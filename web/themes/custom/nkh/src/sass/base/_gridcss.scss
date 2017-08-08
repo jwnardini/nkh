@@ -1,0 +1,49 @@
+/* GRID CSS SYSTEM
+********************************/
+// Grid parent
+@mixin gridcss($grid-type, $args, $row-gap: $grid-row-gap, $column-gap: $grid-column-gap, $flow: null) {
+  display: grid;
+  #{$grid-type}: #{$args};
+  grid-column-gap: $column-gap;
+  grid-row-gap: $row-gap;
+  grid-auto-flow:#{$flow};
+}
+
+// Semantic grid
+@mixin tm-gridcss($number, $row-gap: $grid-row-gap, $column-gap: $grid-column-gap, $flow:null) {
+  @include gridcss('grid-template-columns', repeat($number, 1fr), $row-gap, $column-gap, $flow);
+  > * > * {
+    @include trim();
+  }
+}
+
+// Grid item spanning
+@mixin gridcss-item-span($columns: null, $rows: null){
+  grid-column-end: span $columns;
+  grid-row-end: span $rows;
+}
+
+// Grid item explicit placement/sizing
+@mixin gridcss-item-placement($column: null, $row: null){
+  grid-row: #{$row};
+  grid-column: #{$column};
+}
+
+// example of grid css usage
+.four-column-gridcss {
+  @include tm-gridcss(4, $flow: dense);
+  > * {
+    background: #eee;
+  }
+}
+
+// example enlarge grid item
+.example-larger {
+  @include gridcss-item-span(2, 3);
+}
+// example reposition and enlarge grid item
+.example-position {
+  /* autoprefixer: off */
+  @include gridcss-item-placement(1, '1/3');
+  background-color: $highlight;
+}

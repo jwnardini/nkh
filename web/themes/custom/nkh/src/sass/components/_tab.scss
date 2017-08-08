@@ -1,0 +1,15 @@
+.tm-tab-enabled {
+  .tm-tab-label {
+    display: none;
+  }
+  .tm-tab-content {
+    &.tm-tab-hide {
+      display: none;
+    }
+  }
+  .tm-tab-links {
+    .active {
+      font-weight: bold;
+    }
+  }
+}

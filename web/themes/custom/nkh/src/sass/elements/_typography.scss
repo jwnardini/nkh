@@ -1,0 +1,99 @@
+// Define baseline lineheight
+$lineheight: 1.6em;
+
+// Define a border style
+$border: 1px solid #ccc;
+
+// The amount lists, blockquotes and comments are indented.
+$indent-amount: 30px;
+
+// Rem with pixel fallback
+@mixin font-size($sizeValue: 16) {
+  font-size: $sizeValue + px;
+  font-size: ($sizeValue / 10) + rem;
+  // @TODO calculate lineheight using font-size, x-height and some type of ratio
+  // x-height and ratio would be variables
+  // provide a way to override or omit
+  // different ratio for headings?
+}
+
+body{
+  @include font-size(18);
+  line-height: $lineheight;
+  font-family: $base-font-family;
+  min-width: $min-width;
+  color: $gray;
+  @include breakpoint($all-devices) {
+    &.noscroll {
+      overflow: hidden;
+      height: 100%;
+      width: 100%;
+      position: fixed;
+    }
+  }
+}
+
+//Define your custom font styles for selectors here
+h1 {
+  font-family: $base-heading-font;
+}
+// Heading style
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $base-heading-font;
+}
+a {
+  color: $highlight;
+  text-decoration: none;
+}
+hr {
+  border-bottom: $border;
+}
+blockquote {
+  border-left: $border;
+  padding-left: $indent-amount;
+  font-size: 1.5em;
+  line-height: 1.25em;
+  p {
+    margin: 0.5em 0;
+  }
+}
+cite {
+  @include font-size(16);
+  display: block;
+}
+.intro {
+  font-size: 1.5em;
+  line-height: 1.5em;
+}
+// Global button styling
+.button-link,
+%button {
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  border: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  display: inline-block;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  cursor: pointer;
+  background-color: $highlight;
+  color: #fff;
+  font-family: $sans;
+  line-height: 40px;
+  height: 40px;
+  padding: 0 20px;
+  @include notouchhover {
+    background-color: lighten($highlight, 10);
+  }
+}
+#logo img {
+  max-width: 160px;
+}

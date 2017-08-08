@@ -1,0 +1,15 @@
+/**
+ * Blocks.
+ */
+
+/* Block wrapper. */
+.block {
+  position: relative;
+}
+
+%fadein-selector {
+  transition: opacity 300ms ease 50ms;
+  &.transparent {
+    opacity: 0;
+  }
+}

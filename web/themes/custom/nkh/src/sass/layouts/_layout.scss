@@ -1,0 +1,99 @@
+/**
+ * @file
+ * Positioning for a responsive layout.
+ *
+ * Define CSS classes to create a fluid grid layout with optional sidebars
+ * depending on whether blocks are placed in the left or right sidebars.
+ *
+ */
+
+
+/**
+ * Center the page.
+ *
+ * For screen sizes larger than 1200px, prevent excessively long lines of text
+ * by setting a max-width.
+ */
+
+/* LAYOUT FOR MOBILE MENU */
+@include breakpoint($all-devices){
+  #main,
+  #footer,
+  #region-bottom {
+    position: relative;
+    left: 0;
+    transition: all 500ms ease;
+    .menu-active & {
+      left: -255px;
+      opacity: 0.2;
+      transition: all 500ms ease;
+    }
+  }
+}
+
+#main {
+  @include clearfix();
+}
+
+
+@include breakpoint($desktop) {
+  //The layout when there are no sidebars.
+  .no-sidebars {
+    #content {
+      @include col(10, 14, $offset: 2);
+    }
+  }
+
+  // The layout when there is only one sidebar, the left one.
+  .sidebar-first {
+    #content {
+      @include col(10, 14);
+    }
+    .sidebar-first {
+      @include col(4, 14);
+    }
+  }
+
+  // The layout when there is only one sidebar, the right one.
+  .sidebar-second {
+    #content {
+      @include col(8, 14, $offset: 1);
+    }
+    .sidebar-second {
+      @include col(4, 14, $offset: 1);
+    }
+  }
+
+  // The layout when there are two sidebars.
+  .two-sidebars {
+    #content {
+      @include col(8, 14, $offset: 1);
+    }
+    .sidebars {
+      @include col(4, 14, $offset: 1);
+    }
+  }
+}
+
+@include breakpoint($lg-desktop) {
+  // The layout when there are two sidebars.
+  .two-sidebars {
+    #content {
+      @include col(7, 14, $offset: 3);
+      margin-right: -100%;
+    }
+    .sidebars {
+      float: none;
+      width: auto;
+      margin: 0;
+      .sidebar-first {
+        @include col(3, 14);
+      }
+      .sidebar-second {
+        @include col(4, 14, $offset: 7);
+      }
+    }
+  }
+}
+
+@import "regions/regions";

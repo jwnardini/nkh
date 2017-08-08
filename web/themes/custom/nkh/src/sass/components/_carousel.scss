@@ -1,0 +1,25 @@
+.owl-theme .owl-controls {
+
+  .owl-buttons,
+  .owl-nav {
+
+    .owl-prev,
+    .owl-next {
+
+    }
+    .owl-next {
+
+      &.disabled {
+
+      }
+    }
+    .owl-prev {
+      &.disabled {
+
+      }
+    }
+  }
+  .owl-pagination {
+
+  }
+}

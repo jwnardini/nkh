@@ -1,0 +1,51 @@
+/* DECLARE FONTS
+******************************/
+
+// Import Google Web Fonts
+//@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,700italic,700,600italic,600,900);
+//@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700,700italic);
+
+
+//@font-face {
+//  font-family: 'captainicon';
+//  src:url('fonts/captainicon/captainicon.woff2') format('woff2'),
+//  url('fonts/captainicon/captainicon.woff') format('woff'),
+//  url('fonts/captainicon/captainicon.ttf') format('truetype'),
+//  url('fonts/captainicon/captainicon.svg') format('svg');
+//  font-weight: normal;
+//  font-style: normal;
+//}
+
+@mixin crisp() {
+  // crisper font aliasing
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin icon($name) {
+  content: $name;
+  font-family: 'captainicon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  @include crisp();
+}
+
+/* VARIABLES
+******************************/
+// Font stacks.
+$georgia:         Georgia, "Times New Roman", "DejaVu Serif", serif;
+$helvetica:       Helvetica, Arial, "Nimbus Sans L", sans-serif;
+$courier:         "Courier New", "DejaVu Sans Mono", monospace, sans-serif;
+
+// fonts
+$serif: 'Droid Serif', $georgia;
+$sans: 'Source Sans Pro', $helvetica;
+
+// Create some variables for the font stacks we want to use on this site.
+$base-font-family: $sans; // The font family set on the html element.
+$base-heading-font: $sans;
+$font-monospace:   $courier;

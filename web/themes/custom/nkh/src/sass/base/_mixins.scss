@@ -1,0 +1,164 @@
+// @file
+// Custom sass mixins
+//
+// Define the custom mixins for your project here.
+// http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#defining_a_mixin
+
+// Makes an element visually hidden, but accessible.
+// @see http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+@mixin element-invisible {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+// Turns off the element-invisible effect.
+@mixin element-invisible-off {
+  position: static !important;
+  clip: auto;
+  height: auto;
+  width: auto;
+  overflow: auto;
+}
+
+// Makes an element visually hidden by default, but visible when focused.
+@mixin element-focusable {
+  @include element-invisible;
+
+  &:active,
+  &:focus {
+    @include element-invisible-off;
+  }
+}
+
+// Clearfix
+@mixin clearfix {
+  &:after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+}
+
+// define a global box-shadow style
+@mixin boxshadow {
+  -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+// A global setting that can be used for controlling container widths
+.inner-wrapper,
+%inner-wrapper {
+  position: relative;
+  @include clearfix;
+  max-width: $screen-tablet - 60px;
+  margin: 0 30px;
+  @include breakpoint($tablet-only) {
+    margin: 0 auto;
+  }
+  @include breakpoint($desktop){
+    max-width: $screen-max - 120px;
+    margin: 0 60px;
+  }
+  @include breakpoint($lg-desktop) {
+    margin: 0 auto;
+  }
+}
+
+
+// Isolate a hover effect only for non-touch screens - requires Modernizr with touch detection
+@mixin notouchhover {
+  .no-touchevents & {
+    &:hover,
+    &:focus {
+      @content;
+    }
+  }
+}
+
+// Fully prefixed placeholder styling
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+// Flexible video container
+.video-player,
+%video {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* padding-top: 30px; */
+  height: 0;
+  overflow: hidden;
+  iframe,
+  object,
+  embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+}
+
+// Left floated inline menu with no margin, padding or border
+@mixin list-reset($type: float) {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  @include clearfix;
+  li {
+    list-style-type: none;
+    list-style-image: none;
+    @if $type == float {
+      float: left;
+      display: block;
+    }
+    @else if $type == inline {
+      display: inline;
+    }
+    @else if $type == inline-block {
+      display: inline-block;
+    }
+  }
+}
+
+
+// auto scroll with smooth scrolling on touch devices
+%scroll {
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+@mixin trim($direction: v) {
+  @if $direction == v {
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  } @else if $direction == h {
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

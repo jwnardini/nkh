@@ -1,0 +1,23 @@
+{
+  "minify": true,
+  "options": [
+    "setClasses",
+    "domPrefixes",
+    "prefixes",
+    "html5shiv",
+    "testAllProps",
+    "testProp",
+    "testStyles"
+  ],
+  "feature-detects": [
+    "css/backgroundsize",
+    "css/columns",
+    "css/pointerevents",
+    "css/remunit",
+    "css/transforms",
+    "css/vwunit",
+    "css/cssgrid",
+    "svg/asimg",
+    "touchevents"
+  ]
+}

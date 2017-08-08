@@ -1,0 +1,44 @@
+@mixin svg-sprite {
+	background: url("../svg/svg-sprite.svg") no-repeat;
+}
+
+.svg-home {
+	@include svg-sprite;
+	background-position: 100% 0;
+}
+
+.svg-home-dims {
+	width: 24px;
+	height: 24px;
+}
+
+.svg-library {
+	@include svg-sprite;
+	background-position: 0 0;
+}
+
+.svg-library-dims {
+	width: 25px;
+	height: 24px;
+}
+
+.svg-tv {
+	@include svg-sprite;
+	background-position: 0 100%;
+}
+
+.svg-tv-dims {
+	width: 24px;
+	height: 24px;
+}
+
+.svg-twitter {
+	@include svg-sprite;
+	background-position: 96% 100%;
+}
+
+.svg-twitter-dims {
+	width: 24px;
+	height: 24px;
+}
+

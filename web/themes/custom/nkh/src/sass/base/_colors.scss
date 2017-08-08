@@ -1,0 +1,26 @@
+// Colors
+$black: #333;
+$ltblue: #96B4CE;
+$blue: #326CB1;
+$medblue: #2f6BAA;
+$ltgray: #A2A2A2;
+$medgray: #666;
+$gray: #333;
+$owhite: #F2F2F2;
+$white: #FFF;
+
+// global use cases
+$dark: $black;
+$light: $owhite;
+$highlight: $blue;
+
+// style swatches in fabricator
+.light {
+  border-color: $light;
+}
+.dark {
+  border-color: $dark;
+}
+.highlight {
+  border-color: $highlight;
+}

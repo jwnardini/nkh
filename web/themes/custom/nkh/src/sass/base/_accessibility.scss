@@ -1,0 +1,49 @@
+/**
+ * Accessibility features.
+ */
+
+/* element-invisible as defined by http://snook.ca/archives/html_and_css/hiding-content-for-accessibility */
+.element-invisible,
+.visually-hidden,
+%element-invisible {
+  @include element-invisible;
+}
+
+/* Turns off the element-invisible effect. */
+%element-invisible-off {
+  @include element-invisible-off;
+}
+
+.element-focusable,
+%element-focusable {
+  @extend %element-invisible;
+
+  &:active,
+  &:focus {
+    @extend %element-invisible-off;
+  }
+}
+
+/*
+ * The skip-link link will be completely hidden until a user tabs to the link.
+ */
+.skip-link {
+  display: block;
+  background: #2d2d2d;
+  color: #ffffff;
+  text-align: center;
+  height: 0;
+  &:focus {
+    height: auto;
+    padding: 10px;
+  }
+}
+
+/*
+ * Removing focus from content so that skip-link fix does not always highlight main container when any content is clicked
+ */
+
+#content{
+  outline: none;
+}
+

@@ -1,0 +1,108 @@
+form {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  > * {
+    @include trim();
+  }
+}
+.form-item,
+.form-actions {
+  margin: 20px 0;
+}
+label {
+  font-family: $sans;
+  margin-bottom: 5px;
+}
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+textarea {
+  padding: 6px 12px;
+  font-family: $sans;
+  min-width: 280px;
+  box-sizing: border-box;
+  border: $border;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  @extend %element-invisible;
+  + label {
+    display: inline;
+    font-weight: normal;
+    box-sizing: border-box;
+    position: relative;
+    cursor: pointer;
+    &:before {
+      content: '';
+      display: inline-block;
+      height: 14px;
+      width: 14px;
+      margin-bottom: -2px;
+      margin-right: 8px;
+      overflow: hidden;
+      border: 1px solid $highlight;
+    }
+    &.focused:before {
+      box-shadow: 0 0 5px #444;
+    }
+  }
+  &:checked + label{
+    &:before {
+      background-color: $highlight;
+    }
+  }
+}
+input[type="radio"] + label:before {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.selectlist {
+  position: relative;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  background-color: #eee;
+  border: 1px solid $ltgray;
+  display:inline-block;
+}
+
+select {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  z-index: 2;
+  border: 1px solid $ltgray;
+  -webkit-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  -moz-padding-end: 10px;
+  line-height: 1em;
+  height: 40px;
+  padding: 8px 16px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  cursor: pointer;
+  font-family: $sans;
+  min-width: 200px;
+  background-color: #eee;
+  .selectlist & {
+    float: left;
+    background: transparent;
+    background-color: transparent;
+    margin: 0;
+    line-height: 14px;
+    border: none;
+  }
+}
+
+button,
+input[type="submit"],
+input[type="button"] {
+  @extend %button;
+}

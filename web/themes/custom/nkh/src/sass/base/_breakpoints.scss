@@ -1,0 +1,17 @@
+// Screen widths
+$screen-min: 320px;
+$screen-mobile: 500px;
+$screen-tablet: 760px;
+$screen-desktop: 1024px;
+$screen-max: 1440px;
+
+// Breakpoints
+$min-width: $screen-min;
+$mobile: max-width $screen-mobile;
+$lg-mobile: $screen-mobile + 1 $screen-tablet;
+$tablet: min-width $screen-tablet + 1;
+$tablet-only: $screen-tablet + 1 $screen-desktop - 1;
+$all-devices: max-width $screen-desktop - 1;
+$desktop: min-width $screen-desktop;
+$desktop-only: $screen-desktop $screen-max - 1;
+$lg-desktop: min-width $screen-max;

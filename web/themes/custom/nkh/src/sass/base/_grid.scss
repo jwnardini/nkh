@@ -1,0 +1,147 @@
+/* GRID VARIABLES
+********************************/
+$grid-columns: 16;
+$grid-column-gap: 20px;
+$grid-row-gap: $grid-column-gap;
+
+
+/* FUNCTIONS
+********************************/
+@function negative ($number) {
+  @if type-of($number) != number {
+    @return $number;
+  }
+  @else if $number != 0 {
+    @return -$number;
+  }
+}
+
+/* MIXINS
+********************************/
+// column wrapper
+@mixin colwrapper($row-gap: $grid-row-gap, $column-gap: $grid-column-gap) {
+  margin-top: negative($row-gap);
+  margin-left: negative($column-gap);
+  @include clearfix();
+  position: relative;
+}
+
+// column
+@mixin col($columns: 1, $grid: $grid-columns, $column-gap: $grid-column-gap, $offset: 0, $float: left) {
+  width: calc((#{$columns}/#{$grid})*100% - #{$column-gap});
+  margin-left: calc((#{$offset}/#{$grid})*100% + #{$column-gap});
+  @if $float != none {
+    float: $float;
+  }
+}
+
+// offset
+@mixin offset($offset: 1, $grid: $grid-columns, $column-gap: $grid-column-gap) {
+  margin-left: calc((#{$offset}/#{$grid})*100% + #{$column-gap});
+}
+
+// change column width
+@mixin changecol($original_columns, $add_columns_left, $add_columns_right, $column-gap: $grid-column-gap) {
+  margin-left: calc((100%/#{$original_columns}) * #{$add_columns_left} - #{$column-gap});
+  margin-right: calc((100%/#{$original_columns}) * #{$add_columns_right} - #{$column-gap});
+  width: auto;
+  position: relative;
+}
+
+//Preferred version of clearfix
+@mixin clearfix() {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// generation column spans
+@mixin generate-grid-span($grid: $grid-columns) {
+  @for $i from 1 through $grid {
+    .span-#{$i} {
+      @include col($i, $grid);
+      @for $k from 1 through $grid {
+        &.offset-#{$k} {
+          @include offset($k, $grid);
+        }
+      }
+    }
+  }
+}
+
+// grid
+@mixin tm-grid($number, $row-gap: $grid-row-gap, $column-gap: $grid-column-gap) {
+  @include colwrapper($row-gap, $column-gap);
+  > * {
+    @include col(1, $number, $column-gap);
+    margin-top: $row-gap;
+    background-color: #eee;
+    > * {
+      @include trim();
+    }
+    &:nth-child(#{$number}n+1) {
+      clear: left;
+    }
+  }
+}
+
+/* DISPLAY
+********************************/
+.clearfix {
+  @include clearfix;
+}
+
+// Generation grid span classes for 12 column grid
+@include breakpoint($desktop) {
+  .column-wrapper{
+    &.twelve {
+      @include colwrapper(null);
+      @include generate-grid-span(12);
+    }
+  }
+}
+
+// create default classes for frequently used grids
+@include breakpoint($desktop) {
+  .two-column-grid {
+    @include tm-grid(2);
+  }
+  .three-column-grid {
+    @include tm-grid(3);
+  }
+  .four-column-grid {
+    @include tm-grid(4);
+  }
+}
+@include breakpoint($tablet-only) {
+  .two-column-grid,
+  .three-column-grid,
+  .four-column-grid {
+    @include tm-grid(2);
+  }
+}
+
+// example breakout column grid item
+.example-breakout {
+  background-color: $highlight;
+  @include breakpoint($desktop) {
+    @include changecol(1, -1, -1);
+  }
+}
+
+/* CENTERING OFFSET
+********************************/
+.center-10 {
+  @include col(10, 12, 0, 1, none);
+}
+.center-8 {
+  @include col(8, 12, 0, 2, none);
+}
+.center-6 {
+  @include col(6, 12, 0, 3, none);
+}
+.center-4 {
+  @include col(4, 12, 0, 4, none);
+}
