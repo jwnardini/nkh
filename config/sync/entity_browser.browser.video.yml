@@ -1,0 +1,31 @@
+uuid: 2c437bf1-66db-4205-8f24-2aca382b245e
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.media_preview
+  module:
+    - views
+name: video
+label: video
+display: modal
+display_configuration:
+  width: '650'
+  height: '500'
+  link_text: 'Select entities'
+  auto_open: true
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  f545e448-c1b6-4a61-ad07-9338c19f83c5:
+    settings:
+      view: media_preview
+      view_display: entity_browser_1
+      submit_text: 'Select entities'
+      auto_select: false
+    uuid: f545e448-c1b6-4a61-ad07-9338c19f83c5
+    weight: 2
+    label: 'Video library'
+    id: view

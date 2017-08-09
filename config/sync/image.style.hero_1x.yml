@@ -1,0 +1,7 @@
+uuid: 5ed919be-b314-4f1d-bfc6-48c76767865b
+langcode: en
+status: true
+dependencies: {  }
+name: hero_1x
+label: Hero_1x
+effects: {  }

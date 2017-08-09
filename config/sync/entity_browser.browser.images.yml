@@ -1,0 +1,37 @@
+uuid: c66207ae-603d-45d9-9498-3a232e2d218f
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.media_preview
+  module:
+    - views
+name: images
+label: Images
+display: modal
+display_configuration:
+  width: '650'
+  height: '500'
+  link_text: 'Select entities'
+  auto_open: true
+selection_display: no_display
+selection_display_configuration:
+  entity_type: media
+  display: rendered_entity
+  display_settings:
+    view_mode: default
+  select_text: 'Use selected'
+  selection_hidden: false
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  be8ee674-263b-4902-93df-71561c24aa69:
+    settings:
+      view: media_preview
+      view_display: entity_browser_1
+      submit_text: 'Select entities'
+      auto_select: false
+    uuid: be8ee674-263b-4902-93df-71561c24aa69
+    weight: -8
+    label: 'Image Library'
+    id: view
