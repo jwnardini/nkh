@@ -14,6 +14,10 @@ $dark: $black;
 $light: $owhite;
 $highlight: $blue;
 
+body {
+  background: $ltgray; // testing to see if compiling is working
+}
+
 // style swatches in fabricator
 .light {
   border-color: $light;

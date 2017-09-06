@@ -38,7 +38,7 @@ rm .gitignore
 
 ## Compiling
 
-**Development**: Starts a watch of the toolkit files and initializes Browser Sync 
+**Development**: Starts a watch of the toolkit files and initializes Browser Sync
 ```shell
 npm start
 ```
@@ -73,7 +73,7 @@ gulp
 **Some Notes on...**
 - Organization using the atomic css modal
 - Breakpoints
-- promote accesibility best practices
+- promote accessibility best practices
 
 
 ## Node

@@ -3,6 +3,9 @@
 !.gitignore
 !gulpfile.js
 !npm-shrinkwrap.json
+!nkh.theme
+!nkh.info.yml
+!nkh.libraries.yml
 !package.json
 !README.md
 !webpack.config.js
