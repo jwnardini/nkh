@@ -23,6 +23,7 @@ regions:
   postscript: Postscript
   prefooter: Prefooter
   footer: Footer
+  disabled: Disabled
 
 # define custom css for wysiwyg
 #ckeditor_stylesheets:
