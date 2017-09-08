@@ -17,14 +17,13 @@ libraries-override:
 
 # Regions
 regions:
+  alert: Alert
   header: Header
-  navigation: 'Navigation Bar'
-  highlighted: Highlighted
   content: Content
-  sidebar_first: 'First sidebar'
-  sidebar_second: 'Second sidebar'
+  postscript: Postscript
+  prefooter: Prefooter
   footer: Footer
-  bottom: 'Page bottom'
+  disabled: Disabled
 
 # define custom css for wysiwyg
 #ckeditor_stylesheets:
