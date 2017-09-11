@@ -1,0 +1,15 @@
+uuid: fadc56e3-b0fa-4bec-af0c-36749d51bb58
+langcode: en
+status: true
+dependencies: {  }
+id: publisher
+label: Publisher
+weight: -6
+is_admin: null
+permissions:
+  - 'administer nodes'
+  - 'delete all revisions'
+  - 'delete any article content'
+  - 'delete any blog content'
+  - 'delete any page content'
+  - 'use text format simple_html'

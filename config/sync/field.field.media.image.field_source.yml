@@ -1,0 +1,29 @@
+uuid: 6f0a6d53-fef7-4966-ae75-65aeb6ec3e53
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_source
+    - media_entity.bundle.image
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    simple_html: simple_html
+    plain_text: plain_text
+    basic_html: '0'
+    restricted_html: '0'
+    full_html: '0'
+id: media.image.field_source
+field_name: field_source
+entity_type: media
+bundle: image
+label: Source
+description: 'Enter any photo credits or restrictions on this image.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

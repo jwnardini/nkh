@@ -1,0 +1,24 @@
+uuid: 14a011b2-2179-4da1-9fa1-24c764053334
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.header-social-media-links
+  module:
+    - system
+  theme:
+    - nkh
+id: headersocialmedialinks
+theme: nkh
+region: header
+weight: -9
+provider: null
+plugin: 'system_menu_block:header-social-media-links'
+settings:
+  id: 'system_menu_block:header-social-media-links'
+  label: 'Header Social Media Links'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }

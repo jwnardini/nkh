@@ -1,0 +1,29 @@
+uuid: 1ef8d589-92b6-4384-bf52-07b7d30420f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_caption
+    - media_entity.bundle.image
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    simple_html: simple_html
+    plain_text: plain_text
+    basic_html: '0'
+    restricted_html: '0'
+    full_html: '0'
+id: media.image.field_caption
+field_name: field_caption
+entity_type: media
+bundle: image
+label: Caption
+description: 'Enter additional information about this image.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

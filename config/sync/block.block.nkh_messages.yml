@@ -1,0 +1,22 @@
+uuid: e851be61-c386-4863-8026-8f0ea455f5f5
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - nkh
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: nkh_messages
+theme: nkh
+region: alert
+weight: -8
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,10 @@
+uuid: a1893b1e-f385-4a69-8ac1-af0805e2dbf8
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.teaser_long
+label: 'Long Teaser'
+targetEntityType: node
+cache: true

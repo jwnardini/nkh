@@ -1,0 +1,22 @@
+uuid: 727cb422-8243-46a0-9747-f0ebae8e5c9a
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - chief
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: chief_messages
+theme: chief
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

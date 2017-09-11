@@ -1,0 +1,25 @@
+uuid: 9c6719fe-4672-4887-a38d-f6b95f988d0b
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - nkh
+_core:
+  default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
+id: nkh_branding
+theme: nkh
+region: header
+weight: -11
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

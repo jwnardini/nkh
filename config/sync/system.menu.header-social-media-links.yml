@@ -1,0 +1,8 @@
+uuid: 4304bce6-0d0e-4f95-813c-994bc0ab18ea
+langcode: en
+status: true
+dependencies: {  }
+id: header-social-media-links
+label: 'Header Social Media Links'
+description: 'Social media links for header section only'
+locked: false

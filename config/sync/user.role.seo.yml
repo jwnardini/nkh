@@ -1,0 +1,10 @@
+uuid: 656a7334-5716-4da6-ad93-3f3e6153f870
+langcode: en
+status: true
+dependencies: {  }
+id: seo
+label: SEO
+weight: -5
+is_admin: null
+permissions:
+  - 'use text format simple_html'

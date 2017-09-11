@@ -1,0 +1,24 @@
+uuid: 2ba90a19-b500-48df-b052-103e4731d88d
+langcode: en
+status: true
+dependencies: {  }
+id: editor
+label: Editor
+weight: -7
+is_admin: null
+permissions:
+  - 'delete article revisions'
+  - 'delete blog revisions'
+  - 'delete page revisions'
+  - 'edit any article content'
+  - 'edit any blog content'
+  - 'edit any page content'
+  - 'revert all revisions'
+  - 'revert article revisions'
+  - 'revert blog revisions'
+  - 'revert page revisions'
+  - 'use text format simple_html'
+  - 'view all revisions'
+  - 'view article revisions'
+  - 'view blog revisions'
+  - 'view page revisions'

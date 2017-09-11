@@ -1,0 +1,20 @@
+uuid: cebe5daf-e7d2-4c13-be93-8750ab91a3ea
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - nkh
+id: messages
+theme: nkh
+region: content
+weight: -10
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Messages
+  provider: system
+  label_display: '0'
+visibility: {  }

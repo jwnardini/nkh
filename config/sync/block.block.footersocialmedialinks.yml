@@ -1,0 +1,24 @@
+uuid: 9a4f9baf-4690-4c1c-b2d6-de56a8f5fe23
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer-social-media-links
+  module:
+    - system
+  theme:
+    - nkh
+id: footersocialmedialinks
+theme: nkh
+region: footer
+weight: -7
+provider: null
+plugin: 'system_menu_block:footer-social-media-links'
+settings:
+  id: 'system_menu_block:footer-social-media-links'
+  label: 'Footer Social Media Links'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }

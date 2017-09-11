@@ -1,0 +1,22 @@
+uuid: 01c09511-5d14-4520-aa1e-1fffc85356f5
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - nkh
+_core:
+  default_config_hash: jQQUUWN2Uxr5qZtc9zcJKBCxpKY8orN1u2HPqYYRQDI
+id: nkh_powered
+theme: nkh
+region: disabled
+weight: -9
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

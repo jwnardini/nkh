@@ -1,0 +1,20 @@
+uuid: 15f20a1d-f546-4d7f-b37d-8ebde5809b3d
+langcode: en
+status: true
+dependencies: {  }
+id: author
+label: Author
+weight: -8
+is_admin: null
+permissions:
+  - 'create article content'
+  - 'create blog content'
+  - 'create page content'
+  - 'delete own article content'
+  - 'delete own blog content'
+  - 'delete own page content'
+  - 'edit own article content'
+  - 'edit own blog content'
+  - 'edit own page content'
+  - 'use text format simple_html'
+  - 'view own unpublished content'

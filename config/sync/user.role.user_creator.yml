@@ -1,0 +1,12 @@
+uuid: dcffebf0-e198-4d05-a5d0-c4c17d278d84
+langcode: en
+status: true
+dependencies: {  }
+id: user_creator
+label: 'User Creator'
+weight: -4
+is_admin: null
+permissions:
+  - 'access user profiles'
+  - 'administer users'
+  - 'use text format simple_html'

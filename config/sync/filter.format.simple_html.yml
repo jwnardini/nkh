@@ -1,0 +1,30 @@
+uuid: 8cc3fce5-a73c-4c80-a21f-76ffe75578e7
+langcode: en
+status: true
+dependencies: {  }
+name: 'Simple HTML'
+format: simple_html
+weight: -9
+filters:
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: -10
+    settings:
+      allowed_html: '<a href hreflang name id> <em> <strong>'
+      filter_html_help: true
+      filter_html_nofollow: false
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: true
+    weight: 10
+    settings: {  }
+  filter_url:
+    id: filter_url
+    provider: filter
+    status: true
+    weight: 0
+    settings:
+      filter_url_length: 72

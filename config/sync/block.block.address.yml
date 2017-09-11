@@ -1,0 +1,25 @@
+uuid: 9e325a43-44d2-4d82-a906-4fdf1dcca44a
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:096b1eed-727a-4897-8b9d-1dca16a30e64'
+  module:
+    - block_content
+  theme:
+    - nkh
+id: address
+theme: nkh
+region: footer
+weight: -5
+provider: null
+plugin: 'block_content:096b1eed-727a-4897-8b9d-1dca16a30e64'
+settings:
+  id: 'block_content:096b1eed-727a-4897-8b9d-1dca16a30e64'
+  label: Address
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

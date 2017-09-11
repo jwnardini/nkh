@@ -4,16 +4,25 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.embed
+    - field.field.media.image.field_caption
     - field.field.media.image.field_image
     - media_entity.bundle.image
     - responsive_image.styles.narrow
   module:
     - responsive_image
+    - text
 id: media.image.embed
 targetEntityType: media
 bundle: image
 mode: embed
 content:
+  field_caption:
+    type: text_default
+    weight: 1
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
   field_image:
     weight: 0
     label: hidden

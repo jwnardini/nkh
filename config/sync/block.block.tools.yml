@@ -1,0 +1,24 @@
+uuid: 45fb39f5-7d18-497f-8eeb-07e9714248e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.tools
+  module:
+    - system
+  theme:
+    - nkh
+id: tools
+theme: nkh
+region: header
+weight: -7
+provider: null
+plugin: 'system_menu_block:tools'
+settings:
+  id: 'system_menu_block:tools'
+  label: Tools
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }
