@@ -1,0 +1,18 @@
+name: Blog
+type: module
+core: 8.x
+dependencies:
+  - datetime
+  - entity_browser_entity_form
+  - field
+  - inline_entity_form
+  - media_entity
+  - media_entity_image
+  - menu_ui
+  - node
+  - path
+  - text
+  - user
+  - video_embed_media
+version: 8.x-1.0
+package: 'No Kid Hungry'

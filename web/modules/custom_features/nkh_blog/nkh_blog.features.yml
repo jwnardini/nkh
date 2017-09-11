@@ -1,0 +1,5 @@
+bundle: nkh
+excluded:
+  - media_entity.bundle.image
+  - media_entity.bundle.video
+required: true
