@@ -1,0 +1,33 @@
+id: blog_image
+status: true
+label: Blog Image Migration
+dependencies:
+  enforced:
+    module:
+      - nkh_blog_migrate
+source:
+  plugin: csv
+  track_changes: true
+  path: /config/install/migration-NKH-Blog-content-pull.csv
+  header_row_count: 1
+  keys:
+    - legacy_node_id
+destination:
+  plugin: entity:file
+  urlencode: true
+process:
+  filename: filename
+  uri: uri
+#  filemime:
+#    plugin: default_value
+#    default_value: 'image/jpeg'
+  status:
+    plugin: default_value
+    default_value: 1
+  created: created
+  changed: changed
+  uid:
+    plugin: default_value
+    default_value: 1
+
+migration_dependencies: {}

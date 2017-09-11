@@ -1,0 +1,96 @@
+# missing fields:
+  # featured image
+  # excerpt
+  # tags
+
+id: blog
+status: true
+label: Blog Node Migration
+# remove below when all migrations are complete
+dependencies:
+  enforced:
+    module:
+      - nkh_blog_migrate
+source:
+  plugin: csv
+  track_changes: true
+  path: /config/install/migration-NKH-Blog-content-pull.csv
+  header_row_count: 1
+  keys:
+    - legacy_node_id
+  #constants is only necessary for urls without 'slash'
+  constants:
+    slash: '/'
+    openextended: ' <div class="extended">'
+    closedextended: '</div>'
+destination:
+  plugin: entity:node
+process:   # Type is the specific type of node
+  type:
+    plugin: default_value
+    default_value: blog
+  # Most processes will look like the following three. When no
+  # plugin like default_value above is specified, the "get" plugin
+  # is used by default. This is used for a 1 to 1 migration of source
+  # to desitination.
+  langcode:
+    plugin: default_value
+    default_value: und
+  status:
+    plugin: default_value
+    default_value: 1
+  promote:
+    plugin: default_value
+    default_value: 0
+  sticky:
+    plugin: default_value
+    default_value: 0
+  revision_translation_affected:
+    plugin: default_value
+    default_value: 1
+  default_langcode:
+    plugin: default_value
+    default_value: 1
+  path:
+    plugin: concat
+    source:
+      - constants/slash
+      - alias
+
+  created: created
+  changed: changed
+  title: title
+  uid:
+    plugin: default_value
+    default_value: 1
+  'body/summary': field_excerpt_value
+  'body/value':
+    plugin: concat
+    source:
+      - body_value
+      - openextended
+      - field_extended_value
+      - closedextended
+  'body/format':
+    plugin: default_value
+    default_value: full_html
+
+# in case we migrate field intro content:
+#  'field_intro/format':
+#    plugin: default_value
+#    default_value: full_html
+#  'field_intro/value': field_intro
+
+  field_image_featured:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: filename
+    -
+      plugin: migration_lookup
+      migration: blog_image
+      source: legacy_node_id
+      no_stub: true
+
+
+migration_dependencies: {}
