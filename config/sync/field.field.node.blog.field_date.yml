@@ -7,6 +7,8 @@ dependencies:
     - node.type.blog
   module:
     - datetime
+_core:
+  default_config_hash: DO5FDfKH2_yLDVeRUbv-QzTn2ExTJTsiQ3rKmYE61zo
 id: node.blog.field_date
 field_name: field_date
 entity_type: node

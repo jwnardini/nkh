@@ -19,6 +19,8 @@ dependencies:
     - datetime
     - text
     - user
+_core:
+  default_config_hash: 0nPISJUHmwZsNPqtoGjPjYC5A5dCi_TqymD4JH8GZ7s
 id: node.blog.default
 targetEntityType: node
 bundle: blog

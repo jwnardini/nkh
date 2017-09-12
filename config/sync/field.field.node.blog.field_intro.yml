@@ -7,6 +7,8 @@ dependencies:
     - node.type.blog
   module:
     - text
+_core:
+  default_config_hash: QsQXHUcrGTX_CUX_g_wSo1vLAVaKa6su6LZgC2d-Co8
 id: node.blog.field_intro
 field_name: field_intro
 entity_type: node
