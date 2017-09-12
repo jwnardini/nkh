@@ -5,6 +5,8 @@ dependencies:
   module:
     - media_entity
     - node
+_core:
+  default_config_hash: zJ4NjiHcygBX0wbnWn-SCOJLp-L7oKNvnRnQiHCZKEI
 id: node.field_video
 field_name: field_video
 entity_type: node

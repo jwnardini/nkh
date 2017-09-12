@@ -8,6 +8,8 @@ third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
+_core:
+  default_config_hash: ffCrGShuF5v2sttNAissaPAqHFedsHEzAvfrMycf5rI
 name: Blog
 type: blog
 description: ''

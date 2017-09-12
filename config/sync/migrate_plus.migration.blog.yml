@@ -1,0 +1,81 @@
+uuid: 52453a7d-3cdf-483a-bcaf-3c4a9f2c534c
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - nkh_blog_migrate
+_core:
+  default_config_hash: fS6YnxW9LwHiFdKAMhxlPuDgX3KfJD-VGqstKgho7Kw
+id: blog
+migration_tags: null
+migration_group: null
+label: 'Blog Node Migration'
+source:
+  plugin: csv
+  track_changes: true
+  path: /config/install/migration-NKH-Blog-content-pull.csv
+  header_row_count: 1
+  keys:
+    - legacy_node_id
+  constants:
+    slash: /
+    openextended: ' <div class="extended">'
+    closedextended: '</div>'
+process:
+  type:
+    plugin: default_value
+    default_value: blog
+  langcode:
+    plugin: default_value
+    default_value: und
+  status:
+    plugin: default_value
+    default_value: 1
+  promote:
+    plugin: default_value
+    default_value: 0
+  sticky:
+    plugin: default_value
+    default_value: 0
+  revision_translation_affected:
+    plugin: default_value
+    default_value: 1
+  default_langcode:
+    plugin: default_value
+    default_value: 1
+  path:
+    plugin: concat
+    source:
+      - constants/slash
+      - alias
+  created: created
+  changed: changed
+  title: title
+  uid:
+    plugin: default_value
+    default_value: 1
+  body/summary: field_excerpt_value
+  body/value:
+    plugin: concat
+    source:
+      - body_value
+      - openextended
+      - field_extended_value
+      - closedextended
+  body/format:
+    plugin: default_value
+    default_value: full_html
+  field_image_featured:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: filename
+    -
+      plugin: migration_lookup
+      migration: blog_image
+      source: legacy_node_id
+      no_stub: true
+destination:
+  plugin: 'entity:node'
+migration_dependencies: {  }
