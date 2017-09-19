@@ -1,0 +1,23 @@
+uuid: 1bb5c4a9-10af-452c-b579-97b0e4528df2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_twitter
+    - node.type.partner
+  module:
+    - link
+id: node.partner.field_twitter
+field_name: field_twitter
+entity_type: node
+bundle: partner
+label: Twitter
+description: 'link to partner twitter site - will display with twitter icon'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 1
+field_type: link

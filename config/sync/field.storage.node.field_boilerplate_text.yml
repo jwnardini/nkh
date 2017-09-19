@@ -1,0 +1,19 @@
+uuid: a0d3f98e-3dfa-46c2-8f80-1a50a3d94e25
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_boilerplate_text
+field_name: field_boilerplate_text
+entity_type: node
+type: text_with_summary
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

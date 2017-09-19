@@ -1,0 +1,30 @@
+uuid: 603d75a3-bbcd-4a84-8f8d-5a22c7e67f46
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_summary
+    - node.type.partner
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    basic_html: basic_html
+    simple_html: simple_html
+    full_html: full_html
+    restricted_html: '0'
+    plain_text: '0'
+id: node.partner.field_summary
+field_name: field_summary
+entity_type: node
+bundle: partner
+label: Summary
+description: 'short description *for search results - separate from summary field'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

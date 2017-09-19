@@ -1,0 +1,19 @@
+uuid: 2505d0d4-0143-4e32-846c-6f68cbfd3e70
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_last_name
+    - node.type.profile
+id: node.profile.field_last_name
+field_name: field_last_name
+entity_type: node
+bundle: profile
+label: 'Last Name'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,23 @@
+uuid: aa94d3d3-5af3-4ed7-bae7-87bc653c9ed8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_external_site
+    - node.type.partner
+  module:
+    - link
+id: node.partner.field_external_site
+field_name: field_external_site
+entity_type: node
+bundle: partner
+label: 'Partner Site'
+description: 'link to partner site'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 1
+field_type: link

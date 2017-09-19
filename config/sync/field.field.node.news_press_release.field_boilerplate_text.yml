@@ -1,0 +1,34 @@
+uuid: ce7e08e5-9f6a-4ee9-8a4a-6bfadba38180
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_boilerplate_text
+    - node.type.news_press_release
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    basic_html: basic_html
+    simple_html: simple_html
+    full_html: full_html
+    restricted_html: '0'
+    plain_text: '0'
+id: node.news_press_release.field_boilerplate_text
+field_name: field_boilerplate_text
+entity_type: node
+bundle: news_press_release
+label: 'BoilerPlate Text'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    summary: ''
+    value: "<p>This is the BoilerPlate Text. Please remove this if the content needs to be different.</p>\r\n"
+    format: basic_html
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

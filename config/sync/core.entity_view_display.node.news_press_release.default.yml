@@ -1,0 +1,123 @@
+uuid: 7c175dec-37f7-4a90-b626-a857b672a52e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.news_press_release.body
+    - field.field.node.news_press_release.field_boilerplate_text
+    - field.field.node.news_press_release.field_date
+    - field.field.node.news_press_release.field_external_site
+    - field.field.node.news_press_release.field_issue_taxonomy
+    - field.field.node.news_press_release.field_news_taxonomy
+    - field.field.node.news_press_release.field_partner_taxonomy
+    - field.field.node.news_press_release.field_release_date
+    - field.field.node.news_press_release.field_subtitle
+    - field.field.node.news_press_release.field_summary
+    - field.field.node.news_press_release.field_video
+    - node.type.news_press_release
+  module:
+    - datetime
+    - link
+    - text
+    - user
+id: node.news_press_release.default
+targetEntityType: node
+bundle: news_press_release
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_boilerplate_text:
+    weight: 112
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_date:
+    weight: 113
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_external_site:
+    weight: 107
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_issue_taxonomy:
+    weight: 110
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_news_taxonomy:
+    weight: 109
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_partner_taxonomy:
+    weight: 108
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_release_date:
+    weight: 105
+    label: hidden
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_subtitle:
+    weight: 111
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_summary:
+    weight: 104
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_video:
+    weight: 106
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

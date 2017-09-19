@@ -1,0 +1,23 @@
+uuid: 393d981e-e596-47b0-b61b-a2a991f2665d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_external_site
+    - node.type.news_press_release
+  module:
+    - link
+id: node.news_press_release.field_external_site
+field_name: field_external_site
+entity_type: node
+bundle: news_press_release
+label: URL
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

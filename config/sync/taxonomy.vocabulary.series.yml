@@ -1,0 +1,9 @@
+uuid: ec96eef2-787e-41d7-bb9f-1b257203e75e
+langcode: en
+status: true
+dependencies: {  }
+name: Series
+vid: series
+description: 'Blog-specific Taxonomy list'
+hierarchy: 0
+weight: 0

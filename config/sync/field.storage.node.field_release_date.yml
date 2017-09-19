@@ -1,19 +1,19 @@
-uuid: a8fa8005-6acf-41e0-87b5-f63884a2eca3
+uuid: 1bcc219a-dd62-4208-8006-42bce55f8f51
 langcode: en
 status: true
 dependencies:
   module:
-    - media_entity
+    - datetime
     - node
-id: node.field_video
-field_name: field_video
+id: node.field_release_date
+field_name: field_release_date
 entity_type: node
-type: entity_reference
+type: datetime
 settings:
-  target_type: media
-module: core
+  datetime_type: date
+module: datetime
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

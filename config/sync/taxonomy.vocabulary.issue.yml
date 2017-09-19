@@ -1,0 +1,9 @@
+uuid: 24861ca3-2ab4-43ab-9108-501104f74f22
+langcode: en
+status: true
+dependencies: {  }
+name: Issue
+vid: issue
+description: 'Issue-specific Taxonomy list'
+hierarchy: 0
+weight: 0

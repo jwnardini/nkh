@@ -1,17 +1,16 @@
-uuid: a8fa8005-6acf-41e0-87b5-f63884a2eca3
+uuid: 92bb23e5-4157-44c9-865a-9bd6855d00e4
 langcode: en
 status: true
 dependencies:
   module:
-    - media_entity
+    - link
     - node
-id: node.field_video
-field_name: field_video
+id: node.field_external_site
+field_name: field_external_site
 entity_type: node
-type: entity_reference
-settings:
-  target_type: media
-module: core
+type: link
+settings: {  }
+module: link
 locked: false
 cardinality: -1
 translatable: true

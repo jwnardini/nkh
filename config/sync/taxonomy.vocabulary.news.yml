@@ -1,0 +1,9 @@
+uuid: 3813eac2-74d9-4cc7-bdc7-30de50ba69d3
+langcode: en
+status: true
+dependencies: {  }
+name: News
+vid: news
+description: 'News-specific Taxonomy list'
+hierarchy: 0
+weight: 0

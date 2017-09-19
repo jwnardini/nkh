@@ -1,0 +1,9 @@
+uuid: 2f25cb06-1c48-496d-b3f9-bf9e2c57b5cd
+langcode: en
+status: true
+dependencies: {  }
+name: Partner
+vid: partner
+description: 'Partner-specific Taxonomy list'
+hierarchy: 0
+weight: 0

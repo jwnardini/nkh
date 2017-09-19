@@ -1,16 +1,16 @@
-uuid: a8fa8005-6acf-41e0-87b5-f63884a2eca3
+uuid: d3fc61ec-da59-4e98-9ab9-a73ede8b4e2e
 langcode: en
 status: true
 dependencies:
   module:
-    - media_entity
     - node
-id: node.field_video
-field_name: field_video
+    - taxonomy
+id: node.field_issue_taxonomy
+field_name: field_issue_taxonomy
 entity_type: node
 type: entity_reference
 settings:
-  target_type: media
+  target_type: taxonomy_term
 module: core
 locked: false
 cardinality: -1
