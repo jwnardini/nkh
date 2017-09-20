@@ -1,12 +1,12 @@
-uuid: e677deb7-6b43-4872-87d2-09d0188296a6
+uuid: 8f202f07-6af9-4a79-9860-e81deea5c3dc
 langcode: en
 status: true
 dependencies:
   module:
     - node
     - text
-id: node.field_subtitle
-field_name: field_subtitle
+id: node.field_boilerplate
+field_name: field_boilerplate
 entity_type: node
 type: text_long
 settings: {  }

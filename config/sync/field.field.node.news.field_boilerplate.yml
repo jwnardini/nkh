@@ -1,0 +1,32 @@
+uuid: ac00296a-597d-4a75-816c-ee7662afe696
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_boilerplate
+    - node.type.news
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    basic_html: basic_html
+    simple_html: simple_html
+    full_html: full_html
+    restricted_html: '0'
+    plain_text: '0'
+id: node.news.field_boilerplate
+field_name: field_boilerplate
+entity_type: node
+bundle: news
+label: 'BoilerPlate Text'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: "<p>This is the BoilerPlate Text. Please remove this if the content needs to be different.</p>\r\n"
+    format: basic_html
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -5,13 +5,13 @@ dependencies:
   config:
     - field.field.node.profile.body
     - field.field.node.profile.field_first_name
+    - field.field.node.profile.field_image_headshot
     - field.field.node.profile.field_last_name
-    - field.field.node.profile.field_logo
-    - field.field.node.profile.field_profile_type
-    - field.field.node.profile.field_summary
+    - field.field.node.profile.field_taxonomy_profile
+    - field.field.node.profile.field_teaser
     - node.type.profile
   module:
-    - image
+    - link
     - text
     - user
 id: node.profile.default
@@ -34,6 +34,14 @@ content:
     third_party_settings: {  }
     type: string
     region: content
+  field_image_headshot:
+    weight: 112
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
   field_last_name:
     weight: 103
     label: above
@@ -42,25 +50,20 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-  field_logo:
-    weight: 105
-    label: above
+  field_taxonomy_profile:
+    weight: 108
+    label: hidden
     settings:
-      image_style: ''
-      image_link: ''
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
     third_party_settings: {  }
-    type: image
+    type: link
     region: content
-  field_profile_type:
-    weight: 106
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_summary:
-    weight: 104
+  field_teaser:
+    weight: 107
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -69,4 +72,6 @@ content:
   links:
     weight: 100
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden: {  }

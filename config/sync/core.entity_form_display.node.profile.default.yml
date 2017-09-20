@@ -5,14 +5,15 @@ dependencies:
   config:
     - field.field.node.profile.body
     - field.field.node.profile.field_first_name
+    - field.field.node.profile.field_image_headshot
     - field.field.node.profile.field_last_name
-    - field.field.node.profile.field_logo
-    - field.field.node.profile.field_profile_type
-    - field.field.node.profile.field_summary
-    - image.style.thumbnail
+    - field.field.node.profile.field_taxonomy_profile
+    - field.field.node.profile.field_teaser
     - node.type.profile
   module:
-    - image
+    - entity_browser_entity_form
+    - inline_entity_form
+    - link
     - path
     - text
 id: node.profile.default
@@ -43,6 +44,21 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
+  field_image_headshot:
+    weight: 42
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: images
+    type: inline_entity_form_complex
+    region: content
   field_last_name:
     weight: 33
     settings:
@@ -51,31 +67,21 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
-  field_logo:
-    weight: 35
+  field_taxonomy_profile:
+    weight: 38
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+      placeholder_url: ''
+      placeholder_title: ''
     third_party_settings: {  }
-    type: image_image
+    type: link_default
     region: content
-  field_profile_type:
-    weight: 36
+  field_teaser:
+    weight: 37
     settings:
-      match_operator: CONTAINS
-      size: 60
+      rows: 5
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
-  field_summary:
-    weight: 34
-    settings:
-      rows: 9
-      summary_rows: 3
-      placeholder: ''
-    third_party_settings: {  }
-    type: text_textarea_with_summary
+    type: text_textarea
     region: content
   path:
     type: path

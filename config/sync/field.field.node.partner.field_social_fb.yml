@@ -1,0 +1,23 @@
+uuid: c5fea8b6-16e2-4bab-bc47-895679d9356d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_social_fb
+    - node.type.partner
+  module:
+    - link
+id: node.partner.field_social_fb
+field_name: field_social_fb
+entity_type: node
+bundle: partner
+label: Facebook
+description: 'link to partner facebook site - will display with FB icon'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 1
+field_type: link

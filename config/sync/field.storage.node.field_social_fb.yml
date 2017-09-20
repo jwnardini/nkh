@@ -1,16 +1,16 @@
-uuid: e677deb7-6b43-4872-87d2-09d0188296a6
+uuid: 2e0f7372-aa05-4f3d-8300-87a2387cf95d
 langcode: en
 status: true
 dependencies:
   module:
+    - link
     - node
-    - text
-id: node.field_subtitle
-field_name: field_subtitle
+id: node.field_social_fb
+field_name: field_social_fb
 entity_type: node
-type: text_long
+type: link
 settings: {  }
-module: text
+module: link
 locked: false
 cardinality: 1
 translatable: true

@@ -1,0 +1,29 @@
+uuid: c0cbe8ad-521b-42b7-96dc-a2bb88eceac8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_teaser
+    - node.type.profile
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    basic_html: basic_html
+    simple_html: simple_html
+    full_html: full_html
+    restricted_html: '0'
+    plain_text: '0'
+id: node.profile.field_teaser
+field_name: field_teaser
+entity_type: node
+bundle: profile
+label: Summary
+description: 'short description *for search results - separate from summary field'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

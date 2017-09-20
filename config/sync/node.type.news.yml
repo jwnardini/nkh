@@ -1,4 +1,4 @@
-uuid: 67639e1c-7505-4ea0-99c7-43565b4719ad
+uuid: ac6e1415-d58e-4321-a402-16e1511cab63
 langcode: en
 status: true
 dependencies:
@@ -8,10 +8,10 @@ third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
-name: Partner
-type: partner
-description: 'This is the partner content type'
+name: 'News/Press Release'
+type: news
+description: 'This is the News/Press Release content type'
 help: ''
 new_revision: true
 preview_mode: 1
-display_submitted: false
+display_submitted: true

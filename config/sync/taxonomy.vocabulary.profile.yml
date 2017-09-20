@@ -2,7 +2,7 @@ uuid: 217fb1de-318d-4d79-ae84-234f6cbb4a52
 langcode: en
 status: true
 dependencies: {  }
-name: 'Profile Type'
+name: Profile
 vid: profile
 description: 'Profile-specific Taxonomy list'
 hierarchy: 0

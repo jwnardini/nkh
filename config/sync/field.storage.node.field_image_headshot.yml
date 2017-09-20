@@ -1,16 +1,17 @@
-uuid: e677deb7-6b43-4872-87d2-09d0188296a6
+uuid: 8e4f0466-8362-4ad0-9018-fe16c32fbccc
 langcode: en
 status: true
 dependencies:
   module:
+    - media_entity
     - node
-    - text
-id: node.field_subtitle
-field_name: field_subtitle
+id: node.field_image_headshot
+field_name: field_image_headshot
 entity_type: node
-type: text_long
-settings: {  }
-module: text
+type: entity_reference
+settings:
+  target_type: media
+module: core
 locked: false
 cardinality: 1
 translatable: true

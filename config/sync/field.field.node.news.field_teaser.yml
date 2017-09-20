@@ -1,0 +1,29 @@
+uuid: 5dc82030-9da0-4bb9-8362-091eb981c7d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_teaser
+    - node.type.news
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    basic_html: basic_html
+    simple_html: simple_html
+    full_html: full_html
+    restricted_html: '0'
+    plain_text: '0'
+id: node.news.field_teaser
+field_name: field_teaser
+entity_type: node
+bundle: news
+label: Summary
+description: 'short description *for search results - separate from summary field'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
