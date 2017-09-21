@@ -6,8 +6,6 @@ dependencies:
     - field.storage.node.field_image_featured
     - media_entity.bundle.image
     - node.type.blog
-_core:
-  default_config_hash: QITCQQHUIuRw1K9bMC9gYfAw-xvSKPqQus0-YkeOS84
 id: node.blog.field_image_featured
 field_name: field_image_featured
 entity_type: node

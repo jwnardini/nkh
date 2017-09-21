@@ -4,7 +4,6 @@ description: A starter module for your migration
 core: 8.x
 package: Migration
 dependencies:
-    - nkh_blog
     - migrate_source_csv
     - migrate_plus
     - migrate_tools
