@@ -4,8 +4,6 @@ status: true
 dependencies:
   config:
     - node.type.blog
-_core:
-  default_config_hash: AuUBWpB7_6HJ42aZjyJsvTl5SNSauIJBKXi3vjnQnSQ
 id: node.blog.status
 field_name: status
 entity_type: node

@@ -21,8 +21,6 @@ dependencies:
     - inline_entity_form
     - path
     - text
-_core:
-  default_config_hash: UMJFGbpMubXnPiSK9OMfYLpYb4Mo5BBiua0HZBtvJPY
 id: node.blog.default
 targetEntityType: node
 bundle: blog

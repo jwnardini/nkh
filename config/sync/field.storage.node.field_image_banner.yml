@@ -5,8 +5,6 @@ dependencies:
   module:
     - media_entity
     - node
-_core:
-  default_config_hash: zrAzFPOC4OMiRkR_wj3waRnXv_VfVsiGVdkUMpjdSN0
 id: node.field_image_banner
 field_name: field_image_banner
 entity_type: node
