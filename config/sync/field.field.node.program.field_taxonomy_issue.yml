@@ -1,0 +1,28 @@
+uuid: eac32705-d232-4670-a67b-2446521830a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_taxonomy_issue
+    - node.type.program
+    - taxonomy.vocabulary.issue
+id: node.program.field_taxonomy_issue
+field_name: field_taxonomy_issue
+entity_type: node
+bundle: program
+label: 'Issue Taxonomy'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      issue: issue
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

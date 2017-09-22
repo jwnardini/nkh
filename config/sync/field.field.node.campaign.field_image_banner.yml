@@ -1,0 +1,28 @@
+uuid: ea0d327a-e19a-427d-8e18-53f802d5562e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image_banner
+    - media_entity.bundle.image
+    - node.type.campaign
+id: node.campaign.field_image_banner
+field_name: field_image_banner
+entity_type: node
+bundle: campaign
+label: 'Banner Image'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

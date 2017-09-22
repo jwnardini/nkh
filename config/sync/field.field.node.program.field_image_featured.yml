@@ -1,0 +1,28 @@
+uuid: 9daed663-a636-4c88-8f39-31c53c17760a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image_featured
+    - media_entity.bundle.image
+    - node.type.program
+id: node.program.field_image_featured
+field_name: field_image_featured
+entity_type: node
+bundle: program
+label: 'Featured Image'
+description: 'for headshot'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

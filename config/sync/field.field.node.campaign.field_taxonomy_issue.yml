@@ -1,0 +1,28 @@
+uuid: efe0d1c2-272a-48db-9b2d-3da225ac5f6d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_taxonomy_issue
+    - node.type.campaign
+    - taxonomy.vocabulary.issue
+id: node.campaign.field_taxonomy_issue
+field_name: field_taxonomy_issue
+entity_type: node
+bundle: campaign
+label: 'Issue Taxonomy'
+description: 'Issue-specific Taxonomy list'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      issue: issue
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

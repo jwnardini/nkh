@@ -1,0 +1,29 @@
+uuid: 9cc85a59-0dfd-4541-b0c3-e6cbe1247006
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_subtitle
+    - node.type.campaign
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    basic_html: basic_html
+    simple_html: simple_html
+    full_html: full_html
+    restricted_html: '0'
+    plain_text: '0'
+id: node.campaign.field_subtitle
+field_name: field_subtitle
+entity_type: node
+bundle: campaign
+label: Subtitle
+description: 'subtitle for campaign'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

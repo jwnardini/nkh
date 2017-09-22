@@ -1,0 +1,23 @@
+uuid: 4f7bbfa0-c472-4673-bd51-16db7d4181ff
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_entity_partner
+    - node.type.blog
+id: node.blog.field_entity_partner
+field_name: field_entity_partner
+entity_type: node
+bundle: blog
+label: 'Partner Entity field'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node_type'
+  handler_settings:
+    target_bundles: null
+    auto_create: true
+field_type: entity_reference

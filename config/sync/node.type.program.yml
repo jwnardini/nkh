@@ -1,0 +1,17 @@
+uuid: a0202953-ddad-4afb-bb92-dd06e96bb2a4
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Program
+type: program
+description: 'This is the Program content type'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

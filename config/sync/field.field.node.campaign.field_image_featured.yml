@@ -1,0 +1,28 @@
+uuid: 60c964af-4904-4ecc-8fa9-26f6f799dd8a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image_featured
+    - media_entity.bundle.image
+    - node.type.campaign
+id: node.campaign.field_image_featured
+field_name: field_image_featured
+entity_type: node
+bundle: campaign
+label: 'Featured Image'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference
