@@ -13,7 +13,6 @@ dependencies:
     - field.field.node.blog.field_taxonomy_issue
     - field.field.node.blog.field_taxonomy_series
     - field.field.node.blog.field_teaser
-    - field.field.node.blog.field_video
     - node.type.blog
   module:
     - datetime
@@ -128,21 +127,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
-    region: content
-  field_video:
-    weight: 3
-    settings:
-      form_mode: default
-      label_singular: ''
-      label_plural: ''
-      allow_new: true
-      allow_existing: true
-      match_operator: CONTAINS
-      override_labels: false
-    third_party_settings:
-      entity_browser_entity_form:
-        entity_browser_id: video
-    type: inline_entity_form_complex
     region: content
   path:
     type: path

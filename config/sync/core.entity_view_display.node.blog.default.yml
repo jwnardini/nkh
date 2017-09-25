@@ -13,7 +13,6 @@ dependencies:
     - field.field.node.blog.field_taxonomy_issue
     - field.field.node.blog.field_taxonomy_series
     - field.field.node.blog.field_teaser
-    - field.field.node.blog.field_video
     - node.type.blog
   module:
     - datetime
@@ -102,14 +101,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
-    region: content
-  field_video:
-    weight: 4
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
     region: content
 hidden:
   links: true

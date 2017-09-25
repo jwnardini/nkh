@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.campaign.body
+    - field.field.node.campaign.field_entity_partner
     - field.field.node.campaign.field_image_banner
     - field.field.node.campaign.field_image_featured
     - field.field.node.campaign.field_subtitle
@@ -38,6 +39,15 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_entity_partner:
+    weight: 26
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_image_banner:
     weight: 2
     settings:

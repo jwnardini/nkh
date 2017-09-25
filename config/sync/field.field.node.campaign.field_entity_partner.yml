@@ -1,0 +1,23 @@
+uuid: b0710165-295d-41f3-b806-293fd07eff69
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_entity_partner
+    - node.type.campaign
+id: node.campaign.field_entity_partner
+field_name: field_entity_partner
+entity_type: node
+bundle: campaign
+label: 'Related Partner'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node_type'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference
