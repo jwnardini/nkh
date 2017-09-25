@@ -1,0 +1,37 @@
+<?php
+
+/**
+ * @file
+ * Contains nkh_blog_migrate.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function nkh_blog_migrate_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the custom_user_migrate module.
+    case 'help.page.nkh_blog_migrate':
+      $output = '';
+      $output .= '<h2>' . t('About') . '</h2>';
+      $output .= '<p>' . t('This module aims to be a starting point for any Drupal 8 migration.') . '</p>';
+      $output .= '<h3>' . t('Helpful Links') . '</h3>';
+      $output .= '<ul>';
+      $output .= '<li><a href="/admin/config/development/configuration/single/import"' . t('Update Config Sync Files') . '</li>';
+      $output .= '</ul>';
+      return $output;
+
+  }
+}
+
+/**
+ * Implements hook_migration_plugins_alter().
+ */
+function nkh_blog_migrate_migration_plugins_alter(&$definitions) {
+  $definitions['blog_image']['source']['path'] =
+    drupal_get_path('module', 'nkh_blog_migrate') . $definitions['blog_image']['source']['path'];
+  $definitions['blog']['source']['path'] =
+    drupal_get_path('module', 'nkh_blog_migrate') . $definitions['blog']['source']['path'];
+}

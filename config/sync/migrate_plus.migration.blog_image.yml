@@ -1,0 +1,35 @@
+uuid: 03eadc2c-a525-4ca5-85f2-244758018f3b
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - nkh_blog_migrate
+_core:
+  default_config_hash: _Nv-cj_t9VjZj-y5VvtqEPOaKsyJnAtNsqv3F6xd4UE
+id: blog_image
+migration_tags: null
+migration_group: null
+label: 'Blog Image Migration'
+source:
+  plugin: csv
+  track_changes: true
+  path: /config/install/migration-NKH-Blog-content-pull.csv
+  header_row_count: 1
+  keys:
+    - legacy_node_id
+process:
+  filename: filename
+  uri: uri
+  status:
+    plugin: default_value
+    default_value: 1
+  created: created
+  changed: changed
+  uid:
+    plugin: default_value
+    default_value: 1
+destination:
+  plugin: 'entity:file'
+  urlencode: true
+migration_dependencies: {  }
