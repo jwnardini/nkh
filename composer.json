@@ -42,6 +42,7 @@
         "drupal/module_filter": "^3.0",
         "drupal/pathauto": "^1.0",
         "drupal/redirect": "^1.0@beta",
+        "drupal/search_api": "^1.4",
         "drupal/video_embed_field": "^1.5",
         "drush/drush": "~8.0",
         "webflo/drupal-finder": "^0.3.0",
