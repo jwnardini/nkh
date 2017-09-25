@@ -13,3 +13,45 @@
     opacity: 0;
   }
 }
+.color-plates{
+  div{
+  	width: 100px;
+	height: 60px;
+	padding: 5px;
+	font-size: 1.4rem;
+	vertical-align: text-bottom;
+	color: $white;
+	display: inline-block;
+	margin-bottom: 10px;
+	&+& {
+	  margin-left: 10px;
+	}
+  }
+}
+.color-box{
+
+  &__nkh-orange{
+    background: $nkh-orange;
+  }
+  &__nkh-darkorange{
+    background: $nkh-darkorange;
+  }
+  &__nkh-lightgrey{
+    background: $nkh-lightgrey;
+  }
+  &__nkh-darkgrey{
+    background: $nkh-darkgrey;
+  }
+  &__nkh-darkergrey{
+    background: $nkh-darkergrey;
+  }
+  &__nkh-yellow{
+    background: $nkh-yellow;
+  }
+  &__nkh-brightyellow{
+    background: $nkh-brightyellow;
+  }
+  &__nkh-lightblue{
+    background: $nkh-lightblue;
+  }
+ }
