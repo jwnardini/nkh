@@ -97,3 +97,103 @@ cite {
 #logo img {
   max-width: 160px;
 }
+main {
+  p, li, span{
+    a{
+      text-decoration: underline;
+      font-weight: 700;
+      &:hover{
+        color: $nkh-darkorange;
+      }
+    }
+  }
+
+  ul{
+    margin-left: 0;
+    padding-left: 0;
+    li{
+      padding-left: 2em;
+      margin: 0 0 1rem;
+      list-style: none;
+      &:before{
+        width: 1.25rem;
+        height: 1.25rem;
+        content: " ";
+        background-size: 100% 100%;
+        //background: image goes here repeat center 80% $nkh-orange;
+        position: absolute;
+        margin-left: -3rem;
+        margin-top: .6rem;
+      }
+    }
+  }
+}
+
+h2, h3, h4, h5{
+  color: $nkh-darkergrey;
+}
+
+h2 {
+  font-size: 2.4rem;
+  @include breakpoint($screen-mobile) {
+    font-size: 2.6rem;
+  }
+
+  @include breakpoint($lg-mobile) {
+    font-size: 3rem;
+  }
+
+  @include breakpoint($tablet) {
+    font-size: 3.2rem;
+  }
+
+  @include breakpoint($desktop) {
+    font-size: 3.6rem;
+  }
+}
+h3 {
+  font-size: 2rem;
+  @include breakpoint($screen-mobile) {
+    font-size: 2.2rem;
+  }
+
+  @include breakpoint($lg-mobile) {
+    font-size: 2.6rem;
+  }
+
+  @include breakpoint($tablet) {
+    font-size: 2.8rem;
+  }
+}
+blockquote{
+  font-size: 2.8rem;
+  font-weight: 700;
+  border: 0;
+  padding: 0;
+  position: relative;
+  text-decoration: none;
+  //-webkit-mask: image goes here
+  -webkit-mask-size: 50%;
+  letter-spacing: -0.04em;
+  strong{
+    background: linear-gradient($white 60%, $nkh-orange 40%);
+    background: -o-linear-gradient($white 60%, $nkh-orange 40%);
+    background: -moz-linear-gradient($white 60%, $nkh-orange 40%);
+    background: -webkit-linear-gradient($white 60%, $nkh-orange 40%);
+    background: -ms-linear-gradient($white 60%, $nkh-orange 40%);
+  }
+  @include breakpoint($screen-mobile) {
+    font-size: 3rem;
+  }
+
+  @include breakpoint($lg-mobile) {
+    font-size: 3rem;
+  }
+
+  @include breakpoint($tablet) {
+    font-size: 4.4rem;
+  }  
+  @include breakpoint($desktop) {
+    font-size: 5.4rem;
+  }
+}

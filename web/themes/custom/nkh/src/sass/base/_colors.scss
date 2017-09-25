@@ -9,10 +9,6 @@ $gray: #333;
 $owhite: #F2F2F2;
 $white: #FFF;
 
-// global use cases
-$dark: $black;
-$light: $owhite;
-$highlight: $blue;
 
 // nkh colors
 $nkh-orange: #FE6A0D;
@@ -23,6 +19,11 @@ $nkh-darkergrey: #383D44;
 $nkh-yellow: #88B631;
 $nkh-brightyellow: #FDC12D;
 $nkh-lightblue: #48C0E7;
+
+// global use cases
+$dark: $black;
+$light: $owhite;
+$highlight: $nkh-orange;
 
 body {
   background: $white; // testing to see if compiling is working

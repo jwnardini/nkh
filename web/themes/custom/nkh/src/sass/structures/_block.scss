@@ -16,20 +16,19 @@
 .color-plates{
   div{
   	width: 100px;
-	height: 60px;
-	padding: 5px;
-	font-size: 1.4rem;
-	vertical-align: text-bottom;
-	color: $white;
-	display: inline-block;
-	margin-bottom: 10px;
-	&+& {
-	  margin-left: 10px;
-	}
+  	height: 60px;
+  	padding: 5px;
+  	font-size: 1.4rem;
+  	vertical-align: text-bottom;
+  	color: $white;
+  	display: inline-block;
+  	margin-bottom: 10px;
+  	&+& {
+  	  margin-left: 10px;
+  	}
   }
 }
 .color-box{
-
   &__nkh-orange{
     background: $nkh-orange;
   }
@@ -53,5 +52,24 @@
   }
   &__nkh-lightblue{
     background: $nkh-lightblue;
+  }
+ }
+ .teaser-text{
+  p{
+    font-weight: 300;
+    color: $nkh-lightgrey;
+    font-size: 2.4rem;
+    line-height: 1.33;
+    @include breakpoint($screen-mobile) {
+      font-size: 3rem;
+    }
+
+    @include breakpoint($tablet) {
+      font-size: 3.2rem;
+    }
+
+    @include breakpoint($desktop) {
+      font-size: 3.6rem;
+    }  
   }
  }
