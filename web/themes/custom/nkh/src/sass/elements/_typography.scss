@@ -56,6 +56,10 @@ hr {
 cite {
   @include font-size(16);
   display: block;
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: -0.1rem;
+
 }
 .intro {
   font-size: 1.5em;
@@ -90,6 +94,9 @@ cite {
   max-width: 160px;
 }
 main {
+  p, li{
+    font-weight: 400;
+  }
   p, li, span{
     a{
       text-decoration: underline;
@@ -99,16 +106,13 @@ main {
       }
     }
   }
-  p, li{
-    font-weight: 300;
-  }
+
 
   ul{
     margin-left: 0;
     padding-left: 0;
     li{
       padding-left: 2em;
-      margin: 0 0 1rem;
       list-style: none;
       &:before{
         width: 1.25rem;
@@ -122,11 +126,20 @@ main {
       }
     }
   }
+  li{
+    margin: 0 0 .5rem;
+  }
+  blockquote{
+    & *{
+      font-weight: 700;    
+    }  
+  }
 }
 
 h2, h3, h4, h5{
   color: $nkh-darkergrey;
 }
+
 
 h2 {
   font-size: 2.4rem;
@@ -160,27 +173,25 @@ h3 {
     font-size: 2.8rem;
   }
 }
-blockquote {
-  border-left: $border;
-  padding-left: $indent-amount;
-  font-size: 1.5em;
-  line-height: 1.25em;
-  p {
-    margin: 0.5em 0;
-  }
-}
 
 blockquote{
   font-size: 2.8rem;
-  font-weight: 700;
+
   border: 0;
   padding: 0;
   position: relative;
   text-decoration: none;
   //-webkit-mask: image goes here
   -webkit-mask-size: 50%;
+  line-height: 1.25em;
   letter-spacing: -0.04em;
+  p {
+    margin: 0.5em 0;
+  }
+
   strong{
+    margin-left: 1.1rem;
+    margin-right: .5rem;
     background: linear-gradient($white 60%, $nkh-orange 40%);
     background: -o-linear-gradient($white 60%, $nkh-orange 40%);
     background: -moz-linear-gradient($white 60%, $nkh-orange 40%);
