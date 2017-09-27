@@ -7,5 +7,5 @@ _core:
 id: node
 label: Content
 tags:
+  description: '[node:field_teaser]'
   title: '[node:title] | [site:name]'
-  description: '[node:summary]'
