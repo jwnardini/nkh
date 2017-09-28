@@ -63,7 +63,7 @@ process:   # Type is the specific type of node
   uid:
     plugin: default_value
     default_value: 1
-  'body/summary': field_excerpt_value
+#  'body/summary': field_excerpt_value
   'body/value':
     plugin: concat
     source:
@@ -80,6 +80,7 @@ process:   # Type is the specific type of node
 #    plugin: default_value
 #    default_value: full_html
 #  'field_intro/value': field_intro
+  field_teaser: field_excerpt_value
 
   field_image_featured:
     -
