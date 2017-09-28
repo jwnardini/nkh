@@ -1,3 +1,22 @@
 #header {
+  li{
+    padding-left: 0;
+    &:before{
+      display: none
+    }
+  }
+}
 
+.nkh-logo{
+  max-width: 300px;
+  enable-background:new 0 0 237 104.7;
+  .st0{
+    fill:#231F20;
+  }  
+  .st1{
+    fill:#F16722;
+  }
+  .st2{
+    fill:#717275;
+  }
 }

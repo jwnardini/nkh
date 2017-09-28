@@ -33,9 +33,16 @@
 	}
 
 	li {
+	    &:before{
+	      display: none;
+	    }
+	    padding-left: 0;
 		list-style-type: none;
 		margin-top: 0;
 		margin-bottom: 0;
+		li{
+		  padding-left: 1rem;
+		}
 	}
 
 	a {

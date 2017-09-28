@@ -15,3 +15,13 @@ $all-devices: max-width $screen-desktop - 1;
 $desktop: min-width $screen-desktop;
 $desktop-only: $screen-desktop $screen-max - 1;
 $lg-desktop: min-width $screen-max;
+
+$min320: min-width 320px;
+$min480: min-width 480px;
+$min540: min-width 540px;
+$min768: min-width 768px;
+$min1024: min-width 1024px;
+$min1120: min-width 1120px;
+$min1260: min-width 1260px;
+$min1360: min-width 1360px;
+$min1600: min-width 1600px;

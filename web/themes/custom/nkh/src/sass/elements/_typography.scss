@@ -9,7 +9,7 @@ $indent-amount: 30px;
 
 // Rem with pixel fallback
 @mixin font-size($sizeValue: 16) {
-  font-size: $sizeValue + px;
+  //font-size: $sizeValue + px;
   font-size: ($sizeValue / 10) + rem;
   // @TODO calculate lineheight using font-size, x-height and some type of ratio
   // x-height and ratio would be variables
@@ -18,7 +18,7 @@ $indent-amount: 30px;
 }
 
 body{
-  @include font-size(18);
+  font-size: 1.8rem;
   line-height: $lineheight;
   font-family: $base-font-family;
   min-width: $min-width;
@@ -44,7 +44,10 @@ h4,
 h5,
 h6 {
   font-family: $base-heading-font;
+  color: $nkh-text;
 }
+
+
 a {
   color: $highlight;
   text-decoration: none;
@@ -52,18 +55,15 @@ a {
 hr {
   border-bottom: $border;
 }
-blockquote {
-  border-left: $border;
-  padding-left: $indent-amount;
-  font-size: 1.5em;
-  line-height: 1.25em;
-  p {
-    margin: 0.5em 0;
-  }
-}
+
 cite {
   @include font-size(16);
   display: block;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: $nkh-lightergrey;
+  font-style: normal;
+  letter-spacing: 0;
 }
 .intro {
   font-size: 1.5em;
@@ -91,9 +91,145 @@ cite {
   height: 40px;
   padding: 0 20px;
   @include notouchhover {
-    background-color: lighten($highlight, 10);
+    background-color: $nkh-darkorange;
   }
+}
+//will pick a better name later and change the pattern later once Zaid has it
+.dark-button{
+  background-color: $nkh-darkergrey;
+  @include notouchhover {
+    background-color: #67717d;
+  }  
 }
 #logo img {
   max-width: 160px;
+}
+p{
+  line-height: 2
+}
+p, li{
+  font-weight: 400;
+  color: $nkh-text;
+}
+p, li, span{
+  a{
+    text-decoration: underline;
+    font-weight: 700;
+    &:hover{
+      color: $nkh-darkorange;
+    }
+  }
+}
+
+ul, ol{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  li{
+    padding-left: 2em;
+    list-style: none;
+    margin-bottom: .5em;
+    &:before{
+      position: absolute;
+      margin-left: -3rem;
+      text-align: center;
+    }
+
+  }
+}
+ul{
+  li{
+    &:before{
+      width: 1.25rem;
+      height: 1.25rem;
+      content: " ";
+      background: $nkh-orange;
+      margin-top: .7rem;
+    }    
+  }
+}
+ol{
+  counter-reset: li;
+  li{
+    counter-increment: count-me;
+    &:before {
+      content: counter(count-me) ".";
+      font-weight: 500;
+      width: 2rem;
+      color: $nkh-orange
+    }
+  }
+}
+
+
+
+
+h2 {
+  color: $nkh-darkergrey;
+  @include texture-grit-text;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  font-size: 2.6rem;
+  @include breakpoint($min540) {
+    font-size: 3rem;
+  }
+
+  @include breakpoint($min768) {
+    font-size: 3.2rem;
+  }
+
+  @include breakpoint($min1024) {
+    font-size: 3.6rem;
+  }
+}
+h3 {
+  font-size: 2rem;
+  @include breakpoint($min480) {
+    font-size: 2.2rem;
+  }
+
+  @include breakpoint($min540) {
+    font-size: 2.6rem;
+  }
+
+  @include breakpoint($min768) {
+    font-size: 2.8rem;
+  }
+  @include breakpoint($min1024) {
+    font-size: 3rem;
+  }
+}
+
+
+blockquote{
+  border: 0;
+  padding: 0;
+  color: $nkh-darkergrey;
+  position: relative;
+  text-decoration: none;
+  letter-spacing: -0.04em;
+  *{
+    line-height: 1.29;
+    font-weight: 700;  
+  } 
+  p {
+    margin: 0.5em 0;
+  }
+
+  strong{
+    margin-left: 1.1rem;
+    margin-right: .5rem;
+    background: linear-gradient($white 60%, $nkh-orange 40%);
+    background: -o-linear-gradient($white 60%, $nkh-orange 40%);
+    background: -moz-linear-gradient($white 60%, $nkh-orange 40%);
+    background: -webkit-linear-gradient($white 60%, $nkh-orange 40%);
+    background: -ms-linear-gradient($white 60%, $nkh-orange 40%);
+  }
+  font-size: 3rem;
+  @include breakpoint($min768) {
+    font-size: 4.4rem;
+  }  
+  @include breakpoint($min1024) {
+    font-size: 5.4rem;
+  }
 }

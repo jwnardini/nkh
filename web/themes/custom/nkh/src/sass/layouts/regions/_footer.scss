@@ -1,3 +1,8 @@
 #footer {
-
+  li{
+    padding-left: 0;
+    &:before{
+      display: none
+    }
+  }
 }
