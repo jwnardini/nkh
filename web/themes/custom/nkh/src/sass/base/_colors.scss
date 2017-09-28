@@ -11,19 +11,23 @@ $white: #FFF;
 
 
 // nkh colors
-$nkh-orange: #FE6A0D;
-$nkh-darkorange: #F0682F;
-$nkh-lightgrey: #94989E;
-$nkh-darkgrey: #83868B;
-$nkh-darkergrey: #383D44;
-$nkh-yellow: #88B631;
-$nkh-brightyellow: #FDC12D;
-$nkh-lightblue: #48C0E7;
+$nkh-orange: rgba(254,106,13, 1);
+$nkh-darkorange: rgba(240,104,47, 1);
+$nkh-lightergrey: rgba(163,163,163, 1);
+$nkh-lightgrey: rgba(148,152,158, 1);
+$nkh-darkgrey: rgba(131,134,139, 1);
+$nkh-darkergrey: rgba(56,61,68 ,1);
+$nkh-yellow: rgba(136,182,49, 1);
+$nkh-brightyellow: rgba(253,193,45, 1);
+$nkh-lightblue: rgba(72,192,231, 1);
+
+
 
 // global use cases
 $dark: $black;
 $light: $owhite;
 $highlight: $nkh-orange;
+$nkh-text: $nkh-darkergrey;
 
 
 // style swatches in fabricator
@@ -36,3 +40,28 @@ $highlight: $nkh-orange;
 .highlight {
   border-color: $highlight;
 }
+
+// generate color palettes 
+$themes:(
+  orange: $nkh-orange,
+  darkorange: $nkh-darkorange,
+  lightgrey: $nkh-lightgrey,
+  darkgrey: $nkh-darkgrey,
+  darkergrey: $nkh-darkergrey,
+  yellow: $nkh-yellow,
+  brightyellow: $nkh-brightyellow,
+  lightblue: $nkh-lightblue
+);
+
+@mixin theme($name, $color) {
+  .box__nkh-#{$name} {
+      background: $color
+  }  
+}
+
+// Including themes 
+// By looping through the $themes map
+@each $key, $value in $themes {
+  @include theme($key, $value);
+}
+

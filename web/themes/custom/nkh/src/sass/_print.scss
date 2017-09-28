@@ -68,8 +68,15 @@
   .sidebars,
   .breadcrumb,
   .pager,
+  .tabs,
   .feed-icons {
     visibility: hidden;
     display: none;
+  }
+  .color-palettes{
+    box__*{
+      background: inherit;
+      -webkit-print-color-adjust: exact!important;
+    }
   }
 }

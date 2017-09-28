@@ -135,3 +135,14 @@ a.tabs-secondary__tab-link.is-active {
   @extend %tabs-secondary__tab-link;
   @extend %tabs-secondary__tab-link-is-active;
 }
+//toolbar and tabs for admin user
+
+.toolbar-tab,
+.tabs{
+  li{
+    padding-left: 0;
+    &:before{
+      display: none
+    }
+  }
+}
