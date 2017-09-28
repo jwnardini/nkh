@@ -22,7 +22,6 @@ $nkh-brightyellow: rgba(253,193,45, 1);
 $nkh-lightblue: rgba(72,192,231, 1);
 
 
-
 // global use cases
 $dark: $black;
 $light: $owhite;
@@ -55,9 +54,11 @@ $themes:(
 
 @mixin theme($name, $color) {
   .box__nkh-#{$name} {
-      background: $color
-  }  
-}
+    background: $color
+  }
+  .border__nkh-#{$name} {
+    border-color: $color
+  }}
 
 // Including themes 
 // By looping through the $themes map

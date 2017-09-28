@@ -141,6 +141,7 @@ a.tabs-secondary__tab-link.is-active {
 .tabs{
   li{
     padding-left: 0;
+    margin-bottom: 0;
     &:before{
       display: none
     }

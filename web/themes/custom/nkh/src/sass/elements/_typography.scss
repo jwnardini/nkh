@@ -9,7 +9,7 @@ $indent-amount: 30px;
 
 // Rem with pixel fallback
 @mixin font-size($sizeValue: 16) {
-  font-size: $sizeValue + px;
+  //font-size: $sizeValue + px;
   font-size: ($sizeValue / 10) + rem;
   // @TODO calculate lineheight using font-size, x-height and some type of ratio
   // x-height and ratio would be variables
@@ -18,7 +18,7 @@ $indent-amount: 30px;
 }
 
 body{
-  @include font-size(18);
+  font-size: 1.8rem;
   line-height: $lineheight;
   font-family: $base-font-family;
   min-width: $min-width;
@@ -91,8 +91,15 @@ cite {
   height: 40px;
   padding: 0 20px;
   @include notouchhover {
-    background-color: lighten($highlight, 10);
+    background-color: $nkh-darkorange;
   }
+}
+//will pick a better name later and change the pattern later once Zaid has it
+.dark-button{
+  background-color: $nkh-darkergrey;
+  @include notouchhover {
+    background-color: #67717d;
+  }  
 }
 #logo img {
   max-width: 160px;
@@ -158,10 +165,10 @@ ol{
 
 
 h2 {
-/*  -webkit-mask: url('../../src/images/NKH_TEXTURE_144dpi.png') 0 0;
-  mask: url('../../src/images/NKH_TEXTURE_144dpi.png') 0 0;
-  -webkit-mask-size: 50%; */
+  color: $nkh-darkergrey;
+  @include texture-grit-text;
   line-height: 1.2;
+  letter-spacing: -0.025em;
   font-size: 2.6rem;
   @include breakpoint($min540) {
     font-size: 3rem;
@@ -197,10 +204,9 @@ h3 {
 blockquote{
   border: 0;
   padding: 0;
+  color: $nkh-darkergrey;
   position: relative;
   text-decoration: none;
-  //-webkit-mask: image goes here
-  -webkit-mask-size: 50%;
   letter-spacing: -0.04em;
   *{
     line-height: 1.29;

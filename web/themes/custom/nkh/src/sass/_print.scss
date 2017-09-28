@@ -10,7 +10,11 @@
  * aggregated with other stylesheets, for improved front-end performance.
  */
 @media print {
+  width: 100%;
+  @page {
+    margin: 0.5cm;
 
+  }
   /* Underline all links. */
   a:link,
   a:visited {
@@ -25,9 +29,9 @@
   #content {
     /* Add visible URL after links. */
     a[href]:after {
-      content: " (" attr(href) ")";
-      font-weight: normal;
-      font-size: 10px;
+//      content: " (" attr(href) ")";
+//      font-weight: normal;
+//      font-size: 10px;
     }
 
     /* Only display useful links. */
@@ -38,7 +42,7 @@
 
     /* Add visible title after abbreviations. */
     abbr[title]:after {
-      content: " (" attr(title) ")";
+/*      content: " (" attr(title) ")";*/
     }
   }
 
@@ -49,7 +53,13 @@
     margin: 0 !important;
     padding: 0 !important;
   }
-
+  #header{
+    .region-header,
+    .menu-toggle{
+      visibility: hidden;
+      display: none;
+    }
+  }
   /* Turn off any background colors or images. */
   body,
   #page,
@@ -61,7 +71,6 @@
   }
 
   /* Hide sidebars and nav elements. */
-  #header,
   #skip-link,
   #navigation,
   #footer,
@@ -73,10 +82,21 @@
     visibility: hidden;
     display: none;
   }
+  .inner-wrapper{
+    max-width: 90%;
+  }
+  /* for style guide only */
   .color-palettes{
     box__*{
       background: inherit;
       -webkit-print-color-adjust: exact!important;
     }
   }
+  article{
+  }
+  h1{
+    font-size: 5rem;
+    padding-bottom: 2rem;
+  }
+
 }
