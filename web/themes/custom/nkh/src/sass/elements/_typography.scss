@@ -158,9 +158,9 @@ ol{
 
 
 h2 {
-  -webkit-mask: url('../../src/images/NKH_TEXTURE_144dpi.png') 0 0;
+/*  -webkit-mask: url('../../src/images/NKH_TEXTURE_144dpi.png') 0 0;
   mask: url('../../src/images/NKH_TEXTURE_144dpi.png') 0 0;
-  -webkit-mask-size: 50%;
+  -webkit-mask-size: 50%; */
   line-height: 1.2;
   font-size: 2.6rem;
   @include breakpoint($min540) {
