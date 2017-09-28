@@ -26,5 +26,5 @@ regions:
   disabled: Disabled
 
 # define custom css for wysiwyg
-#ckeditor_stylesheets:
-#  - dist/css/wysiwyg.css
+ckeditor_stylesheets:
+ - dist/css/styles.css
