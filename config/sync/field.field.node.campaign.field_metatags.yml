@@ -1,0 +1,23 @@
+uuid: 31d3b5e7-8bdf-46fb-9021-06f0b692ecf1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_metatags
+    - node.type.campaign
+  module:
+    - metatag
+id: node.campaign.field_metatags
+field_name: field_metatags
+entity_type: node
+bundle: campaign
+label: 'Meta Tags'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 'a:0:{}'
+default_value_callback: ''
+settings: {  }
+field_type: metatag
