@@ -58,7 +58,8 @@ $themes:(
   }
   .border__nkh-#{$name} {
     border-color: $color
-  }}
+  }
+}
 
 // Including themes 
 // By looping through the $themes map

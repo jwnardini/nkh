@@ -16,6 +16,18 @@
 //  font-style: normal;
 //}
 
+@font-face {
+  font-family: 'nkh';
+
+  src:  url('../fonts/nkh.eot?ham7pr');
+  src:  url('../fonts/nkh.eot?ham7pr#iefix') format('embedded-opentype'),
+    url('../fonts/nkh.eot?ham7pr') format('truetype'),
+    url('../fonts/nkh.woff?ham7pr') format('woff'),
+    url('../fonts/nkh.svg?ham7pr#nkh') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @mixin crisp() {
   // crisper font aliasing
   -webkit-font-smoothing: antialiased;
@@ -24,7 +36,7 @@
 
 @mixin icon($name) {
   content: $name;
-  font-family: 'captainicon';
+  font-family: 'nkh';
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -33,6 +45,40 @@
   line-height: 1;
   @include crisp();
 }
+
+.icon:before{
+  @include icon(nkh);
+}
+
+//listing all the icons
+$icon-search: "\e986";
+$icon-facebook: "\ea91";
+$icon-instagram: "\ea92";
+$icon-twitter: "\ea96";
+$icon-youtube: "\ea9d";
+
+//listing all the key and value
+$icons:(
+  search: $icon-search,
+  facebook: $icon-facebook,
+  instagram: $icon-instagram,
+  twitter: $icon-twitter,
+  youtube: $icon-youtube,
+);
+
+//mixing the icon key and value
+@mixin theme($item, $icon) {
+  .icon-#{$item}:before {
+    content: $icon
+  }
+}
+
+// Including themes 
+// By looping through the $themes map
+@each $key, $value in $icons {
+  @include theme($key, $value);
+}
+
 
 /* VARIABLES
 ******************************/
