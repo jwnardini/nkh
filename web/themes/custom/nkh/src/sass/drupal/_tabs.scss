@@ -147,3 +147,10 @@ a.tabs-secondary__tab-link.is-active {
     }
   }
 }
+//hide the left admin menu when it's less than 480px. 
+//We can remove this when we are done with theming.
+.toolbar-tray{
+  @include breakpoint($min480) {
+    display: none;
+  }  
+}
