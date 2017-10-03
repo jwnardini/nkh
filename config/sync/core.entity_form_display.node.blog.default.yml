@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.blog.field_image_banner
     - field.field.node.blog.field_image_featured
     - field.field.node.blog.field_intro
+    - field.field.node.blog.field_metatags
     - field.field.node.blog.field_taxonomy_issue
     - field.field.node.blog.field_taxonomy_series
     - field.field.node.blog.field_teaser
@@ -19,6 +20,7 @@ dependencies:
     - datetime
     - entity_browser_entity_form
     - inline_entity_form
+    - metatag
     - maxlength
     - path
     - text
@@ -119,6 +121,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+    region: content
+  field_metatags:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_firehose
     region: content
   field_taxonomy_issue:
     weight: 6

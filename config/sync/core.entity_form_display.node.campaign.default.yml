@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.campaign.field_entity_partner
     - field.field.node.campaign.field_image_banner
     - field.field.node.campaign.field_image_featured
+    - field.field.node.campaign.field_metatags
     - field.field.node.campaign.field_subtitle
     - field.field.node.campaign.field_taxonomy_issue
     - field.field.node.campaign.field_teaser
@@ -17,6 +18,7 @@ dependencies:
     - entity_browser_entity_form
     - inline_entity_form
     - link
+    - metatag
     - path
     - text
 id: node.campaign.default
@@ -77,6 +79,12 @@ content:
       entity_browser_entity_form:
         entity_browser_id: images
     type: inline_entity_form_complex
+    region: content
+  field_metatags:
+    weight: 27
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_firehose
     region: content
   field_subtitle:
     weight: 1
