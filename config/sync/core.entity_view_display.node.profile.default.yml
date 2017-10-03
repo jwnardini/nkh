@@ -7,11 +7,13 @@ dependencies:
     - field.field.node.profile.field_first_name
     - field.field.node.profile.field_image_headshot
     - field.field.node.profile.field_last_name
+    - field.field.node.profile.field_metatags
     - field.field.node.profile.field_taxonomy_profile
     - field.field.node.profile.field_teaser
     - node.type.profile
   module:
     - link
+    - metatag
     - text
     - user
 id: node.profile.default
@@ -28,7 +30,7 @@ content:
     region: content
   field_first_name:
     weight: 102
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -44,11 +46,18 @@ content:
     region: content
   field_last_name:
     weight: 103
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_metatags:
+    weight: 113
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
     region: content
   field_taxonomy_profile:
     weight: 108
@@ -64,7 +73,7 @@ content:
     region: content
   field_teaser:
     weight: 107
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default

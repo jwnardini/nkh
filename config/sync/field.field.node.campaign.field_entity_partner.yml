@@ -16,8 +16,6 @@ translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:node_type'
-  handler_settings:
-    target_bundles: null
-    auto_create: false
+  handler: 'default:node'
+  handler_settings: {  }
 field_type: entity_reference

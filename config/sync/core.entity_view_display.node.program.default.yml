@@ -6,12 +6,14 @@ dependencies:
     - field.field.node.program.body
     - field.field.node.program.field_image_banner
     - field.field.node.program.field_image_featured
+    - field.field.node.program.field_metatags
     - field.field.node.program.field_taxonomy_issue
     - field.field.node.program.field_teaser
     - field.field.node.program.field_url
     - node.type.program
   module:
     - link
+    - metatag
     - text
     - user
 id: node.program.default
@@ -41,6 +43,13 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_metatags:
+    weight: 7
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
     region: content
   field_taxonomy_issue:
     weight: 6

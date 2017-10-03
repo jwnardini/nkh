@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.news.body
     - field.field.node.news.field_boilerplate
     - field.field.node.news.field_date
+    - field.field.node.news.field_metatags
     - field.field.node.news.field_subtitle
     - field.field.node.news.field_taxonomy_issue
     - field.field.node.news.field_taxonomy_news
@@ -17,6 +18,7 @@ dependencies:
   module:
     - datetime
     - link
+    - metatag
     - path
     - text
 id: node.news.default
@@ -55,6 +57,12 @@ content:
       increment: 30
     third_party_settings: {  }
     type: datetime_datelist
+    region: content
+  field_metatags:
+    weight: 29
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_firehose
     region: content
   field_subtitle:
     weight: 6
