@@ -11,8 +11,8 @@ id: node.program.field_url
 field_name: field_url
 entity_type: node
 bundle: program
-label: URL
-description: 'link to program site (if external)'
+label: 'Related Links'
+description: 'Link to the program (if offsite).'
 required: false
 translatable: true
 default_value: {  }

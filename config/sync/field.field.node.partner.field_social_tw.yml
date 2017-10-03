@@ -12,7 +12,7 @@ field_name: field_social_tw
 entity_type: node
 bundle: partner
 label: Twitter
-description: 'link to partner twitter site - will display with twitter icon'
+description: 'Link to this partner''s Twitter page.'
 required: false
 translatable: false
 default_value: {  }

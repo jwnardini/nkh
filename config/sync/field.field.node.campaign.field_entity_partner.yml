@@ -5,17 +5,24 @@ dependencies:
   config:
     - field.storage.node.field_entity_partner
     - node.type.campaign
+    - node.type.partner
 id: node.campaign.field_entity_partner
 field_name: field_entity_partner
 entity_type: node
 bundle: campaign
 label: 'Related Partner'
-description: ''
+description: 'Reference sponsoring or contributing partners for this campaign.'
 required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:node'
-  handler_settings: {  }
+  handler_settings:
+    target_bundles:
+      partner: partner
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
 field_type: entity_reference

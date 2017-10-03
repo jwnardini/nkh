@@ -1,26 +1,26 @@
-uuid: 9cc85a59-0dfd-4541-b0c3-e6cbe1247006
+uuid: c86f9c19-2f5b-4f15-937f-f7273eb38fc4
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_subtitle
+    - field.storage.node.field_intro
     - node.type.campaign
   module:
     - allowed_formats
     - text
 third_party_settings:
   allowed_formats:
-    basic_html: basic_html
-    simple_html: simple_html
-    full_html: full_html
+    basic_html: '0'
+    simple_html: '0'
     restricted_html: '0'
+    full_html: '0'
     plain_text: '0'
-id: node.campaign.field_subtitle
-field_name: field_subtitle
+id: node.campaign.field_intro
+field_name: field_intro
 entity_type: node
 bundle: campaign
-label: Subtitle
-description: 'subtitle for campaign'
+label: Introduction
+description: 'A brief introduction to the rest of the post.'
 required: false
 translatable: true
 default_value: {  }

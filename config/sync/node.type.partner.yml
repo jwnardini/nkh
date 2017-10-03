@@ -10,7 +10,7 @@ third_party_settings:
     parent: ''
 name: Partner
 type: partner
-description: 'This is the partner content type'
+description: 'Use <em>Partner</em> for commercial and non-profit partners.'
 help: ''
 new_revision: true
 preview_mode: 1

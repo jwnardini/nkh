@@ -10,9 +10,9 @@ id: node.campaign.field_taxonomy_issue
 field_name: field_taxonomy_issue
 entity_type: node
 bundle: campaign
-label: 'Issue Taxonomy'
-description: 'Issue-specific Taxonomy list'
-required: true
+label: Issues
+description: ''
+required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''

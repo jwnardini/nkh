@@ -1,28 +1,28 @@
-uuid: 769ce9e0-5a1e-4ef8-911f-ca7a29b86cf2
+uuid: 886b58df-8b62-411f-8c24-9a6523e661d4
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_taxonomy_partner
+    - field.storage.node.field_entity_partner
     - node.type.news
-    - taxonomy.vocabulary.partner
-id: node.news.field_taxonomy_partner
-field_name: field_taxonomy_partner
+    - node.type.partner
+id: node.news.field_entity_partner
+field_name: field_entity_partner
 entity_type: node
 bundle: news
-label: 'Partner Taxonomy'
+label: 'Related Partner'
 description: ''
 required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:taxonomy_term'
+  handler: 'default:node'
   handler_settings:
     target_bundles:
       partner: partner
     sort:
       field: _none
-    auto_create: false
+    auto_create: true
     auto_create_bundle: ''
 field_type: entity_reference

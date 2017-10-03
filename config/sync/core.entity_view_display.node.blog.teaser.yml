@@ -6,11 +6,12 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.blog.body
     - field.field.node.blog.field_date
-    - field.field.node.blog.field_entity_author
     - field.field.node.blog.field_entity_partner
+    - field.field.node.blog.field_entity_profile
     - field.field.node.blog.field_image_banner
     - field.field.node.blog.field_image_featured
     - field.field.node.blog.field_intro
+    - field.field.node.blog.field_metatags
     - field.field.node.blog.field_taxonomy_issue
     - field.field.node.blog.field_taxonomy_series
     - field.field.node.blog.field_teaser
@@ -33,11 +34,12 @@ content:
     region: content
 hidden:
   field_date: true
-  field_entity_author: true
   field_entity_partner: true
+  field_entity_profile: true
   field_image_banner: true
   field_image_featured: true
   field_intro: true
+  field_metatags: true
   field_taxonomy_issue: true
   field_taxonomy_series: true
   field_teaser: true

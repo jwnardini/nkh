@@ -10,7 +10,7 @@ id: node.blog.field_taxonomy_series
 field_name: field_taxonomy_series
 entity_type: node
 bundle: blog
-label: 'Series Taxonomy'
+label: Series
 description: ''
 required: true
 translatable: false

@@ -10,10 +10,10 @@ dependencies:
     - text
 third_party_settings:
   allowed_formats:
-    basic_html: basic_html
-    simple_html: simple_html
-    full_html: full_html
+    basic_html: '0'
+    simple_html: '0'
     restricted_html: '0'
+    full_html: '0'
     plain_text: '0'
 id: node.program.body
 field_name: body
@@ -26,5 +26,5 @@ translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  display_summary: true
+  display_summary: false
 field_type: text_with_summary

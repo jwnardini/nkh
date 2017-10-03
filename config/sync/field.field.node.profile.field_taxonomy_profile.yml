@@ -1,23 +1,28 @@
-uuid: a57bada0-bc23-430e-98fd-066df3e6d683
+uuid: 85e420d7-bc31-4c44-8032-032a3e942d01
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_taxonomy_profile
     - node.type.profile
-  module:
-    - link
+    - taxonomy.vocabulary.profile
 id: node.profile.field_taxonomy_profile
 field_name: field_taxonomy_profile
 entity_type: node
 bundle: profile
-label: 'Profile Taxonomy'
+label: 'Profile Type'
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  link_type: 17
-  title: 1
-field_type: link
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      profile: profile
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

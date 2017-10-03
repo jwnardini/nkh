@@ -10,7 +10,7 @@ id: node.program.field_taxonomy_issue
 field_name: field_taxonomy_issue
 entity_type: node
 bundle: program
-label: 'Issue Taxonomy'
+label: Issues
 description: ''
 required: false
 translatable: true

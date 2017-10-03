@@ -6,18 +6,22 @@ dependencies:
     - field.field.node.news.body
     - field.field.node.news.field_boilerplate
     - field.field.node.news.field_date
+    - field.field.node.news.field_entity_partner
+    - field.field.node.news.field_intro
     - field.field.node.news.field_metatags
-    - field.field.node.news.field_subtitle
     - field.field.node.news.field_taxonomy_issue
     - field.field.node.news.field_taxonomy_news
-    - field.field.node.news.field_taxonomy_partner
     - field.field.node.news.field_teaser
     - field.field.node.news.field_url
     - field.field.node.news.field_video
     - node.type.news
   module:
+    - allowed_formats
     - datetime
+    - entity_browser_entity_form
+    - inline_entity_form
     - link
+    - maxlength
     - metatag
     - path
     - text
@@ -28,21 +32,15 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 9
+    weight: 8
     settings:
       rows: 9
       summary_rows: 3
       placeholder: ''
     third_party_settings: {  }
     region: content
-  created:
-    type: datetime_timestamp
-    weight: 1
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_boilerplate:
-    weight: 10
+    weight: 9
     settings:
       rows: 5
       placeholder: ''
@@ -50,7 +48,7 @@ content:
     type: text_textarea
     region: content
   field_date:
-    weight: 7
+    weight: 2
     settings:
       date_order: MDY
       time_type: '24'
@@ -58,57 +56,73 @@ content:
     third_party_settings: {  }
     type: datetime_datelist
     region: content
+  field_entity_partner:
+    weight: 6
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: _none
+    type: inline_entity_form_complex
+    region: content
+  field_intro:
+    weight: 7
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_enforce: false
+        maxlength_js_truncate_html: false
+    type: text_textarea
+    region: content
   field_metatags:
-    weight: 29
+    weight: 11
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
     region: content
-  field_subtitle:
-    weight: 6
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-    type: text_textarea
-    region: content
   field_taxonomy_issue:
-    weight: 27
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+    weight: 5
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: options_buttons
     region: content
   field_taxonomy_news:
-    weight: 26
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+    weight: 4
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
-  field_taxonomy_partner:
-    weight: 28
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: options_select
     region: content
   field_teaser:
-    weight: 8
+    weight: 1
     settings:
-      rows: 5
+      rows: 3
       placeholder: ''
-    third_party_settings: {  }
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
+      maxlength:
+        maxlength_js: 160
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_enforce: false
+        maxlength_js_truncate_html: false
     type: text_textarea
     region: content
   field_url:
-    weight: 12
+    weight: 10
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -116,49 +130,36 @@ content:
     type: link_default
     region: content
   field_video:
-    weight: 11
+    weight: 3
     settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
       match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
+      override_labels: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: video
+    type: inline_entity_form_complex
     region: content
   path:
     type: path
-    weight: 4
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
-  promote:
-    type: boolean_checkbox
-    settings:
-      display_label: true
-    weight: 2
-    region: content
-    third_party_settings: {  }
-  sticky:
-    type: boolean_checkbox
-    settings:
-      display_label: true
-    weight: 3
-    region: content
-    third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 5
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  uid:
-    type: entity_reference_autocomplete
     weight: 0
+    region: content
     settings:
-      match_operator: CONTAINS
       size: 60
       placeholder: ''
-    region: content
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  created: true
+  promote: true
+  sticky: true
+  uid: true

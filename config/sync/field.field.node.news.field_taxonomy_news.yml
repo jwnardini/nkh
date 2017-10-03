@@ -10,7 +10,7 @@ id: node.news.field_taxonomy_news
 field_name: field_taxonomy_news
 entity_type: node
 bundle: news
-label: 'News Taxonomy'
+label: 'News Type'
 description: ''
 required: false
 translatable: false

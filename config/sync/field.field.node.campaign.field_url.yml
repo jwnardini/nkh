@@ -11,8 +11,8 @@ id: node.campaign.field_url
 field_name: field_url
 entity_type: node
 bundle: campaign
-label: URL
-description: 'link to donation page'
+label: Link
+description: 'Enter your donation page URL path and use action words in your link text.'
 required: false
 translatable: true
 default_value: {  }

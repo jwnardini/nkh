@@ -7,8 +7,8 @@ dependencies:
     - field.field.node.campaign.field_entity_partner
     - field.field.node.campaign.field_image_banner
     - field.field.node.campaign.field_image_featured
+    - field.field.node.campaign.field_intro
     - field.field.node.campaign.field_metatags
-    - field.field.node.campaign.field_subtitle
     - field.field.node.campaign.field_taxonomy_issue
     - field.field.node.campaign.field_teaser
     - field.field.node.campaign.field_url
@@ -55,19 +55,19 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
+  field_intro:
+    weight: 11
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
   field_metatags:
     weight: 10
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter
-    region: content
-  field_subtitle:
-    weight: 1
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
     region: content
   field_taxonomy_issue:
     weight: 8

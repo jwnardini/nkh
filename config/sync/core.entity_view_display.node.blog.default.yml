@@ -5,8 +5,8 @@ dependencies:
   config:
     - field.field.node.blog.body
     - field.field.node.blog.field_date
-    - field.field.node.blog.field_entity_author
     - field.field.node.blog.field_entity_partner
+    - field.field.node.blog.field_entity_profile
     - field.field.node.blog.field_image_banner
     - field.field.node.blog.field_image_featured
     - field.field.node.blog.field_intro
@@ -41,17 +41,17 @@ content:
     third_party_settings: {  }
     type: datetime_default
     region: content
-  field_entity_author:
-    weight: 10
+  field_entity_partner:
+    weight: 9
     label: hidden
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  field_entity_partner:
-    weight: 9
-    label: hidden
+  field_entity_profile:
+    weight: 12
+    label: above
     settings:
       link: true
     third_party_settings: {  }

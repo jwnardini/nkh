@@ -10,8 +10,8 @@ third_party_settings:
     parent: ''
 name: 'News/Press Release'
 type: news
-description: 'This is the News/Press Release content type'
+description: 'Use <em>News/Press Release</em> for timely updates.'
 help: ''
 new_revision: true
 preview_mode: 1
-display_submitted: true
+display_submitted: false

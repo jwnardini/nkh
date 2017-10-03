@@ -10,10 +10,10 @@ dependencies:
     - text
 third_party_settings:
   allowed_formats:
-    basic_html: basic_html
-    simple_html: simple_html
-    full_html: full_html
+    basic_html: '0'
+    simple_html: '0'
     restricted_html: '0'
+    full_html: '0'
     plain_text: '0'
 id: node.news.field_boilerplate
 field_name: field_boilerplate
@@ -25,7 +25,7 @@ required: false
 translatable: false
 default_value:
   -
-    value: "<p>This is the BoilerPlate Text. Please remove this if the content needs to be different.</p>\r\n"
+    value: "<p><strong>ABOUT NO KID HUNGRY</strong><br />\r\nNo child should go hungry in America, but 1 in 5 kids will face hunger this year. Using proven, practical solutions, No Kid Hungry is ending childhood hunger today by ensuring that kids start the day with a nutritious breakfast, are able to get the nutrition they need during the summertime, and families learn the skills they need to shop and cook on a budget. When we all work together, we can make sure kids get the healthy food they need. No Kid Hungry is a campaign of national anti-hunger organization Share Our Strength.</p>\r\n"
     format: basic_html
 default_value_callback: ''
 settings: {  }

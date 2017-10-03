@@ -10,7 +10,7 @@ id: node.partner.field_taxonomy_partner
 field_name: field_taxonomy_partner
 entity_type: node
 bundle: partner
-label: 'Partner Taxonomy'
+label: 'Partner Type'
 description: ''
 required: true
 translatable: false

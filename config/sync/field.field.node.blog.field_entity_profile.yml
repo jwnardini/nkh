@@ -1,16 +1,16 @@
-uuid: 6c11b374-1567-4df1-be26-77106f5ecf92
+uuid: 2633f01f-3d0b-404b-93f5-bb25cc0eff6b
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_entity_author
+    - field.storage.node.field_entity_profile
     - node.type.blog
     - node.type.profile
-id: node.blog.field_entity_author
-field_name: field_entity_author
+id: node.blog.field_entity_profile
+field_name: field_entity_profile
 entity_type: node
 bundle: blog
-label: Author
+label: 'Author Profile'
 description: ''
 required: false
 translatable: false
@@ -23,6 +23,6 @@ settings:
       profile: profile
     sort:
       field: _none
-    auto_create: true
+    auto_create: false
     auto_create_bundle: ''
 field_type: entity_reference
