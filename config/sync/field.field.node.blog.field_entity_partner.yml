@@ -5,19 +5,24 @@ dependencies:
   config:
     - field.storage.node.field_entity_partner
     - node.type.blog
+    - node.type.partner
 id: node.blog.field_entity_partner
 field_name: field_entity_partner
 entity_type: node
 bundle: blog
-label: 'Partner Entity field'
+label: Partner
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:node_type'
+  handler: 'default:node'
   handler_settings:
-    target_bundles: null
+    target_bundles:
+      partner: partner
+    sort:
+      field: _none
     auto_create: true
+    auto_create_bundle: ''
 field_type: entity_reference

@@ -1,4 +1,4 @@
-uuid: 70ccb98a-27fa-44dd-b4fd-f9c7299eedcb
+uuid: b423e3d3-c20b-40fb-ad25-ceebc0f31451
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     module:
       - nkh_blog_migrate
 _core:
-  default_config_hash: fS6YnxW9LwHiFdKAMhxlPuDgX3KfJD-VGqstKgho7Kw
+  default_config_hash: DzVM1jdx44jBlcsHSoE5IWRKc7rXRIZoHHckmS-P8Ys
 id: blog
 migration_tags: null
 migration_group: null
@@ -28,7 +28,7 @@ process:
     default_value: blog
   langcode:
     plugin: default_value
-    default_value: und
+    default_value: en
   status:
     plugin: default_value
     default_value: 1
@@ -55,7 +55,6 @@ process:
   uid:
     plugin: default_value
     default_value: 1
-  body/summary: field_excerpt_value
   body/value:
     plugin: concat
     source:
@@ -66,6 +65,7 @@ process:
   body/format:
     plugin: default_value
     default_value: full_html
+  field_teaser: field_excerpt_value
   field_image_featured:
     -
       plugin: skip_on_empty
