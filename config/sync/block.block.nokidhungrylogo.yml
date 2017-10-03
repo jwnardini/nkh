@@ -1,9 +1,9 @@
-uuid: e0c6bdbf-3980-4bf7-a764-bc5ce459334b
+uuid: e12650b1-79c6-45f4-a287-ef972e8f25e8
 langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:basic:fdf20a7a-7638-40a0-85c8-d1f8221aca35'
+    - 'block_content:basic:3dd44480-ff40-4101-8d5a-319e59ce9214'
   module:
     - block_content
   theme:
@@ -13,9 +13,9 @@ theme: nkh
 region: footer
 weight: -8
 provider: null
-plugin: 'block_content:fdf20a7a-7638-40a0-85c8-d1f8221aca35'
+plugin: 'block_content:3dd44480-ff40-4101-8d5a-319e59ce9214'
 settings:
-  id: 'block_content:fdf20a7a-7638-40a0-85c8-d1f8221aca35'
+  id: 'block_content:3dd44480-ff40-4101-8d5a-319e59ce9214'
   label: 'No Kid Hungry Logo'
   provider: block_content
   label_display: '0'
