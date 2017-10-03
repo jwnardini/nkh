@@ -13,6 +13,7 @@ $white: #FFF;
 // nkh colors
 $nkh-orange: rgba(254,106,13, 1);
 $nkh-darkorange: rgba(240,104,47, 1);
+$nkh-footer-lightergrey: rgba(200,204,210, 1);
 $nkh-lightergrey: rgba(163,163,163, 1);
 $nkh-lightgrey: rgba(148,152,158, 1);
 $nkh-darkgrey: rgba(131,134,139, 1);
@@ -44,6 +45,7 @@ $nkh-text: $nkh-darkergrey;
 $themes:(
   orange: $nkh-orange,
   darkorange: $nkh-darkorange,
+  footer-lightergrey: $nkh-footer-lightergrey,
   lightgrey: $nkh-lightgrey,
   darkgrey: $nkh-darkgrey,
   darkergrey: $nkh-darkergrey,
@@ -58,7 +60,8 @@ $themes:(
   }
   .border__nkh-#{$name} {
     border-color: $color
-  }}
+  }
+}
 
 // Including themes 
 // By looping through the $themes map
