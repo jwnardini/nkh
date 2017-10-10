@@ -32,7 +32,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 8
+    weight: 6
     settings:
       rows: 9
       summary_rows: 3
@@ -40,7 +40,7 @@ content:
     third_party_settings: {  }
     region: content
   field_boilerplate:
-    weight: 9
+    weight: 10
     settings:
       rows: 5
       placeholder: ''
@@ -48,7 +48,7 @@ content:
     type: text_textarea
     region: content
   field_date:
-    weight: 2
+    weight: 3
     settings:
       date_order: MDY
       time_type: '24'
@@ -57,7 +57,7 @@ content:
     type: datetime_datelist
     region: content
   field_entity_partner:
-    weight: 6
+    weight: 9
     settings:
       form_mode: default
       label_singular: ''
@@ -72,7 +72,7 @@ content:
     type: inline_entity_form_complex
     region: content
   field_intro:
-    weight: 7
+    weight: 5
     settings:
       rows: 3
       placeholder: ''
@@ -94,19 +94,19 @@ content:
     type: metatag_firehose
     region: content
   field_taxonomy_issue:
-    weight: 5
+    weight: 8
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
     region: content
   field_taxonomy_news:
-    weight: 4
+    weight: 0
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_teaser:
-    weight: 1
+    weight: 2
     settings:
       rows: 3
       placeholder: ''
@@ -122,7 +122,7 @@ content:
     type: text_textarea
     region: content
   field_url:
-    weight: 10
+    weight: 4
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -130,7 +130,7 @@ content:
     type: link_default
     region: content
   field_video:
-    weight: 3
+    weight: 7
     settings:
       form_mode: default
       label_singular: ''
@@ -152,7 +152,7 @@ content:
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 0
+    weight: 1
     region: content
     settings:
       size: 60

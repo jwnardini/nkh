@@ -11,11 +11,9 @@ dependencies:
     - field.field.node.campaign.field_metatags
     - field.field.node.campaign.field_taxonomy_issue
     - field.field.node.campaign.field_teaser
-    - field.field.node.campaign.field_url
     - field.field.node.campaign.field_video
     - node.type.campaign
   module:
-    - link
     - metatag
     - text
     - user
@@ -83,18 +81,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
-    region: content
-  field_url:
-    weight: 6
-    label: hidden
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    type: link
     region: content
   field_video:
     weight: 7
