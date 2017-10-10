@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.blog.body
-    - field.field.node.blog.field_date
+    - field.field.node.blog.field_date_simple
     - field.field.node.blog.field_entity_partner
     - field.field.node.blog.field_entity_profile
     - field.field.node.blog.field_image_banner
@@ -48,7 +48,7 @@ content:
         maxlength_js_enforce: false
         maxlength_js_truncate_html: false
     region: content
-  field_date:
+  field_date_simple:
     weight: 7
     settings: {  }
     third_party_settings: {  }

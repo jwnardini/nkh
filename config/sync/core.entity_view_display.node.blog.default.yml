@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.blog.body
-    - field.field.node.blog.field_date
+    - field.field.node.blog.field_date_simple
     - field.field.node.blog.field_entity_partner
     - field.field.node.blog.field_entity_profile
     - field.field.node.blog.field_image_banner
@@ -32,9 +32,9 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-  field_date:
-    weight: 3
-    label: hidden
+  field_date_simple:
+    weight: 13
+    label: above
     settings:
       format_type: medium
       timezone_override: ''

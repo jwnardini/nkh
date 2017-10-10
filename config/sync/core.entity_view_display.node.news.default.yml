@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.field.node.news.body
     - field.field.node.news.field_boilerplate
-    - field.field.node.news.field_date
+    - field.field.node.news.field_date_simple
     - field.field.node.news.field_entity_partner
     - field.field.node.news.field_intro
     - field.field.node.news.field_metatags
@@ -40,12 +40,12 @@ content:
     third_party_settings: {  }
     type: text_default
     region: content
-  field_date:
-    weight: 2
-    label: hidden
+  field_date_simple:
+    weight: 17
+    label: above
     settings:
+      format_type: medium
       timezone_override: ''
-      format_type: m_d_y_
     third_party_settings: {  }
     type: datetime_default
     region: content
