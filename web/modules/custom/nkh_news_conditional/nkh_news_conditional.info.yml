@@ -1,0 +1,4 @@
+name: NKH News Conditional
+type: module
+description: Conditionally displayed 'Boilerplate Text' field for the News/Press Release content type.
+core: 8.x

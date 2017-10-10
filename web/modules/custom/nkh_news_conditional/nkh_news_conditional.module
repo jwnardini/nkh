@@ -1,0 +1,53 @@
+<?php
+
+/**
+ * @file
+ * Contains nkh_news_conditional.module.
+ */
+
+ use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+ // function nkh_news_conditional_form_alter(&$form, FormStateInterface &$form_state, $form_id) {
+ //   dpm($form);
+ // }
+
+function nkh_news_conditional_form_node_news_form_alter(&$form, FormStateInterface &$form_state, $form_id) {
+  $form['field_boilerplate']['#states'] = [
+    'invisible' => [
+      'select[name="field_taxonomy_news"]' => ['value' => '1'],
+      'select[name="field_taxonomy_news"]' => ['value' => '0']
+    ],
+    'disabled' => [
+      'select[name="field_taxonomy_news"]' => ['value' => '1'],
+      'select[name="field_taxonomy_news"]' => ['value' => '0']
+    ],
+    'visible' => [
+      'select[name="field_taxonomy_news"]' => ['value' => '2']
+    ],
+    'enabled' => [
+      'select[name="field_taxonomy_news"]' => ['value' => '2']
+    ]
+  ];
+}
+
+function nkh_news_conditional_form_node_news_edit_form_alter(&$form, FormStateInterface &$form_state, $form_id) {
+  $form['field_boilerplate']['#states'] = [
+    'invisible' => [
+      'select[name="field_taxonomy_news"]' => ['value' => '1'],
+      'select[name="field_taxonomy_news"]' => ['value' => '0']
+    ],
+    'disabled' => [
+      'select[name="field_taxonomy_news"]' => ['value' => '1'],
+      'select[name="field_taxonomy_news"]' => ['value' => '0']
+    ],
+    'visible' => [
+      'select[name="field_taxonomy_news"]' => ['value' => '2']
+    ],
+    'enabled' => [
+      'select[name="field_taxonomy_news"]' => ['value' => '2']
+    ]
+  ];
+}
