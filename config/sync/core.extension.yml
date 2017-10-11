@@ -45,6 +45,7 @@ module:
   migrate_tools: 0
   module_filter: 0
   nkh_blog_migrate: 0
+  nkh_news_conditional: 0
   node: 0
   options: 0
   page_cache: 0

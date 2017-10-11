@@ -1,4 +1,4 @@
-uuid: b423e3d3-c20b-40fb-ad25-ceebc0f31451
+uuid: 1befe39f-fca7-498a-bf88-f3dbe096cd8e
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     module:
       - nkh_blog_migrate
 _core:
-  default_config_hash: DzVM1jdx44jBlcsHSoE5IWRKc7rXRIZoHHckmS-P8Ys
+  default_config_hash: igZrQ-FvIb0GESzbOtqsIDz68ZC1S5vYj9BpPbjGUXQ
 id: blog
 migration_tags: null
 migration_group: null
@@ -51,6 +51,11 @@ process:
       - alias
   created: created
   changed: changed
+  field_date_simple:
+    plugin: format_date
+    from_format: U
+    to_format: Y-m-d
+    source: date
   title: title
   uid:
     plugin: default_value
