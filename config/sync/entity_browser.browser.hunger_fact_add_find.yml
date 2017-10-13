@@ -1,0 +1,42 @@
+uuid: 796db42e-d7af-48cb-905a-e5f5de705de7
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.entity_browser_hunger_fact
+  module:
+    - entity_browser_entity_form
+    - views
+name: hunger_fact_add_find
+label: 'Hunger Fact Add and Find'
+display: iframe
+display_configuration:
+  width: '650'
+  height: '500'
+  link_text: 'Select Hunger Fact'
+  auto_open: true
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  a20c69c7-1858-4994-bc40-4cd6f808a432:
+    settings:
+      entity_type: hunger_fact
+      bundle: ''
+      form_mode: default
+      submit_text: 'Save and place this new Hunger Fact'
+    uuid: a20c69c7-1858-4994-bc40-4cd6f808a432
+    weight: -9
+    label: 'Create new Hunger Fact'
+    id: entity_form
+  51a6e7f4-1a9d-4d6f-bb1f-754c65e4cf60:
+    settings:
+      view: entity_browser_hunger_fact
+      view_display: entity_browser_1
+      submit_text: 'Select and place this Hunger Fact'
+      auto_select: false
+    uuid: 51a6e7f4-1a9d-4d6f-bb1f-754c65e4cf60
+    weight: -10
+    label: 'Select Existing Hunger Fact'
+    id: view

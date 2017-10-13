@@ -1,0 +1,31 @@
+uuid: 262a163e-4bd0-498c-8330-9b33133b6716
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.entity_browser_landing_link
+  module:
+    - views
+name: landing_link_find
+label: 'Landing Link Find'
+display: iframe
+display_configuration:
+  width: '650'
+  height: '500'
+  link_text: 'Select Landing Link'
+  auto_open: true
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: single
+widget_selector_configuration: {  }
+widgets:
+  574081a8-116b-444f-a309-02157642114d:
+    settings:
+      view: entity_browser_landing_link
+      view_display: entity_browser_1
+      submit_text: 'Select and place this Landing Link'
+      auto_select: false
+    uuid: 574081a8-116b-444f-a309-02157642114d
+    weight: 1
+    label: 'Add Existing Landing Link'
+    id: view

@@ -1,0 +1,44 @@
+uuid: 2192cb31-5d77-412e-8d88-1bda5921fe78
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.reference_block
+    - field.field.block_content.reference_block.field_cta_entity
+    - field.field.block_content.reference_block.field_hf_entity
+    - field.field.block_content.reference_block.field_landinglink_entity
+    - field.field.block_content.reference_block.field_type
+id: block_content.reference_block.default
+targetEntityType: block_content
+bundle: reference_block
+mode: default
+content:
+  field_cta_entity:
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: full
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_hf_entity:
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: full
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_landinglink_entity:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: full
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden:
+  field_type: true

@@ -1,0 +1,20 @@
+uuid: fe4c5086-5700-4cf0-b1cb-bac3630a5755
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - eck
+id: block_content.field_hf_entity
+field_name: field_hf_entity
+entity_type: block_content
+type: entity_reference
+settings:
+  target_type: hunger_fact
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

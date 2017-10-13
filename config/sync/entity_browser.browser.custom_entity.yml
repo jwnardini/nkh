@@ -1,0 +1,114 @@
+uuid: 82a2f95d-ead3-4d95-afce-5d0d5d0ec585
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.entity_browser_cta
+    - views.view.entity_browser_hunger_fact
+    - views.view.entity_browser_landing_link
+  module:
+    - entity_browser_entity_form
+    - views
+name: custom_entity
+label: 'Custom Entity'
+display: iframe
+display_configuration:
+  width: '650'
+  height: '500'
+  link_text: 'Select entities'
+  auto_open: true
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  bd5cf996-161c-4b9e-8c43-75bfa655bfdc:
+    settings:
+      entity_type: cta
+      bundle: alert
+      form_mode: default
+      submit_text: 'Save new alert CTA'
+    uuid: bd5cf996-161c-4b9e-8c43-75bfa655bfdc
+    weight: -7
+    label: 'Create CTA (Alert)'
+    id: entity_form
+  59213b4b-8bf3-4553-8ef3-3a7faab13884:
+    settings:
+      entity_type: cta
+      bundle: image
+      form_mode: default
+      submit_text: 'Save new image CTA'
+    uuid: 59213b4b-8bf3-4553-8ef3-3a7faab13884
+    weight: -6
+    label: 'Create CTA (Image)'
+    id: entity_form
+  72791d8e-2979-42b7-8210-814ee11132ba:
+    settings:
+      view: entity_browser_cta
+      view_display: entity_browser_1
+      submit_text: 'Select CTA'
+      auto_select: false
+    uuid: 72791d8e-2979-42b7-8210-814ee11132ba
+    weight: -10
+    label: 'Add Existing CTA'
+    id: view
+  ba517fe9-cc07-4a8a-87e3-33ebdcfad26d:
+    settings:
+      view: entity_browser_hunger_fact
+      view_display: entity_browser_1
+      submit_text: 'Select Hunger Fact'
+      auto_select: false
+    uuid: ba517fe9-cc07-4a8a-87e3-33ebdcfad26d
+    weight: -9
+    label: 'Add Existing Hunger Fact'
+    id: view
+  1854fad9-9f43-41dc-9de6-3caa599146d2:
+    settings:
+      entity_type: hunger_fact
+      bundle: default
+      form_mode: default
+      submit_text: 'Save new Hunger Fact'
+    uuid: 1854fad9-9f43-41dc-9de6-3caa599146d2
+    weight: -4
+    label: 'Create Hunger Fact'
+    id: entity_form
+  ae50b59c-9ffa-42c6-80f6-557a17e6f0c1:
+    settings:
+      view: entity_browser_landing_link
+      view_display: entity_browser_1
+      submit_text: 'Select Landing Link'
+      auto_select: false
+    uuid: ae50b59c-9ffa-42c6-80f6-557a17e6f0c1
+    weight: -8
+    label: 'Add Existing Landing Link'
+    id: view
+  38d8d4d0-e898-4dd2-af59-6c0306bc3b96:
+    settings:
+      entity_type: landing_link
+      bundle: auto
+      form_mode: default
+      submit_text: 'Save Automatic Landing Link'
+    uuid: 38d8d4d0-e898-4dd2-af59-6c0306bc3b96
+    weight: -3
+    label: 'Create Landing Link (auto)'
+    id: entity_form
+  30132dd8-60ec-41cf-ac5b-04f27a55c36c:
+    settings:
+      entity_type: landing_link
+      bundle: manual
+      form_mode: default
+      submit_text: 'Save Manual Landing Link'
+    uuid: 30132dd8-60ec-41cf-ac5b-04f27a55c36c
+    weight: -2
+    label: 'Create Landing Link (manual)'
+    id: entity_form
+  a2978e69-06ce-4d70-953a-511023361a94:
+    settings:
+      entity_type: cta
+      bundle: text
+      form_mode: default
+      submit_text: 'Save new text CTA'
+    uuid: a2978e69-06ce-4d70-953a-511023361a94
+    weight: -5
+    label: 'Create CTA (Text)'
+    id: entity_form

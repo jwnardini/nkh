@@ -1,0 +1,21 @@
+uuid: 70083db1-916d-4e53-b214-db75144680a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.reference_block
+    - field.storage.block_content.field_type
+  module:
+    - options
+id: block_content.reference_block.field_type
+field_name: field_type
+entity_type: block_content
+bundle: reference_block
+label: 'Entity Type'
+description: 'Select which kind of entity you would like to reference in this block.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_float

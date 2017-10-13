@@ -1,0 +1,31 @@
+uuid: 890b24df-baf8-408d-9e90-ab49884abf8b
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.entity_browser_hunger_fact
+  module:
+    - views
+name: hunger_fact_find
+label: 'Hunger Fact Find'
+display: iframe
+display_configuration:
+  width: '650'
+  height: '500'
+  link_text: 'Select Hunger Fact'
+  auto_open: true
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: single
+widget_selector_configuration: {  }
+widgets:
+  87547cee-98b1-4b32-83ac-e47031ec4c0a:
+    settings:
+      view: entity_browser_hunger_fact
+      view_display: entity_browser_1
+      submit_text: 'Select and place this Hunger Fact'
+      auto_select: false
+    uuid: 87547cee-98b1-4b32-83ac-e47031ec4c0a
+    weight: 1
+    label: 'Add Existing Hunger Fact'
+    id: view

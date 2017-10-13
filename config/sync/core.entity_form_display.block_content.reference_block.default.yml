@@ -1,0 +1,82 @@
+uuid: 5ce807b7-7369-43f9-9a9d-447e946808f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.reference_block
+    - field.field.block_content.reference_block.field_cta_entity
+    - field.field.block_content.reference_block.field_hf_entity
+    - field.field.block_content.reference_block.field_landinglink_entity
+    - field.field.block_content.reference_block.field_type
+  module:
+    - entity_browser_entity_form
+    - inline_entity_form
+    - maxlength
+id: block_content.reference_block.default
+targetEntityType: block_content
+bundle: reference_block
+mode: default
+content:
+  field_cta_entity:
+    weight: 3
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: cta_add_find
+    type: inline_entity_form_complex
+    region: content
+  field_hf_entity:
+    weight: 4
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: hunger_fact_add_find
+    type: inline_entity_form_complex
+    region: content
+  field_landinglink_entity:
+    weight: 2
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: landing_link_add_find
+    type: inline_entity_form_complex
+    region: content
+  field_type:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: 'CTA-text_Action_Qualifier / CTA-image_Action_Qualifier / HF_Topic_Stat / Alert_Topic_Date'
+    third_party_settings:
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+hidden: {  }

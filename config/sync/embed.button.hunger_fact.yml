@@ -1,0 +1,24 @@
+uuid: 2a9de765-97c7-48ca-b8a1-50195f5a9400
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.hunger_fact.default
+  content:
+    - 'file:file:425eeb14-32f5-4fda-9188-07e3a2eaf69a'
+  module:
+    - eck
+    - entity_embed
+label: 'Hunger Fact'
+id: hunger_fact
+type_id: entity
+type_settings:
+  entity_type: hunger_fact
+  bundles:
+    - default
+  display_plugins:
+    - 'view_mode:hunger_fact.full'
+  entity_browser: hunger_fact_add_find
+  entity_browser_settings:
+    display_review: true
+icon_uuid: 425eeb14-32f5-4fda-9188-07e3a2eaf69a

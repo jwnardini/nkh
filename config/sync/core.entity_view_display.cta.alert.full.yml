@@ -1,0 +1,32 @@
+uuid: 09081e47-3dba-4e86-aadd-1d99288c9e02
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.cta.full
+    - eck.eck_type.cta.alert
+id: cta.alert.full
+targetEntityType: cta
+bundle: alert
+mode: full
+content:
+  created:
+    label: hidden
+    type: timestamp
+    weight: 0
+    region: content
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+  title:
+    label: hidden
+    type: string
+    weight: -5
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  changed: true

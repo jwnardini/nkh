@@ -1,0 +1,32 @@
+uuid: 0c9fe17c-cc73-4ab2-8ceb-d2a6c3792206
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.hunger_fact.full
+    - eck.eck_type.hunger_fact.default
+id: hunger_fact.default.full
+targetEntityType: hunger_fact
+bundle: default
+mode: full
+content:
+  created:
+    label: hidden
+    type: timestamp
+    weight: 0
+    region: content
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+  title:
+    label: hidden
+    type: string
+    weight: -5
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  changed: true

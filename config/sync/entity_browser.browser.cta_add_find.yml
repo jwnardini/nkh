@@ -1,0 +1,52 @@
+uuid: 148b8f63-0311-4ffd-88c6-70c880dfeb51
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.entity_browser_cta
+  module:
+    - entity_browser_entity_form
+    - views
+name: cta_add_find
+label: 'CTA add and find'
+display: iframe
+display_configuration:
+  width: '650'
+  height: '500'
+  link_text: 'Select CTA'
+  auto_open: true
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  9f7143cf-8996-4295-897a-4cf3b35ab0ae:
+    settings:
+      view: entity_browser_cta
+      view_display: entity_browser_2
+      submit_text: 'Place this CTA'
+      auto_select: false
+    uuid: 9f7143cf-8996-4295-897a-4cf3b35ab0ae
+    weight: 1
+    label: 'Select a CTA'
+    id: view
+  563cfb29-4414-4c5a-b51e-b398ffafbf25:
+    settings:
+      entity_type: cta
+      bundle: image
+      form_mode: default
+      submit_text: 'Save and place this new image CTA'
+    uuid: 563cfb29-4414-4c5a-b51e-b398ffafbf25
+    weight: 2
+    label: 'Add new CTA (image)'
+    id: entity_form
+  35abc90d-a972-41ba-bd26-95486edaee36:
+    settings:
+      entity_type: cta
+      bundle: text
+      form_mode: default
+      submit_text: 'Save and place this new text CTA'
+    uuid: 35abc90d-a972-41ba-bd26-95486edaee36
+    weight: 3
+    label: 'Add new CTA (text)'
+    id: entity_form

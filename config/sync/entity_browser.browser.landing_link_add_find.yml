@@ -1,0 +1,52 @@
+uuid: 7693a297-a540-4b7e-9056-96fcdd5f1ec6
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.entity_browser_landing_link
+  module:
+    - entity_browser_entity_form
+    - views
+name: landing_link_add_find
+label: 'Landing Link add and find'
+display: iframe
+display_configuration:
+  width: '650'
+  height: '500'
+  link_text: 'Select entities'
+  auto_open: true
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  38fca7e0-d5ee-42c1-8c55-924145d88f1d:
+    settings:
+      view: entity_browser_landing_link
+      view_display: entity_browser_1
+      submit_text: 'Select and place this Landing Link'
+      auto_select: false
+    uuid: 38fca7e0-d5ee-42c1-8c55-924145d88f1d
+    weight: 1
+    label: 'Add existing Landing Link'
+    id: view
+  579ce129-f2f0-40e4-9d91-3362159c747d:
+    settings:
+      entity_type: landing_link
+      bundle: auto
+      form_mode: default
+      submit_text: 'Save and place this Landing Link'
+    uuid: 579ce129-f2f0-40e4-9d91-3362159c747d
+    weight: 2
+    label: 'Create new Landing Link (auto)'
+    id: entity_form
+  c1c50547-40d3-4d92-9994-6713b2e8f323:
+    settings:
+      entity_type: landing_link
+      bundle: manual
+      form_mode: default
+      submit_text: 'Save and place this Landing Link'
+    uuid: c1c50547-40d3-4d92-9994-6713b2e8f323
+    weight: 3
+    label: 'Create new Landing Link (manual)'
+    id: entity_form

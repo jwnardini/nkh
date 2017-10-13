@@ -19,11 +19,18 @@ settings:
           items:
             - Bold
             - Italic
-            - Strike
+            - Underline
             - Superscript
             - Subscript
+            - Blockquote
+            - HorizontalRule
             - '-'
             - RemoveFormat
+            - Format
+        -
+          name: 'Block Formatting'
+          items:
+            - Styles
         -
           name: Linking
           items:
@@ -35,29 +42,43 @@ settings:
             - BulletedList
             - NumberedList
         -
-          name: Media
-          items:
-            - Blockquote
-            - DrupalImage
-            - Table
-            - HorizontalRule
-        -
-          name: 'Block Formatting'
-          items:
-            - Format
-        -
           name: Tools
           items:
+            - SpecialChar
             - ShowBlocks
             - Source
+            - Maximize
+            - Undo
+            - Redo
+        -
+          name: Media
+          items:
+            - DrupalImage
+            - Table
+        -
+          name: Embed
+          items:
+            - media
+            - cta
+            - hunger_fact
+            - landing_link
   plugins:
+    language:
+      language_list: un
     stylescombo:
       styles: ''
+    video_embed:
+      defaults:
+        children:
+          autoplay: true
+          responsive: true
+          width: '854'
+          height: '480'
 image_upload:
   status: true
   scheme: public
   directory: inline-images
   max_size: ''
   max_dimensions:
-    width: 0
-    height: 0
+    width: null
+    height: null

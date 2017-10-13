@@ -1,0 +1,31 @@
+uuid: 10b4f3fe-5c31-420e-97f5-12bae4cb294f
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.landing_link.manual
+id: landing_link.manual.default
+targetEntityType: landing_link
+bundle: manual
+mode: default
+content:
+  created:
+    label: hidden
+    type: timestamp
+    weight: 0
+    region: content
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+  title:
+    label: hidden
+    type: string
+    weight: -5
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  changed: true

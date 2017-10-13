@@ -1,0 +1,10 @@
+uuid: 22f648e3-b717-4422-8b0d-f96395db5822
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+id: hunger_fact.full
+label: Full
+targetEntityType: hunger_fact
+cache: true

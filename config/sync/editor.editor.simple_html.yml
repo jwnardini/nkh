@@ -17,16 +17,48 @@ settings:
           items:
             - Bold
             - Italic
+            - Underline
+            - Subscript
+            - Superscript
+            - Blockquote
+            - HorizontalRule
+            - '-'
+            - RemoveFormat
+            - Format
+        -
+          name: Classes
+          items:
+            - Styles
         -
           name: Links
           items:
             - DrupalLink
             - DrupalUnlink
         -
+          name: Lists
+          items:
+            - BulletedList
+            - NumberedList
+        -
           name: Tools
           items:
+            - SpecialChar
             - PasteFromWord
-            - RemoveFormat
+            - Source
+            - Maximize
+            - Undo
+            - Redo
+        -
+          name: Media
+          items:
+            - Table
+        -
+          name: Embed
+          items:
+            - media
+            - cta
+            - hunger_fact
+            - landing_link
   plugins:
     language:
       language_list: un

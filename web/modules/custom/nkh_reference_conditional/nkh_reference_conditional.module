@@ -1,0 +1,41 @@
+<?php
+
+/**
+ * @file
+ * Contains nkh_news_conditional.module.
+ */
+
+ use Drupal\Core\Form\FormStateInterface;
+
+ function nkh_reference_conditional_form_block_content_reference_block_form_alter(&$form, FormStateInterface &$form_state, $form_id) {
+   $form['field_landinglink_entity']['#states'] = [
+     'invisible' => [
+       'select[name="field_type"]' => ['value' => '_none'],
+       'select[name="field_type"]' => ['value' => '1'],
+       'select[name="field_type"]' => ['value' => '2'],
+     ],
+     'visible' => [
+       'select[name="field_type"]' => ['value' => '3']
+     ],
+   ];
+   $form['field_cta_entity']['#states'] = [
+     'invisible' => [
+       'select[name="field_type"]' => ['value' => '_none'],
+       'select[name="field_type"]' => ['value' => '2'],
+       'select[name="field_type"]' => ['value' => '3'],
+     ],
+     'visible' => [
+       'select[name="field_type"]' => ['value' => '1']
+     ],
+   ];
+   $form['field_hf_entity']['#states'] = [
+     'invisible' => [
+       'select[name="field_type"]' => ['value' => '_none'],
+       'select[name="field_type"]' => ['value' => '1'],
+       'select[name="field_type"]' => ['value' => '3'],
+     ],
+     'visible' => [
+       'select[name="field_type"]' => ['value' => '2']
+     ],
+   ];
+ }

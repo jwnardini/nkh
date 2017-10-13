@@ -1,7 +1,11 @@
 uuid: 8cc3fce5-a73c-4c80-a21f-76ffe75578e7
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - editor
+    - entity_embed
+    - video_embed_wysiwyg
 name: 'Simple HTML'
 format: simple_html
 weight: -9
@@ -10,21 +14,69 @@ filters:
     id: filter_html
     provider: filter
     status: true
-    weight: -10
+    weight: -50
     settings:
-      allowed_html: '<a href hreflang name id> <em> <strong>'
+      allowed_html: '<a href hreflang name id> <em> <strong> <drupal-entity data-entity-type data-entity-uuid data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button> <p> <sup> <sub> <blockquote> <ul> <li> <ol> <hr> <img src alt data-entity-type data-entity-uuid> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <u> <s>'
       filter_html_help: true
       filter_html_nofollow: false
   filter_htmlcorrector:
     id: filter_htmlcorrector
     provider: filter
     status: true
-    weight: 10
+    weight: -47
     settings: {  }
   filter_url:
     id: filter_url
     provider: filter
     status: true
-    weight: 0
+    weight: -46
     settings:
       filter_url_length: 72
+  entity_embed:
+    id: entity_embed
+    provider: entity_embed
+    status: true
+    weight: -45
+    settings: {  }
+  editor_file_reference:
+    id: editor_file_reference
+    provider: editor
+    status: false
+    weight: -43
+    settings: {  }
+  filter_align:
+    id: filter_align
+    provider: filter
+    status: false
+    weight: -49
+    settings: {  }
+  filter_autop:
+    id: filter_autop
+    provider: filter
+    status: false
+    weight: -42
+    settings: {  }
+  filter_caption:
+    id: filter_caption
+    provider: filter
+    status: false
+    weight: -48
+    settings: {  }
+  filter_html_escape:
+    id: filter_html_escape
+    provider: filter
+    status: false
+    weight: -44
+    settings: {  }
+  filter_html_image_secure:
+    id: filter_html_image_secure
+    provider: filter
+    status: false
+    weight: -40
+    settings: {  }
+  video_embed_wysiwyg:
+    id: video_embed_wysiwyg
+    provider: video_embed_wysiwyg
+    status: false
+    weight: -41
+    settings: {  }

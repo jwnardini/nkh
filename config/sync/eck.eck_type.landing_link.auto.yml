@@ -1,0 +1,9 @@
+uuid: de3cdfbb-9118-42dd-a926-598dce2d602a
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.landing_link
+name: Auto
+type: auto
+description: 'For internal links, will automatically pull in content and imagery.'

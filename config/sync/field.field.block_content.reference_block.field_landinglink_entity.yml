@@ -1,0 +1,30 @@
+uuid: 2f1eeb39-79b5-4814-8bd3-43f7a7c75740
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.reference_block
+    - eck.eck_type.landing_link.auto
+    - eck.eck_type.landing_link.manual
+    - field.storage.block_content.field_landinglink_entity
+id: block_content.reference_block.field_landinglink_entity
+field_name: field_landinglink_entity
+entity_type: block_content
+bundle: reference_block
+label: 'Landing Link Reference'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:landing_link'
+  handler_settings:
+    target_bundles:
+      auto: auto
+      manual: manual
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: auto
+field_type: entity_reference

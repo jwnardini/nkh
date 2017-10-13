@@ -1,0 +1,9 @@
+uuid: 0a240a95-ce4b-4444-83d8-1a8361974358
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.cta
+name: Alert
+type: alert
+description: 'Orange alert to display above the navigation.'

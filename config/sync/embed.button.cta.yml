@@ -1,0 +1,26 @@
+uuid: 603ec797-80a9-4acc-ba17-59626c650c94
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.cta.image
+    - eck.eck_type.cta.text
+  content:
+    - 'file:file:e391ab4f-e01e-48d3-9b61-83c0b7428085'
+  module:
+    - eck
+    - entity_embed
+label: CTA
+id: cta
+type_id: entity
+type_settings:
+  entity_type: cta
+  bundles:
+    - image
+    - text
+  display_plugins:
+    - 'view_mode:cta.full'
+  entity_browser: cta_add_find
+  entity_browser_settings:
+    display_review: true
+icon_uuid: e391ab4f-e01e-48d3-9b61-83c0b7428085
