@@ -26,3 +26,22 @@
     }    
   }
 }
+.sos-logo{
+  enable-background:new 0 0 237 104.7;
+  .st0{  
+    fill: $nkh-lightgrey;
+  } 
+  display: block;
+  max-width: 200px;
+  margin-top: 20px;
+  @include breakpoint($min1024) {
+    max-width: 170px;
+    display: inline-block;
+    float: right;
+    margin-top: -50px;
+  }
+  @include breakpoint($min1120) {
+    max-width: 200px;
+    margin-top: -30px;
+  }
+}
