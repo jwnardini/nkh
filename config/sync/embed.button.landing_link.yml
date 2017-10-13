@@ -1,0 +1,26 @@
+uuid: 93ca4a89-1f2f-4d43-9c60-979d0449a6af
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.landing_link.auto
+    - eck.eck_type.landing_link.manual
+  content:
+    - 'file:file:2a7d1a0f-a790-40ec-b7fe-7943799b0546'
+  module:
+    - eck
+    - entity_embed
+label: 'Landing Link'
+id: landing_link
+type_id: entity
+type_settings:
+  entity_type: landing_link
+  bundles:
+    - auto
+    - manual
+  display_plugins:
+    - 'view_mode:landing_link.full'
+  entity_browser: landing_link_add_find
+  entity_browser_settings:
+    display_review: true
+icon_uuid: 2a7d1a0f-a790-40ec-b7fe-7943799b0546

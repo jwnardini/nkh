@@ -19,6 +19,7 @@ settings:
           items:
             - Bold
             - Italic
+            - RemoveFormat
         -
           name: Linking
           items:
@@ -33,16 +34,11 @@ settings:
           name: Media
           items:
             - Blockquote
-            - DrupalImage
             - media
         -
           name: 'Block Formatting'
           items:
             - Format
-        -
-          name: Tools
-          items:
-            - Source
   plugins:
     language:
       language_list: un

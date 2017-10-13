@@ -1,0 +1,31 @@
+uuid: 9567d054-e704-4c07-9e52-efe4a782abf6
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.entity_browser_cta
+  module:
+    - views
+name: cta_find
+label: 'CTA Find'
+display: iframe
+display_configuration:
+  width: '650'
+  height: '500'
+  link_text: 'Select CTA'
+  auto_open: true
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: single
+widget_selector_configuration: {  }
+widgets:
+  e8b07580-9295-4ed0-b5b6-416060eef859:
+    settings:
+      view: entity_browser_cta
+      view_display: entity_browser_1
+      submit_text: 'Select and place this CTA'
+      auto_select: false
+    uuid: e8b07580-9295-4ed0-b5b6-416060eef859
+    weight: 1
+    label: 'Add Existing CTA'
+    id: view

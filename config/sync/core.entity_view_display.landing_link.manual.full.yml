@@ -1,0 +1,32 @@
+uuid: 73003fcc-c869-4dcf-a2c0-a823f369a233
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.landing_link.full
+    - eck.eck_type.landing_link.manual
+id: landing_link.manual.full
+targetEntityType: landing_link
+bundle: manual
+mode: full
+content:
+  created:
+    label: hidden
+    type: timestamp
+    weight: 0
+    region: content
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+  title:
+    label: hidden
+    type: string
+    weight: -5
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  changed: true

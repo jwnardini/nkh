@@ -1,0 +1,9 @@
+uuid: fafd77aa-c4d1-4f32-97d6-edf566bcb3f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.hunger_fact
+name: Default
+type: default
+description: ''

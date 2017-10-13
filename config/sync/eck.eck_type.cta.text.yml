@@ -1,0 +1,9 @@
+uuid: 9a8b826c-f80c-44cd-8a85-d936efe8e4d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.cta
+name: Text
+type: text
+description: 'This is the "ribbon" call to action style, running full-width across the page and containing only text.'

@@ -1,0 +1,32 @@
+uuid: 32a72490-4bc6-4a5f-9a03-00511980ede1
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.reference_block
+    - eck.eck_type.cta.alert
+    - eck.eck_type.cta.image
+    - eck.eck_type.cta.text
+    - field.storage.block_content.field_cta_entity
+id: block_content.reference_block.field_cta_entity
+field_name: field_cta_entity
+entity_type: block_content
+bundle: reference_block
+label: 'CTA Reference'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:cta'
+  handler_settings:
+    target_bundles:
+      alert: alert
+      image: image
+      text: text
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: image
+field_type: entity_reference

@@ -1,0 +1,10 @@
+uuid: af3f485d-89ef-468d-ac43-d4c73454ffdc
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+id: cta.full
+label: Full
+targetEntityType: cta
+cache: true

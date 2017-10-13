@@ -1,0 +1,28 @@
+uuid: 5844a1aa-43f2-42d8-962b-b0665db2b84a
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.reference_block
+    - eck.eck_type.hunger_fact.default
+    - field.storage.block_content.field_hf_entity
+id: block_content.reference_block.field_hf_entity
+field_name: field_hf_entity
+entity_type: block_content
+bundle: reference_block
+label: 'Hunger Fact Reference'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:hunger_fact'
+  handler_settings:
+    target_bundles:
+      default: default
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

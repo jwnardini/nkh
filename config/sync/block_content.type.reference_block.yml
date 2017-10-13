@@ -1,0 +1,8 @@
+uuid: 1d2eb4db-62fe-4357-9a33-11b67fccc1dc
+langcode: en
+status: true
+dependencies: {  }
+id: reference_block
+label: 'Reference Block'
+revision: 0
+description: 'Allows for any kind of cta, hunger fact, or link to be created.'

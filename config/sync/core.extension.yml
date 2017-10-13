@@ -16,6 +16,7 @@ module:
   datetime: 0
   dblog: 0
   dynamic_page_cache: 0
+  eck: 0
   editor: 0
   embed: 0
   entity: 0
@@ -46,6 +47,7 @@ module:
   module_filter: 0
   nkh_blog_migrate: 0
   nkh_news_conditional: 0
+  nkh_reference_conditional: 0
   node: 0
   options: 0
   page_cache: 0

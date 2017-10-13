@@ -1,0 +1,42 @@
+uuid: 64f75b70-3d32-449c-b227-3b7edf1d5b64
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.entity_browser_cta
+  module:
+    - entity_browser_entity_form
+    - views
+name: cta_alert_add_find
+label: 'CTA alert add and find'
+display: iframe
+display_configuration:
+  width: '650'
+  height: '500'
+  link_text: 'Select Alert'
+  auto_open: true
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  79a4c7a6-00a2-4ac7-b59a-691ea74ef3fc:
+    settings:
+      entity_type: cta
+      bundle: alert
+      form_mode: default
+      submit_text: 'Save and place this alert'
+    uuid: 79a4c7a6-00a2-4ac7-b59a-691ea74ef3fc
+    weight: 1
+    label: 'Create an Alert'
+    id: entity_form
+  c3a74073-8558-42e0-a93c-8f8a619ba991:
+    settings:
+      view: entity_browser_cta
+      view_display: entity_browser_3
+      submit_text: 'Select and place this alert'
+      auto_select: false
+    uuid: c3a74073-8558-42e0-a93c-8f8a619ba991
+    weight: 2
+    label: 'Select an existing Alert'
+    id: view

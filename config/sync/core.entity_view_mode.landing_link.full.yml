@@ -1,0 +1,10 @@
+uuid: b75f8191-2ef2-4887-b877-a05c701a7246
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+id: landing_link.full
+label: Full
+targetEntityType: landing_link
+cache: true

@@ -1,0 +1,9 @@
+uuid: 39a40497-da2e-4e35-9d2a-51b2d749c436
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.cta
+name: Image
+type: image
+description: 'This is a call to action to be placed in the middle of body copy, with an orange overlay on the image, and a text area.'

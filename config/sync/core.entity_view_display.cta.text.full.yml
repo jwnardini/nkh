@@ -1,0 +1,32 @@
+uuid: 96caee94-7b6d-4844-a508-3d022741c056
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.cta.full
+    - eck.eck_type.cta.text
+id: cta.text.full
+targetEntityType: cta
+bundle: text
+mode: full
+content:
+  created:
+    label: hidden
+    type: timestamp
+    weight: 0
+    region: content
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+  title:
+    label: hidden
+    type: string
+    weight: -5
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  changed: true

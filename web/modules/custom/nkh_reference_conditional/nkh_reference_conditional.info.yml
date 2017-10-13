@@ -1,0 +1,4 @@
+name: NKH Reference Conditional
+type: module
+description: Conditionally displays the entity reference fields on the reference block form.
+core: 8.x
