@@ -8,7 +8,7 @@ dependencies:
     - video_embed_wysiwyg
 _core:
   default_config_hash: P8ddpAIKtawJDi5SzOwCzVnnNYqONewSTJ6Xn0dW_aQ
-name: 'Basic HTML'
+name: Basic
 format: basic_html
 weight: -10
 filters:

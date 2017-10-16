@@ -6,7 +6,7 @@ dependencies:
     - editor
     - entity_embed
     - video_embed_wysiwyg
-name: 'Simple HTML'
+name: Simple
 format: simple_html
 weight: -9
 filters:

@@ -7,6 +7,9 @@ label: 'User Creator'
 weight: -4
 is_admin: null
 permissions:
+  - 'access shortcuts'
+  - 'access toolbar'
   - 'access user profiles'
   - 'administer users'
   - 'use text format simple_html'
+  - 'view the administration theme'

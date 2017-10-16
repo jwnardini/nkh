@@ -8,9 +8,9 @@ dependencies:
     - video_embed_wysiwyg
 _core:
   default_config_hash: hewPmBgni9jlDK_IjLxUx1HsTbinK-hdl0lOwjbteIY
-name: 'Full HTML'
+name: Advanced
 format: full_html
-weight: -7
+weight: -8
 filters:
   filter_align:
     id: filter_align

@@ -44,7 +44,6 @@ settings:
           items:
             - SpecialChar
             - PasteFromWord
-            - Source
             - Maximize
             - Undo
             - Redo

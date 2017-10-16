@@ -1,0 +1,22 @@
+uuid: 67b223b3-026a-494d-b6de-b40fba06af5a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: campaign
+label: Campaign
+type: 'canonical_entities:node'
+pattern: 'ways-you-can-help/whats-happening-now/[node:title]'
+selection_criteria:
+  5495d428-c66d-463e-9f97-4bbca836a1d6:
+    id: node_type
+    bundles:
+      campaign: campaign
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 5495d428-c66d-463e-9f97-4bbca836a1d6
+selection_logic: and
+weight: -8
+relationships: {  }

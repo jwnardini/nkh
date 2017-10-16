@@ -56,3 +56,9 @@
 span.field-label {
   padding: 0 1em 0 0; /* LTR */
 }
+
+.contextual-links{
+  *{
+    color: $nkh-text !important;
+  }
+}

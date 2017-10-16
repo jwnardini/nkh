@@ -20,8 +20,8 @@ settings:
             - Bold
             - Italic
             - Underline
-            - Superscript
             - Subscript
+            - Superscript
             - Blockquote
             - HorizontalRule
             - '-'
@@ -44,8 +44,9 @@ settings:
         -
           name: Tools
           items:
-            - SpecialChar
             - ShowBlocks
+            - SpecialChar
+            - PasteFromWord
             - Source
             - Maximize
             - Undo

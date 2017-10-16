@@ -7,4 +7,9 @@ label: SEO
 weight: -5
 is_admin: null
 permissions:
+  - 'access shortcuts'
+  - 'access toolbar'
+  - 'administer meta tags'
+  - 'create url aliases'
   - 'use text format simple_html'
+  - 'view the administration theme'
