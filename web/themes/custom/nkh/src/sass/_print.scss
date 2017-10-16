@@ -11,9 +11,9 @@
  */
 @media print {
   width: 100%;
+
   @page {
     margin: 0.5cm;
-
   }
   /* Underline all links. */
   a:link,
@@ -87,10 +87,10 @@
   }
   /* for style guide only */
   .color-palettes{
-    box__*{
-      background: inherit;
-      -webkit-print-color-adjust: exact!important;
-    }
+    // box__*{
+    //   background: inherit;
+    //   -webkit-print-color-adjust: exact!important;
+    // }
   }
   article{
   }

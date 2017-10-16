@@ -202,18 +202,16 @@
 
 .block--address {
 
-  * {
-    display: block;
-    color: $nkh-lightgrey;
-    font-weight: 400;
-    text-decoration: none;
-    font-style: normal;
-    margin: 0;
+  display: block;
+  color: $nkh-lightgrey;
+  font-weight: 400;
+  text-decoration: none;
+  font-style: normal;
+  margin: 0;
 
-    @include breakpoint($min768) {
-      display: inline;
-      margin: 0 7px 0 0;
-    }
+  @include breakpoint($min768) {
+    display: inline;
+    margin: 0 7px 0 0;
   }
 
   a {
