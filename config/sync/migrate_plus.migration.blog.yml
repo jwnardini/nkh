@@ -1,4 +1,4 @@
-uuid: 1befe39f-fca7-498a-bf88-f3dbe096cd8e
+uuid: 56b716ee-7dc9-4dee-834e-5456d403b9b5
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     module:
       - nkh_blog_migrate
 _core:
-  default_config_hash: igZrQ-FvIb0GESzbOtqsIDz68ZC1S5vYj9BpPbjGUXQ
+  default_config_hash: LRMhCPyYaYVRWLd1dsarVlUxE083T8LpOFWS98oh_JA
 id: blog
 migration_tags: null
 migration_group: null
@@ -78,7 +78,7 @@ process:
       source: filename
     -
       plugin: migration_lookup
-      migration: blog_image
+      migration: blog_media
       source: legacy_node_id
       no_stub: true
 destination:
