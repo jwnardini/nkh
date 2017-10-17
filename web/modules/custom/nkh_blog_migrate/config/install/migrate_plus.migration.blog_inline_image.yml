@@ -14,7 +14,7 @@ source:
     - unique_id
   constants: 
     file_source_uri: 'public://temp_migrate/nkh-backup-files'
-    file_source_dest: 'public:/'
+    file_source_dest: 'public:'
 destination:
   plugin: entity:file
 process:

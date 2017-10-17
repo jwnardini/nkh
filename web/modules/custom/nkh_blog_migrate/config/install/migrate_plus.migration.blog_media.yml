@@ -1,6 +1,6 @@
 id: blog_media
 status: true
-label: Blog Body Inline Images
+label: Blog Media 
 dependencies:
   enforced:
     module:
