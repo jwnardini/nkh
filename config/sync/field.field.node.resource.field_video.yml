@@ -1,0 +1,28 @@
+uuid: 3f1b7cb7-61cb-48c5-8e6e-b74355c745fc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_video
+    - media_entity.bundle.video
+    - node.type.resource
+id: node.resource.field_video
+field_name: field_video
+entity_type: node
+bundle: resource
+label: Video
+description: 'youtube or vimeo links only'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      video: video
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,9 @@
+uuid: 6ea551fd-ee05-4847-9d3c-51153adff1cf
+langcode: en
+status: true
+dependencies: {  }
+name: Location
+vid: location
+description: 'Location-specific Taxonomy list'
+hierarchy: 0
+weight: 0
