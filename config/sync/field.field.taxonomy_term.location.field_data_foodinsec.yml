@@ -1,0 +1,19 @@
+uuid: 382f411f-c462-4151-89c6-7bf3f897e146
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_data_foodinsec
+    - taxonomy.vocabulary.location
+id: taxonomy_term.location.field_data_foodinsec
+field_name: field_data_foodinsec
+entity_type: taxonomy_term
+bundle: location
+label: 'Food Insecurity'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

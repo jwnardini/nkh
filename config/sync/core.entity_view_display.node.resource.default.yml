@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.resource.body
+    - field.field.node.resource.field_file
     - node.type.resource
   module:
+    - file
     - text
     - user
 id: node.resource.default
@@ -19,6 +21,13 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
+    region: content
+  field_file:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: file_default
     region: content
   links:
     weight: 100

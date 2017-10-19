@@ -1,0 +1,9 @@
+uuid: bfaab22f-95d6-46c9-9bb5-75c14a807b1f
+langcode: en
+status: true
+dependencies: {  }
+name: Location
+vid: location
+description: 'States, DC, and National'
+hierarchy: 0
+weight: 0
