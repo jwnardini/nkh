@@ -1,11 +1,21 @@
-uuid: a1fdd05c-ac2c-4059-a29c-8e36981aaad3
+uuid: d4641fba-9609-413d-b9e7-aed5edbf5eac
 langcode: en
 status: true
 dependencies:
   config:
     - field.field.node.resource.body
+    - field.field.node.resource.field_desc_corporate
+    - field.field.node.resource.field_desc_dineout
+    - field.field.node.resource.field_desc_local
+    - field.field.node.resource.field_image_featured
+    - field.field.node.resource.field_taxonomy_location
+    - field.field.node.resource.field_taxonomy_resource
+    - field.field.node.resource.field_teaser
+    - field.field.node.resource.field_upload
+    - field.field.node.resource.field_video
     - node.type.resource
   module:
+    - file
     - text
     - user
 id: node.resource.default
@@ -19,6 +29,73 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
+    region: content
+  field_desc_corporate:
+    weight: 104
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_desc_dineout:
+    weight: 106
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_desc_local:
+    weight: 105
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_image_featured:
+    weight: 108
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_taxonomy_location:
+    weight: 110
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_taxonomy_resource:
+    weight: 109
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_teaser:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_upload:
+    weight: 107
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_video:
+    weight: 103
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
   links:
     weight: 100
