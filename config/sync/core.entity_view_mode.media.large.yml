@@ -1,0 +1,10 @@
+uuid: d7512902-9495-4f2b-8e9d-907e82c41664
+langcode: en
+status: true
+dependencies:
+  module:
+    - media_entity
+id: media.large
+label: 'Full-width image with overlaid caption'
+targetEntityType: media
+cache: true
