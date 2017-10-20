@@ -17,6 +17,7 @@ dependencies:
     - node.type.blog
   module:
     - allowed_formats
+    - content_moderation
     - datetime
     - entity_browser_entity_form
     - inline_entity_form
@@ -140,7 +141,7 @@ content:
     weight: 10
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: options_buttons
     region: content
   field_taxonomy_series:
     weight: 0

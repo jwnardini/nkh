@@ -13,6 +13,7 @@ dependencies:
     - node.type.program
   module:
     - allowed_formats
+    - content_moderation
     - entity_browser_entity_form
     - inline_entity_form
     - link
@@ -74,7 +75,7 @@ content:
     weight: 4
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: options_buttons
     region: content
   field_teaser:
     weight: 1
