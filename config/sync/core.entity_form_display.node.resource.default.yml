@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.resource.body
-    - node.type.resource
     - field.field.node.resource.field_desc_corporate
     - field.field.node.resource.field_desc_dineout
     - field.field.node.resource.field_desc_local
