@@ -1,19 +1,19 @@
-uuid: 24ba39b6-6514-4661-ace7-742a231d7c26
+uuid: d1f5c0a5-d8b7-4736-946a-effbe0b0e7b8
 langcode: en
 status: true
 dependencies:
   module:
     - node
     - taxonomy
-id: node.field_taxonomy_series
-field_name: field_taxonomy_series
+id: node.field_taxonomy_resource
+field_name: field_taxonomy_resource
 entity_type: node
 type: entity_reference
 settings:
   target_type: taxonomy_term
 module: core
 locked: false
-cardinality: 1
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

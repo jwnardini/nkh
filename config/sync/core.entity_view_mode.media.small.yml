@@ -1,0 +1,10 @@
+uuid: 9610deef-4dfa-4b90-83b3-7896bf1b06d1
+langcode: en
+status: true
+dependencies:
+  module:
+    - media_entity
+id: media.small
+label: 'Half-width with overlaid caption'
+targetEntityType: media
+cache: true

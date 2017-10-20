@@ -1,0 +1,10 @@
+uuid: eec97c2f-a336-47df-84b6-20b5e14f0eba
+langcode: en
+status: true
+dependencies:
+  module:
+    - media_entity
+id: media.feature_caption
+label: 'Large Caption with half-width image'
+targetEntityType: media
+cache: true

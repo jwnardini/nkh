@@ -8,7 +8,6 @@ dependencies:
     - field.field.node.page.field_teaser
     - node.type.page
   module:
-    - metatag
     - text
     - user
 _core:
@@ -21,25 +20,11 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 100
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_metatags:
-    weight: 102
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: metatag_empty_formatter
-    region: content
-  field_teaser:
-    weight: 103
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
-  links:
-    weight: 101
-    region: content
-hidden: {  }
+hidden:
+  field_metatags: true
+  field_teaser: true
+  links: true
