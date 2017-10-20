@@ -25,4 +25,12 @@ content:
   links:
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  field_desc_corporate: true
+  field_desc_dineout: true
+  field_desc_local: true
+  field_image_featured: true
+  field_taxonomy_location: true
+  field_taxonomy_resource: true
+  field_teaser: true
+  field_upload: true
