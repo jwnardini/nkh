@@ -1,0 +1,19 @@
+uuid: e13efeef-73b1-4c38-92a6-1c3685092af1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_data_snap
+    - taxonomy.vocabulary.location
+id: taxonomy_term.location.field_data_snap
+field_name: field_data_snap
+entity_type: taxonomy_term
+bundle: location
+label: SNAP
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

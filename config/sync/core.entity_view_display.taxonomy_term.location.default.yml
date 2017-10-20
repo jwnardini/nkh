@@ -1,0 +1,29 @@
+uuid: d8016837-c8d6-49e0-bd9c-1dcecdf21d4c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.location.field_data_foodinsec
+    - field.field.taxonomy_term.location.field_data_schoolbkfst
+    - field.field.taxonomy_term.location.field_data_snap
+    - field.field.taxonomy_term.location.field_data_summernutr
+    - taxonomy.vocabulary.location
+  module:
+    - text
+id: taxonomy_term.location.default
+targetEntityType: taxonomy_term
+bundle: location
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_data_foodinsec: true
+  field_data_schoolbkfst: true
+  field_data_snap: true
+  field_data_summernutr: true

@@ -16,6 +16,7 @@ dependencies:
     - node.type.resource
   module:
     - entity_browser_entity_form
+    - content_moderation
     - file
     - inline_entity_form
     - path

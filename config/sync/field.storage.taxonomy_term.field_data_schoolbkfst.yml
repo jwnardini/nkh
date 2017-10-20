@@ -1,0 +1,21 @@
+uuid: 3f9a880b-3656-472c-9f08-1a59c9dd896e
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.field_data_schoolbkfst
+field_name: field_data_schoolbkfst
+entity_type: taxonomy_term
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,19 @@
+uuid: 317b3c01-2d64-411a-a6dc-89c98e02077b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_data_summernutr
+    - taxonomy.vocabulary.location
+id: taxonomy_term.location.field_data_summernutr
+field_name: field_data_summernutr
+entity_type: taxonomy_term
+bundle: location
+label: 'Summer Nutrition'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
