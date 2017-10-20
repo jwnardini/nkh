@@ -1,0 +1,29 @@
+uuid: f005014b-e1a3-4178-a109-96f8d35b3406
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_desc_local
+    - node.type.resource
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    basic_html: '0'
+    simple_html: '0'
+    restricted_html: '0'
+    full_html: '0'
+    plain_text: '0'
+id: node.resource.field_desc_local
+field_name: field_desc_local
+entity_type: node
+bundle: resource
+label: 'Local Market description'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
