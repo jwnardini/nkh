@@ -30,8 +30,10 @@ function nkh_partner_migrate_help($route_name, RouteMatchInterface $route_match)
  * Implements hook_migration_plugins_alter().
  */
 function nkh_partner_migrate_migration_plugins_alter(&$definitions) {
-  // $definitions['blog_image']['source']['path'] =
-  //   drupal_get_path('module', 'nkh_partner_migrate') . $definitions['blog_image']['source']['path'];
   $definitions['partner']['source']['path'] =
     drupal_get_path('module', 'nkh_partner_migrate') . $definitions['partner']['source']['path'];
+  $definitions['partner_image']['source']['path'] =
+    drupal_get_path('module', 'nkh_partner_migrate') . $definitions['partner_image']['source']['path'];
+  $definitions['partner_media']['source']['path'] =
+    drupal_get_path('module', 'nkh_partner_migrate') . $definitions['partner_media']['source']['path'];
 }
