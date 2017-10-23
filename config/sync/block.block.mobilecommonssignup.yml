@@ -1,0 +1,25 @@
+uuid: 1cb057c9-d862-48d5-9b3f-7a87d39d7e6e
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:ea741ca5-fa4c-4f19-8479-940c7e95cd38'
+  module:
+    - block_content
+  theme:
+    - nkh
+id: mobilecommonssignup
+theme: nkh
+region: disabled
+weight: 0
+provider: null
+plugin: 'block_content:ea741ca5-fa4c-4f19-8479-940c7e95cd38'
+settings:
+  id: 'block_content:ea741ca5-fa4c-4f19-8479-940c7e95cd38'
+  label: 'Mobile Commons Signup'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

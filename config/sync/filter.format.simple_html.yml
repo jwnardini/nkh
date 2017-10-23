@@ -32,35 +32,17 @@ filters:
     weight: -46
     settings:
       filter_url_length: 72
-  entity_embed:
-    id: entity_embed
-    provider: entity_embed
-    status: true
-    weight: -45
-    settings: {  }
   editor_file_reference:
     id: editor_file_reference
     provider: editor
     status: false
     weight: -43
     settings: {  }
-  filter_align:
-    id: filter_align
-    provider: filter
-    status: false
-    weight: -49
-    settings: {  }
-  filter_autop:
-    id: filter_autop
-    provider: filter
-    status: false
-    weight: -42
-    settings: {  }
-  filter_caption:
-    id: filter_caption
-    provider: filter
-    status: false
-    weight: -48
+  entity_embed:
+    id: entity_embed
+    provider: entity_embed
+    status: true
+    weight: -45
     settings: {  }
   filter_html_escape:
     id: filter_html_escape
@@ -68,11 +50,29 @@ filters:
     status: false
     weight: -44
     settings: {  }
+  filter_align:
+    id: filter_align
+    provider: filter
+    status: false
+    weight: -49
+    settings: {  }
+  filter_caption:
+    id: filter_caption
+    provider: filter
+    status: false
+    weight: -48
+    settings: {  }
   filter_html_image_secure:
     id: filter_html_image_secure
     provider: filter
     status: false
     weight: -40
+    settings: {  }
+  filter_autop:
+    id: filter_autop
+    provider: filter
+    status: false
+    weight: -42
     settings: {  }
   video_embed_wysiwyg:
     id: video_embed_wysiwyg
