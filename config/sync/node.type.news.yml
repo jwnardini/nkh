@@ -11,7 +11,7 @@ third_party_settings:
 name: 'News/Press Release'
 type: news
 description: 'Use <em>News/Press Release</em> for timely updates.'
-help: ''
+help: 'This is your main title. Please keep it under 50 characters for SEO best practices.'
 new_revision: true
 preview_mode: 1
 display_submitted: false

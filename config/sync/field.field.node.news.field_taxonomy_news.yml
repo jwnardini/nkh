@@ -11,7 +11,7 @@ field_name: field_taxonomy_news
 entity_type: node
 bundle: news
 label: 'News Type'
-description: ''
+description: 'Select either News or Press Release.'
 required: true
 translatable: false
 default_value: {  }

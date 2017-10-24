@@ -11,7 +11,7 @@ field_name: field_entity_partner
 entity_type: node
 bundle: campaign
 label: 'Related Partner'
-description: 'Reference sponsoring or contributing partners for this campaign.'
+description: 'This allows you to select a specific partner to relate to this campaign.'
 required: false
 translatable: true
 default_value: {  }

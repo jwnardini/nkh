@@ -12,7 +12,7 @@ field_name: field_url
 entity_type: node
 bundle: partner
 label: Website
-description: 'Link to this partner''s website.'
+description: 'Enter the homepage or specific link on the site of the partner.'
 required: false
 translatable: true
 default_value: {  }

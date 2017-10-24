@@ -11,7 +11,7 @@ field_name: field_entity_profile
 entity_type: node
 bundle: blog
 label: 'Author Profile'
-description: ''
+description: 'Choose the author for your blog. If the Author already has a profile within the system, you can use "Add existing node" to select their name. If they do not have a profile already, you can use "Add new node" to create a profile for them and add their name to this blog.'
 required: false
 translatable: false
 default_value: {  }

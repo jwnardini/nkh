@@ -10,7 +10,7 @@ field_name: field_last_name
 entity_type: node
 bundle: profile
 label: 'Last Name'
-description: ''
+description: 'Enter the last name.'
 required: true
 translatable: false
 default_value: {  }

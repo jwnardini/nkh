@@ -11,7 +11,7 @@ third_party_settings:
 name: Campaign
 type: campaign
 description: 'Use <em>Campaign</em> for short-term or special initiatives.'
-help: ''
+help: 'Enter the name of your campaign (i.e., "Summer is the Hungriest Time of Year."'
 new_revision: true
 preview_mode: 1
 display_submitted: false

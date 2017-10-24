@@ -12,15 +12,16 @@ third_party_settings:
   allowed_formats:
     basic_html: '0'
     simple_html: '0'
-    restricted_html: '0'
     full_html: '0'
+    restricted_html: '0'
     plain_text: '0'
+    code: '0'
 id: node.partner.body
 field_name: body
 entity_type: node
 bundle: partner
 label: Body
-description: ''
+description: 'Enter the full description of the partner.'
 required: false
 translatable: true
 default_value: {  }

@@ -12,15 +12,16 @@ third_party_settings:
   allowed_formats:
     basic_html: '0'
     simple_html: '0'
-    restricted_html: '0'
     full_html: '0'
+    restricted_html: '0'
     plain_text: '0'
+    code: '0'
 id: node.news.body
 field_name: body
 entity_type: node
 bundle: news
 label: Body
-description: ''
+description: 'This is the main content for the news piece or press release.'
 required: true
 translatable: true
 default_value: {  }

@@ -12,15 +12,16 @@ third_party_settings:
   allowed_formats:
     basic_html: '0'
     simple_html: '0'
-    restricted_html: '0'
     full_html: '0'
+    restricted_html: '0'
     plain_text: '0'
+    code: '0'
 id: node.campaign.field_intro
 field_name: field_intro
 entity_type: node
 bundle: campaign
 label: Introduction
-description: 'A brief introduction to the rest of the post.'
+description: 'This content will display in the header. It should include an in-text link to your main call-to-action, and be a short, impactful statement.'
 required: false
 translatable: true
 default_value: {  }

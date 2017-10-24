@@ -11,7 +11,7 @@ field_name: field_video
 entity_type: node
 bundle: news
 label: Video
-description: 'Please include videos from youtube or vimeo only.'
+description: 'Enter the URL for an associated video.'
 required: false
 translatable: true
 default_value: {  }

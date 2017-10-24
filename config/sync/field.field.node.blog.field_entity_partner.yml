@@ -11,7 +11,7 @@ field_name: field_entity_partner
 entity_type: node
 bundle: blog
 label: Partner
-description: ''
+description: 'This allows you to select a partner to relate to the blog.'
 required: false
 translatable: false
 default_value: {  }

@@ -15,7 +15,7 @@ _core:
 name: 'Basic Page'
 type: page
 description: 'Use <em>Basic Page</em> for your static content, such as an ''About us'' page.'
-help: ''
+help: 'This is your main title. Please keep it under 50 characters for SEO best practices.'
 new_revision: true
 preview_mode: 1
 display_submitted: false

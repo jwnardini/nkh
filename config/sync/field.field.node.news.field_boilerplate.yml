@@ -12,15 +12,16 @@ third_party_settings:
   allowed_formats:
     basic_html: '0'
     simple_html: '0'
-    restricted_html: '0'
     full_html: '0'
+    restricted_html: '0'
     plain_text: '0'
+    code: '0'
 id: node.news.field_boilerplate
 field_name: field_boilerplate
 entity_type: node
 bundle: news
 label: 'BoilerPlate Text'
-description: ''
+description: 'This is available for press releases, and is an editable, automatically populated summary of No Kid Hungry.'
 required: false
 translatable: false
 default_value:
