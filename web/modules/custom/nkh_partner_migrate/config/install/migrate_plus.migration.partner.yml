@@ -64,14 +64,14 @@ process: # Type is the specific type of node
     default_value: full_html
   field_teaser: field_teaser
   field_url: field_url
-##    field_image_featured:
-##      -
-##        plugin: skip_on_empty
-##        method: process
-##        source: filename
-    # -
-    #   plugin: migration_lookup
-    #   migration: partner_image
-    #   source: legacy_id
-    #   no_stub: true
+  field_image_logo:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_image_logo
+    -
+      plugin: migration_lookup
+      migration: partner_media
+      source: legacy_id
+      no_stub: true
 migration_dependencies: {}
