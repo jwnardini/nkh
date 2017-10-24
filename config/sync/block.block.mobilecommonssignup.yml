@@ -10,8 +10,8 @@ dependencies:
     - nkh
 id: mobilecommonssignup
 theme: nkh
-region: disabled
-weight: 0
+region: footer
+weight: -6
 provider: null
 plugin: 'block_content:ea741ca5-fa4c-4f19-8479-940c7e95cd38'
 settings:

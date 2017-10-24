@@ -11,7 +11,7 @@ _core:
 id: nkh_powered
 theme: nkh
 region: disabled
-weight: -9
+weight: -11
 provider: null
 plugin: system_powered_by_block
 settings:

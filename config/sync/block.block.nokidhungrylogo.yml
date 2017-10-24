@@ -2,16 +2,12 @@ uuid: e12650b1-79c6-45f4-a287-ef972e8f25e8
 langcode: en
 status: true
 dependencies:
-  content:
-    - 'block_content:basic:3dd44480-ff40-4101-8d5a-319e59ce9214'
-  module:
-    - block_content
   theme:
     - nkh
 id: nokidhungrylogo
 theme: nkh
 region: footer
-weight: -8
+weight: -9
 provider: null
 plugin: 'block_content:3dd44480-ff40-4101-8d5a-319e59ce9214'
 settings:
