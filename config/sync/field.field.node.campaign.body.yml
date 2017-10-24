@@ -12,15 +12,16 @@ third_party_settings:
   allowed_formats:
     basic_html: '0'
     simple_html: '0'
-    restricted_html: '0'
     full_html: '0'
+    restricted_html: '0'
     plain_text: '0'
+    code: '0'
 id: node.campaign.body
 field_name: body
 entity_type: node
 bundle: campaign
 label: Body
-description: ''
+description: 'Enter your main narrative of the campaign here. You can use this field to place calls-to-action, enter callout quotes and place images. This is the main content for your campaign.'
 required: false
 translatable: true
 default_value: {  }

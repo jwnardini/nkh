@@ -10,7 +10,7 @@ field_name: field_first_name
 entity_type: node
 bundle: profile
 label: 'First Name'
-description: ''
+description: 'Enter the first name.'
 required: true
 translatable: false
 default_value: {  }

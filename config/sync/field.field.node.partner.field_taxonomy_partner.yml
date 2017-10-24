@@ -11,7 +11,7 @@ field_name: field_taxonomy_partner
 entity_type: node
 bundle: partner
 label: 'Partner Type'
-description: ''
+description: 'Choose the partner type from the list provided (i.e., corporate or community partner).'
 required: false
 translatable: false
 default_value: {  }

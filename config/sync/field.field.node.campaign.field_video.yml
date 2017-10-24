@@ -11,7 +11,7 @@ field_name: field_video
 entity_type: node
 bundle: campaign
 label: Video
-description: 'youtube or vimeo links only'
+description: 'This content will display in the header.'
 required: false
 translatable: true
 default_value: {  }

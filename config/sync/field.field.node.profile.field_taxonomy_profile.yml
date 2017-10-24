@@ -11,7 +11,7 @@ field_name: field_taxonomy_profile
 entity_type: node
 bundle: profile
 label: 'Profile Type'
-description: ''
+description: 'Choose the appropriate category for this profile (i.e., Staff or Board of Directors).'
 required: false
 translatable: false
 default_value: {  }

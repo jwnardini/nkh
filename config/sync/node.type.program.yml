@@ -11,7 +11,7 @@ third_party_settings:
 name: Program
 type: program
 description: 'Use <em>Program</em> for long-term initiatives.'
-help: ''
+help: 'This is your main title. Please keep it under 50 characters for SEO best practices.'
 new_revision: true
 preview_mode: 1
 display_submitted: false

@@ -12,7 +12,7 @@ field_name: field_social_ins
 entity_type: node
 bundle: partner
 label: Instagram
-description: 'Link to this partner''s Instagram page.'
+description: 'Enter the partner Instagram URL.'
 required: false
 translatable: false
 default_value: {  }

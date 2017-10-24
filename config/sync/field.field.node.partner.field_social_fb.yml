@@ -12,7 +12,7 @@ field_name: field_social_fb
 entity_type: node
 bundle: partner
 label: Facebook
-description: 'Link to this partner''s Facebook page.'
+description: 'Enter the partner Facebook URL.'
 required: false
 translatable: false
 default_value: {  }

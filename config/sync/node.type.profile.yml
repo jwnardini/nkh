@@ -11,7 +11,7 @@ third_party_settings:
 name: Profile
 type: profile
 description: 'Use <em>Profile</em> for chefs, blog authors, and staff.'
-help: ''
+help: 'Enter the full name of the profile. This will create the URL as well as the title for this page.'
 new_revision: true
 preview_mode: 1
 display_submitted: false

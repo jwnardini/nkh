@@ -12,7 +12,7 @@ field_name: field_date_simple
 entity_type: node
 bundle: news
 label: Date
-description: ''
+description: 'Enter the date the news source was original posted.'
 required: false
 translatable: true
 default_value: {  }

@@ -11,7 +11,7 @@ field_name: field_taxonomy_series
 entity_type: node
 bundle: blog
 label: Series
-description: ''
+description: 'Choose the series for the bog. You may choose only one.'
 required: false
 translatable: false
 default_value: {  }

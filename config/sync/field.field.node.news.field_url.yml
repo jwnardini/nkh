@@ -12,7 +12,7 @@ field_name: field_url
 entity_type: node
 bundle: news
 label: 'Related Links'
-description: ''
+description: 'Enter the name of the news source, as well as the link (i.e., New York Times and URL).'
 required: false
 translatable: false
 default_value: {  }

@@ -11,7 +11,7 @@ third_party_settings:
 name: Blog
 type: blog
 description: 'Use <em>Blog</em> for editorial content.'
-help: ''
+help: 'This is your main title. Please keep it under 50 characters for SEO best practices.'
 new_revision: true
 preview_mode: 1
 display_submitted: false
