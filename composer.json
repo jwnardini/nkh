@@ -36,6 +36,7 @@
         "drupal/facets_pretty_paths": "1.x-dev",
         "drupal/features": "^3.5",
         "drupal/file_browser": "^1.1",
+        "drupal/focal_point": "^1.0@beta",
         "drupal/inline_entity_form": "^1.0@beta",
         "drupal/maxlength": "^1.0@beta",
         "drupal/media_entity": "^1.6",
