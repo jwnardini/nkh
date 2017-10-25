@@ -1,13 +1,10 @@
-
 id: partner
 status: true
 label: Partner Node Migration
-
 dependencies:
   enforced:
     module:
       - nkh_partner_migrate
-
 source:
   plugin: csv
   track_changes: true

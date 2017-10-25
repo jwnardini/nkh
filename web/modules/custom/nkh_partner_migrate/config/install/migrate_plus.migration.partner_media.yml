@@ -26,10 +26,6 @@ process:
       plugin: skip_on_empty
       method: row
       source: field_image_logo
-  thumbnail_alt:
-    plugin: default_value
-    default_value: Thumbnail
-  thumbnail_title: title
   field_image:
     plugin: migration_lookup
     migration: partner_image

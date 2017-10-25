@@ -25,10 +25,6 @@ process:
     - 
       plugin: skip_on_empty
       method: row
-  thumbnail_alt: 
-    plugin: default_value
-    default_value: Thumbnail
-  thumbnail_title: filename
   field_image:
     plugin: migration_lookup
     migration: blog_image
