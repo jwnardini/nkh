@@ -30,7 +30,7 @@ process:
     plugin: default_value
     default_value: Thumbnail
   thumbnail_title: title
-  field_image_logo:
+  field_image:
     plugin: migration_lookup
     migration: partner_image
     source: legacy_id
