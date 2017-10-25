@@ -31,6 +31,7 @@
         "drupal/entity_browser": "^1.0",
         "drupal/entity_browser_enhanced": "^1.0@beta",
         "drupal/entity_embed": "^1.0@beta",
+        "drupal/entityqueue": "^1.0@alpha",
         "drupal/facets": "^1.0@alpha",
         "drupal/facets_pretty_paths": "1.x-dev",
         "drupal/features": "^3.5",
