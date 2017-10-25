@@ -1,0 +1,21 @@
+uuid: 158f11c2-b5b3-4b30-af25-a0ee61af645a
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+id: hunger_fact.field_statistic_hunger
+field_name: field_statistic_hunger
+entity_type: hunger_fact
+type: string
+settings:
+  max_length: 12
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

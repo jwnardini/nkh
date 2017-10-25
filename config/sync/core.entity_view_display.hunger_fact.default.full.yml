@@ -5,28 +5,31 @@ dependencies:
   config:
     - core.entity_view_mode.hunger_fact.full
     - eck.eck_type.hunger_fact.default
+    - field.field.hunger_fact.default.field_body_hunger
+    - field.field.hunger_fact.default.field_statistic_hunger
+  module:
+    - text
 id: hunger_fact.default.full
 targetEntityType: hunger_fact
 bundle: default
 mode: full
 content:
-  created:
+  field_body_hunger:
+    type: text_default
+    weight: 1
+    region: content
     label: hidden
-    type: timestamp
+    settings: {  }
+    third_party_settings: {  }
+  field_statistic_hunger:
+    type: string
     weight: 0
     region: content
-    settings:
-      date_format: medium
-      custom_date_format: ''
-      timezone: ''
-    third_party_settings: {  }
-  title:
     label: hidden
-    type: string
-    weight: -5
-    region: content
     settings:
       link_to_entity: false
     third_party_settings: {  }
 hidden:
   changed: true
+  created: true
+  title: true
