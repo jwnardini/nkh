@@ -1,0 +1,30 @@
+uuid: 692164c4-673f-448f-b302-e3a47d7222cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.hunger_fact.default
+    - field.storage.hunger_fact.field_body_hunger
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    basic_html: '0'
+    simple_html: '0'
+    full_html: '0'
+    restricted_html: '0'
+    plain_text: '0'
+    code: '0'
+id: hunger_fact.default.field_body_hunger
+field_name: field_body_hunger
+entity_type: hunger_fact
+bundle: default
+label: Body
+description: 'This is the body text for the Hunger Fact'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
