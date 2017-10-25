@@ -1,0 +1,43 @@
+uuid: 22f80733-3da0-44a6-9b93-d04efc4c5905
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - nkh_partner_migrate
+_core:
+  default_config_hash: sEV_9PhtRRei_rKseOx9ErvvrbKAWIEGheHizPpXO2g
+id: partner_media
+migration_tags: null
+migration_group: null
+label: 'Partner Media Migration'
+source:
+  plugin: csv
+  track_changes: true
+  path: /config/install/Partners-All-Migrate-dbor.csv
+  header_row_count: 1
+  keys:
+    - legacy_id
+process:
+  bundle:
+    plugin: default_value
+    default_value: image
+  name:
+    -
+      plugin: get
+      source: title
+    -
+      plugin: skip_on_empty
+      method: row
+      source: field_image_logo
+  thumbnail_alt:
+    plugin: default_value
+    default_value: Thumbnail
+  thumbnail_title: title
+  field_image_logo:
+    plugin: migration_lookup
+    migration: partner_image
+    source: legacy_id
+destination:
+  plugin: 'entity:media'
+migration_dependencies: null

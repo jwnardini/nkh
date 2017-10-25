@@ -1,0 +1,65 @@
+uuid: e01702ea-d5bb-4c39-b978-d041c8b82420
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - nkh_partner_migrate
+_core:
+  default_config_hash: 1e6hBbnyp0vrvvu825RMtVxKHIis9LvA-irmETMhBeQ
+id: partner_image
+migration_tags: null
+migration_group: null
+label: 'Partner Image Migration'
+source:
+  plugin: csv
+  track_changes: true
+  path: /config/install/Partners-All-Migrate-dbor.csv
+  header_row_count: 1
+  keys:
+    - legacy_id
+  constants:
+    file_source_uri: 'public://temp_migrate/nkh-backup-files'
+    file_source_dest: 'public://2017-10'
+process:
+  file_source:
+    -
+      plugin: concat
+      delimiter: /
+      source:
+        - constants/file_source_uri
+        - field_image_logo
+    -
+      plugin: urlencode
+  file_dest:
+    -
+      plugin: concat
+      delimiter: /
+      source:
+        - constants/file_source_dest
+        - field_image_logo
+    -
+      plugin: urlencode
+  filename:
+    -
+      plugin: get
+      source: field_image_logo
+    -
+      plugin: skip_on_empty
+      method: row
+  uri:
+    plugin: file_copy
+    source:
+      - '@file_source'
+      - '@file_dest'
+  status:
+    plugin: default_value
+    default_value: 1
+  created: created
+  changed: changed
+  uid:
+    plugin: default_value
+    default_value: 1
+destination:
+  plugin: 'entity:file'
+migration_dependencies: {  }
