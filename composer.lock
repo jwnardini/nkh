@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3de562433dee66f62a165ef0e45a430b",
+    "content-hash": "b93b08dbc5166f789dfbd62e41207872",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2678,7 +2678,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/facets_pretty_paths"
             },
-            "time": "2017-06-12T21:03:27+00:00"
+            "time": "2017-06-12 21:03:27"
         },
         {
             "name": "drupal/features",
@@ -3806,6 +3806,57 @@
                 "source": "http://git.drupal.org/project/search_api_solr.git",
                 "issues": "https://www.drupal.org/project/issues/search_api_solr",
                 "irc": "irc://irc.freenode.org/drupal-search-api"
+            }
+        },
+        {
+            "name": "drupal/svg_image_field",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/svg_image_field",
+                "reference": "8.x-1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/svg_image_field-8.x-1.0.zip",
+                "reference": "8.x-1.0",
+                "shasum": "c2a17a3b17d6d042a4ccec585f7636603ac415ca"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0",
+                    "datestamp": "1490366583",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "romychvk",
+                    "homepage": "https://www.drupal.org/user/361734"
+                },
+                {
+                    "name": "shmel210",
+                    "homepage": "https://www.drupal.org/user/2600028"
+                }
+            ],
+            "description": "Provides svg image field",
+            "homepage": "https://www.drupal.org/project/svg_image_field",
+            "support": {
+                "source": "http://cgit.drupalcode.org/svg_image_field"
             }
         },
         {
