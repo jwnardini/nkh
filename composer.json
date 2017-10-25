@@ -51,6 +51,7 @@
         "drupal/search_api": "^1.5",
         "drupal/search_api_autocomplete": "^1.0@beta",
         "drupal/search_api_solr": "^1.1",
+        "drupal/svg_image": "^1.6",
         "drupal/svg_image_field": "^1.0",
         "drupal/video_embed_field": "^1.5",
         "drush/drush": "~8.0",
