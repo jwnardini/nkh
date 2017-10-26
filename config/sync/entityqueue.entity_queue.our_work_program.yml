@@ -1,0 +1,26 @@
+uuid: be782267-cd5a-47cb-a825-a255dc9bc481
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: our_work_program
+label: 'Our Work (Program)'
+handler: simple
+handler_configuration: {  }
+entity_settings:
+  target_type: node
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      campaign: campaign
+      program: program
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: campaign
+queue_settings:
+  min_size: 0
+  max_size: 0
+  act_as_queue: false
+  reverse_in_admin: false
