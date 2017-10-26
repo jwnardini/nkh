@@ -6,8 +6,9 @@ dependencies:
     - core.entity_view_mode.media.landscape
     - field.field.media.image.field_caption
     - field.field.media.image.field_image
+    - field.field.media.image.field_source
     - media_entity.bundle.image
-    - responsive_image.styles.landscape
+    - responsive_image.styles.landscape_large
   module:
     - responsive_image
     - text
@@ -24,16 +25,17 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_image:
+    type: responsive_image
     weight: 0
+    region: content
     label: hidden
     settings:
-      responsive_image_style: landscape
+      responsive_image_style: landscape_large
       image_link: ''
     third_party_settings: {  }
-    type: responsive_image
-    region: content
 hidden:
   created: true
+  field_source: true
   name: true
   thumbnail: true
   uid: true

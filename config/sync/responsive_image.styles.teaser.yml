@@ -1,0 +1,24 @@
+uuid: 6308c4f3-1875-4a49-9ada-00ddeb19eeaf
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.teaser_1x
+    - image.style.teaser_2x
+  theme:
+    - nkh
+id: teaser
+label: Teaser
+image_style_mappings:
+  -
+    breakpoint_id: nkh.retina
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: teaser_1x
+  -
+    breakpoint_id: nkh.retina
+    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: teaser_2x
+breakpoint_group: nkh
+fallback_image_style: teaser_1x

@@ -61,8 +61,8 @@ content:
     weight: 0
     label: hidden
     settings:
-      link: true
-      view_mode: default
+      view_mode: hero
+      link: false
     third_party_settings: {  }
     type: entity_reference_entity_view
     region: content
@@ -70,9 +70,10 @@ content:
     weight: 5
     label: hidden
     settings:
-      link: true
+      view_mode: small_featured_image
+      link: false
     third_party_settings: {  }
-    type: entity_reference_label
+    type: entity_reference_entity_view
     region: content
   field_intro:
     weight: 1

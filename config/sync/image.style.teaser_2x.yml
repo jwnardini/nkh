@@ -1,7 +1,17 @@
 uuid: e6415c49-2df5-4b0f-8b61-44f3cb5e60d3
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - focal_point
 name: teaser_2x
-label: Teaser_2x
-effects: {  }
+label: 'Teaser 2x'
+effects:
+  a4aa24bc-b56e-43ea-a6c5-47645d9e5260:
+    uuid: a4aa24bc-b56e-43ea-a6c5-47645d9e5260
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 920
+      height: 630
+      crop_type: focal_point
