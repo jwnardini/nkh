@@ -1,0 +1,17 @@
+uuid: 15d32f84-c531-4f8a-8cf6-f184bf3380c2
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: medium_1x
+label: 'Landscape Medium 1x'
+effects:
+  f9d7112d-81ba-4961-98fb-3dfe7bc8fca1:
+    uuid: f9d7112d-81ba-4961-98fb-3dfe7bc8fca1
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 880
+      height: 690
+      crop_type: focal_point
