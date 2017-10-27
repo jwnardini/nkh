@@ -1,12 +1,13 @@
-uuid: 9544d240-7d7b-4dac-a9d5-56f3c1d31ee3
+uuid: 46b75cc3-82c1-43f8-95aa-f69780d61947
 langcode: en
 status: true
 dependencies:
   config:
     - entityqueue.entity_queue.our_work
-    - entityqueue.entity_queue.our_work_program
     - field.storage.node.field_image_featured
     - field.storage.node.field_teaser
+    - image.style.large_2x
+    - image.style.portrait_2x
   module:
     - entityqueue
     - media_entity
@@ -63,10 +64,10 @@ display:
       row:
         type: fields
       fields:
-        path:
-          id: path
-          table: node
-          field: path
+        field_image_featured:
+          id: field_image_featured
+          table: node__field_image_featured
+          field: field_image_featured
           relationship: none
           group_type: group
           admin_label: ''
@@ -74,9 +75,9 @@ display:
           exclude: true
           alter:
             alter_text: false
-            text: ''
+            text: "{{ field_image_featured }}\n<div class=\"title-wrapper\"><span class=\"series-title\">{{ field_taxonomy_series }}</span><div class=\"view-title\">{{ title }}</div><div class=\"view-summary\">{{ field_teaser }}</div></div>"
             make_link: false
-            path: ''
+            path: '{{ path }}'
             absolute: false
             external: false
             replace_spaces: false
@@ -111,9 +112,22 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          absolute: false
-          entity_type: node
-          plugin_id: node_path
+          click_sort_column: target_id
+          type: media_thumbnail
+          settings:
+            image_style: large_2x
+            image_link: ''
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         type:
           id: type
           table: node_field_data
@@ -179,10 +193,10 @@ display:
           entity_type: node
           entity_field: type
           plugin_id: field
-        field_image_featured:
-          id: field_image_featured
-          table: node__field_image_featured
-          field: field_image_featured
+        title:
+          id: title
+          table: node_field_data
+          field: title
           relationship: none
           group_type: group
           admin_label: ''
@@ -190,7 +204,7 @@ display:
           exclude: true
           alter:
             alter_text: false
-            text: "{{ field_image_featured }}\n<div class=\"title-wrapper\"><span class=\"series-title\">{{ field_taxonomy_series }}</span><div class=\"view-title\">{{ title }}</div><div class=\"view-summary\">{{ field_teaser }}</div></div>"
+            text: '{{ field_image_featured }}<div class="title-wrapper"><span class="series-title">{{ field_taxonomy_series }}</span><div class="view-title">{{ title }}</div>{{ field_teaser }}</div>'
             make_link: false
             path: '{{ path }}'
             absolute: false
@@ -206,8 +220,8 @@ display:
             target: ''
             nl2br: false
             max_length: 0
-            word_boundary: true
-            ellipsis: true
+            word_boundary: false
+            ellipsis: false
             more_link: false
             more_link_text: ''
             more_link_path: ''
@@ -227,12 +241,11 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: target_id
-          type: media_thumbnail
+          click_sort_column: value
+          type: string
           settings:
-            image_style: ''
-            image_link: ''
-          group_column: target_id
+            link_to_entity: false
+          group_column: value
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -242,6 +255,8 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+          entity_type: node
+          entity_field: title
           plugin_id: field
         field_teaser:
           id: field_teaser
@@ -305,10 +320,10 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        title:
-          id: title
-          table: node_field_data
-          field: title
+        path:
+          id: path
+          table: node
+          field: path
           relationship: none
           group_type: group
           admin_label: ''
@@ -332,8 +347,8 @@ display:
             target: ''
             nl2br: false
             max_length: 0
-            word_boundary: false
-            ellipsis: false
+            word_boundary: true
+            ellipsis: true
             more_link: false
             more_link_text: ''
             more_link_path: ''
@@ -353,23 +368,9 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
+          absolute: false
           entity_type: node
-          entity_field: title
-          plugin_id: field
+          plugin_id: node_path
       filters:
         status:
           value: '1'
@@ -383,22 +384,20 @@ display:
             operator: ''
           group: 1
       sorts:
-        created:
-          id: created
+        entityqueue_relationship:
+          id: entityqueue_relationship
           table: node_field_data
-          field: created
-          order: DESC
-          entity_type: node
-          entity_field: created
-          plugin_id: date
+          field: entityqueue_relationship
           relationship: none
           group_type: group
           admin_label: ''
+          order: ASC
           exposed: false
           expose:
             label: ''
-          granularity: second
-      title: 'Our Work'
+          entity_type: node
+          plugin_id: entity_queue_position
+      title: ''
       header:
         area:
           id: area
@@ -410,7 +409,7 @@ display:
           empty: false
           tokenize: false
           content:
-            value: 'We start with breakfast, but we don''t stop there. Nullam ut molestie est. Quisque consectetur, dui sit amet viverra gravida, leo dui porttitor tortor, vitae accumsan augue odio vel ex. Nulla sit amet suscipit lorem. '
+            value: 'We''re educators and advocates, parents and policymakers, award-winning chefs and Fortune 500 leaders with a shared belieft: no kid should go hungry.'
             format: basic_html
           plugin_id: text
       footer: {  }
@@ -424,372 +423,11 @@ display:
           group_type: group
           admin_label: 'Content queue'
           required: true
-          limit_queue: our_work_program
+          limit_queue: our_work
           entity_type: node
           plugin_id: entity_queue
       arguments: {  }
       display_extenders: {  }
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - 'user.node_grants:view'
-        - user.permissions
-      tags:
-        - 'config:entityqueue.entity_queue.our_work_program'
-        - 'config:field.storage.node.field_image_featured'
-        - 'config:field.storage.node.field_teaser'
-        - entity_field_info
-        - views_data
-  our_work:
-    display_plugin: block
-    id: our_work
-    display_title: 'Our Work'
-    position: 1
-    display_options:
-      display_extenders: {  }
-      display_description: ''
-      relationships:
-        entityqueue_relationship:
-          id: entityqueue_relationship
-          table: node_field_data
-          field: entityqueue_relationship
-          relationship: none
-          group_type: group
-          admin_label: 'Content queue'
-          required: true
-          limit_queue: our_work
-          entity_type: node
-          plugin_id: entity_queue
-      defaults:
-        relationships: false
-        header: false
-        fields: false
-        title: false
-      header:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          tokenize: false
-          content:
-            value: 'Our in six kids don''t get the food.... Our in six kids don''t get the food.... Our in six kids don''t get the food.... Our in six kids don''t get the food.... '
-            format: basic_html
-          plugin_id: text
-      fields:
-        path:
-          id: path
-          table: node
-          field: path
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          absolute: false
-          entity_type: node
-          plugin_id: node_path
-        type:
-          id: type
-          table: node_field_data
-          field: type
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: false
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          entity_type: node
-          entity_field: type
-          plugin_id: field
-        field_image_featured:
-          id: field_image_featured
-          table: node__field_image_featured
-          field: field_image_featured
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: "{{ field_image_featured }}\n<div class=\"title-wrapper\"><span class=\"series-title\">{{ field_taxonomy_series }}</span><div class=\"view-title\">{{ title }}</div><div class=\"view-summary\">{{ field_teaser }}</div></div>"
-            make_link: false
-            path: '{{ path }}'
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: media_thumbnail
-          settings:
-            image_style: ''
-            image_link: ''
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
-        field_teaser:
-          id: field_teaser
-          table: node__field_teaser
-          field: field_teaser
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 140
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: true
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: text_default
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
-        title:
-          id: title
-          table: node_field_data
-          field: title
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: false
-          alter:
-            alter_text: true
-            text: '{{ field_image_featured }}<div class="title-wrapper"><span class="series-title">{{ type }}</span><div class="view-title">{{ title }}</div>{{ field_teaser }}</div>'
-            make_link: true
-            path: '{{ path }}'
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: false
-            ellipsis: false
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          entity_type: node
-          entity_field: title
-          plugin_id: field
-      title: 'Our Work'
     cache_metadata:
       max-age: -1
       contexts:
@@ -803,31 +441,68 @@ display:
         - 'config:field.storage.node.field_teaser'
         - entity_field_info
         - views_data
-  our_work_attachment:
+  attachment_1:
     display_plugin: attachment
-    id: our_work_attachment
-    display_title: Attachment
+    id: attachment_1
+    display_title: 'Our Work - 2'
     position: 2
     display_options:
       display_extenders: {  }
-      displays:
-        our_work: our_work
+      display_description: ''
+      defaults:
+        fields: true
+        header: false
       pager:
         type: some
         options:
-          items_per_page: 3
-          offset: 0
-      title: ''
-      defaults:
-        title: false
-        fields: false
-        relationships: false
-        header: false
+          items_per_page: 1
+          offset: 1
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: 'We start with breakfast, proin vitae odio metus. Nulla consectetur ligula ac luctus placerat. Donec mollis urna nec nisi scelerisque tempus. Vestibulum in eros leo. Donec tincidunt ligula id orci rhoncus molestie. '
+            format: basic_html
+          plugin_id: text
+      attachment_position: after
+      displays:
+        our_stories: our_stories
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:entityqueue.entity_queue.our_work'
+        - 'config:field.storage.node.field_image_featured'
+        - 'config:field.storage.node.field_teaser'
+        - entity_field_info
+        - views_data
+  attachment_2:
+    display_plugin: attachment
+    id: attachment_2
+    display_title: 'Our Work - 3'
+    position: 3
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      displays:
+        our_stories: our_stories
+      attachment_position: after
       fields:
-        path:
-          id: path
-          table: node
-          field: path
+        field_image_featured:
+          id: field_image_featured
+          table: node__field_image_featured
+          field: field_image_featured
           relationship: none
           group_type: group
           admin_label: ''
@@ -835,9 +510,9 @@ display:
           exclude: true
           alter:
             alter_text: false
-            text: ''
+            text: "{{ field_image_featured }}\n<div class=\"title-wrapper\"><span class=\"series-title\">{{ field_taxonomy_series }}</span><div class=\"view-title\">{{ title }}</div><div class=\"view-summary\">{{ field_teaser }}</div></div>"
             make_link: false
-            path: ''
+            path: '{{ path }}'
             absolute: false
             external: false
             replace_spaces: false
@@ -872,9 +547,22 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          absolute: false
-          entity_type: node
-          plugin_id: node_path
+          click_sort_column: target_id
+          type: media_thumbnail
+          settings:
+            image_style: portrait_2x
+            image_link: ''
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         type:
           id: type
           table: node_field_data
@@ -940,132 +628,6 @@ display:
           entity_type: node
           entity_field: type
           plugin_id: field
-        field_image_featured:
-          id: field_image_featured
-          table: node__field_image_featured
-          field: field_image_featured
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: "{{ field_image_featured }}\n<div class=\"title-wrapper\"><span class=\"series-title\">{{ field_taxonomy_series }}</span><div class=\"view-title\">{{ title }}</div><div class=\"view-summary\">{{ field_teaser }}</div></div>"
-            make_link: false
-            path: '{{ path }}'
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: media_thumbnail
-          settings:
-            image_style: ''
-            image_link: ''
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
-        field_teaser:
-          id: field_teaser
-          table: node__field_teaser
-          field: field_teaser
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 140
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: true
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: text_default
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
         title:
           id: title
           table: node_field_data
@@ -1074,11 +636,11 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: false
+          exclude: true
           alter:
-            alter_text: true
-            text: '{{ field_image_featured }}<div class="title-wrapper"><span class="series-title">{{ type }}</span><div class="view-title">{{ title }}</div>{{ field_teaser }}</div>'
-            make_link: true
+            alter_text: false
+            text: '{{ field_image_featured }}<div class="title-wrapper"><span class="series-title">{{ field_taxonomy_series }}</span><div class="view-title">{{ title }}</div>{{ field_teaser }}</div>'
+            make_link: false
             path: '{{ path }}'
             absolute: false
             external: false
@@ -1131,33 +693,128 @@ display:
           entity_type: node
           entity_field: title
           plugin_id: field
-      relationships:
-        entityqueue_relationship:
-          id: entityqueue_relationship
-          table: node_field_data
-          field: entityqueue_relationship
-          relationship: none
-          group_type: group
-          admin_label: 'Content queue'
-          required: true
-          limit_queue: our_work_program
-          entity_type: node
-          plugin_id: entity_queue
-      attachment_position: after
-      header:
-        area:
-          id: area
-          table: views
-          field: area
+        field_teaser:
+          id: field_teaser
+          table: node__field_teaser
+          field: field_teaser
           relationship: none
           group_type: group
           admin_label: ''
-          empty: false
-          tokenize: false
-          content:
-            value: 'We start with breakfast, but we don''t stop there. Nullam ut molestie est. Quisque consectetur, dui sit amet viverra gravida, leo dui porttitor tortor, vitae accumsan augue odio vel ex. Nulla sit amet suscipit lorem. '
-            format: basic_html
-          plugin_id: text
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: text_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        path:
+          id: path
+          table: node
+          field: path
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: '{{ field_image_featured }}<div class="title-wrapper"><span class="series-title">{{ type }}</span><div class="view-title">{{ title }}</div>{{ field_teaser }}</div>'
+            make_link: true
+            path: '{{ path }}'
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          absolute: false
+          entity_type: node
+          plugin_id: node_path
+      defaults:
+        fields: false
+        header: false
+      header: {  }
+      pager:
+        type: some
+        options:
+          items_per_page: 1
+          offset: 2
     cache_metadata:
       max-age: -1
       contexts:
@@ -1166,7 +823,63 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:entityqueue.entity_queue.our_work_program'
+        - 'config:entityqueue.entity_queue.our_work'
+        - 'config:field.storage.node.field_image_featured'
+        - 'config:field.storage.node.field_teaser'
+        - entity_field_info
+        - views_data
+  attachment_3:
+    display_plugin: attachment
+    id: attachment_3
+    display_title: 'Our Work - 4'
+    position: 4
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      displays:
+        our_stories: our_stories
+      header: {  }
+      defaults:
+        header: false
+      pager:
+        type: some
+        options:
+          items_per_page: 1
+          offset: 3
+      attachment_position: after
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:entityqueue.entity_queue.our_work'
+        - 'config:field.storage.node.field_image_featured'
+        - 'config:field.storage.node.field_teaser'
+        - entity_field_info
+        - views_data
+  our_stories:
+    display_plugin: block
+    id: our_stories
+    display_title: 'Our Work - 1'
+    position: 1
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      title: 'Our Work'
+      defaults:
+        title: false
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:entityqueue.entity_queue.our_work'
         - 'config:field.storage.node.field_image_featured'
         - 'config:field.storage.node.field_teaser'
         - entity_field_info
