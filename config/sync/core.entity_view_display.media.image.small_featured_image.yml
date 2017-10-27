@@ -1,21 +1,21 @@
-uuid: 67a5f6fd-d55e-4519-8dd6-2fe07e63035c
+uuid: 3a891be9-1757-494b-b89b-982316a01cc1
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.media.small
+    - core.entity_view_mode.media.small_featured_image
     - field.field.media.image.field_caption
     - field.field.media.image.field_image
     - field.field.media.image.field_source
     - media_entity.bundle.image
-    - responsive_image.styles.landscape_medium
+    - responsive_image.styles.teaser
   module:
     - responsive_image
     - text
-id: media.image.small
+id: media.image.small_featured_image
 targetEntityType: media
 bundle: image
-mode: small
+mode: small_featured_image
 content:
   field_caption:
     weight: 1
@@ -25,14 +25,14 @@ content:
     type: text_default
     region: content
   field_image:
-    type: responsive_image
     weight: 0
-    region: content
     label: hidden
     settings:
-      responsive_image_style: landscape_medium
+      responsive_image_style: teaser
       image_link: ''
     third_party_settings: {  }
+    type: responsive_image
+    region: content
 hidden:
   created: true
   field_source: true

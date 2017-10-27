@@ -1,0 +1,24 @@
+uuid: d52283a7-5d6a-42da-b58e-158cbe591ef9
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.small_1x
+    - image.style.small_2x
+  theme:
+    - nkh
+id: small
+label: Small
+image_style_mappings:
+  -
+    breakpoint_id: nkh.retina
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: small_1x
+  -
+    breakpoint_id: nkh.retina
+    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: small_2x
+breakpoint_group: nkh
+fallback_image_style: small_1x
