@@ -1,37 +1,39 @@
-uuid: 76af89fc-10e1-4f57-a4ba-1badc8e86359
+uuid: 1de13081-77cd-4d56-a6f9-63f48f88db7e
 langcode: en
 status: true
 dependencies:
   config:
+    - image.style.large_1x
+    - image.style.large_2x
+    - image.style.medium_1x
+    - image.style.medium_2x
     - image.style.small_1x
     - image.style.small_2x
-    - image.style.square_1x
-    - image.style.square_2x
   theme:
     - nkh
-id: square
-label: Square
+id: landscape_large
+label: 'Landscape Large'
 image_style_mappings:
   -
     breakpoint_id: nkh.desktop
     multiplier: 1x
     image_mapping_type: image_style
-    image_mapping: square_1x
+    image_mapping: large_1x
   -
     breakpoint_id: nkh.desktop
     multiplier: 2x
     image_mapping_type: image_style
-    image_mapping: square_2x
+    image_mapping: large_2x
   -
     breakpoint_id: nkh.tablet
     multiplier: 1x
     image_mapping_type: image_style
-    image_mapping: small_1x
+    image_mapping: medium_1x
   -
     breakpoint_id: nkh.tablet
     multiplier: 2x
     image_mapping_type: image_style
-    image_mapping: small_2x
+    image_mapping: medium_2x
   -
     breakpoint_id: nkh.mobile
     multiplier: 1x
@@ -43,4 +45,4 @@ image_style_mappings:
     image_mapping_type: image_style
     image_mapping: small_2x
 breakpoint_group: nkh
-fallback_image_style: square_1x
+fallback_image_style: large_1x

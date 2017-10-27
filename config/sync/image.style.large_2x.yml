@@ -1,0 +1,17 @@
+uuid: 0eae3efd-d9fe-4dd3-b17e-7a735b951a40
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: large_2x
+label: 'Landscape Large 2x'
+effects:
+  68cd772e-bf43-4edf-9bd0-f72705b8e29d:
+    uuid: 68cd772e-bf43-4edf-9bd0-f72705b8e29d
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 3540
+      height: 1840
+      crop_type: focal_point

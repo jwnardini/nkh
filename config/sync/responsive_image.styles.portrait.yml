@@ -1,24 +1,46 @@
-uuid: 0aaf5902-c406-4d3e-a999-95b910522694
+uuid: c69aa39c-da43-4b4b-8290-c23379f63292
 langcode: en
 status: true
 dependencies:
   config:
-    - image.style.max_1300x1300
-    - image.style.max_325x325
-    - image.style.max_650x650
-    - image.style.medium
+    - image.style.portrait_1x
+    - image.style.portrait_2x
+    - image.style.small_1x
+    - image.style.small_2x
+  theme:
+    - nkh
 id: portrait
 label: Portrait
 image_style_mappings:
   -
-    breakpoint_id: responsive_image.viewport_sizing
+    breakpoint_id: nkh.desktop
     multiplier: 1x
-    image_mapping_type: sizes
-    image_mapping:
-      sizes: 100vw
-      sizes_image_styles:
-        - max_1300x1300
-        - max_325x325
-        - max_650x650
-breakpoint_group: responsive_image
-fallback_image_style: medium
+    image_mapping_type: image_style
+    image_mapping: portrait_1x
+  -
+    breakpoint_id: nkh.desktop
+    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: portrait_2x
+  -
+    breakpoint_id: nkh.tablet
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: small_1x
+  -
+    breakpoint_id: nkh.tablet
+    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: small_2x
+  -
+    breakpoint_id: nkh.mobile
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: small_1x
+  -
+    breakpoint_id: nkh.mobile
+    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: small_2x
+breakpoint_group: nkh
+fallback_image_style: portrait_1x

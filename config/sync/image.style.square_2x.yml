@@ -1,0 +1,17 @@
+uuid: e7a5a700-f127-44e9-811c-826e4f5a4128
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: square_2x
+label: 'Square 2x'
+effects:
+  6b8a0a4c-825d-4fd8-b5f2-a76edc7f2756:
+    uuid: 6b8a0a4c-825d-4fd8-b5f2-a76edc7f2756
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1570
+      height: 1570
+      crop_type: focal_point
