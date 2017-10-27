@@ -12,7 +12,7 @@ entity_type: node
 bundle: blog
 label: 'Featured Image'
 description: 'This image will display on landing pages when this blog is featured. It will not display on the page you are currently editing, but it can be the same image as your header image. Please upload it in both places.'
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
