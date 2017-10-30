@@ -7,7 +7,7 @@ dependencies:
 id: nokidhungrylogo
 theme: nkh
 region: footer
-weight: -9
+weight: -8
 provider: null
 plugin: 'block_content:3dd44480-ff40-4101-8d5a-319e59ce9214'
 settings:
