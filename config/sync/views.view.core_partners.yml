@@ -8,7 +8,7 @@ dependencies:
     - node.type.partner
     - taxonomy.vocabulary.partner
   content:
-    - 'taxonomy_term:partner:420d1076-dc14-4633-8da9-439cebb5b4dc'
+    - 'taxonomy_term:partner:ffdea638-abe8-4085-b41f-d2d4350624ca'
   module:
     - entityqueue
     - media_entity
@@ -293,10 +293,10 @@ display:
           error_message: true
           plugin_id: taxonomy_index_tid
       sorts:
-        title:
-          id: title
+        entityqueue_relationship:
+          id: entityqueue_relationship
           table: node_field_data
-          field: title
+          field: entityqueue_relationship
           relationship: none
           group_type: group
           admin_label: ''
@@ -305,8 +305,7 @@ display:
           expose:
             label: ''
           entity_type: node
-          entity_field: title
-          plugin_id: standard
+          plugin_id: entity_queue_position
       title: 'Core Partners'
       header: {  }
       footer: {  }
@@ -352,13 +351,30 @@ display:
     display_options:
       display_extenders: {  }
       display_description: ''
+      filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+          group: 1
+      defaults:
+        filters: false
+        filter_groups: false
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -381,10 +397,96 @@ display:
         use_more: false
         use_more_always: false
         use_more_text: false
+        sorts: false
+        filters: false
+        filter_groups: false
       relationships: {  }
       use_more: false
       use_more_always: true
       use_more_text: more
+      sorts:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: standard
+      filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+          group: 1
+        field_taxonomy_partner_target_id:
+          id: field_taxonomy_partner_target_id
+          table: node__field_taxonomy_partner
+          field: field_taxonomy_partner_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value:
+            - 5
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_taxonomy_partner_target_id_op
+            label: 'Partner Type (field_taxonomy_partner)'
+            description: ''
+            use_operator: false
+            operator: field_taxonomy_partner_target_id_op
+            identifier: field_taxonomy_partner_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              author: '0'
+              editor: '0'
+              publisher: '0'
+              seo: '0'
+              user_creator: '0'
+              content_administrator: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: textfield
+          limit: true
+          vid: partner
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
     cache_metadata:
       max-age: -1
       contexts:
