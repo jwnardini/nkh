@@ -7,16 +7,16 @@ dependencies:
 id: profile
 label: Profile
 type: 'canonical_entities:node'
-pattern: '[node:title]'
+pattern: 'who-we-are/leadership/[node:title]'
 selection_criteria:
-  8237eb54-ca2f-4b81-9f99-72d1f22317d5:
+  7817f885-17b1-41f2-8245-dacf7c1e0f12:
     id: node_type
     bundles:
       profile: profile
     negate: false
     context_mapping:
       node: node
-    uuid: 8237eb54-ca2f-4b81-9f99-72d1f22317d5
+    uuid: 7817f885-17b1-41f2-8245-dacf7c1e0f12
 selection_logic: and
 weight: -3
 relationships: {  }
