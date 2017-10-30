@@ -27,16 +27,19 @@
   max-width: 180px;
   height: 80px;
   display: block;
+  .st0{ 
+    fill:#231F20;
+  }
+  .st1{
+    fill:#F16722;
+  }   
+  .st2{   
+    fill:#717275;
+  }
+
   @include breakpoint($min1024) {
     max-width: 200px;
     height: auto;
-  }
-  &__footer{
-    max-width: 200px;
-    height: 88px;
-    .st0{
-      fill:#fff;
-    }    
   }
 }
 
@@ -46,12 +49,12 @@
 
 .sos-logo {
   enable-background:new 0 0 237 104.7;
-  .st0{  
-    fill: $nkh-lightgrey;
-  } 
   display: block;
   max-width: 200px;
   margin-top: 20px;
+  .st0{  
+    fill: $nkh-lightgrey;
+  } 
   @include breakpoint($min1024) {
     max-width: 170px;
     display: inline-block;
@@ -64,11 +67,4 @@
     margin-right: 23px;
     margin-top: -60px;
   }
-}
-.region-header{
-  float: right;
-  position: absolute;
-  top: 2rem;
-  right: 0;
-
 }

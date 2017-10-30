@@ -1,21 +1,23 @@
 .region-header {
-	height: 0; //set this all the time for mobile-first, then remove it for desktop
-	max-height: 0;
-	overflow: hidden;
-	transition: max-height .6s;
-	transition-timing-function: ease-out;
+  height: 0; //set this all the time for mobile-first, then remove it for desktop
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .6s;
+  transition-timing-function: ease-out;
   float: right;
   position: absolute;
   top: auto;
   right: 0;
   @include breakpoint($min1024) {
     width: calc(100% - 300px);
-    transition: none;
     height: auto;
     max-height: none;
+    transition: none;
+    top: 2rem;
     overflow: visible; // Needed for newsletter form dropdown - Casey
     nav{
-      display: inline-block
+      display: inline-block;
+      vertical-align: top;
     }
     .sub-nav-toggle,
     .sub-nav-toggle-back{
@@ -28,37 +30,37 @@
       display: none
     }
   }  
-	&.mobile {
+  &.mobile {
     float: none;
-		height: 0;
     top: auto;
     right: auto;
-		max-height: 0;
-		width: 100%;
-		text-align: center;
-		transition: max-height .6s;
-		transition-timing-function: ease-out;
-		//margin-top:331px;
-		.region-header {
-		    width: 100%;
-		}
-		&.open {
+    height: 0;
+    max-height: 0;
+    width: 100%;
+    text-align: center;
+    transition: max-height .6s;
+    transition-timing-function: ease-out;
+    //margin-top:331px;
+    .region-header {
+        width: 100%;
+    }
+    &.open {
       height: calc(100% - 140px);
-			max-height: 100rem;
-			transition: max-height .6s;
-			transition-timing-function: ease-out;
-	    width: 100vw;
-	    margin-left: -3rem;
-	    background: $white;
-	    z-index: 100;
-      overflow-y: scroll;
-	    padding-bottom: 5rem;
-	    margin-top:0;
+      max-height: 100rem;
+      width: 100vw;
+      margin-left: -3rem;
+      padding-bottom: 5rem;
+      margin-top:0;
       position: absolute;
       bottom: 140px;
-		}
+      background: $white;
+      z-index: 100;
+      overflow-y: scroll;
+      transition: max-height .6s;
+      transition-timing-function: ease-out;
+    }
 
-	}
+  }
   .menu--main{
     @include breakpoint($min1024) {
       li{
@@ -212,8 +214,6 @@
 
   }
 }
-
-
 .sub-nav-toggle,
 .sub-nav-toggle-back,
 .sub-nav-toggle-back.menu-link {
