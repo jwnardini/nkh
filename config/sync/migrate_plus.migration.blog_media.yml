@@ -1,4 +1,4 @@
-uuid: 69b3595c-0d08-4514-bcf1-b13cb0c94cf2
+uuid: 8b14f0c2-13af-4832-a778-76a963c4eba0
 langcode: en
 status: true
 dependencies:
@@ -6,11 +6,11 @@ dependencies:
     module:
       - nkh_blog_migrate
 _core:
-  default_config_hash: g71avNO-2d3paRwhyIYL3QLI9IU7ZpaorZMIv7VDKGY
+  default_config_hash: IDZkdayJwX9SCo8h-7p_xxWIyd7zp8TMC4yqd3ubEPw
 id: blog_media
 migration_tags: null
 migration_group: null
-label: 'Blog Body Inline Images'
+label: 'Blog Media'
 source:
   plugin: csv
   track_changes: true
@@ -29,14 +29,13 @@ process:
     -
       plugin: skip_on_empty
       method: row
-  thumbnail_alt:
-    plugin: default_value
-    default_value: Thumbnail
-  thumbnail_title: filename
   field_image:
     plugin: migration_lookup
     migration: blog_image
     source: legacy_node_id
 destination:
   plugin: 'entity:media'
-migration_dependencies: null
+migration_dependencies:
+  required:
+    - blog_image
+  optional: {  }

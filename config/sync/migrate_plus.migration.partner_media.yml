@@ -1,4 +1,4 @@
-uuid: 22f80733-3da0-44a6-9b93-d04efc4c5905
+uuid: b073d9f9-6a73-4951-90aa-fa412a7b4d35
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     module:
       - nkh_partner_migrate
 _core:
-  default_config_hash: sEV_9PhtRRei_rKseOx9ErvvrbKAWIEGheHizPpXO2g
+  default_config_hash: gwNGFJdbtZfSQYURf49nYB5kLQwn4B_gdwMleiaKkmA
 id: partner_media
 migration_tags: null
 migration_group: null
@@ -30,14 +30,13 @@ process:
       plugin: skip_on_empty
       method: row
       source: field_image_logo
-  thumbnail_alt:
-    plugin: default_value
-    default_value: Thumbnail
-  thumbnail_title: title
   field_image:
     plugin: migration_lookup
     migration: partner_image
     source: legacy_id
 destination:
   plugin: 'entity:media'
-migration_dependencies: null
+migration_dependencies:
+  required:
+    - partner_image
+  optional: {  }

@@ -1,4 +1,4 @@
-uuid: 4b8026cd-838d-4795-82da-682180fb380f
+uuid: 03bf8e0a-9b1a-4413-a8cc-32ba86c93733
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     module:
       - nkh_partner_migrate
 _core:
-  default_config_hash: t70g0PfQ0tTsHnoAk7iqijRnqIAypkhbu4BVUMTi2z0
+  default_config_hash: Ld729RV5E9etQUhOdTWUKSPjT3JZF-Fyhk1aMyKC5RE
 id: partner
 migration_tags: null
 migration_group: null
@@ -71,4 +71,8 @@ process:
       no_stub: true
 destination:
   plugin: 'entity:node'
-migration_dependencies: {  }
+migration_dependencies:
+  required:
+    - partner_image
+    - partner_media
+  optional: {  }

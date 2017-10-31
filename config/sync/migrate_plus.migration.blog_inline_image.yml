@@ -1,4 +1,4 @@
-uuid: 2015f57e-2cab-42c4-b733-45810ca52a9f
+uuid: 601cab5c-b8f2-48f9-ac0f-58965660c19c
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     module:
       - nkh_blog_migrate
 _core:
-  default_config_hash: 7UGezvrAdMOL4sYRBXjACHzs_cbrZ8yJWExTqlToQ4Q
+  default_config_hash: Zrr1fbqK5AWYTga6otTh02vkmwGaaVBTSONTj4Hgz2U
 id: blog_inline_image
 migration_tags: null
 migration_group: null
@@ -20,7 +20,7 @@ source:
     - unique_id
   constants:
     file_source_uri: 'public://temp_migrate/nkh-backup-files'
-    file_source_dest: 'public://'
+    file_source_dest: 'public:'
 process:
   file_source:
     -
@@ -38,7 +38,6 @@ process:
       source:
         - constants/file_source_dest
         - uri
-        - filename
     -
       plugin: urlencode
   filename:
