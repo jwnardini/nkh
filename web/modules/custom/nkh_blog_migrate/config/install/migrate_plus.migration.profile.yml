@@ -41,7 +41,7 @@ process: # Type is the specific type of node
     default_value: 1
   uid:
     plugin: default_value
-    default_value: 14
+    default_value: 1
   created: created
   changed: changed
   title:
