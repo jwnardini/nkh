@@ -29,3 +29,7 @@ process:
     plugin: migration_lookup
     migration: blog_image
     source: legacy_node_id
+migration_dependencies: 
+  required:
+    - blog_image
+  optional: {}

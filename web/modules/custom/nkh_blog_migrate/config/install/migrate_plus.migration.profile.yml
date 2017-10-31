@@ -18,11 +18,41 @@ source:
 destination:
   plugin: entity:node
 process: # Type is the specific type of node
+  type:
+    plugin: default_value
+    default_value: profile
+  langcode:
+    plugin: default_value
+    default_value: en
+  status:
+    plugin: default_value
+    default_value: 1
+  promote:
+    plugin: default_value
+    default_value: 0
+  sticky:
+    plugin: default_value
+    default_value: 0
+  revision_translation_affected:
+    plugin: default_value
+    default_value: 1
+  default_langcode:
+    plugin: default_value
+    default_value: 1
+  uid:
+    plugin: default_value
+    default_value: 14
+  created: created
+  changed: changed
   title:
-    source: 'Full Author Name'
-    plugin: entity_exists
-    entity_type: node
-    bundle: profile
+    -
+      plugin: get
+      source: 'Full Author Name'
+    -
+      plugin: make_unique_entity_field
+      entity_type: node
+      field: title
+      postfix: _
   field_first_name: 'Author First name'
   field_last_name: 'Authorn last name'
 migration_dependencies: {}

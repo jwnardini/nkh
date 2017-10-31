@@ -30,3 +30,8 @@ process:
     plugin: migration_lookup
     migration: partner_image
     source: legacy_id
+
+migration_dependencies: 
+  required:
+    - partner_image
+  optional: {}

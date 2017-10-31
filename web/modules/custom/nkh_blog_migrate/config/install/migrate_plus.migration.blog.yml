@@ -77,11 +77,6 @@ process:   # Type is the specific type of node
   'body/format':
     plugin: default_value
     default_value: full_html
-# in case we migrate field intro content:
-#  'field_intro/format':
-#    plugin: default_value
-#    default_value: full_html
-#  'field_intro/value': field_intro
   field_teaser: field_excerpt_value
   field_image_featured:
     -
@@ -94,7 +89,20 @@ process:   # Type is the specific type of node
       source: legacy_node_id
       no_stub: true
   field_entity_profile:
-    plugin: entity_generate
-    source: 'Full Author Name'
+    -
+      plugin: skip_on_empty
+      method: process
+      source: 'Full Author Name'
+    -
+      plugin: entity_lookup
+      source: 'Full Author Name'
+      value_key: title
+      bundle: profile
+      entity_type: node
 
-migration_dependencies: {}
+migration_dependencies: 
+  required:
+    - blog_image
+    - blog_media
+    - profile
+  optional: {}

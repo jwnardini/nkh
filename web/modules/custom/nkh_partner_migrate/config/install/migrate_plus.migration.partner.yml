@@ -71,4 +71,9 @@ process: # Type is the specific type of node
       migration: partner_media
       source: legacy_id
       no_stub: true
-migration_dependencies: {}
+
+migration_dependencies: 
+  required:
+    - partner_image
+    - partner_media
+  optional: {}
