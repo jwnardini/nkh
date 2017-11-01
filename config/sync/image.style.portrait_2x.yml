@@ -1,0 +1,17 @@
+uuid: d91f7edd-3d9e-448a-bcc8-5fcbb49bd97b
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: portrait_2x
+label: 'Portrait 2x'
+effects:
+  59888fa1-ba21-4adc-b832-5f63c2384bc1:
+    uuid: 59888fa1-ba21-4adc-b832-5f63c2384bc1
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1470
+      height: 2000
+      crop_type: focal_point

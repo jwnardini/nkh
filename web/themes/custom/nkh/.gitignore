@@ -8,6 +8,7 @@
 !nkh.theme
 !nkh.info.yml
 !nkh.libraries.yml
+!nkh.breakpoints.yml
 !package.json
 !README.md
 !webpack.config.js

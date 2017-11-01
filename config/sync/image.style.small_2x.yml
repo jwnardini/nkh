@@ -1,0 +1,17 @@
+uuid: 14df4c71-09b7-4f56-9bc9-caafb5a80383
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: small_2x
+label: 'Small 2x'
+effects:
+  2c1e8763-d671-41ba-b36d-7740b598e73f:
+    uuid: 2c1e8763-d671-41ba-b36d-7740b598e73f
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1740
+      height: 920
+      crop_type: focal_point

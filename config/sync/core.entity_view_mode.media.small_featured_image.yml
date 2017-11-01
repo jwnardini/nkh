@@ -1,0 +1,10 @@
+uuid: dc91edae-0611-486e-9fa4-42fb7d140b61
+langcode: en
+status: true
+dependencies:
+  module:
+    - media_entity
+id: media.small_featured_image
+label: 'Small Featured Image'
+targetEntityType: media
+cache: true
