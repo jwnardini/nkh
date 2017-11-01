@@ -1,24 +1,46 @@
-uuid: a8fa633b-2513-4bd0-a40d-5324a5c46499
+uuid: 76af89fc-10e1-4f57-a4ba-1badc8e86359
 langcode: en
 status: true
 dependencies:
   config:
-    - image.style.max_1300x1300
-    - image.style.max_325x325
-    - image.style.max_650x650
-    - image.style.medium
+    - image.style.small_1x
+    - image.style.small_2x
+    - image.style.square_1x
+    - image.style.square_2x
+  theme:
+    - nkh
 id: square
 label: Square
 image_style_mappings:
   -
-    breakpoint_id: responsive_image.viewport_sizing
+    breakpoint_id: nkh.desktop
     multiplier: 1x
-    image_mapping_type: sizes
-    image_mapping:
-      sizes: '(min-width: 1290px) 325px, (min-width: 851px) 25vw, (min-width: 560px) 50vw, 100vw'
-      sizes_image_styles:
-        - max_1300x1300
-        - max_325x325
-        - max_650x650
-breakpoint_group: responsive_image
-fallback_image_style: medium
+    image_mapping_type: image_style
+    image_mapping: square_1x
+  -
+    breakpoint_id: nkh.desktop
+    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: square_2x
+  -
+    breakpoint_id: nkh.tablet
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: small_1x
+  -
+    breakpoint_id: nkh.tablet
+    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: small_2x
+  -
+    breakpoint_id: nkh.mobile
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: small_1x
+  -
+    breakpoint_id: nkh.mobile
+    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: small_2x
+breakpoint_group: nkh
+fallback_image_style: square_1x

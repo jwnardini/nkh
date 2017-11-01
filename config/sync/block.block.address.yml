@@ -11,7 +11,7 @@ dependencies:
 id: address
 theme: nkh
 region: footer
-weight: -7
+weight: -6
 provider: null
 plugin: 'block_content:096b1eed-727a-4897-8b9d-1dca16a30e64'
 settings:

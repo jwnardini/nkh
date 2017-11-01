@@ -1,0 +1,46 @@
+uuid: a223cd56-c94d-4567-b7ad-ffff6ddad679
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.medium_1x
+    - image.style.medium_2x
+    - image.style.small_1x
+    - image.style.small_2x
+  theme:
+    - nkh
+id: landscape_medium
+label: 'Landscape Medium'
+image_style_mappings:
+  -
+    breakpoint_id: nkh.desktop
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: medium_1x
+  -
+    breakpoint_id: nkh.desktop
+    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: medium_2x
+  -
+    breakpoint_id: nkh.tablet
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: small_1x
+  -
+    breakpoint_id: nkh.tablet
+    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: small_2x
+  -
+    breakpoint_id: nkh.mobile
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: small_1x
+  -
+    breakpoint_id: nkh.mobile
+    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: small_2x
+breakpoint_group: nkh
+fallback_image_style: medium_1x
