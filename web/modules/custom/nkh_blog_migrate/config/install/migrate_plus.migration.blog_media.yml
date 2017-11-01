@@ -1,0 +1,35 @@
+id: blog_media
+status: true
+label: Blog Media 
+dependencies:
+  enforced:
+    module:
+      - nkh_blog_migrate
+source:
+  plugin: csv
+  track_changes: true
+  path: /config/install/migration-NKH-Blog-content-pull.csv
+  header_row_count: 1
+  keys:
+    - legacy_node_id
+destination: 
+  plugin: entity:media
+process:
+  bundle:
+    plugin: default_value
+    default_value: image
+  name:
+    -
+      plugin: get
+      source: filename
+    - 
+      plugin: skip_on_empty
+      method: row
+  field_image:
+    plugin: migration_lookup
+    migration: blog_image
+    source: legacy_node_id
+migration_dependencies: 
+  required:
+    - blog_image
+  optional: {}

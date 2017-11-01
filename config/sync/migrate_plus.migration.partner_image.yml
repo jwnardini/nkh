@@ -1,23 +1,23 @@
-uuid: 329cbf87-7ef0-4ca4-8d28-e0e783095992
+uuid: 96091530-17b5-402e-8ee0-e7e521d202a6
 langcode: en
 status: true
 dependencies:
   enforced:
     module:
-      - nkh_blog_migrate
+      - nkh_partner_migrate
 _core:
-  default_config_hash: XSpH7poKIaYedenf6al4_pyF15ddEHrlNCj76wSGXtM
-id: blog_image
+  default_config_hash: 1e6hBbnyp0vrvvu825RMtVxKHIis9LvA-irmETMhBeQ
+id: partner_image
 migration_tags: null
 migration_group: null
-label: 'Blog Image Migration'
+label: 'Partner Image Migration'
 source:
   plugin: csv
   track_changes: true
-  path: /config/install/migration-NKH-Blog-content-pull.csv
+  path: /config/install/Partners-All-Migrate-dbor.csv
   header_row_count: 1
   keys:
-    - legacy_node_id
+    - legacy_id
   constants:
     file_source_uri: 'public://temp_migrate/nkh-backup-files'
     file_source_dest: 'public://2017-10'
@@ -28,7 +28,7 @@ process:
       delimiter: /
       source:
         - constants/file_source_uri
-        - filename
+        - field_image_logo
     -
       plugin: urlencode
   file_dest:
@@ -37,13 +37,13 @@ process:
       delimiter: /
       source:
         - constants/file_source_dest
-        - filename
+        - field_image_logo
     -
       plugin: urlencode
   filename:
     -
       plugin: get
-      source: filename
+      source: field_image_logo
     -
       plugin: skip_on_empty
       method: row

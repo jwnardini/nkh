@@ -111,6 +111,11 @@
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
             "drush/contrib/{$name}": ["type:drupal-drush"]
+        },
+        "patches": {
+            "drupal/core": {
+                "Drupal Core fix symlink in files directory": "https://www.drupal.org/files/issues/stream_wrappers-allow_symlinks-1008402-115.patch"
+            }
         }
     }
 }

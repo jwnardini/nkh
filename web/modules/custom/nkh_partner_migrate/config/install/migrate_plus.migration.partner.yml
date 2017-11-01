@@ -1,34 +1,26 @@
-# missing fields:
-  # featured image
-  # excerpt
-  # tags
-
-id: blog
+id: partner
 status: true
-label: Blog Node Migration
-# remove below when all migrations are complete
+label: Partner Node Migration
 dependencies:
   enforced:
     module:
-      - nkh_blog_migrate
+      - nkh_partner_migrate
 source:
   plugin: csv
   track_changes: true
-  path: /config/install/migration-NKH-Blog-content-pull.csv
+  path: /config/install/Partners-All-Migrate-dbor.csv
   header_row_count: 1
   keys:
-    - legacy_node_id
+    - legacy_id
   #constants is only necessary for urls without 'slash'
   constants:
     slash: '/'
-    openextended: ' <div class="extended">'
-    closedextended: '</div>'
 destination:
   plugin: entity:node
-process:   # Type is the specific type of node
+process: # Type is the specific type of node
   type:
     plugin: default_value
-    default_value: blog
+    default_value: partner
   # Most processes will look like the following three. When no
   # plugin like default_value above is specified, the "get" plugin
   # is used by default. This is used for a 1 to 1 migration of source
@@ -56,53 +48,32 @@ process:   # Type is the specific type of node
     source:
       - constants/slash
       - alias
+
   created: created
-  changed: changed
-  field_date_simple:
-    plugin: format_date
-    from_format: 'U'
-    to_format: 'Y-m-d'
-    source: date
+  changed: created
   title: title
   uid:
     plugin: default_value
     default_value: 1
-  'body/value':
-    plugin: concat
-    source:
-      - body_value
-      - openextended
-      - field_extended_value
-      - closedextended
+  'body/value': body
   'body/format':
     plugin: default_value
     default_value: full_html
-  field_teaser: field_excerpt_value
-  field_image_featured:
+  field_teaser: field_teaser
+  field_url: field_url
+  field_image_logo:
     -
       plugin: skip_on_empty
       method: process
-      source: filename
+      source: field_image_logo
     -
       plugin: migration_lookup
-      migration: blog_media
-      source: legacy_node_id
+      migration: partner_media
+      source: legacy_id
       no_stub: true
-  field_entity_profile:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: 'Full Author Name'
-    -
-      plugin: entity_lookup
-      source: 'Full Author Name'
-      value_key: title
-      bundle: profile
-      entity_type: node
 
 migration_dependencies: 
   required:
-    - blog_image
-    - blog_media
-    - profile
+    - partner_image
+    - partner_media
   optional: {}
