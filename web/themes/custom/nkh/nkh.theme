@@ -27,3 +27,7 @@ function nkh_theme_suggestions_page_alter(array &$suggestions, array $variables)
     array_splice($suggestions, 1, 0, 'page__node__' . $node->getType());
   }
 }
+function nkh_preprocess_block(&$variables) {
+  $element = $variables['content'];
+  $variables['url'] = substr($_SERVER['REQUEST_URI'], 1);
+}
