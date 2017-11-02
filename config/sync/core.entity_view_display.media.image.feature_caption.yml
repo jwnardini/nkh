@@ -8,7 +8,7 @@ dependencies:
     - field.field.media.image.field_image
     - field.field.media.image.field_source
     - media_entity.bundle.image
-    - responsive_image.styles.small
+    - responsive_image.styles.landscape_medium
   module:
     - responsive_image
     - text
@@ -30,7 +30,7 @@ content:
     region: content
     label: hidden
     settings:
-      responsive_image_style: small
+      responsive_image_style: landscape_medium
       image_link: ''
     third_party_settings: {  }
 hidden:

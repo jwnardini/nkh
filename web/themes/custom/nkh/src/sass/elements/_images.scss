@@ -1,0 +1,99 @@
+
+//Image view mode for WYSIWYG
+.embedded-entity{
+  .view-mode-large,
+  .view-mode-small{
+      margin-bottom: 2%;
+  }
+  .view-mode-small{
+    display: block;
+    @include breakpoint($min768) {
+      float: left;
+      width: 49%;
+      margin-right: 2%;
+    }
+  }
+  + .embedded-entity .view-mode-small{
+    @include breakpoint($min768) {
+      margin-right:0;
+    }   
+  }
+}
+//this is for WYSIWYG to have the same margin for the embedded-entity view-mode-small block  
+.cke_widget_wrapper{
+  + .cke_widget_wrapper .embedded-entity .view-mode-small{
+    @include breakpoint($min768) {
+      margin-right:0;
+    }   
+  }
+}
+
+.view-mode-large,
+.view-mode-small{
+  .field{
+    margin: 0
+  }
+  .text-formatted{
+    position: absolute;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    bottom: 0;
+    p{
+      background: rgba($black, .75);
+      color: $white;
+      font-size: 14px;
+      line-height: 1.4;
+      padding: 0.7rem 1rem;
+      margin: 0;
+      width: auto;
+      display: inline-block;
+    }
+  }
+}
+.view-mode-feature-caption{
+  width: 100%;
+  @include breakpoint($min1024) {
+    display: flex;
+    align-items: center;
+  }
+  .field--type-image{
+    @include breakpoint($min1024) {
+      order: 2;
+      max-width: 49%;
+    }  
+  }
+  .field--type-image,
+  .text-formatted{
+    margin: 0 0 2% 0;
+  }
+  .text-formatted{
+    color: $nkh-darkergrey;
+    position: relative;
+    text-decoration: none;
+    letter-spacing: -0.04em;
+    @include breakpoint($min1024) {
+      order: 1;
+      max-width: 36%;
+      margin-right: 15%;
+    }  
+    *{
+      line-height: 1.29;
+      font-weight: 700;  
+    } 
+    p {
+      margin: 0.5em 0;
+    }
+
+    strong{
+      margin-left: 1.1rem;
+      margin-right: .5rem;
+      @include large-text-highlight;
+    }
+    font-size: 3rem;
+
+    @include breakpoint($min1024) {
+      font-size: 4rem;
+    }
+  }
+}

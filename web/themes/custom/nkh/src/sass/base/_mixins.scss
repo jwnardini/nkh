@@ -166,14 +166,22 @@
 @mixin texture-grit-text {
   &:not(*:root) {
   background: url("/themes/custom/nkh/dist/images/nkh_texture_144dpi.jpg") center top;
-    background-position: random(100) + rem;
-    background-size: 10%;
-    color:transparent;
-    -webkit-font-smoothing:antialiased;
-    -webkit-background-clip:text;
-    -moz-background-clip:text;
-    background-clip:text;
-    //-webkit-text-fill-color:transparent;
-    //margin:0;
+  background-position: random(100) + rem;
+  background-size: 10%;
+  color:transparent;
+  -webkit-font-smoothing:antialiased;
+  -webkit-background-clip:text;
+  -moz-background-clip:text;
+  background-clip:text;
+  //-webkit-text-fill-color:transparent;
+  //margin:0;
   }
+}
+
+@mixin large-text-highlight{
+  background: linear-gradient($white 60%, $nkh-orange 40%);
+  background: -o-linear-gradient($white 60%, $nkh-orange 40%);
+  background: -moz-linear-gradient($white 60%, $nkh-orange 40%);
+  background: -webkit-linear-gradient($white 60%, $nkh-orange 40%);
+  background: -ms-linear-gradient($white 60%, $nkh-orange 40%);  
 }
