@@ -1,4 +1,4 @@
-uuid: 329cbf87-7ef0-4ca4-8d28-e0e783095992
+uuid: 601cab5c-b8f2-48f9-ac0f-58965660c19c
 langcode: en
 status: true
 dependencies:
@@ -6,21 +6,21 @@ dependencies:
     module:
       - nkh_blog_migrate
 _core:
-  default_config_hash: XSpH7poKIaYedenf6al4_pyF15ddEHrlNCj76wSGXtM
-id: blog_image
+  default_config_hash: Zrr1fbqK5AWYTga6otTh02vkmwGaaVBTSONTj4Hgz2U
+id: blog_inline_image
 migration_tags: null
 migration_group: null
-label: 'Blog Image Migration'
+label: 'Blog Inline Image Migration'
 source:
   plugin: csv
   track_changes: true
-  path: /config/install/migration-NKH-Blog-content-pull.csv
+  path: /config/install/inline_images.csv
   header_row_count: 1
   keys:
-    - legacy_node_id
+    - unique_id
   constants:
     file_source_uri: 'public://temp_migrate/nkh-backup-files'
-    file_source_dest: 'public://2017-10'
+    file_source_dest: 'public:'
 process:
   file_source:
     -
@@ -37,7 +37,7 @@ process:
       delimiter: /
       source:
         - constants/file_source_dest
-        - filename
+        - uri
     -
       plugin: urlencode
   filename:
@@ -55,8 +55,6 @@ process:
   status:
     plugin: default_value
     default_value: 1
-  created: created
-  changed: changed
   uid:
     plugin: default_value
     default_value: 1

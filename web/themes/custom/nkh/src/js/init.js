@@ -9,6 +9,7 @@ require('./includes/throttle');
 require('./includes/cookies');
 require('./includes/viewport');
 require('./includes/menu');
+require('./includes/mobile-menu');
 require('./includes/shorten');
 require('./includes/skip-links');
 require('./includes/form');

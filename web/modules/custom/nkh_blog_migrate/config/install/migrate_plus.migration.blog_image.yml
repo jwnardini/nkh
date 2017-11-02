@@ -12,15 +12,42 @@ source:
   header_row_count: 1
   keys:
     - legacy_node_id
+  constants: 
+    file_source_uri: 'public://temp_migrate/nkh-backup-files'
+    file_source_dest: 'public://2017-10'
 destination:
   plugin: entity:file
-  urlencode: true
 process:
-  filename: filename
-  uri: uri
-#  filemime:
-#    plugin: default_value
-#    default_value: 'image/jpeg'
+  file_source:
+    - 
+      plugin: concat
+      delimiter: /
+      source:
+       - constants/file_source_uri
+       - filename
+    - 
+      plugin: urlencode
+  file_dest:
+    - 
+      plugin: concat
+      delimiter: /
+      source: 
+        - constants/file_source_dest
+        - filename
+    -
+      plugin: urlencode
+  filename: 
+    - 
+      plugin: get
+      source: filename
+    -
+      plugin: skip_on_empty
+      method: row
+  uri:
+    plugin: file_copy
+    source:
+      - '@file_source'
+      - '@file_dest'
   status:
     plugin: default_value
     default_value: 1
