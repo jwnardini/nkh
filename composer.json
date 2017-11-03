@@ -26,6 +26,7 @@
         "drupal/console": "~1.0",
         "drupal/core": "~8.0",
         "drupal/devel": "^1.2",
+        "drupal/easy_breadcrumb": "^1.6",
         "drupal/eck": "^1.0@alpha",
         "drupal/embed": "^1.0",
         "drupal/entity": "^1.0",
