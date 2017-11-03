@@ -1,0 +1,30 @@
+uuid: 4150783d-432e-4cbf-9fe3-2ad2dff6c444
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.cta.image
+    - field.storage.cta.field_text
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    plain_text: plain_text
+    basic_html: '0'
+    simple_html: '0'
+    full_html: '0'
+    restricted_html: '0'
+    code: '0'
+id: cta.image.field_text
+field_name: field_text
+entity_type: cta
+bundle: image
+label: Text
+description: 'Enter the short description about your CTA.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

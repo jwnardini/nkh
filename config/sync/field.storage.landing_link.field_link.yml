@@ -1,0 +1,19 @@
+uuid: bc36e275-78d7-4375-8b80-067dd1f74981
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - link
+id: landing_link.field_link
+field_name: field_link
+entity_type: landing_link
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

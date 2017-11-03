@@ -4,28 +4,61 @@ status: true
 dependencies:
   config:
     - eck.eck_type.landing_link.manual
+    - field.field.landing_link.manual.field_additional_link_text
+    - field.field.landing_link.manual.field_image
+    - field.field.landing_link.manual.field_link
+    - field.field.landing_link.manual.field_teaser_text
+  module:
+    - link
 id: landing_link.manual.default
 targetEntityType: landing_link
 bundle: manual
 mode: default
 content:
-  created:
+  field_additional_link_text:
+    weight: 4
     label: hidden
-    type: timestamp
-    weight: 0
-    region: content
     settings:
-      date_format: medium
-      custom_date_format: ''
-      timezone: ''
+      link_to_entity: false
     third_party_settings: {  }
+    type: string
+    region: content
+  field_image:
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: square
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_link:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_teaser_text:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
   title:
     label: hidden
     type: string
-    weight: -5
+    weight: 0
     region: content
     settings:
       link_to_entity: false
     third_party_settings: {  }
 hidden:
   changed: true
+  created: true

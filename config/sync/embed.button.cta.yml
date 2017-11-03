@@ -6,7 +6,7 @@ dependencies:
     - eck.eck_type.cta.image
     - eck.eck_type.cta.text
   content:
-    - 'file:file:e391ab4f-e01e-48d3-9b61-83c0b7428085'
+    - 'file:file:d4f8101f-bb92-4d4c-9b3f-1061fbcb9e7e'
   module:
     - eck
     - entity_embed
@@ -23,4 +23,4 @@ type_settings:
   entity_browser: cta_add_find
   entity_browser_settings:
     display_review: true
-icon_uuid: e391ab4f-e01e-48d3-9b61-83c0b7428085
+icon_uuid: d4f8101f-bb92-4d4c-9b3f-1061fbcb9e7e

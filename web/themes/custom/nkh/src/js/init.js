@@ -16,12 +16,24 @@ require('./includes/form');
 require('./includes/tabs');
 require('./includes/sticky');
 require('./includes/konami');
+require('./includes/carousel');
 
 (function ($) {
   // DOC READY
   $(function () {
     // Place code here or place in a toolkit script file and require above
+    $('.view-core-partners .view-content').addClass('owl-carousel');
+    
+    $(".owl-carousel").owlCarousel({
+      items:3, 
+      dots: false,
+      nav: true,
+      smartSpeed: 900,
+      navText: ["<i class='icon icon-prev'></i>","<i class='icon icon-next'></i>"],
+      lazyLoad: true
+    });
 
+//    $('.owl-carousel').owlCarousel();
     // Example of using throttle
     // $(window).on('resize', throttle(function () {
     //   console.log('resize');

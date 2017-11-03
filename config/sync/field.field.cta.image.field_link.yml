@@ -1,0 +1,23 @@
+uuid: 8c3b9ff5-9601-4675-a344-9ed580f39c7e
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.cta.image
+    - field.storage.cta.field_link
+  module:
+    - link
+id: cta.image.field_link
+field_name: field_link
+entity_type: cta
+bundle: image
+label: Link
+description: 'Enter the location (path) of the page you would like this CTA to link to.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

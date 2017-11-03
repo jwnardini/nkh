@@ -1,0 +1,30 @@
+uuid: f047ffa4-3738-4a3d-a628-f5cafa8a9659
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.cta.alert
+    - field.storage.cta.field_text
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    basic_html: basic_html
+    plain_text: plain_text
+    code: code
+    simple_html: '0'
+    full_html: '0'
+    restricted_html: '0'
+id: cta.alert.field_text
+field_name: field_text
+entity_type: cta
+bundle: alert
+label: Text
+description: 'Enter the text for your alert and link to the page it should go to.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
