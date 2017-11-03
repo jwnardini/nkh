@@ -1,4 +1,19 @@
 <?php
-/**
- * THEME SPECIFIC PREPROCESS FUNCTIONS
- */
+//* @file
+//* This file has all the theme hook function that requires to
+//* preprocess before it prints in html. For functions such as
+//* bma_preprocess_bma_landing_page or bma_preprocess_bma_subpage
+//* make sure to go to comment section bma-subpage.html.twig or bma-landing-page.html.twig
+//* to see available variables.
+//* Make sure variables are placed in both in the function below and necessary twig file
+//*
+//*
+//*
+//*
+//*
+
+function nkh_preprocess_entity_embed_container(&$variables) {
+  $entityTypeID = $variables['element']['#entity']->getEntityType()->id();
+  $bundle = $variables['element']['#entity']->bundle();
+  $variables['attributes']['class'][] = 'entity-' . $entityTypeID . '-' . $bundle;
+}
