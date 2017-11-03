@@ -1,0 +1,31 @@
+uuid: 5095f55a-2d23-4520-9658-7e7713ef2888
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.entity_browser_cta
+  module:
+    - views
+name: cta_text_find
+label: 'CTA Text Find'
+display: modal
+display_configuration:
+  width: '650'
+  height: '500'
+  link_text: 'Select entities'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: single
+widget_selector_configuration: {  }
+widgets:
+  4a7b8f8a-d0ee-41a7-aa37-eddae79e05ab:
+    settings:
+      view: entity_browser_cta
+      view_display: entity_browser_5
+      submit_text: 'Select this CTA'
+      auto_select: false
+    uuid: 4a7b8f8a-d0ee-41a7-aa37-eddae79e05ab
+    weight: 1
+    label: 'Find a CTA'
+    id: view
