@@ -37,6 +37,7 @@ module:
   file: 0
   filter: 0
   focal_point: 0
+  ga_login: 0
   help: 0
   history: 0
   image: 0
@@ -63,12 +64,18 @@ module:
   nkh_news_conditional: 0
   nkh_reference_conditional: 0
   node: 0
+  one_time_password: 0
   options: 0
   page_cache: 0
   password_policy: 0
+  password_policy_history: 0
+  password_policy_length: 0
+  password_policy_username: 0
+  password_strength: 0
   path: 0
   quickedit: 0
   rdf: 0
+  real_aes: 0
   redirect: 0
   responsive_image: 0
   search: 0
