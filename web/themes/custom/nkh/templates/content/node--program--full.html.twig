@@ -73,26 +73,16 @@
 
   <div class="header-section">
     <div>{{ content.field_image_banner }}</div>
-
     <h1>{{ drupal_title() }}</h1>
   </div>
   <div class="share-section">
     {{ drupal_block('nkh_breadcrumbs') }}
+    {% include directory ~ '/templates/share-links.html.twig' %}
   </div>
 
-  {% if display_submitted %}
-    <footer class="node__meta">
-      {{ author_picture }}
-      <div{{ author_attributes.addClass('node__submitted') }}>
-        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-        {{ metadata }}
-      </div>
-    </footer>
-  {% endif %}
-
   <div{{ content_attributes.addClass('node__content') }}>
-   
-    {{ content|without('field_image_banner', 'field_taxonomy_series') }}
+     
+    {{ content|without('field_image_banner','field_image_featured', 'field_teaser') }}
   </div>
 
 </article>
