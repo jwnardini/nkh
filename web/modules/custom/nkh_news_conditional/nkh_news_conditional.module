@@ -14,26 +14,26 @@
  //   dpm($form);
  // }
 
-function nkh_news_conditional_form_node_news_form_alter(&$form, FormStateInterface &$form_state, $form_id) {
-  $form['field_boilerplate']['#states'] = [
-    'invisible' => [
-      'select[name="field_taxonomy_news"]' => ['value' => '24'],
-      'select[name="field_taxonomy_news"]' => ['value' => '_none']
-    ],
-    'visible' => [
-      'select[name="field_taxonomy_news"]' => ['value' => '25']
-    ],
-  ];
-}
-
-function nkh_news_conditional_form_node_news_edit_form_alter(&$form, FormStateInterface &$form_state, $form_id) {
-  $form['field_boilerplate']['#states'] = [
-    'invisible' => [
-      'select[name="field_taxonomy_news"]' => ['value' => '24'],
-      'select[name="field_taxonomy_news"]' => ['value' => '_none']
-    ],
-    'visible' => [
-      'select[name="field_taxonomy_news"]' => ['value' => '25']
-    ],
-  ];
-}
+// function nkh_news_conditional_form_node_news_form_alter(&$form, FormStateInterface &$form_state, $form_id) {
+//   $form['field_boilerplate']['#states'] = [
+//     'invisible' => [
+//       'select[name="field_taxonomy_news"]' => ['value' => '24'],
+//       'select[name="field_taxonomy_news"]' => ['value' => '_none']
+//     ],
+//     'visible' => [
+//       'select[name="field_taxonomy_news"]' => ['value' => '25']
+//     ],
+//   ];
+// }
+//
+// function nkh_news_conditional_form_node_news_edit_form_alter(&$form, FormStateInterface &$form_state, $form_id) {
+//   $form['field_boilerplate']['#states'] = [
+//     'invisible' => [
+//       'select[name="field_taxonomy_news"]' => ['value' => '24'],
+//       'select[name="field_taxonomy_news"]' => ['value' => '_none']
+//     ],
+//     'visible' => [
+//       'select[name="field_taxonomy_news"]' => ['value' => '25']
+//     ],
+//   ];
+// }
