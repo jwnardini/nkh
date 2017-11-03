@@ -4,11 +4,16 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_cta_ref
+    - field.field.node.page.field_landing_link_ref
     - field.field.node.page.field_metatags
     - field.field.node.page.field_teaser
     - node.type.page
   module:
     - allowed_formats
+    - content_moderation
+    - entity_browser_entity_form
+    - inline_entity_form
     - maxlength
     - metatag
     - path
@@ -39,6 +44,36 @@ content:
       allowed_formats:
         hide_help: '0'
         hide_guidelines: '0'
+  field_cta_ref:
+    weight: 121
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: cta_find
+    type: inline_entity_form_complex
+    region: content
+  field_landing_link_ref:
+    weight: 122
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: landing_link_find
+    type: inline_entity_form_complex
+    region: content
   field_metatags:
     weight: 4
     settings: {  }

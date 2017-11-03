@@ -1,0 +1,21 @@
+uuid: 6d0fd519-76a4-4713-be87-ef4e75cd42b5
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+id: landing_link.field_additional_link_text
+field_name: field_additional_link_text
+entity_type: landing_link
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

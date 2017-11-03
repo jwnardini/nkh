@@ -1,0 +1,58 @@
+id: profile
+status: true
+label: Profile Node Migration
+dependencies:
+  enforced:
+    module:
+      - nkh_blog_migrate
+source:
+  plugin: csv
+  track_changes: true
+  path: /config/install/migration-NKH-Blog-content-pull.csv
+  header_row_count: 1
+  keys:
+    - legacy_node_id
+  #constants is only necessary for urls without 'slash'
+  constants:
+    slash: '/'
+destination:
+  plugin: entity:node
+process: # Type is the specific type of node
+  type:
+    plugin: default_value
+    default_value: profile
+  langcode:
+    plugin: default_value
+    default_value: en
+  status:
+    plugin: default_value
+    default_value: 1
+  promote:
+    plugin: default_value
+    default_value: 0
+  sticky:
+    plugin: default_value
+    default_value: 0
+  revision_translation_affected:
+    plugin: default_value
+    default_value: 1
+  default_langcode:
+    plugin: default_value
+    default_value: 1
+  uid:
+    plugin: default_value
+    default_value: 1
+  created: created
+  changed: changed
+  title:
+    -
+      plugin: get
+      source: 'Full Author Name'
+    -
+      plugin: make_unique_entity_field
+      entity_type: node
+      field: title
+      postfix: _
+  field_first_name: 'Author First name'
+  field_last_name: 'Authorn last name'
+migration_dependencies: {}

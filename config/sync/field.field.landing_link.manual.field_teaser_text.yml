@@ -1,0 +1,19 @@
+uuid: 78e941fc-a4ae-47e6-8b70-8bc488e47210
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.landing_link.manual
+    - field.storage.landing_link.field_teaser_text
+id: landing_link.manual.field_teaser_text
+field_name: field_teaser_text
+entity_type: landing_link
+bundle: manual
+label: 'Teaser Text'
+description: 'Enter descriptive information about where this content will take the user.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

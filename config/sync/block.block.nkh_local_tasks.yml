@@ -9,7 +9,7 @@ _core:
 id: nkh_local_tasks
 theme: nkh
 region: content
-weight: -7
+weight: -11
 provider: null
 plugin: local_tasks_block
 settings:

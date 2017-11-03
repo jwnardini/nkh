@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   content:
-    - 'file:file:3a188400-4eac-4beb-83bb-ab74ed735a21'
+    - 'file:file:0b9b07b0-07ef-4169-b37f-9a29f16289d2'
   module:
     - entity_embed
     - node
@@ -19,4 +19,4 @@ type_settings:
   entity_browser: ''
   entity_browser_settings:
     display_review: false
-icon_uuid: 3a188400-4eac-4beb-83bb-ab74ed735a21
+icon_uuid: 0b9b07b0-07ef-4169-b37f-9a29f16289d2

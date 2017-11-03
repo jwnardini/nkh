@@ -35,6 +35,7 @@ permissions:
   - 'update media'
   - 'use editorial transition archive'
   - 'use editorial transition create_new_draft'
+  - 'use text format full_html'
   - 'use text format simple_html'
   - 'view all revisions'
   - 'view any unpublished content'

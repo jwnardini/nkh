@@ -1,0 +1,68 @@
+uuid: 1a4c9867-75d4-49d0-9413-c9f62d3b4523
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.landing_link.manual
+    - field.field.landing_link.manual.field_additional_link_text
+    - field.field.landing_link.manual.field_image
+    - field.field.landing_link.manual.field_link
+    - field.field.landing_link.manual.field_teaser_text
+  module:
+    - entity_browser_entity_form
+    - inline_entity_form
+    - link
+id: landing_link.manual.default
+targetEntityType: landing_link
+bundle: manual
+mode: default
+content:
+  field_additional_link_text:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_image:
+    weight: 1
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: images
+    type: inline_entity_form_complex
+    region: content
+  field_link:
+    weight: 4
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_teaser_text:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true

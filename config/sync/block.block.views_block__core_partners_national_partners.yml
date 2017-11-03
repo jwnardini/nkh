@@ -1,0 +1,24 @@
+uuid: ecc1f32f-16ff-499b-ac2f-e8a6020bd156
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.core_partners
+  module:
+    - views
+  theme:
+    - nkh
+id: views_block__core_partners_national_partners
+theme: nkh
+region: postscript
+weight: 0
+provider: null
+plugin: 'views_block:core_partners-national_partners'
+settings:
+  id: 'views_block:core_partners-national_partners'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility: {  }

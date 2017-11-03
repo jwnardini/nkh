@@ -1,0 +1,37 @@
+id: partner_media
+status: true
+label: Partner Media Migration
+dependencies:
+  enforced:
+    module:
+      - nkh_partner_migrate
+source:
+  plugin: csv
+  track_changes: true
+  path:  /config/install/Partners-All-Migrate-dbor.csv
+  header_row_count: 1
+  keys:
+    - legacy_id
+destination:
+  plugin: entity:media
+process:
+  bundle:
+    plugin: default_value
+    default_value: image
+  name:
+    -
+      plugin: get
+      source: title
+    -
+      plugin: skip_on_empty
+      method: row
+      source: field_image_logo
+  field_image:
+    plugin: migration_lookup
+    migration: partner_image
+    source: legacy_id
+
+migration_dependencies: 
+  required:
+    - partner_image
+  optional: {}

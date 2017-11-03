@@ -1,4 +1,4 @@
-uuid: 1f634dbd-3357-4b10-8812-03aabe6402a2
+uuid: 329cbf87-7ef0-4ca4-8d28-e0e783095992
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     module:
       - nkh_blog_migrate
 _core:
-  default_config_hash: _Nv-cj_t9VjZj-y5VvtqEPOaKsyJnAtNsqv3F6xd4UE
+  default_config_hash: XSpH7poKIaYedenf6al4_pyF15ddEHrlNCj76wSGXtM
 id: blog_image
 migration_tags: null
 migration_group: null
@@ -18,9 +18,40 @@ source:
   header_row_count: 1
   keys:
     - legacy_node_id
+  constants:
+    file_source_uri: 'public://temp_migrate/nkh-backup-files'
+    file_source_dest: 'public://2017-10'
 process:
-  filename: filename
-  uri: uri
+  file_source:
+    -
+      plugin: concat
+      delimiter: /
+      source:
+        - constants/file_source_uri
+        - filename
+    -
+      plugin: urlencode
+  file_dest:
+    -
+      plugin: concat
+      delimiter: /
+      source:
+        - constants/file_source_dest
+        - filename
+    -
+      plugin: urlencode
+  filename:
+    -
+      plugin: get
+      source: filename
+    -
+      plugin: skip_on_empty
+      method: row
+  uri:
+    plugin: file_copy
+    source:
+      - '@file_source'
+      - '@file_dest'
   status:
     plugin: default_value
     default_value: 1
@@ -31,5 +62,4 @@ process:
     default_value: 1
 destination:
   plugin: 'entity:file'
-  urlencode: true
 migration_dependencies: {  }

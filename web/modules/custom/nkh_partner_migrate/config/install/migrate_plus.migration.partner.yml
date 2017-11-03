@@ -1,0 +1,79 @@
+id: partner
+status: true
+label: Partner Node Migration
+dependencies:
+  enforced:
+    module:
+      - nkh_partner_migrate
+source:
+  plugin: csv
+  track_changes: true
+  path: /config/install/Partners-All-Migrate-dbor.csv
+  header_row_count: 1
+  keys:
+    - legacy_id
+  #constants is only necessary for urls without 'slash'
+  constants:
+    slash: '/'
+destination:
+  plugin: entity:node
+process: # Type is the specific type of node
+  type:
+    plugin: default_value
+    default_value: partner
+  # Most processes will look like the following three. When no
+  # plugin like default_value above is specified, the "get" plugin
+  # is used by default. This is used for a 1 to 1 migration of source
+  # to desitination.
+  langcode:
+    plugin: default_value
+    default_value: en
+  status:
+    plugin: default_value
+    default_value: 1
+  promote:
+    plugin: default_value
+    default_value: 0
+  sticky:
+    plugin: default_value
+    default_value: 0
+  revision_translation_affected:
+    plugin: default_value
+    default_value: 1
+  default_langcode:
+    plugin: default_value
+    default_value: 1
+  path:
+    plugin: concat
+    source:
+      - constants/slash
+      - alias
+
+  created: created
+  changed: created
+  title: title
+  uid:
+    plugin: default_value
+    default_value: 1
+  'body/value': body
+  'body/format':
+    plugin: default_value
+    default_value: full_html
+  field_teaser: field_teaser
+  field_url: field_url
+  field_image_logo:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_image_logo
+    -
+      plugin: migration_lookup
+      migration: partner_media
+      source: legacy_id
+      no_stub: true
+
+migration_dependencies: 
+  required:
+    - partner_image
+    - partner_media
+  optional: {}

@@ -5,7 +5,7 @@ dependencies:
   config:
     - eck.eck_type.hunger_fact.default
   content:
-    - 'file:file:425eeb14-32f5-4fda-9188-07e3a2eaf69a'
+    - 'file:file:0921ca81-1ea5-4547-8acc-fb5d75380322'
   module:
     - eck
     - entity_embed
@@ -21,4 +21,4 @@ type_settings:
   entity_browser: hunger_fact_add_find
   entity_browser_settings:
     display_review: true
-icon_uuid: 425eeb14-32f5-4fda-9188-07e3a2eaf69a
+icon_uuid: 0921ca81-1ea5-4547-8acc-fb5d75380322

@@ -1,4 +1,4 @@
-uuid: 1befe39f-fca7-498a-bf88-f3dbe096cd8e
+uuid: 13c6b313-a254-44c6-9ae2-17e21ed5b4ff
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     module:
       - nkh_blog_migrate
 _core:
-  default_config_hash: igZrQ-FvIb0GESzbOtqsIDz68ZC1S5vYj9BpPbjGUXQ
+  default_config_hash: pR2w0tjwlo1nnmgjo4M_56NSLi_lJipxgQ5D57udgYQ
 id: blog
 migration_tags: null
 migration_group: null
@@ -78,9 +78,25 @@ process:
       source: filename
     -
       plugin: migration_lookup
-      migration: blog_image
+      migration: blog_media
       source: legacy_node_id
       no_stub: true
+  field_entity_profile:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: 'Full Author Name'
+    -
+      plugin: entity_lookup
+      source: 'Full Author Name'
+      value_key: title
+      bundle: profile
+      entity_type: node
 destination:
   plugin: 'entity:node'
-migration_dependencies: {  }
+migration_dependencies:
+  required:
+    - blog_image
+    - blog_media
+    - profile
+  optional: {  }
