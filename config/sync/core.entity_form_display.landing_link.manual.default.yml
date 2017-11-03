@@ -1,4 +1,4 @@
-uuid: 10b4f3fe-5c31-420e-97f5-12bae4cb294f
+uuid: 1a4c9867-75d4-49d0-9413-c9f62d3b4523
 langcode: en
 status: true
 dependencies:
@@ -9,6 +9,8 @@ dependencies:
     - field.field.landing_link.manual.field_link
     - field.field.landing_link.manual.field_teaser_text
   module:
+    - entity_browser_entity_form
+    - inline_entity_form
     - link
 id: landing_link.manual.default
 targetEntityType: landing_link
@@ -16,49 +18,51 @@ bundle: manual
 mode: default
 content:
   field_additional_link_text:
-    weight: 4
-    label: hidden
+    weight: 5
     settings:
-      link_to_entity: false
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: string
+    type: string_textfield
     region: content
   field_image:
     weight: 1
-    label: hidden
     settings:
-      view_mode: square
-      link: false
-    third_party_settings: {  }
-    type: entity_reference_entity_view
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: images
+    type: inline_entity_form_complex
     region: content
   field_link:
-    weight: 3
-    label: hidden
+    weight: 4
     settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
+      placeholder_url: ''
+      placeholder_title: ''
     third_party_settings: {  }
-    type: link
+    type: link_default
     region: content
   field_teaser_text:
-    weight: 2
-    label: hidden
-    settings: {  }
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
     third_party_settings: {  }
-    type: basic_string
+    type: string_textarea
     region: content
   title:
-    label: hidden
-    type: string
+    type: string_textfield
     weight: 0
     region: content
     settings:
-      link_to_entity: false
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
 hidden:
-  changed: true
   created: true

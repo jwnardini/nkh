@@ -1,25 +1,33 @@
-uuid: 57dca10d-9ff6-485d-8296-3fb8ef77be1d
+uuid: 7d5553aa-14da-444b-853e-6e9a9857acff
 langcode: en
 status: true
 dependencies:
   config:
     - eck.eck_type.landing_link.auto
     - field.field.landing_link.auto.field_content_ref
+  module:
+    - entityqueue
 id: landing_link.auto.default
 targetEntityType: landing_link
 bundle: auto
 mode: default
 content:
   field_content_ref:
-    weight: 0
-    label: hidden
+    weight: 1
     settings:
-      view_mode: teaser
-      link: false
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_entity_view
+    type: entityqueue_dragtable
     region: content
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
 hidden:
-  changed: true
   created: true
-  title: true
