@@ -1,0 +1,23 @@
+uuid: 03f432fc-6eea-40b9-b3a2-d5583c38d9d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.landing_link.manual
+    - field.storage.landing_link.field_link
+  module:
+    - link
+id: landing_link.manual.field_link
+field_name: field_link
+entity_type: landing_link
+bundle: manual
+label: Link
+description: 'Enter the location (path) this Landing Link should go to.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

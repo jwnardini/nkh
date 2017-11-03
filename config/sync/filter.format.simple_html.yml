@@ -8,7 +8,7 @@ dependencies:
     - video_embed_wysiwyg
 name: Simple
 format: simple_html
-weight: -9
+weight: -10
 filters:
   filter_html:
     id: filter_html

@@ -1,0 +1,28 @@
+uuid: 43409252-18c7-4c95-bf2e-1daba8174121
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.cta.text
+    - field.storage.node.field_cta_ref
+    - node.type.page
+id: node.page.field_cta_ref
+field_name: field_cta_ref
+entity_type: node
+bundle: page
+label: 'CTA Reference'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:cta'
+  handler_settings:
+    target_bundles:
+      text: text
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

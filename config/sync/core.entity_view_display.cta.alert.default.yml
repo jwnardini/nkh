@@ -4,28 +4,22 @@ status: true
 dependencies:
   config:
     - eck.eck_type.cta.alert
+    - field.field.cta.alert.field_text
+  module:
+    - text
 id: cta.alert.default
 targetEntityType: cta
 bundle: alert
 mode: default
 content:
-  created:
-    label: hidden
-    type: timestamp
+  field_text:
     weight: 0
-    region: content
-    settings:
-      date_format: medium
-      custom_date_format: ''
-      timezone: ''
-    third_party_settings: {  }
-  title:
     label: hidden
-    type: string
-    weight: -5
-    region: content
-    settings:
-      link_to_entity: false
+    settings: {  }
     third_party_settings: {  }
+    type: text_default
+    region: content
 hidden:
   changed: true
+  created: true
+  title: true

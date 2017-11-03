@@ -5,28 +5,22 @@ dependencies:
   config:
     - core.entity_view_mode.cta.full
     - eck.eck_type.cta.text
+    - field.field.cta.text.field_text
+  module:
+    - text
 id: cta.text.full
 targetEntityType: cta
 bundle: text
 mode: full
 content:
-  created:
-    label: hidden
-    type: timestamp
+  field_text:
+    type: text_default
     weight: 0
     region: content
-    settings:
-      date_format: medium
-      custom_date_format: ''
-      timezone: ''
-    third_party_settings: {  }
-  title:
     label: hidden
-    type: string
-    weight: -5
-    region: content
-    settings:
-      link_to_entity: false
+    settings: {  }
     third_party_settings: {  }
 hidden:
   changed: true
+  created: true
+  title: true

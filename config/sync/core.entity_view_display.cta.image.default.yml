@@ -4,28 +4,53 @@ status: true
 dependencies:
   config:
     - eck.eck_type.cta.image
+    - field.field.cta.image.field_image
+    - field.field.cta.image.field_link
+    - field.field.cta.image.field_text
+  module:
+    - link
+    - text
 id: cta.image.default
 targetEntityType: cta
 bundle: image
 mode: default
 content:
-  created:
-    label: hidden
-    type: timestamp
+  field_image:
     weight: 0
-    region: content
+    label: hidden
     settings:
-      date_format: medium
-      custom_date_format: ''
-      timezone: ''
+      view_mode: landscape
+      link: false
     third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_link:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: true
+      url_plain: true
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_text:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
   title:
     label: hidden
     type: string
-    weight: -5
+    weight: 1
     region: content
     settings:
       link_to_entity: false
     third_party_settings: {  }
 hidden:
   changed: true
+  created: true
