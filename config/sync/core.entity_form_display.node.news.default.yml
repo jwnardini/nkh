@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.news.body
     - field.field.node.news.field_boilerplate
+    - field.field.node.news.field_cta_ref
     - field.field.node.news.field_date_simple
     - field.field.node.news.field_entity_partner
     - field.field.node.news.field_intro
@@ -17,6 +18,7 @@ dependencies:
     - node.type.news
   module:
     - allowed_formats
+    - content_moderation
     - datetime
     - entity_browser_entity_form
     - inline_entity_form
@@ -46,6 +48,21 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+    region: content
+  field_cta_ref:
+    weight: 121
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: cta_text_find
+    type: inline_entity_form_complex
     region: content
   field_date_simple:
     weight: 4

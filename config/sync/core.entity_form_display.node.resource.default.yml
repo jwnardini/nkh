@@ -4,9 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.node.resource.body
+    - field.field.node.resource.field_cta_ref
     - field.field.node.resource.field_desc_corporate
     - field.field.node.resource.field_desc_dineout
     - field.field.node.resource.field_desc_local
+    - field.field.node.resource.field_file
     - field.field.node.resource.field_image_featured
     - field.field.node.resource.field_taxonomy_location
     - field.field.node.resource.field_taxonomy_resource
@@ -15,8 +17,8 @@ dependencies:
     - field.field.node.resource.field_video
     - node.type.resource
   module:
-    - entity_browser_entity_form
     - content_moderation
+    - entity_browser_entity_form
     - file
     - inline_entity_form
     - path
@@ -41,6 +43,21 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_cta_ref:
+    weight: 121
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: cta_text_find
+    type: inline_entity_form_complex
+    region: content
   field_desc_corporate:
     weight: 3
     settings:

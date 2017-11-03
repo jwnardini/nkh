@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.campaign.body
+    - field.field.node.campaign.field_cta_ref
     - field.field.node.campaign.field_entity_partner
     - field.field.node.campaign.field_image_banner
     - field.field.node.campaign.field_image_featured
@@ -15,6 +16,7 @@ dependencies:
     - node.type.campaign
   module:
     - allowed_formats
+    - content_moderation
     - entity_browser_entity_form
     - inline_entity_form
     - maxlength
@@ -33,6 +35,21 @@ content:
       summary_rows: 3
       placeholder: ''
     third_party_settings: {  }
+    region: content
+  field_cta_ref:
+    weight: 121
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: cta_text_find
+    type: inline_entity_form_complex
     region: content
   field_entity_partner:
     weight: 8

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.partner.body
+    - field.field.node.partner.field_cta_ref
     - field.field.node.partner.field_image_logo
     - field.field.node.partner.field_metatags
     - field.field.node.partner.field_social_fb
@@ -114,4 +115,5 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_cta_ref: true

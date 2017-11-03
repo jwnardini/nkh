@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.news.body
     - field.field.node.news.field_boilerplate
+    - field.field.node.news.field_cta_ref
     - field.field.node.news.field_date_simple
     - field.field.node.news.field_entity_partner
     - field.field.node.news.field_intro
@@ -29,19 +30,19 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 4
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     region: content
   field_boilerplate:
-    weight: 5
+    weight: 3
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_date_simple:
-    weight: 17
+    weight: 11
     label: above
     settings:
       format_type: medium
@@ -50,7 +51,7 @@ content:
     type: datetime_default
     region: content
   field_entity_partner:
-    weight: 15
+    weight: 9
     label: above
     settings:
       link: true
@@ -58,21 +59,21 @@ content:
     type: entity_reference_label
     region: content
   field_intro:
-    weight: 16
+    weight: 10
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_metatags:
-    weight: 14
+    weight: 8
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter
     region: content
   field_taxonomy_issue:
-    weight: 12
+    weight: 7
     label: hidden
     settings:
       link: true
@@ -80,7 +81,7 @@ content:
     type: entity_reference_label
     region: content
   field_taxonomy_news:
-    weight: 11
+    weight: 6
     label: hidden
     settings:
       link: true
@@ -88,14 +89,14 @@ content:
     type: entity_reference_label
     region: content
   field_teaser:
-    weight: 3
+    weight: 1
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_url:
-    weight: 7
+    weight: 5
     label: hidden
     settings:
       trim_length: 80
@@ -107,7 +108,7 @@ content:
     type: link
     region: content
   field_video:
-    weight: 6
+    weight: 4
     label: hidden
     settings:
       link: true
@@ -119,4 +120,5 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_cta_ref: true
