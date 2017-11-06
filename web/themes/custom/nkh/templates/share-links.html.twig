@@ -2,10 +2,10 @@
   <span>Share This Post</span>
   <ul>
     <li>
-      <a target="_blank" href="https://twitter.com/share?text=url={{ drupal_token('site:url') }}{{ url }}&amp;{{ drupal_title() }}&amp;via=nokidhungry">Twitter</a>
+      <a target="_blank" href="https://twitter.com/share?url={{ drupal_token('site:url') }}{{ url }}&amp;text={{ drupal_title() }}&amp;via=nokidhungry">Twitter</a>
     </li>
     <li>
-      <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://nkh-1030:9031/{{ url }}&amp;src=sdkpreparse">Facebook</a>
+      <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ drupal_token('site:url') }}{{ url }}&amp;src=sdkpreparse">Facebook</a>
       
     </li>
   </ul>
