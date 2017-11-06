@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "dc2638dce9521f64602b75837d96ee0f",
+    "content-hash": "b9e347f69e054b61732cb277665f771e",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -223,6 +223,7 @@
             "time": "2017-01-06T15:43:33+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "christian-riesen/base32",
             "version": "1.3.1",
             "source": {
@@ -277,6 +278,8 @@
             "time": "2016-05-05T11:49:03+00:00"
         },
         {
+=======
+>>>>>>> 783ae29b0eca600ceacb58cab22344b5e95216a7
             "name": "christian-riesen/otp",
             "version": "2.4.0",
             "source": {
