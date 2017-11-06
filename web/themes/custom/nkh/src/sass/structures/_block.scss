@@ -44,3 +44,36 @@
     }  
   }
 }
+[id*="donate"]{
+  width: 120px;
+  display: inline-block;
+  @include clearfix;
+  .field--type-text-with-summary{
+    position: relative;
+    a{
+      width: 120px;
+      background-color: $highlight;
+      color: $white;
+      @include link-button;
+      display: block;
+      line-height: 1.3;
+      text-align: center;
+      margin-bottom: -1px;
+      transition: .25s background-color ease-in;
+    }
+    ul{
+      display: none;
+      position: absolute;
+    }
+    li{
+      margin: 0;
+      padding: 0;
+      a{
+        font-size: 11px;
+      }
+    }
+    &:hover ul{
+      display: block;
+    }
+  }
+}

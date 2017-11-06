@@ -9,7 +9,7 @@
   top: auto;
   right: 0;
   @include breakpoint($min1024) {
-    width: calc(100% - 300px);
+    width: calc(100% - 250px);
     height: auto;
     max-height: none;
     transition: none;
@@ -62,39 +62,12 @@
 
   }
   .menu--main{
-    @include breakpoint($min1024) {
-      li{
-        padding: 0 0 0 1rem;
-        margin-left: 0;
-        display: inline-block;
-        + li{
-          margin-left: 40px;
-        }
-        ul {
-          display: none;
-          position: absolute;
-          background: $white;
-
-        }
-        &:hover{
-          ul {
-            display: block;
-          }
-        }
-        li {
-          display: block;
-          margin: 0;
-          padding: 0;
-        }
-      }
-      a.menu-link{
-        padding: 1rem 0;
-        display: block;
-      }    
-    }
+    //mobile + desktop
     a.menu-link {
-      font-weight: 16px; 
+      font-size: 16px; 
+      font-weight: 500;
       color: $nkh-text;
+      line-height: 1.2;
       text-decoration: none;
       text-transform: uppercase;
       border-bottom: 3px solid transparent;
@@ -104,6 +77,66 @@
         border-bottom: 3px solid $nkh-orange;
       }
     } 
+    //desktop
+    @include breakpoint($min1024) {
+      li{
+        padding: 0;
+        margin-left: 0;
+        display: inline-block;
+        position: relative;
+        + li{
+          margin-left: 15px;
+        }
+        ul {
+          display: none;
+          position: absolute;
+          background: $white;
+          padding-top: 2rem;
+          left: -4rem;
+        }
+        &:hover{
+          ul {
+            display: block;
+          }
+        }
+        li {
+          display: block;
+          margin: 0 0 -2px 0;
+          padding: 0;
+        }
+        li a.menu-link{
+          padding: .8rem .5rem;
+          width: 200px;
+          color: $white;
+          background: #383d44;
+          -webkit-mask: url('/themes/custom/nkh/images/solid.svg');
+          -webkit-mask-size: 100%;
+          &:hover{
+            color: $white;
+            background: #4d545d;
+            border-bottom: 3px solid transparent;
+          }
+          &.is-active{
+            background: #31353b;          
+          }          
+        }
+      }
+      a.menu-link{
+        padding: 1rem 0 0;
+        display: block;
+        text-align: center;
+      }
+    }
+    @include breakpoint($min1260) {
+      li{
+        + li{
+          margin-left: 30px;
+        }
+        li{
+          margin-left: 0;
+        }
+      }
+    }
   }
 }
 
@@ -337,11 +370,8 @@
       &:before {
         color:  $nkh-darkorange;
       }
-
     }
-
   }
-
   .subnav>.menu-item>.menu.open {
     left: 0;
     width: 100%;

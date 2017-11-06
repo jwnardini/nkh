@@ -34,19 +34,21 @@
 .menu--footer-social-media-links{
   display: inline-block;
 }
+.menu--header-social-media-links{
+  @include breakpoint($min1024) {
+    margin: -3px 0 0 10px;
+  }
+}
 
 .menu--header-social-media-links,
 .menu--footer-social-media-links{
-
   li{
-  	margin-right: 10px;
-
-    &:last-child{
-      margin-right: 0;
+    display: inline-block;
+    padding: 0;
+    + li{
+      margin-left: 10px;
     }
-
   }
-
   a {
     display: block;
     width: 2.9rem; //size of the icons
@@ -75,19 +77,14 @@
 
 
   }
-
+  [data-drupal-link-system-path="<front>"]:before{
+    content: $icon-logo;
+  }
   [href*="facebook"]:before {
     content: $icon-facebook;
   }
   [href*="twitter"]:before {
     content: $icon-twitter;
-  }
-
-  [href*="instagram"]:before {
-    content: $icon-instagram;
-  }
-  [href*="youtube"]:before {
-    content: $icon-youtube;
   }
 
   &.block {
@@ -96,10 +93,36 @@
 
 }
 .menu--footer-social-media-links{
+  [data-drupal-link-system-path="<front>"]:before{
+    content: $icon-logo;
+  }
+  [href*="instagram"]:before {
+    content: $icon-instagram;
+  }
+  [href*="youtube"]:before {
+    content: $icon-youtube;
+  }
+
   a{
     &:hover, &:focus, &:active {
       &:before {
         color: $nkh-footer-lightergrey;
+      }
+    }
+  }
+  li{
+    &:first-child{
+      display: block;
+      clear: both;
+      a{
+        width: 200px;
+        height: 100px;
+        display: block;
+        margin: 0;
+        &:before{
+          font-size: 87px;
+          color: $white;
+        }
       }
     }
   }
