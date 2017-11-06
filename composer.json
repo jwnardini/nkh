@@ -49,7 +49,6 @@
         "drupal/migrate_source_csv": "^2.0",
         "drupal/migrate_tools": "^2.0",
         "drupal/module_filter": "^3.0",
-        "drupal/one_time_password": "^1.0@alpha",
         "drupal/password_policy": "^3.0@alpha",
         "drupal/password_strength": "^2.0@alpha",
         "drupal/pathauto": "^1.0",

@@ -65,7 +65,6 @@ module:
   nkh_partner_migrate: 0
   nkh_reference_conditional: 0
   node: 0
-  one_time_password: 0
   options: 0
   page_cache: 0
   password_policy: 0
