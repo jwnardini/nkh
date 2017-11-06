@@ -201,3 +201,6 @@
 
 }
 
+@mixin large-text-highlight{
+  background: linear-gradient($white 60%, $nkh-orange 40%);
+}
