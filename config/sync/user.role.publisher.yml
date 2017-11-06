@@ -25,7 +25,6 @@ permissions:
   - 'use editorial transition archived_draft'
   - 'use editorial transition archived_published'
   - 'use editorial transition publish'
-  - 'use text format full_html'
   - 'use text format simple_html'
   - 'view any unpublished content'
   - 'view latest version'
