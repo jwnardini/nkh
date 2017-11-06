@@ -34,6 +34,7 @@ permissions:
   - 'edit own article content'
   - 'edit own blog content'
   - 'edit own page content'
+  - 'use text format full_html'
   - 'use text format simple_html'
   - 'view own unpublished content'
   - 'view the administration theme'
