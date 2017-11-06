@@ -69,33 +69,29 @@
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
   ]
 %}
-
 <article{{ attributes.addClass(classes) }}>
 
   <div class="header-section">
-    <h1>{{ drupal_title() }}</h1>
+    <div class='banner-section'>{{ content.field_image_banner }}</div>
+    <div class="intro-section_video">
+      {% if content.field_video|render|striptags %}
+        {{ content.field_video }}
+      {% else %}
+        {{ content.field_image_featured }}
+      {% endif %}
+    </div>
+    <div class='intro-section'>
+      <h1>{{ drupal_title() }}</h1>
+      {{ content.field_intro }}
+    </div>
+  </div>
+  <div class="share-section">
+    {{ drupal_block('nkh_breadcrumbs') }}
+    {% include directory ~ '/templates/share-links.html.twig' %}
   </div>
 
-  {{ title_prefix }}
-  {% if not page %}
-    <h2{{ title_attributes }}>
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h2>
-  {% endif %}
-  {{ title_suffix }}
-
-  {% if display_submitted %}
-    <footer class="node__meta">
-      {{ author_picture }}
-      <div{{ author_attributes.addClass('node__submitted') }}>
-        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-        {{ metadata }}
-      </div>
-    </footer>
-  {% endif %}
-
-  <div{{ content_attributes.addClass('node__content') }}>
-    {{ content }}
+  <div{{ content_attributes.addClass('node__content') }}>     
+    {{ content|without('field_image_banner','field_image_featured', 'field_teaser', 'field_intro', 'field_video') }}
   </div>
 
 </article>

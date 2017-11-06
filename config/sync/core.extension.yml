@@ -24,7 +24,6 @@ module:
   eck: 0
   editor: 0
   embed: 0
-  encrypt: 0
   entity: 0
   entity_browser: 0
   entity_browser_enhanced: 0
@@ -43,7 +42,6 @@ module:
   image: 0
   inline_entity_form: 0
   inline_form_errors: 0
-  key: 0
   link: 0
   maxlength: 0
   media_entity: 0
@@ -68,6 +66,10 @@ module:
   options: 0
   page_cache: 0
   password_policy: 0
+  password_policy_history: 0
+  password_policy_length: 0
+  password_policy_username: 0
+  password_strength: 0
   path: 0
   quickedit: 0
   rdf: 0
@@ -85,7 +87,6 @@ module:
   system: 0
   taxonomy: 0
   text: 0
-  tfa: 0
   token: 0
   toolbar: 0
   tour: 0

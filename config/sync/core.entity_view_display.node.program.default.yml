@@ -33,9 +33,10 @@ content:
     weight: 1
     label: hidden
     settings:
-      link: true
+      view_mode: landscape
+      link: false
     third_party_settings: {  }
-    type: entity_reference_label
+    type: entity_reference_entity_view
     region: content
   field_image_featured:
     weight: 2
@@ -84,5 +85,4 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden:
-  field_cta_ref: true
+hidden: {  }
