@@ -24,7 +24,6 @@ module:
   eck: 0
   editor: 0
   embed: 0
-  encrypt: 0
   entity: 0
   entity_browser: 0
   entity_browser_enhanced: 0
@@ -43,7 +42,6 @@ module:
   image: 0
   inline_entity_form: 0
   inline_form_errors: 0
-  key: 0
   link: 0
   maxlength: 0
   media_entity: 0
