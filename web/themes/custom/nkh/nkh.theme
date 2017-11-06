@@ -31,3 +31,9 @@ function nkh_preprocess_block(&$variables) {
   $element = $variables['content'];
   $variables['url'] = substr($_SERVER['REQUEST_URI'], 1);
 }
+
+function nkh_preprocess_entity_embed_container(&$variables) {
+  $entityTypeID = $variables['element']['#entity']->getEntityType()->id();
+  $bundle = $variables['element']['#entity']->bundle();
+  $variables['attributes']['class'][] = 'entity-' . $entityTypeID . '-' . $bundle;
+}
