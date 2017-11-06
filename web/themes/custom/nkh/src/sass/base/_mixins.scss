@@ -165,7 +165,7 @@
 
 @mixin texture-grit-text {
   &:not(*:root) {
-  background: url("/themes/custom/nkh/dist/images/nkh_texture_144dpi.jpg") center top;
+    background: url("/themes/custom/nkh/dist/images/nkh_texture_144dpi.jpg") center top;
     background-position: random(100) + rem;
     background-size: 10%;
     color:transparent;
@@ -176,4 +176,8 @@
     //-webkit-text-fill-color:transparent;
     //margin:0;
   }
+}
+
+@mixin large-text-highlight{
+  background: linear-gradient($white 60%, $nkh-orange 40%);
 }
