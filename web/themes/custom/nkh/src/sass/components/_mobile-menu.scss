@@ -24,6 +24,14 @@
       display: none
     }
   }
+  a{
+    @include breakpoint($min1024) {
+      font-size: 14px;
+    }
+    @include breakpoint($min1260) {
+      font-size: 16px;
+    }
+  }
   li {
     list-style-type: none;
     &:before{
@@ -64,7 +72,6 @@
   .menu--main{
     //mobile + desktop
     a.menu-link {
-      font-size: 16px; 
       font-weight: 500;
       color: $nkh-text;
       line-height: 1.2;

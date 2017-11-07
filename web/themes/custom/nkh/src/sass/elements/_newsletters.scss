@@ -1,0 +1,229 @@
+
+.block--newsletter {
+  background: $nkh-text;
+  color: $white;
+  padding: 2rem;
+
+  input {
+    //color: $white;
+    border-color: rgba($white, .6);
+    font-size: 1.6rem;
+    padding: .5rem 1rem;
+    width: 100%;
+
+    &:hover, &:focus, &:active {
+      border-color: rgba($white, 1);
+    }
+
+    &::-webkit-input-placeholder, &:-moz-placeholder, &::-moz-placeholder, &:-ms-input-placeholder, placeholder {
+      //color: $white !important;
+    }
+  }
+
+
+  input[type="submit"], button[type="submit"] {
+    background: $nkh-orange;
+    &:hover, &:focus {
+      background: $nkh-orange;
+    }
+  }
+
+
+
+  @include breakpoint($min1024) { //change the colors back on desktop
+    background: $white;
+  }
+}
+
+
+
+
+.block--newsletter {
+  @include breakpoint($min768) {
+    //display: none; //to make the content admins not go crazy
+  }
+
+  @include breakpoint($min1024) {
+
+    text-align: center;
+
+    &.closed,
+    &.open {
+      display: inline-block; position: relative;
+      //width: 17rem;
+      //height: 560px;
+      text-align: right;
+      vertical-align: bottom;
+
+      form {
+        position: absolute;
+        z-index: 100;
+        right: 0;
+        top: 5.6rem;
+        width: 380px;
+        height: 0;
+        padding: 0 4rem 0;
+
+        background: rgba($nkh-text, 0.9);
+
+        transition: all .3s;
+        overflow: hidden;
+
+        .form-group {
+
+          .input-group {
+            padding: 0;
+
+            label {
+              display: block;
+              width: 100%;
+              padding: .5rem 0;
+              text-align: left;
+            }
+
+            input {
+              width: 100%;
+              padding-left: 1rem;
+              background: $white;
+              color: $black;
+            }
+
+            #webform-component-disclaimer p {
+              text-align: left;
+              line-height: 2.5rem;
+
+              br {
+                content: ' ';
+                display: inline;
+                clear: none;
+
+                &:after {
+                  content: ' ';
+                }
+              }
+            }
+          }
+
+        }
+
+        button {
+          width: 100%;
+          border-radius: 0;
+        }
+
+      }
+
+      label[for="primary_email"] {
+        display: block;
+        padding: 1rem 0;
+        margin-bottom: 2rem;
+        text-align: left;
+        line-height: 1;
+        width: 100%;
+      }
+
+    }
+
+    &.open form {
+      height: 480px;
+      padding: 2rem 4rem 0;
+    }
+  }
+}
+
+@include breakpoint($min1024) {
+  .header .search__block.open ~ .newsletter-form__block {
+    width: 5.6rem; //width of the button
+
+    .header-newsletter-form__toggle span {
+      display: none;
+    }
+
+    form { //hide the form
+      @include element-invisible;
+    }
+  }
+}
+
+.header-newsletter-form__toggle { //the toggle icon
+  //display: none; //we don't want to use a button on mobile
+  background: transparent;
+  border-radius: 0;
+  pointer-events: none;
+  padding: 0 0 1.4rem;
+  display: block;
+  text-align: center;
+  width: 100%;
+
+  span:last-of-type {
+    @include element-invisible-off;
+  }
+
+  span:first-of-type {
+    // display: none;
+  }
+
+
+
+  @include breakpoint($min1024) {
+    pointer-events: all;
+    display: block;
+    padding: 1.4rem;
+    text-align: left;
+    background: $nkh-orange;
+
+    &:hover, &:active, &:focus {
+      background: $nkh-text;
+    }
+
+    span:first-of-type {
+      line-height: 2.8rem;
+      padding-right: 1rem;
+      color: $white;
+      text-transform: uppercase;
+    }
+
+    span:last-of-type {
+      @include element-invisible;
+    }
+  }
+}
+
+/*#header:not(.top) .newsletter-form__block.block {
+
+  @include breakpoint($min1024) {
+    &.closed,
+    &.open {
+      width: 5.6rem;
+
+      button span {
+        display: none;
+      }
+    }
+  }
+
+}*/
+
+.alert-success[style="display: none;"],
+.alert-success2[style="display: none;"] {
+  text-align: center;
+
+  ~ * {
+    opacity: 1;
+    transition: all .2s;
+  }
+
+}
+
+.alert-success:not([style="display: none;"]),
+.alert-success2:not([style="display: none;"]) {
+  ~ * {
+    opacity: 0;
+    display: none;
+  }
+}
+
+.header .mobile .newsletter-form__block {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}

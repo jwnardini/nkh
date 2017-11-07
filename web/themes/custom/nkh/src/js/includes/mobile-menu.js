@@ -6,36 +6,36 @@
             //Code here
             //
 
-            $( '.menu' ).on( 'mouseenter focus', '.menu-item--expanded > a', function( e ) {
-                var el = $( this );
-                el.toggleClass( 'has-focus' );
-                // Show sub-menu
-                el.parents( '.menu-item' ).attr( 'aria-expanded', 'true' );
-            }).on( 'mouseleave blur', '.menu-item--expanded > a', function( e ) {
-                var el = $( this );
-                el.toggleClass( 'has-focus' );
-                // Only hide sub-menu after a short delay, so links get a chance to catch focus from tabbing
-                setTimeout( function() {
-                    if ( el.siblings( 'li.menu-item > .menu' ).attr( 'data-has-focus' ) !== 'true' ) {
-                        el.parents( 'li.menu-item' ).attr( 'aria-expanded', 'false' );
-                    }
-                }, 100 );
-            }).on( 'mouseenter focusin', 'li.menu-item > .menu', function( e ) {
-                var el = $( this );
-                el.attr( 'data-has-focus', 'true' );
-            }).on( 'mouseleave focusout', 'li.menu-item > .menu', function( e ) {
-                var el = $( this );
-                setTimeout( function() {
-                    // Check if anything else has picked up focus (i.e. next link in sub-menu)
-                    if ( el.find( ':focus' ).length === 0 ) {
-                        el.attr( 'data-has-focus', 'false' );
-                        // Hide sub-menu on the way out if parent link doesn't have focus now
-                        if ( el.siblings( 'li.menu-item a.has-focus' ).length === 0 ) {
-                            el.parents( '.menu-item--expanded' ).attr( 'aria-expanded', 'false' );
-                        }
-                    }
-                }, 100 );
-            });
+    $( '.menu' ).on( 'mouseenter focus', '.menu-item--expanded > a', function( e ) {
+        var el = $( this );
+        el.toggleClass( 'has-focus' );
+        // Show sub-menu
+        el.parents( '.menu-item' ).attr( 'aria-expanded', 'true' );
+    }).on( 'mouseleave blur', '.menu-item--expanded > a', function( e ) {
+        var el = $( this );
+        el.toggleClass( 'has-focus' );
+        // Only hide sub-menu after a short delay, so links get a chance to catch focus from tabbing
+        setTimeout( function() {
+            if ( el.siblings( 'li.menu-item > .menu' ).attr( 'data-has-focus' ) !== 'true' ) {
+                el.parents( 'li.menu-item' ).attr( 'aria-expanded', 'false' );
+            }
+        }, 100 );
+    }).on( 'mouseenter focusin', 'li.menu-item > .menu', function( e ) {
+        var el = $( this );
+        el.attr( 'data-has-focus', 'true' );
+    }).on( 'mouseleave focusout', 'li.menu-item > .menu', function( e ) {
+        var el = $( this );
+        setTimeout( function() {
+            // Check if anything else has picked up focus (i.e. next link in sub-menu)
+            if ( el.find( ':focus' ).length === 0 ) {
+                el.attr( 'data-has-focus', 'false' );
+                // Hide sub-menu on the way out if parent link doesn't have focus now
+                if ( el.siblings( 'li.menu-item a.has-focus' ).length === 0 ) {
+                    el.parents( '.menu-item--expanded' ).attr( 'aria-expanded', 'false' );
+                }
+            }
+        }, 100 );
+    });
 
 
     //     }
@@ -345,18 +345,18 @@
 
     // Execute code once the DOM is ready. $(document).ready() not required within Drupal.behaviors.
 
-      $(window).load(function () {
-        // Execute code once the window is fully loaded.
+      // $(window).load(function () {
+      //   // Execute code once the window is fully loaded.
 
-      });
+      // });
 
-      $(window).resize(function () {
-        // Execute code when the window is resized.
-      });
+      // $(window).resize(function () {
+      //   // Execute code when the window is resized.
+      // });
 
-      $(window).scroll(function () {
-        // Execute code when the window scrolls.
-      });
+      // $(window).scroll(function () {
+      //   // Execute code when the window scrolls.
+      // });
 
   //   }
   // };
