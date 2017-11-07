@@ -51,10 +51,10 @@ settings:
           name: Media
           items:
             - Table
+            - media
         -
           name: Embed
           items:
-            - media
             - cta
             - hunger_fact
             - landing_link
@@ -62,7 +62,7 @@ settings:
     language:
       language_list: un
     stylescombo:
-      styles: ''
+      styles: a.button|Button
     video_embed:
       defaults:
         children:
