@@ -8,7 +8,6 @@ dependencies:
     - node.type.partner
     - taxonomy.vocabulary.partner
   content:
-    - 'taxonomy_term:issue:fdd6acb1-cdc6-42c1-9c58-2313bc2bde26'
     - 'taxonomy_term:partner:ac4b966e-0346-4181-8f49-f30acb8963ac'
   module:
     - entityqueue
