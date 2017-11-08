@@ -62,7 +62,7 @@
   }
   @include breakpoint($desktop){
     max-width: $screen-max - 120px;
-    margin: 0 60px;
+    margin: 0 10px;
   }
   @include breakpoint($lg-desktop) {
     margin: 0 auto;
@@ -165,7 +165,7 @@
 
 @mixin texture-grit-text {
   &:not(*:root) {
-    background: url("/themes/custom/nkh/dist/images/nkh_texture_144dpi.jpg") center top;
+  background: url("/themes/custom/nkh/images/solid.svg") center top;
     background-position: random(100) + rem;
     background-size: 10%;
     color:transparent;
@@ -176,6 +176,27 @@
     //-webkit-text-fill-color:transparent;
     //margin:0;
   }
+}
+@mixin link-button {
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  border: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-decoration: none;
+  -webkit-mask: url('/themes/custom/nkh/images/solid.svg');
+  @include notouchhover {
+    background-color: $nkh-darkerorange;
+  }
+
 }
 
 @mixin large-text-highlight{
