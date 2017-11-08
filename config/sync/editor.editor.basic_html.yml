@@ -24,6 +24,7 @@ settings:
           name: Linking
           items:
             - DrupalLink
+            - Linkit
             - DrupalUnlink
         -
           name: Lists
@@ -44,6 +45,8 @@ settings:
       language_list: un
     stylescombo:
       styles: ''
+    linkit:
+      linkit_profile: linkit_internal
     video_embed:
       defaults:
         children:

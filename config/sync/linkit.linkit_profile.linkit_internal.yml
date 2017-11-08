@@ -1,0 +1,20 @@
+uuid: b2c82ed8-e2bd-42c0-bc52-8e30e737eb05
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: linkit_internal
+label: 'LinkIt Internal'
+description: ''
+attributes: {  }
+matchers:
+  20f183fa-b7d6-4653-a483-e5d3a468b931:
+    uuid: 20f183fa-b7d6-4653-a483-e5d3a468b931
+    id: 'entity:node'
+    weight: 0
+    settings:
+      result_description: Content
+      bundles: {  }
+      group_by_bundle: true
+      include_unpublished: false

@@ -33,6 +33,7 @@ settings:
           name: Links
           items:
             - DrupalLink
+            - Linkit
             - DrupalUnlink
         -
           name: Lists
@@ -43,6 +44,7 @@ settings:
           name: Tools
           items:
             - SpecialChar
+            - PasteText
             - PasteFromWord
             - Maximize
             - Undo
@@ -63,6 +65,8 @@ settings:
       language_list: un
     stylescombo:
       styles: a.button|Button
+    linkit:
+      linkit_profile: linkit_internal
     video_embed:
       defaults:
         children:

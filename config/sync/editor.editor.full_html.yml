@@ -35,6 +35,7 @@ settings:
           name: Linking
           items:
             - DrupalLink
+            - Linkit
             - DrupalUnlink
         -
           name: Lists
@@ -46,6 +47,7 @@ settings:
           items:
             - ShowBlocks
             - SpecialChar
+            - PasteText
             - PasteFromWord
             - Source
             - Maximize
@@ -67,6 +69,8 @@ settings:
       language_list: un
     stylescombo:
       styles: a.button|Button
+    linkit:
+      linkit_profile: linkit_internal
     video_embed:
       defaults:
         children:
