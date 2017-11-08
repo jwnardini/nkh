@@ -105,7 +105,7 @@
         ul {
           display: none;
           position: absolute;
-          background: $white;
+          background: transparent;
           padding-top: 2rem;
           left: -4rem;
         }
@@ -120,7 +120,7 @@
           padding: 0;
         }
         li a.menu-link{
-          padding: .8rem .5rem;
+          padding: 1.8rem .5rem 1rem;
           width: 200px;
           color: $white;
           background: #383d44;
