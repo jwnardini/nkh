@@ -4,6 +4,10 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_cta_ref
+  content:
+    - 'cta:text:0703117d-d981-4c4e-b803-5e9b331162b2'
+    - 'cta:text:8b80e19c-4526-4983-9e19-7dd76d3c5923'
+    - 'cta:text:da562e24-f185-4219-9ef9-5b391993381a'
   module:
     - node
     - user
@@ -212,8 +216,24 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      block_hide_empty: true
+      block_hide_empty: false
       display_description: ''
+      empty:
+        entity_cta:
+          id: entity_cta
+          table: views
+          field: entity_cta
+          relationship: none
+          group_type: group
+          admin_label: Pledge
+          empty: true
+          tokenize: true
+          target: da562e24-f185-4219-9ef9-5b391993381a
+          view_mode: full
+          bypass_access: false
+          plugin_id: entity
+      defaults:
+        empty: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -231,8 +251,24 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      block_hide_empty: true
+      block_hide_empty: false
       display_description: ''
+      empty:
+        entity_cta:
+          id: entity_cta
+          table: views
+          field: entity_cta
+          relationship: none
+          group_type: group
+          admin_label: Donate
+          empty: true
+          tokenize: true
+          target: 0703117d-d981-4c4e-b803-5e9b331162b2
+          view_mode: full
+          bypass_access: false
+          plugin_id: entity
+      defaults:
+        empty: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -250,8 +286,24 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      block_hide_empty: true
+      block_hide_empty: false
       display_description: ''
+      empty:
+        entity_cta:
+          id: entity_cta
+          table: views
+          field: entity_cta
+          relationship: none
+          group_type: group
+          admin_label: Newsletter
+          empty: true
+          tokenize: true
+          target: 8b80e19c-4526-4983-9e19-7dd76d3c5923
+          view_mode: full
+          bypass_access: false
+          plugin_id: entity
+      defaults:
+        empty: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -269,8 +321,24 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      block_hide_empty: true
+      block_hide_empty: false
       display_description: ''
+      empty:
+        entity_cta:
+          id: entity_cta
+          table: views
+          field: entity_cta
+          relationship: none
+          group_type: group
+          admin_label: Newsletter
+          empty: true
+          tokenize: true
+          target: 8b80e19c-4526-4983-9e19-7dd76d3c5923
+          view_mode: full
+          bypass_access: false
+          plugin_id: entity
+      defaults:
+        empty: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -288,8 +356,24 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      block_hide_empty: true
+      block_hide_empty: false
       display_description: ''
+      empty:
+        entity_cta:
+          id: entity_cta
+          table: views
+          field: entity_cta
+          relationship: none
+          group_type: group
+          admin_label: Donate
+          empty: true
+          tokenize: true
+          target: 0703117d-d981-4c4e-b803-5e9b331162b2
+          view_mode: full
+          bypass_access: false
+          plugin_id: entity
+      defaults:
+        empty: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -307,8 +391,24 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      block_hide_empty: true
+      block_hide_empty: false
       display_description: ''
+      empty:
+        entity_cta:
+          id: entity_cta
+          table: views
+          field: entity_cta
+          relationship: none
+          group_type: group
+          admin_label: Pledge
+          empty: true
+          tokenize: true
+          target: da562e24-f185-4219-9ef9-5b391993381a
+          view_mode: full
+          bypass_access: false
+          plugin_id: entity
+      defaults:
+        empty: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -326,8 +426,24 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      block_hide_empty: true
+      block_hide_empty: false
       display_description: ''
+      empty:
+        entity_cta:
+          id: entity_cta
+          table: views
+          field: entity_cta
+          relationship: none
+          group_type: group
+          admin_label: Pledge
+          empty: true
+          tokenize: true
+          target: da562e24-f185-4219-9ef9-5b391993381a
+          view_mode: full
+          bypass_access: false
+          plugin_id: entity
+      defaults:
+        empty: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -345,8 +461,24 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      block_hide_empty: true
+      block_hide_empty: false
       display_description: ''
+      empty:
+        entity_cta:
+          id: entity_cta
+          table: views
+          field: entity_cta
+          relationship: none
+          group_type: group
+          admin_label: Donate
+          empty: true
+          tokenize: true
+          target: 0703117d-d981-4c4e-b803-5e9b331162b2
+          view_mode: full
+          bypass_access: false
+          plugin_id: entity
+      defaults:
+        empty: false
     cache_metadata:
       max-age: -1
       contexts:
