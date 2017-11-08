@@ -41,8 +41,8 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Apply
-          reset_button: false
+          submit_button: Search
+          reset_button: true
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
@@ -284,7 +284,53 @@ display:
           view_mode: default
           entity_type: cta
           plugin_id: rendered_entity
-      filters: {  }
+      filters:
+        title:
+          id: title
+          table: cta_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: title_op
+            label: Title
+            description: ''
+            use_operator: false
+            operator: title_op
+            identifier: title
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              author: '0'
+              editor: '0'
+              publisher: '0'
+              seo: '0'
+              user_creator: '0'
+              content_administrator: '0'
+              administrator: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: cta
+          entity_field: title
+          plugin_id: string
       sorts:
         changed:
           id: changed
@@ -326,6 +372,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
         - 'url.query_args:sort_by'
         - 'url.query_args:sort_order'
@@ -348,6 +395,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
         - 'url.query_args:sort_by'
         - 'url.query_args:sort_order'
@@ -653,6 +701,52 @@ display:
           entity_type: cta
           entity_field: type
           plugin_id: bundle
+        title:
+          id: title
+          table: cta_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: title_op
+            label: Title
+            description: ''
+            use_operator: false
+            operator: title_op
+            identifier: title
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              author: '0'
+              editor: '0'
+              publisher: '0'
+              seo: '0'
+              user_creator: '0'
+              content_administrator: '0'
+              administrator: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: cta
+          entity_field: title
+          plugin_id: string
       filter_groups:
         operator: AND
         groups:
@@ -662,6 +756,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
         - 'url.query_args:sort_by'
         - 'url.query_args:sort_order'
@@ -959,6 +1054,52 @@ display:
           entity_type: cta
           entity_field: type
           plugin_id: bundle
+        title:
+          id: title
+          table: cta_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: title_op
+            label: Title
+            description: ''
+            use_operator: false
+            operator: title_op
+            identifier: title
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              author: '0'
+              editor: '0'
+              publisher: '0'
+              seo: '0'
+              user_creator: '0'
+              content_administrator: '0'
+              administrator: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: cta
+          entity_field: title
+          plugin_id: string
       filter_groups:
         operator: AND
         groups:
@@ -968,6 +1109,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
         - 'url.query_args:sort_by'
         - 'url.query_args:sort_order'
@@ -1265,6 +1407,52 @@ display:
           entity_type: cta
           entity_field: type
           plugin_id: bundle
+        title:
+          id: title
+          table: cta_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: title_op
+            label: Title
+            description: ''
+            use_operator: false
+            operator: title_op
+            identifier: title
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              author: '0'
+              editor: '0'
+              publisher: '0'
+              seo: '0'
+              user_creator: '0'
+              content_administrator: '0'
+              administrator: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: cta
+          entity_field: title
+          plugin_id: string
       filter_groups:
         operator: AND
         groups:
@@ -1274,6 +1462,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
         - 'url.query_args:sort_by'
         - 'url.query_args:sort_order'
@@ -1531,6 +1720,52 @@ display:
         filters: false
         filter_groups: false
       filters:
+        title:
+          id: title
+          table: cta_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: title_op
+            label: Title
+            description: ''
+            use_operator: false
+            operator: title_op
+            identifier: title
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              author: '0'
+              editor: '0'
+              publisher: '0'
+              seo: '0'
+              user_creator: '0'
+              content_administrator: '0'
+              administrator: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: cta
+          entity_field: title
+          plugin_id: string
         type:
           id: type
           table: cta_field_data
@@ -1580,6 +1815,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
         - 'url.query_args:sort_by'
         - 'url.query_args:sort_order'

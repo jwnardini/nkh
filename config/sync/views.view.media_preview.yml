@@ -40,8 +40,8 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Apply
-          reset_button: false
+          submit_button: Search
+          reset_button: true
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
@@ -287,6 +287,50 @@ display:
           expose:
             operator: ''
           group: 1
+        field_image_title:
+          id: field_image_title
+          table: media__field_image
+          field: field_image_title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: word
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_image_title_op
+            label: 'Image Title'
+            description: ''
+            use_operator: false
+            operator: field_image_title_op
+            identifier: field_image_title
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              author: '0'
+              editor: '0'
+              publisher: '0'
+              seo: '0'
+              user_creator: '0'
+              content_administrator: '0'
+              administrator: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: string
       sorts:
         created:
           id: created
@@ -314,6 +358,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
       tags: {  }
   entity_browser_1:
@@ -328,5 +373,6 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
       tags: {  }
