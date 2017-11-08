@@ -62,7 +62,7 @@
   }
   @include breakpoint($desktop){
     max-width: $screen-max - 120px;
-    margin: 0 30px;
+    margin: 0 10px;
   }
   @include breakpoint($lg-desktop) {
     margin: 0 auto;
@@ -192,9 +192,7 @@
   text-transform: uppercase;
   font-weight: 500;
   text-decoration: none;
-  padding: 15px 20px;
   -webkit-mask: url('/themes/custom/nkh/images/solid.svg');
-  -webkit-mask-size: 400%;
   @include notouchhover {
     background-color: $nkh-darkerorange;
   }

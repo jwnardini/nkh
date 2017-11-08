@@ -1,11 +1,48 @@
+.header-newsletter-form__toggle { //the toggle icon
+  display: none;
+  span:last-of-type {
+    @include element-invisible-off;
+    @include element-invisible;
+  }
+  @include breakpoint($min1024) {
+    text-align: center;
+    background: $nkh-darkergrey;
+    border-radius: 0;
+    pointer-events: none;
+    display: block;
+    @include link-button;
+    -webkit-mask-size: 200%;
+    padding: .5rem 1rem;
+    height: 48px;
+    &:hover, &:active, &:focus {
+      background: $nkh-darkgrey;
+    }
+    span:first-of-type {
+      line-height: 2.8rem;
+      color: $white;
+      text-transform: uppercase;
+    }
+  }
+  @include breakpoint($min1260) {
+    padding: .5rem 2rem;  
+    height: 50px;
+  }
+}
 
 .block--newsletter {
-  background: $nkh-text;
-  color: $white;
-  padding: 2rem;
-
+  background: $white;
+  color: $nkh-text;
+  padding: 0;
+  display: block; 
+  position: relative;
+  vertical-align: text-bottom;
+  width: 91vw;
+  margin: 0 0 0 2rem;
+  .text-formatted{
+    display: inline-block;
+    margin: 0;
+  }
   input {
-    //color: $white;
     border-color: rgba($white, .6);
     font-size: 1.6rem;
     padding: .5rem 1rem;
@@ -20,113 +57,111 @@
     }
   }
 
-
   input[type="submit"], button[type="submit"] {
-    background: $nkh-orange;
+    @include link-button;
+    background-color: $highlight;
+    -webkit-mask-size: 60%;
+    color: $white;
+    text-transform: uppercase;
+    width: 100%;
+    border-radius: 0;
+    line-height: 0;
+
     &:hover, &:focus {
-      background: $nkh-orange;
+      background-color: $nkh-darkorange;
+    }
+  }
+  input {
+    width: 100%;
+    padding-left: 1rem;
+    background: $white;
+    color: $nkh-text;
+    margin-bottom: 1rem;
+    &:hover{
+      border: 1px solid $nkh-darkergrey;
     }
   }
 
 
-
-  @include breakpoint($min1024) { //change the colors back on desktop
-    background: $white;
+  .required{
+    font-size: 0;
+    &:before{
+      content: "*";
+      font-size: 1.5rem;
+      margin-left: -.5rem;
+    }
   }
-}
+  .wrapable{
+    &:before{
+      position: absolute;
+      margin-top: .2em;
+    }
+  }
 
+  .Explicit {
+    text-align: left;
+    line-height: 1.6rem;
+    font-size: 12px;
+    margin-bottom: 1rem;
+    display: inline-block;
+    padding-left: 2.5rem;
+  }
+  p{
+    margin: 0;
+    line-height: 1;
+  }
 
-
-
-.block--newsletter {
-  @include breakpoint($min768) {
-    //display: none; //to make the content admins not go crazy
+  label {
+    display: block;
+    width: 100%;
+    padding: .5rem 0;
+    margin: 0;
+    text-align: left;
+    font-size: 16px;
   }
 
   @include breakpoint($min1024) {
-
+    display: inline-block; 
+    width: auto;
+    margin-left: 0;
+    margin-top: -.2rem;
     text-align: center;
+    form {
+      position: absolute;
+      z-index: 100;
+      right: 0;
+      top: 2.5rem;
+      width: 380px;
+      height: auto;
+      padding: 2rem 3rem;
+      display: block;
+      border: 2px solid rgba($nkh-text, .2);
+      background: rgba($white, 0.9);
+      color: $nkh-text;
+      transition: all .3s;
+      overflow: hidden;
+      clear: both;
+    }
+    label{
+      font-size: 14px;
+    }
 
     &.closed,
     &.open {
-      display: inline-block; position: relative;
-      //width: 17rem;
-      //height: 560px;
+      display: inline-block; 
+      position: relative;
       text-align: right;
-      vertical-align: bottom;
-
-      form {
-        position: absolute;
-        z-index: 100;
-        right: 0;
-        top: 5.6rem;
-        width: 380px;
-        height: 0;
-        padding: 0 4rem 0;
-
-        background: rgba($nkh-text, 0.9);
-
-        transition: all .3s;
-        overflow: hidden;
-
-        .form-group {
-
-          .input-group {
-            padding: 0;
-
-            label {
-              display: block;
-              width: 100%;
-              padding: .5rem 0;
-              text-align: left;
-            }
-
-            input {
-              width: 100%;
-              padding-left: 1rem;
-              background: $white;
-              color: $black;
-            }
-
-            #webform-component-disclaimer p {
-              text-align: left;
-              line-height: 2.5rem;
-
-              br {
-                content: ' ';
-                display: inline;
-                clear: none;
-
-                &:after {
-                  content: ' ';
-                }
-              }
-            }
-          }
-
-        }
-
-        button {
-          width: 100%;
-          border-radius: 0;
-        }
-
-      }
-
-      label[for="primary_email"] {
-        display: block;
-        padding: 1rem 0;
-        margin-bottom: 2rem;
-        text-align: left;
-        line-height: 1;
-        width: 100%;
-      }
-
     }
 
-    &.open form {
-      height: 480px;
-      padding: 2rem 4rem 0;
+    &.closed form,
+    form{
+      opacity: 0;
+    }
+
+    &.open {
+      form {
+        opacity: 1;
+      }
     }
   }
 }
@@ -134,61 +169,14 @@
 @include breakpoint($min1024) {
   .header .search__block.open ~ .newsletter-form__block {
     width: 5.6rem; //width of the button
-
     .header-newsletter-form__toggle span {
       display: none;
     }
-
     form { //hide the form
       @include element-invisible;
     }
   }
 }
-
-.header-newsletter-form__toggle { //the toggle icon
-  //display: none; //we don't want to use a button on mobile
-  background: transparent;
-  border-radius: 0;
-  pointer-events: none;
-  padding: 0 0 1.4rem;
-  display: block;
-  text-align: center;
-  width: 100%;
-
-  span:last-of-type {
-    @include element-invisible-off;
-  }
-
-  span:first-of-type {
-    // display: none;
-  }
-
-
-
-  @include breakpoint($min1024) {
-    pointer-events: all;
-    display: block;
-    padding: 1.4rem;
-    text-align: left;
-    background: $nkh-orange;
-
-    &:hover, &:active, &:focus {
-      background: $nkh-text;
-    }
-
-    span:first-of-type {
-      line-height: 2.8rem;
-      padding-right: 1rem;
-      color: $white;
-      text-transform: uppercase;
-    }
-
-    span:last-of-type {
-      @include element-invisible;
-    }
-  }
-}
-
 /*#header:not(.top) .newsletter-form__block.block {
 
   @include breakpoint($min1024) {
@@ -222,7 +210,6 @@
     display: none;
   }
 }
-
 .header .mobile .newsletter-form__block {
   padding-top: 2rem;
   padding-bottom: 2rem;

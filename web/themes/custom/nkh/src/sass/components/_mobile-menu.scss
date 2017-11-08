@@ -9,21 +9,28 @@
   top: auto;
   right: 0;
   @include breakpoint($min1024) {
-    width: calc(100% - 250px);
+
     height: auto;
     max-height: none;
     transition: none;
-    top: 2rem;
     overflow: visible; // Needed for newsletter form dropdown - Casey
+    width: auto;
+    top: 2rem;
     nav{
       display: inline-block;
       vertical-align: top;
+      margin-top: .5rem;
     }
     .sub-nav-toggle,
     .sub-nav-toggle-back{
       display: none
     }
   }
+  @include breakpoint($min1260) {
+    top: 3.5rem;
+  }
+
+  span,
   a{
     @include breakpoint($min1024) {
       font-size: 14px;
@@ -57,7 +64,7 @@
       max-height: 100rem;
       width: 100vw;
       margin-left: -3rem;
-      padding-bottom: 5rem;
+      padding-bottom: 0;
       margin-top:0;
       position: absolute;
       bottom: 140px;
@@ -79,7 +86,8 @@
       text-transform: uppercase;
       border-bottom: 3px solid transparent;
       transition: .25s border-bottom ease-out;
-      &:hover{
+      &:hover,
+      &.is-active{
         color: $nkh-text;
         border-bottom: 3px solid $nkh-orange;
       }
@@ -243,7 +251,8 @@
 
 .stay-open-menu {
   position: fixed !important;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
   background: $white;
   height: 100%;
   z-index: 100;
@@ -301,7 +310,7 @@
       transition-timing-function: ease-out;
     }
     .menu-link{
-      padding: 1rem 1rem .5rem;
+      padding: 2rem 2rem 1.5rem;
     }
   }
 
@@ -333,7 +342,7 @@
     top: 0;
     left: auto;
     width: 40px;
-    padding: 5px 55px 10px 10px;
+    padding: .6rem 2em 0 0;
     float: right;
     &:before {
       content: ">";

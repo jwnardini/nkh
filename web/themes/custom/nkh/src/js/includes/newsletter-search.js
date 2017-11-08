@@ -7,12 +7,11 @@
             // http://codekarate.com/blog/drupal-7-prevent-duplicating-javascript-behaviors
 
             //if (context == document) {
-                console.log('somerhing');
 
                 $( '.block-search' ).prepend( '<button class="header-search-form__toggle"><span class="element-invisible">Open the Search Form</span></button>');
 
 
-                $('.block--newsletter, .block-search')
+                $('#block-newslettersignupform, .block-search')
 
                 //$('.header-newsletter-form__toggle, .header-search-form__toggle')
                     .off('mousedown').on('mousedown', function() {
@@ -47,7 +46,7 @@
                         }
                     })
 
-                    .on( 'blur focusout', function() {
+                    .on( 'focusout blur', function() {
                         $(this).removeClass( 'open' ).addClass( 'closed' );
                         console.log('It closed on blur');
                     });
