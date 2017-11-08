@@ -11,7 +11,7 @@ dependencies:
 id: footernewslettersignup
 theme: nkh
 region: footer
-weight: -9
+weight: -11
 provider: null
 plugin: 'block_content:6c4be1e0-fef8-45ee-a5e9-8c20367d17df'
 settings:

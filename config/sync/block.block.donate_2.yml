@@ -1,4 +1,4 @@
-uuid: ff62942a-e10c-48d0-89bd-15d2d6ce929a
+uuid: 0a3dea14-b0e0-4950-a787-d1030e538c14
 langcode: en
 status: true
 dependencies:
@@ -8,10 +8,10 @@ dependencies:
     - block_content
   theme:
     - nkh
-id: donate
+id: donate_2
 theme: nkh
-region: header
-weight: -9
+region: footer
+weight: -10
 provider: null
 plugin: 'block_content:e9fa88d3-ee73-4064-ae26-a62b3f7645fb'
 settings:
