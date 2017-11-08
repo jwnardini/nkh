@@ -10,6 +10,7 @@ require('./includes/cookies');
 require('./includes/viewport');
 require('./includes/menu');
 require('./includes/mobile-menu');
+require('./includes/newsletter-search');
 require('./includes/shorten');
 require('./includes/skip-links');
 require('./includes/form');

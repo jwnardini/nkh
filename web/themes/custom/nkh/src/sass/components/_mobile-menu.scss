@@ -9,19 +9,34 @@
   top: auto;
   right: 0;
   @include breakpoint($min1024) {
-    width: calc(100% - 300px);
+
     height: auto;
     max-height: none;
     transition: none;
-    top: 2rem;
     overflow: visible; // Needed for newsletter form dropdown - Casey
+    width: auto;
+    top: 2rem;
     nav{
       display: inline-block;
       vertical-align: top;
+      margin-top: .5rem;
     }
     .sub-nav-toggle,
     .sub-nav-toggle-back{
       display: none
+    }
+  }
+  @include breakpoint($min1260) {
+    top: 3.5rem;
+  }
+
+  span,
+  a{
+    @include breakpoint($min1024) {
+      font-size: 14px;
+    }
+    @include breakpoint($min1260) {
+      font-size: 16px;
     }
   }
   li {
@@ -49,7 +64,7 @@
       max-height: 100rem;
       width: 100vw;
       margin-left: -3rem;
-      padding-bottom: 5rem;
+      padding-bottom: 0;
       margin-top:0;
       position: absolute;
       bottom: 140px;
@@ -62,19 +77,37 @@
 
   }
   .menu--main{
+    //mobile + desktop
+    a.menu-link {
+      font-weight: 500;
+      color: $nkh-text;
+      line-height: 1.2;
+      text-decoration: none;
+      text-transform: uppercase;
+      border-bottom: 3px solid transparent;
+      transition: .25s border-bottom ease-out;
+      &:hover,
+      &.is-active{
+        color: $nkh-text;
+        border-bottom: 3px solid $nkh-orange;
+      }
+    } 
+    //desktop
     @include breakpoint($min1024) {
       li{
-        padding: 0 0 0 1rem;
+        padding: 0;
         margin-left: 0;
         display: inline-block;
+        position: relative;
         + li{
-          margin-left: 40px;
+          margin-left: 15px;
         }
         ul {
           display: none;
           position: absolute;
           background: $white;
-
+          padding-top: 2rem;
+          left: -4rem;
         }
         &:hover{
           ul {
@@ -83,27 +116,42 @@
         }
         li {
           display: block;
-          margin: 0;
+          margin: 0 0 -2px 0;
           padding: 0;
+        }
+        li a.menu-link{
+          padding: .8rem .5rem;
+          width: 200px;
+          color: $white;
+          background: #383d44;
+          -webkit-mask: url('/themes/custom/nkh/images/solid.svg');
+          -webkit-mask-size: 100%;
+          &:hover{
+            color: $white;
+            background: #4d545d;
+            border-bottom: 3px solid transparent;
+          }
+          &.is-active{
+            background: #31353b;          
+          }          
         }
       }
       a.menu-link{
-        padding: 1rem 0;
+        padding: 1rem 0 0;
         display: block;
-      }    
-    }
-    a.menu-link {
-      font-weight: 16px; 
-      color: $nkh-text;
-      text-decoration: none;
-      text-transform: uppercase;
-      border-bottom: 3px solid transparent;
-      transition: .25s border-bottom ease-out;
-      &:hover{
-        color: $nkh-text;
-        border-bottom: 3px solid $nkh-orange;
+        text-align: center;
       }
-    } 
+    }
+    @include breakpoint($min1260) {
+      li{
+        + li{
+          margin-left: 30px;
+        }
+        li{
+          margin-left: 0;
+        }
+      }
+    }
   }
 }
 
@@ -203,7 +251,8 @@
 
 .stay-open-menu {
   position: fixed !important;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
   background: $white;
   height: 100%;
   z-index: 100;
@@ -261,7 +310,7 @@
       transition-timing-function: ease-out;
     }
     .menu-link{
-      padding: 1rem 1rem .5rem;
+      padding: 2rem 2rem 1.5rem;
     }
   }
 
@@ -293,7 +342,7 @@
     top: 0;
     left: auto;
     width: 40px;
-    padding: 5px 55px 10px 10px;
+    padding: .6rem 2em 0 0;
     float: right;
     &:before {
       content: ">";
@@ -337,11 +386,8 @@
       &:before {
         color:  $nkh-darkorange;
       }
-
     }
-
   }
-
   .subnav>.menu-item>.menu.open {
     left: 0;
     width: 100%;

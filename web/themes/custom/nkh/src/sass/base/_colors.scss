@@ -11,8 +11,10 @@ $white: #FFF;
 
 
 // nkh colors
+$nkh-bone: rgba(246,245,243, 1);
 $nkh-orange: rgba(254,106,13, 1);
 $nkh-darkorange: rgba(240,104,47, 1);
+$nkh-darkerorange: rgba(227,90,3, 1);
 $nkh-footer-lightergrey: rgba(200,204,210, 1);
 $nkh-lightergrey: rgba(163,163,163, 1);
 $nkh-lightgrey: rgba(148,152,158, 1);
@@ -43,8 +45,10 @@ $nkh-text: $nkh-darkergrey;
 
 // generate color palettes 
 $themes:(
+  bone: $nkh-bone,
   orange: $nkh-orange,
   darkorange: $nkh-darkorange,
+  darkerorange: $nkh-darkerorange,
   footer-lightergrey: $nkh-footer-lightergrey,
   lightgrey: $nkh-lightgrey,
   darkgrey: $nkh-darkgrey,

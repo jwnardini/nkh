@@ -1,0 +1,75 @@
+.block--search{
+  padding: 0 1.5rem 0 2rem;
+  width: 96.5%;
+  .field--type-text-with-summary{
+  	padding: 0;
+    a{
+      width: 100%;
+      color: $white;
+      background-color: $highlight;
+      display: block;
+      @include link-button;
+      -webkit-mask-size: 60%;
+      padding: 15px 0;
+      line-height: 1.3;
+      &:after{
+        content: " To No Kid Hungry";
+        text-transform: uppercase;
+      }
+      &:hover{
+        background-color: $nkh-darkorange;
+      }
+    }
+    ul{
+      display: none;
+      position: absolute;
+      width: 100%;
+      z-index: 1001;
+    }
+  }
+
+  @include breakpoint($min1024) {
+    padding: 0;
+    width: 100px;
+    margin-left: 1.4rem;
+    margin-top: -.2rem;
+    display: inline-block;
+    vertical-align: top;
+    @include clearfix;
+    .field--type-text-with-summary{
+      position: relative;
+      margin: 0;
+      a{
+        @include link-button;
+        -webkit-mask-size: 200%;
+        padding: 15px 0;
+        line-height: 1.3;
+        text-align: center;
+        margin-bottom: -1px;
+        transition: .25s background-color ease-in;
+        &:after{
+          content: "";
+        }
+      }
+      ul{
+        display: none;
+        position: absolute;
+        width: 100%;
+      }
+      li{
+        margin: 0;
+        padding: 0;
+        a{
+          font-size: 11px;
+        }
+      }
+      &:hover ul{
+        display: block;
+      }
+    }
+  }
+  @include breakpoint($min1260) {
+    margin-left: 2rem;
+    width: 120px;
+  }
+}

@@ -1,0 +1,25 @@
+uuid: 64cffc65-5722-4b5c-b9b4-3bd9d4164262
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:2a514bfe-76ab-41d3-a0a9-a258eaf68b0b'
+  module:
+    - block_content
+  theme:
+    - nkh
+id: donate
+theme: nkh
+region: header
+weight: -9
+provider: null
+plugin: 'block_content:2a514bfe-76ab-41d3-a0a9-a258eaf68b0b'
+settings:
+  id: 'block_content:2a514bfe-76ab-41d3-a0a9-a258eaf68b0b'
+  label: Donate
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

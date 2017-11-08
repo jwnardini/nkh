@@ -38,8 +38,11 @@
   }
 
   @include breakpoint($min1024) {
-    max-width: 200px;
+    max-width: 150px;
     height: auto;
+  }
+  @include breakpoint($min1260) {
+    max-width: 200px;
   }
 }
 
