@@ -1,0 +1,137 @@
+.mobile-alert-button { //the toggle icon
+  text-align: center;
+  border-radius: 0;
+  pointer-events: none;
+  display: inline;
+  padding: 0;
+  background-color: transparent;
+  &:hover, &:active, &:focus {
+    color: $nkh-lightgrey;
+  }
+  span:first-of-type {
+    line-height: 1rem;
+    color: $white;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  span:last-of-type {
+    @include element-invisible-off;
+    @include element-invisible;
+  }
+}
+.joinform {
+  z-index: 100;
+  right: -65%;
+  top: 5rem;
+  width: 300px;
+  height: auto;
+  padding: 2rem 3rem;
+  background-color: #4d545d;
+  -webkit-mask: url('/themes/custom/nkh/images/solid.svg');
+  -webkit-mask-size: 100%;
+  position: absolute;
+  transition: all .3s;
+  overflow: hidden;
+  clear: both;
+  text-align: left;
+  @include clearfix;
+  label,
+  span,
+  span *{
+    color: $white;
+    font-weight: 400;
+    width: 100%;
+    text-align: left;
+    font-size: 14px;
+    line-height: 1;
+  }
+}
+
+div[class*="block-mobilecommonssignup"]{
+  background: transparent;
+  color: $white;
+  padding: 0;
+  display: inline; 
+  width: auto;
+  text-align: center;
+  margin-left: 1.8rem;
+  @include clearfix;
+  @include breakpoint($min768) {
+    display: inline-block; 
+    margin-left: 3rem;
+  }
+  @include breakpoint($min1024) {
+    margin: -.9rem 0 0 3rem;
+  }
+
+
+  &.closed,
+  &.open {
+    display: inline-block; 
+    position: relative;
+  }
+
+  &.closed form,
+  .joinform{
+    opacity: 0;
+    display: none;
+  }
+
+  &.open {
+    .joinform {
+      opacity: 1;
+      display: block;
+    }
+  }
+  p {
+    font-size: 2.2rem;
+    font-weight: 500;
+    margin: 0;
+    color: $white;
+    line-height: 1.4;
+  }
+
+  label{
+    display: block;
+    margin-bottom: 2rem;
+  }
+  .text-formatted{
+    margin: 0;
+    display: inline;
+  }
+
+  input[type="submit"], button[type="submit"] {
+    @include link-button;
+    background-color: $highlight;
+    -webkit-mask-size: 60%;
+    color: $white;
+    text-transform: uppercase;
+    width: 100%;
+    border-radius: 0;
+    line-height: 0;
+
+    &:hover, &:focus {
+      background-color: $nkh-darkorange;
+    }
+  }
+  input[type="text"]{
+    border-color: rgba($white, .6);
+    padding: .5rem 1rem;
+    min-width: auto;
+    font-size: 1.6rem;
+    width: 100%;
+    background: $white;
+    color: $nkh-text;
+    margin-bottom: 1rem;
+    &:hover{
+      border: 1px solid $nkh-darkergrey;
+    }
+  }
+  @include breakpoint($min1024) {
+    label {
+      font-size: 14px;
+    }
+  }
+}
+
+

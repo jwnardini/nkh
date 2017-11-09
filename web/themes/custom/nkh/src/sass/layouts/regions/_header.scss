@@ -21,6 +21,14 @@
       top: 1rem;
     }
   }
+  div[class*="block-newsletter"]{
+    &.closed,
+    &.open {
+      display: inline-block; 
+      position: relative;
+      text-align: right;
+    }  
+  }
 }
 
 .nkh-logo {

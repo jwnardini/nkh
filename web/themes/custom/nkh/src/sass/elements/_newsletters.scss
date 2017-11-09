@@ -6,7 +6,6 @@
   }
   @include breakpoint($min1024) {
     text-align: center;
-    background: $nkh-darkergrey;
     border-radius: 0;
     pointer-events: none;
     display: block;
@@ -14,9 +13,7 @@
     -webkit-mask-size: 200%;
     padding: .5rem 1rem;
     height: 48px;
-    &:hover, &:active, &:focus {
-      background: $nkh-darkgrey;
-    }
+    background: $nkh-darkergrey;
     span:first-of-type {
       line-height: 2.8rem;
       color: $white;
@@ -29,8 +26,7 @@
   }
 }
 
-.block--newsletter {
-  background: $white;
+div[class*="block-newsletter"]{
   color: $nkh-text;
   padding: 0;
   display: block; 
@@ -38,18 +34,19 @@
   vertical-align: text-bottom;
   width: 91vw;
   margin: 0 0 0 2rem;
+  @include clearfix;
   .text-formatted{
     display: inline-block;
     margin: 0;
   }
   input {
-    border-color: rgba($white, .6);
+    border-color: rgba($nkh-text, .6);
     font-size: 1.6rem;
     padding: .5rem 1rem;
     width: 100%;
 
     &:hover, &:focus, &:active {
-      border-color: rgba($white, 1);
+      border-color: rgba($nkh-text, 1);
     }
 
     &::-webkit-input-placeholder, &:-moz-placeholder, &::-moz-placeholder, &:-ms-input-placeholder, placeholder {
@@ -66,9 +63,8 @@
     width: 100%;
     border-radius: 0;
     line-height: 0;
-
-    &:hover, &:focus {
-      background-color: $nkh-darkorange;
+    &:hover,{
+      border: 1px solid $nkh-darkergrey;
     }
   }
   input {
@@ -81,8 +77,6 @@
       border: 1px solid $nkh-darkergrey;
     }
   }
-
-
   .required{
     font-size: 0;
     &:before{
@@ -126,6 +120,11 @@
     margin-left: 0;
     margin-top: -.2rem;
     text-align: center;
+    &:hover, &:active, &:focus {
+      .header-newsletter-form__toggle{
+        background-color: #4d545d;
+      }
+    }  
     form {
       position: absolute;
       z-index: 100;
@@ -134,40 +133,34 @@
       width: 380px;
       height: auto;
       padding: 2rem 3rem;
-      display: block;
       border: 2px solid rgba($nkh-text, .2);
       background: rgba($white, 0.9);
       color: $nkh-text;
       transition: all .3s;
       overflow: hidden;
       clear: both;
+      @include clearfix;
     }
     label{
       font-size: 14px;
     }
-
-    &.closed,
-    &.open {
-      display: inline-block; 
-      position: relative;
-      text-align: right;
-    }
-
     &.closed form,
     form{
       opacity: 0;
+      display: none;
     }
 
     &.open {
       form {
         opacity: 1;
+        display: block;
       }
     }
   }
 }
 
 @include breakpoint($min1024) {
-  .header .search__block.open ~ .newsletter-form__block {
+  .header .block--search.open ~ .block--newsletter {
     width: 5.6rem; //width of the button
     .header-newsletter-form__toggle span {
       display: none;
@@ -177,20 +170,6 @@
     }
   }
 }
-/*#header:not(.top) .newsletter-form__block.block {
-
-  @include breakpoint($min1024) {
-    &.closed,
-    &.open {
-      width: 5.6rem;
-
-      button span {
-        display: none;
-      }
-    }
-  }
-
-}*/
 
 .alert-success[style="display: none;"],
 .alert-success2[style="display: none;"] {
@@ -210,7 +189,7 @@
     display: none;
   }
 }
-.header .mobile .newsletter-form__block {
+.header .mobile .block--newsletter {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
