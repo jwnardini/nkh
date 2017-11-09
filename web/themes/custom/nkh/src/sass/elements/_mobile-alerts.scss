@@ -47,7 +47,7 @@
   }
 }
 
-.block--mobilecommons {
+div[class*="block-mobilecommonssignup"]{
   background: transparent;
   color: $white;
   padding: 0;
@@ -61,7 +61,7 @@
     margin-left: 3rem;
   }
   @include breakpoint($min1024) {
-    margin: -1.5rem 0 0 3rem;
+    margin: -.9rem 0 0 3rem;
   }
 
 
@@ -95,8 +95,10 @@
     display: block;
     margin-bottom: 2rem;
   }
-
-
+  .text-formatted{
+    margin: 0;
+    display: inline;
+  }
 
   input[type="submit"], button[type="submit"] {
     @include link-button;
@@ -129,7 +131,6 @@
     label {
       font-size: 14px;
     }
-
   }
 }
 

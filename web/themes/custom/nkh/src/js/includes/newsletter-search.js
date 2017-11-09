@@ -11,7 +11,7 @@
                 $( '.block-search' ).prepend( '<button class="header-search-form__toggle"><span class="element-invisible">Open the Search Form</span></button>');
 
 
-                $('.block--mobilecommons, .block--newsletter, .block-search')
+                $('.block-mobilecommonssignup, .block-newslettersignupform, .block-newslettersignupform-2, .block-search')
 
                 //$('.header-newsletter-form__toggle, .header-search-form__toggle')
                     .off('mousedown').on('mousedown', function() {
