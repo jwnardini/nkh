@@ -1,0 +1,25 @@
+uuid: 661d0b9e-b34c-4756-b6df-612e5d4c8562
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:8d8638fb-79d4-4afa-89a7-918088de9a39'
+  module:
+    - block_content
+  theme:
+    - nkh
+id: newslettersignupform_2
+theme: nkh
+region: footer
+weight: -11
+provider: null
+plugin: 'block_content:8d8638fb-79d4-4afa-89a7-918088de9a39'
+settings:
+  id: 'block_content:8d8638fb-79d4-4afa-89a7-918088de9a39'
+  label: 'Header Newsletter Signup Form'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
