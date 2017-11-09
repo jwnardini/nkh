@@ -27,12 +27,12 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 1
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     region: content
   field_image_logo:
-    weight: 2
+    weight: 1
     label: hidden
     settings:
       view_mode: default
@@ -48,7 +48,7 @@ content:
     type: metatag_empty_formatter
     region: content
   field_social_fb:
-    weight: 3
+    weight: 2
     label: hidden
     settings:
       trim_length: 80
@@ -60,7 +60,7 @@ content:
     type: link
     region: content
   field_social_ins:
-    weight: 5
+    weight: 4
     label: hidden
     settings:
       trim_length: 80
@@ -72,7 +72,7 @@ content:
     type: link
     region: content
   field_social_tw:
-    weight: 4
+    weight: 3
     label: hidden
     settings:
       trim_length: 80
@@ -99,7 +99,7 @@ content:
     type: text_default
     region: content
   field_url:
-    weight: 6
+    weight: 5
     label: hidden
     settings:
       trim_length: 80
