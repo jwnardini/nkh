@@ -6,4 +6,4 @@ name: Series
 vid: series
 description: 'Blog-specific Taxonomy list'
 hierarchy: 0
-weight: 0
+weight: -9

@@ -6,4 +6,4 @@ name: Profile
 vid: profile
 description: 'Profile-specific Taxonomy list'
 hierarchy: 0
-weight: 0
+weight: -7

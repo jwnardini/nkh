@@ -6,4 +6,4 @@ name: News
 vid: news
 description: 'News-specific Taxonomy list'
 hierarchy: 0
-weight: 0
+weight: -6

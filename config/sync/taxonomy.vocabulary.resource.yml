@@ -6,4 +6,4 @@ name: Resource
 vid: resource
 description: 'Resource-specific Taxonomy list'
 hierarchy: 0
-weight: 0
+weight: -4

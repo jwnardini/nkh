@@ -6,4 +6,4 @@ name: Location
 vid: location
 description: 'Location-specific Taxonomy list'
 hierarchy: 0
-weight: 0
+weight: -5
