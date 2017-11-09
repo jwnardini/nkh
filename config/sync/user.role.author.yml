@@ -37,4 +37,5 @@ permissions:
   - 'use text format full_html'
   - 'use text format simple_html'
   - 'view own unpublished content'
+  - 'view scheduled content'
   - 'view the administration theme'

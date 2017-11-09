@@ -43,4 +43,5 @@ permissions:
   - 'view blog revisions'
   - 'view latest version'
   - 'view page revisions'
+  - 'view scheduled content'
   - 'view the administration theme'
