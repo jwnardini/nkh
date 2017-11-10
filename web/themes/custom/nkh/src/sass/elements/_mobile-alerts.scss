@@ -1,20 +1,20 @@
-.mobile-alert-button { //the toggle icon
+button.mobile-alert-button { //the toggle icon
   text-align: center;
   border-radius: 0;
-  pointer-events: none;
-  display: inline;
+  display: block;
   padding: 0;
+  width: 136px;
+  z-index: 100;
   background-color: transparent;
+  color: $white;
+  text-transform: uppercase;
+  font-weight: 500;
   &:hover, &:active, &:focus {
     color: $nkh-lightgrey;
+    background-color: transparent;
   }
-  span:first-of-type {
-    line-height: 1rem;
-    color: $white;
-    text-transform: uppercase;
-    font-weight: 500;
-  }
-  span:last-of-type {
+
+  span.element-invisible {
     @include element-invisible-off;
     @include element-invisible;
   }
@@ -62,27 +62,34 @@ div[class*="block-mobilecommonssignup"]{
   }
   @include breakpoint($min1024) {
     margin: -.9rem 0 0 3rem;
-  }
-
-
-  &.closed,
-  &.open {
     display: inline-block; 
-    position: relative;
+    width: 136px;
   }
 
-  &.closed form,
-  .joinform{
-    opacity: 0;
-    display: none;
-  }
+  .text-formatted{
+    margin: 0;
+    display: inline-block;
+    &.closed,
+    &.open {
+      display: inline-block; 
+      position: relative;
+    }
 
-  &.open {
-    .joinform {
-      opacity: 1;
-      display: block;
+    &.closed form,
+    .joinform{
+      opacity: 0;
+      display: none;
+    }
+
+    &.open {
+      .joinform {
+        opacity: 1;
+        display: block;
+      }
     }
   }
+
+
   p {
     font-size: 2.2rem;
     font-weight: 500;
@@ -95,10 +102,7 @@ div[class*="block-mobilecommonssignup"]{
     display: block;
     margin-bottom: 2rem;
   }
-  .text-formatted{
-    margin: 0;
-    display: inline;
-  }
+
 
   input[type="submit"], button[type="submit"] {
     @include link-button;
