@@ -1,0 +1,33 @@
+uuid: 5f5208d4-c7de-4b48-bc34-5bb122133ff0
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.cta_references
+  module:
+    - ctools
+    - views
+  theme:
+    - nkh
+id: views_block__cta_references_partner
+theme: nkh
+region: prefooter
+weight: 0
+provider: null
+plugin: 'views_block:cta_references-block_5'
+settings:
+  id: 'views_block:cta_references-block_5'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      partner: partner
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

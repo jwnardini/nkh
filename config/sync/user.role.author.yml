@@ -11,6 +11,7 @@ permissions:
   - 'access cta_add_find entity browser pages'
   - 'access cta_alert_add_find entity browser pages'
   - 'access cta_find entity browser pages'
+  - 'access cta_text_find entity browser pages'
   - 'access custom_entity entity browser pages'
   - 'access embed entity browser pages'
   - 'access files overview'

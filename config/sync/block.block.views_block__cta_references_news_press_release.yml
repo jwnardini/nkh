@@ -1,0 +1,33 @@
+uuid: fdcc187f-06a2-4dc1-aad5-8563e7dca355
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.cta_references
+  module:
+    - ctools
+    - views
+  theme:
+    - nkh
+id: views_block__cta_references_news_press_release
+theme: nkh
+region: prefooter
+weight: 0
+provider: null
+plugin: 'views_block:cta_references-block_4'
+settings:
+  id: 'views_block:cta_references-block_4'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      news: news
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

@@ -5,6 +5,8 @@ dependencies:
   config:
     - views.view.core_partners
   module:
+    - ctools
+    - system
     - views
   theme:
     - nkh
@@ -21,4 +23,15 @@ settings:
   label_display: visible
   views_label: ''
   items_per_page: none
-visibility: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles: {  }
+    negate: true
+    context_mapping:
+      node: '@node.node_route_context:node'
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

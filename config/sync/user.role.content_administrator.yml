@@ -21,6 +21,7 @@ permissions:
   - 'administer shortcuts'
   - 'administer taxonomy'
   - 'bypass eck entity access'
+  - 'bypass maxlength'
   - 'create media'
   - 'create url aliases'
   - 'customize shortcut links'
