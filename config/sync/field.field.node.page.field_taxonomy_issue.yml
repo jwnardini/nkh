@@ -1,0 +1,29 @@
+uuid: 090fb297-a1ca-4324-94f2-01191167c1ca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_taxonomy_issue
+    - node.type.page
+    - taxonomy.vocabulary.issue
+id: node.page.field_taxonomy_issue
+field_name: field_taxonomy_issue
+entity_type: node
+bundle: page
+label: Issues
+description: 'Choose from the sitewide taxonomy (i.e., Summer Meals or School Breakfast). You may choose as many as you''d like. '
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      issue: issue
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

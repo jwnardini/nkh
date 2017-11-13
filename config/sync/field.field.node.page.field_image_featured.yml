@@ -1,0 +1,28 @@
+uuid: 6001955b-f35f-4739-afef-4bee17e1392b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image_featured
+    - media_entity.bundle.image
+    - node.type.page
+id: node.page.field_image_featured
+field_name: field_image_featured
+entity_type: node
+bundle: page
+label: 'Featured Image'
+description: 'This image will display on landing pages when this page is featured. It will not display on the page you are currently editing, but it can be the same image as your header image. Please upload it in both places. '
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

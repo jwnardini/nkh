@@ -5,8 +5,12 @@ dependencies:
   config:
     - field.field.node.page.body
     - field.field.node.page.field_cta_ref
+    - field.field.node.page.field_image_banner
+    - field.field.node.page.field_image_featured
+    - field.field.node.page.field_intro
     - field.field.node.page.field_landing_link_ref
     - field.field.node.page.field_metatags
+    - field.field.node.page.field_taxonomy_issue
     - field.field.node.page.field_teaser
     - node.type.page
   module:
@@ -22,27 +26,46 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 0
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_cta_ref:
-    weight: 1
-    label: above
+  field_image_banner:
+    weight: 0
+    label: hidden
     settings:
-      link: true
+      view_mode: hero
+      link: false
     third_party_settings: {  }
-    type: entity_reference_label
+    type: entity_reference_entity_view
+    region: content
+  field_intro:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
     region: content
   field_landing_link_ref:
-    weight: 2
-    label: above
+    weight: 4
+    label: hidden
     settings:
-      link: true
+      view_mode: full
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_taxonomy_issue:
+    weight: 3
+    label: hidden
+    settings:
+      link: false
     third_party_settings: {  }
     type: entity_reference_label
     region: content
 hidden:
+  field_cta_ref: true
+  field_image_featured: true
   field_metatags: true
   field_teaser: true
   links: true

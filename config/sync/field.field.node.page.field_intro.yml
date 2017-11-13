@@ -1,9 +1,9 @@
-uuid: 723a244d-5ade-4d60-b044-4a55bb47f371
+uuid: f09314d6-47c0-4298-a0e0-14a15969681d
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.body
+    - field.storage.node.field_intro
     - node.type.page
   module:
     - allowed_formats
@@ -16,18 +16,15 @@ third_party_settings:
     basic_html: '0'
     plain_text: '0'
     code: '0'
-_core:
-  default_config_hash: rUop-8b6hvxxDYbv-KobTfNIBNbPY9qOPl8f6kBNSpw
-id: node.page.body
-field_name: body
+id: node.page.field_intro
+field_name: field_intro
 entity_type: node
 bundle: page
-label: Body
-description: 'This is the main content for the page. '
+label: Introduction
+description: 'This content will display ahead of the main body and will be styled slightly differently to give it special weight. '
 required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
-settings:
-  display_summary: false
-field_type: text_with_summary
+settings: {  }
+field_type: text_long
