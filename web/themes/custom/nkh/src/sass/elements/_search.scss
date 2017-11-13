@@ -112,6 +112,7 @@ button.header-search-form__toggle {
     &.closed form,
     form{
       opacity: 0;
+      display: none;
     }
     &.open {
       form {

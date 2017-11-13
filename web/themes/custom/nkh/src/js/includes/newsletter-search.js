@@ -10,46 +10,32 @@
 
                 $( '.block-search' ).prepend( '<button class="header-search-form__toggle"><span class="element-invisible">Open the Search Form</span></button>');
 
+                var $everything = $(window);
+                // add class to this list for toggle class on the same page. Use this on footer/header sectionss.
+                var $blocks = $('.block-mobilecommonssignup .text-formatted, .block-newslettersignupform, .block-newslettersignupform-2, .block-search')
 
-                $('.block-mobilecommonssignup, .block-newslettersignupform, .block-newslettersignupform-2, .block-search')
+                // give the classes above a common share class.
+                $blocks.addClass('toggle-class');
 
-                //$('.header-newsletter-form__toggle, .header-search-form__toggle')
-                    .off('mousedown').on('mousedown', function() {
-                        if ( $(this).hasClass( 'open' ) ) {
-                            $(this).removeClass( 'open' ).addClass( 'closed' );
-                            //console.log('It had the open class, and on click closed');
+                
+                $(document).on('click', function(e) {
+                    // remove all the click listening by checking if it has toggle-class
+                    if( !$(e.target).parents().hasClass('toggle-class') ) {                    
+                        if( $('.open').is(':visible') ) {
+                            $('.open').removeClass('open');
+                        }else{
+                          //nothing.
                         }
-                        else if ( $(this).siblings().hasClass( 'open' ) ) {
-                            $(this).siblings().removeClass( 'open' ).addClass( 'closed' );
-                            $(this).addClass( 'open' ).removeClass( 'closed' );
-                            //console.log('The sibling had the open class, and on click closed');
-                        }
-                        else {
-                            $(this).addClass( 'open' ).removeClass( 'closed' );
-                            //console.log('It opened on click');
-                        }
-                    })
-
-                    .on( 'focusin', function() {
-                        if ( $(this).siblings().hasClass( 'open' ) ) {
-                            $(this).siblings().removeClass( 'open' ).addClass( 'closed' );
-                            $(this).addClass( 'open' ).removeClass( 'closed' );
-                            //console.log('It got focus, and the sibling had the open class, so sibling was closed and this was opened.');
-                        }
-                        else if ( $(this).hasClass( 'open' ) ) {
-                            //do nothing
-                            //console.log('It had the open class, and so on focus didnt change');
-                        }
-                        else {
-                            $(this).addClass( 'open' ).removeClass( 'closed' );
-                            //console.log('It opened when the focus went to it.');
-                        }
-                    })
-
-                    .on( 'focusout blur', function() {
-                        $(this).removeClass( 'open' ).addClass( 'closed' );
-                        console.log('It closed on blur');
-                    });
+                    }
+                });
+                $blocks.click(function() {
+                    // this removes all the slibings open class
+                    if( $('.open').is(':visible') ) {
+                        $('.open').removeClass('open');
+                    }
+                    // this add the open class to the specific clicked object.
+                    $(this).addClass('open');
+                });
 
             //}
 
