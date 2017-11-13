@@ -1,0 +1,31 @@
+uuid: 490d1619-8df0-44c2-bfd4-16fb3a3a46f5
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:reference_block:3856ceae-fb3a-4483-804b-ed0d840af74d'
+  module:
+    - block_content
+    - system
+  theme:
+    - nkh
+id: ctaalert_permanent_header
+theme: nkh
+region: alert
+weight: 0
+provider: null
+plugin: 'block_content:3856ceae-fb3a-4483-804b-ed0d840af74d'
+settings:
+  id: 'block_content:3856ceae-fb3a-4483-804b-ed0d840af74d'
+  label: CTA-alert_permanent_header
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }
