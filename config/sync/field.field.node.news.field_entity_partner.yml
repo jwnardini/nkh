@@ -11,7 +11,7 @@ field_name: field_entity_partner
 entity_type: node
 bundle: news
 label: 'Related Partner'
-description: ''
+description: 'This allows you to select any partners sponsoring or related to the news story. '
 required: false
 translatable: true
 default_value: {  }

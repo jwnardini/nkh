@@ -11,7 +11,7 @@ field_name: field_image_logo
 entity_type: node
 bundle: partner
 label: Logo
-description: 'Upload the partner logo.'
+description: 'Upload the partner logo. SVG or PNG is preferred for transparency, please favor square or landscape logos over portrait logos, if possible. Images should be greater than 650×650.'
 required: false
 translatable: false
 default_value: {  }

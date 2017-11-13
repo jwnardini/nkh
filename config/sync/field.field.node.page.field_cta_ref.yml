@@ -11,7 +11,7 @@ field_name: field_cta_ref
 entity_type: node
 bundle: page
 label: 'CTA Reference'
-description: ''
+description: 'Use this to create a text Call To Action (i.e, the CTA that is on the bottom of the page). You can choose from existing or add a new one here. '
 required: false
 translatable: false
 default_value: {  }

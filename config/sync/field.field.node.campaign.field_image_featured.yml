@@ -11,7 +11,7 @@ field_name: field_image_featured
 entity_type: node
 bundle: campaign
 label: 'Featured Image'
-description: 'This image will display on landing pages when this campaign is featured. It will not display on the page you are currently editing, but it can be the same image as your header image. Please upload it in both places.'
+description: 'This image will display on landing pages when this campaign is featured. It will not display on the page you are currently editing, but it can be the same image as your header image. Please upload it in both places. Preferred dimensions equal to or greater than 920×630.'
 required: true
 translatable: true
 default_value: {  }

@@ -11,7 +11,7 @@ field_name: field_image_banner
 entity_type: node
 bundle: campaign
 label: 'Banner Image'
-description: 'This image will display on the top of the page.'
+description: 'This image will display at the top of the page. Preferred dimensions equal to or greater than 3840×1580.'
 required: false
 translatable: true
 default_value: {  }
