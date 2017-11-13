@@ -30,50 +30,50 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 2
+    weight: 5
     settings: {  }
     third_party_settings: {  }
     region: content
   field_boilerplate:
-    weight: 3
+    weight: 7
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_date_simple:
-    weight: 11
-    label: above
+    weight: 1
+    label: hidden
     settings:
-      format_type: medium
       timezone_override: ''
+      format_type: m_d_y_
     third_party_settings: {  }
     type: datetime_default
     region: content
   field_entity_partner:
     weight: 9
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
   field_intro:
-    weight: 10
-    label: above
+    weight: 4
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_metatags:
-    weight: 8
+    weight: 11
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter
     region: content
   field_taxonomy_issue:
-    weight: 7
+    weight: 8
     label: hidden
     settings:
       link: true
@@ -81,7 +81,7 @@ content:
     type: entity_reference_label
     region: content
   field_taxonomy_news:
-    weight: 6
+    weight: 10
     label: hidden
     settings:
       link: true
@@ -89,14 +89,14 @@ content:
     type: entity_reference_label
     region: content
   field_teaser:
-    weight: 1
+    weight: 2
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_url:
-    weight: 5
+    weight: 6
     label: hidden
     settings:
       trim_length: 80
@@ -108,12 +108,13 @@ content:
     type: link
     region: content
   field_video:
-    weight: 4
+    weight: 3
     label: hidden
     settings:
-      link: true
+      view_mode: embed
+      link: false
     third_party_settings: {  }
-    type: entity_reference_label
+    type: entity_reference_entity_view
     region: content
   links:
     weight: 0
