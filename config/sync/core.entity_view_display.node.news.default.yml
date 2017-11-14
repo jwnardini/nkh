@@ -52,7 +52,7 @@ content:
     region: content
   field_entity_partner:
     weight: 9
-    label: hidden
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
@@ -74,7 +74,7 @@ content:
     region: content
   field_taxonomy_issue:
     weight: 8
-    label: hidden
+    label: inline
     settings:
       link: true
     third_party_settings: {  }

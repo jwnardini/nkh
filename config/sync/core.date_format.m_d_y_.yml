@@ -5,4 +5,4 @@ dependencies: {  }
 id: m_d_y_
 label: 'Month Day, Year'
 locked: false
-pattern: 'M d, Y'
+pattern: 'M j, Y'
