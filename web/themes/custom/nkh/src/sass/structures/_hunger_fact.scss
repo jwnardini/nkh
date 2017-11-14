@@ -1,0 +1,105 @@
+.entity--hunger-fact{
+  -webkit-mask: url('/themes/custom/nkh/images/solid-2.svg');
+  -webkit-mask-size: 20%;
+  background: $nkh-lightgrey;
+  padding: 2rem;
+  width: calc(100% + 40px);
+  margin-left: -20px;
+  margin-right: -20px;
+  @include breakpoint($min480) {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  } 
+  overflow: hidden;
+  .entity-content{
+    max-width: 1000px;
+    margin: 20px 0;
+    @include breakpoint($min480) {
+      margin:0 auto;
+    } 
+    *{
+      color: $white;
+      letter-spacing: .1rem;
+    }
+
+    & > a{
+      text-decoration: underline;
+      font-size: 1.2rem;
+      margin: 2.5rem 0 0.5rem; 
+      @include breakpoint($min1024) {
+        margin: 2rem 0 3rem;
+      }
+
+    }
+    & > a,
+    .hunger-fact-title{
+      width: 100%;
+      display: block;
+    }
+  }
+  .field--name-field-statistic-hunger{
+    font-size: 10.4rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    padding-bottom: 1.5rem;
+    -webkit-mask: url(/themes/custom/nkh/images/solid-2.svg);
+    -webkit-mask-size: 100%;
+    color: $white;
+    position: relative;
+    line-height: 1;
+    &::after{
+      position: absolute;
+      content: '';
+      @include large-text-highlight;
+      display: block;
+      bottom: 1.2rem;
+      width: 100%;
+      height: 8rem;
+      z-index: -9;
+    }
+  }
+  .field--name-field-body-hunger{  
+    @include breakpoint($min1024) {
+      padding-left: 6rem;
+    }
+    p{
+      background: $nkh-darkgrey;
+      font-weight: 300;
+      line-height: 1.2;
+      display: inline;
+      padding: .6rem 0;
+    }
+  }
+
+}
+.hunger-fact-title,
+.field--name-field-statistic-hunger{
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.field--name-field-statistic-hunger{
+  display: inline-table;
+
+}
+.field--name-field-statistic-hunger,
+.field--name-field-body-hunger{
+  margin-bottom: 2rem;
+  @include breakpoint($min1024) {
+    display: table-cell;
+    vertical-align: middle;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+}
+
+.hunger-fact-title{
+  margin: 1.5rem 0 1.5rem;  
+  @include breakpoint($min1024) {
+    margin: 3rem 0 2.5rem;
+  }
+  font-size: 1.4rem;
+}
+
+
