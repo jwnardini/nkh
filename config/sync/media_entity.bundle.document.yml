@@ -1,0 +1,15 @@
+uuid: 5b284c8c-fbb2-471b-bd85-b82147dfc0ab
+langcode: en
+status: true
+dependencies:
+  module:
+    - media_entity_document
+id: document
+label: Document
+description: 'Non-image files, such as PDFs, Word Docs, or Excel spreadsheets.'
+type: document
+queue_thumbnail_downloads: false
+new_revision: false
+type_configuration:
+  source_field: ''
+field_map: {  }
