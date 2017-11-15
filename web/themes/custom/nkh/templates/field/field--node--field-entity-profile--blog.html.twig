@@ -62,11 +62,12 @@
         {% elseif  loop.last %}
           {% if (loop.index == 1) %}
             <div{{ item.attributes.addClass('field__item') }}>
-          {% else %}
-            and <div{{ item.attributes.addClass('field__item') }}>
+          {% else %}      
+            <div{{ item.attributes.addClass('field__item') }}>
+              <span>and</span>
           {% endif %}
         {% else %}
-          , <div{{ item.attributes.addClass('field__item') }}>  
+          <div{{ item.attributes.addClass('field__item') }}>,  
         {% endif %}
           {{ item.content }} </div>
       {% endfor %}
