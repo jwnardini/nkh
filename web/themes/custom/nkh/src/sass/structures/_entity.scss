@@ -1,0 +1,21 @@
+.entity-cta-text{
+  -webkit-mask: url('/themes/custom/nkh/images/solid.svg');
+  -webkit-mask-size: 20%;
+  background: $nkh-orange;
+  padding: 2rem;
+  width: calc(100% + 40px);
+  margin-left: -20px;
+  margin-right: -20px;
+  @include breakpoint($min480) {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  } 
+  overflow: hidden;
+  *{
+    color: $white;
+    letter-spacing: .1rem;
+    text-align: center;
+    max-width: 1000px;
+  }  
+}
