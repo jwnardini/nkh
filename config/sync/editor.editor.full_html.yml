@@ -48,7 +48,6 @@ settings:
             - ShowBlocks
             - SpecialChar
             - PasteText
-            - PasteFromWord
             - Source
             - Maximize
             - Undo
