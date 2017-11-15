@@ -1,6 +1,6 @@
 div[data-quickedit-entity-id*="hunger_fact"],
 .entity--hunger-fact{
-  -webkit-mask: url('/themes/custom/nkh/images/solid-2.svg');
+  -webkit-mask: url('/themes/custom/nkh/images/solid.svg');
   -webkit-mask-size: 20%;
   background: $nkh-lightgrey;
   padding: 2rem;
@@ -43,7 +43,7 @@ div[data-quickedit-entity-id*="hunger_fact"],
     font-weight: 700;
     letter-spacing: 0;
     padding-bottom: 1.5rem;
-    -webkit-mask: url(/themes/custom/nkh/images/solid-2.svg);
+    -webkit-mask: url(/themes/custom/nkh/images/solid.svg);
     -webkit-mask-size: 50%;
     color: $white;
     position: relative;
