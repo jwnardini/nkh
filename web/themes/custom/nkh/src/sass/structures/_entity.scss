@@ -1,11 +1,10 @@
-/*div[data-quickedit-entity-id*="cta"],*/
+div[data-quickedit-entity-id*="cta"],
 .entity-cta-text{
   padding: 2rem;
   width: calc(100% + 40px);
   margin-left: -20px;
   margin-right: -20px;
   overflow: visible;
-  &:before,
   &:after{
     content: '';
     display: block;
@@ -15,15 +14,9 @@
     width: 100%;
     height: 100%;
   }
-/*  &:before{
-    background: $nkh-orange;
-    background-blend-mode: multiply;
-  }*/
   &:after{
     background: url('/themes/custom/nkh/images/texture_orange.png') repeat;
-/*    opacity: .1;
-    mix-blend-mode: multiply;
-*/    background-size: 21%;
+    background-size: 21%;
   }
   @include breakpoint($min480) {
     width: 100%;
