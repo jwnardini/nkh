@@ -62,7 +62,7 @@ process:   # Type is the specific type of node
     plugin: format_date
     from_format: 'U'
     to_format: 'Y-m-d'
-    source: date
+    source: changed
   title: title
   uid:
     plugin: default_value
