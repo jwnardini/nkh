@@ -21,6 +21,7 @@ $nkh-lightgrey: rgba(148,152,158, 1);
 $nkh-darkgrey: rgba(131,134,139, 1);
 $nkh-darkergrey: rgba(56,61,68 ,1);
 $nkh-yellow: rgba(136,182,49, 1);
+$nkh-green: rgba(150,183,76, 1);
 $nkh-brightyellow: rgba(253,193,45, 1);
 $nkh-lightblue: rgba(72,192,231, 1);
 
@@ -55,6 +56,7 @@ $themes:(
   darkergrey: $nkh-darkergrey,
   yellow: $nkh-yellow,
   brightyellow: $nkh-brightyellow,
+  green: $nkh-green,
   lightblue: $nkh-lightblue
 );
 
