@@ -1,0 +1,31 @@
+uuid: 1eb2e8ab-4838-485e-baf3-284388f3ecf6
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.media_preview
+  module:
+    - views
+name: svg_images
+label: 'SVG Images'
+display: modal
+display_configuration:
+  width: ''
+  height: ''
+  link_text: 'Select entities'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  0102e890-4b72-4229-bbfd-992f42ed1c50:
+    settings:
+      view: media_preview
+      view_display: entity_browser_2
+      submit_text: 'Select image'
+      auto_select: false
+    uuid: 0102e890-4b72-4229-bbfd-992f42ed1c50
+    weight: 1
+    label: 'SVG Images'
+    id: view

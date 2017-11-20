@@ -1,0 +1,24 @@
+uuid: 6852f9c1-22a1-4117-ad17-9c4af39c8844
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.large
+    - image.style.medium
+  theme:
+    - nkh
+id: proportionate
+label: Proportionate
+image_style_mappings:
+  -
+    breakpoint_id: nkh.retina
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: medium
+  -
+    breakpoint_id: nkh.retina
+    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: large
+breakpoint_group: nkh
+fallback_image_style: medium

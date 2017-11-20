@@ -23,6 +23,7 @@ dependencies:
     - maxlength
     - metatag
     - path
+    - scheduler
     - text
 id: node.partner.default
 targetEntityType: node
@@ -65,7 +66,7 @@ content:
       override_labels: false
     third_party_settings:
       entity_browser_entity_form:
-        entity_browser_id: images
+        entity_browser_id: svg_images
     type: inline_entity_form_complex
     region: content
   field_metatags:
@@ -140,6 +141,17 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  publish_on:
+    type: datetime_timestamp_no_default
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  scheduler_settings:
+    weight: 20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
@@ -154,6 +166,12 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  unpublish_on:
+    type: datetime_timestamp_no_default
+    weight: 30
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden:
   created: true
