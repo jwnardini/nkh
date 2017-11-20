@@ -12,7 +12,7 @@ field_name: field_url
 entity_type: node
 bundle: program
 label: 'Related Links'
-description: 'Link to the program (if offsite).'
+description: 'Link to the program (if offsite). Enter the name of the website/page in "Link Text" and the link itself in "URL."'
 required: false
 translatable: true
 default_value: {  }

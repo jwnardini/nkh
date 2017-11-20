@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - menu_ui
+    - node_title_help_text
     - scheduler
 third_party_settings:
   menu_ui:
@@ -20,10 +21,12 @@ third_party_settings:
     unpublish_enable: true
     unpublish_required: false
     unpublish_revision: false
+  node_title_help_text:
+    title_help: 'Enter the name of the partner (i.e., Arbys.)'
 name: Partner
 type: partner
 description: 'Use <em>Partner</em> for commercial and non-profit partners.'
-help: 'Enter the name of the partner (i.e., Arbys.)'
+help: ''
 new_revision: false
 preview_mode: 1
 display_submitted: false
