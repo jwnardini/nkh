@@ -5,6 +5,15 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.partner.body
+    - field.field.node.partner.field_cta_ref
+    - field.field.node.partner.field_image_logo
+    - field.field.node.partner.field_metatags
+    - field.field.node.partner.field_social_fb
+    - field.field.node.partner.field_social_ins
+    - field.field.node.partner.field_social_tw
+    - field.field.node.partner.field_taxonomy_partner
+    - field.field.node.partner.field_teaser
+    - field.field.node.partner.field_url
     - node.type.partner
   module:
     - text
@@ -17,12 +26,27 @@ content:
   body:
     label: hidden
     type: text_summary_or_trimmed
-    weight: 101
+    weight: 1
     settings:
-      trim_length: 600
+      trim_length: 160
     third_party_settings: {  }
     region: content
-  links:
-    weight: 100
+  field_image_logo:
+    type: entity_reference_entity_view
+    weight: 0
     region: content
-hidden: {  }
+    label: hidden
+    settings:
+      view_mode: small_featured_image
+      link: false
+    third_party_settings: {  }
+hidden:
+  field_cta_ref: true
+  field_metatags: true
+  field_social_fb: true
+  field_social_ins: true
+  field_social_tw: true
+  field_taxonomy_partner: true
+  field_teaser: true
+  field_url: true
+  links: true
