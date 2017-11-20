@@ -6,7 +6,7 @@ dependencies:
     - eck.eck_type.landing_link.auto
     - eck.eck_type.landing_link.manual
   content:
-    - 'file:file:2a7d1a0f-a790-40ec-b7fe-7943799b0546'
+    - 'file:file:547e76a6-4964-4f44-b97e-77437ff18069'
   module:
     - eck
     - entity_embed
@@ -23,4 +23,4 @@ type_settings:
   entity_browser: landing_link_add_find
   entity_browser_settings:
     display_review: true
-icon_uuid: 2a7d1a0f-a790-40ec-b7fe-7943799b0546
+icon_uuid: 547e76a6-4964-4f44-b97e-77437ff18069

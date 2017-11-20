@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - media_entity.bundle.document
+  content:
+    - 'file:file:b31185a9-0056-43a5-b0ba-ca085f038116'
   module:
     - entity_embed
     - media_entity
@@ -19,4 +21,4 @@ type_settings:
   entity_browser: files
   entity_browser_settings:
     display_review: true
-icon_uuid: null
+icon_uuid: b31185a9-0056-43a5-b0ba-ca085f038116
