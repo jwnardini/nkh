@@ -18,3 +18,12 @@ matchers:
       bundles: {  }
       group_by_bundle: true
       include_unpublished: false
+  08dcf426-b9e2-4277-b44e-46752177c280:
+    uuid: 08dcf426-b9e2-4277-b44e-46752177c280
+    id: 'entity:media'
+    weight: 0
+    settings:
+      result_description: File
+      bundles:
+        document: document
+      group_by_bundle: true
