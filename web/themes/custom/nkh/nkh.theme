@@ -44,6 +44,8 @@ function nkh_preprocess_eck_entity(&$variables) {
   $variables['landingLinkTitle'] = $variables['entity']['title'][0]; 
   $variables['landingLinkTeaser'] = $variables['entity']['field_teaser_text'][0]; 
   $variables['landingLinkAdditional'] = $variables['entity']['field_additional_link_text'][0]; 
+  $variables['landingLinkBody'] = $variables['entity']['field_text'][0];   
+  
 }
 
 function nkh_preprocess_node(&$variables) {
@@ -54,4 +56,5 @@ function nkh_preprocess_node(&$variables) {
     $newsType = true;
   }
     $variables['newsType']= $newsType;
+
 }
