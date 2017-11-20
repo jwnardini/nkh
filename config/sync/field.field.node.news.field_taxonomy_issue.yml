@@ -10,7 +10,7 @@ id: node.news.field_taxonomy_issue
 field_name: field_taxonomy_issue
 entity_type: node
 bundle: news
-label: Issues
+label: Tags
 description: 'Choose from the sitewide taxonomy (i.e., Summer Meals or School Breakfast). You may choose as many as you''d like.'
 required: false
 translatable: false

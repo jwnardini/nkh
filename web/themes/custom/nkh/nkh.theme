@@ -37,3 +37,14 @@ function nkh_preprocess_entity_embed_container(&$variables) {
   $bundle = $variables['element']['#entity']->bundle();
   $variables['attributes']['class'][] = 'entity-' . $entityTypeID . '-' . $bundle;
 }
+
+
+function nkh_preprocess_node(&$variables) {
+  $whichNewsType = $variables['elements']['field_taxonomy_news'][0]['#title'];
+  $newsType = false;
+  //This is for Boilerplate text display in News/Press Release content type
+  if($whichNewsType == 'Press Release'){
+    $newsType = true;
+  }
+    $variables['newsType']= $newsType;
+}
