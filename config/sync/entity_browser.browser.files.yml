@@ -9,34 +9,40 @@ dependencies:
     - views
 name: files
 label: Files
-display: modal
+display: iframe
 display_configuration:
-  width: '650'
+  width: 100%
   height: '500'
-  link_text: 'Select entities'
-  auto_open: false
+  link_text: 'Select files'
+  auto_open: true
 selection_display: no_display
-selection_display_configuration: {  }
+selection_display_configuration:
+  entity_type: media
+  display: rendered_entity
+  display_settings:
+    view_mode: default
+  select_text: 'Use file'
+  selection_hidden: false
 widget_selector: tabs
 widget_selector_configuration: {  }
 widgets:
   f4432594-6532-4781-aade-9f3e38aa0da8:
     settings:
       entity_type: media
-      bundle: ''
+      bundle: document
       form_mode: default
-      submit_text: 'Save file'
+      submit_text: Submit
     uuid: f4432594-6532-4781-aade-9f3e38aa0da8
-    weight: 1
-    label: Upload
+    weight: -9
+    label: 'Upload New File'
     id: entity_form
   0211f728-55b5-4c65-b20f-27ea43cdc696:
     settings:
       view: media_preview
-      view_display: entity_browser_1
+      view_display: entity_browser_5
       submit_text: 'Select file'
       auto_select: false
     uuid: 0211f728-55b5-4c65-b20f-27ea43cdc696
-    weight: 2
-    label: Find
+    weight: -10
+    label: 'File Library'
     id: view

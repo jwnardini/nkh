@@ -1,0 +1,25 @@
+uuid: d4f72c1c-28c5-4618-940d-a971779d96ac
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:60b6fa37-03be-4724-afc2-963d252ad7e0'
+  module:
+    - block_content
+  theme:
+    - nkh
+id: hp_hero__intro
+theme: nkh
+region: disabled
+weight: 0
+provider: null
+plugin: 'block_content:60b6fa37-03be-4724-afc2-963d252ad7e0'
+settings:
+  id: 'block_content:60b6fa37-03be-4724-afc2-963d252ad7e0'
+  label: 'Homepage Hero Introduction'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -56,7 +56,9 @@ settings:
           name: Media
           items:
             - Table
-            - media
+            - file
+            - video
+            - photo
         -
           name: Embed
           items:

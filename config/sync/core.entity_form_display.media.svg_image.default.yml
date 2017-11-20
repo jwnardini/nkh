@@ -1,22 +1,25 @@
-uuid: bf1b2921-fd63-48bf-95d8-676ebf259c64
+uuid: 0abed5e5-da02-4b67-98a8-133d3214174b
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.media.video.field_media_video_embed_field
-    - media_entity.bundle.video
+    - field.field.media.svg_image.field_image
+    - image.style.thumbnail
+    - media_entity.bundle.svg_image
   module:
-    - video_embed_field
-id: media.video.default
+    - svg_image
+id: media.svg_image.default
 targetEntityType: media
-bundle: video
+bundle: svg_image
 mode: default
 content:
-  field_media_video_embed_field:
-    type: video_embed_field_textfield
+  field_image:
     weight: 1
-    settings: {  }
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
     third_party_settings: {  }
+    type: image_image
     region: content
   name:
     type: string_textfield

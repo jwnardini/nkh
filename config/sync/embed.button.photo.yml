@@ -1,0 +1,24 @@
+uuid: 65637135-0e45-49c8-aca1-71a891dab64e
+langcode: en
+status: true
+dependencies:
+  config:
+    - media_entity.bundle.image
+  module:
+    - entity_embed
+    - media_entity
+label: Photo
+id: photo
+type_id: entity
+type_settings:
+  entity_type: media
+  bundles:
+    - image
+  display_plugins:
+    - 'view_mode:media.feature_caption'
+    - 'view_mode:media.large'
+    - 'view_mode:media.small'
+  entity_browser: images
+  entity_browser_settings:
+    display_review: true
+icon_uuid: null

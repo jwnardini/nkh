@@ -52,7 +52,9 @@ settings:
           name: Media
           items:
             - Table
-            - media
+            - photo
+            - video
+            - file
         -
           name: Embed
           items:
