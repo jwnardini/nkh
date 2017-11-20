@@ -1,0 +1,8 @@
+uuid: f7711e75-83ac-46e4-87d1-7dbea7f795c9
+langcode: en
+status: true
+dependencies: {  }
+id: full_month_date_year
+label: 'Full Month, Date, Year'
+locked: false
+pattern: 'F j, Y'

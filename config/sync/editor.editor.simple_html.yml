@@ -45,7 +45,6 @@ settings:
           items:
             - SpecialChar
             - PasteText
-            - PasteFromWord
             - Maximize
             - Undo
             - Redo
@@ -53,7 +52,9 @@ settings:
           name: Media
           items:
             - Table
-            - media
+            - photo
+            - video
+            - file
         -
           name: Embed
           items:

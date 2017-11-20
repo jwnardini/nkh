@@ -13,7 +13,6 @@
 //*
 
 function nkh_preprocess_html(&$variables) {
- 
   if ($node = \Drupal::request()->attributes->get('node')) {
     $variables['attributes']['class'][] = 'page-node-' . $node->id();
   }
@@ -27,6 +26,7 @@ function nkh_theme_suggestions_page_alter(array &$suggestions, array $variables)
     array_splice($suggestions, 1, 0, 'page__node__' . $node->getType());
   }
 }
+
 function nkh_preprocess_block(&$variables) {
   $element = $variables['content'];
   $variables['url'] = substr($_SERVER['REQUEST_URI'], 1);
@@ -36,4 +36,22 @@ function nkh_preprocess_entity_embed_container(&$variables) {
   $entityTypeID = $variables['element']['#entity']->getEntityType()->id();
   $bundle = $variables['element']['#entity']->bundle();
   $variables['attributes']['class'][] = 'entity-' . $entityTypeID . '-' . $bundle;
+}
+
+function nkh_preprocess_eck_entity(&$variables) {
+  $variables['landingLink'] = $variables['entity']['field_link'][0]; 
+  $variables['landingLinkImage'] = $variables['entity']['field_image'][0]; 
+  $variables['landingLinkTitle'] = $variables['entity']['title'][0]; 
+  $variables['landingLinkTeaser'] = $variables['entity']['field_teaser_text'][0]; 
+  $variables['landingLinkAdditional'] = $variables['entity']['field_additional_link_text'][0]; 
+}
+
+function nkh_preprocess_node(&$variables) {
+  $whichNewsType = $variables['elements']['field_taxonomy_news'][0]['#title'];
+  $newsType = false;
+  //This is for Boilerplate text display in News/Press Release content type
+  if($whichNewsType == 'Press Release'){
+    $newsType = true;
+  }
+    $variables['newsType']= $newsType;
 }

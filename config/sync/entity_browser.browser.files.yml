@@ -1,4 +1,4 @@
-uuid: c66207ae-603d-45d9-9498-3a232e2d218f
+uuid: 8ed6a665-4977-4a77-9cc2-b112a8896be9
 langcode: en
 status: true
 dependencies:
@@ -7,13 +7,13 @@ dependencies:
   module:
     - entity_browser_entity_form
     - views
-name: images
-label: Images
+name: files
+label: Files
 display: iframe
 display_configuration:
   width: 100%
   height: '500'
-  link_text: 'Select images'
+  link_text: 'Select files'
   auto_open: true
 selection_display: no_display
 selection_display_configuration:
@@ -21,28 +21,28 @@ selection_display_configuration:
   display: rendered_entity
   display_settings:
     view_mode: default
-  select_text: 'Use selected'
+  select_text: 'Use file'
   selection_hidden: false
 widget_selector: tabs
 widget_selector_configuration: {  }
 widgets:
-  be8ee674-263b-4902-93df-71561c24aa69:
-    settings:
-      view: media_preview
-      view_display: entity_browser_4
-      submit_text: 'Select images'
-      auto_select: false
-    uuid: be8ee674-263b-4902-93df-71561c24aa69
-    weight: -8
-    label: 'Image Library'
-    id: view
-  8cccccf2-da57-4854-b2e0-bc060ee216c2:
+  f4432594-6532-4781-aade-9f3e38aa0da8:
     settings:
       entity_type: media
-      bundle: image
+      bundle: document
       form_mode: default
       submit_text: Submit
-    uuid: 8cccccf2-da57-4854-b2e0-bc060ee216c2
-    weight: 2
-    label: 'Add New Image'
+    uuid: f4432594-6532-4781-aade-9f3e38aa0da8
+    weight: -9
+    label: 'Upload New File'
     id: entity_form
+  0211f728-55b5-4c65-b20f-27ea43cdc696:
+    settings:
+      view: media_preview
+      view_display: entity_browser_5
+      submit_text: 'Select file'
+      auto_select: false
+    uuid: 0211f728-55b5-4c65-b20f-27ea43cdc696
+    weight: -10
+    label: 'File Library'
+    id: view

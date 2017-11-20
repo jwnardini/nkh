@@ -50,3 +50,13 @@ widgets:
     weight: -9
     label: 'Add Image'
     id: entity_form
+  3a454871-e576-4f21-b083-2b4b5a3775e8:
+    settings:
+      entity_type: media
+      bundle: document
+      form_mode: default
+      submit_text: Submit
+    uuid: 3a454871-e576-4f21-b083-2b4b5a3775e8
+    weight: 4
+    label: 'Add File'
+    id: entity_form

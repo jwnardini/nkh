@@ -1,24 +1,24 @@
-uuid: 0fc3c32c-919c-4b66-a1d5-5ec56fed294c
+uuid: 65637135-0e45-49c8-aca1-71a891dab64e
 langcode: en
 status: true
 dependencies:
-  content:
-    - 'file:file:0f7830de-c5d1-4ddf-a55f-514c837af57a'
+  config:
+    - media_entity.bundle.image
   module:
     - entity_embed
     - media_entity
-label: Media
-id: media
+label: Photo
+id: photo
 type_id: entity
 type_settings:
   entity_type: media
-  bundles: {  }
+  bundles:
+    - image
   display_plugins:
-    - 'view_mode:media.embed'
     - 'view_mode:media.feature_caption'
     - 'view_mode:media.large'
     - 'view_mode:media.small'
-  entity_browser: embed
+  entity_browser: images
   entity_browser_settings:
     display_review: true
-icon_uuid: 0f7830de-c5d1-4ddf-a55f-514c837af57a
+icon_uuid: null

@@ -1,28 +1,18 @@
-uuid: 2dcf10bc-c170-4685-8392-ef810330920c
+uuid: 52081bb9-c869-4bb2-9c73-f1b7c310b457
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.media.image.field_caption
-    - field.field.media.image.field_image
-    - field.field.media.image.field_source
+    - field.field.media.svg_image.field_image
     - image.style.large
-    - media_entity.bundle.image
+    - media_entity.bundle.svg_image
   module:
     - svg_image
-    - text
-id: media.image.default
+id: media.svg_image.default
 targetEntityType: media
-bundle: image
+bundle: svg_image
 mode: default
 content:
-  field_caption:
-    weight: 1
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
   field_image:
     weight: 0
     label: hidden
@@ -38,7 +28,6 @@ content:
     region: content
 hidden:
   created: true
-  field_source: true
   name: true
   thumbnail: true
   uid: true
