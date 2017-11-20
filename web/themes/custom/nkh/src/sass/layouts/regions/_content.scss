@@ -1,3 +1,55 @@
 #content {
 
 }
+
+.node--type-page{
+  .node__content{
+    & > .text-formatted{
+      display:grid;
+      margin:20px;
+      grid-gap:0;
+
+      @include breakpoint($min480) {
+      	margin-left: 0;
+      	margin-right: 0;
+        grid-gap:20px;
+      }  
+  
+      $gridTemplateColumns: "[full-start] minmax(0em, 1fr) [main-start] minmax(0, 1000px) [main-end] minmax(0em, 1fr) [full-end];";
+      grid-template-columns: #{$gridTemplateColumns};
+      & > *{
+        grid-column:main-start/main-end;
+      }    
+      blockquote,
+      .entity-hunger_fact-default{
+        grid-column: full-start/full-end;
+      }
+    }  
+  }
+}
+
+.node--type-blog{
+  .node__content{
+    & > .text-formatted{
+      display:grid;
+      margin:20px;
+      grid-gap:0;
+
+      @include breakpoint($min480) {
+      	margin-left: 0;
+      	margin-right: 0;
+        grid-gap:20px;
+      }  
+  
+      $gridTemplateColumns: "[full-start] minmax(0em, 1fr) [main-start] minmax(0, 800px) [main-end] minmax(0em, 1fr) [full-end];";
+      grid-template-columns: #{$gridTemplateColumns};
+      & > *{
+        grid-column:main-start/main-end;
+      }    
+      blockquote,
+      .entity-hunger_fact-default{
+        grid-column: full-start/full-end;
+      }
+    }  
+  }
+}

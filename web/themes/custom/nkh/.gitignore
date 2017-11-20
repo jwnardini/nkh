@@ -3,6 +3,7 @@
 !fonts/
 !images/
 !dist/
+!images/
 !.gitignore
 !gulpfile.js
 !npm-shrinkwrap.json

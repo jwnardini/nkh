@@ -18,10 +18,13 @@
   ]
 %}
 <div {{ attributes.addClass(classes) }}>
+  <div class="entity-content">
+    <span class="hunger-fact-title">Hunger Fact:</span>
+    <div class="entity-content__details">
+      {{ entity }}
+    </div>
+    <a href="#">Learn More About Hunger in America</a>
+  </div>
 
-<span class="hunger-fact-title">Hunger Facts:</span>
-    {{ entity }}
-
-<a href="#">Learn More About Hunger in America</a>
 </div>
 
