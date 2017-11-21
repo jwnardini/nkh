@@ -53,5 +53,17 @@ function nkh_preprocess_node(&$variables) {
   if($whichNewsType == 'Press Release'){
     $newsType = true;
   }
-    $variables['newsType']= $newsType;
+  $variables['newsType']= $newsType;
+
+
+  //This is for the title on pages. 
+  //The boolean is to trigger it to print when it's not homepage.
+  $whichPage = $variables['attributes']['about'];
+  $isHomepage = true;
+
+  if($whichPage == '/homepage'){
+    $isHomepage = false;
+  }
+
+  $variables['isHomepage']= $isHomepage;
 }
