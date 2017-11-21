@@ -1,0 +1,30 @@
+uuid: 0f5ddf91-8d7e-4570-8531-9af972307883
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.partners
+  module:
+    - system
+    - views
+  theme:
+    - nkh
+id: views_block__partners_corporate
+theme: nkh
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:partners-block_1'
+settings:
+  id: 'views_block:partners-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: /partners
+    negate: false
+    context_mapping: {  }
