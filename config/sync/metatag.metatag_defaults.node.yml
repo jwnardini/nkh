@@ -9,3 +9,8 @@ label: Content
 tags:
   description: '[node:field_teaser]'
   title: '[node:title] | [site:name]'
+  og_description: '[node:field_teaser:value]'
+  og_image: '[node:field_image_banner:entity:field_image],[node:field_image_featured:entity:field_image]'
+  og_type: '[node:content-type]'
+  twitter_cards_image: '[node:field_image_banner:entity:field_image],[node:field_image_featured:entity:field_image]'
+  twitter_cards_type: summary_large_image
