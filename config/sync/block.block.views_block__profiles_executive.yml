@@ -1,0 +1,30 @@
+uuid: 113190b6-fd04-490e-a91f-61ed5c89b646
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.profiles
+  module:
+    - system
+    - views
+  theme:
+    - nkh
+id: views_block__profiles_executive
+theme: nkh
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:profiles-block_1'
+settings:
+  id: 'views_block:profiles-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: /who-we-are/leadership
+    negate: false
+    context_mapping: {  }
