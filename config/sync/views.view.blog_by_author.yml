@@ -308,7 +308,7 @@ display:
           type: datetime_default
           settings:
             timezone_override: ''
-            format_type: m_d_y_
+            format_type: full_month_date_year
           group_column: value
           group_columns: {  }
           group_rows: true
