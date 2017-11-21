@@ -1,16 +1,16 @@
-uuid: 7ebc80bc-7016-4d49-aacd-b4a5c7a00aa1
+uuid: 0cd595d3-c4cd-4de6-90e6-e352f78cd7fd
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_taxonomy_resource
+    - field.storage.node.field_file_type
     - node.type.resource
-    - taxonomy.vocabulary.resource
-id: node.resource.field_taxonomy_resource
-field_name: field_taxonomy_resource
+    - taxonomy.vocabulary.file_type
+id: node.resource.field_file_type
+field_name: field_file_type
 entity_type: node
 bundle: resource
-label: 'Resource Category'
+label: 'File Type'
 description: ''
 required: false
 translatable: false
@@ -20,9 +20,10 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      resource: resource
+      file_type: file_type
     sort:
-      field: _none
+      field: name
+      direction: asc
     auto_create: false
     auto_create_bundle: ''
 field_type: entity_reference

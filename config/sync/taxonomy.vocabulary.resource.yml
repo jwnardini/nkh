@@ -2,7 +2,7 @@ uuid: 40a46077-0a2d-4caa-8802-84243ddef72c
 langcode: en
 status: true
 dependencies: {  }
-name: Resource
+name: 'Resource Category'
 vid: resource
 description: 'Resource-specific Taxonomy list'
 hierarchy: 0
