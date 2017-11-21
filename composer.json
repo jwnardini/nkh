@@ -42,7 +42,7 @@
         "drupal/focal_point": "^1.0@beta",
         "drupal/inline_entity_form": "^1.0@beta",
         "drupal/linkit": "^4.3",
-        "drupal/maxlength": "^1.0@beta",
+        "drupal/maxlength": "1.x-dev",
         "drupal/media_entity": "^1.6",
         "drupal/media_entity_document": "^1.1",
         "drupal/media_entity_image": "^1.2",
