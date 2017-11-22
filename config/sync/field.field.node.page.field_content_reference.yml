@@ -1,0 +1,32 @@
+uuid: 197c3c45-d537-4fc7-844b-0a97484c26a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content_reference
+    - node.type.blog
+    - node.type.campaign
+    - node.type.page
+    - node.type.program
+id: node.page.field_content_reference
+field_name: field_content_reference
+entity_type: node
+bundle: page
+label: 'Featured Content'
+description: 'Enter up to four items to feature. If more than four items are referenced, the top four will be used in display. You may drag items to reorder, which will be reflected in the featured listing on the page.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      blog: blog
+      campaign: campaign
+      program: program
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: blog
+field_type: entity_reference

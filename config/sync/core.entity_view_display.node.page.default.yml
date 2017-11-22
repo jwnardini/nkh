@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_content_reference
     - field.field.node.page.field_cta_ref
     - field.field.node.page.field_image_banner
     - field.field.node.page.field_image_featured
@@ -64,6 +65,7 @@ content:
     type: entity_reference_label
     region: content
 hidden:
+  field_content_reference: true
   field_cta_ref: true
   field_image_featured: true
   field_metatags: true
