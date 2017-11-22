@@ -105,15 +105,16 @@
   <main role="main" id="main" class="clearfix">
     <div id="content" tabindex="-1">
       {% if is_front %}
-
-        <div class="front_hero-section">
-          <div class="content-section">
-            <h1>
-              <span>No</span>
-              <span>Kid</span>
-              <span>Hungry</span>
-            </h1>
-            {{ drupal_block('hp_hero__intro') }}
+        <div class="front_hero">
+          <div class="front_hero-section">
+            <div class="content-section">
+              <h1>
+                <span>No</span>
+                <span>Kid</span>
+                <span>Hungry</span>
+              </h1>
+              {{ drupal_block('hp_hero__intro') }}
+            </div>
           </div>
         </div>
       {% endif %}

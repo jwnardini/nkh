@@ -20,6 +20,7 @@ $nkh-lightergrey: rgba(163,163,163, 1);
 $nkh-lightgrey: rgba(148,152,158, 1);
 $nkh-darkgrey: rgba(131,134,139, 1);
 $nkh-darkergrey: rgba(56,61,68 ,1);
+$nkh-darkergrey-button: rgba(77,84,93 ,1);
 $nkh-yellow: rgba(136,182,49, 1);
 $nkh-green: rgba(150,183,76, 1);
 $nkh-brightyellow: rgba(253,193,45, 1);
@@ -54,6 +55,7 @@ $themes:(
   lightgrey: $nkh-lightgrey,
   darkgrey: $nkh-darkgrey,
   darkergrey: $nkh-darkergrey,
+  darkergrey-button: $nkh-darkergrey-button,
   yellow: $nkh-yellow,
   brightyellow: $nkh-brightyellow,
   green: $nkh-green,
