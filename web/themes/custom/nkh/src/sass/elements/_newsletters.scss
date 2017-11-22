@@ -122,7 +122,7 @@ div[class*="block-newsletter"]{
     text-align: center;
     &:hover, &:active, &:focus {
       .header-newsletter-form__toggle{
-        background-color: #4d545d;
+        background-color: $nkh-darkergrey-button;
       }
     }  
     form {
