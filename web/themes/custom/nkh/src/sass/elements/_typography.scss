@@ -1,5 +1,5 @@
 // Define baseline lineheight
-$lineheight: 1.6em;
+$lineheight: 1.6;
 
 // Define a border style
 $border: 1px solid #ccc;
@@ -22,7 +22,7 @@ body{
   line-height: $lineheight;
   font-family: $base-font-family;
   min-width: $min-width;
-  color: $gray;
+  color: $nkh-darkergrey;
   @include breakpoint($all-devices) {
     &.noscroll {
       overflow: hidden;
@@ -30,6 +30,9 @@ body{
       width: 100%;
       position: fixed;
     }
+  }
+  @include breakpoint($min1024) {
+    font-size: 2rem;
   }
 }
 
@@ -99,18 +102,12 @@ cite {
   background-color: $nkh-darkergrey;
   @include notouchhover {
     background-color: #67717d;
-  }  
+  }
 }
 #logo img {
   max-width: 160px;
 }
-p{
-  line-height: 2
-}
-p, li{
-  font-weight: 400;
-  color: $nkh-text;
-}
+
 p, li, span{
   a{
     text-decoration: underline;
@@ -145,7 +142,7 @@ ul{
       content: " ";
       background: $nkh-orange;
       margin-top: .7rem;
-    }    
+    }
   }
 }
 ol{
@@ -165,7 +162,7 @@ ol{
 
 
 h2 {
-  color: $nkh-darkergrey;
+  //color: $nkh-darkergrey;
   @include texture-grit-text;
   line-height: 1.2;
   letter-spacing: -0.025em;
@@ -208,12 +205,13 @@ blockquote{
   position: relative;
   text-decoration: none;
   letter-spacing: -0.04em;
+  max-width: 1200px;
+  padding: 0 1rem;
+  margin: 0.5em auto;
+  line-height: 1.3;
   *{
     line-height: 1.29;
-    font-weight: 700;  
-  } 
-  p {
-    margin: 0.5em 0;
+    font-weight: 700;
   }
 
   strong{
@@ -224,9 +222,19 @@ blockquote{
   font-size: 3rem;
   @include breakpoint($min768) {
     font-size: 4.4rem;
-  }  
+  }
   @include breakpoint($min1024) {
     font-size: 5.4rem;
   }
 }
 
+.field--name-field-intro {
+  color: $nkh-darkgrey;
+  font-size: 3.2rem;
+  line-height: 1.4;
+
+  @include breakpoint($min1024) {
+    font-size: 3.6rem;
+  }
+
+}
