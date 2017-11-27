@@ -73,9 +73,10 @@
 
   <div class="header-section">
     <div>{{ content.field_image_banner }}</div>
-    <div>{{ content.field_taxonomy_series }}</div>
-
-    <h1>{{ drupal_title() }}</h1>
+    <div class="header-section__overlay">
+      <div>{{ content.field_taxonomy_series }}</div>
+      <h1>{{ drupal_title() }}</h1>
+    </div>
   </div>
   <div class="share-section">
     {{ drupal_block('nkh_breadcrumbs') }}
@@ -84,7 +85,7 @@
 
 
   <div{{ content_attributes.addClass('node__content') }}>
-   
+
     {{ content|without('field_teaser', 'field_taxonomy_series', 'field_taxonomy_news', 'field_taxonomy_issue', 'field_entity_partner', 'field_boilerplate') }}
 
     {% if newsType %}

@@ -19,11 +19,11 @@
 @font-face {
   font-family: 'nkh';
 
-  src:  url('../../fonts/nkh.eot?h5ptw7');
-  src:  url('../../fonts/nkh.eot?h5ptw7#iefix') format('embedded-opentype'),
-    url('../../fonts/nkh.eot?h5ptw7') format('truetype'),
-    url('../../fonts/nkh.woff?h5ptw7') format('woff'),
-    url('../../fonts/nkh.svg?h5ptw7#nkh') format('svg');
+  src:  url('../../fonts/nkh.eot?s0uj1s');
+  src:  url('../../fonts/nkh.eot?s0uj1s#iefix') format('embedded-opentype'),
+    url('../../fonts/nkh.eot?s0uj1s') format('truetype'),
+    url('../../fonts/nkh.woff?s0uj1s') format('woff'),
+    url('../../fonts/nkh.svg?s0uj1s#nkh') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -64,6 +64,8 @@ $icon-play: "\ea1c";
 $icon-pdf: "\eadf";
 $icon-word: "\eae1";
 $icon-excel: "\eae2";
+$icon-external: "\e901";
+
 
 //listing all the key and value
 $icons:(
@@ -79,7 +81,9 @@ $icons:(
   play: $icon-play,
   pdf: $icon-pdf,
   word: $icon-word,
-  excel: $icon-excel
+  excel: $icon-excel,
+  external: $icon-external
+
 );
 
 //mixing the icon key and value

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_image_logo
+    - media_entity.bundle.image
     - media_entity.bundle.svg_image
     - node.type.partner
 id: node.partner.field_image_logo
@@ -20,6 +21,7 @@ settings:
   handler: 'default:media'
   handler_settings:
     target_bundles:
+      image: image
       svg_image: svg_image
     sort:
       field: _none

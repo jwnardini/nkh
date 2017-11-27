@@ -1,4 +1,4 @@
-.entity-cta-text{
+.entity-cta-text, .view-cta-references {
   padding: 2rem;
   width: calc(100% + 40px);
   margin-left: -20px;
@@ -15,13 +15,12 @@
   }
   &:after{
     background: url('/themes/custom/nkh/images/texture_orange.png') repeat;
-    background-size: 21%;
   }
   @include breakpoint($min480) {
     width: 100%;
     margin-left: 0;
     margin-right: 0;
-  } 
+  }
   .text-formatted{
     margin: 0 auto;
     text-align: center;
@@ -37,6 +36,9 @@
     color: $white;
     letter-spacing: .1rem;
 
+  }
+  p {
+    margin: 1em 0;
   }
   a{
     display: inline;
@@ -70,7 +72,7 @@
         top: 0;
         opacity: 1;
         transform: translate(-50%, -100%) scale(1) rotate(0deg);
-      }      
+      }
     }
   }
 }
@@ -97,11 +99,11 @@
       mix-blend-mode: multiply;
     }
     &:before{
-      -webkit-mask-size: 150%;   
+      -webkit-mask-size: 150%;
     }
     &:after{
-      -webkit-mask-size: 2100%;   
-    }      
+      -webkit-mask-size: 2100%;
+    }
   }
   picture{
     position: relative;
@@ -143,7 +145,7 @@
       background-repeat: no-repeat;
       box-shadow: none;
       background-position: 0 5rem;
-      -webkit-transition: background-position .1s ease-out; 
+      -webkit-transition: background-position .1s ease-out;
       transition: background-position .5s ease-out;
     }
   }
@@ -158,7 +160,7 @@
   }
   .landing_additional{
     font-weight: 700;
-    text-transform: uppercase;    
+    text-transform: uppercase;
     &:hover span{
       background-position: 0 2rem;
     }
@@ -191,7 +193,7 @@
         height: 50%;
         top: 25%;
         right: 0;
-      }    
+      }
     }
   }
   &:nth-of-type(even){
@@ -208,7 +210,7 @@
         top: 25%;
         left: 0;
         z-index: 1;
-      }    
+      }
     }
   }
   &:nth-child(3n+1) {
@@ -316,11 +318,11 @@
     }
     .image-section{
       &:before{
-        -webkit-mask-size: 600%;   
+        -webkit-mask-size: 600%;
       }
       &:after{
-        -webkit-mask-size: 204%;   
-      }      
+        -webkit-mask-size: 204%;
+      }
     }
     &:nth-of-type(odd){
       .image-section{
@@ -338,7 +340,7 @@
           top: -2rem;
           left: -3rem;
           z-index: -1
-        }    
+        }
       }
       .content-section{
         padding: 5rem 0 5rem 9rem;
@@ -362,7 +364,7 @@
           bottom: -2.5rem;
           width: 60%;
           height: 94%;
-          z-index: -1;     
+          z-index: -1;
           top: auto;
           left: auto;
         }
@@ -376,4 +378,100 @@
       }
     }
   }
+}
+.entity--cta-image{
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  position: relative;
+  .image-section{
+    margin: 0;
+    position: relative;
+    div{
+      margin: 0;
+    }
+  }
+  img{
+    opacity: .9;
+    background: $nkh-orange;
+  }
+  picture{
+    position: relative;
+    display: block;
+    &:before{
+      content: '';
+      display: block;
+      -webkit-mask: url('/themes/custom/nkh/images/solid.png') 0 0;
+      position: absolute;
+      mix-blend-mode: multiply;
+      background: $nkh-orange;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      @include breakpoint($min768) {
+        display: none;
+      }
+    }
+    &:after{
+      display: block;
+      content: '';
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      background: $nkh-orange;
+      mix-blend-mode: multiply;
+    }
+  }
+  .content-section{
+    background: $nkh-orange;
+    position: relative;
+    padding: 2rem 2rem 1rem 3rem;
+    @include breakpoint($min768) {
+      position: absolute;
+      bottom: -5rem;
+      width: 48%;
+      right: 7rem;
+      padding: 2.5rem 4rem 2rem;
+    }
+  }
+  *{
+    color: $white;
+  }
+  .landing_title{
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 0 0 2rem;
+    &:hover span{
+      background-position: 0 1.05em;
+    }
+    span{
+      background-image: linear-gradient(180deg, transparent 0,$white 0);
+      background-repeat: no-repeat;
+      background-position: 0 1.1em;
+      padding-bottom: 0.5rem;
+      transition: background-position .1s ease-out;
+    }
+  }
+  p{
+    line-height: 1.6;
+    font-size: 1.4rem;
+  }
+}
+//to override all span.icon class
+.embedded-entity{
+  margin-bottom: 1em;
+  &[class*='entity']{
+    .landing_title{
+      span.icon{
+        background-image: none;
+      }
+      + &:hover{
+        span.icon{
+          background-image: none;
+        }
+      }
+    }
+  }
+
 }

@@ -39,11 +39,19 @@ function nkh_preprocess_entity_embed_container(&$variables) {
 }
 
 function nkh_preprocess_eck_entity(&$variables) {
-  $variables['landingLink'] = $variables['entity']['field_link'][0]; 
-  $variables['landingLinkImage'] = $variables['entity']['field_image'][0]; 
-  $variables['landingLinkTitle'] = $variables['entity']['title'][0]; 
-  $variables['landingLinkTeaser'] = $variables['entity']['field_teaser_text'][0]; 
-  $variables['landingLinkAdditional'] = $variables['entity']['field_additional_link_text'][0]; 
+  $variables['entityLink'] = $variables['entity']['field_link'][0]['#plain_text'];
+  $variables['entityLinkImage'] = $variables['entity']['field_image'][0]; 
+  $variables['entityLinkTitle'] = $variables['entity']['title'][0]; 
+  $variables['entityLinkTeaser'] = $variables['entity']['field_teaser_text'][0]; 
+  $variables['entityLinkAdditional'] = $variables['entity']['field_additional_link_text'][0]; 
+  $variables['entityLinkBody'] = $variables['entity']['field_text'][0];
+  
+  //check to see if this is an external link
+  if(substr($variables['entityLink'], 0, 1) === '/') {
+    $variables['entityLinkExternal'] = false;
+  } else {
+    $variables['entityLinkExternal'] = true;
+  }
 }
 
 function nkh_preprocess_node(&$variables) {
@@ -68,3 +76,4 @@ function nkh_preprocess_node(&$variables) {
 
   $variables['isNotHomepage']= $isNotHomepage;
 }
+

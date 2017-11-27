@@ -11,18 +11,15 @@
     display: block;
     @include link-button;
     -webkit-mask-size: 200%;
-    padding: .5rem 1rem;
+    padding: 0;
     height: 48px;
+    width: 156px;
     background: $nkh-darkergrey;
     span:first-of-type {
       line-height: 2.8rem;
       color: $white;
       text-transform: uppercase;
     }
-  }
-  @include breakpoint($min1260) {
-    padding: .5rem 2rem;  
-    height: 50px;
   }
 }
 

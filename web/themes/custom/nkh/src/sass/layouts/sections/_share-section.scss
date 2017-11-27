@@ -1,15 +1,84 @@
 .share-section {
   background: $nkh-bone;
-  padding: 5px 10px;
+  padding: 18px 20px 12px;
   display: flex;
   flex-direction: row;
   align-items: center;
-
-  .block-nkh-breadcrumbs {
-
+  li{
+    display: inline-block;  
+    vertical-align: top;
+  } 
+  *{
+    font-weight: 300;
+    font-size: 1.2rem;
+    color: $nkh-text;
   }
-
-  .share-this {
-
+}
+.block-nkh-breadcrumbs{
+  flex: 1 1;
+  padding-right: 20px;
+  li{
+    vertical-align: top;
+    margin-right: 6px;
+    margin-bottom: 6px;
+    + li{
+      margin-left: 6px;
+    }
+    &:last-child{
+      margin-left: 0;      
+    }
+  }
+  a{
+    text-decoration: none;
+    border-bottom: 2px solid $nkh-orange;
+    padding-bottom: 0.4rem;    
+  }
+}
+.share-this{
+  display: none;
+  @include breakpoint($min768) {
+    display: block;
+    min-width: 175px;
+    span, ul{
+      display: inline-block;
+      vertical-align: top;
+    }
+    li{
+      margin: -3px 25px 0 15px;
+      padding: 0;
+      + li{
+        margin-right: 0;
+      }
+      &:before{
+        display: none;
+      }
+    }
+    a {
+      display: block;
+      padding: 0;
+      position: relative;
+      text-indent: -9999px;
+      margin: 0;
+      &:before {
+        @include icon(nkh);
+        color: $nkh-orange;
+        display: block;
+        position: absolute;
+        text-indent: 0;
+        transition: all .2s;
+        font-size: 23px;
+      }
+      &:hover{
+        &:before {
+          color: $nkh-darkerorange;
+        }
+      }
+    }
+    [href*="facebook"]:before {
+      content: $icon-facebook;
+    }
+    [href*="twitter"]:before {
+      content: $icon-twitter;
+    }
   }
 }
