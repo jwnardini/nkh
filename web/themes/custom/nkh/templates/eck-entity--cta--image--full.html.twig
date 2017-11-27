@@ -18,15 +18,18 @@
   ]
 %}
 <div {{ attributes.addClass(classes) }}>
-  <a href='{{ landingLink }}' alt='title'>
+  <a href='{{ entityLink }}' alt='title'>
     <div class="image-section">
-      {{ landingLinkImage }}
+      {{ entityLinkImage }} 
     </div>
     <div class="content-section">
       <p class='landing_title'>
-        <span>{{ landingLinkTitle }}</span>
+        <span>{{ entityLinkTitle }}</span>
+        {% if entityLinkExternal %}
+          <span class="icon icon-external"></span>
+        {% endif %}
       </p>
-      {{ landingLinkBody }}
+      {{ entityLinkBody }}
     </div>
   </a>
 </div>
