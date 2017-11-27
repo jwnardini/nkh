@@ -73,16 +73,18 @@
 
   <div class="header-section">
     <div class='banner-section'>{{ content.field_image_banner }}</div>
-    <div class="intro-section_video">
-      {% if content.field_video|render|striptags %}
-        {{ content.field_video }}
-      {% else %}
-        {{ content.field_image_featured }}
-      {% endif %}
-    </div>
-    <div class='intro-section'>
-      <h1>{{ drupal_title() }}</h1>
-      {{ content.field_intro }}
+    <div class="header-section__overlay">
+      <div class="intro-section_video">
+        {% if content.field_video|render|striptags %}
+          {{ content.field_video }}
+        {% else %}
+          {{ content.field_image_featured }}
+        {% endif %}
+      </div>
+      <div class='intro-section'>
+        <h1>{{ drupal_title() }}</h1>
+        {{ content.field_intro }}
+      </div>
     </div>
   </div>
   <div class="share-section">
@@ -90,7 +92,7 @@
     {% include directory ~ '/templates/share-links.html.twig' %}
   </div>
 
-  <div{{ content_attributes.addClass('node__content') }}>     
+  <div{{ content_attributes.addClass('node__content') }}>
     {{ content|without('field_image_banner','field_image_featured', 'field_teaser', 'field_intro', 'field_video') }}
   </div>
 

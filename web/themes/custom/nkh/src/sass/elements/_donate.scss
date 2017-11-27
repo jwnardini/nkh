@@ -1,4 +1,4 @@
-div[class*="block-donate"]{
+[class*="block-donate"]{
   padding: 0 1.5rem 0 2rem;
   width: 96.5%;
   .field--type-text-with-summary{
@@ -48,7 +48,7 @@ div[class*="block-donate"]{
         margin-bottom: -1px;
         transition: .25s background-color ease-in;
         &:after{
-          content: "";
+          content: none;
         }
       }
       ul{
