@@ -77,7 +77,7 @@
   }
 }
 
-.entity-landing_link-manual{
+article.entity-landing_link-manual{
   margin-top: 5rem;
   + .entity-landing_link-manual{
     margin-top: 0;
@@ -93,17 +93,17 @@
     &:after{
       content: '';
       display: block;
-      -webkit-mask: url('/themes/custom/nkh/images/solid.png') 0 0;
+      -webkit-mask: url('/themes/custom/nkh/images/nkh-canvas-orange.png') 0 0;
       position: absolute;
       opacity: 1;
       mix-blend-mode: multiply;
     }
     &:before{
-      -webkit-mask-size: 150%;
+      -webkit-mask-size: 350%;   
     }
     &:after{
-      -webkit-mask-size: 2100%;
-    }
+      -webkit-mask-size: 3750%;   
+    }      
   }
   picture{
     position: relative;
@@ -128,7 +128,9 @@
   p{
     margin-top: 0;
     display: block;
-    line-height: 1.6;
+    line-height: 1.8;
+    color: $nkh-text;
+    font-size: 1.6rem;
     span{
       display: inline;
       padding-bottom: .5rem;
@@ -136,33 +138,27 @@
   }
   .landing_teaser,
   .landing_additional{
-    padding: 0 2.5rem;
+    padding: 0 0 0 2.5rem;
   }
 
-  .landing_additional,
-  .landing_title{
-    span{
-      background-repeat: no-repeat;
-      box-shadow: none;
-      background-position: 0 5rem;
-      -webkit-transition: background-position .1s ease-out;
-      transition: background-position .5s ease-out;
-    }
-  }
-  .landing_title{
+  .landing_title {
     font-size: 3.5rem;
     font-weight: 700;
     line-height: 1.4;
     margin-bottom: 1.5rem;
-    &:hover span{
-      background-position: 0 3.5rem;
-    }
   }
-  .landing_additional{
+  .landing_additional {
     font-weight: 700;
     text-transform: uppercase;
+    span{
+      background-repeat: no-repeat;
+      box-shadow: none;
+      -webkit-transition: background-position .1s ease-out; 
+      transition: background-position .1s ease-out;
+      background-position: 0 1.09em;      
+    }
     &:hover span{
-      background-position: 0 2rem;
+      background-position: 0 .5em;
     }
   }
   a{
@@ -180,7 +176,7 @@
       }
     }
   }
-  &:nth-of-type(odd){
+  &:nth-child(odd){
     .image-section{
       &:before{
         width: 50%;
@@ -196,7 +192,7 @@
       }
     }
   }
-  &:nth-of-type(even){
+  &:nth-child(even){
     .image-section{
       &:before{
         width: 50%;
@@ -213,38 +209,13 @@
       }
     }
   }
-  &:nth-child(3n+1) {
-    .landing_additional,
-    .landing_title{
-      span{
-        background-image: linear-gradient(180deg,transparent 0,$nkh-green 0);
-      }
-      &:hover{
-        span{
-          background-image: linear-gradient(180deg,transparent 0, $nkh-green 0);
-        }
-      }
-    }
-    .image-section{
-      &:before,
-      &:after{
-        background: $nkh-green;
-      }
-    }
-    a{
-      &:hover{
-        picture{
-          &:after{
-            background: $nkh-green;
-          }
-        }
-      }
-    }
-  }
 
-  &:nth-child(3n+2) {
-    .landing_additional,
-    .landing_title{
+
+  &:nth-child(3n+1) {
+    span.icon{
+      color: $nkh-lightblue;
+    }
+    .landing_additional {
       span{
         background-image: linear-gradient(180deg,transparent 0,$nkh-lightblue 0);
       }
@@ -252,6 +223,7 @@
         span{
           background-image: linear-gradient(180deg,transparent 0, $nkh-lightblue 0);
         }
+
       }
     }
     .image-section{
@@ -272,9 +244,11 @@
 
 
   }
-  &:nth-child(3n+3) {
-    .landing_additional,
-    .landing_title{
+  &:nth-child(3n+2) {
+    span.icon{
+      color: $nkh-yellow;
+    }
+    .landing_additional {
       span{
         background-image: linear-gradient(180deg,transparent 0,$nkh-yellow 0);
       }
@@ -282,6 +256,8 @@
         span{
           background-image: linear-gradient(180deg,transparent 0, $nkh-yellow 0);
         }
+
+
       }
     }
     .image-section{
@@ -295,6 +271,37 @@
         picture{
           &:after{
             background: $nkh-yellow;
+          }
+        }
+      }
+    }
+  }
+  &:nth-child(3n+3) {
+    span.icon{
+      color: $nkh-green;
+    }
+    .landing_additional {
+      span{
+        background-image: linear-gradient(180deg,transparent 0,$nkh-green 0);
+      }
+      &:hover{
+        span{
+          background-image: linear-gradient(180deg,transparent 0, $nkh-green 0);
+        }
+
+      }
+    }
+    .image-section{
+      &:before,
+      &:after{
+        background: $nkh-green;
+      }
+    }
+    a{
+      &:hover{
+        picture{
+          &:after{
+            background: $nkh-green;
           }
         }
       }
@@ -318,11 +325,11 @@
     }
     .image-section{
       &:before{
-        -webkit-mask-size: 600%;
+        -webkit-mask-size: 1300%;   
       }
       &:after{
-        -webkit-mask-size: 204%;
-      }
+        -webkit-mask-size: 300%;   
+      }      
     }
     &:nth-of-type(odd){
       .image-section{
@@ -381,7 +388,7 @@
 }
 .entity--cta-image{
   max-width: 800px;
-  margin: 0 auto 2rem;
+  margin: 0 auto 7rem;
   position: relative;
   .image-section{
     margin: 0;
@@ -397,41 +404,40 @@
   picture{
     position: relative;
     display: block;
-    &:before{
-      content: '';
-      display: block;
-      -webkit-mask: url('/themes/custom/nkh/images/solid.png') 0 0;
-      position: absolute;
-      mix-blend-mode: multiply;
-      background: $nkh-orange;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      @include breakpoint($min768) {
-        display: none;
-      }
-    }
     &:after{
       display: block;
       content: '';
       height: 100%;
       width: 100%;
       position: absolute;
+      mix-blend-mode: color;
       top: 0;
-      background: $nkh-orange;
-      mix-blend-mode: multiply;
+      background: rgba($nkh-orange, .9);
     }
   }
   .content-section{
-    background: $nkh-orange;
+    background: rgba($nkh-orange, .9);
     position: relative;
     padding: 2rem 2rem 1rem 3rem;
     @include breakpoint($min768) {
       position: absolute;
       bottom: -5rem;
-      width: 48%;
-      right: 7rem;
-      padding: 2.5rem 4rem 2rem;
+      width: 50%;
+      right: 7rem;    
+      padding: 3rem 3rem 2.5rem 4rem;
+    }
+    &:after{
+      -webkit-mask: url('/themes/custom/nkh/images/nkh-canvas-orange.png') 0 0 / 300%;
+      background: $nkh-orange;
+      display: block;
+      content: '';
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      mix-blend-mode: lighten;
+      top: 0;
+      left: 0;
+      z-index: 0;
     }
   }
   *{
@@ -442,9 +448,9 @@
     font-weight: 700;
     line-height: 1.4;
     margin: 0 0 2rem;
-    &:hover span{
-      background-position: 0 1.05em;
-    }
+    display: block;
+    position: relative;
+    z-index: 100;
     span{
       background-image: linear-gradient(180deg, transparent 0,$white 0);
       background-repeat: no-repeat;
@@ -452,10 +458,13 @@
       padding-bottom: 0.5rem;
       transition: background-position .1s ease-out;
     }
+    &:hover span{
+      background-position: 0 1.05em;
+    }
   }
   p{
     line-height: 1.6;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 }
 //to override all span.icon class
@@ -473,5 +482,4 @@
       }
     }
   }
-
 }
