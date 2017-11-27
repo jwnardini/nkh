@@ -1,0 +1,34 @@
+uuid: 82538ba5-0044-4037-b159-8db41e9c6144
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.blog_post
+  module:
+    - ctools
+    - views
+  theme:
+    - nkh
+id: views_block__blog_post_by_issue
+theme: nkh
+region: postscript
+weight: 0
+provider: null
+plugin: 'views_block:blog_post-by_issue'
+settings:
+  id: 'views_block:blog_post-by_issue'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      campaign: campaign
+      program: program
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
