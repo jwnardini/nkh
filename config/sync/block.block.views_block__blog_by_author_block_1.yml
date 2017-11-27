@@ -1,0 +1,33 @@
+uuid: 5af81eb1-9ae0-4f22-a538-8b33768acb83
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.blog_by_author
+  module:
+    - ctools
+    - views
+  theme:
+    - nkh
+id: views_block__blog_by_author_block_1
+theme: nkh
+region: postscript
+weight: 0
+provider: null
+plugin: 'views_block:blog_by_author-block_1'
+settings:
+  id: 'views_block:blog_by_author-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      profile: profile
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
