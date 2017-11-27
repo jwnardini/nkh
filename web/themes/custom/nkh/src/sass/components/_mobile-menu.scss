@@ -15,7 +15,7 @@
     transition: none;
     overflow: visible; // Needed for newsletter form dropdown - Casey
     width: auto;
-    top: 2rem;
+    top: 3.5rem;
     nav{
       display: inline-block;
       vertical-align: top;
@@ -26,17 +26,14 @@
       display: none
     }
   }
-  @include breakpoint($min1260) {
-    top: 3.5rem;
-  }
 
   span,
   a{
     @include breakpoint($min1024) {
-      font-size: 14px;
+      font-size: 12px;
     }
     @include breakpoint($min1260) {
-      font-size: 16px;
+      font-size: 14px;
     }
   }
   li {
@@ -55,7 +52,6 @@
     text-align: center;
     transition: max-height .6s;
     transition-timing-function: ease-out;
-    //margin-top:331px;
     .region-header {
         width: 100%;
     }
@@ -79,7 +75,7 @@
   .menu--main{
     //mobile + desktop
     a.menu-link {
-      font-weight: 500;
+      font-weight: 600;
       color: $nkh-text;
       line-height: 1.2;
       text-decoration: none;
@@ -106,8 +102,8 @@
           display: none;
           position: absolute;
           background: transparent;
-          padding-top: 2rem;
-          left: -4rem;
+          padding-top: 1.3em;
+          left: -4.08em;
         }
         &:hover{
           ul {
@@ -120,20 +116,41 @@
           padding: 0;
         }
         li a.menu-link{
-          padding: 1.8rem .5rem 1rem;
-          width: 200px;
+          padding: 2.1rem 0 1.5rem;
+          min-width: 200px;
           color: $white;
           background: #383d44;
           -webkit-mask: url('/themes/custom/nkh/images/solid.svg');
           -webkit-mask-size: 100%;
-          &:hover{
+          &:hover,
+          &.is-active{
             color: $white;
-            background: #4d545d;
             border-bottom: 3px solid transparent;
-          }
+          }          
           &.is-active{
             background: #31353b;          
           }          
+          &:hover{
+            background: #4d545d;
+          }
+        }
+        ul{
+          left: -3.08em;
+        }
+        &:nth-child(2) {
+          ul {
+            left: -3.1em;
+          }
+        }
+        &:nth-child(3) {
+          ul {
+            left: -2.6em;
+          }
+        }
+        &:nth-child(4) {
+          ul {
+            left: -3.6em;
+          }
         }
       }
       a.menu-link{
@@ -149,6 +166,27 @@
         }
         li{
           margin-left: 0;
+        }
+        li a.menu-link{
+          min-width: 250px;        
+        }
+        ul{
+          left: -4.08em;
+        }
+        &:nth-child(2) {
+          ul {
+            left: -4em;
+          }
+        }
+        &:nth-child(3) {
+          ul {
+            left: -3.9em;
+          }
+        }
+        &:nth-child(4) {
+          ul {
+            left: -4.8em;
+          }
         }
       }
     }
