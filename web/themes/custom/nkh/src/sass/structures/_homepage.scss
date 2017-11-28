@@ -42,14 +42,9 @@
 
   h1{
     display: block;
-    background: url('/themes/custom/nkh/images/solid_orange.png') repeat center top;
+    background: url('/themes/custom/nkh/images/nkh-canvas-orange.png') repeat center center;
     background-position: 0;
     background-size: 90%;
-    color: transparent;
-    text-transform: uppercase;
-    -webkit-font-smoothing: antialiased;
-    -webkit-background-clip: text;
-    background-clip: text;
     line-height: .9;
     font-weight: 800;
     text-align: center;
@@ -188,5 +183,15 @@
       background: $nkh-darkergrey-button
     }  
   }
-
+}
+.front_hero-section h1,
+.block-views-block-our-stories-our-stories h2,
+.block-views-block-our-work-our-work h2{
+  color: transparent;
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+  text-shadow: 0 0 0 transparent
 }
