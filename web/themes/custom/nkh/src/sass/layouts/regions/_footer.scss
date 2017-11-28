@@ -7,7 +7,7 @@
 .menu--footer {
   display: inline;
   ul, li{
-    display: inline;    
+    display: inline;
   }
   li {
     margin-right: 30px;
@@ -100,7 +100,7 @@
       }
     }
   }
-  a{ 
+  a{
     &:before {
       font-size: 18px;
     }
@@ -109,7 +109,7 @@
 
 
 .menu--footer-social-media-links{
-  [data-drupal-link-system-path="<front>"]:before{
+  [href="/"]:before{
     content: $icon-logo;
   }
   [href*="instagram"]:before {
@@ -227,22 +227,22 @@
     }
   }
   .block-newslettersignupform-2,
-  .block-donate-2 { 
+  .block-donate-2 {
     display: none;
     margin: 0;
   }
 
   @include breakpoint($min1024) {
     & > *{
-      vertical-align: top;       
+      vertical-align: top;
     }
 
     .block-mobilecommonssignup,
-    .menu--footer { 
+    .menu--footer {
       display: inline-block;
-    } 
+    }
     .block-newslettersignupform-2,
-    .block-donate-2 { 
+    .block-donate-2 {
       margin-top: -1.1rem;
       display: inline-block;
     }
@@ -257,12 +257,12 @@
         .header-newsletter-form__toggle{
           background-color: #4d545d;
         }
-      }        
+      }
     }
     .block-donate-2  {
       float: right;
-    }   
-    .menu--footer-social-media-links  { 
+    }
+    .menu--footer-social-media-links  {
       float: left;
       clear: both;
     }
@@ -295,5 +295,3 @@
     }
   }
 }
-
-
