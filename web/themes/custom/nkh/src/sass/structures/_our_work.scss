@@ -1,0 +1,246 @@
+.block-views-block-our-work-our-work {
+  max-width: 1320px;
+  margin: 2rem auto;
+  a{
+    color: $white;
+    position: relative;
+    display: block;
+    //need this to get some separation
+    min-height: 350px;
+    margin-bottom: 100px;
+    @include breakpoint($min768) {
+      min-height: 450px;
+    }    
+    @include breakpoint($min1024) {
+      min-height: auto;
+      margin-bottom: 0;
+    }    
+    &:hover{
+      color: $white;
+    }
+    @include clearfix;
+  }
+  h2{
+    background: url('/themes/custom/nkh/images/nkh-canvas-grey-sm.png') repeat center top;
+    background-size: 100%;
+    color: transparent;
+    text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
+    -webkit-background-clip: text;
+    background-clip: text;
+    margin: 0 0 1rem 2rem;
+    font-size: 4.5rem;
+    @include breakpoint($min1024) {
+      font-size: 3.2rem;
+      position: absolute;
+      text-align: right;
+      margin-top: 0; 
+      margin-left: 15%;
+    }
+  }
+  .view-header{
+    color: $nkh-lightgrey;
+    margin: 0 0 3.5rem 2rem;
+    font-size: 2.5rem;
+    @include breakpoint($min1024) {
+      width: 50%;
+      text-align: left;
+      margin-left: 38%;
+      margin-bottom: 60px;
+    }
+    @include clearfix;
+  }
+  .image-wrapper{
+    display: block;
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+    width: 100%;
+    img{
+      min-width: 100%;
+      min-height: 300px;
+    }
+    @include breakpoint($min768) {
+      height: 400px;
+      img{
+        min-height: 400px;
+      }
+    
+    }
+  }
+  .title-wrapper{
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    top: 30%;
+    padding: 3rem 2rem;
+    min-height: 300px;
+    @include breakpoint($min768) {
+      min-height: 400px;
+    }
+    @include breakpoint($min1024) {
+      top: inherit;
+      min-height: auto;
+    }
+
+    p{
+      font-size: 1.6rem;
+      line-height: 1.8;
+      font-weight: 400;
+      margin-top: 1.5rem;
+    }
+    &:before,
+    &:after{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;   
+    }
+    &:before{
+      background: $nkh-orange;
+      opacity: .55;    
+    }
+    &:after{
+      background: url('/themes/custom/nkh/images/nkh-canvas-orange.png') repeat;
+      background-size: 450%;
+      mix-blend-mode: multiply;
+      opacity: .65;
+      @include breakpoint($min768) {
+        background-size: 250%;     
+      }
+      @include breakpoint($min1024) {
+        background-size: 118%;     
+      }
+    }
+    &:hover .view-title{
+      background-position: 0 1em;
+    }
+
+  }
+  .view-title,
+  .series-title{
+    margin-bottom: 1rem;
+    font-weight: 500;
+  
+  }
+  .view-title{
+    font-size: 3.5rem;
+    line-height: 1.2;
+    display: inline;
+    letter-spacing: -.05rem;
+    background-image: linear-gradient(180deg, transparent 0,$white 0);
+    background-repeat: no-repeat;
+    background-position: 0 1.05em;
+    padding-bottom: .55rem;
+    transition: background-position .1s ease-out;
+    @include breakpoint($min1024) {
+      font-size: 4.5rem;  
+    }
+  }
+  .series-title{
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    letter-spacing: .15rem;
+    display: block;
+  }
+  .attachment{
+    .views-element-container{
+      &:first-child{
+        .view-header {
+          color: $nkh-text;
+          font-size: 1.6rem;
+          padding: 4rem 2rem 4rem 0;
+        }
+      }
+      &:nth-child(2){
+        margin-bottom: 0;
+      }
+    }
+  }
+  @include breakpoint($min1024) {
+    .view-id-our_work{
+      .image-wrapper{
+        height: auto;
+        overflow: visible;
+      }
+      .title-wrapper{
+        width: 36%;
+        bottom: -30px;
+        left: 60px;
+        padding: 30px 3rem 5rem 4rem;
+      }
+
+    }
+    .attachment{
+      max-width: 1260px;
+      margin: 0 auto;
+      display: grid;
+      grid-gap: 25px 40px;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 500px;
+      padding: 30px;
+      .view-title{
+        font-size: 3.2rem;
+      }
+      .views-element-container{
+        .view-title{
+          background-position: 0 1.05em;
+        }
+        .title-wrapper{
+          &:hover .view-title{
+            background-position: 0 1em;
+          }          
+        }   
+        &:first-child{
+          grid-column: 1 ;
+          grid-row: 1 / 3;
+          .view-header {
+            padding: 7.5rem 5rem 7rem;
+            line-height: 1.8;
+            width: 100%;
+            margin: 0;
+          }
+          .view-content{
+            .title-wrapper{
+              width: 75%;
+              bottom: 10rem;
+              left: -20px;  
+              padding: 2rem 5rem;        
+            }          
+          }
+        }
+        &:nth-child(2){
+          grid-column: 2 ;
+          grid-row: 1 / 2 ;
+          overflow-y: hidden;
+          padding-right: 15px;
+          position: relative;
+          .title-wrapper{
+            width: 82%;
+            bottom: 85px;
+            left: auto;  
+            right: -20px;
+            padding: 4rem 4rem 3rem 5rem;
+          }
+        }
+        &:last-child{
+          grid-column: 2;
+          grid-row: 2 / 3;
+          .views-row{
+            padding-left: 30px;
+            padding-right: 40px;         
+          }
+          .title-wrapper{
+            width: 75%;
+            bottom: -30px;
+            left: 40px;
+            padding: 2.8rem 3rem 5rem 3.2rem;
+          }
+        }
+      }
+    }
+  }
+}

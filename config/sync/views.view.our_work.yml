@@ -474,7 +474,7 @@ display:
           plugin_id: text
       attachment_position: after
       displays:
-        our_stories: our_stories
+        our_work: our_work
       fields:
         field_image_featured:
           id: field_image_featured
@@ -743,7 +743,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ field_image_featured }}<div class="title-wrapper"><span class="series-title">{{ type }}</span><div class="view-title">{{ title }}</div>{{ field_teaser }}</div>'
+            text: '<div class="image-wrapper">{{ field_image_featured }}</div><div class="title-wrapper"><span class="series-title">{{ type }}</span><div class="view-title">{{ title }}</div>{{ field_teaser }}</div>'
             make_link: true
             path: '{{ path }}'
             absolute: false
@@ -805,7 +805,7 @@ display:
       display_extenders: {  }
       display_description: ''
       displays:
-        our_stories: our_stories
+        our_work: our_work
       attachment_position: after
       fields:
         field_image_featured:
@@ -1075,7 +1075,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ field_image_featured }}<div class="title-wrapper"><span class="series-title">{{ type }}</span><div class="view-title">{{ title }}</div>{{ field_teaser }}</div>'
+            text: '<div class="image-wrapper">{{ field_image_featured }}</div><div class="title-wrapper"><span class="series-title">{{ type }}</span><div class="view-title">{{ title }}</div>{{ field_teaser }}</div>'
             make_link: true
             path: '{{ path }}'
             absolute: false
@@ -1146,7 +1146,7 @@ display:
       display_extenders: {  }
       display_description: ''
       displays:
-        our_stories: our_stories
+        our_work: our_work
       header: {  }
       defaults:
         header: false
@@ -1425,7 +1425,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ field_image_featured }}<div class="title-wrapper"><span class="series-title">{{ type }}</span><div class="view-title">{{ title }}</div>{{ field_teaser }}</div>'
+            text: '<div class="image-wrapper">{{ field_image_featured }}</div><div class="title-wrapper"><span class="series-title">{{ type }}</span><div class="view-title">{{ title }}</div>{{ field_teaser }}</div>'
             make_link: true
             path: '{{ path }}'
             absolute: false
@@ -1478,9 +1478,9 @@ display:
         - 'config:field.storage.node.field_teaser'
         - entity_field_info
         - views_data
-  our_stories:
+  our_work:
     display_plugin: block
-    id: our_stories
+    id: our_work
     display_title: 'Our Work - 1'
     position: 1
     display_options:
@@ -1758,7 +1758,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ field_image_featured }}<div class="title-wrapper"><span class="series-title">{{ type }}</span><div class="view-title">{{ title }}</div>{{ field_teaser }}</div>'
+            text: '<div class="image-wrapper">{{ field_image_featured }}</div><div class="title-wrapper"><span class="series-title">{{ type }}</span><div class="view-title">{{ title }}</div>{{ field_teaser }}</div>'
             make_link: true
             path: '{{ path }}'
             absolute: false
