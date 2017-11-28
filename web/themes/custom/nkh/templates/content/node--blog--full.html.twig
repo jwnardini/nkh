@@ -71,11 +71,12 @@
 %}
 <article{{ attributes.addClass(classes) }}>
 
-  <div class="header-section">
-    <div>{{ content.field_image_banner }}</div>
-    <div>{{ content.field_taxonomy_series }}</div>
-
-    <h1>{{ drupal_title() }}</h1>
+  <div class="header-section {% if content.field_image_banner|render|striptags %}header-section__has-image{% endif %}">
+    {{ content.field_image_banner }}
+    <div class="header-section__overlay">
+      {{ content.field_taxonomy_series }}
+      <h1>{{ drupal_title() }}</h1>
+    </div>
   </div>
   <div class="share-section">
     {{ drupal_block('nkh_breadcrumbs') }}
@@ -83,8 +84,14 @@
   </div>
 
   <div{{ content_attributes.addClass('node__content') }}>
-   
-    {{ content|without('field_image_banner', 'field_taxonomy_series') }}
+
+  <div class="byline">
+  {{ content.field_entity_profile }}
+  {{ content.field_entity_partner }}
+  {{ content.field_date_simple }}
+  </div>
+
+    {{ content|without('field_image_banner', 'field_date_simple', 'field_entity_partner', 'field_entity_profile', 'field_image_featured', 'field_teaser', 'field_taxonomy_series') }}
   </div>
 
 </article>

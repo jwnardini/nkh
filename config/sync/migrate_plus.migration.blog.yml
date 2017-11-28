@@ -55,21 +55,11 @@ process:
     plugin: format_date
     from_format: U
     to_format: Y-m-d
-    source: date
+    source: created
   title: title
   uid:
     plugin: default_value
     default_value: 1
-  body/value:
-    plugin: concat
-    source:
-      - body_value
-      - openextended
-      - field_extended_value
-      - closedextended
-  body/format:
-    plugin: default_value
-    default_value: full_html
   field_teaser: field_excerpt_value
   field_image_featured:
     -

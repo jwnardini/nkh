@@ -10,17 +10,18 @@ dependencies:
     - text
 third_party_settings:
   allowed_formats:
-    basic_html: '0'
     simple_html: '0'
-    restricted_html: '0'
     full_html: '0'
+    restricted_html: '0'
+    basic_html: '0'
     plain_text: '0'
+    code: '0'
 id: node.resource.field_desc_corporate
 field_name: field_desc_corporate
 entity_type: node
 bundle: resource
 label: 'Corporate Market description'
-description: ''
+description: 'Describe how to use this resource in a Corporate Market setting. (short paragraph)'
 required: false
 translatable: false
 default_value: {  }

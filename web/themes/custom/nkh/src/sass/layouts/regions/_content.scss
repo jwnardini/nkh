@@ -2,54 +2,53 @@
 
 }
 
-.node--type-page{
-  .node__content{
-    & > .text-formatted{
-      display:grid;
-      margin:20px;
-      grid-gap:0;
+.profile, .user-login-form {
+  display:grid;
 
-      @include breakpoint($min480) {
-      	margin-left: 0;
-      	margin-right: 0;
-        grid-gap:20px;
-      }  
-  
-      $gridTemplateColumns: "[full-start] minmax(0em, 1fr) [main-start] minmax(0, 1000px) [main-end] minmax(0em, 1fr) [full-end];";
-      grid-template-columns: #{$gridTemplateColumns};
-      & > *{
-        grid-column:main-start/main-end;
-      }    
-      blockquote,
-      .embedded-entity {
-        grid-column: full-start/full-end;
-      }
-    }  
+  $gridTemplateColumns:
+  "[full-start] minmax(0em, 1fr) [main-start] minmax(0, 1000px) [main-end] minmax(0em, 1fr) [full-end];";
+
+  grid-template-columns: #{$gridTemplateColumns};
+
+  > * {
+    grid-column:main-start;
   }
+
 }
 
-.node--type-blog{
-  .node__content{
-    & > .text-formatted{
-      display:grid;
-      margin:20px;
-      grid-gap:0;
+.header-section,
+.share-section {
 
-      @include breakpoint($min480) {
-      	margin-left: 0;
-      	margin-right: 0;
-        grid-gap:20px;
-      }  
-  
-      $gridTemplateColumns: "[full-start] minmax(0em, 1fr) [main-start] minmax(0, 800px) [main-end] minmax(0em, 1fr) [full-end];";
-      grid-template-columns: #{$gridTemplateColumns};
-      & > *{
-        grid-column:main-start/main-end;
-      }    
-      blockquote,
-      .embedded-entity {
-        grid-column: full-start/full-end;
-      }
-    }  
+}
+
+.node--view-mode-full .node__content {
+  display:grid;
+
+  $gridTemplateColumns:
+  "[full-start] minmax(0em, 1fr) [main-start] minmax(0, 1000px) [main-end] minmax(0em, 1fr) [full-end];";
+
+  grid-template-columns: #{$gridTemplateColumns};
+
+  padding-top: 2rem;
+
+  > * {
+    grid-column:main-start;
   }
+
+  .text-formatted {
+    grid-column:full-start/full-end;
+    grid-gap: 0 20px;
+    display:grid;
+    grid-template-columns: #{$gridTemplateColumns};
+
+    > * {
+      grid-column:main-start;
+    }
+    > blockquote,
+    > .entity-hunger_fact-default,
+    > .entity-cta-text {
+      grid-column: full-start/full-end;
+    }
+  }
+
 }

@@ -18,7 +18,6 @@ dependencies:
     - node.type.blog
   module:
     - datetime
-    - metatag
     - text
     - user
 id: node.blog.default
@@ -29,21 +28,21 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 2
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     region: content
   field_date_simple:
-    weight: 10
-    label: above
+    weight: 4
+    label: hidden
     settings:
-      format_type: medium
       timezone_override: ''
+      format_type: full_month_date_year
     third_party_settings: {  }
     type: datetime_default
     region: content
   field_entity_partner:
-    weight: 7
+    weight: 3
     label: hidden
     settings:
       link: true
@@ -51,15 +50,15 @@ content:
     type: entity_reference_label
     region: content
   field_entity_profile:
-    weight: 9
-    label: above
+    weight: 2
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
   field_image_banner:
-    weight: 0
+    weight: 1
     label: hidden
     settings:
       view_mode: hero
@@ -67,31 +66,15 @@ content:
     third_party_settings: {  }
     type: entity_reference_entity_view
     region: content
-  field_image_featured:
-    weight: 3
-    label: hidden
-    settings:
-      view_mode: small_featured_image
-      link: false
-    third_party_settings: {  }
-    type: entity_reference_entity_view
-    region: content
   field_intro:
-    weight: 1
+    weight: 5
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
-  field_metatags:
-    weight: 8
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: metatag_empty_formatter
-    region: content
   field_taxonomy_issue:
-    weight: 4
+    weight: 7
     label: hidden
     settings:
       link: true
@@ -99,20 +82,16 @@ content:
     type: entity_reference_label
     region: content
   field_taxonomy_series:
-    weight: 5
+    weight: 0
     label: hidden
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  field_teaser:
-    weight: 6
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
 hidden:
   field_cta_ref: true
+  field_image_featured: true
+  field_metatags: true
+  field_teaser: true
   links: true

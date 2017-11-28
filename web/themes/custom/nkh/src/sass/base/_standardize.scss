@@ -87,7 +87,7 @@ audio:not([controls]) {
  */
 blockquote,
 p {
-  margin: 1em 0;
+  margin: 0 0 1em;
 }
 
 
@@ -112,7 +112,7 @@ hr {
   box-sizing: content-box;
   height: 0;
   border-bottom: 1px solid;
-  margin: 1em 0;
+  margin: 0 0 1em;
 }
 
 /* Address styling not present in IE 8/9. */
@@ -176,7 +176,7 @@ menu,
 ol,
 ul {
   /* Address margins set differently in IE 6/7. */
-  margin: 1em 0;
+  margin: 0 0 1em;
 }
 ol,
 ul {

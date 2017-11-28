@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_content_reference
     - field.field.node.page.field_cta_ref
     - field.field.node.page.field_image_banner
     - field.field.node.page.field_image_featured
@@ -49,8 +50,17 @@ content:
       allowed_formats:
         hide_help: '0'
         hide_guidelines: '0'
+  field_content_reference:
+    weight: 14
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_cta_ref:
-    weight: 13
+    weight: 15
     settings:
       form_mode: default
       label_singular: ''
@@ -111,7 +121,7 @@ content:
     type: text_textarea
     region: content
   field_landing_link_ref:
-    weight: 14
+    weight: 13
     settings:
       form_mode: default
       label_singular: ''
@@ -132,7 +142,7 @@ content:
     type: metatag_firehose
     region: content
   field_taxonomy_issue:
-    weight: 15
+    weight: 16
     settings: {  }
     third_party_settings: {  }
     type: options_buttons

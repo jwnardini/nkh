@@ -10,7 +10,7 @@ field_name: field_jobtitle
 entity_type: node
 bundle: profile
 label: Title
-description: 'This person''s job title.'
+description: 'Include the full job title that should be associated with this profile.'
 required: false
 translatable: false
 default_value: {  }

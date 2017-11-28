@@ -1,4 +1,4 @@
-div[class*="block-donate"]{
+[class*="block-donate"]{
   padding: 0 1.5rem 0 2rem;
   width: 96.5%;
   .field--type-text-with-summary{
@@ -42,13 +42,13 @@ div[class*="block-donate"]{
       a{
         @include link-button;
         -webkit-mask-size: 200%;
-        padding: 15px 0;
+        height: 48px;
         line-height: 1.3;
         text-align: center;
         margin-bottom: -1px;
         transition: .25s background-color ease-in;
         &:after{
-          content: "";
+          content: none;
         }
       }
       ul{
@@ -70,6 +70,6 @@ div[class*="block-donate"]{
   }
   @include breakpoint($min1260) {
     margin-left: 2rem;
-    width: 120px;
+    width: 124px;
   }
 }

@@ -55,7 +55,7 @@
 {% if label_hidden %}
   {% if multiple %}
     <div{{ attributes.addClass(classes, 'field__items') }}>
-      TAGS 
+      <div class="label">Tags</div> 
       {% for item in items %}
         <div{{ item.attributes.addClass('field__item') }}>{{ item.content }} </div>
       {% endfor %}

@@ -1,0 +1,9 @@
+uuid: 95b8b889-e96f-4886-8eb7-62d44c07edf3
+langcode: en
+status: true
+dependencies: {  }
+name: 'File Type'
+vid: file_type
+description: 'Resources manual file type tag (so that files can be bundled into zips)'
+hierarchy: 0
+weight: 0

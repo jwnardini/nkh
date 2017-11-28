@@ -3,7 +3,7 @@
   bottom: 0;
   position: fixed;
   z-index: 100;
-  min-height: 145px;
+  min-height: 110px;
   background: white;
   //height: auto;
   @include breakpoint($min1024) {
@@ -24,10 +24,10 @@
   div[class*="block-newsletter"]{
     &.closed,
     &.open {
-      display: inline-block; 
+      display: inline-block;
       position: relative;
       text-align: right;
-    }  
+    }
   }
 }
 
@@ -35,23 +35,19 @@
   max-width: 180px;
   height: 80px;
   display: block;
-  .st0{ 
+  .st0{
     fill:#231F20;
   }
   .st1{
     fill:#F16722;
-  }   
-  .st2{   
+  }
+  .st2{
     fill:#717275;
   }
+}
 
-  @include breakpoint($min1024) {
-    max-width: 150px;
-    height: auto;
-  }
-  @include breakpoint($min1260) {
-    max-width: 200px;
-  }
+.logo-link:after {
+  content: none;
 }
 
 #block-nkh-branding {
@@ -63,9 +59,9 @@
   display: block;
   max-width: 200px;
   margin-top: 20px;
-  .st0{  
+  .st0{
     fill: $nkh-lightgrey;
-  } 
+  }
   @include breakpoint($min1024) {
     max-width: 170px;
     display: inline-block;

@@ -10,7 +10,7 @@ id: node.resource.field_taxonomy_resource
 field_name: field_taxonomy_resource
 entity_type: node
 bundle: resource
-label: 'Resource Taxonomy'
+label: 'Resource Category'
 description: ''
 required: false
 translatable: false
