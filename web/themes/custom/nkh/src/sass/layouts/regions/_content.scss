@@ -45,7 +45,8 @@
       grid-column:main-start;
     }
     > blockquote,
-    > .entity-hunger_fact-default {
+    > .entity-hunger_fact-default,
+    > .entity-cta-text {
       grid-column: full-start/full-end;
     }
   }

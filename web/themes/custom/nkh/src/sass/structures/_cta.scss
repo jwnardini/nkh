@@ -1,0 +1,46 @@
+// this is the one above the theme custom template. 
+// I just need to set 0 margin on it.
+.field.field--name-field-cta-entity{
+  margin: 0;
+}
+//button
+button.toggle-close{
+  float: right;
+  top: 35%;
+  position: absolute;
+  right: 0;
+  background-color: transparent;
+  font-size: 0;
+  &:before{
+   font-size: 2rem;
+  }
+  &:hover{
+    background-color: transparent;
+  }
+}
+//for the alert only. Go to _entity.scss for the background styling
+.entity--cta--alert{
+  display: block;
+  opacity: 1;
+  .text-formatted{
+    max-width: 70%;
+    @include breakpoint($min1024) {
+      max-width: 900px;
+    }
+    @include breakpoint($min1260) {
+      max-width: 1150px;
+    }
+    *{
+      font-size: 1.6rem;
+    }
+    a{
+      font-weight: 500;
+      border-bottom: 3px solid $white;
+      padding-bottom: .1em;
+      text-transform: uppercase;
+      margin: 0 .8rem 0 0;
+      &:hover{
+      }
+    }
+  } 
+}

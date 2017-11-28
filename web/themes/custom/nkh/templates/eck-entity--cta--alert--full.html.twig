@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Default theme implementation of a container used to wrap embedded entities.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing element.
+ * - children: The rendered child elements of the container.
+ *
+ * @see template_preprocess_entity_embed_container()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'entity-cta-text',
+    'view-cta-references',
+  ]
+%}
+<div {{ attributes.addClass(classes) }}>
+  {{ entity }}
+  <button class="icon toggle-close icon-close">Close</button>
+</div>
+

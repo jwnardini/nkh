@@ -64,8 +64,8 @@ $icon-play: "\ea1c";
 $icon-pdf: "\eadf";
 $icon-word: "\eae1";
 $icon-excel: "\eae2";
+$icon-close: "\ea0f";
 $icon-external: "\e901";
-
 
 //listing all the key and value
 $icons:(
@@ -82,8 +82,8 @@ $icons:(
   pdf: $icon-pdf,
   word: $icon-word,
   excel: $icon-excel,
+  close: $icon-close,
   external: $icon-external
-
 );
 
 //mixing the icon key and value

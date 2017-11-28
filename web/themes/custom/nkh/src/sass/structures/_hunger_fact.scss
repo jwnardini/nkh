@@ -1,8 +1,7 @@
 div[data-quickedit-entity-id*="hunger_fact"],
 .entity--hunger-fact{
-  -webkit-mask: url('/themes/custom/nkh/images/solid.svg');
-  -webkit-mask-size: 20%;
-  background: $nkh-lightgrey;
+  background: url('/themes/custom/nkh/images/pledge-bg.png');
+  background-size: 30%;
   padding: 2rem;
   width: calc(100% + 40px);
   margin-left: -20px;
