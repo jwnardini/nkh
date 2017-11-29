@@ -1,0 +1,30 @@
+uuid: 764d28e3-8f16-4efc-accc-998849ba6f71
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.our_stories
+  module:
+    - system
+    - views
+  theme:
+    - nkh
+id: views_block__our_stories_our_stories
+theme: nkh
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:our_stories-our_stories'
+settings:
+  id: 'views_block:our_stories-our_stories'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }
