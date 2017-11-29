@@ -104,7 +104,7 @@
     }
   }
   .header-section__overlay {
-    max-width: 1250px;
+    max-width: 1300px;
   }
 }
 
@@ -121,9 +121,10 @@
     }
     &__overlay {
       align-self: flex-end;
-      margin: 0;
+      margin: 0 auto;
       text-align: left;
       padding: 4vw 5vw 0;
+      max-width: 1300px;
     }
   }
   h1 {
@@ -140,6 +141,7 @@
     font-weight: 800;
     margin: 0;
     line-height: .9;
+    letter-spacing: -.05em;
     max-width: 90vw;
 
     font-size: 6rem;
@@ -159,10 +161,10 @@
       font-size: 14rem;
     }
     @include breakpoint($min1260) {
-      font-size: 18rem;
+      font-size: 17rem;
     }
     @include breakpoint($min1360) {
-      font-size: 20rem;
+      font-size: 19rem;
     }
   }
 }
