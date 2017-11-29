@@ -73,9 +73,11 @@
 <article{{ attributes.addClass(classes) }}>
 
   {% if isNotHomepage %}
-    <div class="header-section">
+    <div class="header-section {% if content.field_image_banner|render|striptags %}header-section__has-image{% endif %}">
+      {{ content.field_image_banner }}
       <div class="header-section__overlay">
         <h1>{{ drupal_title() }}</h1>
+        {{ content.field_subtitle }}
       </div>
     </div>
   {% endif %}
@@ -99,7 +101,7 @@
   {% endif %}
 
   <div{{ content_attributes.addClass('node__content') }}>
-    {{ content }}
+    {{ content|without('field_image_banner', 'field_image_featured', 'field_subtitle', 'field_teaser', 'field_taxonomy_issue') }}
   </div>
 
 </article>

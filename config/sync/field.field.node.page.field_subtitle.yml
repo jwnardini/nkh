@@ -1,0 +1,30 @@
+uuid: 6f05953c-a266-48a8-9ce3-4a38f6f3c58a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_subtitle
+    - node.type.page
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    plain_text: plain_text
+    simple_html: '0'
+    full_html: '0'
+    restricted_html: '0'
+    basic_html: '0'
+    code: '0'
+id: node.page.field_subtitle
+field_name: field_subtitle
+entity_type: node
+bundle: page
+label: Subtitle
+description: 'Use this space to provide additional messaging to support the title of this page. It should be under 20 characters, or 2-4 words.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

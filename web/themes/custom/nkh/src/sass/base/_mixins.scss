@@ -177,6 +177,34 @@
     //margin:0;
   }
 }
+@mixin grit-clip-gray {
+  color: $nkh-text;
+  &:not(*:root) {
+    background: url('/themes/custom/nkh/images/nkh-canvas-grey-sm.png');
+    background-size: 460px;
+    color: rgba($nkh-text, .1);
+    -webkit-font-smoothing:antialiased;
+    -webkit-background-clip:text;
+    -moz-background-clip:text;
+    background-clip:text;
+  }
+}
+@mixin grit-clip-orange {
+  color: $nkh-orange;
+  &:not(*:root) {
+    background: url('/themes/custom/nkh/images/solid_orange.png');
+    background-size: 600px;
+    color: rgba($nkh-orange, .1);
+    -webkit-font-smoothing:antialiased;
+    -webkit-background-clip:text;
+    -moz-background-clip:text;
+    background-clip:text;
+  }
+}
+@mixin grit-bg-orange {
+  color: $white;
+  background: url(../../images/texture_orange.png) $nkh-orange;
+}
 @mixin link-button {
   box-sizing: border-box;
   position: relative;
