@@ -21,20 +21,11 @@
     @include clearfix;
   }
   h2{
-    color: $nkh-text;
+    @include grit-clip-gray;
     text-transform: uppercase;
     margin: 0 0 1rem 2rem;
     font-size: 4.5rem;
 
-    &:not(*:root) {
-      background: url('/themes/custom/nkh/images/nkh-canvas-grey-sm.png');
-      background-size: 460px;
-      color: rgba($nkh-text, .1);
-      -webkit-font-smoothing:antialiased;
-      -webkit-background-clip:text;
-      -moz-background-clip:text;
-      background-clip:text;
-    }
     @include breakpoint($min1024) {
       font-size: 3.2rem;
       position: absolute;
