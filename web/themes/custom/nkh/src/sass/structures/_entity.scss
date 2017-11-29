@@ -268,15 +268,15 @@ article.entity-landing_link-manual{
   }
   &:nth-child(3n+2) {
     span.icon{
-      color: $nkh-yellow;
+      color: $nkh-brightyellow;
     }
     .landing_additional {
       span{
-        background-image: linear-gradient(180deg,transparent 0,$nkh-yellow 0);
+        background-image: linear-gradient(180deg,transparent 0, $nkh-brightyellow 0);
       }
       &:hover{
         span{
-          background-image: linear-gradient(180deg,transparent 0, $nkh-yellow 0);
+          background-image: linear-gradient(180deg,transparent 0, $nkh-brightyellow 0);
         }
 
 
@@ -285,14 +285,14 @@ article.entity-landing_link-manual{
     .image-section{
       &:before,
       &:after{
-        background: $nkh-yellow;
+        background: $nkh-brightyellow;
       }
     }
     a{
       &:hover{
         picture{
           &:after{
-            background: $nkh-yellow;
+            background: $nkh-brightyellow;
           }
         }
       }
