@@ -8,9 +8,10 @@
     color: $white;
     position: relative;
     display: block;
+    text-decoration: none;
     //need this to get some separation
     min-height: 350px;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     @include breakpoint($min768) {
       min-height: 450px;
     }    
@@ -56,14 +57,17 @@
     margin: 0 0 3.5rem 2rem;
     font-size: 3rem;
     @include breakpoint($min1024) {
-      font-size: 3.6rem;
+      font-size: 3.2rem;
       line-height: 1.33;
+      width: 50%;
+      margin-left: 45%;
+    }
+    @include breakpoint($min1120) {
+      font-size: 3.6rem;
       width: 52%;
-      text-align: left;
-      margin-left: 38%;
+      margin-left: 42%;
       margin-bottom: 60px;
     }
-    @include clearfix;
   }
   .image-wrapper{
     display: block;
@@ -89,10 +93,10 @@
     }
   }
   .title-wrapper{
-    position: absolute;
+    position: relative;
     z-index: 100;
     width: 100%;
-    top: 30%;
+    margin-top: -24%;
     padding: 3rem 2rem;
     min-height: 300px;
     .view-title{
@@ -102,6 +106,8 @@
       min-height: 400px;
     }
     @include breakpoint($min1024) {
+      position: absolute;
+      margin-top: 0;
       top: inherit;
       min-height: auto;
       padding: 3rem 5rem 1.5rem;
@@ -141,7 +147,7 @@
       }
     }
     &:hover .view-title{
-      background-position: 0 1em;
+      background-position: 0 1.12em;
     }
   }
   .view-title,
@@ -157,7 +163,7 @@
     letter-spacing: -.05rem;
     background-image: linear-gradient(180deg, transparent 0,$white 0);
     background-repeat: no-repeat;
-    background-position: 0 1.05em;
+    background-position: 0 1.2em;
     padding-bottom: .55rem;
     transition: background-position .1s ease-out;
     @include breakpoint($min1024) {
@@ -179,11 +185,11 @@
       }
       .views-element-container{
         .view-title{
-          background-position: 0 1.05em;
+          background-position: 0 1.12em;
         }
         .title-wrapper{
           &:hover .view-title{
-            background-position: 0 1em;
+            background-position: 0 1.2em;
           }
         }
       }
@@ -263,7 +269,7 @@
           }
         }
         &:nth-child(2){
-          width: 42%;
+          width: 41%;
           margin-left: 1.5%;
           margin-bottom: 65px;
           padding-top: 25px;
