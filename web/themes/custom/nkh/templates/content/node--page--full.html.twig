@@ -73,7 +73,7 @@
 <article{{ attributes.addClass(classes) }}>
 
   {% if isNotHomepage %}
-    <div class="header-section {% if content.field_image_banner|render|striptags %}header-section__has-image{% endif %}">
+    <div class="header-section {% if content.field_image_banner|render|striptags %}header-section__has-image{% endif %} {% if not content.field_subtitle|render|striptags %}header-section__big-title{% endif %}">
       {{ content.field_image_banner }}
       <div class="header-section__overlay">
         <h1>{{ drupal_title() }}</h1>

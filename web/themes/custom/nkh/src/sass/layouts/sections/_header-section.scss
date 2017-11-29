@@ -55,9 +55,12 @@
     position: relative;
     z-index: 10;
     padding: 4vw 5vw;
+    box-sizing: content-box;
+    max-width: 1300px;
 
     h1 {
       color: white;
+      line-height: 1;
     }
 
     .field--name-field-taxonomy-series {
@@ -88,6 +91,7 @@
   h1 {
     @include grit-bg-orange;
     display: inline;
+    line-height: 1.1;
 
     font-size: 3.8rem;
     @include breakpoint($min540) {
@@ -108,6 +112,7 @@
   }
 }
 
+
 .page-node-type-page {
   .header-section {
     background: $nkh-bone;
@@ -120,11 +125,32 @@
       }
     }
     &__overlay {
-      align-self: flex-end;
       margin: 0 auto;
       text-align: left;
       padding: 4vw 5vw 0;
-      max-width: 1300px;
+    }
+    &__big-title {
+      margin-bottom: 5rem;
+      padding-bottom: 4vw;
+      h1 {
+        @include grit-bg-orange;
+        margin-left: 0;
+        display: inline;
+
+        font-size: 3.8rem;
+        @include breakpoint($min540) {
+          font-size: 4.5rem;
+        }
+        @include breakpoint($min768) {
+          font-size: 5rem;
+        }
+        @include breakpoint($min960) {
+          font-size: 6rem;
+        }
+        @include breakpoint($min1120) {
+          font-size: 8rem;
+        }
+      }
     }
   }
   h1 {
@@ -166,5 +192,76 @@
     @include breakpoint($min1360) {
       font-size: 19rem;
     }
+  }
+}
+
+.header-section__campaign {
+  display: block;
+
+  .field--name-field-intro {
+    color: $white;
+    a {
+      color: inherit;
+      &:after {
+        background: $white;
+      }
+    }
+  }
+
+  h1 {
+    margin: .5em 0;
+
+    font-size: 3.8rem;
+    @include breakpoint($min540) {
+      font-size: 4.5rem;
+    }
+    @include breakpoint($min768) {
+      font-size: 5rem;
+    }
+    @include breakpoint($min960) {
+      font-size: 6rem;
+    }
+    @include breakpoint($min1120) {
+      font-size: 8rem;
+    }
+  }
+}
+
+.intro-section {
+  text-align: left;
+  color: $white;
+}
+
+.header-section__has-featured-image,
+.header-section__has-video {
+  @include breakpoint($min1120) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    box-sizing: content-box;
+  }
+
+  .intro-section {
+    text-align: left;
+    color: $white;
+    @include breakpoint($min1120) {
+      width: 50%;
+      padding: 0 0 0 4rem;
+    }
+    @include breakpoint($min1360) {
+      width: 40%;
+    }
+  }
+}
+
+.intro-section__video,
+.intro-section__image {
+  width: 100%;
+  @include breakpoint($min1120) {
+    width: 50%;
+    padding: 0 4rem 0 0;
+  }
+  @include breakpoint($min1360) {
+    width: 60%;
   }
 }

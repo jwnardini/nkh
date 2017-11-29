@@ -71,16 +71,17 @@
 %}
 <article{{ attributes.addClass(classes) }}>
 
-  <div class="header-section">
-    <div class='banner-section'>{{ content.field_image_banner }}</div>
-    <div class="header-section__overlay">
-      <div class="intro-section_video">
-        {% if content.field_video|render|striptags %}
+  <div class="header-section header-section__campaign">
+    <div class="header-section__overlay {% if content.field_video|render|striptags %}header-section__has-video {% endif %}{% if content.field_image_featured|render|striptags %}header-section__has-featured-image{% endif %}">
+      {% if content.field_video|render|striptags %}
+      <div class="intro-section__video">
           {{ content.field_video }}
+          </div>
         {% else %}
+        <div class="intro-section__image">
           {{ content.field_image_featured }}
-        {% endif %}
       </div>
+      {% endif %}
       <div class='intro-section'>
         <h1>{{ drupal_title() }}</h1>
         {{ content.field_intro }}
