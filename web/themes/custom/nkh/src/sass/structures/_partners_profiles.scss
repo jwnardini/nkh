@@ -1,0 +1,25 @@
+[class*="block-views-blockpartners-block"] {
+
+}
+
+[class*="block-views-blockprofiles-block"] {
+
+}
+
+[class*="block-views-blockpartners-block"],
+[class*="block-views-blockprofiles-block"] {
+  padding: 6rem 4rem;
+  max-width: 1260px;
+  h2 {
+    @include grit-clip-gray;
+  }
+  .view-content {
+    display: flex;
+    align-content: center;
+    align-items: center;
+  }
+  .views-row {
+    width: 20rem;
+    padding: 1rem;
+  }
+}
