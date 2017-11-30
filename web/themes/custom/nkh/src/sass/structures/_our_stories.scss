@@ -138,7 +138,7 @@
     }
     &:after{
       mix-blend-mode: multiply;
-      opacity: .65;
+      opacity: .4;
     }
     &:hover .view-title{
       background-position: 0 1.12em;
@@ -194,7 +194,7 @@
 .block-views-block-featured-content-featured-content {
   .title-wrapper{
     &:before{
-      background: rgba($nkh-lightblue, .7);
+      background: rgba(0,124,163,.7);
     }
     &:after{
       background: url('/themes/custom/nkh/images/nkh-canvas-white.png') 0 0/800px;
