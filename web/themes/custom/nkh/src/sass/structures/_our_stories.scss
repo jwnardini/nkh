@@ -1,7 +1,8 @@
 //both of this are quite similar so combining the css will reduce file size.
 //see _our_work.css for details.
 .block-views-block-our-work-our-work,
-.block-views-block-our-stories-our-stories {
+.block-views-block-our-stories-our-stories,
+.block-views-block-featured-content-featured-content {
   max-width: 1600px;
   margin: 2rem auto 6rem;
   a{
@@ -196,7 +197,8 @@
     }
   }
 }
-.block-views-block-our-stories-our-stories {
+.block-views-block-our-stories-our-stories,
+.block-views-block-featured-content-featured-content {
   .title-wrapper{
     &:before{
       background: rgba($nkh-lightblue, .7);
