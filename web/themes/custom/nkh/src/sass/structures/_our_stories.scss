@@ -14,11 +14,11 @@
     margin-bottom: 50px;
     @include breakpoint($min768) {
       min-height: 450px;
-    }    
+    }
     @include breakpoint($min1024) {
       min-height: auto;
       margin-bottom: 0;
-    }    
+    }
     &:hover{
       color: $white;
     }
@@ -48,12 +48,13 @@
       font-size: 4.8rem;
       position: absolute;
       text-align: right;
-      margin-top: 0; 
+      margin-top: 0;
       margin-left: 15%;
     }
   }
   .view-header{
     color: $nkh-lightgrey;
+    font-weight: 300;
     margin: 0 0 3.5rem 2rem;
     font-size: 3rem;
     @include breakpoint($min1024) {
@@ -83,13 +84,13 @@
       height: 400px;
       img{
         min-height: 400px;
-      }    
+      }
     }
     @include breakpoint($min1024) {
       height: auto;
       img{
         min-height: auto;
-      }    
+      }
     }
   }
   .title-wrapper{
@@ -100,7 +101,7 @@
     padding: 3rem 2rem;
     min-height: 300px;
     .view-title{
-      line-height: 1.6; 
+      line-height: 1.6;
     }
     @include breakpoint($min768) {
       min-height: 400px;
@@ -115,7 +116,7 @@
       bottom: 45px;
       width: 45%;
       .view-title{
-        line-height: 1.4; 
+        line-height: 1.4;
       }
     }
 
@@ -133,17 +134,17 @@
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: -1;   
+      z-index: -1;
     }
     &:after{
       background-size: 450%;
       mix-blend-mode: multiply;
       opacity: .65;
       @include breakpoint($min768) {
-        background-size: 250%;     
+        background-size: 250%;
       }
       @include breakpoint($min1024) {
-        background-size: 118%;     
+        background-size: 118%;
       }
     }
     &:hover .view-title{
@@ -214,21 +215,21 @@
         .title-wrapper{
           &:before{
             background: rgba(134, 177, 57, .75);
-          }          
+          }
         }
       }
       &:nth-child(2){
         .title-wrapper{
           &:before{
             background: rgba($nkh-orange, .75);
-          }          
+          }
         }
       }
       &:last-child{
         .title-wrapper{
           &:before{
             background: rgba(251, 187, 47, .75);
-          }          
+          }
         }
       }
     }
@@ -250,7 +251,7 @@
     .attachment{
       .views-element-container{
         display: inline-block;
-        vertical-align: top; 
+        vertical-align: top;
         &:first-child{
           width: 56%;
           .view-header {
@@ -265,7 +266,7 @@
               bottom: -3rem;
               left: 8%;
               padding: 3rem 4rem 5rem;
-            }          
+            }
           }
         }
         &:nth-child(2){
@@ -282,7 +283,7 @@
             line-height: 1.4;
             width: 82%;
             bottom: 55px;
-            left: auto;  
+            left: auto;
             right: -20px;
             padding: 2.5rem 4rem 4rem 2.5rem;
           }
