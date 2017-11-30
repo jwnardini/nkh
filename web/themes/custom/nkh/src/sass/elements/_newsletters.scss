@@ -23,10 +23,10 @@
   }
 }
 
-div[class*="block-newsletter"]{
+div[class*="block-newsletter"] {
   color: $nkh-text;
   padding: 0;
-  display: block; 
+  display: block;
   position: relative;
   vertical-align: text-bottom;
   width: 91vw;
@@ -59,9 +59,9 @@ div[class*="block-newsletter"]{
     text-transform: uppercase;
     width: 100%;
     border-radius: 0;
-    line-height: 0;
     &:hover,{
-      border: 1px solid $nkh-darkergrey;
+      background-color: $nkh-darkergrey;
+      border: 0 none;
     }
   }
   input {
@@ -112,7 +112,7 @@ div[class*="block-newsletter"]{
   }
 
   @include breakpoint($min1024) {
-    display: inline-block; 
+    display: inline-block;
     width: auto;
     margin-left: 0;
     margin-top: -.2rem;
@@ -121,7 +121,7 @@ div[class*="block-newsletter"]{
       .header-newsletter-form__toggle{
         background-color: $nkh-darkergrey-button;
       }
-    }  
+    }
     form {
       position: absolute;
       z-index: 100;
@@ -189,4 +189,106 @@ div[class*="block-newsletter"]{
 .header .mobile .block--newsletter {
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.cta-form__toggle {
+  text-decoration: underline;
+  display: inline;
+  height: auto;
+  font-weight: 700;
+  background: none transparent;
+
+  &:active, &:hover, &:focus {
+    background: none transparent;
+  }
+}
+
+.visible .cta-form__fields {
+  height: 400px;
+  @include breakpoint($min960) {
+    height: 200px;
+  }
+}
+
+.cta-form__group {
+  display: inline-block;
+  @include breakpoint($min960) {
+    width: 30%;
+    margin: 0 1%;
+  }
+}
+
+form.cta-form__fields {
+  height: 0;
+  overflow: hidden;
+  transition: height .2s;
+  font-size: 1.6rem;
+
+  input {
+    border-color: rgba($nkh-text, .6);
+    font-size: 1.6rem;
+    padding: .5rem 1rem;
+    width: 100%;
+
+    &:hover, &:focus, &:active {
+      border-color: rgba($nkh-text, 1);
+    }
+
+    &::-webkit-input-placeholder, &:-moz-placeholder, &::-moz-placeholder, &:-ms-input-placeholder, placeholder {
+      //color: $white !important;
+    }
+  }
+
+  input[type="submit"], button[type="submit"] {
+    @include link-button;
+    background: url(../../images/nkh-canvas-darkgrey.png);
+    background-color: $highlight;
+    -webkit-mask-size: 60%;
+    color: $white;
+    text-transform: uppercase;
+    display: block;
+    margin: 0 auto;
+    width: auto;
+    padding: 1rem 2rem;
+    border-radius: 0;
+    border: 0;
+    &:hover,{
+      background-color: $nkh-darkergrey;
+      border: 0 none;
+    }
+  }
+  input {
+    width: 100%;
+    padding-left: 1rem;
+    background: $white;
+    color: $nkh-text;
+    margin-bottom: 1rem;
+    &:hover{
+      border: 1px solid $nkh-darkergrey;
+    }
+  }
+  .required{
+    @include element-invisible;
+    &:before{
+      content: "*";
+      font-size: 1.5rem;
+      margin-left: -.5rem;
+    }
+  }
+  .wrapable{
+    &:before{
+      position: absolute;
+      margin-top: .2em;
+    }
+  }
+
+  .Explicit {
+    text-align: left;
+    line-height: 1.6rem;
+    font-size: 12px;
+    margin-bottom: 1rem;
+    display: inline-block;
+    padding-left: 2.5rem;
+  }
+
 }

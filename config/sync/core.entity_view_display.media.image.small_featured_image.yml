@@ -11,19 +11,11 @@ dependencies:
     - responsive_image.styles.teaser
   module:
     - responsive_image
-    - text
 id: media.image.small_featured_image
 targetEntityType: media
 bundle: image
 mode: small_featured_image
 content:
-  field_caption:
-    weight: 1
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
   field_image:
     weight: 0
     label: hidden
@@ -35,6 +27,7 @@ content:
     region: content
 hidden:
   created: true
+  field_caption: true
   field_source: true
   name: true
   thumbnail: true

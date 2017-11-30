@@ -12,7 +12,7 @@ dependencies:
 id: views_block__blog_post_by_issue
 theme: nkh
 region: postscript
-weight: 0
+weight: -23
 provider: null
 plugin: 'views_block:blog_post-by_issue'
 settings:

@@ -11,19 +11,11 @@ dependencies:
     - responsive_image.styles.portrait
   module:
     - responsive_image
-    - text
 id: media.image.portrait
 targetEntityType: media
 bundle: image
 mode: portrait
 content:
-  field_caption:
-    type: text_default
-    weight: 1
-    region: content
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
   field_image:
     type: responsive_image
     weight: 0
@@ -35,6 +27,7 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  field_caption: true
   field_source: true
   name: true
   thumbnail: true

@@ -1,14 +1,16 @@
 uuid: 5b4472c6-f85f-4d9c-9d36-af229c3cbca4
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - core.entity_view_mode.media.embed
     - field.field.media.image.field_caption
     - field.field.media.image.field_image
     - field.field.media.image.field_source
+    - image.style.large
     - media_entity.bundle.image
   module:
+    - svg_image
     - text
 id: media.image.embed
 targetEntityType: media
@@ -22,9 +24,21 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
+  field_image:
+    type: image
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      image_style: large
+      image_link: ''
+      svg_render_as_image: '1'
+      svg_attributes:
+        width: ''
+        height: ''
+    third_party_settings: {  }
 hidden:
   created: true
-  field_image: true
   field_source: true
   name: true
   thumbnail: true

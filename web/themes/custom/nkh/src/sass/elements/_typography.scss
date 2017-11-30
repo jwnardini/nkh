@@ -104,12 +104,13 @@ cite {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
+  border: 0;
   cursor: pointer;
   background-color: $highlight;
   color: #fff;
   font-family: $sans;
-  line-height: 40px;
-  height: 40px;
+  line-height: 2em;
+  //height: 40px;
   padding: 0 20px;
   @include notouchhover {
     background-color: $nkh-darkorange;
@@ -251,8 +252,13 @@ blockquote{
 
 .field--name-field-intro {
   color: $nkh-darkgrey;
-  font-size: 3.2rem;
+  font-size: 2.8rem;
   line-height: 1.4;
+  font-weight: 300;
+
+  @include breakpoint($min768) {
+    font-size: 3.2rem;
+  }
 
   @include breakpoint($min1024) {
     font-size: 3.6rem;

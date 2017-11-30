@@ -17,10 +17,10 @@
                 // give the classes above a common share class.
                 $blocks.addClass('toggle-class');
 
-                
+
                 $(document).on('click', function(e) {
                     // remove all the click listening by checking if it has toggle-class
-                    if( !$(e.target).parents().hasClass('toggle-class') ) {                    
+                    if( !$(e.target).parents().hasClass('toggle-class') ) {
                         if( $('.open').is(':visible') ) {
                             $('.open').removeClass('open');
                         }else{
@@ -36,6 +36,14 @@
                     // this add the open class to the specific clicked object.
                     $(this).addClass('open');
                 });
+
+                $('.cta-form__toggle').on('click keyup', function() {
+                  $(this).parents('.cta-form').toggleClass('visible');
+                });
+
+      					$( '.cta-form__fields' ).on('focusin', function() {
+      						$(this).parents('.cta-form').addClass( 'visible' );
+      					});
 
             //}
 

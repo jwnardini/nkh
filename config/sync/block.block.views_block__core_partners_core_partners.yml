@@ -1,35 +1,28 @@
-uuid: ecc1f32f-16ff-499b-ac2f-e8a6020bd156
+uuid: 02641123-f4ae-44b9-991d-73031c1e20af
 langcode: en
 status: true
 dependencies:
   config:
     - views.view.core_partners
   module:
-    - ctools
     - system
     - views
   theme:
     - nkh
-id: views_block__core_partners_national_partners
+id: views_block__core_partners_core_partners
 theme: nkh
 region: postscript
-weight: -24
+weight: -25
 provider: null
-plugin: 'views_block:core_partners-national_partners'
+plugin: 'views_block:core_partners-core_partners'
 settings:
-  id: 'views_block:core_partners-national_partners'
+  id: 'views_block:core_partners-core_partners'
   label: ''
   provider: views
   label_display: visible
   views_label: ''
   items_per_page: none
 visibility:
-  'entity_bundle:node':
-    id: 'entity_bundle:node'
-    bundles: {  }
-    negate: true
-    context_mapping:
-      node: '@node.node_route_context:node'
   request_path:
     id: request_path
     pages: '<front>'

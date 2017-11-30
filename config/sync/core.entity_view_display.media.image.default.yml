@@ -10,19 +10,11 @@ dependencies:
     - media_entity.bundle.image
   module:
     - svg_image
-    - text
 id: media.image.default
 targetEntityType: media
 bundle: image
 mode: default
 content:
-  field_caption:
-    weight: 1
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
   field_image:
     weight: 0
     label: hidden
@@ -38,6 +30,7 @@ content:
     region: content
 hidden:
   created: true
+  field_caption: true
   field_source: true
   name: true
   thumbnail: true

@@ -12,7 +12,7 @@ dependencies:
 id: views_block__featured_content_featured_content
 theme: nkh
 region: postscript
-weight: -23
+weight: -26
 provider: null
 plugin: 'views_block:featured_content-featured_content'
 settings:

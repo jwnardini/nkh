@@ -41,8 +41,8 @@
   }
 
   h1{
+    @include grit-clip-orange;
     display: block;
-    color: $nkh-orange;
     text-transform: uppercase;
     line-height: .9;
     font-weight: 800;
@@ -50,15 +50,7 @@
     font-size: 9.3rem;
     margin-top: -1.3rem;
     margin-left: -1rem;
-    &:not(*:root) {
-      background: url('/themes/custom/nkh/images/solid_orange.png');
-      background-size: 600px;
-      color: rgba($nkh-orange, .1);
-      -webkit-font-smoothing:antialiased;
-      -webkit-background-clip:text;
-      -moz-background-clip:text;
-      background-clip:text;
-    }
+
     @include breakpoint($min480) {
       margin-left: auto;
       font-size: 10.5rem;
