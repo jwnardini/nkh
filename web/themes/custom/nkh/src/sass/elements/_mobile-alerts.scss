@@ -70,7 +70,7 @@ div[class*="block-mobilecommonssignup"]{
     margin: 0;
     display: inline-block;
     &.closed,
-    &.open {
+    &.open-item {
       display: inline-block; 
       position: relative;
     }
@@ -81,7 +81,7 @@ div[class*="block-mobilecommonssignup"]{
       display: none;
     }
 
-    &.open {
+    &.open-item {
       .joinform {
         opacity: 1;
         display: block;

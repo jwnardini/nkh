@@ -147,7 +147,7 @@ div[class*="block-newsletter"] {
       display: none;
     }
 
-    &.open {
+    &.open-item {
       form {
         opacity: 1;
         display: block;
@@ -157,7 +157,7 @@ div[class*="block-newsletter"] {
 }
 
 @include breakpoint($min1024) {
-  .header .block--search.open ~ .block--newsletter {
+  .header .block--search.open-item ~ .block--newsletter {
     width: 5.6rem; //width of the button
     .header-newsletter-form__toggle span {
       display: none;
