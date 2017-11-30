@@ -1,0 +1,9 @@
+name: NKH Resource Migrate
+type: module
+description: The Resource content type migration
+core: 8.x
+package: Migration
+dependencies:
+    - migrate_source_csv
+    - migrate_plus
+    - migrate_tools

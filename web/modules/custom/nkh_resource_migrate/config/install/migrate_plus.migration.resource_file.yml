@@ -1,0 +1,56 @@
+id: resource_file
+status: true
+label: Resource File Migration
+dependencies:
+  enforced:
+    module:
+      - nkh_resource_migrate
+source:
+  plugin: csv
+  track_changes: true
+  path: /config/resource_migration_content.csv
+  header_row_count: 1
+  keys:
+    - 'Unique ID'
+  constants:
+    file_source_uri: public://temp_migrate/resource-migration-files-full-list
+    file_source_dest: 'public://2017-12'
+destination:
+  plugin: entity:file
+process:
+  file_source:
+    -
+      plugin: concat
+      delimiter: /
+      source:
+        - constants/file_source_uri
+        - asset
+  file_dest:
+    -
+      plugin: concat
+      delimiter: /
+      source:
+        - constants/file_source_dest
+        - asset
+    -
+      plugin: urlencode
+  filename:
+    -
+      plugin: get
+      source: asset
+    -
+      plugin: skip_on_empty
+      method: row
+  uri:
+    plugin: file_copy
+    source:
+      - '@file_source'
+      - '@file_dest'
+  status:
+    plugin: default_value
+    default_value: 1
+  uid:
+    plugin: default_value
+    default_value: 1
+
+migration_dependencies: {}
