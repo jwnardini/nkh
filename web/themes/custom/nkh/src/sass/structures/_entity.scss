@@ -22,6 +22,7 @@
   }
   &:after{
     background: url('/themes/custom/nkh/images/nkh-canvas-orange.png') repeat;
+    background-size: 1500px;
   }
   @include breakpoint($min480) {
     width: 100%;
@@ -62,8 +63,13 @@
     }
   }
 }
+// the first one is specifically for the content added entity.
+.embedded-entity.entity-cta-text,
 .view-id-cta_references {
-  font-size: 6rem;
+  font-size: 4rem;
+  @include breakpoint($min768) {
+    font-size: 6rem;
+  }
   font-weight: 700;
 
   a{
@@ -81,8 +87,9 @@
       display: block;
       height: 300px;
       background: $nkh-text;
-      -webkit-mask: url('/themes/custom/nkh/images/doodle.svg');
+      -webkit-mask: url('/themes/custom/nkh/images/btn-bingo.gif');
       -webkit-mask-size: 100%;
+      -webkit-mask-repeat: repeat;
       content: '';
     }
   }
@@ -175,7 +182,7 @@ article.entity-landing_link-manual{
       box-shadow: none;
       -webkit-transition: background-position .1s ease-out;
       transition: background-position .1s ease-out;
-      background-position: 0 1.09em;
+      background-position: 0 1.25em;
     }
     &:hover span{
       background-position: 0 .5em;
