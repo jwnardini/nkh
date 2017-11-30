@@ -104,12 +104,13 @@ cite {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
+  border: 0;
   cursor: pointer;
   background-color: $highlight;
   color: #fff;
   font-family: $sans;
-  line-height: 40px;
-  height: 40px;
+  line-height: 2em;
+  //height: 40px;
   padding: 0 20px;
   @include notouchhover {
     background-color: $nkh-darkorange;

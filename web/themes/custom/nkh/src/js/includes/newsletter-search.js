@@ -37,13 +37,12 @@
                     $(this).addClass('open');
                 });
 
-
-                $('.cta-form__toggle').on( 'click', function(e) {
-                  $( '.cta-newsletter-signup' ).toggleClass( 'open' );
+                $('.cta-form__toggle').on('click keyup', function() {
+                  $(this).parents('.cta-form').toggleClass('visible');
                 });
 
-      					$( '.cta-newsletter-signup' ).on('focusin', function() {
-      						$(this).addClass( 'open' );
+      					$( '.cta-form__fields' ).on('focusin', function() {
+      						$(this).parents('.cta-form').addClass( 'visible' );
       					});
 
             //}
