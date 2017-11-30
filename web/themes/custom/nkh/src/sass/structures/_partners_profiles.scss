@@ -10,11 +10,13 @@
 [class*="block-views-blockprofiles-block"] {
   padding: 6rem 4rem;
   max-width: 1260px;
+  margin: 0 auto;
   h2 {
     @include grit-clip-gray;
   }
   .view-content {
     display: flex;
+    flex-wrap: wrap;
     align-content: center;
     align-items: center;
   }
