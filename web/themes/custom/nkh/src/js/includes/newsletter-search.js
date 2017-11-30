@@ -12,7 +12,7 @@
 
                 var $everything = $(window);
                 // add class to this list for toggle class on the same page. Use this on footer/header sectionss.
-                var $blocks = $('.block-mobilecommonssignup .text-formatted, .block-newslettersignupform, .block-newslettersignupform-2, .block-search, .cta-form')
+                var $blocks = $('.block-mobilecommonssignup .text-formatted, .block-newslettersignupform, .block-newslettersignupform-2, .block-search')
 
                 // give the classes above a common share class.
                 $blocks.addClass('toggle-class');
@@ -35,6 +35,9 @@
                     }
                     // this add the open class to the specific clicked object.
                     $(this).addClass('open');
+                });
+                $('.cta-form__toggle').on('click, keyup', function() {
+                  $(this).parent().children('.newsletter-signup').toggleClass('open');
                 });
 
             //}
