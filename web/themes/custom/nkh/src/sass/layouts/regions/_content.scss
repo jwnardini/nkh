@@ -75,14 +75,14 @@
 
   .side-section {
     grid-column:side-start/main-end;
-    @include breakpoint($min1120) {
+    @include breakpoint($min960) {
       grid-column:side-start/main-start;
       padding: 0 4rem 0 0;
     }
   }
   .main-section {
     grid-column:side-start/main-end;
-    @include breakpoint($min1120) {
+    @include breakpoint($min960) {
       grid-column:main-start/main-start;
       padding: 0 0 0 4rem;
     }
