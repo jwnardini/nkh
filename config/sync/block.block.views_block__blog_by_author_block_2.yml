@@ -12,7 +12,7 @@ dependencies:
 id: views_block__blog_by_author_block_2
 theme: nkh
 region: postscript
-weight: 0
+weight: -21
 provider: null
 plugin: 'views_block:blog_by_author-block_2'
 settings:
