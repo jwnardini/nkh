@@ -10,7 +10,7 @@ var Cookies = require('js-cookie');
 
     var $timer = 1;
     //uncomment the line below for testing. It will set the timer to one minute only.
-    //var $inOne = new Date(new Date().getTime() + 1 * 60 * 1000);
+    //var $timer = new Date(new Date().getTime() + 1 * 60 * 1000);
 
     //On click to toggle settings
     $ctaCloseButton.click(function() {
