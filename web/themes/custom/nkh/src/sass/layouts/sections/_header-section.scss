@@ -87,7 +87,9 @@
 
 }
 
-.page-node-type-blog {
+.page-node-type-blog,
+.page-node-type-program,
+.page-node-type-news {
   h1 {
     @include grit-bg-orange;
     display: inline;
