@@ -40,6 +40,14 @@ body{
 h1 {
   font-family: $base-heading-font;
   line-height: 1.1;
+  margin: 0 0 2rem;
+  font-size: 3.2rem;
+  @include breakpoint($min768) {
+    font-size: 3.6rem;
+  }
+  @include breakpoint($min960) {
+    font-size: 4.4rem;
+  }
 }
 // Heading style
 h2,
@@ -276,5 +284,19 @@ blockquote{
   }
   div {
     margin-right: .6em;
+  }
+}
+
+.field--name-field-jobtitle {
+  font-size: 2.8rem;
+  line-height: 1.4;
+  font-weight: 300;
+
+  @include breakpoint($min768) {
+    font-size: 3.2rem;
+  }
+
+  @include breakpoint($min1024) {
+    font-size: 3.6rem;
   }
 }

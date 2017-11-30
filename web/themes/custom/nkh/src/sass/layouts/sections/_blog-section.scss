@@ -1,4 +1,5 @@
-div[class*="block-views-block-blog-post-"] {
+div[class*="block-views-block-blog-post-"],
+div[class*="block-views-block-blog-by-author"] {
   margin-top: 15rem;
   background: $nkh-bone;
   &:before{
@@ -84,7 +85,7 @@ div[class*="block-views-block-blog-post-"] {
           background: rgba($nkh-brightyellow, .5);
         }
       }
-    }   
+    }
 
     @include breakpoint($min1024) {
       display: inline-block;
@@ -99,12 +100,12 @@ div[class*="block-views-block-blog-post-"] {
   .view-header,
   .view-title,
   .views-field-field-taxonomy-issue{
-    font-weight: 700;    
+    font-weight: 700;
   }
   .view-header,
   .views-field-field-entity-profile,
   .views-field-field-taxonomy-issue{
-    text-transform: uppercase;    
+    text-transform: uppercase;
   }
   .title-wrapper{
     margin-top: 2rem;
@@ -134,7 +135,7 @@ div[class*="block-views-block-blog-post-"] {
   .views-field-field-date-simple{
     margin-left: 2rem;
     .field-content,
-    &:after{  
+    &:after{
       display: inline;
     }
 

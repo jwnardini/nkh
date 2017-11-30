@@ -52,3 +52,39 @@
   }
 
 }
+
+.page-node-type-partner .node--view-mode-full .node__content,
+.page-node-type-profile .node--view-mode-full .node__content {
+  $gridTemplateColumns:
+  "[full-start] minmax(0em, 1fr) [side-start] minmax(0, 460px) [main-start] minmax(0, 800px) [main-end] minmax(0em, 1fr) [full-end];";
+
+  grid-template-columns: #{$gridTemplateColumns};
+
+  padding: 6rem 4rem;
+  @include breakpoint($min960) {
+    padding-top: 8rem;
+  }
+
+  .text-formatted {
+    grid-gap: 0;
+  }
+
+  .side-section, .main-section {
+    margin: 0 auto 2rem;
+  }
+
+  .side-section {
+    grid-column:side-start/main-end;
+    @include breakpoint($min1120) {
+      grid-column:side-start/main-start;
+      padding: 0 4rem 0 0;
+    }
+  }
+  .main-section {
+    grid-column:side-start/main-end;
+    @include breakpoint($min1120) {
+      grid-column:main-start/main-start;
+      padding: 0 0 0 4rem;
+    }
+  }
+}
