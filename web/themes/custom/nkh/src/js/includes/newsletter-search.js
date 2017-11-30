@@ -21,8 +21,8 @@
                 $(document).on('click', function(e) {
                     // remove all the click listening by checking if it has toggle-class
                     if( !$(e.target).parents().hasClass('toggle-class') ) {
-                        if( $('.open').is(':visible') ) {
-                            $('.open').removeClass('open');
+                        if( $('.open-item').is(':visible') ) {
+                            $('.open-item').removeClass('open-item');
                         }else{
                           //nothing.
                         }
@@ -30,20 +30,20 @@
                 });
                 $blocks.click(function() {
                     // this removes all the slibings open class
-                    if( $('.open').is(':visible') ) {
-                        $('.open').removeClass('open');
+                    if( $('.open-item').is(':visible') ) {
+                        $('.open-item').removeClass('open-item');
                     }
                     // this add the open class to the specific clicked object.
-                    $(this).addClass('open');
+                    $(this).addClass('open-item');
                 });
 
                 $('.cta-form__toggle').on('click keyup', function() {
                   $(this).parents('.cta-form').toggleClass('visible');
                 });
 
-      					$( '.cta-form__fields' ).on('focusin', function() {
-      						$(this).parents('.cta-form').addClass( 'visible' );
-      					});
+				$( '.cta-form__fields' ).on('focusin', function() {
+					$(this).parents('.cta-form').addClass( 'visible' );
+				});
 
             //}
 
