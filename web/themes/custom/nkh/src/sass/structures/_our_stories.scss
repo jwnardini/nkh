@@ -55,13 +55,13 @@
   .view-header{
     color: $nkh-lightgrey;
     font-weight: 300;
-    margin: 2em 3.5rem;
+    margin: 4em 3.5rem 2em;
     font-size: 3rem;
     @include breakpoint($min1024) {
       font-size: 3.2rem;
       line-height: 1.33;
       width: 50%;
-      margin: 2em 0 2em 45%;
+      margin: 4em 0 2em 45%;
     }
     @include breakpoint($min1120) {
       font-size: 3.6rem;
