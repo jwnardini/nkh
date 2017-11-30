@@ -36,9 +36,15 @@
                     // this add the open class to the specific clicked object.
                     $(this).addClass('open');
                 });
-                $('.cta-form__toggle').on('click, keyup', function() {
-                  $(this).parent().children('.newsletter-signup').toggleClass('open');
+
+
+                $('.cta-form__toggle').on( 'click', function(e) {
+                  $( '.cta-newsletter-signup' ).toggleClass( 'open' );
                 });
+
+      					$( '.cta-newsletter-signup' ).on('focusin', function() {
+      						$(this).addClass( 'open' );
+      					});
 
             //}
 

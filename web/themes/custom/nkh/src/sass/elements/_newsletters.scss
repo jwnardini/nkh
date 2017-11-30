@@ -23,7 +23,7 @@
   }
 }
 
-div[class*="block-newsletter"], .newsletter-signup {
+div[class*="block-newsletter"], .cta-newsletter-signup {
   color: $nkh-text;
   padding: 0;
   display: block;
@@ -194,7 +194,7 @@ div[class*="block-newsletter"], .newsletter-signup {
 .cta-form__toggle {
   text-decoration: underline;
 }
-.newsletter-signup {
+.cta-newsletter-signup {
   height: 0;
   display: none;
   transition: height .2s;
