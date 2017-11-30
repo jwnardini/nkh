@@ -77,10 +77,12 @@
     {% include directory ~ '/templates/share-links.html.twig' %}
   </div>
 
-  <div{{ content_attributes.addClass('node__content') }}>     
+  <div{{ content_attributes.addClass('node__content') }}>
+  {% if content.field_image_headshot|render|striptags %}
     <div class='side-section'>
       {{ content.field_image_headshot}}
     </div>
+    {% endif %}
     <div class='main-section'>
       <h1>{{ drupal_title() }}</h1>
       {{ content|without('field_teaser', 'field_image_headshot', 'field_taxonomy_profile', 'field_first_name', 'field_last_name') }}

@@ -77,7 +77,8 @@
     {% include directory ~ '/templates/share-links.html.twig' %}
   </div>
 
-  <div{{ content_attributes.addClass('node__content') }}>     
+  <div{{ content_attributes.addClass('node__content') }}>
+    {% if content.field_image_logo|render|striptags or content.field_social_ins|render|striptags or content.field_social_fb|render|striptags or content.field_social_tw|render|striptags or content.field_url|render|striptags %}
     <div class='side-section'>
       {{ content.field_image_logo}}
       {{ content.field_social_ins}}
@@ -85,9 +86,10 @@
       {{ content.field_social_tw}}
       {{ content.field_url}}
     </div>
+    {% endif %}
     <div class='main-section'>
       <h1>{{ drupal_title() }}</h1>
-      {{ content|without('field_teaser', 'field_social_fb', 'field_social_ins', 'field_image_logo', 'field_social_tw', 'field_url') }}
+      {{ content|without('field_teaser', 'field_social_fb', 'field_social_ins', 'field_image_logo', 'field_social_tw', 'field_url', 'field_taxonomy_partner') }}
     </div>
   </div>
 

@@ -82,6 +82,9 @@
   }
   .main-section {
     grid-column:side-start/main-end;
+  }
+  .side-section ~ .main-section {
+    grid-column:side-start/main-end;
     @include breakpoint($min960) {
       grid-column:main-start/main-start;
       padding: 0 0 0 4rem;
