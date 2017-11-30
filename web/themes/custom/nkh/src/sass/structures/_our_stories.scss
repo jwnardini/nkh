@@ -3,7 +3,7 @@
 .block-views-block-our-work-our-work,
 .block-views-block-our-stories-our-stories {
   max-width: 1600px;
-  margin: 2rem auto;
+  margin: 2rem auto 6rem;
   a{
     color: $white;
     position: relative;
@@ -55,19 +55,18 @@
   .view-header{
     color: $nkh-lightgrey;
     font-weight: 300;
-    margin: 0 0 3.5rem 2rem;
+    margin: 2em 3.5rem;
     font-size: 3rem;
     @include breakpoint($min1024) {
       font-size: 3.2rem;
       line-height: 1.33;
       width: 50%;
-      margin-left: 45%;
+      margin: 2em 0 2em 45%;
     }
     @include breakpoint($min1120) {
       font-size: 3.6rem;
       width: 52%;
       margin-left: 42%;
-      margin-bottom: 60px;
     }
   }
   .image-wrapper{
