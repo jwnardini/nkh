@@ -12,15 +12,15 @@
 
                 var $everything = $(window);
                 // add class to this list for toggle class on the same page. Use this on footer/header sectionss.
-                var $blocks = $('.block-mobilecommonssignup .text-formatted, .block-newslettersignupform, .block-newslettersignupform-2, .block-search')
+                var $blocks = $('.block-mobilecommonssignup .text-formatted, .block-newslettersignupform, .block-newslettersignupform-2, .block-search, .cta-form')
 
                 // give the classes above a common share class.
                 $blocks.addClass('toggle-class');
 
-                
+
                 $(document).on('click', function(e) {
                     // remove all the click listening by checking if it has toggle-class
-                    if( !$(e.target).parents().hasClass('toggle-class') ) {                    
+                    if( !$(e.target).parents().hasClass('toggle-class') ) {
                         if( $('.open').is(':visible') ) {
                             $('.open').removeClass('open');
                         }else{
