@@ -239,7 +239,11 @@ blockquote{
   line-height: 1.3;
   color: $nkh-text;
   -webkit-mask: url('/themes/custom/nkh/images/nkh-canvas-grey-sm.png');
-  -webkit-mask-size: 100px;
+  -webkit-mask-size: 200px;
+  -webkit-font-smoothing:antialiased;
+  -webkit-background-clip:text;
+  -moz-background-clip:text;
+  background-clip:text;
   *{
     line-height: 1.29;
     font-weight: 700;
