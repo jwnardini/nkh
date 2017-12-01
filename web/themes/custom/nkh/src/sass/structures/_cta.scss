@@ -8,9 +8,13 @@ button.toggle-close{
   float: right;
   top: 35%;
   position: absolute;
-  right: 0;
   background-color: transparent;
   font-size: 0;
+  right: 1rem;
+  @include breakpoint($min1024) {
+    right: 0;
+  }
+
   &:before{
    font-size: 2rem;
   }
@@ -19,9 +23,10 @@ button.toggle-close{
   }
 }
 //for the alert only. Go to _entity.scss for the background styling
-.entity--cta--alert{
+.entity-cta-text.view-cta-references{
   display: block;
   opacity: 1;
+  padding: 3rem 0;
   .text-formatted{
     max-width: 70%;
     @include breakpoint($min1024) {
@@ -31,15 +36,14 @@ button.toggle-close{
       max-width: 1150px;
     }
     *{
-      font-size: 1.6rem;
+      font-size: 1.8rem;
+      font-weight: 200;
+      margin: 0;
     }
     a{
-      font-weight: 500;
-      border-bottom: 3px solid $white;
-      padding-bottom: .1em;
-      text-transform: uppercase;
-      margin: 0 .8rem 0 0;
-      &:hover{
+      border: none;
+      &:after{
+        content: none;
       }
     }
   } 
