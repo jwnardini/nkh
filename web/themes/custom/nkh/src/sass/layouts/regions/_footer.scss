@@ -69,26 +69,24 @@
     margin-top: 0;
     }
     @include breakpoint($min1024) {
-      margin: -3px 0 0 1.8rem;
+      margin: 1.3rem 0 0 1.8rem;
     }
     @include breakpoint($min1260) {
-      margin: -3px 0 0 2.5rem;
+      margin-left: 2.5rem;
     }
   }
   li{
     display: inline-block;
     vertical-align: top;
-    margin-top: .4rem;
     padding: 0;
     + li{
-      margin-left: 15px;
+      margin-left: 3rem;
       @include breakpoint($min1024) {
-        margin-left: 5px;
-        margin-right: 5px;
+        margin-right: 3rem;
       }
-      @include breakpoint($min1260) {
-        margin-left: 15px;
-        margin-right: 15px;
+      @include breakpoint($min1024) {
+        margin-left: 4.5rem;
+        margin-right: 4.5rem;
       }
     }
   }
