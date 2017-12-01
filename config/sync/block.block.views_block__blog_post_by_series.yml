@@ -10,7 +10,7 @@ dependencies:
     - nkh
 id: views_block__blog_post_by_series
 theme: nkh
-region: postscript
+region: disabled
 weight: -23
 provider: null
 plugin: 'views_block:blog_post-by_series'
