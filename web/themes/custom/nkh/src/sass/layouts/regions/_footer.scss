@@ -1,62 +1,54 @@
 [id="footer"] .menu--main{
-  margin-bottom: 30px;
   display: inline-block;
-  margin-top: 2rem;
+  margin-top: 2rem 0 3rem;
 }
 
 .menu--footer {
   display: inline;
-  ul, li{
-    display: inline;
-  }
+
   li {
-    margin-right: 30px;
-    @include breakpoint($min480) {
+    display: inline-block;
+    margin-right: 1%;
+    width: 48%;
+  }
+
+  //set it inline from here
+  @media (min-width: 700px){
+
+
+  }
+  @include breakpoint($min768) {
+    margin: 0;
+    ul, li{
+      display: inline;
       margin-right: 40px;
     }
-    &:last-child {
+    li:last-child {
       margin-right: 0;
     }
   }
-  @include breakpoint($min768) {
-    margin: -3px 0 0 1.1rem;
+  @include breakpoint($min1024) {
+    margin: 0;
   }
+
 }
 
-[id="footer"] .menu--main,
-.menu--footer-social-media-links{
-  display: block;
-  @include breakpoint($min768) {
-    display: inline-block;
-    margin-top: 4rem;
-    margin-right: 1.2rem;
-  }
-  li{
-    display: inline-block;
-  }
-}
+
 .menu--header-social-media-links,
 .menu--footer-social-media-links{
   a {
     display: block;
-    width: 2.9rem; //size of the icons
-    height: 2.9rem;
-    overflow: hidden;
+    width: 100%;
     padding: 0;
     position: relative;
-    text-indent: -9999px;
-    margin: 1rem 0;
-
+    font-size: 0;
     &:before {
       @include icon(nkh);
       color: $nkh-lightgrey;
       display: block;
       position: absolute;
-      left: 0;
-      top: 0;
-      text-indent: 0;
       transition: all .2s;
-      font-size: 20px;
+      font-size: 2.6rem;
     }
     &:after {
       content: none;
@@ -109,6 +101,13 @@
 
 
 .menu--footer-social-media-links{
+  margin: 3rem 0 5rem;
+  @include breakpoint($min768) {
+    width: 40%;
+  }
+  @include breakpoint($min1024) {
+    width: auto;
+  }
   [href="/"]:before{
     content: $icon-logo;
   }
@@ -130,37 +129,61 @@
     &:first-child{
       display: block;
       clear: both;
+      margin-top: -1rem;
       a{
-        width: 200px;
-        height: 100px;
+        width: 180px;
+        height: 85px;
         display: block;
         margin: 0;
         &:before{
-          font-size: 87px;
+          font-size: 84px;
           color: $white;
         }
       }
     }
     display: inline-block;
     padding: 0;
-    + li{
-      margin-left: 15px;
-      @include breakpoint($min1024) {
-        margin-left: 5px;
-      }
-      @include breakpoint($min1260) {
-        margin-left: 15px;
-      }
+    &:nth-child(2){
+      margin-left: 0;
     }
+    + li{
+      margin-left: 48px;
+    }
+  }
+}
+[id="footer"] .menu--main,
+.menu--footer-social-media-links{
+  display: block;
+  @include breakpoint($min768) {
+    display: inline-block;
+    margin: 5rem 0;
+  }
+  @include breakpoint($min1024) {
+    display: inline-block;
+    margin: 6rem 1.2rem 5rem 0;
+  }
+  li{
+    display: inline-block;
   }
 }
 
 [id="footer"] {
-  padding: 50px 0 100px;
+  padding: 50px 0 150px;
   background: $nkh-darkergrey;
-  font-size: 14px;
+  font-size: 12px;
   @include breakpoint($min480) {
-    font-size: 16px;
+    font-size: 14px;
+  }
+  .inner-wrapper{
+    @include breakpoint($min768) {
+      max-width: 100%;
+      padding: 0 2rem;
+    }
+    @include breakpoint($min1024) {
+      padding-bottom: 125px;
+      max-width: 1320px;
+      padding: 0;
+    }
   }
   li {
     padding-left: 0;
@@ -187,7 +210,7 @@
   .menu--main {
     width: 100%;
     @include breakpoint($min768) {
-      width: 66%;
+      width: 58%;
       vertical-align: top;
     }
     @include breakpoint($min1024) {
@@ -199,7 +222,7 @@
         width: 48%;
         vertical-align: top;
         margin-right: .5%;
-        margin-bottom: 30px;
+        margin-bottom: 10px;
         @include breakpoint($min1024) {
           width: 23.5%;
           margin-right: 1%;
@@ -252,7 +275,7 @@
     .block-newslettersignupform-2{
       position: absolute;
       right: 0;
-      margin-right: 16rem;
+      margin-right: 15.4rem;
       &:hover, &:active, &:focus {
         .header-newsletter-form__toggle{
           background-color: #4d545d;

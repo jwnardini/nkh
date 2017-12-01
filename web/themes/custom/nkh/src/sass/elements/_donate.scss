@@ -30,7 +30,7 @@
 
   @include breakpoint($min1024) {
     padding: 0;
-    width: 100px;
+    width: 124px;
     margin-left: 1.4rem;
     margin-top: -.2rem;
     display: inline-block;
@@ -70,6 +70,5 @@
   }
   @include breakpoint($min1260) {
     margin-left: 2rem;
-    width: 124px;
   }
 }
