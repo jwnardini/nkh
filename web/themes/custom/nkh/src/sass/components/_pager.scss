@@ -8,24 +8,36 @@
   padding: 0;
   text-align: center;
 }
-%pager__item {
-  display: inline;
+.pager__item {
+  display: inline-block;
   padding: 0 0.5em;
   list-style-type: none;
   background-image: none;
+  a {
+    text-decoration: none;
+    &:after {
+      content: "";
+      height: 2px;
+      width: 100%;
+    }
+    &:hover, &:active, &:focus {
+      &:after {
+        background: $nkh-orange !important;
+      }
+    }
+  }
+  &:before {
+    content: none;
+  }
+  &.is-active {
+    font-weight: 800;
+  }
 }
 
-.pager-item,      /* A list item containing a page number in the list of pages. */
-.pager-first,     /* The first page's list item. */
-.pager-previous,  /* The previous page's list item. */
-.pager-next,      /* The next page's list item. */
-.pager-last,      /* The last page's list item. */
-.pager-ellipsis { /* A concatenation of several list items using an ellipsis. */
-  @extend %pager__item;
-}
 
-/* The current page's list item. */
-.pager-current {
-  @extend %pager__item;
-  font-weight: bold;
+.pager__item--first,     // The first page's list item. */
+.pager__item--previous,  // The previous page's list item. */
+.pager__item--next,      // The next page's list item. */
+.pager__item--last {
+
 }

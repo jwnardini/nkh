@@ -1,4 +1,4 @@
-uuid: 82538ba5-0044-4037-b159-8db41e9c6144
+uuid: f0eb5bae-e4a4-4dfb-a703-9c7066a9e130
 langcode: en
 status: true
 dependencies:
@@ -9,26 +9,24 @@ dependencies:
     - views
   theme:
     - nkh
-id: views_block__blog_post_by_issue
+id: views_block__blog_post_block_1
 theme: nkh
 region: postscript
-weight: -24
+weight: -22
 provider: null
-plugin: 'views_block:blog_post-by_issue'
+plugin: 'views_block:blog_post-block_1'
 settings:
-  id: 'views_block:blog_post-by_issue'
+  id: 'views_block:blog_post-block_1'
   label: ''
   provider: views
   label_display: '0'
   views_label: ''
   items_per_page: none
-  context_mapping: {  }
 visibility:
   'entity_bundle:node':
     id: 'entity_bundle:node'
     bundles:
-      campaign: campaign
-      program: program
+      blog: blog
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'
