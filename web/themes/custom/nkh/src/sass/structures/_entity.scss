@@ -690,6 +690,7 @@ article.entity-landing_link-manual,
       background-position: 0 1.1em;
       padding-bottom: 0.5rem;
       transition: background-position .1s ease-out;
+      word-break: break-word;
     }
     &:hover span{
       background-position: 0 1.05em;
