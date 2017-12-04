@@ -1,0 +1,36 @@
+uuid: e0370fd8-dea2-4f18-83c0-a77cf181b692
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.landing_link.auto
+    - field.storage.landing_link.field_content_reference
+    - node.type.blog
+    - node.type.campaign
+    - node.type.news
+    - node.type.page
+    - node.type.program
+id: landing_link.auto.field_content_reference
+field_name: field_content_reference
+entity_type: landing_link
+bundle: auto
+label: Reference
+description: 'Type the title of a post to reference it. Allowed types: Basic Pages, Blogs, Campaigns, News/Press Releases, and Programs.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      page: page
+      blog: blog
+      campaign: campaign
+      news: news
+      program: program
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: page
+field_type: entity_reference

@@ -40,18 +40,19 @@ function nkh_preprocess_entity_embed_container(&$variables) {
 
 function nkh_preprocess_eck_entity(&$variables) {
   $variables['entityLink'] = $variables['entity']['field_link'][0]['#plain_text'];
-  $variables['entityLinkImage'] = $variables['entity']['field_image'][0]; 
-  $variables['entityLinkTitle'] = $variables['entity']['title'][0]; 
-  $variables['entityLinkTeaser'] = $variables['entity']['field_teaser_text'][0]; 
-  $variables['entityLinkAdditional'] = $variables['entity']['field_additional_link_text'][0]; 
+  $variables['entityLinkImage'] = $variables['entity']['field_image'][0];
+  $variables['entityLinkTitle'] = $variables['entity']['title'][0];
+  $variables['entityLinkTeaser'] = $variables['entity']['field_teaser_text'][0];
+  $variables['entityLinkAdditional'] = $variables['entity']['field_additional_link_text'][0];
   $variables['entityLinkBody'] = $variables['entity']['field_text'][0];
-  
+
   //check to see if this is an external link
   if(substr($variables['entityLink'], 0, 1) === '/') {
     $variables['entityLinkExternal'] = false;
   } else {
     $variables['entityLinkExternal'] = true;
   }
+
 }
 
 function nkh_preprocess_node(&$variables) {
@@ -64,16 +65,15 @@ function nkh_preprocess_node(&$variables) {
   $variables['newsType']= $newsType;
 
 
-  //This is for the title on pages. 
+  //This is for the title on pages.
   //The boolean is to trigger it to print when it's not homepage.
   $whichPage = $variables['attributes']['about'];
 
   if($whichPage == '/homepage'){
     $isNotHomepage = false;
   }else{
-    $isNotHomepage = true;    
+    $isNotHomepage = true;
   }
 
   $variables['isNotHomepage']= $isNotHomepage;
 }
-

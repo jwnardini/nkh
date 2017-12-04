@@ -1,12 +1,12 @@
-uuid: f64fae70-c1b3-420d-9bf6-04b1d6d611b7
+uuid: 8738c32c-1546-4f5a-8158-e1d0f20fd4b6
 langcode: en
 status: true
 dependencies:
   module:
     - eck
     - node
-id: landing_link.field_content_ref
-field_name: field_content_ref
+id: landing_link.field_content_reference
+field_name: field_content_reference
 entity_type: landing_link
 type: entity_reference
 settings:

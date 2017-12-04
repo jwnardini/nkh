@@ -4,17 +4,17 @@ status: true
 dependencies:
   config:
     - eck.eck_type.landing_link.auto
-    - field.field.landing_link.auto.field_content_ref
+    - field.field.landing_link.auto.field_content_reference
 id: landing_link.auto.default
 targetEntityType: landing_link
 bundle: auto
 mode: default
 content:
-  field_content_ref:
+  field_content_reference:
     weight: 0
     label: hidden
     settings:
-      view_mode: teaser
+      view_mode: default
       link: false
     third_party_settings: {  }
     type: entity_reference_entity_view
