@@ -38,17 +38,11 @@
     }
     & > div{
       display: inline-block;
-      vertical-align: top;
-      width: 48%;
-      margin-left: 1%;
+      vertical-align: middle;
+      width: 21%;
       margin-bottom: 1%;
-
-      @include breakpoint($min768) {
-        vertical-align: middle;
-        width: 21%;
-        + div{ 
-          margin-left: 2.7%;
-        }      
+      + div{ 
+        margin-left: 2.7%;
       }
     }
   }
