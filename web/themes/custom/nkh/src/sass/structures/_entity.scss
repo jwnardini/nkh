@@ -22,7 +22,7 @@
   }
   &:after{
     background: url('/themes/custom/nkh/images/nkh-canvas-orange.png') repeat;
-    background-size: 1500px;
+    background-size: 1200px;
   }
   @include breakpoint($min480) {
     width: 100%;
