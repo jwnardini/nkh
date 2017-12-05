@@ -78,17 +78,17 @@ function nkh_preprocess_node(&$variables) {
 
   
   //to get length of subtitle
-  $page_subtitle = $variables['elements']['field_subtitle']['0']['#text'];
+  $pageSubtitle = $variables['elements']['field_subtitle']['0']['#text'];
   
-  $variables['pageSubtitle']= $page_subtitle;
+  $variables['pageSubtitle']= $pageSubtitle;
 
-  $page_subtitle_count = strlen($page_subtitle);
+  $pageSubtitleCount = strlen($pageSubtitle);
   
-  if($page_subtitle_count < 30){
-    $page_subtitle_class = 'subtitle_length';
+  if($pageSubtitleCount < 30){
+    $pageSubtitleCount = 'subtitle_length';
   }else{
-    $page_subtitle_class = 'subtitle_max_length';
+    $pageSubtitleCount = 'subtitle_max_length';
   }
 
-  $variables['pageSubtitleClass']= $page_subtitle_class;
+  $variables['pageSubtitleClass']= $pageSubtitleCount;
 }
