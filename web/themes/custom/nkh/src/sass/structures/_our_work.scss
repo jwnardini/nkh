@@ -100,9 +100,9 @@
       opacity: .55;
     }
     &:after{
-      background: url('/themes/custom/nkh/images/nkh-tile-orange.png') 0 0/300px;
+      background: url('/themes/custom/nkh/images/nkh-canvas-orange.png') 0 0 / 800px;
       mix-blend-mode: multiply;
-      opacity: .4;
+      opacity: .65;
     }
     &:hover .view-title{
       background-position: 0 1em;

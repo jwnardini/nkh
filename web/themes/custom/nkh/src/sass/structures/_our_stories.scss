@@ -138,7 +138,7 @@
     }
     &:after{
       mix-blend-mode: multiply;
-      opacity: .8;
+      opacity: .4;
     }
     &:hover .view-title{
       background-position: 0 1.12em;
@@ -194,10 +194,10 @@
 .block-views-block-featured-content-featured-content {
   .title-wrapper{
     &:before{
-      background: url('/themes/custom/nkh/images/nkh-tile-blue.png') 0 0/300px;
-      opacity: .8
+      background: rgba(0,124,163,.7);
     }
     &:after{
+      background: url('/themes/custom/nkh/images/nkh-canvas-white.png') 0 0/800px;
     }
   }
   .attachment{
@@ -211,30 +211,22 @@
       &:first-child{
         .title-wrapper{
           &:before{
-            background: url('/themes/custom/nkh/images/nkh-tile-green.png') 0 0/300px;
+            background: rgba(134, 177, 57, .75);
           }
-          &:after{
-          }
-
         }
       }
       &:nth-child(2){
         .title-wrapper{
           &:before{
-            background: url('/themes/custom/nkh/images/nkh-tile-orange.png') 0 0/300px;
-          }
-          &:after{
+            background: rgba($nkh-orange, .75);
           }
         }
       }
       &:last-child{
         .title-wrapper{
           &:before{
-            background: url('/themes/custom/nkh/images/nkh-tile-gold.png') 0 0/300px;
+            background: rgba(251, 187, 47, .75);
           }
-          &:after{
-          }
-
         }
       }
     }

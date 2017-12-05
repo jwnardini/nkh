@@ -44,7 +44,7 @@
       position: relative;
       display: block;
       left: 0;
-      top: 1rem;
+      top: 2.3rem;
     }
   }
   div[class*="block-newsletter"]{
@@ -69,11 +69,6 @@
   }
   .st2{
     fill:#717275;
-  }
-  @include breakpoint($min1024) {
-    max-width: 180px;
-    height: 80px;
-  
   }
 }
 
