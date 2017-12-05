@@ -211,6 +211,10 @@
           overflow: hidden;
           padding-right: 15px;
           position: relative;
+          margin-bottom:20px;
+          @supports (display:block){
+            margin-bottom:0;
+          }
           a{
             height: 550px;
           }
