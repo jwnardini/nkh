@@ -179,7 +179,7 @@
 }
 @mixin grit-clip-gray {
   color: $nkh-text;
-  &:not(*:root) {
+  @supports (display:block) {
     background: url('/themes/custom/nkh/images/nkh-canvas-grey-sm.png');
     background-size: 460px;
     color: rgba($nkh-text, .1);
