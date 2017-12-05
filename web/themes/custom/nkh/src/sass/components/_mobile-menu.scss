@@ -59,13 +59,13 @@
         width: 100%;
     }
     &.open {
-      height: calc(100% - 140px);
+      height: calc(100% - 138px);
       max-height: 100rem;
       width: 100vw;
       margin: 0;
       position: absolute;
       bottom: 140px;
-      background: $white;
+      background: rgba($white, .9);
       z-index: 100;
       overflow-y: scroll;
       transition: max-height .6s;
@@ -305,7 +305,6 @@
   width: 100%;
   text-align: left;
   position: relative;
-  background: $white;
   & > ul.menu{
     width: 100%;
     display: block;
