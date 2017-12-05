@@ -100,16 +100,9 @@
       opacity: .55;
     }
     &:after{
-      background: url('/themes/custom/nkh/images/nkh-canvas-orange.png') repeat;
-      background-size: 450%;
+      background: url('/themes/custom/nkh/images/nkh-canvas-orange.png') 0 0 / 800px;
       mix-blend-mode: multiply;
       opacity: .65;
-      @include breakpoint($min768) {
-        background-size: 250%;
-      }
-      @include breakpoint($min1024) {
-        background-size: 118%;
-      }
     }
     &:hover .view-title{
       background-position: 0 1em;
