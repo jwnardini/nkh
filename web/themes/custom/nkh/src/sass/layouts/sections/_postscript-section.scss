@@ -30,6 +30,9 @@
   @include breakpoint($min1024) {
     width: 49.7%;
   }
+  a{
+    &:after { content: none; }    
+  }
 }
 .block-views-block-core-partners-core-partners{
   .view-content{
@@ -97,12 +100,6 @@
         max-height: 100px;
         display: block;
         margin: auto;
-      }
-      &:hover,
-      &:active{
-        &:after{
-          background: none;
-        }
       }
     }
   }

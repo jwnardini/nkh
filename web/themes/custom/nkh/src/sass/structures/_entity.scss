@@ -51,6 +51,9 @@
     text-decoration: none;
     position: relative;
     border-bottom: 4px solid rgba($white, 0.95);
+    &:after { 
+      content: none; 
+    }
   }
   &:hover{
     a{
@@ -406,6 +409,9 @@ article.entity-landing_link-manual,
         }
       }
     }
+    &:after { 
+      content: none; 
+    }
   }
   &:nth-child(odd){
     .image-section{
@@ -699,6 +705,11 @@ article.entity-landing_link-manual,
   p{
     line-height: 1.6;
     font-size: 1.6rem;
+  }
+  a{
+    &:after { 
+      content: none; 
+    }    
   }
 }
 //to override all span.icon class

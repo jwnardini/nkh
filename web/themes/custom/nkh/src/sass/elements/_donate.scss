@@ -15,6 +15,7 @@
       &:after{
         content: " To No Kid Hungry";
         text-transform: uppercase;
+        background: none;
       }
       &:hover{
         background-color: $nkh-darkorange;
