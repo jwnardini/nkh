@@ -29,8 +29,8 @@ div[class*="block-newsletter"] {
   display: block;
   position: relative;
   vertical-align: text-bottom;
-  width: 91vw;
-  margin: 0 0 0 2rem;
+  width: auto;
+  margin: 0 2rem;
   @include clearfix;
   .text-formatted{
     display: inline-block;
