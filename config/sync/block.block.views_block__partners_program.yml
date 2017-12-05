@@ -25,6 +25,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: /partners
+    pages: /partners/program-partners
     negate: false
     context_mapping: {  }
