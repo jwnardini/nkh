@@ -3,7 +3,7 @@
   bottom: 0;
   position: fixed;
   z-index: 1000;
-  min-height: 110px;
+  min-height: 140px;
   background: white;
   //height: auto;
   @include breakpoint($min1024) {
@@ -12,7 +12,7 @@
   }
   .nkh-logo {
     position: fixed;
-    bottom: 4.5rem;
+    bottom: 6rem;
     left: 2rem;
     @include breakpoint($min1024) {
       position: relative;
@@ -32,8 +32,8 @@
 }
 
 .nkh-logo {
-  max-width: 180px;
-  height: 80px;
+  max-width: 150px;
+  height: 67px;
   display: block;
   .st0{
     fill:#231F20;
@@ -43,6 +43,11 @@
   }
   .st2{
     fill:#717275;
+  }
+  @include breakpoint($min1024) {
+    max-width: 180px;
+    height: 80px;
+  
   }
 }
 

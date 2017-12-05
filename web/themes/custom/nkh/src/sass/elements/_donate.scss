@@ -1,8 +1,26 @@
 [class*="block-donate"]{
-  padding: 0 1.5rem 0 2rem;
-  width: 96.5%;
+  position: fixed;
+  bottom: 0;
+  padding: 0;
+  width: 100%;
+  @include breakpoint($min1024) {
+    position: relative;
+    bottom: auto;
+    padding: 0 1.5rem 0 2rem;
+    width: 124px;
+    margin-left: 1.4rem;
+    margin-top: -.2rem;
+    display: inline-block;
+    vertical-align: top;
+    @include clearfix;
+
+  }    
+  @include breakpoint($min1260) {
+    margin-left: 2rem;
+    width: 124px;
+  }
   .field--type-text-with-summary{
-  	padding: 0;
+    padding: 0;
     a{
       width: 100%;
       color: $white;
@@ -29,13 +47,6 @@
   }
 
   @include breakpoint($min1024) {
-    padding: 0;
-    width: 100px;
-    margin-left: 1.4rem;
-    margin-top: -.2rem;
-    display: inline-block;
-    vertical-align: top;
-    @include clearfix;
     .field--type-text-with-summary{
       position: relative;
       margin: 0;
@@ -67,9 +78,5 @@
         display: block;
       }
     }
-  }
-  @include breakpoint($min1260) {
-    margin-left: 2rem;
-    width: 124px;
   }
 }
