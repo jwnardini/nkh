@@ -56,7 +56,7 @@
   .view-header{
     color: $nkh-lightgrey;
     font-weight: 300;
-    margin: 4em 3.5rem 2em;
+    margin: 0 2rem 2rem;
     font-size: 3rem;
     @include breakpoint($min1024) {
       font-size: 3.2rem;
@@ -208,6 +208,9 @@
     }
   }
   .attachment{
+    .view-header{
+      margin: 4rem 3.5rem 2rem;    
+    }
     .views-element-container{
       .view-title{
         line-height: 1.6;
