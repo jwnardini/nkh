@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_date_simple
     - field.storage.node.field_entity_profile
     - field.storage.node.field_image_featured
+    - field.storage.node.field_taxonomy_series
   module:
     - datetime
     - node
@@ -177,6 +178,69 @@ display:
           absolute: false
           entity_type: node
           plugin_id: node_path
+        field_taxonomy_series:
+          id: field_taxonomy_series
+          table: node__field_taxonomy_series
+          field: field_taxonomy_series
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         field_image_featured:
           id: field_image_featured
           table: node__field_image_featured
@@ -188,7 +252,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "{{ field_image_featured }}\n<div class=\"title-wrapper\"><div class=\"view-title\">{{ title }}</div></div>"
+            text: "{{ field_image_featured }}\n<div class=\"title-wrapper\"><span class=\"view-series\">{{ field_taxonomy_series }}</span><div class=\"view-title\">{{ title }}</div></div>"
             make_link: true
             path: '{{ path }}'
             absolute: false
@@ -393,7 +457,7 @@ display:
             label: ''
           granularity: day
           plugin_id: datetime
-      title: 'More Blog Posts'
+      title: 'by Series'
       header:
         area:
           id: area
@@ -507,30 +571,7 @@ display:
         - 'config:field.storage.node.field_date_simple'
         - 'config:field.storage.node.field_entity_profile'
         - 'config:field.storage.node.field_image_featured'
-  block_1:
-    display_plugin: block
-    id: block_1
-    display_title: 'By Date'
-    position: 1
-    display_options:
-      display_extenders: {  }
-      title: 'More Blog Posts'
-      defaults:
-        title: false
-        arguments: false
-      display_description: ''
-      arguments: {  }
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - 'user.node_grants:view'
-        - user.permissions
-      tags:
-        - 'config:field.storage.node.field_date_simple'
-        - 'config:field.storage.node.field_entity_profile'
-        - 'config:field.storage.node.field_image_featured'
+        - 'config:field.storage.node.field_taxonomy_series'
   blog_list:
     display_plugin: block
     id: blog_list
@@ -542,42 +583,98 @@ display:
       defaults:
         title: false
         arguments: false
-        pager: false
       display_description: ''
-      arguments: {  }
-      pager:
-        type: full
-        options:
-          items_per_page: 9
-          offset: 0
-          id: 0
-          total_pages: null
-          tags:
-            previous: Previous
-            next: Next
-            first: First
-            last: Last
-          expose:
-            items_per_page: false
-            items_per_page_label: 'Items per page'
-            items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
-            offset: false
-            offset_label: Offset
-          quantity: 4
+      arguments:
+        nid:
+          id: nid
+          table: node_field_data
+          field: nid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          default_action: default
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: false
+          title: ''
+          default_argument_type: node
+          default_argument_options: {  }
+          default_argument_skip_url: false
+          summary_options:
+            base_path: ''
+            count: true
+            items_per_page: 25
+            override: false
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: true
+          validate:
+            type: none
+            fail: 'not found'
+          validate_options: {  }
+          break_phrase: true
+          not: true
+          entity_type: node
+          entity_field: nid
+          plugin_id: node_nid
+        tid:
+          id: tid
+          table: taxonomy_index
+          field: tid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          default_action: default
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: false
+          title: ''
+          default_argument_type: taxonomy_tid
+          default_argument_options:
+            node: true
+            anyall: +
+            term_page: '0'
+            limit: false
+            vids: {  }
+          default_argument_skip_url: false
+          summary_options:
+            base_path: ''
+            count: true
+            items_per_page: 25
+            override: false
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: true
+          validate:
+            type: none
+            fail: 'not found'
+          validate_options: {  }
+          break_phrase: true
+          add_table: false
+          require_value: false
+          reduce_duplicates: true
+          plugin_id: taxonomy_index_tid
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url.query_args
+        - url
         - 'user.node_grants:view'
         - user.permissions
       tags:
         - 'config:field.storage.node.field_date_simple'
         - 'config:field.storage.node.field_entity_profile'
         - 'config:field.storage.node.field_image_featured'
+        - 'config:field.storage.node.field_taxonomy_series'
   by_issue:
     display_plugin: block
     id: by_issue
@@ -726,6 +823,7 @@ display:
         - 'config:field.storage.node.field_date_simple'
         - 'config:field.storage.node.field_entity_profile'
         - 'config:field.storage.node.field_image_featured'
+        - 'config:field.storage.node.field_taxonomy_series'
   by_series:
     display_plugin: block
     id: by_series
@@ -866,3 +964,4 @@ display:
         - 'config:field.storage.node.field_date_simple'
         - 'config:field.storage.node.field_entity_profile'
         - 'config:field.storage.node.field_image_featured'
+        - 'config:field.storage.node.field_taxonomy_series'
