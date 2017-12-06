@@ -4,7 +4,7 @@ mail: alexis.findiesen@agencychief.com
 slogan: ''
 page:
   403: ''
-  404: ''
+  404: /node/486
   front: /node/1
 admin_compact_mode: false
 weight_select_max: 100
