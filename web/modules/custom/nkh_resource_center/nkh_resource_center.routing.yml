@@ -1,0 +1,7 @@
+nkh_resource_center.listing:
+  path: '/resource-center'
+  defaults:
+    _title: 'Resource Center'
+    _form: '\Drupal\nkh_resource_center\Form\ResourceListing'
+  requirements:
+    _permission: 'access content'

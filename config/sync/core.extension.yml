@@ -66,6 +66,7 @@ module:
   nkh_news_conditional: 0
   nkh_partner_migrate: 0
   nkh_reference_conditional: 0
+  nkh_resource_center: 0
   nkh_resource_migrate: 0
   node: 0
   node_title_help_text: 0

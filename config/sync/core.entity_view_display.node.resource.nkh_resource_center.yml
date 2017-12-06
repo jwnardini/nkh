@@ -1,8 +1,9 @@
-uuid: d4641fba-9609-413d-b9e7-aed5edbf5eac
+uuid: 86064347-2505-4886-81c2-64a9301a227b
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.nkh_resource_center
     - field.field.node.resource.body
     - field.field.node.resource.field_cta_ref
     - field.field.node.resource.field_desc_corporate
@@ -18,75 +19,50 @@ dependencies:
     - field.field.node.resource.field_video
     - node.type.resource
   module:
-    - file
     - text
     - user
-id: node.resource.default
+id: node.resource.nkh_resource_center
 targetEntityType: node
 bundle: resource
-mode: default
+mode: nkh_resource_center
 content:
   body:
     label: hidden
     type: text_default
-    weight: 3
+    weight: 0
     settings: {  }
     third_party_settings: {  }
     region: content
   field_desc_corporate:
-    weight: 4
+    weight: 1
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_desc_dineout:
-    weight: 6
+    weight: 3
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_desc_local:
-    weight: 5
+    weight: 2
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
-  field_image_featured:
-    weight: 2
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_upload:
-    weight: 1
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: file_default
-    region: content
-  field_video:
-    weight: 0
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  links:
-    weight: 7
-    region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
   field_cta_ref: true
   field_file: true
   field_file_type: true
+  field_image_featured: true
   field_taxonomy_location: true
   field_taxonomy_resource: true
   field_teaser: true
+  field_upload: true
+  field_video: true
+  links: true
   nkh_resource_single_form: true

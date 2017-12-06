@@ -1,0 +1,12 @@
+uuid: 004cdcbb-01f6-4327-b2db-c2fbe48830c7
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: gvZvvnFAShv72NvHzPlzs2b6Ai5Uf1xzESkkHNUN2-M
+id: node.nkh_resource_center
+label: 'Single Resource Form Content'
+targetEntityType: node
+cache: true

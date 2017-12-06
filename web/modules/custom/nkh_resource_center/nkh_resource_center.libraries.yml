@@ -1,0 +1,9 @@
+single_form:
+  js:
+    js/single_download.js: {}
+    js/copy.js: {}
+    js/collapse.js: {}
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery
