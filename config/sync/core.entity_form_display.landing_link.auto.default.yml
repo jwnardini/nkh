@@ -4,22 +4,20 @@ status: true
 dependencies:
   config:
     - eck.eck_type.landing_link.auto
-    - field.field.landing_link.auto.field_content_ref
-  module:
-    - entityqueue
+    - field.field.landing_link.auto.field_content_reference
 id: landing_link.auto.default
 targetEntityType: landing_link
 bundle: auto
 mode: default
 content:
-  field_content_ref:
-    weight: 1
+  field_content_reference:
+    weight: 3
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: entityqueue_dragtable
+    type: entity_reference_autocomplete
     region: content
   title:
     type: string_textfield

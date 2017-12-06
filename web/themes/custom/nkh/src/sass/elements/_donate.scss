@@ -1,8 +1,27 @@
 [class*="block-donate"]{
-  padding: 0 1.5rem 0 2rem;
-  width: 96.5%;
+  &.block{
+    position: fixed;
+    bottom: 0;
+    padding: 0;
+    width: 100%;
+    .field{
+      margin: 0;
+    }
+    @include breakpoint($min1024) {
+      position: relative;
+      bottom: auto;
+      width: 124px;
+      margin-top: -.2rem;
+      display: inline-block;
+      vertical-align: top;
+      @include clearfix;
+    }    
+    @include breakpoint($min1260) {
+      margin-left: .3rem;
+    }    
+  }
   .field--type-text-with-summary{
-  	padding: 0;
+    padding: 0;
     a{
       width: 100%;
       color: $white;
@@ -15,6 +34,11 @@
       &:after{
         content: " To No Kid Hungry";
         text-transform: uppercase;
+        background: none;
+        display: inline-block;
+        width: auto;
+        top: 0;
+        margin-left: 6px;
       }
       &:hover{
         background-color: $nkh-darkorange;
@@ -26,17 +50,7 @@
       width: 100%;
       z-index: 99;
     }
-  }
-
-  @include breakpoint($min1024) {
-    padding: 0;
-    width: 100px;
-    margin-left: 1.4rem;
-    margin-top: -.2rem;
-    display: inline-block;
-    vertical-align: top;
-    @include clearfix;
-    .field--type-text-with-summary{
+    @include breakpoint($min1024) {
       position: relative;
       margin: 0;
       a{
@@ -67,9 +81,5 @@
         display: block;
       }
     }
-  }
-  @include breakpoint($min1260) {
-    margin-left: 2rem;
-    width: 124px;
   }
 }

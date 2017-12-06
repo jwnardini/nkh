@@ -1,0 +1,43 @@
+{#
+/**
+ * @file
+ * Default theme implementation of a container used to wrap embedded entities.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing element.
+ * - children: The rendered child elements of the container.
+ *
+ * @see nkh_preprocess_entity_embed_container()
+ * @see function nkh_preprocess_eck_entity() {
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+set classes = [
+  'entity-landing-link',
+  'landing-link',
+  'entity-landing-link--manual',
+]
+%}
+<div {{ attributes.addClass(classes) }}>
+  <a href='{{ entityLink }}' alt='title'>
+	  <div class="image-section">
+	    {{ entityLinkImage }}
+	  </div>
+	  <div class="content-section">
+	    <p class='landing_title'>
+	      <span>{{ entityLinkTitle }}</span>
+	      {% if entityLinkExternal %}
+	        <span class="icon icon-external"></span>
+	      {% endif %}
+	    </p>
+	    <p class='landing_teaser'>
+	      {{ entityLinkTeaser }}
+	    </p>
+	    <p class='landing_additional'>
+	      <span>{{ entityLinkAdditional }}</span>
+	    </p>
+	  </div>
+  </a>
+</div>

@@ -22,7 +22,7 @@
   }
   &:after{
     background: url('/themes/custom/nkh/images/nkh-canvas-orange.png') repeat;
-    background-size: 1500px;
+    background-size: 1200px;
   }
   @include breakpoint($min480) {
     width: 100%;
@@ -51,6 +51,9 @@
     text-decoration: none;
     position: relative;
     border-bottom: 4px solid rgba($white, 0.95);
+    &:after { 
+      content: none; 
+    }
   }
   &:hover{
     a{
@@ -86,10 +89,8 @@
       z-index: 5;
       display: block;
       height: 300px;
-      background: $nkh-text;
-      -webkit-mask: url('/themes/custom/nkh/images/btn-bingo.gif');
-      -webkit-mask-size: 100%;
-      -webkit-mask-repeat: repeat;
+      background: url('/themes/custom/nkh/images/btn-bingo.gif') 0 0 no-repeat;
+      background-size: 100%;
       content: '';
     }
   }
@@ -104,9 +105,213 @@
   }
 }
 
-article.entity-landing_link-manual{
+.field--name-field-landing-link-ref {
+  .field__item {
+    margin-top: 5rem;
+    + .field__item {
+      margin-top: 0;
+    }
+    &:last-of-type{
+      margin-bottom: 5rem;
+    }
+    &:nth-child(odd){
+      .image-section{
+        &:before{
+          width: 50%;
+          height: 3rem;
+          top: -3rem;
+          left: 0;
+        }
+        &:after{
+          width: 3rem;
+          height: 50%;
+          top: 25%;
+          right: 0;
+        }
+      }
+    }
+    &:nth-child(even){
+      .image-section{
+        &:before{
+          width: 50%;
+          height: 3rem;
+          bottom: -3rem;
+          right: 0;
+        }
+        &:after{
+          width: 3rem;
+          height: 50%;
+          top: 25%;
+          left: 0;
+          z-index: 1;
+        }
+      }
+    }
+
+    &:nth-child(3n+1) {
+      span.icon{
+        color: $nkh-lightblue;
+      }
+      .landing_additional {
+        span{
+          background-image: linear-gradient(180deg,transparent 0,$nkh-lightblue 0);
+        }
+        &:hover{
+          span{
+            background-image: linear-gradient(180deg,transparent 0, $nkh-lightblue 0);
+          }
+
+        }
+      }
+      .image-section{
+        &:before,
+        &:after{
+          background: $nkh-lightblue;
+        }
+      }
+      a{
+        &:hover{
+          picture{
+            &:after{
+              background: $nkh-lightblue;
+            }
+          }
+        }
+      }
+
+
+    }
+    &:nth-child(3n+2) {
+      span.icon{
+        color: $nkh-brightyellow;
+      }
+      .landing_additional {
+        span{
+          background-image: linear-gradient(180deg,transparent 0, $nkh-brightyellow 0);
+        }
+        &:hover{
+          span{
+            background-image: linear-gradient(180deg,transparent 0, $nkh-brightyellow 0);
+          }
+
+
+        }
+      }
+      .image-section{
+        &:before,
+        &:after{
+          background: $nkh-brightyellow;
+        }
+      }
+      a{
+        &:hover{
+          picture{
+            &:after{
+              background: $nkh-brightyellow;
+            }
+          }
+        }
+      }
+    }
+    &:nth-child(3n+3) {
+      span.icon{
+        color: $nkh-green;
+      }
+      .landing_additional {
+        span{
+          background-image: linear-gradient(180deg,transparent 0,$nkh-green 0);
+        }
+        &:hover{
+          span{
+            background-image: linear-gradient(180deg,transparent 0, $nkh-green 0);
+          }
+
+        }
+      }
+      .image-section{
+        &:before,
+        &:after{
+          background: $nkh-green;
+        }
+      }
+      a{
+        &:hover{
+          picture{
+            &:after{
+              background: $nkh-green;
+            }
+          }
+        }
+      }
+    }
+    @include breakpoint($min1024) {
+      &:nth-of-type(odd){
+        .image-section{
+          &:before{
+            top: 7rem;
+            right: -5rem;
+            width: 15%;
+            height: 50%;
+            z-index: 1;
+            left: auto;
+          }
+          &:after{
+            width: 50%;
+            height: 90%;
+            top: -2rem;
+            left: -3rem;
+            z-index: -1
+          }
+        }
+        .content-section{
+          padding: 5rem 0 5rem 9rem;
+        }
+      }
+      &:nth-of-type(even){
+        .image-section{
+          grid-column-start: 2;
+          grid-column-end: 3;
+          grid-row-start: 1;
+          grid-row-end: 2;
+          &:before{
+            top: 15rem;
+            left: -4rem;
+            width: 15%;
+            height: 50%;
+            z-index: 1;
+          }
+          &:after{
+            right: -3rem;
+            bottom: -2.5rem;
+            width: 60%;
+            height: 94%;
+            z-index: -1;
+            top: auto;
+            left: auto;
+          }
+        }
+        .content-section{
+          grid-column-start: 1;
+          grid-column-end: 2;
+          grid-row-start: 1;
+          grid-row-end: 2;
+          padding: 5rem 6rem 5rem 0;
+        }
+      }
+    }
+  }
+  .entity-landing-link--auto {
+    margin-top: 0;
+  }
+
+
+}
+
+article.entity-landing_link-manual,
+.entity-landing-link--auto {
   margin-top: 5rem;
-  + .entity-landing_link-manual{
+  + .entity-landing_link-manual,
+  + .entity-landing-link--auto {
     margin-top: 0;
   }
   &:last-of-type{
@@ -201,6 +406,9 @@ article.entity-landing_link-manual{
           transition-timing-function: ease-in;
         }
       }
+    }
+    &:after { 
+      content: none; 
     }
   }
   &:nth-child(odd){
@@ -413,6 +621,8 @@ article.entity-landing_link-manual{
     }
   }
 }
+
+
 .entity--cta-image{
   max-width: 800px;
   margin: 0 auto 7rem;
@@ -484,6 +694,7 @@ article.entity-landing_link-manual{
       background-position: 0 1.25em;
       padding-bottom: 0.5rem;
       transition: background-position .1s ease-out;
+      word-break: break-word;
     }
     &:hover span{
       background-position: 0 1.15em;
@@ -493,6 +704,11 @@ article.entity-landing_link-manual{
     line-height: 1.6;
     font-size: 1.6rem;
     font-weight: 300;
+  }
+  a{
+    &:after { 
+      content: none; 
+    }    
   }
 }
 //to override all span.icon class

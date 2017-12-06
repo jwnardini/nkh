@@ -22,7 +22,7 @@ third_party_settings:
     unpublish_required: false
     unpublish_revision: false
   node_title_help_text:
-    title_help: 'Enter the full name of the profile. This will create the URL as well as the title for this page.'
+    title_help: 'Enter the full name of the profile. This will create the URL as well as the title for this page. Please keep it under 50 characters for SEO best practices - if a person''s name is longer than that, try abbreviating their first name.'
 name: Profile
 type: profile
 description: 'Use <em>Profile</em> for chefs, blog authors, and staff.'

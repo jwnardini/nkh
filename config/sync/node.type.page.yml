@@ -24,7 +24,7 @@ third_party_settings:
     unpublish_required: false
     unpublish_revision: false
   node_title_help_text:
-    title_help: 'This is your main title. Please keep it under 50 characters for SEO best practices.'
+    title_help: 'This is your main title. Please keep it under 20 characters for best formatting.'
 _core:
   default_config_hash: KuyA4NHPXcmKAjRtwa0vQc2ZcyrUJy6IlS2TAyMNRbc
 name: 'Basic Page'

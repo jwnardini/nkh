@@ -56,7 +56,7 @@
   .view-header{
     color: $nkh-lightgrey;
     font-weight: 300;
-    margin: 4em 3.5rem 2em;
+    margin: 0 2rem 2rem;
     font-size: 3rem;
     @include breakpoint($min1024) {
       font-size: 3.2rem;
@@ -123,7 +123,7 @@
     p{
       font-size: 1.6rem;
       line-height: 1.8;
-      font-weight: 400;
+      font-weight: 300;
       margin-top: 1.5rem;
     }
     &:before,
@@ -137,15 +137,8 @@
       z-index: -1;
     }
     &:after{
-      background-size: 450%;
       mix-blend-mode: multiply;
-      opacity: .65;
-      @include breakpoint($min768) {
-        background-size: 250%;
-      }
-      @include breakpoint($min1024) {
-        background-size: 118%;
-      }
+      opacity: .4;
     }
     &:hover .view-title{
       background-position: 0 1.12em;
@@ -154,17 +147,17 @@
   .view-title,
   .series-title{
     margin-bottom: 1rem;
-    font-weight: 500;
+    font-weight: 700;
 
   }
   .view-title{
     font-size: 3.6rem;
     line-height: 1.2;
     display: inline;
-    letter-spacing: -.05rem;
+    letter-spacing: -.025em;
     background-image: linear-gradient(180deg, transparent 0,$white 0);
     background-repeat: no-repeat;
-    background-position: 0 1.2em;
+    background-position: 0 1.25em;
     padding-bottom: .55rem;
     transition: background-position .1s ease-out;
     @include breakpoint($min1024) {
@@ -174,7 +167,7 @@
   .series-title{
     text-transform: uppercase;
     font-size: 1.6rem;
-    letter-spacing: .15rem;
+    letter-spacing: .025em;
     display: block;
   }
   @include breakpoint($min1024) {
@@ -186,7 +179,7 @@
       }
       .views-element-container{
         .view-title{
-          background-position: 0 1.12em;
+          background-position: 0 1.29em;
         }
         .title-wrapper{
           &:hover .view-title{
@@ -201,13 +194,16 @@
 .block-views-block-featured-content-featured-content {
   .title-wrapper{
     &:before{
-      background: rgba($nkh-lightblue, .7);
+      background: rgba(0,124,163,.7);
     }
     &:after{
-      background: url('/themes/custom/nkh/images/nkh-canvas-white.png') repeat;
+      background: url('/themes/custom/nkh/images/nkh-canvas-white.png') 0 0/800px;
     }
   }
   .attachment{
+    .view-header{
+      margin: 4rem 3.5rem 2rem;    
+    }
     .views-element-container{
       .view-title{
         line-height: 1.6;

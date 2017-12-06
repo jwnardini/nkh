@@ -29,4 +29,9 @@
   img {
     display: inline-block;
   }
+  a{
+    &:after{
+      content: none;
+    }
+  }
 }

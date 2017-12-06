@@ -35,11 +35,15 @@ button.header-search-form__toggle {
   position: relative;
   vertical-align: top;
   overflow: visible;
-  width: auto;
-  form{
-    width: 91vw;
-    margin: 0 0 0 2rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  @include breakpoint($min1024) {
+    margin-bottom: 0;
+    width: auto;
+  }
 
+  form {
+    margin: 0 2rem;
   }
   .form-type-search,
   .form-actions{
@@ -51,18 +55,22 @@ button.header-search-form__toggle {
     }
   }
   .form-type-search{
-    width: 79.2%;
+    width: 73%;
     input{
-      padding: 1.05rem 1rem;
+      padding: 1.08rem 1rem;
+      @include breakpoint($min1024) {
+        padding-top: 1.05rem;
+      }
+
     }
   }
   .form-actions{
-    width: 21%;
-    margin: 0 0 0 -1rem;
+    width: 25%;
     input{
       height: 45px;
       font-size: 14px;
       text-transform: uppercase;
+      padding: 0;
     }
   }
 
@@ -130,6 +138,4 @@ button.header-search-form__toggle {
 }
 
 .mobile .block-search {
-  padding: 1rem 2rem;
-  margin-bottom: 2rem;
 }

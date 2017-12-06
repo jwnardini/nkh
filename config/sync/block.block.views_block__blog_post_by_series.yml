@@ -5,14 +5,13 @@ dependencies:
   config:
     - views.view.blog_post
   module:
-    - ctools
     - views
   theme:
     - nkh
 id: views_block__blog_post_by_series
 theme: nkh
-region: postscript
-weight: -22
+region: disabled
+weight: -23
 provider: null
 plugin: 'views_block:blog_post-by_series'
 settings:
@@ -23,11 +22,4 @@ settings:
   views_label: ''
   items_per_page: none
   context_mapping: {  }
-visibility:
-  'entity_bundle:node':
-    id: 'entity_bundle:node'
-    bundles:
-      blog: blog
-    negate: false
-    context_mapping:
-      node: '@node.node_route_context:node'
+visibility: {  }

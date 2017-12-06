@@ -12,7 +12,7 @@ dependencies:
 id: views_block__core_partners_core_partners
 theme: nkh
 region: postscript
-weight: -25
+weight: -26
 provider: null
 plugin: 'views_block:core_partners-core_partners'
 settings:

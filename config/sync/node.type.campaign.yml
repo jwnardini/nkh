@@ -22,7 +22,7 @@ third_party_settings:
     unpublish_required: false
     unpublish_revision: false
   node_title_help_text:
-    title_help: 'Enter the name of your campaign (i.e., "Summer is the Hungriest Time of Year").'
+    title_help: 'Enter the name of your campaign (i.e., "Summer is the Hungriest Time of Year"). Please keep it under 50 characters for SEO best practices.'
 name: Campaign
 type: campaign
 description: 'Use <em>Campaign</em> for short-term or special initiatives.'

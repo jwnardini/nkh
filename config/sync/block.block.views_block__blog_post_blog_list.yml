@@ -1,30 +1,30 @@
-uuid: edccbb5e-7380-4024-94cb-3315daaaffbc
+uuid: 859d133c-900e-4621-8e49-fdce21937580
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.partners
+    - views.view.blog_post
   module:
     - system
     - views
   theme:
     - nkh
-id: views_block__partners_chefs
+id: views_block__blog_post_blog_list
 theme: nkh
-region: content
-weight: 0
+region: postscript
+weight: -19
 provider: null
-plugin: 'views_block:partners-block_3'
+plugin: 'views_block:blog_post-blog_list'
 settings:
-  id: 'views_block:partners-block_3'
+  id: 'views_block:blog_post-blog_list'
   label: ''
   provider: views
-  label_display: visible
+  label_display: '0'
   views_label: ''
   items_per_page: none
 visibility:
   request_path:
     id: request_path
-    pages: /partners/chefs
+    pages: /node/6
     negate: false
     context_mapping: {  }

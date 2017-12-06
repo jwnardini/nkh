@@ -15,27 +15,24 @@
 #}
 {%
   set classes = [
+  'entity-landing-link',
+  'landing-link',
+  'entity-landing-link--auto',
   ]
 %}
 <div {{ attributes.addClass(classes) }}>
-  <a href='{{ entityLink }}' alt='title'>
+  <a href="{{ entity.field_content_reference.0['#node'].path.value.0.alias }}" alt='{{ entity.field_content_reference.0['#node'].title.value }}'>
 	  <div class="image-section">
-	    {{ entityLinkImage }}
+	    {{ entity.field_content_reference.0['#node'].field_image_featured.value }}
 	  </div>
 	  <div class="content-section">
 	    <p class='landing_title'>
-	      <span>{{ entityLinkTitle }}</span>
-	      {% if entityLinkExternal %}
-	        <span class="icon icon-external"></span>
-	      {% endif %}
+	      <span>{{ entity.field_content_reference.0['#node'].title.value }}</span>
 	    </p>
 	    <p class='landing_teaser'>
-	      {{ entityLinkTeaser }}
+	      {{ entity.field_content_reference.0['#node'].field_teaser.value }}
 	    </p>
-	    <p class='landing_additional'>
-	      <span>{{ entityLinkAdditional }}</span>
-	    </p>
+
 	  </div>
   </a>
 </div>
-
