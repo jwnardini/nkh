@@ -30,6 +30,9 @@
   @include breakpoint($min1024) {
     width: 49.7%;
   }
+  a{
+    &:after { content: none; }    
+  }
 }
 .block-views-block-core-partners-core-partners{
   .view-content{
@@ -38,17 +41,12 @@
     }
     & > div{
       display: inline-block;
-      vertical-align: top;
-      width: 48%;
+      vertical-align: middle;
+      width: 21%;
       margin-left: 1%;
       margin-bottom: 1%;
-
-      @include breakpoint($min768) {
-        vertical-align: middle;
-        width: 21%;
-        + div{ 
-          margin-left: 2.7%;
-        }      
+      + div{ 
+        margin-left: 2.7%;
       }
     }
   }
@@ -97,12 +95,6 @@
         max-height: 100px;
         display: block;
         margin: auto;
-      }
-      &:hover,
-      &:active{
-        &:after{
-          background: none;
-        }
       }
     }
   }

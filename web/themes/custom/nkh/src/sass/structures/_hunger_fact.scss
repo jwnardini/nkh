@@ -26,11 +26,13 @@ div[data-quickedit-entity-id*="hunger_fact"],
     & > a{
       text-decoration: underline;
       font-size: 1.2rem;
-      margin: 2.5rem 0 0.5rem; 
+      margin: 2.5rem 0 0.5rem;
       @include breakpoint($min1024) {
         margin: 2rem 0 3rem;
       }
-
+      &:after{
+        content: none;
+      }
     }
     & > a,
     .hunger-fact-title{

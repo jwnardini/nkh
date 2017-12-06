@@ -22,7 +22,7 @@
   }
   &:after{
     background: url('/themes/custom/nkh/images/nkh-canvas-orange.png') repeat;
-    background-size: 1500px;
+    background-size: 1200px;
   }
   @include breakpoint($min480) {
     width: 100%;
@@ -51,6 +51,9 @@
     text-decoration: none;
     position: relative;
     border-bottom: 4px solid rgba($white, 0.95);
+    &:after { 
+      content: none; 
+    }
   }
   &:hover{
     a{
@@ -86,10 +89,8 @@
       z-index: 5;
       display: block;
       height: 300px;
-      background: $nkh-text;
-      -webkit-mask: url('/themes/custom/nkh/images/btn-bingo.gif');
-      -webkit-mask-size: 100%;
-      -webkit-mask-repeat: repeat;
+      background: url('/themes/custom/nkh/images/btn-bingo.gif') 0 0 no-repeat;
+      background-size: 100%;
       content: '';
     }
   }
@@ -406,6 +407,9 @@ article.entity-landing_link-manual,
         }
       }
     }
+    &:after { 
+      content: none; 
+    }
   }
   &:nth-child(odd){
     .image-section{
@@ -690,6 +694,7 @@ article.entity-landing_link-manual,
       background-position: 0 1.1em;
       padding-bottom: 0.5rem;
       transition: background-position .1s ease-out;
+      word-break: break-word;
     }
     &:hover span{
       background-position: 0 1.05em;
@@ -698,6 +703,11 @@ article.entity-landing_link-manual,
   p{
     line-height: 1.6;
     font-size: 1.6rem;
+  }
+  a{
+    &:after { 
+      content: none; 
+    }    
   }
 }
 //to override all span.icon class
