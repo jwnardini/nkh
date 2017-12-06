@@ -317,7 +317,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div>{{ field_image_headshot }}</div>\n<div>{{ title }}</div>\n<div>{{ field_jobtitle }}</div>"
+            text: "<div class=\"view-profile-image\">{{ field_image_headshot }}</div>\n<div class=\"view-profile-name\">{{ title }}</div>\n<div class=\"view-profile-jobtitle\">{{ field_jobtitle }}</div>"
             make_link: true
             path: '{{ path }}'
             absolute: false
