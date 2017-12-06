@@ -20,12 +20,12 @@
     flex-grow: 1;
   }
   .views-row {
-    width: 20rem;
-    padding: 1rem;
+    width: 24rem;
+    padding: 1rem 0;
     text-align: left;
     //make sure that each profile is centered once the browser gets really narrow
     margin: auto;
-    @include breakpoint($min480) {
+    @include breakpoint($min540) {
       margin: 0;
     }
 
