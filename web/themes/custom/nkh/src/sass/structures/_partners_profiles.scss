@@ -39,7 +39,8 @@
     }
   }
 }
-[class*="block-views-blockprofiles-block"] {
+[class*="block-views-blockprofiles-block"],
+[class*="block-views-block-partners"] {
   a{
     text-decoration: none;
   }
