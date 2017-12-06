@@ -21,7 +21,7 @@ field_name: field_subtitle
 entity_type: node
 bundle: page
 label: Subtitle
-description: 'Use this space to provide additional messaging to support the title of this page. It should be under 20 characters, or 2-4 words.'
+description: 'Use this space to provide additional messaging to support the title of this page. It should be around 20 characters for best formatting, or 2-4 words.'
 required: false
 translatable: false
 default_value: {  }
