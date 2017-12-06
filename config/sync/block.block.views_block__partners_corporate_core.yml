@@ -1,22 +1,22 @@
-uuid: 764d28e3-8f16-4efc-accc-998849ba6f71
+uuid: 32de07fc-2935-44cf-bacf-ebd642f47fd2
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.our_stories
+    - views.view.partners
   module:
     - system
     - views
   theme:
     - nkh
-id: views_block__our_stories_our_stories
+id: views_block__partners_corporate_core
 theme: nkh
 region: content
-weight: -23
+weight: -19
 provider: null
-plugin: 'views_block:our_stories-our_stories'
+plugin: 'views_block:partners-block_7'
 settings:
-  id: 'views_block:our_stories-our_stories'
+  id: 'views_block:partners-block_7'
   label: ''
   provider: views
   label_display: visible
@@ -25,6 +25,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: '<front>'
+    pages: /partners/corporate-partners
     negate: false
     context_mapping: {  }
