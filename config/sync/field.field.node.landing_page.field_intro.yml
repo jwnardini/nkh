@@ -1,0 +1,30 @@
+uuid: 0e412308-d8dc-4c44-af5d-530a6aa4b562
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_intro
+    - node.type.landing_page
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    basic_html: basic_html
+    code: code
+    simple_html: '0'
+    full_html: '0'
+    restricted_html: '0'
+    plain_text: '0'
+id: node.landing_page.field_intro
+field_name: field_intro
+entity_type: node
+bundle: landing_page
+label: Introduction
+description: 'This content will display ahead of the main body and will be styled slightly differently to give it special weight. '
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

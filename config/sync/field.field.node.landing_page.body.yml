@@ -1,0 +1,31 @@
+uuid: d8d51195-9b4c-4065-b9a4-be734c95dfaa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.landing_page
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    simple_html: simple_html
+    code: code
+    full_html: '0'
+    restricted_html: '0'
+    basic_html: '0'
+    plain_text: '0'
+id: node.landing_page.body
+field_name: body
+entity_type: node
+bundle: landing_page
+label: Body
+description: 'This is the main content for the page. '
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary
