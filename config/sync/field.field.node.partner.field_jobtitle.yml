@@ -1,0 +1,19 @@
+uuid: 95a1f7d7-cef7-4655-90ab-d75478c47267
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_jobtitle
+    - node.type.partner
+id: node.partner.field_jobtitle
+field_name: field_jobtitle
+entity_type: node
+bundle: partner
+label: Title
+description: 'Include the job title that should be associated if this is a Celebrity or Chef. For Celebrities, this would be the type of Celebrity, such as "Actress." For Chefs, this could include their primary restaurant, such as "Executive Chef, Rose''s Luxury."'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

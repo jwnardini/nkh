@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.partner.body
     - field.field.node.partner.field_cta_ref
     - field.field.node.partner.field_image_logo
+    - field.field.node.partner.field_jobtitle
     - field.field.node.partner.field_metatags
     - field.field.node.partner.field_social_fb
     - field.field.node.partner.field_social_ins
@@ -117,3 +118,4 @@ content:
     third_party_settings: {  }
 hidden:
   field_cta_ref: true
+  field_jobtitle: true
