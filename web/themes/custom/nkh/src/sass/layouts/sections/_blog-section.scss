@@ -24,7 +24,7 @@ div[class*="block-views-block-blog-by-author"] {
         background: none;
       }
       .view-title{
-        background-position: 0 1.05em;
+        background-position: 0 1.2em;
       }
     }
   }
@@ -75,6 +75,9 @@ div[class*="block-views-block-blog-by-author"] {
     }
 
     &:nth-child(3n-2){
+      .view-series{
+        background: rgba($nkh-lightblue, .5);
+      }
       a:hover, a:focus, a:active{
         .field--type-image:after{
           background: rgba($nkh-lightblue, .5);
@@ -82,6 +85,9 @@ div[class*="block-views-block-blog-by-author"] {
       }
     }
     &:nth-child(3n-1){
+      .view-series{
+        background: rgba($nkh-green, .5);
+      }
       a:hover, a:focus, a:active{
         .field--type-image:after{
           background: rgba($nkh-green, .5);
@@ -89,6 +95,9 @@ div[class*="block-views-block-blog-by-author"] {
       }
     }
     &:nth-child(3n){
+      .view-series{
+        background: rgba($nkh-brightyellow, .5);
+      }
       a:hover, a:focus, a:active {
         .field--type-image:after{
           background: rgba($nkh-brightyellow, .5);
@@ -98,17 +107,28 @@ div[class*="block-views-block-blog-by-author"] {
   }
   .view-header,
   .view-title,
-  .views-field-field-taxonomy-issue{
+  .view-series{
     font-weight: 700;
   }
   .view-header,
   .views-field-field-entity-profile,
-  .views-field-field-taxonomy-issue{
+  .view-series{
     text-transform: uppercase;
   }
+  .view-series {
+    margin-top: -4.9rem;
+    padding: 1.2rem;;
+    font-size: 1.2rem;
+    display: block;
+    position: absolute;
+    z-index: 100;
+    color: $white;    
+
+  }
   .title-wrapper{
-    margin-top: 2rem;
+    margin-top: 2.5rem;
     padding: 0 2rem;
+    position: relative;
   }
   .view-title{
     font-size: 2.2rem;
@@ -121,17 +141,17 @@ div[class*="block-views-block-blog-by-author"] {
     color: $nkh-text;
     background-image: linear-gradient(180deg, transparent 0,$nkh-text 0);
     background-repeat: no-repeat;
-    background-position: 0 1.15em;
+    background-position: 0 1.35em;
     padding-bottom: .55rem;
     transition: background-position .1s ease-out;
   }
   .views-field-field-entity-profile,
   .views-field-field-date-simple{
-    display: inline-block;
     color: $nkh-lightgrey;
     font-size: 1.2rem;
   }
   .views-field-field-date-simple{
+    display: inline-block;
     margin-left: 2rem;
     .field-content,
     &:after{
@@ -141,6 +161,11 @@ div[class*="block-views-block-blog-by-author"] {
     &:after{
       content: "/";
       margin-right: .5rem;
+    }
+  }
+  .views-field-field-entity-profile{
+    &, .field-content{
+      display: inline;
     }
   }
   .views-field-field-image-featured{
