@@ -1,0 +1,212 @@
+uuid: 4aab01cb-3630-48d9-890a-3352c6644b75
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.landing_page.body
+    - field.field.node.landing_page.field_content_reference
+    - field.field.node.landing_page.field_cta_ref
+    - field.field.node.landing_page.field_image_banner
+    - field.field.node.landing_page.field_image_featured
+    - field.field.node.landing_page.field_intro
+    - field.field.node.landing_page.field_landing_link_ref
+    - field.field.node.landing_page.field_metatags
+    - field.field.node.landing_page.field_taxonomy_issue
+    - field.field.node.landing_page.field_teaser
+    - node.type.landing_page
+  module:
+    - allowed_formats
+    - content_moderation
+    - entity_browser_entity_form
+    - inline_entity_form
+    - maxlength
+    - metatag
+    - path
+    - scheduler
+    - text
+id: node.landing_page.default
+targetEntityType: node
+bundle: landing_page
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 4
+    region: content
+    settings:
+      rows: 9
+      placeholder: ''
+      summary_rows: 3
+    third_party_settings:
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_summary: null
+        maxlength_js_label_summary: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_enforce: false
+        maxlength_js_truncate_html: false
+      allowed_formats:
+        hide_help: '0'
+        hide_guidelines: '0'
+  field_content_reference:
+    weight: 15
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_cta_ref:
+    weight: 16
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: cta_find
+    type: inline_entity_form_complex
+    region: content
+  field_image_banner:
+    weight: 6
+    settings:
+      form_mode: default
+      override_labels: true
+      label_singular: Image
+      label_plural: Images
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: images
+    type: inline_entity_form_complex
+    region: content
+  field_image_featured:
+    weight: 5
+    settings:
+      form_mode: default
+      override_labels: true
+      label_singular: Image
+      label_plural: Images
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: images
+    type: inline_entity_form_complex
+    region: content
+  field_intro:
+    weight: 3
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings:
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_enforce: false
+        maxlength_js_truncate_html: false
+      allowed_formats:
+        hide_help: '0'
+        hide_guidelines: '0'
+    type: text_textarea
+    region: content
+  field_landing_link_ref:
+    weight: 14
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: landing_link_find
+    type: inline_entity_form_complex
+    region: content
+  field_metatags:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_firehose
+    region: content
+  field_taxonomy_issue:
+    weight: 17
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_teaser:
+    weight: 2
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
+      maxlength:
+        maxlength_js: 160
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_enforce: false
+        maxlength_js_truncate_html: false
+    type: text_textarea
+    region: content
+  moderation_state:
+    type: moderation_state_default
+    weight: 12
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  publish_on:
+    type: datetime_timestamp_no_default
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  scheduler_settings:
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 13
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  unpublish_on:
+    type: datetime_timestamp_no_default
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  promote: true
+  sticky: true
+  uid: true

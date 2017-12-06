@@ -1,0 +1,28 @@
+uuid: d33b7f13-16f2-4e85-93c5-af5edcfb5c0e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image_banner
+    - media_entity.bundle.image
+    - node.type.landing_page
+id: node.landing_page.field_image_banner
+field_name: field_image_banner
+entity_type: node
+bundle: landing_page
+label: 'Banner Image'
+description: 'This image will display at the top of the page. Preferred dimensions equal to or greater than 3840×1580.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference
