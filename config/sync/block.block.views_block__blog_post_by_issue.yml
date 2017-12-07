@@ -28,6 +28,7 @@ visibility:
     id: 'entity_bundle:node'
     bundles:
       campaign: campaign
+      news: news
       program: program
     negate: false
     context_mapping:
