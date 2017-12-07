@@ -1015,7 +1015,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "{{ field_image_featured }}<div class=\"title-wrapper\"><span class=\"series-title\">{{ type }}</span><div class=\"view-title\">{{ title }}</div><span class=\"read-more\">read more</span></div>\n"
+            text: '{{ field_image_featured }}<div class=\"title-wrapper\"><span class=\"series-title\">{{ type }}</span><div class=\"view-title\">{{ title }}</div><span class=\"read-more\">read more</span></div>\n'
             make_link: true
             path: '{{ path }}'
             absolute: false
