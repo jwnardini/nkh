@@ -16,7 +16,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: start;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-grow: 1;
   }
   .views-row {
@@ -27,6 +27,9 @@
     margin: auto;
     @include breakpoint($min540) {
       margin: 0;
+    }
+    @include breakpoint($min1120) {
+      width: 25%;
     }
 
   }
