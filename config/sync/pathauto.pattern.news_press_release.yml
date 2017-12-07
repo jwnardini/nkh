@@ -7,16 +7,16 @@ dependencies:
 id: news_press_release
 label: 'News/Press Release'
 type: 'canonical_entities:node'
-pattern: 'who-we-are/press-room/[node:title]'
+pattern: 'who-we-are/pressroom/[node:title]'
 selection_criteria:
-  4cbc33f9-1bdd-4556-b901-7f2f0e6c66f7:
+  570c97a4-fbcc-4c30-ac57-b9c615893d60:
     id: node_type
     bundles:
       news: news
     negate: false
     context_mapping:
       node: node
-    uuid: 4cbc33f9-1bdd-4556-b901-7f2f0e6c66f7
+    uuid: 570c97a4-fbcc-4c30-ac57-b9c615893d60
 selection_logic: and
 weight: -6
 relationships: {  }

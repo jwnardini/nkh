@@ -268,7 +268,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "{{ field_image_featured }}\n<div class=\"title-wrapper\"><span class=\"view-series\">{{ field_taxonomy_series }}</span><div class=\"view-title\">{{ title }}</div></div>"
+            text: "{{ field_image_featured }}\n<div class=\"title-wrapper\">\n{% if field_taxonomy_series|render|striptags %}<span class=\"view-series\">{{ field_taxonomy_series }}</span>{% endif %}\n<h3 class=\"view-title\">{{ title }}</h3>\n</div>"
             make_link: true
             path: '{{ path }}'
             absolute: false
@@ -494,8 +494,8 @@ display:
           empty: false
           tokenize: false
           content:
-            value: 'Blog Posts'
-            format: simple_html
+            value: '<div class="wrap"><h2 class="view-title">Blog Posts</h2></div>'
+            format: code
           plugin_id: text
       footer: {  }
       empty: {  }
@@ -547,6 +547,7 @@ display:
           not: false
           plugin_id: numeric
       display_extenders: {  }
+      css_class: article-list
     cache_metadata:
       max-age: -1
       contexts:
@@ -834,7 +835,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "{{ field_image_featured }}\n<div class=\"title-wrapper\"><span class=\"view-series\">{{ field_taxonomy_series }}</span><div class=\"view-title\">{{ title }}</div></div>"
+            text: "{{ field_image_featured }}\n<div class=\"title-wrapper\">\n{% if field_taxonomy_series|render|striptags %}<span class=\"view-series\">{{ field_taxonomy_series }}</span>{% endif %}\n<h3 class=\"view-title\">{{ title }}</h3>\n</div>"
             make_link: true
             path: '{{ path }}'
             absolute: false

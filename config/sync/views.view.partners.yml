@@ -638,7 +638,7 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: true
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -664,7 +664,7 @@ display:
           alter:
             alter_text: false
             text: ''
-            make_link: true
+            make_link: false
             path: '{{ path }}'
             absolute: false
             external: false
@@ -726,7 +726,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<div class="view-profile-image">{{ field_image_logo }}</div>'
+            text: '<div class="view-profile-image">{{ field_image_logo }}<span class="element-invisible">{{ title }}</span></div>'
             make_link: true
             path: '{{ path }}'
             absolute: false
@@ -964,7 +964,7 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: true
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -990,7 +990,7 @@ display:
           alter:
             alter_text: false
             text: ''
-            make_link: true
+            make_link: false
             path: '{{ path }}'
             absolute: false
             external: false
@@ -1052,7 +1052,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<div class="view-profile-name">{{ title }}</div>'
+            text: '<h3 class="view-profile-name">{{ title }}</h3>'
             make_link: true
             path: '{{ path }}'
             absolute: false
@@ -1313,7 +1313,7 @@ display:
           alter:
             alter_text: false
             text: ''
-            make_link: true
+            make_link: false
             path: '{{ path }}'
             absolute: false
             external: false
@@ -1437,7 +1437,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"view-profile-image\">{{ field_image_logo }}</div>\n<div class=\"view-profile-name\">{{ title }}</div>\n<div class=\"view-profile-jobtitle\">{{ field_jobtitle }}</div>"
+            text: "<div class=\"view-profile-image\">{{ field_image_logo }}</div>\n<h3 class=\"view-profile-name\">{{ title }}</h3>\n<div class=\"view-profile-jobtitle\">{{ field_jobtitle }}</div>"
             make_link: true
             path: '{{ path }}'
             absolute: false
@@ -1699,7 +1699,7 @@ display:
           alter:
             alter_text: false
             text: ''
-            make_link: true
+            make_link: false
             path: '{{ path }}'
             absolute: false
             external: false
@@ -1823,7 +1823,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"view-profile-image\">{{ field_image_logo }}</div>\n<div class=\"view-profile-name\">{{ title }}</div>\n<div class=\"view-profile-jobtitle\">{{ field_jobtitle }}</div>"
+            text: "<div class=\"view-profile-image\">{{ field_image_logo }}</div>\n<h3 class=\"view-profile-name\">{{ title }}</h3>\n<div class=\"view-profile-jobtitle\">{{ field_jobtitle }}</div>"
             make_link: true
             path: '{{ path }}'
             absolute: false
@@ -2059,7 +2059,7 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: true
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -2085,7 +2085,7 @@ display:
           alter:
             alter_text: false
             text: ''
-            make_link: true
+            make_link: false
             path: '{{ path }}'
             absolute: false
             external: false
@@ -2147,7 +2147,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<div class="view-profile-image">{{ field_image_logo }}</div>'
+            text: '<div class="view-profile-image">{{ field_image_logo }}<span class="element-invisible">{{ title }}</span></div>'
             make_link: true
             path: '{{ path }}'
             absolute: false
@@ -2382,7 +2382,7 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: true
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -2408,7 +2408,7 @@ display:
           alter:
             alter_text: false
             text: ''
-            make_link: true
+            make_link: false
             path: '{{ path }}'
             absolute: false
             external: false
@@ -2470,7 +2470,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<div class="view-profile-name">{{ title }}</div>'
+            text: '<h3 class="view-profile-name">{{ title }}</h3>'
             make_link: true
             path: '{{ path }}'
             absolute: false
@@ -2662,7 +2662,7 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: true
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -2688,7 +2688,7 @@ display:
           alter:
             alter_text: false
             text: ''
-            make_link: true
+            make_link: false
             path: '{{ path }}'
             absolute: false
             external: false
@@ -2750,7 +2750,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<div class="view-profile-image">{{ field_image_logo }}</div>'
+            text: '<div class="view-profile-image">{{ field_image_logo }}<span class="element-invisible">{{ title }}</span></div>'
             make_link: true
             path: '{{ path }}'
             absolute: false

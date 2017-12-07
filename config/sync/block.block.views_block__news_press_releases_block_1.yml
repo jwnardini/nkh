@@ -1,0 +1,30 @@
+uuid: 353d8c95-6c9d-4a10-8e7e-e9e006b71962
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.news_press_releases
+  module:
+    - system
+    - views
+  theme:
+    - nkh
+id: views_block__news_press_releases_block_1
+theme: nkh
+region: postscript
+weight: 0
+provider: null
+plugin: 'views_block:news_press_releases-block_1'
+settings:
+  id: 'views_block:news_press_releases-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: /who-we-are/pressroom
+    negate: false
+    context_mapping: {  }
