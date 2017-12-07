@@ -179,7 +179,7 @@
 }
 @mixin grit-clip-gray {
   color: $nkh-text;
-  &:not(*:root) {
+  @supports (display:block) {
     -webkit-mask: url('/themes/custom/nkh/images/nkh-canvas-grey-sm.png');
     mask: url('/themes/custom/nkh/images/nkh-canvas-grey-sm.png');
     mask-size: auto auto;
