@@ -1758,7 +1758,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<div class="image-wrapper">{{ field_image_featured }}</div><div class="title-wrapper"><span class="series-title">{{ type }}</span><div class="view-title">{{ title }}</div>{{ field_teaser }}</div>'
+            text: "<div class=\"image-wrapper\">{{ field_image_featured }}</div>\n<div class=\"title-wrapper\">\n{% if field_taxonomy_series|render|striptags %}<span class=\"series-title\">{{ field_taxonomy_series }}</span>{% endif %}\n<h3 class=\"view-title\">{{ title }}</h3>\n{{ field_teaser }}</div>"
             make_link: true
             path: '{{ path }}'
             absolute: false

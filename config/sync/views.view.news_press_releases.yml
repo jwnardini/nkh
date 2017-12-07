@@ -400,7 +400,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "{{ field_image_featured }}\n<div class=\"title-wrapper\">\n{% if field_taxonomy_series|render|striptags %}<span class=\"view-series\">{{ field_taxonomy_series }}</span>{% endif %}\n<div class=\"view-title\">{{ title }}</div>\n</div>"
+            text: "{{ field_image_featured }}\n<div class=\"title-wrapper\">\n{% if field_taxonomy_series|render|striptags %}<span class=\"view-series\">{{ field_taxonomy_series }}</span>{% endif %}\n<h3 class=\"view-title\">{{ title }}</h3>\n</div>"
             make_link: true
             path: '{{ path }}'
             absolute: false
@@ -920,8 +920,8 @@ display:
           empty: false
           tokenize: false
           content:
-            value: '<h2 class="view-title">Press Releases</h2>'
-            format: simple_html
+            value: '<div class="wrap"><h2 class="view-title">Press Releases</h2></div>'
+            format: code
           plugin_id: text
       block_hide_empty: true
     cache_metadata:
@@ -988,8 +988,8 @@ display:
           empty: false
           tokenize: false
           content:
-            value: '<h2 class="view-title">News and Press Releases</h2>'
-            format: simple_html
+            value: '<div class="wrap"><h2 class="view-title">News and Press Releases</h2></div>'
+            format: code
           plugin_id: text
       filters:
         status:
@@ -1211,7 +1211,7 @@ display:
           empty: false
           tokenize: false
           content:
-            value: '<h2 class="view-title">News</h2>'
+            value: '<div class="wrap"><h2 class="view-title">News</h2></div>'
             format: simple_html
           plugin_id: text
       block_hide_empty: true
