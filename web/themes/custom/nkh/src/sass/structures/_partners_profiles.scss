@@ -45,7 +45,10 @@
     text-decoration: none;
   }
   .view-profile-name {
+    color: $nkh-orange;
+    margin: 0;
     text-decoration: underline;
+    font-size: 2rem;
   }
   .view-profile-jobtitle {
     font-size: 1.4rem;

@@ -45,6 +45,9 @@
       margin-left: 15%;
     }
   }
+  h3 {
+    color: inherit;
+  }
   .view-header{
     color: $nkh-lightgrey;
     font-weight: 300;
@@ -170,6 +173,7 @@
     font-weight: 700;
     padding-bottom: .2em;
     border-bottom: 2px solid $white;
+    display: inline-block;
   }
   @include breakpoint($min1024) {
     .attachment{
@@ -203,7 +207,7 @@
   }
   .attachment{
     .view-header{
-      margin: 4rem 3.5rem 2rem;    
+      margin: 4rem 3.5rem 2rem;
     }
     .views-element-container{
       .view-title{
