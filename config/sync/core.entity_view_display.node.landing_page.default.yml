@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.landing_page.field_intro
     - field.field.node.landing_page.field_landing_link_ref
     - field.field.node.landing_page.field_metatags
+    - field.field.node.landing_page.field_subtitle
     - field.field.node.landing_page.field_taxonomy_issue
     - field.field.node.landing_page.field_teaser
     - node.type.landing_page
@@ -55,6 +56,13 @@ content:
       link: false
     third_party_settings: {  }
     type: entity_reference_entity_view
+    region: content
+  field_subtitle:
+    weight: 5
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
     region: content
   field_taxonomy_issue:
     weight: 3
