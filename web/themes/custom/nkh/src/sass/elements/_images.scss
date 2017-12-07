@@ -4,6 +4,23 @@
 //So we can be more specific about targeting the right divs.
 .embedded-entity{
   .media-image{
+    &.view-mode-embed{
+      display: block;
+      width: auto;
+      margin: 0 auto 3rem;
+      img{
+        display: block;
+        margin: 0 auto;
+      }
+      @include breakpoint($min1024) {
+        float: left;
+        margin: 0 2rem 1rem 20%;
+        max-width: 50%;      
+      }
+      @include breakpoint($min1600) {
+        margin-left: 30rem;
+      }
+    }
     &.view-mode-large,
     &.view-mode-small{
       display: block;
@@ -29,6 +46,12 @@
         }
       }
     }
+    &.view-mode-large{
+      width: 100vw;
+      display: block;
+      margin: 0 auto;
+      max-width: 1600px;
+    }
     &.view-mode-small{
       @include breakpoint($min768) {
         float: left;
@@ -38,11 +61,16 @@
     }
     &.view-mode-feature-caption{
       width: 100%;
+      padding: 0 2vw;
       @include breakpoint($min1024) {
         display: flex;
         align-items: center;
       }
       .field--type-image{
+        img{
+          display: block;
+          margin: 0 auto;
+        } 
         @include breakpoint($min1024) {
           order: 2;
           max-width: 49%;
@@ -56,7 +84,9 @@
         color: $nkh-darkergrey;
         position: relative;
         text-decoration: none;
-        letter-spacing: -0.04em;
+        letter-spacing: -0.025em;
+        @include grit-clip-gray;
+
         @include breakpoint($min1024) {
           order: 1;
           max-width: 36%;
@@ -75,10 +105,21 @@
           @include large-text-highlight;
         }
         font-size: 3rem;
-
-        @include breakpoint($min1024) {
-          font-size: 4rem;
+        @include breakpoint($min768) {
+          font-size: 4.4rem;
         }
+        @include breakpoint($min1024) {
+          font-size: 6rem;
+        }
+      }
+      .field--name-field-caption {
+        &, p{
+          padding: 0 1rem;
+          @include breakpoint($min1024) {
+            width: 50vw;
+            max-width: 800px;
+          }
+        }      
       }
     }
   }

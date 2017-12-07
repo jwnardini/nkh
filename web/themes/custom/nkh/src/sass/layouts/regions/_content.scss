@@ -22,32 +22,63 @@
 }
 
 .node--view-mode-full .node__content {
-  display:grid;
-
-  $gridTemplateColumns:
-  "[full-start] minmax(0em, 1fr) [main-start] minmax(0, 1000px) [main-end] minmax(0em, 1fr) [full-end];";
-
-  grid-template-columns: #{$gridTemplateColumns};
-
-  padding-top: 2rem;
-
-  > * {
-    grid-column:main-start;
+  > div{
+    padding: 2rem;
+    @include breakpoint($min768) {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0;
+    }
   }
 
-  .text-formatted {
-    grid-column:full-start/full-end;
-    grid-gap: 0 20px;
-    display:grid;
-    grid-template-columns: #{$gridTemplateColumns};
+  .text-formatted{
+    width: 100vw;
+    display: block;
+    margin: 0 auto;
+    max-width: 1600px;
+    & > *:not(article, blockquote){
+      width: 90vw;
+      margin-left: auto;
+      margin-right: auto;
+      @include breakpoint($min768) {
+        width: 67vw;
+      }
+      @include breakpoint($min1024) {
+        width: 60vw;
+        max-width: 1000px;
 
-    > * {
-      grid-column:main-start;
+      }
     }
-    > blockquote,
-    > .entity-hunger_fact-default,
-    > .entity-cta-text {
-      grid-column: full-start/full-end;
+    blockquote{
+      &, *{
+      margin-left: auto;
+      margin-right: auto;
+      width: 100vw;
+      max-width: 1200px;
+      }
+    }
+    article{
+      &.entity-media-video,
+      &.entity-landing_link-auto,
+      &.entity-landing_link-manual{
+        margin-left: auto;
+        margin-right: auto;
+      }
+      &.entity-media-video{
+        max-width: 1000px;                
+      }
+
+      &.entity-landing_link-auto,
+      &.entity-landing_link-manual{
+        max-width: 1200px;
+      }
+
+      &.embedded-entity.entity-cta-text,
+      &.entity-hunger_fact-default {
+          width: 100vw;
+          left: 50%;
+          margin-left: -50vw;
+      }
     }
   }
 
@@ -55,6 +86,8 @@
 
 .page-node-type-partner .node--view-mode-full .node__content,
 .page-node-type-profile .node--view-mode-full .node__content {
+  display:grid;
+
   $gridTemplateColumns:
   "[full-start] minmax(0em, 1fr) [side-start] minmax(0, 460px) [main-start] minmax(0, 800px) [main-end] minmax(0em, 1fr) [full-end];";
 
