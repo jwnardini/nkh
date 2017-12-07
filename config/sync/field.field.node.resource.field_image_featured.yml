@@ -11,7 +11,7 @@ field_name: field_image_featured
 entity_type: node
 bundle: resource
 label: 'Thumbnail Image Upload'
-description: ''
+description: 'If you would like to include a screenshot of the resource, upload that screenshot here.'
 required: false
 translatable: true
 default_value: {  }

@@ -12,7 +12,7 @@ field_name: field_upload
 entity_type: node
 bundle: resource
 label: 'File Upload'
-description: ''
+description: 'Upload resource file here.'
 required: false
 translatable: false
 default_value: {  }

@@ -6,13 +6,22 @@ dependencies:
     - field.storage.node.body
     - node.type.resource
   module:
+    - allowed_formats
     - text
+third_party_settings:
+  allowed_formats:
+    simple_html: '0'
+    full_html: '0'
+    restricted_html: '0'
+    basic_html: '0'
+    plain_text: '0'
+    code: '0'
 id: node.resource.body
 field_name: body
 entity_type: node
 bundle: resource
 label: Body
-description: ''
+description: 'The body text will be used to populate the teaser overlay on the listing page. If you would like to add additional information about the resource that isn''t captured in the other description fields, you may also add that text here.'
 required: false
 translatable: true
 default_value: {  }
