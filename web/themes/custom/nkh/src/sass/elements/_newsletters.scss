@@ -50,6 +50,11 @@ div[class*="block-newsletter"] {
       //color: $white !important;
     }
   }
+  input[type="checkbox"] {
+    width: auto;
+    float: left;
+
+  }
 
   input[type="submit"], button[type="submit"] {
     @include link-button;
@@ -82,7 +87,8 @@ div[class*="block-newsletter"] {
       margin-left: -.5rem;
     }
   }
-  .wrapable{
+  label.wrapable{
+    display: block;
     &:before{
       position: absolute;
       margin-top: .2em;
