@@ -29,7 +29,7 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 1
+    weight: 3
     settings: {  }
     third_party_settings: {  }
     region: content
@@ -54,65 +54,38 @@ content:
     third_party_settings: {  }
     type: text_default
     region: content
-  field_file_type:
-    weight: 11
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
   field_image_featured:
-    weight: 8
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_taxonomy_location:
-    weight: 10
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_taxonomy_resource:
-    weight: 9
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_teaser:
     weight: 2
-    label: above
-    settings: {  }
+    label: hidden
+    settings:
+      link: true
     third_party_settings: {  }
-    type: text_default
+    type: entity_reference_label
     region: content
   field_upload:
-    weight: 7
-    label: above
+    weight: 1
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: file_default
     region: content
   field_video:
-    weight: 3
-    label: above
+    weight: 0
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
   links:
-    weight: 0
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
   field_cta_ref: true
   field_file: true
+  field_file_type: true
+  field_taxonomy_location: true
+  field_taxonomy_resource: true
+  field_teaser: true
