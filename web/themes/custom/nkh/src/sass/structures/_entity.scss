@@ -51,8 +51,8 @@
     text-decoration: none;
     position: relative;
     border-bottom: 4px solid rgba($white, 0.95);
-    &:after { 
-      content: none; 
+    &:after {
+      content: none;
     }
   }
   &:hover{
@@ -304,18 +304,23 @@
       }
     }
   }
-  .entity-landing-link--auto {
+  .entity-landing-link--auto,
+  .entity-landing-link--manual {
     margin-top: 0;
   }
 
 
 }
 
-article.entity-landing_link-manual,
-.entity-landing-link--auto {
+.entity-landing-link--manual,
+.entity-landing-link--auto,
+.entity-landing_link-auto,
+.entity-landing_link-manual {
   margin-top: 5rem;
-  + .entity-landing_link-manual,
-  + .entity-landing-link--auto {
+  + .entity-landing-link--manual,
+  + .entity-landing-link--auto,
+  + .entity-landing_link-auto,
+  + .entity-landing_link-manual {
     margin-top: 0;
   }
   &:last-of-type{
@@ -411,8 +416,8 @@ article.entity-landing_link-manual,
         }
       }
     }
-    &:after { 
-      content: none; 
+    &:after {
+      content: none;
     }
   }
   &:nth-child(odd){
@@ -710,9 +715,9 @@ article.entity-landing_link-manual,
     font-weight: 300;
   }
   a{
-    &:after { 
-      content: none; 
-    }    
+    &:after {
+      content: none;
+    }
   }
 }
 //to override all span.icon class
