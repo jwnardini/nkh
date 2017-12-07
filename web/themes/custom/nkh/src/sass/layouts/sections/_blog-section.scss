@@ -1,5 +1,4 @@
-div[class*="block-views-block-blog-post-"],
-div[class*="block-views-block-blog-by-author"] {
+.article-list {
   margin-top: 15rem;
   background: $nkh-bone;
   &:before{
@@ -13,11 +12,12 @@ div[class*="block-views-block-blog-by-author"] {
     background-size: 600px;
     margin: -1rem 0 0 -791px;
   }
-  & > div{
-    overflow-y: visible;
-    overflow-x: hidden;
-  }
+  // & > div{
+  //   overflow-y: visible;
+  //   overflow-x: hidden;
+  // }
   a{
+    text-decoration: none;
     &:focus,
     &:hover{
       &:after{
@@ -40,19 +40,27 @@ div[class*="block-views-block-blog-by-author"] {
   }
 
   .view-header{
-    background: $nkh-bone;
-    padding: 2rem 5rem;
-    display: inline;
-    font-size: 1.6rem;
+    overflow: hidden;
+    h2 {
+      background: $nkh-bone;
+      padding: 2rem 5rem;
+      display: inline-block;
+      font-size: 1.6rem;
+      margin: 0;
+      color: $nkh-text;
+      position: relative;
+      z-index: 10;
+    }
     &:after{
       content: "";
-      background: #FFF;
+      background: #fff;
       position: absolute;
       z-index: 1;
       width: 100vw;
       top: 0;
+      left: 0;
       height: 5rem;
-      margin-left: 5rem;
+      box-sizing: border-box;
     }
 
   }
@@ -122,7 +130,7 @@ div[class*="block-views-block-blog-by-author"] {
     display: block;
     position: absolute;
     z-index: 100;
-    color: $white;    
+    color: $white;
 
   }
   .title-wrapper{
