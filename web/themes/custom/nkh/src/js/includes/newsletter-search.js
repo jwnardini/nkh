@@ -37,13 +37,13 @@
                     $(this).addClass('open-item');
                 });
 
-                $('.cta-form__toggle').on('click keyup', function() {
-                  $(this).parents('.cta-form').toggleClass('visible');
-                });
-
-				$( '.cta-form__fields' ).on('focusin', function() {
-					$(this).parents('.cta-form').addClass( 'visible' );
-				});
+        //         $('.cta-form__toggle').on('click keyup', function() {
+        //           $(this).parents('.cta-form').toggleClass('visible');
+        //         });
+        //
+				// $( '.cta-form__fields' ).on('focusin', function() {
+				// 	$(this).parents('.cta-form').addClass( 'visible' );
+				// });
 
             //}
 

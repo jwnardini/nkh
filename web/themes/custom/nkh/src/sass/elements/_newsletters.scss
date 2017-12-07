@@ -202,8 +202,8 @@ div[class*="block-newsletter"] {
     background: none transparent;
   }
 }
-
-.visible .cta-form__fields {
+// .visible
+.cta-form__fields {
   height: 400px;
   @include breakpoint($min960) {
     height: 200px;
@@ -219,9 +219,9 @@ div[class*="block-newsletter"] {
 }
 
 form.cta-form__fields {
-  height: 0;
-  overflow: hidden;
-  transition: height .2s;
+  // height: 0;
+  // overflow: hidden;
+  // transition: height .2s;
   font-size: 1.6rem;
 
   input {
