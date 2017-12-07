@@ -192,8 +192,10 @@
 }
 @mixin grit-clip-orange {
   color: $nkh-orange;
-  &:not(*:root) {
+  @supports (display:block) {
     -webkit-mask: url('/themes/custom/nkh/images/solid_orange.png');
+    mask: url('/themes/custom/nkh/images/solid_orange.png');
+    mask-size: auto auto;
     -webkit-mask-size: 600px;
     -webkit-font-smoothing:antialiased;
     -webkit-background-clip:text;
