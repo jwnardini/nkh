@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - eck.eck_type.landing_link.auto
+    - eck.eck_type.landing_link.manual
     - field.storage.node.field_landing_link_ref
     - node.type.landing_page
 id: node.landing_page.field_landing_link_ref
@@ -21,8 +22,9 @@ settings:
   handler_settings:
     target_bundles:
       auto: auto
+      manual: manual
     sort:
       field: _none
     auto_create: false
-    auto_create_bundle: ''
+    auto_create_bundle: auto
 field_type: entity_reference
