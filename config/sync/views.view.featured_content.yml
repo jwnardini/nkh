@@ -491,7 +491,7 @@ display:
           exclude: true
           alter:
             alter_text: false
-            text: "{{ field_image_featured }}\n<div class=\"title-wrapper\"><span class=\"series-title\">{{ field_taxonomy_series }}</span><div class=\"view-title\">{{ title }}</div><div class=\"view-summary\">{{ field_teaser }}</div></div>"
+            text: '{{ field_image_featured }}\n<div class=\"title-wrapper\"><span class=\"series-title\">{{ field_taxonomy_series }}</span><div class=\"view-title\">{{ title }}</div><div class=\"view-summary\">{{ field_teaser }}</div></div>'
             make_link: false
             path: '{{ path }}'
             absolute: false
