@@ -240,6 +240,7 @@
     .attachment{
       .views-element-container{
         display: inline-block;
+        max-width:100%;
         vertical-align: top;
         &:first-child{
           width: 56%;
