@@ -48,4 +48,8 @@ button.toggle-close{
       }
     }
   } 
+  &.hide{
+    opacity: 0;
+    display: none;
+  }  
 }
