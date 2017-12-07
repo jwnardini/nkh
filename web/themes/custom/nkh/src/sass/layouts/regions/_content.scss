@@ -59,12 +59,20 @@
     }
     article{
       &.entity-media-video,
+      &.entity-landing_link-auto,
       &.entity-landing_link-manual{
         margin-left: auto;
         margin-right: auto;
-        width: 100vw;
-        max-width: 1200px;        
       }
+      &.entity-media-video{
+        max-width: 1000px;                
+      }
+
+      &.entity-landing_link-auto,
+      &.entity-landing_link-manual{
+        max-width: 1200px;
+      }
+
       &.embedded-entity.entity-cta-text,
       &.entity-hunger_fact-default {
           width: 100vw;
