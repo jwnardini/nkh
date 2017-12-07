@@ -317,7 +317,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div>{{ field_image_headshot }}</div>\n<div>{{ title }}</div>\n<div>{{ field_jobtitle }}</div>"
+            text: "<div class=\"view-profile-image\">{{ field_image_headshot }}</div>\n<div class=\"view-profile-name\">{{ title }}</div>\n<div class=\"view-profile-jobtitle\">{{ field_jobtitle }}</div>"
             make_link: true
             path: '{{ path }}'
             absolute: false
@@ -531,11 +531,26 @@ display:
         filters: false
         filter_groups: false
         title: false
+        header: false
       filter_groups:
         operator: AND
         groups:
           1: AND
-      title: 'Executive Leadership'
+      title: 'Our Leadership Team'
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: 'From developing programs to feed more kids to building the political will for lasting change to raising the funds needed to make it all happen, the No Kid Hungry team is world-class, and they rely on our executive leaders to make sure they have the support they need every day.'
+            format: simple_html
+          plugin_id: text
     cache_metadata:
       max-age: -1
       contexts:
@@ -561,6 +576,7 @@ display:
         title: false
         filters: false
         filter_groups: false
+        header: false
       filters:
         status:
           value: '1'
@@ -630,6 +646,20 @@ display:
         operator: AND
         groups:
           1: AND
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: "The No Kid Hungry Leadership Council provides strategic guidance and helps us broaden our reach with corporations, foundations, individual donors, media, and policy makers to raise funds, build awareness, and advance our programmatic work.\n \nComposed of passionate leaders from the corporate, philanthropic, media, culinary and policy sectors, the Leadership Council reflects the diversity of the No Kid Hungry movement."
+            format: simple_html
+          plugin_id: text
     cache_metadata:
       max-age: -1
       contexts:
@@ -655,6 +685,7 @@ display:
         title: false
         filters: false
         filter_groups: false
+        header: false
       filters:
         status:
           value: '1'
@@ -724,6 +755,20 @@ display:
         operator: AND
         groups:
           1: AND
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: 'No Kid Hungry’s board of directors is a group of leaders from many fields who are responsible for helping set the direction of No Kid Hungry and make sure the organization is fulfilling its mission. Board members meet regularly; raise funds and awareness; and contribute their many and varied strengths making No Kid Hungry a reality.'
+            format: simple_html
+          plugin_id: text
     cache_metadata:
       max-age: -1
       contexts:

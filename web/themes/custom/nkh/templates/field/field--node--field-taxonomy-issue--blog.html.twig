@@ -57,7 +57,18 @@
     <div{{ attributes.addClass(classes, 'field__items') }}>
       <div class="label">Tags</div> 
       {% for item in items %}
-        <div{{ item.attributes.addClass('field__item') }}>{{ item.content }} </div>
+        {% if loop.first %}
+          <div{{ item.attributes.addClass('field__item') }}>
+        {% elseif  loop.last %}
+          {% if (loop.index == 1) %}
+            <div{{ item.attributes.addClass('field__item') }}>
+          {% else %}
+            ,<div{{ item.attributes.addClass('field__item') }}>
+          {% endif %}
+        {% else %}
+          ,<div{{ item.attributes.addClass('field__item') }}> 
+        {% endif %}
+          {{ item.content }} </div>
       {% endfor %}
     </div>
   {% else %}

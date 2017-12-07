@@ -1,0 +1,30 @@
+uuid: 527c6db9-204d-4198-8824-be71288a80da
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_teaser
+    - node.type.landing_page
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    plain_text: plain_text
+    simple_html: '0'
+    full_html: '0'
+    restricted_html: '0'
+    basic_html: '0'
+    code: '0'
+id: node.landing_page.field_teaser
+field_name: field_teaser
+entity_type: node
+bundle: landing_page
+label: 'Summary (Meta Description)'
+description: 'Provide a 160 character (with spaces) summary of this content; it will be used as the meta description and "teaser" content for landing pages across the site. '
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

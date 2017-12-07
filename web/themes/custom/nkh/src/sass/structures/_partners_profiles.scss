@@ -2,9 +2,7 @@
 
 }
 
-[class*="block-views-blockprofiles-block"] {
 
-}
 
 [class*="block-views-blockpartners-block"],
 [class*="block-views-blockprofiles-block"] {
@@ -17,14 +15,20 @@
   .view-content {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: start;
     justify-content: space-between;
     flex-grow: 1;
   }
   .views-row {
-    width: 20rem;
-    padding: 1rem;
-    text-align: center;
+    width: 24rem;
+    padding: 1rem 0;
+    text-align: left;
+    //make sure that each profile is centered once the browser gets really narrow
+    margin: auto;
+    @include breakpoint($min540) {
+      margin: 0;
+    }
+
   }
   img {
     display: inline-block;
@@ -34,4 +38,19 @@
       content: none;
     }
   }
+}
+[class*="block-views-blockprofiles-block"],
+[class*="block-views-block-partners"] {
+  a{
+    text-decoration: none;
+  }
+  .view-profile-name {
+    text-decoration: underline;
+  }
+  .view-profile-jobtitle {
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: $nkh-text;
+  }
+
 }

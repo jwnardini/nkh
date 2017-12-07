@@ -42,6 +42,7 @@
 
   h1{
     @include grit-clip-orange;
+    background: none;
     display: block;
     text-transform: uppercase;
     line-height: .9;
@@ -117,13 +118,12 @@
     &:after{
       display: block;
       position: absolute;
-      background: url(/themes/custom/nkh/images/solid_white.png) repeat;
-      background-position: 0 0;
+      color: $white;
+      -webkit-mask: url('/themes/custom/nkh/images/solid_white.png');
+      -webkit-mask-size: 550px;
       -webkit-font-smoothing: antialiased;
       -webkit-background-clip: text;
       background-clip: text;
-      background-size: 535%;
-      color: transparent;
       text-transform: uppercase;
       font-size: 16em;
       line-height: 1.3;

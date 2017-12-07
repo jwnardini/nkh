@@ -1,0 +1,28 @@
+uuid: d2ceceb5-0cd0-4705-94be-8d9b6b8ff337
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.cta.text
+    - field.storage.node.field_cta_ref
+    - node.type.landing_page
+id: node.landing_page.field_cta_ref
+field_name: field_cta_ref
+entity_type: node
+bundle: landing_page
+label: 'CTA Reference'
+description: 'Use this to create a text Call To Action (i.e, the CTA that is on the bottom of the page). You can choose from existing or add a new one here. '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:cta'
+  handler_settings:
+    target_bundles:
+      text: text
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

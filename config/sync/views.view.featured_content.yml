@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_image_featured
-    - field.storage.node.field_taxonomy_series
     - field.storage.node.field_teaser
     - image.style.large_2x
     - image.style.portrait_2x
@@ -128,10 +127,10 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_taxonomy_series:
-          id: field_taxonomy_series
-          table: node__field_taxonomy_series
-          field: field_taxonomy_series
+        type:
+          id: type
+          table: node_field_data
+          field: type
           relationship: none
           group_type: group
           admin_label: ''
@@ -190,6 +189,8 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+          entity_type: node
+          entity_field: type
           plugin_id: field
         title:
           id: title
@@ -329,7 +330,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ field_image_featured }}<div class="title-wrapper"><span class="series-title">{{ field_taxonomy_series }}</span><div class="view-title">{{ title }}</div>{{ field_teaser }}</div>'
+            text: '{{ field_image_featured }}<div class="title-wrapper"><span class="series-title">{{ type }}</span><div class="view-title">{{ title }}</div>{{ field_teaser }}</div>'
             make_link: true
             path: '{{ path }}'
             absolute: false
@@ -457,7 +458,6 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_image_featured'
-        - 'config:field.storage.node.field_taxonomy_series'
         - 'config:field.storage.node.field_teaser'
   attachment_1:
     display_plugin: attachment
@@ -544,10 +544,10 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_taxonomy_series:
-          id: field_taxonomy_series
-          table: node__field_taxonomy_series
-          field: field_taxonomy_series
+        type:
+          id: type
+          table: node_field_data
+          field: type
           relationship: none
           group_type: group
           admin_label: ''
@@ -606,6 +606,8 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+          entity_type: node
+          entity_field: type
           plugin_id: field
         title:
           id: title
@@ -745,7 +747,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ field_image_featured }}<div class="title-wrapper"><span class="series-title">{{ field_taxonomy_series }}</span><div class="view-title">{{ title }}</div>{{ field_teaser }}</div>'
+            text: '{{ field_image_featured }}<div class="title-wrapper"><span class="series-title">{{ type }}</span><div class="view-title">{{ title }}</div>{{ field_teaser }}</div>'
             make_link: true
             path: '{{ path }}'
             absolute: false
@@ -795,7 +797,6 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_image_featured'
-        - 'config:field.storage.node.field_taxonomy_series'
         - 'config:field.storage.node.field_teaser'
   attachment_2:
     display_plugin: attachment
@@ -873,10 +874,10 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_taxonomy_series:
-          id: field_taxonomy_series
-          table: node__field_taxonomy_series
-          field: field_taxonomy_series
+        type:
+          id: type
+          table: node_field_data
+          field: type
           relationship: none
           group_type: group
           admin_label: ''
@@ -935,6 +936,8 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+          entity_type: node
+          entity_field: type
           plugin_id: field
         title:
           id: title
@@ -1012,7 +1015,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ field_image_featured }}<div class="title-wrapper"><span class="series-title">{{ field_taxonomy_series }}</span><div class="view-title">{{ title }}</div></div>'
+            text: '{{ field_image_featured }}<div class="title-wrapper"><span class="series-title">{{ type }}</span><div class="view-title">{{ title }}</div></div>'
             make_link: true
             path: '{{ path }}'
             absolute: false
@@ -1071,7 +1074,6 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_image_featured'
-        - 'config:field.storage.node.field_taxonomy_series'
   attachment_3:
     display_plugin: attachment
     id: attachment_3
@@ -1101,7 +1103,6 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_image_featured'
-        - 'config:field.storage.node.field_taxonomy_series'
         - 'config:field.storage.node.field_teaser'
   featured_content:
     display_plugin: block
@@ -1125,5 +1126,4 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_image_featured'
-        - 'config:field.storage.node.field_taxonomy_series'
         - 'config:field.storage.node.field_teaser'

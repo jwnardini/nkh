@@ -180,9 +180,10 @@
 @mixin grit-clip-gray {
   color: $nkh-text;
   @supports (display:block) {
-    background: url('/themes/custom/nkh/images/nkh-canvas-grey-sm.png');
-    background-size: 460px;
-    color: rgba($nkh-text, .1);
+    -webkit-mask: url('/themes/custom/nkh/images/nkh-canvas-grey-sm.png');
+    mask: url('/themes/custom/nkh/images/nkh-canvas-grey-sm.png');
+    mask-size: auto auto;
+    -webkit-mask-size: 200px;
     -webkit-font-smoothing:antialiased;
     -webkit-background-clip:text;
     -moz-background-clip:text;
@@ -192,9 +193,8 @@
 @mixin grit-clip-orange {
   color: $nkh-orange;
   &:not(*:root) {
-    background: url('/themes/custom/nkh/images/solid_orange.png');
-    background-size: 600px;
-    color: rgba($nkh-orange, .1);
+    -webkit-mask: url('/themes/custom/nkh/images/solid_orange.png');
+    -webkit-mask-size: 600px;
     -webkit-font-smoothing:antialiased;
     -webkit-background-clip:text;
     -moz-background-clip:text;

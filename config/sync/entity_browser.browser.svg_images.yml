@@ -29,3 +29,13 @@ widgets:
     weight: 1
     label: 'SVG Images'
     id: view
+  e6c1a02f-d4ca-48bf-b251-6715a498e14f:
+    settings:
+      view: media_preview
+      view_display: entity_browser_4
+      submit_text: 'Select Image'
+      auto_select: false
+    uuid: e6c1a02f-d4ca-48bf-b251-6715a498e14f
+    weight: 2
+    label: Images
+    id: view

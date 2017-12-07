@@ -51,8 +51,8 @@
     text-decoration: none;
     position: relative;
     border-bottom: 4px solid rgba($white, 0.95);
-    &:after { 
-      content: none; 
+    &:after {
+      content: none;
     }
   }
   &:hover{
@@ -64,6 +64,10 @@
         transform: translate(-50%, -100%) scale(1) rotate(0deg);
       }
     }
+  }
+  &.hide{
+    opacity: 0;
+    display: none;
   }
 }
 // the first one is specifically for the content added entity.
@@ -89,10 +93,8 @@
       z-index: 5;
       display: block;
       height: 300px;
-      background: $nkh-text;
-      -webkit-mask: url('/themes/custom/nkh/images/btn-bingo.gif');
-      -webkit-mask-size: 100%;
-      -webkit-mask-repeat: repeat;
+      background: url('/themes/custom/nkh/images/btn-bingo.gif') 0 0 no-repeat;
+      background-size: 100%;
       content: '';
     }
   }
@@ -302,18 +304,23 @@
       }
     }
   }
-  .entity-landing-link--auto {
+  .entity-landing-link--auto,
+  .entity-landing-link--manual {
     margin-top: 0;
   }
 
 
 }
 
-article.entity-landing_link-manual,
-.entity-landing-link--auto {
+.entity-landing-link--manual,
+.entity-landing-link--auto,
+.entity-landing_link-auto,
+.entity-landing_link-manual {
   margin-top: 5rem;
-  + .entity-landing_link-manual,
-  + .entity-landing-link--auto {
+  + .entity-landing-link--manual,
+  + .entity-landing-link--auto,
+  + .entity-landing_link-auto,
+  + .entity-landing_link-manual {
     margin-top: 0;
   }
   &:last-of-type{
@@ -409,8 +416,8 @@ article.entity-landing_link-manual,
         }
       }
     }
-    &:after { 
-      content: none; 
+    &:after {
+      content: none;
     }
   }
   &:nth-child(odd){
@@ -693,23 +700,24 @@ article.entity-landing_link-manual,
     span{
       background-image: linear-gradient(180deg, transparent 0,$white 0);
       background-repeat: no-repeat;
-      background-position: 0 1.1em;
+      background-position: 0 1.25em;
       padding-bottom: 0.5rem;
       transition: background-position .1s ease-out;
       word-break: break-word;
     }
     &:hover span{
-      background-position: 0 1.05em;
+      background-position: 0 1.15em;
     }
   }
   p{
     line-height: 1.6;
     font-size: 1.6rem;
+    font-weight: 300;
   }
   a{
-    &:after { 
-      content: none; 
-    }    
+    &:after {
+      content: none;
+    }
   }
 }
 //to override all span.icon class

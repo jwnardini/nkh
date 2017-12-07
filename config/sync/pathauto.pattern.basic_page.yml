@@ -5,18 +5,19 @@ dependencies:
   module:
     - node
 id: basic_page
-label: 'Basic Page'
+label: 'Basic and Landing Pages'
 type: 'canonical_entities:node'
 pattern: '[node:menu-link:parents:join-path]/[node:title]'
 selection_criteria:
-  154ae65e-e724-4767-b131-336385c9a4d9:
+  d9a3f937-f2fa-4a64-a7af-192a51ac1037:
     id: node_type
     bundles:
+      landing_page: landing_page
       page: page
     negate: false
     context_mapping:
       node: node
-    uuid: 154ae65e-e724-4767-b131-336385c9a4d9
+    uuid: d9a3f937-f2fa-4a64-a7af-192a51ac1037
 selection_logic: and
 weight: -10
 relationships: {  }
