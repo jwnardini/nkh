@@ -10,7 +10,7 @@ div[data-quickedit-entity-id*="hunger_fact"],
     width: 100%;
     margin-left: 0;
     margin-right: 0;
-  } 
+  }
   overflow: hidden;
   *{
     color: $white;
@@ -21,7 +21,7 @@ div[data-quickedit-entity-id*="hunger_fact"],
     margin: 20px;
     @include breakpoint($min480) {
       margin:0 auto;
-    } 
+    }
 
     & > a{
       text-decoration: underline;
@@ -73,7 +73,7 @@ div[data-quickedit-entity-id*="hunger_fact"],
       }
     }
   }
-  .field--name-field-body-hunger{  
+  .field--name-field-body-hunger{
     @include breakpoint($min1024) {
       padding-left: 3rem;
     }
@@ -96,14 +96,15 @@ div[data-quickedit-entity-id*="hunger_fact"],
   }
   .field--name-field-body-hunger{
     margin-left: -2rem;
+    display: block !important;
     @include breakpoint($min1024) {
       margin-left: 0;
-      flex: 1 200%;  
+      flex: 1 200%;
     }
   }
   .field--name-field-statistic-hunger{
     @include breakpoint($min1024) {
-      flex: 1 100%;  
+      flex: 1 100%;
     }
   }
   .field--name-field-statistic-hunger,
@@ -123,11 +124,9 @@ div[data-quickedit-entity-id*="hunger_fact"],
 }
 
 .hunger-fact-title{
-  margin: 1.5rem 0 1.5rem;  
+  margin: 1.5rem 0 1.5rem;
   @include breakpoint($min1024) {
     margin: 3rem 0 2.5rem;
   }
   font-size: 1.4rem;
 }
-
-
