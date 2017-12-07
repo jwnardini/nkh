@@ -548,6 +548,7 @@ display:
           plugin_id: numeric
       display_extenders: {  }
       css_class: article-list
+      hide_attachment_summary: true
     cache_metadata:
       max-age: -1
       contexts:
