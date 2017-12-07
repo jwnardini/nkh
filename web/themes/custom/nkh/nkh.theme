@@ -35,7 +35,8 @@ function nkh_preprocess_block(&$variables) {
 function nkh_preprocess_entity_embed_container(&$variables) {
   $entityTypeID = $variables['element']['#entity']->getEntityType()->id();
   $bundle = $variables['element']['#entity']->bundle();
-  $variables['attributes']['class'][] = 'entity-' . $entityTypeID . '-' . $bundle;
+  $viewMode = $variables['element']['entity']['#view_mode'];
+  $variables['attributes']['class'][] = 'entity-' . $entityTypeID . '-' . $bundle . ' ' . 'view-mode-' . $viewMode;
 }
 
 function nkh_preprocess_eck_entity(&$variables) {
