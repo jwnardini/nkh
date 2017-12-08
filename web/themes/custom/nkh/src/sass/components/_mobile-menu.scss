@@ -75,7 +75,7 @@
   .menu--main {
     //mobile + desktop
     a.menu-link {
-      font-weight: 600;
+      font-weight: 700;
       color: $nkh-text;
       line-height: 1.2;
       text-decoration: none;
@@ -96,7 +96,7 @@
         display: inline-block;
         position: relative;
         + li{
-          margin-left: 15px;
+          margin-left: 10px;
         }
         ul {
           display: none;
@@ -157,6 +157,41 @@
         padding: 1rem 0 0;
         display: block;
         text-align: center;
+      }
+    }
+    @include breakpoint($min1120) {
+      li{
+        + li{
+          margin-left: 15px;
+        }
+        li{
+          margin-left: 0;
+        }
+        li a.menu-link{
+          min-width: 250px;        
+        }
+        ul{
+          left: -4.08em;
+        }
+        &:nth-child(2) {
+          ul {
+            left: -4em;
+          }
+        }
+        &:nth-child(3) {
+          ul {
+            left: -3.9em;
+          }
+        }
+        &:nth-child(4) {
+          ul {
+            left: -4.8em;
+          }
+        }
+      }
+      a.menu-link{
+        letter-spacing: .025em;
+
       }
     }
     @include breakpoint($min1260) {
