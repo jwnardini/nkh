@@ -193,7 +193,7 @@
 
 @mixin grit-clip-white {
   color: $white;
-  &:not(*:root) {
+  @supports (display:block) {
     -webkit-mask: url('/themes/custom/nkh/images/nkh-canvas-white.png');
     -webkit-mask-size: 1000px;
     -webkit-font-smoothing:antialiased;
