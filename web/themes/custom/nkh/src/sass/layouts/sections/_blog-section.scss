@@ -98,8 +98,8 @@
     }
 
     &:nth-child(3n-2){
-      .view-series{
-        background: rgba($nkh-lightblue, .5);
+      .view-series:after{
+        background: url('/themes/custom/nkh/images/nkh-tile-blue.png') 0 0/250px;;
       }
       a:hover, a:focus, a:active{
         .field--type-image:after{
@@ -108,8 +108,8 @@
       }
     }
     &:nth-child(3n-1){
-      .view-series{
-        background: rgba($nkh-green, .5);
+      .view-series:after{
+        background: url('/themes/custom/nkh/images/nkh-tile-green.png') 0 0/250px;;
       }
       a:hover, a:focus, a:active{
         .field--type-image:after{
@@ -118,8 +118,8 @@
       }
     }
     &:nth-child(3n){
-      .view-series{
-        background: rgba($nkh-brightyellow, .5);
+      .view-series:after{
+        background: url('/themes/custom/nkh/images/nkh-tile-gold.png') 0 0/250px;;
       }
       a:hover, a:focus, a:active {
         .field--type-image:after{
@@ -146,6 +146,17 @@
     position: absolute;
     z-index: 100;
     color: $white;
+    letter-spacing: 0.025em;
+    &:after{
+      opacity: .65;
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 100%;
+      top: 0;
+      left: 0;
+      height: 100%;
+    }
 
   }
   .title-wrapper{
@@ -161,6 +172,7 @@
     margin-top: 4rem;
     line-height: 1.6;
     color: $nkh-text;
+    letter-spacing: -.025em;
     background-image: linear-gradient(180deg, transparent 0,$nkh-text 0);
     background-repeat: no-repeat;
     background-position: 0 1.35em;
