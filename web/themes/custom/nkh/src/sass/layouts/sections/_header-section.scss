@@ -91,7 +91,8 @@
 
 .page-node-type-blog,
 .page-node-type-program,
-.page-node-type-news {
+.page-node-type-news,
+.page-node-type-page {
   h1 {
     @include grit-bg-orange;
     display: inline;
@@ -117,7 +118,7 @@
 }
 
 
-.page-node-type-page {
+.page-node-type-landing-page {
   .header-section {
     background: $nkh-bone;
     margin-bottom: 6vw;
