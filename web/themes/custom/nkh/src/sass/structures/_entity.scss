@@ -67,7 +67,7 @@
   }
 }
 // the first one is specifically for the content added entity.
-.embedded-entity.entity-cta-text,
+.entity-cta-text,
 .view-id-cta_references {
   font-size: 4rem;
   @include breakpoint($min768) {

@@ -251,7 +251,7 @@ blockquote{
     font-size: 4.4rem;
   }
   @include breakpoint($min1024) {
-    max-width: 1600px;
+    //max-width: 1600px;
     font-size: 6rem;
   }
 }

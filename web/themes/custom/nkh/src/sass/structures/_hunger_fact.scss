@@ -3,14 +3,14 @@ div[data-quickedit-entity-id*="hunger_fact"],
   background: url('/themes/custom/nkh/images/nkh-canvas-darkgrey.png');
   background-size: 30%;
   padding: 2rem;
-  width: calc(100% + 40px);
+  width: calc(100vw + 40px);
   margin-left: -20px;
   margin-right: -20px;
-  @include breakpoint($min480) {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-  }
+  // @include breakpoint($min480) {
+  //   width: 100%;
+  //   margin-left: 0;
+  //   margin-right: 0;
+  // }
   overflow: hidden;
   *{
     color: $white;
