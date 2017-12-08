@@ -164,8 +164,8 @@
 }
 
 @mixin texture-grit-text {
-  &:not(*:root) {
-  background: url("/themes/custom/nkh/images/solid.svg") center top;
+  @supports (display:block) {
+    background: url("/themes/custom/nkh/images/solid.svg") center top;
     background-position: random(100) + rem;
     background-size: 10%;
     color:transparent;
