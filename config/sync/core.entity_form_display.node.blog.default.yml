@@ -25,6 +25,7 @@ dependencies:
     - maxlength
     - metatag
     - path
+    - scheduler
     - text
 id: node.blog.default
 targetEntityType: node
@@ -54,12 +55,12 @@ content:
     weight: 121
     settings:
       form_mode: default
-      label_singular: ''
-      label_plural: ''
+      override_labels: true
+      label_singular: CTA
+      label_plural: CTAs
       allow_new: true
       allow_existing: true
       match_operator: CONTAINS
-      override_labels: false
     third_party_settings:
       entity_browser_entity_form:
         entity_browser_id: cta_text_find
@@ -75,12 +76,12 @@ content:
     weight: 6
     settings:
       form_mode: default
-      label_singular: ''
-      label_plural: ''
+      override_labels: true
+      label_singular: Partner
+      label_plural: Partners
       allow_new: true
       allow_existing: true
       match_operator: CONTAINS
-      override_labels: false
     third_party_settings:
       entity_browser_entity_form:
         entity_browser_id: _none
@@ -90,12 +91,12 @@ content:
     weight: 5
     settings:
       form_mode: default
-      label_singular: ''
-      label_plural: ''
+      override_labels: true
+      label_singular: Author
+      label_plural: Authors
       allow_new: true
       allow_existing: true
       match_operator: CONTAINS
-      override_labels: false
     third_party_settings:
       entity_browser_entity_form:
         entity_browser_id: _none
@@ -105,12 +106,12 @@ content:
     weight: 3
     settings:
       form_mode: default
-      label_singular: ''
-      label_plural: ''
+      override_labels: true
+      label_singular: Image
+      label_plural: Images
       allow_new: true
       allow_existing: true
       match_operator: CONTAINS
-      override_labels: false
     third_party_settings:
       entity_browser_entity_form:
         entity_browser_id: images
@@ -120,12 +121,12 @@ content:
     weight: 4
     settings:
       form_mode: default
-      label_singular: ''
-      label_plural: ''
+      override_labels: true
+      label_singular: Image
+      label_plural: Images
       allow_new: true
       allow_existing: true
       match_operator: CONTAINS
-      override_labels: false
     third_party_settings:
       entity_browser_entity_form:
         entity_browser_id: images
@@ -193,6 +194,17 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  publish_on:
+    type: datetime_timestamp_no_default
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  scheduler_settings:
+    weight: 20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
@@ -207,6 +219,12 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  unpublish_on:
+    type: datetime_timestamp_no_default
+    weight: 30
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden:
   created: true

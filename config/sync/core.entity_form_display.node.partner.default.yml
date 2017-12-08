@@ -44,12 +44,12 @@ content:
     weight: 17
     settings:
       form_mode: default
-      label_singular: ''
-      label_plural: ''
+      override_labels: true
+      label_singular: CTA
+      label_plural: CTAs
       allow_new: true
       allow_existing: true
       match_operator: CONTAINS
-      override_labels: false
     third_party_settings:
       entity_browser_entity_form:
         entity_browser_id: cta_text_find
@@ -59,12 +59,12 @@ content:
     weight: 4
     settings:
       form_mode: default
-      label_singular: ''
-      label_plural: ''
+      override_labels: true
+      label_singular: Logo
+      label_plural: Logos
       allow_new: true
       allow_existing: true
       match_operator: CONTAINS
-      override_labels: false
     third_party_settings:
       entity_browser_entity_form:
         entity_browser_id: svg_images

@@ -62,12 +62,12 @@ content:
     weight: 15
     settings:
       form_mode: default
-      label_singular: ''
-      label_plural: ''
+      override_labels: true
+      label_singular: CTA
+      label_plural: CTAs
       allow_new: true
       allow_existing: true
       match_operator: CONTAINS
-      override_labels: false
     third_party_settings:
       entity_browser_entity_form:
         entity_browser_id: cta_find
@@ -123,12 +123,12 @@ content:
     weight: 13
     settings:
       form_mode: default
-      label_singular: ''
-      label_plural: ''
+      override_labels: true
+      label_singular: 'Landing Link'
+      label_plural: 'Landing Links'
       allow_new: true
       allow_existing: true
       match_operator: CONTAINS
-      override_labels: false
     third_party_settings:
       entity_browser_entity_form:
         entity_browser_id: landing_link_find
