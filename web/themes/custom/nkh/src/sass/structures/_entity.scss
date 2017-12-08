@@ -268,7 +268,7 @@
         }
       }
       &:nth-of-type(even){
-        a {flex-direction: row;}
+        a {flex-direction: row-reverse;}
         .image-section{
           &:before{
             top: 15rem;

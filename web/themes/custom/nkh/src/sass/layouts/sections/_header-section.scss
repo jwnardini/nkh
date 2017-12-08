@@ -95,7 +95,7 @@
   h1 {
     @include grit-bg-orange;
     display: inline;
-    line-height: 1.1;
+    line-height: 1.2;
 
     font-size: 3.8rem;
     @include breakpoint($min540) {
