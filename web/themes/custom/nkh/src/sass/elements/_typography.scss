@@ -232,15 +232,16 @@ blockquote{
   padding: 0;
   position: relative;
   text-decoration: none;
-  letter-spacing: -0.04em;
-  max-width: 1200px;
-  padding: 0 1rem;
+  letter-spacing: -0.025em;
+  width: 98vw;
+  padding: 0 1vw;
   margin: 0.5em auto;
   line-height: 1.3;
   @include grit-clip-gray;
   *{
     line-height: 1.29;
     font-weight: 700;
+    width: 100%;
   }
   strong{
     @include large-text-highlight;
@@ -250,7 +251,8 @@ blockquote{
     font-size: 4.4rem;
   }
   @include breakpoint($min1024) {
-    font-size: 5.4rem;
+    //max-width: 1600px;
+    font-size: 6rem;
   }
 }
 

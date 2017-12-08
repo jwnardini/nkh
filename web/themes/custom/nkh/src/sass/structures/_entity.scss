@@ -1,7 +1,7 @@
 .entity-cta-text,
 .view-cta-references {
   padding: 2rem;
-  width: calc(100% + 40px);
+  width: calc(100% + 20px);
   margin-left: -20px;
   margin-right: -20px;
   overflow: visible;
@@ -69,7 +69,7 @@
   }
 }
 // the first one is specifically for the content added entity.
-.embedded-entity.entity-cta-text,
+.entity-cta-text,
 .view-id-cta_references {
   display: block;
   font-size: 4rem;
@@ -307,11 +307,8 @@ div[class*="block-views-block-cta-references-"]{
         }
       }
       &:nth-of-type(even){
+        a {flex-direction: row-reverse;}
         .image-section{
-          grid-column-start: 2;
-          grid-column-end: 3;
-          grid-row-start: 1;
-          grid-row-end: 2;
           &:before{
             top: 15rem;
             left: -4rem;
@@ -330,10 +327,6 @@ div[class*="block-views-block-cta-references-"]{
           }
         }
         .content-section{
-          grid-column-start: 1;
-          grid-column-end: 2;
-          grid-row-start: 1;
-          grid-row-end: 2;
           padding: 5rem 6rem 5rem 0;
         }
       }
@@ -588,13 +581,13 @@ div[class*="block-views-block-cta-references-"]{
   }
   @include breakpoint($min1024) {
     a{
-      display:grid;
-      max-width:1000px;
-      grid-gap:20px;
-      grid-template-columns:1fr 1fr;
+      display:flex;
+      max-width:100%;
+      align-items: center;
     }
     .image-section,
     .content-section{
+      width: 50%;
       max-height: 490px;
       margin: 0;
       align-items: start;
@@ -611,6 +604,7 @@ div[class*="block-views-block-cta-references-"]{
       }
     }
     &:nth-of-type(odd){
+      a{flex-direction: row;}
       .image-section{
         &:before{
           top: 7rem;
@@ -633,11 +627,8 @@ div[class*="block-views-block-cta-references-"]{
       }
     }
     &:nth-of-type(even){
+      a {flex-direction: row-reverse;}
       .image-section{
-        grid-column-start: 2;
-        grid-column-end: 3;
-        grid-row-start: 1;
-        grid-row-end: 2;
         &:before{
           top: 15rem;
           left: -4rem;
@@ -656,10 +647,6 @@ div[class*="block-views-block-cta-references-"]{
         }
       }
       .content-section{
-        grid-column-start: 1;
-        grid-column-end: 2;
-        grid-row-start: 1;
-        grid-row-end: 2;
         padding: 5rem 6rem 5rem 0;
       }
     }

@@ -80,6 +80,10 @@
         {{ content.field_subtitle }}
       </div>
     </div>
+    <div class="share-section">
+      {{ drupal_block('nkh_breadcrumbs') }}
+      {% include directory ~ '/templates/share-links.html.twig' %}
+    </div>
   {% endif %}
 
   {{ title_prefix }}

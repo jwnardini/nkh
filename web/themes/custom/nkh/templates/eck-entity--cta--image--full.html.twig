@@ -20,11 +20,11 @@
 <div {{ attributes.addClass(classes) }}>
   <a href='{{ entityLink }}' alt='title'>
     <div class="image-section">
-      {{ entityLinkImage }} 
+      {{ entityLinkImage }}
     </div>
     <div class="content-section">
       <p class='landing_title'>
-        <span>{{ entityLinkTitle }}</span>
+        <span>{{ entity.field_title }}</span>
         {% if entityLinkExternal %}
           <span class="icon icon-external"></span>
         {% endif %}
@@ -33,5 +33,3 @@
     </div>
   </a>
 </div>
-
-

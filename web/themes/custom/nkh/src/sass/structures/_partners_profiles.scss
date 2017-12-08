@@ -28,6 +28,10 @@
     @include breakpoint($min540) {
       margin: 0;
     }
+    @include breakpoint($min1120) {
+      width: 25%;
+      flex: 0 0 calc(25% - 20px);
+    }
 
   }
   img {
@@ -45,7 +49,10 @@
     text-decoration: none;
   }
   .view-profile-name {
+    color: $nkh-orange;
+    margin: 0;
     text-decoration: underline;
+    font-size: 2rem;
   }
   .view-profile-jobtitle {
     font-size: 1.4rem;

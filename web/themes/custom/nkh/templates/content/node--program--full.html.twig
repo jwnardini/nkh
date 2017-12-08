@@ -71,12 +71,13 @@
 %}
 <article{{ attributes.addClass(classes) }}>
 
-  <div class="header-section">
-    <div>{{ content.field_image_banner }}</div>
-    <div class="header-section__overlay">
-      <h1>{{ drupal_title() }}</h1>
-    </div>
+<div class="header-section {% if content.field_image_banner|render|striptags %}header-section__has-image{% endif %}">
+  {{ content.field_image_banner }}
+  <div class="header-section__overlay">
+    {{ content.field_taxonomy_series }}
+    <h1>{{ drupal_title() }}</h1>
   </div>
+</div>
   <div class="share-section">
     {{ drupal_block('nkh_breadcrumbs') }}
     {% include directory ~ '/templates/share-links.html.twig' %}

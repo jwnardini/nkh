@@ -1,0 +1,19 @@
+uuid: f7f72b0a-8a9a-43c1-ba57-8838a120361c
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.cta.image
+    - field.storage.cta.field_title
+id: cta.image.field_title
+field_name: field_title
+entity_type: cta
+bundle: image
+label: Title
+description: 'Enter the main headline for the CTA. Please stay under 4-5 words for best formatting.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -91,11 +91,12 @@
 
 .page-node-type-blog,
 .page-node-type-program,
-.page-node-type-news {
+.page-node-type-news,
+.page-node-type-page {
   h1 {
     @include grit-bg-orange;
     display: inline;
-    line-height: 1.1;
+    line-height: 1.2;
 
     font-size: 3.8rem;
     @include breakpoint($min540) {
@@ -117,7 +118,7 @@
 }
 
 
-.page-node-type-page {
+.page-node-type-landing-page {
   .header-section {
     background: $nkh-bone;
     margin-bottom: 6vw;

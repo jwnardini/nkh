@@ -330,7 +330,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ field_image_featured }}<div class="title-wrapper"><span class="series-title">{{ type }}</span><div class="view-title">{{ title }}</div>{{ field_teaser }}</div>'
+            text: "{{ field_image_featured }}\n<div class=\"title-wrapper\">\n<span class=\"series-title\">{{ type }}</span>\n<h3 class=\"view-title\">{{ title }}</h3>\n<div>{{ field_teaser }}</div>\n<span class=\"read-more\">read more</span>\n</div>"
             make_link: true
             path: '{{ path }}'
             absolute: false
@@ -747,7 +747,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ field_image_featured }}<div class="title-wrapper"><span class="series-title">{{ type }}</span><div class="view-title">{{ title }}</div>{{ field_teaser }}</div>'
+            text: "{{ field_image_featured }}\n<div class=\"title-wrapper\">\n<span class=\"series-title\">{{ type }}</span>\n<h3 class=\"view-title\">{{ title }}</h3>\n<div>{{ field_teaser }}</div>\n<span class=\"read-more\">read more</span>\n</div>"
             make_link: true
             path: '{{ path }}'
             absolute: false
@@ -1015,7 +1015,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ field_image_featured }}<div class="title-wrapper"><span class="series-title">{{ type }}</span><div class="view-title">{{ title }}</div></div>'
+            text: "{{ field_image_featured }}\n<div class=\"title-wrapper\">\n<span class=\"series-title\">{{ type }}</span>\n<h3 class=\"view-title\">{{ title }}</h3>\n<span class=\"read-more\">read more</span>\n</div>"
             make_link: true
             path: '{{ path }}'
             absolute: false
