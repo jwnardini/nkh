@@ -5,6 +5,7 @@ namespace Drupal\nkh_resource_center\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Drupal\nkh_resource_center\Form\NKHResourceCenter;
 
 /**
  * Implements Resource Center Node form.
@@ -24,15 +25,13 @@ class ResourceListing extends FormBase {
    * @todo Add add exeception if no $entity_id
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $view_id = 'resource_view';
-    $view = \Drupal\nkh_resource_center\Form\NKHResourceCenter::getViewData($view_id);
+    $view_id = 'solr_resources';
+    $view = NKHResourceCenter::getViewData($view_id);
     // Return 404 if there is no view.
     if ($view == NULL) {
       throw new NotFoundHttpException();
     }
     $field_count = $form_state->get('field_deltas');
-    ksm(\Drupal::request()->getSession()->get('nkh_bulk_download'));
-    ksm($form_state);
     $form_state->set('zip_url', '');
     $form_state->set('resource_list_state', 'closed');
     $form_state->set('session_name', 'nkh_bulk_download');
@@ -44,6 +43,7 @@ class ResourceListing extends FormBase {
       '#prefix' => '<div id="nkh_resource_list">',
       '#suffix' => '</div>',
     ];
+
     $form_state->set('view_listing', TRUE);
     foreach ($view as $key => $row) {
       $current_row = $this->buildResource($row);
@@ -54,10 +54,12 @@ class ResourceListing extends FormBase {
         ],
         '#tree' => TRUE,
       ];
+
       $form['resource'][$row]['resource'] = [
         '#type' => 'item',
         '#markup' => render($current_row[0]),
       ];
+
       $form['resource'][$row]['form_actions'] = [
         '#type' => 'container',
         '#prefix' => '<div id="resource_center_actions">',
@@ -80,11 +82,21 @@ class ResourceListing extends FormBase {
 
       $form['resource'][$row]['form_actions']['add_resource'] = [
         '#type' => 'submit',
-        '#value' => $current_row[2], //t('Add to Bulk Download'),
+        '#value' => t('Add to Bulk Download'),
         '#submit' => ['Drupal\nkh_resource_center\Form\NKHResourceCenter::addResource'],
         '#ajax' => [
           'callback' => '::addResourceCallback',
           'wrapper' => 'ajax_resource_container',
+        ],
+        '#name' => $current_row[2],
+      ];
+
+      $form['resource'][$row]['form_actions']['file_url'] = [
+        '#type' => 'textfield',
+        '#value' => file_create_url($current_row[1]),
+        '#attributes' => [
+          'id' => 'resource_center_file_' . $row,
+          'readonly' => 'readonly',
         ],
       ];
 
@@ -93,7 +105,7 @@ class ResourceListing extends FormBase {
         '#prefix' => '<div id="ajax_resource_container">',
         '#suffix' => '</div>',
       ];
-  
+
       $form['resource_container']['item_count'] = [
         '#type' => 'html_tag',
         '#tag' => 'span',
@@ -102,6 +114,7 @@ class ResourceListing extends FormBase {
           'class' => 'resource-item-count',
         ],
       ];
+
       if (count(\Drupal::request()->getSession()->get('nkh_bulk_download')) > 0) {
         $form['resource_container']['download_zip'] = [
           '#type' => 'submit',
@@ -116,7 +129,7 @@ class ResourceListing extends FormBase {
           ],
         ];
       }
-  
+
       $form['resource_container']['zip_link'] = [
         '#type' => 'textfield',
         '#value' => $form_state->get('zip_url'),
@@ -125,7 +138,6 @@ class ResourceListing extends FormBase {
           'readonly' => 'readonly',
         ],
       ];
-  
       $form['resource_container']['collapse'] = [
         '#type' => 'html_tag',
         '#tag' => 'button',
@@ -135,11 +147,13 @@ class ResourceListing extends FormBase {
           'id' => 'resource_collapse_button',
         ],
       ];
+
       $form['resource_container']['resource_list'] = [
         '#type' => 'container',
         '#prefix' => '<div id="nkh_resource_list" class="' . $form_state->get('resource_list_state') . '">',
         '#suffix' => '</div>',
       ];
+
       if (\Drupal::request()->getSession()->get('nkh_bulk_download')) {
         foreach (\Drupal::request()->getSession()->get('nkh_bulk_download') as $key => $value) {
           $form['resource_container']['resource_list'][$value[0]] = [
@@ -149,7 +163,7 @@ class ResourceListing extends FormBase {
             ],
             '#tree' => TRUE,
           ];
-  
+
           $form['resource_container']['resource_list'][$value[0]]['resource_display'] = [
             '#type' => 'html_tag',
             '#tag' => 'a',
@@ -158,7 +172,7 @@ class ResourceListing extends FormBase {
               'href' => file_create_url($value[1]),
             ],
           ];
-  
+
           $form['resource_container']['resource_list'][$value[0]]['remove_resource'] = [
             '#type' => 'submit',
             '#value' => t('Remove'),

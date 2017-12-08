@@ -1,0 +1,181 @@
+uuid: 5e452e53-099b-4dd2-bdbe-057b74d5de81
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_taxonomy_location
+    - field.storage.node.field_file_type
+    - field.storage.node.field_taxonomy_resource
+    - search_api.server.database_search
+  module:
+    - search_api
+    - node
+id: nkh_resource_index
+name: 'DB Resource Index'
+description: ''
+read_only: false
+field_settings:
+  rendered_item:
+    label: 'Rendered HTML output'
+    property_path: rendered_item
+    type: text
+    configuration:
+      roles:
+        anonymous: anonymous
+      view_mode:
+        'entity:node':
+          resource: default
+  type:
+    label: 'Content type'
+    datasource_id: 'entity:node'
+    property_path: type
+    type: string
+  field_taxonomy_location:
+    label: 'Location Taxonomy'
+    datasource_id: 'entity:node'
+    property_path: field_taxonomy_location
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_taxonomy_location
+  field_file_type:
+    label: 'File Type'
+    datasource_id: 'entity:node'
+    property_path: field_file_type
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_file_type
+  field_taxonomy_resource:
+    label: 'Resource Category'
+    datasource_id: 'entity:node'
+    property_path: field_taxonomy_resource
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_taxonomy_resource
+  status:
+    label: null
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    indexed_locked: true
+    type_locked: true
+  uid:
+    label: null
+    datasource_id: 'entity:node'
+    property_path: uid
+    type: integer
+    indexed_locked: true
+    type_locked: true
+  node_grants:
+    label: 'Node access information'
+    property_path: search_api_node_grants
+    type: string
+    indexed_locked: true
+    type_locked: true
+    hidden: true
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - resource
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  html_filter:
+    all_fields: false
+    fields:
+      - rendered_item
+      - type
+      - field_taxonomy_location
+      - field_file_type
+      - field_taxonomy_resource
+    title: true
+    alt: true
+    tags:
+      h1: 5
+      h2: 3
+      h3: 2
+      strong: 2
+      b: 2
+      em: 1
+      u: 1
+    weights:
+      preprocess_index: -15
+      preprocess_query: -15
+  entity_status: {  }
+  stemmer:
+    all_fields: false
+    fields:
+      - rendered_item
+    exceptions:
+      texan: texa
+      mexican: mexic
+    weights:
+      preprocess_index: 0
+      preprocess_query: 0
+  hierarchy:
+    fields:
+      field_taxonomy_location: taxonomy_term-parent
+      field_file_type: taxonomy_term-parent
+      field_taxonomy_resource: taxonomy_term-parent
+    weights:
+      preprocess_index: -45
+  stopwords:
+    all_fields: false
+    fields:
+      - rendered_item
+    stopwords:
+      - a
+      - an
+      - and
+      - are
+      - as
+      - at
+      - be
+      - but
+      - by
+      - for
+      - if
+      - in
+      - into
+      - is
+      - it
+      - 'no'
+      - not
+      - of
+      - 'on'
+      - or
+      - s
+      - such
+      - t
+      - that
+      - the
+      - their
+      - then
+      - there
+      - these
+      - they
+      - this
+      - to
+      - was
+      - will
+      - with
+    weights:
+      preprocess_index: -5
+      preprocess_query: -2
+  rendered_item: {  }
+  content_access:
+    weights:
+      preprocess_query: -30
+  add_url: {  }
+  aggregated_field: {  }
+tracker_settings:
+  default: {  }
+options:
+  index_directly: true
+  cron_limit: 50
+server: database_search

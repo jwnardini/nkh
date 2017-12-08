@@ -134,10 +134,10 @@ abstract class NKHResourceCenter extends FormBase {
       $view->execute();
       $view->render();
     }
-    foreach ($view->result as $row) {
-      $result[] = $row->nid;
-    }
 
+    foreach ($view->result as $row) {
+      $result[] = $row->_item->getOriginalObject()->getValue()->id();
+    }
     return $result;
   }
 

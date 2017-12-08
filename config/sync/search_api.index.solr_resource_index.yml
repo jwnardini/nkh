@@ -1,0 +1,127 @@
+uuid: c6befcc1-5d21-432d-a0c5-cbfae39fd229
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_taxonomy_location
+    - field.storage.node.field_desc_local
+    - field.storage.node.field_taxonomy_resource
+    - field.storage.node.field_file_type
+    - field.storage.node.field_desc_dineout
+    - field.storage.node.field_desc_corporate
+    - field.storage.node.body
+    - search_api.server.resources_core
+  module:
+    - search_api
+    - node
+    - taxonomy
+id: solr_resource_index
+name: 'Solr Resource Index'
+description: ''
+read_only: false
+field_settings:
+  field_taxonomy_location:
+    label: 'Location Taxonomy'
+    datasource_id: 'entity:node'
+    property_path: field_taxonomy_location
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_taxonomy_location
+  field_desc_local:
+    label: 'Local Market description'
+    datasource_id: 'entity:node'
+    property_path: field_desc_local
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_desc_local
+  field_taxonomy_resource:
+    label: 'Resource Category'
+    datasource_id: 'entity:node'
+    property_path: field_taxonomy_resource
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_taxonomy_resource
+  field_file_type:
+    label: 'File Type'
+    datasource_id: 'entity:node'
+    property_path: field_file_type
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_file_type
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: string
+  nid:
+    label: ID
+    datasource_id: 'entity:node'
+    property_path: nid
+    type: integer
+  field_desc_dineout:
+    label: 'DineOut Description'
+    datasource_id: 'entity:node'
+    property_path: field_desc_dineout
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_desc_dineout
+  field_desc_corporate:
+    label: 'Corporate Market description'
+    datasource_id: 'entity:node'
+    property_path: field_desc_corporate
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_desc_corporate
+  status:
+    label: status
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+  uid:
+    label: uid
+    datasource_id: 'entity:node'
+    property_path: uid
+    type: integer
+  body:
+    label: Body
+    datasource_id: 'entity:node'
+    property_path: body
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.body
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - resource
+    languages:
+      default: true
+      selected: {  }
+  'entity:taxonomy_term':
+    bundles:
+      default: true
+      selected:
+        - file_type
+        - location
+        - resource
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  rendered_item: {  }
+  add_url: {  }
+  aggregated_field: {  }
+tracker_settings:
+  default: {  }
+options:
+  index_directly: true
+  cron_limit: 50
+server: resources_core

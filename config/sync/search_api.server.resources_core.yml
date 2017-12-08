@@ -1,0 +1,32 @@
+uuid: 5793bcb7-42db-4d39-8076-53d86cfd00be
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_solr
+id: resources_core
+name: 'AWS Solr Resources Core'
+description: ''
+backend: search_api_solr
+backend_config:
+  connector: standard
+  connector_config:
+    scheme: http
+    host: ec2-6-1-usa-va.opensolr.com
+    port: '80'
+    path: /solr/
+    core: opensolr_resources
+    timeout: 5
+    index_timeout: 5
+    optimize_timeout: 10
+    commit_within: 1000
+    solr_version: ''
+    http_method: AUTO
+  retrieve_data: false
+  highlight_data: false
+  excerpt: false
+  skip_schema_check: false
+  site_hash: false
+  suggest_suffix: true
+  suggest_corrections: true
+  suggest_words: false
