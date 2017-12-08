@@ -29,6 +29,9 @@
     }
 
   }
+  .view-profile-image {
+    text-align: center;
+  }
   img {
     display: inline-block;
   }
@@ -66,4 +69,10 @@
     color: $nkh-text;
   }
 
+}
+
+.logo-grid {
+  .view-content {
+    align-items: center;
+  }
 }

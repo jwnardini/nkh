@@ -417,6 +417,7 @@ display:
         filters: false
         filter_groups: false
         fields: false
+        css_class: false
       relationships:
         entityqueue_relationship:
           id: entityqueue_relationship
@@ -764,6 +765,7 @@ display:
           empty_zero: false
           hide_alter_empty: false
           plugin_id: custom
+      css_class: 'partners logo-grid'
     cache_metadata:
       max-age: -1
       contexts:
@@ -1887,6 +1889,7 @@ display:
         filters: false
         filter_groups: false
         fields: false
+        css_class: false
       filters:
         status:
           value: '1'
@@ -2185,6 +2188,7 @@ display:
           empty_zero: false
           hide_alter_empty: false
           plugin_id: custom
+      css_class: 'partners logo-grid'
     cache_metadata:
       max-age: -1
       contexts:
@@ -2533,6 +2537,7 @@ display:
         relationships: false
         sorts: false
         fields: false
+        css_class: false
       relationships:
         entityqueue_relationship:
           id: entityqueue_relationship
@@ -2788,6 +2793,7 @@ display:
           empty_zero: false
           hide_alter_empty: false
           plugin_id: custom
+      css_class: 'partners logo-grid'
     cache_metadata:
       max-age: -1
       contexts:
