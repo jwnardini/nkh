@@ -9,7 +9,7 @@ id: cta.image.field_title
 field_name: field_title
 entity_type: cta
 bundle: image
-label: Title
+label: Headline
 description: 'Enter the main headline for the CTA. Please stay under 4-5 words for best formatting.'
 required: true
 translatable: false
