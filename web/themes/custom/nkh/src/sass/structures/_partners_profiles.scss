@@ -12,10 +12,12 @@
     align-items: start;
     justify-content: space-evenly;
     flex-grow: 1;
+    margin-left: -1rem;
+    margin-right: -1rem;
   }
   .views-row {
     width: 24rem;
-    padding: 1rem 0;
+    padding: 1rem;
     text-align: left;
     //make sure that each profile is centered once the browser gets really narrow
     margin: auto;
@@ -24,7 +26,6 @@
     }
     @include breakpoint($min1120) {
       width: 25%;
-      flex: 0 0 calc(25% - 20px);
     }
 
   }
