@@ -94,6 +94,11 @@
     &:before {
       font-size: 18px;
     }
+    &:hover{
+      &:before{
+        color: $nkh-darkgrey;
+      }
+    }
   }
 }
 

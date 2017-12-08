@@ -128,40 +128,44 @@
   div[class*="field--name-field-social"]{
     display: inline-block;
     vertical-align: top;
+    width: 1em;
+    height: 1em;
+    position: relative;
+    margin: 0;
     + div[class*="field--name-field-social"]{
-      margin-left: 4rem;
+      margin-left: 2rem;
+    }
+    &:before {
+      @include icon(nkh);
+      color: $nkh-lightgrey;
+      display: block;
+      position: absolute;
+      transition: all .2s;
+      font-size: 1em;
+    }
+    &:hover{
+      &:before{
+        color: $nkh-darkgrey;
+      }
     }
     a {
       display: block;
-      width: 100%;
-      padding: 0;
       position: relative;
-      font-size: 0;
-      &:before {
-        @include icon(nkh);
-        color: $nkh-text;
-        display: block;
-        position: absolute;
-        transition: all .2s;
-        font-size: 2.6rem;
-      }
-      &:hover{
-        &:before{
-          color: $nkh-orange;
-        }
-      };
+      text-indent: -9999px;
+      overflow: hidden;
       &:after {
         content: none;
       }
+
     }
-    [href*="facebook"]:before {
-      content: $icon-facebook;
-    }
-    [href*="twitter"]:before {
-      content: $icon-twitter;
-    }
-    [href*="instagram"]:before {
-      content: $icon-instagram;
-    }
+  }
+  .field--name-field-social-fb:before {
+    content: $icon-facebook;
+  }
+  .field--name-field-social-tw:before {
+    content: $icon-twitter;
+  }
+  .field--name-field-social-ins:before {
+    content: $icon-instagram;
   }
 }
