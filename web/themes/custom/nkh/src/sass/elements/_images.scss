@@ -14,11 +14,8 @@
       }
       @include breakpoint($min1024) {
         float: left;
-        margin: 0 2rem 1rem 20%;
+        margin: 0 2rem 1rem 0;
         max-width: 50%;
-      }
-      @include breakpoint($min1600) {
-        margin-left: 30rem;
       }
     }
     &.view-mode-large,
@@ -63,7 +60,7 @@
         //   max-width: 760px;
         //   position: relative;
         // }
-      
+
         + .view-mode-small {
           margin-left: 0;
           margin-right: calc(-25% - 4rem);
