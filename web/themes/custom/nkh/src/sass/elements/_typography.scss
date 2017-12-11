@@ -278,11 +278,11 @@ blockquote{
   font-size: 1.6rem;
   font-weight: 700;
   padding: 0 2rem;
-  .label {
+  .field__label {
     text-transform: uppercase;
     margin-left: 0;
   }
-  div {
+  .field__item {
     margin-left: .6em;
   }
 }

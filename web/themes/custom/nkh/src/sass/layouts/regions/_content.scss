@@ -85,7 +85,22 @@
   }
 
 }
-
+.page-node-type-news{
+  .field--name-field-url{
+    display: flex;
+    align-items: baseline;
+    font-size: 1.6rem;
+    font-weight: 700;
+    padding: 0 2rem;
+    .label {
+      text-transform: uppercase;
+      margin-left: 0;
+    }
+    div {
+      margin-left: .6em;
+    }
+  }
+}
 .page-node-type-partner .node--view-mode-full .node__content,
 .page-node-type-profile .node--view-mode-full .node__content {
   max-width: 1260px;
