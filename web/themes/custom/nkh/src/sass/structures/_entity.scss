@@ -621,7 +621,7 @@
   background: url(../../images/school-breakfast.jpg);
 }
 .block-views-block-hunger-facts-data-snap {
-  background: url(../../images/snap.jpg);
+  background: url(../../images/SNAP.jpg);
 }
 .block-views-block-hunger-facts-data-food-insecurity {
   background: url(../../images/food-insecurity.jpg);
@@ -634,6 +634,9 @@
   position: relative;
   background-size: cover;
   background-position: center center;
+  form, .form-item {
+    margin: 0;
+  }
   .form-actions {
     @include element-invisible;
   }
@@ -644,6 +647,18 @@
     color: $white;
     font-size: 1.8rem;
   }
+  .form-type-select {
+    position: relative;
+    border: 1px solid $white;
+    &:after {
+      @include icon($icon-next);
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      margin-top: -1rem;
+      transform: rotate(90deg);
+    }
+  }
 }
 //the content inside the hunger fact block
 .hunger-fact {
@@ -651,6 +666,9 @@
   position: relative;
   padding: 2rem 2rem 1rem 3rem;
   color: $white;
+  display: flex;
+  flex-direction: column;
+
   @include breakpoint($min768) {
     position: relative;
     bottom: -5rem;
@@ -672,13 +690,11 @@
     z-index: 0;
   }
   h2 {
-    font-size: 3.5rem;
+    //@include element-invisible;
+    font-size: 2.4rem;
     font-weight: 700;
     line-height: 1.4;
-    margin: 0 0 2rem;
-    display: block;
-    position: relative;
-    z-index: 100;
+    margin: 0 0 1rem;
     color: $white;
   }
   p{
@@ -686,8 +702,18 @@
     font-size: 1.6rem;
     font-weight: 300;
   }
+  .view-header {
+    order: 2;
+  }
+  .view-filters {
+    order: 3;
+  }
   .view-content {
+    order: 1;
     font-size: 8rem;
+  }
+  label {
+    @include element-invisible;
   }
 }
 .entity--cta-image {
