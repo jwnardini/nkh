@@ -18,6 +18,7 @@
     position: absolute;
     box-shadow: 0 -1px 3px rgba($nkh-text, .8);
     @include breakpoint($min1024) {
+      min-height: 115px;
       position: relative;
       box-shadow: none;
     }
@@ -56,7 +57,13 @@
     }
   }
 }
-
+.path-frontpage{
+  #header .header-wrapper{
+    @include breakpoint($min1024) {
+      min-height: 89px;
+    }    
+  }  
+}
 .nkh-logo {
   max-width: 150px;
   height: 67px;

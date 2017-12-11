@@ -3,7 +3,7 @@ button.header-search-form__toggle {
   @include icon(nkh);
   @include breakpoint($min1024) {
     display: inline-block;
-    width: 4.4rem;
+    width: 3rem;
     padding: 1.2rem 1.4rem;
     background: $white;
     border-radius: 0;
@@ -21,8 +21,8 @@ button.header-search-form__toggle {
       color: $nkh-lightgrey;
     }
   }
-  @include breakpoint($min1024) {
-    width: 3.6rem;  
+  @include breakpoint($min1120) {
+    width: 4.4rem;  
   }
   @include breakpoint($min1260) {
     width: 5.6rem;  

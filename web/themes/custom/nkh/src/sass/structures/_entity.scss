@@ -1,11 +1,7 @@
+//this is for the background color and texture only.
+//add specific content style elsewhere.
 .entity-cta-text,
-.view-cta-references {
-  padding: 2rem;
-  width: calc(100% + 20px);
-  margin-left: -20px;
-  margin-right: -20px;
-  overflow: visible;
-  position: relative;
+.view-cta-references.view-id-cta_references > div{
   &:before,
   &:after{
     content: '';
@@ -23,16 +19,30 @@
   &:after{
     background: url('/themes/custom/nkh/images/nkh-canvas-orange.png') repeat;
     background-size: 1200px;
-  }
+  }    
+}
+.entity-cta-text,
+.view-cta-references {
+  width: calc(100% + 20px);
+  margin-left: -20px;
+  margin-right: -20px;
+  overflow: visible;
+  position: relative;
+  padding: 1rem; 
   @include breakpoint($min480) {
     width: 100%;
     margin-left: 0;
     margin-right: 0;
   }
+  @include breakpoint($min1024) {
+    padding: 2rem; 
+  }
+
+
   .text-formatted{
     margin: 0 auto;
     text-align: center;
-    max-width: 1200px;
+    max-width: 1600px;
     position: relative;
     overflow: visible;
     z-index: 1;
@@ -47,7 +57,7 @@
   }
   a{
     display: inline;
-    padding-bottom: .5rem;
+    padding-bottom: 0;
     text-decoration: none;
     position: relative;
     border-bottom: 4px solid rgba($white, 0.95);
@@ -55,56 +65,73 @@
       content: none;
     }
   }
+
   &:hover{
     a{
       color: $white;
-      &:before{
-        top: 0;
-        opacity: 1;
-        transform: translate(-50%, -100%) scale(1) rotate(0deg);
-      }
     }
   }
 }
-// the first one is specifically for the content added entity.
+// this is for the large text with white texture added entity.
+// and view cta reference at the bottom of the screen.
 .entity-cta-text,
 .view-id-cta_references {
+  display: block;
   font-size: 4rem;
   @include breakpoint($min768) {
     font-size: 6rem;
   }
   font-weight: 700;
 
-  a{
-    &:before{
-      position: absolute;
-      transform: translate(-50%, -50%) scale(0.5) rotate(5deg);
-      transform-origin: bottom center;
-      text-align: center;
-      transition: 0.15s ease-in-out;
-      opacity: 0;
-      top: -100px;
-      left: 50%;
-      width: 300px;
-      z-index: 5;
-      display: block;
-      height: 300px;
-      background: url('/themes/custom/nkh/images/btn-bingo.gif') 0 0 no-repeat;
-      background-size: 100%;
-      content: '';
-    }
-  }
-  &:hover{
-    a{
-      &:before{
-        top: 0;
-        opacity: 1;
-        transform: translate(-50%, -100%) scale(1) rotate(0deg);
-      }
-    }
+  p{
+    @include grit-clip-white;    
   }
 }
 
+//this is for the bottom cta reference in most pages
+.entity-cta-text,
+div[class*="block-views-block-cta-references-"]{
+  .text-formatted{
+    width: 100vw;
+    display: block;
+    max-width: 1600px;
+  }
+  &:after{
+    content: '';
+    position: absolute;
+    transform: translate(-50%, -50%) scale(0.5) rotate(5deg);
+    transform-origin: bottom center;
+    text-align: center;
+    transition: 0.25s ease-in-out;
+    opacity: 0;
+    top: -8rem;
+    left: 50%;
+    width: 300px;
+    z-index: 100;
+    display: block;
+    height: 300px;
+    background: url('/themes/custom/nkh/images/btn-bingo.gif') 0 0 no-repeat;
+    background-size: 100%;
+    @include breakpoint($min1024) {
+      top: -10rem;
+    }
+  }    
+  &:hover{
+    &:after{
+      opacity: 1;
+      height: 300px;
+      transform: translate(-50%, -100%) scale(1) rotate(0deg);
+      top: 10rem;
+      @include breakpoint($min1024) {
+        top: 11rem;
+      }
+    }      
+  }
+  //in case an admin uses a button instead of a link
+  button{
+    background: none;
+  } 
+}
 .field--name-field-landing-link-ref {
   .field__item {
     margin-top: 5rem;
