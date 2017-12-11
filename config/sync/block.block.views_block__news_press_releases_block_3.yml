@@ -1,25 +1,25 @@
-uuid: 82538ba5-0044-4037-b159-8db41e9c6144
+uuid: d0ccb0f3-afd1-4075-8fb5-a3fdc55ac254
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.blog_post
+    - views.view.news_press_releases
   module:
     - ctools
     - views
   theme:
     - nkh
-id: views_block__blog_post_by_issue
+id: views_block__news_press_releases_block_3
 theme: nkh
 region: postscript
-weight: -24
+weight: 0
 provider: null
-plugin: 'views_block:blog_post-by_issue'
+plugin: 'views_block:news_press_releases-block_3'
 settings:
-  id: 'views_block:blog_post-by_issue'
+  id: 'views_block:news_press_releases-block_3'
   label: ''
   provider: views
-  label_display: '0'
+  label_display: visible
   views_label: ''
   items_per_page: none
   context_mapping: {  }
@@ -27,8 +27,7 @@ visibility:
   'entity_bundle:node':
     id: 'entity_bundle:node'
     bundles:
-      campaign: campaign
-      program: program
+      news: news
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'
