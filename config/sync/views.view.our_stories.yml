@@ -284,7 +284,7 @@ display:
             suffix: ''
             target: ''
             nl2br: false
-            max_length: 140
+            max_length: 160
             word_boundary: true
             ellipsis: true
             more_link: false
@@ -681,7 +681,7 @@ display:
             suffix: ''
             target: ''
             nl2br: false
-            max_length: 140
+            max_length: 160
             word_boundary: true
             ellipsis: true
             more_link: false
