@@ -188,7 +188,7 @@
 
     a {
       color: $white;
-      font-weight: 500;
+      font-weight: 700;
       text-decoration: none;
       text-transform: uppercase;
     }
@@ -200,7 +200,7 @@
     li {
       a{
         color: $nkh-lightgrey;
-        font-weight: 400;
+        font-weight: 300;
         text-transform: none;
       }
     }
@@ -301,7 +301,7 @@
   }
   *{
     color: $nkh-lightgrey;
-    font-weight: 400;
+    font-weight: 300;
     text-decoration: none;
     font-style: normal;
     @include breakpoint($min768) {

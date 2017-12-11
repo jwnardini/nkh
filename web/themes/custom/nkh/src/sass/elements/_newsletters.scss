@@ -11,12 +11,13 @@
     display: block;
     @include link-button;
     -webkit-mask-size: 200%;
-    padding: 0;
-    height: 48px;
+    padding: .4em 0 .6em;
     width: 156px;
+    letter-spacing: .025em;
+    line-height: 1.4;
     background: $nkh-darkergrey;
     span:first-of-type {
-      line-height: 2.8rem;
+      font-weight: 700;
       color: $white;
       text-transform: uppercase;
     }
@@ -32,6 +33,7 @@ div[class*="block-newsletter"] {
   width: auto;
   margin: 0 2rem;
   @include clearfix;
+
   .text-formatted{
     display: inline-block;
     margin: 0;
@@ -120,8 +122,7 @@ div[class*="block-newsletter"] {
   @include breakpoint($min1024) {
     display: inline-block;
     width: auto;
-    margin-left: 0;
-    margin-top: -.2rem;
+    margin: -.2rem 1.5rem 0 0;
     text-align: center;
     &:hover, &:active, &:focus {
       .header-newsletter-form__toggle{
@@ -160,6 +161,10 @@ div[class*="block-newsletter"] {
       }
     }
   }
+  @include breakpoint($min1120) {
+    margin-right: 2rem;
+  }
+
 }
 
 @include breakpoint($min1024) {
