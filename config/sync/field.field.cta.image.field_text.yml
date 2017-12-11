@@ -11,11 +11,11 @@ dependencies:
 third_party_settings:
   allowed_formats:
     plain_text: plain_text
-    basic_html: '0'
+    code: code
     simple_html: '0'
     full_html: '0'
     restricted_html: '0'
-    code: '0'
+    basic_html: '0'
 id: cta.image.field_text
 field_name: field_text
 entity_type: cta

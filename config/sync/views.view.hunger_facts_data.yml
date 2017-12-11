@@ -55,7 +55,7 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
           input_required: false
-          text_input_required: 'Select any filter and click on Apply to see results'
+          text_input_required: ''
           bef:
             general:
               allow_secondary: false
@@ -158,7 +158,7 @@ display:
           exposed: true
           expose:
             operator_id: tid_op
-            label: Location
+            label: State
             description: ''
             use_operator: false
             operator: tid_op
@@ -200,13 +200,19 @@ display:
           plugin_id: taxonomy_index_tid
       sorts: {  }
       title: 'Hunger Facts Data'
-      header: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          plugin_id: text
       footer: {  }
       empty: {  }
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
       use_ajax: true
+      css_class: hunger-fact
     cache_metadata:
       max-age: -1
       contexts:
@@ -272,18 +278,18 @@ display:
             more_link: false
             more_link_text: ''
             more_link_path: ''
-            strip_tags: false
+            strip_tags: true
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
-          element_class: ''
+          element_type: div
+          element_class: hunger-fact__data
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -373,6 +379,7 @@ display:
         fields: false
         sorts: false
         title: false
+        header: false
       display_description: ''
       sorts:
         name:
@@ -390,6 +397,20 @@ display:
           entity_field: name
           plugin_id: standard
       title: 'Food Insecurity'
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: "<h2>Food Insecurity</h2>\n<p>Childhood food insecurity is the percentage of children under eighteen years old living in households that experience limited or uncertain availability of nutritionally adequate and safe foods at some point during the year. Source: Map the Meals Gap (2015)</p>"
+            format: simple_html
+          plugin_id: text
     cache_metadata:
       max-age: -1
       contexts:
@@ -506,18 +527,18 @@ display:
             more_link: false
             more_link_text: ''
             more_link_path: ''
-            strip_tags: false
+            strip_tags: true
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
-          element_class: ''
+          element_type: div
+          element_class: hunger-fact__data
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -541,6 +562,7 @@ display:
         fields: false
         sorts: false
         title: false
+        header: false
       display_description: ''
       sorts:
         field_data_snap_value:
@@ -556,6 +578,20 @@ display:
             label: ''
           plugin_id: standard
       title: SNAP
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: "<h2>SNAP</h2>\n<p>SNAP participation is the percentage of eligible people receiving SNAP benefits; a state ranked first has the highest participation and a state ranked 51st has the lowest participation. (2014)</p>"
+            format: simple_html
+          plugin_id: text
     cache_metadata:
       max-age: -1
       contexts:
@@ -606,18 +642,18 @@ display:
             more_link: false
             more_link_text: ''
             more_link_path: ''
-            strip_tags: false
+            strip_tags: true
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
-          element_class: ''
+          element_type: div
+          element_class: hunger-fact__data
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -707,6 +743,7 @@ display:
         fields: false
         sorts: false
         title: false
+        header: false
       display_description: ''
       sorts:
         field_data_summernutr_value:
@@ -722,6 +759,20 @@ display:
             label: ''
           plugin_id: standard
       title: 'Summer Nutrition'
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: "<h2>Summer Nutrition</h2>\n<p>Summer nutrition participation is the number of children participating in the summer meals programs for every 100 low-income students who participate in the National School Lunch Program during the school year. (2015)</h2>"
+            format: simple_html
+          plugin_id: text
     cache_metadata:
       max-age: -1
       contexts:
@@ -772,18 +823,18 @@ display:
             more_link: false
             more_link_text: ''
             more_link_path: ''
-            strip_tags: false
+            strip_tags: true
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
-          element_class: ''
+          element_type: div
+          element_class: hunger-fact__data
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -873,6 +924,7 @@ display:
         fields: false
         sorts: false
         title: false
+        header: false
       display_description: ''
       sorts:
         field_data_schoolbkfst_value:
@@ -888,6 +940,20 @@ display:
             label: ''
           plugin_id: standard
       title: 'School Breakfast'
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: "<h2>School Breakfast</h2>\n<p>School Breakfast participation is the number of low-income children participating in the School Breakfast Program for every 100 who participate in the National School Lunch Program. (SY 15-16)</p>"
+            format: simple_html
+          plugin_id: text
     cache_metadata:
       max-age: -1
       contexts:
