@@ -273,11 +273,7 @@ blockquote{
 }
 
 .field--name-field-taxonomy-issue {
-  display: flex;
-  align-items: baseline;
-  font-size: 1.6rem;
-  font-weight: 700;
-  padding: 0 2rem;
+  @include blog-news-tag;
   .field__label {
     text-transform: uppercase;
     margin-left: 0;
