@@ -114,6 +114,7 @@
       width: 40%;
       padding: 0 4rem 0 0;
     }
+
   }
   .main-section {
   }
@@ -123,5 +124,50 @@
       width: 60%;
       padding: 0 0 0 4rem;
     }
+  }
+  // The icons will live inside of the div so that they can separate themselves
+  // if the text formatted content also has a social media link
+  div[class*="field--name-field-social"]{
+    display: inline-block;
+    vertical-align: top;
+    width: 1em;
+    height: 1em;
+    position: relative;
+    margin: 0;
+    + div[class*="field--name-field-social"]{
+      margin-left: 2rem;
+    }
+    &:before {
+      @include icon(nkh);
+      color: $nkh-lightgrey;
+      display: block;
+      position: absolute;
+      transition: all .2s;
+      font-size: 1em;
+    }
+    &:hover{
+      &:before{
+        color: $nkh-darkgrey;
+      }
+    }
+    a {
+      display: block;
+      position: relative;
+      text-indent: -9999px;
+      overflow: hidden;
+      &:after {
+        content: none;
+      }
+
+    }
+  }
+  .field--name-field-social-fb:before {
+    content: $icon-facebook;
+  }
+  .field--name-field-social-tw:before {
+    content: $icon-twitter;
+  }
+  .field--name-field-social-ins:before {
+    content: $icon-instagram;
   }
 }
