@@ -190,6 +190,19 @@
     background-clip:text;
   }
 }
+
+@mixin grit-clip-white {
+  color: $white;
+  @supports (display:block) {
+    -webkit-mask: url('/themes/custom/nkh/images/nkh-canvas-white.png');
+    -webkit-mask-size: 1000px;
+    -webkit-font-smoothing:antialiased;
+    -webkit-background-clip:text;
+    -moz-background-clip:text;
+    background-clip:text;
+  }
+}
+
 @mixin grit-clip-orange {
   color: $nkh-orange;
   @supports (display:block) {

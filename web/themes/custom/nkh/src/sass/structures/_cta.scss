@@ -29,6 +29,8 @@ button.toggle-close{
   padding: 3rem 0;
   .text-formatted{
     max-width: 70%;
+
+
     @include breakpoint($min1024) {
       max-width: 900px;
     }
@@ -39,6 +41,10 @@ button.toggle-close{
       font-size: 1.8rem;
       font-weight: 300;
       margin: 0;
+      line-height: 1.8;
+      @include breakpoint($min768) {
+        line-height: 1.4;
+      }
     }
     a{
       font-weight: 700;
