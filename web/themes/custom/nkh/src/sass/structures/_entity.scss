@@ -614,8 +614,83 @@
   }
 }
 
+.block-views-block-hunger-facts-data-summer {
+  background: url(../../images/summer-nutrition.jpg);
+}
+.block-views-block-hunger-facts-data-school-breakfast {
+  background: url(../../images/school-breakfast.jpg);
+}
+.block-views-block-hunger-facts-data-snap {
+  background: url(../../images/snap.jpg);
+}
+.block-views-block-hunger-facts-data-food-insecurity {
+  background: url(../../images/food-insecurity.jpg);
+}
 
-.entity--cta-image{
+[class*="block-views-blockhunger-facts-data"] {
+  max-width: 800px;
+  min-height: 400px;
+  margin: 4rem auto 7rem;
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+  .form-actions {
+    @include element-invisible;
+  }
+  .form-type-select, select {
+    width: 100%;
+    background: transparent;
+    border: 0 none;
+    color: $white;
+    font-size: 1.8rem;
+  }
+}
+//the content inside the hunger fact block
+.hunger-fact {
+  background: rgba($nkh-orange, .9);
+  position: relative;
+  padding: 2rem 2rem 1rem 3rem;
+  color: $white;
+  @include breakpoint($min768) {
+    position: relative;
+    bottom: -5rem;
+    width: 50%;
+    right: 7rem;
+    padding: 3rem 3rem 2.5rem 4rem;
+  }
+  &:after{
+    -webkit-mask: url('/themes/custom/nkh/images/nkh-canvas-orange.png') 0 0 / 300%;
+    background: $nkh-orange;
+    display: block;
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    mix-blend-mode: lighten;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+  h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 0 0 2rem;
+    display: block;
+    position: relative;
+    z-index: 100;
+    color: $white;
+  }
+  p{
+    line-height: 1.6;
+    font-size: 1.6rem;
+    font-weight: 300;
+  }
+  .view-content {
+    font-size: 8rem;
+  }
+}
+.entity--cta-image {
   max-width: 800px;
   margin: 4rem auto 7rem;
   position: relative;
