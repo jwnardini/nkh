@@ -42,9 +42,6 @@ button.toggle-close{
       font-weight: 300;
       margin: 0;
       line-height: 1.8;
-      @include breakpoint($min768) {
-        line-height: 1.4;
-      }
     }
     a{
       font-weight: 700;
