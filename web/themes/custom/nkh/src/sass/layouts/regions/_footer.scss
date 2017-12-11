@@ -274,11 +274,13 @@
     }
     .header-newsletter-form__toggle{
       background-color: $nkh-lightgrey;
+      padding: 1.1em 0 1em;
     }
     .block-newslettersignupform-2{
       position: absolute;
       right: 0;
       margin-right: 15.4rem;
+
       &:hover, &:active, &:focus {
         .header-newsletter-form__toggle{
           background-color: #4d545d;
