@@ -14,10 +14,11 @@ entity_settings:
   handler_settings:
     target_bundles:
       blog: blog
+      campaign: campaign
     sort:
       field: _none
     auto_create: false
-    auto_create_bundle: ''
+    auto_create_bundle: blog
 queue_settings:
   min_size: 0
   max_size: 4
