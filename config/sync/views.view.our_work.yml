@@ -469,7 +469,7 @@ display:
           empty: false
           tokenize: false
           content:
-            value: 'We start with breakfast, proin vitae odio metus. Nulla consectetur ligula ac luctus placerat. Donec mollis urna nec nisi scelerisque tempus. Vestibulum in eros leo. Donec tincidunt ligula id orci rhoncus molestie. '
+            value: 'The truth? We have plenty of food in this country. We also have effective programs to feed kids. The problem is not enough families have access to them. Here''s how we can fix that.'
             format: basic_html
           plugin_id: text
       attachment_position: after
