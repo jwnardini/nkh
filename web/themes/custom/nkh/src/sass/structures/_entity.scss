@@ -1,6 +1,6 @@
 //this is for the background color and texture only.
 //add specific content style elsewhere.
-.entity-cta-text.view-cta-references,
+.entity--cta__orange,
 .view-cta-references.view-id-cta_references > div{
   &:before,
   &:after{
@@ -19,23 +19,23 @@
   &:after{
     background: url('/themes/custom/nkh/images/nkh-canvas-orange.png') repeat;
     background-size: 1200px;
-  }    
+  }
 }
-.entity-cta-text,
+.entity--cta-text,
 .view-cta-references {
   width: calc(100% + 20px);
   margin-left: -20px;
   margin-right: -20px;
   overflow: visible;
   position: relative;
-  padding: 1rem; 
+  padding: 1rem;
   @include breakpoint($min480) {
     width: 100%;
     margin-left: 0;
     margin-right: 0;
   }
   @include breakpoint($min1024) {
-    padding: 2rem; 
+    padding: 2rem;
   }
 
 
@@ -74,7 +74,7 @@
 }
 // this is for the large text with white texture added entity.
 // and view cta reference at the bottom of the screen.
-.entity-cta-text,
+.entity--cta-text,
 .view-id-cta_references {
   display: block;
   font-size: 4rem;
@@ -84,15 +84,15 @@
   font-weight: 700;
 
   p{
-    @include grit-clip-white;    
+    @include grit-clip-white;
   }
 }
 
 //this is for the bottom cta reference in most pages
 div[class*="block-views-block-cta-references-"]{
   .text-formatted{
-    width: 100vw;
-    display: block;
+    //width: 100vw;
+    //display: block;
     max-width: 1600px;
   }
   &:after{
@@ -114,7 +114,7 @@ div[class*="block-views-block-cta-references-"]{
     @include breakpoint($min1024) {
       top: -10rem;
     }
-  }    
+  }
   &:hover{
     &:after{
       opacity: 1;
@@ -124,12 +124,12 @@ div[class*="block-views-block-cta-references-"]{
       @include breakpoint($min1024) {
         top: 11rem;
       }
-    }      
+    }
   }
   //in case an admin uses a button instead of a link
   button{
     background: none;
-  } 
+  }
 }
 .field--name-field-landing-link-ref {
   .field__item {

@@ -43,7 +43,8 @@ input[type="radio"] {
       margin-bottom: -2px;
       margin-right: 8px;
       overflow: hidden;
-      border: 1px solid $highlight;
+      border: 1px solid $nkh-darkgrey;
+      background-color: $white;
     }
     &.focused:before {
       box-shadow: 0 0 5px #444;
@@ -51,7 +52,15 @@ input[type="radio"] {
   }
   &:checked + label{
     &:before {
-      background-color: $highlight;
+      background-color: $white;
+    }
+    &:after {
+      @include icon($icon-close);
+      position: absolute;
+      left: .2em;
+      margin-top: .4em;
+      font-size: 1.2rem;
+      color: gray;
     }
   }
 }

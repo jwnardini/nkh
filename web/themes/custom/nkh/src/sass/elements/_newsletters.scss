@@ -250,6 +250,11 @@ form.cta-form__fields {
     }
   }
 
+  input[type="checkbox"] {
+    width: 1px !important;
+    padding: 0 !important;
+  }
+
   input[type="submit"], button[type="submit"] {
     @include link-button;
     background: url(../../images/nkh-canvas-darkgrey.png);
