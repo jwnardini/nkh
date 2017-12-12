@@ -410,7 +410,7 @@ display:
           empty: false
           tokenize: false
           content:
-            value: 'We''re educators and advocates, parents and policymakers, award-winning chefs and Fortune 500 leaders with a shared belieft: no kid should go hungry.'
+            value: '1 in 6 children in America faces hunger, all across the United States, in every community. It''s real. With your help, we can change it.'
             format: basic_html
           plugin_id: text
       footer: {  }

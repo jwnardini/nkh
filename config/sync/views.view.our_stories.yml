@@ -409,7 +409,7 @@ display:
           empty: false
           tokenize: false
           content:
-            value: 'We''re educators and advocates, parents and policymakers, award-winning chefs and Fortune 500 leaders with a shared belieft: no kid should go hungry.'
+            value: 'When you become part of No Kid Hungry, you''re joining a movement of teachers, chefs, community leaders, parents, lawmakers and CEOs with a shared belief: no kid in America should go hungry.'
             format: basic_html
           plugin_id: text
       footer: {  }
