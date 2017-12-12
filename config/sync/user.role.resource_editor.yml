@@ -1,0 +1,15 @@
+uuid: b044f56c-9216-433f-9e1b-bf779bbb49a1
+langcode: en
+status: true
+dependencies: {  }
+id: resource_editor
+label: 'Resource Maintainer'
+weight: -5
+is_admin: null
+permissions:
+  - 'create resource content'
+  - 'delete resource revisions'
+  - 'edit any resource content'
+  - 'edit own resource content'
+  - 'revert resource revisions'
+  - 'view resource revisions'

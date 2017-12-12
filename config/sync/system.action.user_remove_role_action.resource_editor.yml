@@ -1,0 +1,14 @@
+uuid: 6e54df02-b6e0-4822-8d17-4252b964c0b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.resource_editor
+  module:
+    - user
+id: user_remove_role_action.resource_editor
+label: 'Remove the Resource Editor role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: resource_editor

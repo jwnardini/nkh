@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: user_creator
 label: 'User Creator'
-weight: -4
+weight: -3
 is_admin: null
 permissions:
   - 'access shortcuts'
