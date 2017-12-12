@@ -7,9 +7,11 @@ label: 'Resource Maintainer'
 weight: -5
 is_admin: null
 permissions:
+  - 'access toolbar'
   - 'create resource content'
   - 'delete resource revisions'
   - 'edit any resource content'
   - 'edit own resource content'
   - 'revert resource revisions'
   - 'view resource revisions'
+  - 'view the administration theme'
