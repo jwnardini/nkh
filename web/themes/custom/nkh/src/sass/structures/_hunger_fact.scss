@@ -1,15 +1,10 @@
 div[data-quickedit-entity-id*="hunger_fact"],
 .entity--hunger-fact{
   background: url('/themes/custom/nkh/images/nkh-canvas-darkgrey.png');
-  background-size: 30%;
+  background-size: 800px;
   padding: 2rem;
   width: calc(100vw + 40px);
   margin: 4rem -20px;
-  // @include breakpoint($min480) {
-  //   width: 100%;
-  //   margin-left: 0;
-  //   margin-right: 0;
-  // }
   overflow: hidden;
   *{
     color: $white;
@@ -23,6 +18,7 @@ div[data-quickedit-entity-id*="hunger_fact"],
     }
 
     & > a{
+      letter-spacing: .025em; 
       text-decoration: underline;
       font-size: 1.2rem;
       margin: 2.5rem 0 0.5rem;
@@ -40,10 +36,8 @@ div[data-quickedit-entity-id*="hunger_fact"],
     }
   }
   .field--name-field-statistic-hunger{
-    font-weight: 700;
-    letter-spacing: 0;
     padding-bottom: 0;
-    -webkit-mask: url(/themes/custom/nkh/images/solid.svg);
+    -webkit-mask: url('/themes/custom/nkh/images/solid.svg');
     -webkit-mask-size: 50%;
     color: $white;
     position: relative;
@@ -58,7 +52,7 @@ div[data-quickedit-entity-id*="hunger_fact"],
     span {
       white-space: nowrap;
       &:after {
-        background: url(/themes/custom/nkh/images/nkh-canvas-orange.png) repeat;
+        background: url('/themes/custom/nkh/images/nkh-canvas-orange.png') repeat;
         background-size: 1200px;
         mix-blend-mode: multiply;
         opacity: .85;
@@ -82,6 +76,7 @@ div[data-quickedit-entity-id*="hunger_fact"],
       line-height: 1.2;
       display: inline;
       padding: .6rem 0;
+      letter-spacing: .025em; 
     }
   }
 }
@@ -92,6 +87,16 @@ div[data-quickedit-entity-id*="hunger_fact"],
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .field--name-field-statistic-hunger,
+  .field--name-field-body-hunger{
+    margin-bottom: 2rem;
+    display: block;
+    @include breakpoint($min1024) {
+      vertical-align: middle;
+      margin: 0;
+    }
   }
   .field--name-field-body-hunger{
     margin-left: -2rem;
@@ -106,20 +111,12 @@ div[data-quickedit-entity-id*="hunger_fact"],
       flex: 1 100%;
     }
   }
-  .field--name-field-statistic-hunger,
-  .field--name-field-body-hunger{
-    margin-bottom: 2rem;
-    display: block;
-    @include breakpoint($min1024) {
-      vertical-align: middle;
-      margin: 0;
-    }
-  }
 }
 .hunger-fact-title,
 .field--name-field-statistic-hunger{
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 700;
+  letter-spacing: .025em; 
 }
 
 .hunger-fact-title{
