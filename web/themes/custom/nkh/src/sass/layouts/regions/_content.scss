@@ -82,6 +82,15 @@
       margin-left: -50vw;
     }
 
+    .entity--cta-text {
+      margin-top: 4rem;
+      margin-bottom: 4rem;
+      .text-formatted {
+        width: auto;
+        max-width: 1600px;
+      }
+    }
+
   }
 
 }
