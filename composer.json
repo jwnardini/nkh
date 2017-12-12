@@ -58,6 +58,7 @@
         "drupal/password_strength": "^2.0@alpha",
         "drupal/path_redirect_import": "^1.0@beta",
         "drupal/pathauto": "^1.0",
+        "drupal/publishcontent": "^1.0",
         "drupal/redirect": "^1.0@beta",
         "drupal/scheduler": "^1.0@RC",
         "drupal/search_api": "^1.5",
