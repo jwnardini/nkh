@@ -232,27 +232,20 @@ blockquote{
   padding: 0;
   position: relative;
   text-decoration: none;
-  letter-spacing: -0.025em;
   width: 98vw;
   padding: 0 1vw;
   margin: 0.5em auto;
   line-height: 1.3;
   @include grit-clip-gray;
+  @include large-text-sizing;
   *{
     line-height: 1.29;
+    letter-spacing: -.025em;
     font-weight: 700;
     width: 100%;
   }
   strong{
     @include large-text-highlight;
-  }
-  font-size: 3rem;
-  @include breakpoint($min768) {
-    font-size: 4.4rem;
-  }
-  @include breakpoint($min1024) {
-    //max-width: 1600px;
-    font-size: 6rem;
   }
 }
 
