@@ -81,43 +81,42 @@
       text-transform: uppercase;
     }
   }
-  [id="resource_center_actions"] {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    align-content: center;
-    flex-wrap: wrap;
-    button,
-    input[type="submit"] {
+}
+[id="resource_center_actions"] {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  button,
+  input[type="submit"] {
+    background-color: transparent;
+    color: $nkh-text;
+    padding-right: 0;
+    padding-left: 4rem;
+    margin-left: 1rem;
+    font-size: 1.6rem;
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 3rem;
+    &:hover, &:focus, &:active {
+      text-decoration: underline;
       background-color: transparent;
-      color: $nkh-text;
-      padding-right: 0;
-      padding-left: 4rem;
-      margin-left: 1rem;
-      font-size: 1.6rem;
-      background-repeat: no-repeat;
-      background-position: left center;
-      background-size: 3rem;
-      &:hover, &:focus, &:active {
-        text-decoration: underline;
-      }
     }
   }
   // the download button
-  [data-drupal-selector="edit-form-header-form-actions-download-single"] {
-    background: url(../svg/origin/download.svg);
+  [data-drupal-selector*="form-actions-download-single"] {
+    background-image: url(../svg/origin/download.svg);
     margin-left: 0;
   }
   //the copy shareable link button
-  [data-drupal-selector="edit-form-header-form-actions-copy-single"] {
-    background: url(../svg/origin/copy.svg);
+  [data-drupal-selector*="form-actions-copy-single"] {
+    background-image: url(../svg/origin/copy.svg);
   }
   //the bulk download button
-  [id="edit-form-header-form-actions-add-resource"] {
-    background: url(../svg/origin/add.svg);
+  [id*="form-actions-add-resource"] {
+    background-image: url(../svg/origin/add.svg);
   }
-
-
 }
 //end resource_center_header
 //start download bar
@@ -141,6 +140,13 @@
     flex-direction: column;
   }
 }
+.nkh_resource_container_options {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  background: $nkh-orange;
+  color: $white;
+}
 [id="nkh_resource_list"] {
   transition: height .2s;
   &.open {
@@ -153,9 +159,16 @@
 }
 
 .resource--teaser {
+  h2 {
+    @extend h3;
+    text-decoration: underline;
+    margin: .5rem 0 1rem;
+  }
   &__overlay {
     position: relative;
-    min-height: 300px;
+    height: 275px;
+    background: $white;
+    margin-bottom: 2rem;
     .field--name-field-image-featured {
     }
     .color-overlay {
@@ -197,11 +210,12 @@
   }
 }
 
-.field--name-field-file-type {
+.field.field--name-field-file-type {
   color: $nkh-text;
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
+  margin: 1rem 0 0;
 }
 
 [id="nkh_resource_list"] > [id="edit-resource"] {
@@ -211,7 +225,7 @@
   justify-content: space-evenly;
 }
 .resource-container-inline {
-  width: 48rem;
+  max-width: 48rem;
   padding: 3rem;
   text-align: left;
   //make sure that each resource is centered once the browser gets really narrow
@@ -220,6 +234,64 @@
     margin: 0;
   }
   @include breakpoint($min1120) {
-    width: 50%;
+    width: 48rem;
+    max-width: 50%;
+  }
+  [id="resource_center_actions"] button, [id="resource_center_actions"] input[type="submit"] {
+    display: block;
+    margin: 0 0 .3rem 0;
+  }
+}
+// the featured resources
+.block-views-block-featured-resources-block-1 {
+  background: $white;
+  .view-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: space-evenly;
+  }
+  .views-row {
+    max-width: 48rem;
+    padding: 3rem;
+    text-align: left;
+    margin: auto;
+    @include breakpoint($min540) {
+      margin: 0;
+    }
+    @include breakpoint($min1120) {
+      width: 48rem;
+      max-width: 33%;
+    }
+  }
+}
+.js-form-item[class*="form-actions-file-url"]  {
+  margin: 1rem 0 0;
+  input {
+    width: 100%;
+    min-width: auto;
+  }
+}
+// resource listing
+.path-resource-center {
+  main {
+    background: $nkh-bone;
+  }
+  #content {
+    max-width: 1600px;
+    padding: 4rem 0;
+    margin: 0 auto;
+  }
+}
+.nkh-resource-center-listing {
+  @include breakpoint($min1024) {
+    float: right;
+    width: 70%;
+  }
+}
+[class*="block-exposedformresource-viewpage"] {
+  @include breakpoint($min1024) {
+    float: left;
+    width: 30%;
   }
 }
