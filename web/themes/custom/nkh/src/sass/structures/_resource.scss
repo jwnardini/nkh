@@ -159,17 +159,24 @@
 }
 
 .resource--teaser {
-  h2 {
-    @extend h3;
+  h3 {
     text-decoration: underline;
     margin: .5rem 0 1rem;
+    padding: 0 2rem;
+    line-height: 1.3;
   }
   &__overlay {
     position: relative;
-    height: 275px;
+    height: 305px;
+    overflow: hidden;
     background: $white;
     margin-bottom: 2rem;
-    .field--name-field-image-featured {
+    @include breakpoint($min1120) {
+      height: 15vw;
+    }
+    .field--name-field-image-featured,
+    .field--name-field-image {
+      margin: 0;
     }
     .color-overlay {
       opacity: 0;
@@ -216,16 +223,17 @@
   font-weight: 700;
   font-size: 1.4rem;
   margin: 1rem 0 0;
+  padding: 0 2rem;
 }
 
 [id="nkh_resource_list"] > [id="edit-resource"] {
   display: flex;
   flex-wrap: wrap;
   align-items: start;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 .resource-container-inline {
-  max-width: 48rem;
+  max-width: 50rem;
   padding: 3rem;
   text-align: left;
   //make sure that each resource is centered once the browser gets really narrow
@@ -234,12 +242,17 @@
     margin: 0;
   }
   @include breakpoint($min1120) {
-    width: 48rem;
+    width: 50rem;
     max-width: 50%;
   }
   [id="resource_center_actions"] button, [id="resource_center_actions"] input[type="submit"] {
     display: block;
     margin: 0 0 .3rem 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.2rem;
+    background-size: 2.5rem;
+    padding: .5rem 1rem .5rem 3rem;
   }
 }
 // the featured resources
@@ -249,10 +262,10 @@
     display: flex;
     flex-wrap: wrap;
     align-items: start;
-    justify-content: space-evenly;
+    justify-content: space-between;
   }
   .views-row {
-    max-width: 48rem;
+    max-width: 50rem;
     padding: 3rem;
     text-align: left;
     margin: auto;
@@ -260,10 +273,16 @@
       margin: 0;
     }
     @include breakpoint($min1120) {
-      width: 48rem;
+      width: 50rem;
       max-width: 33%;
     }
   }
+}
+.block-views-block-featured-resources-block-1 h2,
+.view-featured-resources {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 4rem;
 }
 .js-form-item[class*="form-actions-file-url"]  {
   margin: 1rem 0 0;
@@ -279,19 +298,32 @@
   }
   #content {
     max-width: 1600px;
-    padding: 4rem 0;
+    padding: 0 4rem;
     margin: 0 auto;
   }
+  .region-preface {
+    background: $nkh-orange;
+  }
+}
+.block-resourcecentertitle,
+.block-resourcecenterintroduction {
+  color: $white;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 4rem;
+}
+.block-resourcecentertitle {
+  text-align: center;
 }
 .nkh-resource-center-listing {
   @include breakpoint($min1024) {
     float: right;
-    width: 70%;
+    width: 66%;
   }
 }
 [class*="block-exposedformresource-viewpage"] {
   @include breakpoint($min1024) {
     float: left;
-    width: 30%;
+    width: 33%;
   }
 }

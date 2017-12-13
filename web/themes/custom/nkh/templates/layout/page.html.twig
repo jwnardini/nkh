@@ -109,6 +109,9 @@
   </header>
 
   <main role="main" id="main" class="clearfix">
+  {% if page.preface %}
+    {{ page.preface }}
+  {% endif %}
     <div id="content" tabindex="-1">
       {% if is_front %}
         <div class="front_hero">
@@ -123,9 +126,6 @@
             </div>
           </div>
         </div>
-      {% endif %}
-      {% if page.preface %}
-        {{ page.preface }}
       {% endif %}
       {{ page.content }}
     </div>
