@@ -27,7 +27,7 @@ button.toggle-close{
   display: block;
   opacity: 1;
   padding: 1.4rem 0;
-  .text-formatted{
+  .text-formatted {
     max-width: 70%;
     position: relative;
     z-index: 2;
@@ -47,6 +47,7 @@ button.toggle-close{
       line-height: 1.8;
       @include grit-clip-white;
     }
+
     a{
       font-weight: 700;
       text-transform: uppercase;
@@ -54,8 +55,12 @@ button.toggle-close{
         content: none;
       }
     }
+    > *, a {
+      color: $white;
+      -webkit-mask-size: 500px;      
+    }
   }
-  &.hide{
+  &.hide {
     opacity: 0;
     display: none;
   }
