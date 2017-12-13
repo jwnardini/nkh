@@ -236,15 +236,9 @@ class SingleResource extends FormBase {
    * {@inheritdoc}
    */
   public function zipResourcesCallback(array &$form, FormStateInterface $form_state) {
-    $form['resource_container']['zip_link'] = [
-      '#type' => 'textfield',
-      '#value' => $form_state->get('zip_url'),
-      '#attributes' => [
-        'id' => 'resource_zip_link',
-        'readonly' => 'readonly',
-      ],
-    ];
-    return $form['resource_container']['zip_link'];
+    $response = new AjaxResponse();
+    $response->addCommand(new InvokeCommand(NULL, 'downloadZip', [$form_state->get('zip_url')]));
+    return $response;
   }
 
   /**
