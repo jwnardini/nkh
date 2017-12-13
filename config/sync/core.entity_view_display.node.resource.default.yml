@@ -63,14 +63,6 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  field_taxonomy_audience:
-    weight: 8
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
   field_upload:
     weight: 1
     label: hidden
@@ -95,6 +87,7 @@ hidden:
   field_cta_ref: true
   field_file: true
   field_file_type: true
+  field_taxonomy_audience: true
   field_taxonomy_location: true
   field_taxonomy_resource: true
   field_teaser: true
