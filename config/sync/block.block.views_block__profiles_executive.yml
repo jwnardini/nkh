@@ -12,7 +12,7 @@ dependencies:
 id: views_block__profiles_executive
 theme: nkh
 region: content
-weight: -18
+weight: -20
 provider: null
 plugin: 'views_block:profiles-block_1'
 settings:

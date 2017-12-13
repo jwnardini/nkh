@@ -11,7 +11,7 @@ _core:
 id: nkh_breadcrumbs
 theme: nkh
 region: disabled
-weight: -8
+weight: -31
 provider: null
 plugin: system_breadcrumb_block
 settings:

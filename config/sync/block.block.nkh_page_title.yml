@@ -9,7 +9,7 @@ _core:
 id: nkh_page_title
 theme: nkh
 region: disabled
-weight: -10
+weight: -32
 provider: null
 plugin: page_title_block
 settings:

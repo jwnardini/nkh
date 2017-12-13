@@ -19,6 +19,7 @@ libraries-override:
 regions:
   alert: Alert
   header: Header
+  preface: Preface
   content: Content
   postscript: Postscript
   prefooter: Prefooter

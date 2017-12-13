@@ -12,7 +12,7 @@ dependencies:
 id: views_block__our_work_our_work
 theme: nkh
 region: content
-weight: -26
+weight: -28
 provider: null
 plugin: 'views_block:our_work-our_work'
 settings:

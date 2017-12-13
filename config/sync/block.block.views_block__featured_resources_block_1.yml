@@ -11,8 +11,8 @@ dependencies:
     - nkh
 id: views_block__featured_resources_block_1
 theme: nkh
-region: content
-weight: -34
+region: preface
+weight: -33
 provider: null
 plugin: 'views_block:featured_resources-block_1'
 settings:

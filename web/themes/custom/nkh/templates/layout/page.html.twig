@@ -123,6 +123,9 @@
           </div>
         </div>
       {% endif %}
+      {% if page.preface %}
+        {{ page.preface }}
+      {% endif %}
       {{ page.content }}
     </div>
   </main>
