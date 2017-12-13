@@ -1,0 +1,25 @@
+uuid: c231b007-b858-438f-91a2-19395a6a306b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: featured_resources
+label: 'Featured Resources'
+handler: simple
+handler_configuration: {  }
+entity_settings:
+  target_type: node
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      resource: resource
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+queue_settings:
+  min_size: 0
+  max_size: null
+  act_as_queue: true
+  reverse_in_admin: false
