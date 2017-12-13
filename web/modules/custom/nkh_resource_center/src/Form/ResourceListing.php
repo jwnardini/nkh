@@ -6,7 +6,9 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Drupal\nkh_resource_center\Form\NKHResourceCenter;
-use Drupal\views\Views;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\InvokeCommand;
+
 /**
  * Implements Resource Center Node form.
  */
@@ -71,14 +73,14 @@ class ResourceListing extends FormBase {
         '#type' => 'html_tag',
         '#tag' => 'button',
         '#value' => t('Download Resource'),
-        '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterSingleDownload("' . file_create_url($current_row[1]) . '")'],
+        '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterSingleDownload(event,"' . file_create_url($current_row[1]) . '")'],
       ];
       // TODO: Pass something to function to know which link to copy
       $form['resource'][$row]['form_actions']['copy_single'] = [
         '#type' => 'html_tag',
         '#tag' => 'button',
-        '#value' => t('Copy to Clipboard'),
-        '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterCopy(' . $row . ')'],
+        '#value' => t('Copy a Shareable Link'),
+        '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterCopy(event, ' . $row . ')'],
       ];
 
       $form['resource'][$row]['form_actions']['add_resource'] = [
@@ -121,11 +123,6 @@ class ResourceListing extends FormBase {
       '#type' => 'pager',
     ];
 
-    $form['block'] = [
-      '#type' => 'item',
-      '#markup' => render($test),
-    ];
-
     if (count(\Drupal::request()->getSession()->get('nkh_bulk_download')) > 0) {
       $form['resource_container']['download_zip'] = [
         '#type' => 'submit',
@@ -142,21 +139,12 @@ class ResourceListing extends FormBase {
       ];
     }
 
-    $form['resource_container']['zip_link'] = [
-      '#type' => 'textfield',
-      '#value' => $form_state->get('zip_url'),
-      '#attributes' => [
-        'id' => 'resource_zip_link',
-        'readonly' => 'readonly',
-      ],
-    ];
-
     $form['resource_container']['collapse'] = [
       '#type' => 'html_tag',
       '#tag' => 'button',
       '#value' => t('Collapse Items'),
       '#attributes' => [
-        'onclick' => 'Drupal.behaviors.nkhCollapseItems()',
+        'onclick' => 'Drupal.behaviors.nkhCollapseItems(event)',
         'id' => 'resource_collapse_button',
       ],
     ];
@@ -201,7 +189,7 @@ class ResourceListing extends FormBase {
         ];
       }
     }
-
+    $form['#attached']['library'][] = 'nkh_resource_center/single_form';
     return $form;
   }
 
@@ -239,15 +227,10 @@ class ResourceListing extends FormBase {
    * {@inheritdoc}
    */
   public function zipResourcesCallback(array &$form, FormStateInterface $form_state) {
-    $form['resource_container']['zip_link'] = [
-      '#type' => 'textfield',
-      '#value' => $form_state->get('zip_url'),
-      '#attributes' => [
-        'id' => 'resource_zip_link',
-        'readonly' => 'readonly',
-      ],
-    ];
-    return $form['resource_container']['zip_link'];
+
+    $response = new AjaxResponse();
+    $response->addCommand(new InvokeCommand(NULL, 'downloadZip', [$form_state->get('zip_url')]));
+    return $response;
   }
 
   /**

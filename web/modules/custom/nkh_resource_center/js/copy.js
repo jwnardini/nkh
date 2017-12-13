@@ -5,8 +5,10 @@
 
 (function (Drupal) {
   'use strict';
-  Drupal.behaviors.nkhResourceCenterCopy = function(id) {
-    event.preventDefault();
+  Drupal.behaviors.nkhResourceCenterCopy = function(e, id) {
+    var e = window.event || e;
+    var targ = e.target || e.srcElement;
+    e.preventDefault();
     var copyPath = document.getElementById('resource_center_file_' + id);
     copyPath.select();
     document.execCommand("copy");

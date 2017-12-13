@@ -4,6 +4,8 @@ namespace Drupal\nkh_resource_center\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\InvokeCommand;
 
 /**
  * Implements Resource Center Node form.
@@ -94,14 +96,14 @@ class SingleResource extends FormBase {
       '#type' => 'html_tag',
       '#tag' => 'button',
       '#value' => t('Download Resource'),
-      '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterSingleDownload("' . file_create_url($file_uri) . '")'],
+      '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterSingleDownload(event,"' . file_create_url($file_uri) . '")'],
     ];
 
     $form['form_header']['form_actions']['copy_single'] = [
       '#type' => 'html_tag',
       '#tag' => 'button',
-      '#value' => t('Copy to Clipboard'),
-      '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterCopy(' . $entity_id . ')'],
+      '#value' => t('Copy a Shareable Link'),
+      '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterCopy(event, ' . $entity_id . ')'],
     ];
 
     $form['form_header']['form_actions']['add_resource'] = [
@@ -157,21 +159,12 @@ class SingleResource extends FormBase {
       ];
     }
 
-    $form['resource_container']['zip_link'] = [
-      '#type' => 'textfield',
-      '#value' => $form_state->get('zip_url'),
-      '#attributes' => [
-        'id' => 'resource_zip_link',
-        'readonly' => 'readonly',
-      ],
-    ];
-
     $form['resource_container']['collapse'] = [
       '#type' => 'html_tag',
       '#tag' => 'button',
       '#value' => t('Collapse Items'),
       '#attributes' => [
-        'onclick' => 'Drupal.behaviors.nkhCollapseItems()',
+        'onclick' => 'Drupal.behaviors.nkhCollapseItems(event)',
         'id' => 'resource_collapse_button',
       ],
     ];
@@ -236,15 +229,9 @@ class SingleResource extends FormBase {
    * {@inheritdoc}
    */
   public function zipResourcesCallback(array &$form, FormStateInterface $form_state) {
-    $form['resource_container']['zip_link'] = [
-      '#type' => 'textfield',
-      '#value' => $form_state->get('zip_url'),
-      '#attributes' => [
-        'id' => 'resource_zip_link',
-        'readonly' => 'readonly',
-      ],
-    ];
-    return $form['resource_container']['zip_link'];
+    $response = new AjaxResponse();
+    $response->addCommand(new InvokeCommand(NULL, 'downloadZip', [$form_state->get('zip_url')]));
+    return $response;
   }
 
   /**
