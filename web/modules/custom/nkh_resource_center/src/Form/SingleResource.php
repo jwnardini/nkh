@@ -96,14 +96,14 @@ class SingleResource extends FormBase {
       '#type' => 'html_tag',
       '#tag' => 'button',
       '#value' => t('Download Resource'),
-      '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterSingleDownload(event,"' . file_create_url($file_uri) . '")'],
+      '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterSingleDownload("' . file_create_url($file_uri) . '")'],
     ];
 
     $form['form_header']['form_actions']['copy_single'] = [
       '#type' => 'html_tag',
       '#tag' => 'button',
-      '#value' => t('Copy a Shareable Link'),
-      '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterCopy(event, ' . $entity_id . ')'],
+      '#value' => t('Copy to Clipboard'),
+      '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterCopy()'],
     ];
 
     $form['form_header']['form_actions']['add_resource'] = [
@@ -120,7 +120,7 @@ class SingleResource extends FormBase {
       '#type' => 'textfield',
       '#value' => file_create_url($file_uri),
       '#attributes' => [
-        'id' => 'resource_center_file_' . $entity_id,
+        'id' => 'resource_center_file',
         'readonly' => 'readonly',
       ],
     ];
@@ -136,7 +136,14 @@ class SingleResource extends FormBase {
       '#suffix' => '</div>',
     ];
 
-    $form['resource_container']['item_count'] = [
+    $form['resource_container']['option'] = [
+      '#type' => 'container',
+      '#attributes' => [
+        'class' => ['nkh_resource_container_options'],
+      ],
+    ];
+
+    $form['resource_container']['option']['item_count'] = [
       '#type' => 'html_tag',
       '#tag' => 'span',
       '#value' => t(count(\Drupal::request()->getSession()->get('nkh_bulk_download')) . ' Items to Download'),
@@ -145,7 +152,7 @@ class SingleResource extends FormBase {
       ],
     ];
     if (count(\Drupal::request()->getSession()->get('nkh_bulk_download')) > 0) {
-      $form['resource_container']['download_zip'] = [
+      $form['resource_container']['option']['download_zip'] = [
         '#type' => 'submit',
         '#value' => t('Download All Items'),
         '#submit' => ['Drupal\nkh_resource_center\Form\NKHResourceCenter::zipResources'],
@@ -159,12 +166,12 @@ class SingleResource extends FormBase {
       ];
     }
 
-    $form['resource_container']['collapse'] = [
+    $form['resource_container']['option']['collapse'] = [
       '#type' => 'html_tag',
       '#tag' => 'button',
       '#value' => t('Collapse Items'),
       '#attributes' => [
-        'onclick' => 'Drupal.behaviors.nkhCollapseItems(event)',
+        'onclick' => 'Drupal.behaviors.nkhCollapseItems()',
         'id' => 'resource_collapse_button',
       ],
     ];
@@ -207,7 +214,7 @@ class SingleResource extends FormBase {
         ];
       }
     }
-
+    $form['#attached']['library'][] = 'nkh_resource_center/single_form';
     return $form;
   }
 
@@ -229,9 +236,15 @@ class SingleResource extends FormBase {
    * {@inheritdoc}
    */
   public function zipResourcesCallback(array &$form, FormStateInterface $form_state) {
-    $response = new AjaxResponse();
-    $response->addCommand(new InvokeCommand(NULL, 'downloadZip', [$form_state->get('zip_url')]));
-    return $response;
+    $form['resource_container']['zip_link'] = [
+      '#type' => 'textfield',
+      '#value' => $form_state->get('zip_url'),
+      '#attributes' => [
+        'id' => 'resource_zip_link',
+        'readonly' => 'readonly',
+      ],
+    ];
+    return $form['resource_container']['zip_link'];
   }
 
   /**
