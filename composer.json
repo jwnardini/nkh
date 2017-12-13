@@ -63,6 +63,7 @@
         "drupal/scheduler": "^1.0@RC",
         "drupal/search_api": "^1.5",
         "drupal/search_api_autocomplete": "^1.0@beta",
+        "drupal/search_api_page": "^1.0@alpha",
         "drupal/search_api_solr": "^1.1",
         "drupal/seckit": "^1.0@alpha",
         "drupal/session_limit": "^1.0@beta",

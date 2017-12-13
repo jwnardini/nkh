@@ -1,0 +1,61 @@
+<?php
+
+/**
+ * @file
+ * Attaches form as field to view mode.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+
+/**
+ * Implements hook_page_attachments().
+ */
+function nkh_resource_center_page_attachments(array &$attachments) {
+  $attachments['#attached']['library'][] = 'nkh_resource_center/single_form';
+}
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function nkh_resource_center_entity_extra_field_info() {
+  $extra = [];
+  $extra['node']['resource']['display']['nkh_resource_single_form'] = [
+    'label' => t('Resource Center Single Resource Form'),
+    'description' => t('Resource Center Form for individual nodes.'),
+    'weight' => 0,
+    'visible' => FALSE,
+  ];
+  return $extra;
+
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function nkh_resource_center_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  if ($entity->getType() == 'resource') {
+    $entity_id = $entity->id();
+    if ($view_mode == 'full') {
+      if ($display->getComponent('nkh_resource_single_form')) {
+        $form = \Drupal::formBuilder()->getForm('Drupal\nkh_resource_center\Form\SingleResource', $entity_id);
+        $build['nkh_resource_single_form'] = $form;
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_hook_alter().
+ */
+function nkh_resource_center_theme_suggestions_alter(array &$suggestions, array $variables, $hook) {
+  if (isset($variables['element']) && isset($variables['element']['#type']) && $variables['element']['#type'] == 'form') {
+    $form_id = $variables['element']['#form_id'];
+    $original_theme_hook = $variables['theme_hook_original'];
+
+    if ($form_id == 'nkh_resource_center_single') {
+      $suggestions[] = $original_theme_hook . '__' . str_replace('-', '_', $variables['element']['#id']);
+    }
+    return $suggestions;
+  }
+}

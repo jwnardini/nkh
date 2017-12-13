@@ -1,0 +1,63 @@
+uuid: 9082a714-c2d0-4442-bfa1-49ff46de8acf
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.solr_resource_index
+    - views.view.resource_center_search
+  module:
+    - search_api
+id: location_taxonomy
+name: 'Location Taxonomy'
+url_alias: location
+weight: 0
+min_count: 1
+show_only_one_result: false
+field_identifier: field_taxonomy_location
+facet_source_id: 'search_api:views_page__resource_center_search__page_1'
+widget:
+  type: dropdown
+  config:
+    show_numbers: false
+    default_option_label: 'Select a Location'
+query_operator: or
+use_hierarchy: false
+expand_hierarchy: false
+enable_parent_when_child_gets_disabled: true
+hard_limit: 0
+exclude: false
+only_visible_when_facet_source_is_visible: true
+processor_configs:
+  active_widget_order:
+    processor_id: active_widget_order
+    weights:
+      sort: -10
+    settings:
+      sort: DESC
+  count_limit:
+    processor_id: count_limit
+    weights:
+      build: -10
+    settings:
+      minimum_items: 1
+      maximum_items: null
+  count_widget_order:
+    processor_id: count_widget_order
+    weights:
+      sort: -10
+    settings:
+      sort: DESC
+  display_value_widget_order:
+    processor_id: display_value_widget_order
+    weights:
+      sort: -10
+    settings:
+      sort: ASC
+  url_processor_handler:
+    processor_id: url_processor_handler
+    weights:
+      pre_query: -10
+      build: -10
+    settings: {  }
+empty_behavior:
+  behavior: none

@@ -1,0 +1,28 @@
+uuid: 899a8301-b006-4609-8169-0f39dbc774b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.location
+  module:
+    - facets
+    - system
+  theme:
+    - nkh
+id: location
+theme: nkh
+region: content
+weight: -11
+provider: null
+plugin: 'facet_block:location'
+settings:
+  id: 'facet_block:location'
+  label: 'Filter by Location'
+  provider: facets
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: /resource-center/results
+    negate: false
+    context_mapping: {  }

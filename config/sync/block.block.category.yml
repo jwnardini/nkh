@@ -1,0 +1,28 @@
+uuid: 750e29af-89e2-4022-bd7e-1f5616967674
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.category
+  module:
+    - facets
+    - system
+  theme:
+    - nkh
+id: category
+theme: nkh
+region: content
+weight: -10
+provider: null
+plugin: 'facet_block:category'
+settings:
+  id: 'facet_block:category'
+  label: 'Filter by Category'
+  provider: facets
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: /resource-center/results
+    negate: false
+    context_mapping: {  }

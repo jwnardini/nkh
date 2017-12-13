@@ -1,0 +1,64 @@
+uuid: 91e3da83-5d3a-4e7e-9684-7c0db28c5ff5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - search_api.server.aws_solr_general_core
+    - core.entity_view_mode.node.teaser
+  module:
+    - search_api
+    - node
+id: solr_general_index
+name: 'Solr General Index'
+description: ''
+read_only: false
+field_settings:
+  rendered_item:
+    label: 'Rendered HTML output'
+    property_path: rendered_item
+    type: text
+    configuration:
+      roles:
+        anonymous: anonymous
+      view_mode:
+        'entity:node':
+          blog: teaser
+          campaign: teaser
+          news: teaser
+          page: teaser
+          partner: teaser
+          profile: teaser
+          program: teaser
+  body:
+    label: Body
+    datasource_id: 'entity:node'
+    property_path: body
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.body
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: string
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: true
+      selected:
+        - resource
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  rendered_item: {  }
+tracker_settings:
+  default: {  }
+options:
+  index_directly: true
+  cron_limit: 50
+server: aws_solr_general_core

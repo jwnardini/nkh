@@ -89,3 +89,4 @@ hidden:
   field_taxonomy_location: true
   field_taxonomy_resource: true
   field_teaser: true
+  nkh_resource_single_form: true

@@ -1,0 +1,30 @@
+uuid: 1ecc3513-c204-4975-8fde-53229f9526fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.search_resource_center
+  module:
+    - system
+    - views
+  theme:
+    - nkh
+id: views_block__search_resource_center_block_1
+theme: nkh
+region: content
+weight: -12
+provider: null
+plugin: 'views_block:search_resource_center-block_1'
+settings:
+  id: 'views_block:search_resource_center-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: resource-center/results
+    negate: false
+    context_mapping: {  }

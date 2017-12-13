@@ -1,0 +1,6 @@
+name: NKH Resource Center
+description: Adds Bulk Download and other download options to NKH.
+package: Custom
+
+type: module
+core: 8.x

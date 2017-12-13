@@ -66,6 +66,7 @@ module:
   nkh_news_conditional: 0
   nkh_partner_migrate: 0
   nkh_reference_conditional: 0
+  nkh_resource_center: 0
   nkh_resource_migrate: 0
   node: 0
   node_title_help_text: 0
@@ -88,6 +89,7 @@ module:
   search: 0
   search_api: 0
   search_api_autocomplete: 0
+  search_api_db: 0
   search_api_solr: 0
   seckit: 0
   session_limit: 0

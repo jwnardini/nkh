@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - nkh_resource_center
+id: node.nkh_resource_center
+label: 'Single Resource Form Content'
+targetEntityType: node
+cache: true
