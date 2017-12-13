@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.resource.field_file
     - field.field.node.resource.field_file_type
     - field.field.node.resource.field_image_featured
+    - field.field.node.resource.field_taxonomy_audience
     - field.field.node.resource.field_taxonomy_location
     - field.field.node.resource.field_taxonomy_resource
     - field.field.node.resource.field_teaser
@@ -32,7 +33,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 7
+    weight: 8
     settings:
       rows: 9
       summary_rows: 3
@@ -41,12 +42,12 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 16
+    weight: 17
     region: content
     settings: {  }
     third_party_settings: {  }
   field_cta_ref:
-    weight: 22
+    weight: 23
     settings:
       form_mode: default
       override_labels: true
@@ -61,22 +62,6 @@ content:
     type: inline_entity_form_complex
     region: content
   field_desc_corporate:
-    weight: 8
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-    type: text_textarea
-    region: content
-  field_desc_dineout:
-    weight: 10
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-    type: text_textarea
-    region: content
-  field_desc_local:
     weight: 9
     settings:
       rows: 5
@@ -84,14 +69,30 @@ content:
     third_party_settings: {  }
     type: text_textarea
     region: content
+  field_desc_dineout:
+    weight: 11
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_desc_local:
+    weight: 10
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
   field_file_type:
-    weight: 4
+    weight: 5
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
     region: content
   field_image_featured:
-    weight: 11
+    weight: 12
     settings:
       form_mode: default
       override_labels: true
@@ -105,8 +106,14 @@ content:
         entity_browser_id: images
     type: inline_entity_form_complex
     region: content
+  field_taxonomy_audience:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
   field_taxonomy_location:
-    weight: 12
+    weight: 13
     settings:
       match_operator: CONTAINS
       size: 60
@@ -133,14 +140,14 @@ content:
     type: text_textarea
     region: content
   field_upload:
-    weight: 5
+    weight: 6
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
     region: content
   field_video:
-    weight: 6
+    weight: 7
     settings:
       form_mode: default
       override_labels: true
@@ -156,7 +163,7 @@ content:
     region: content
   moderation_state:
     type: moderation_state_default
-    weight: 20
+    weight: 21
     settings: {  }
     region: content
     third_party_settings: {  }
@@ -170,17 +177,17 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 14
+    weight: 15
     region: content
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 19
+    weight: 20
     region: content
     settings: {  }
     third_party_settings: {  }
   scheduler_settings:
-    weight: 17
+    weight: 18
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -188,14 +195,14 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 21
+    weight: 22
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 13
+    weight: 14
     region: content
     third_party_settings: {  }
   title:
@@ -208,7 +215,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 15
+    weight: 16
     settings:
       match_operator: CONTAINS
       size: 60
@@ -217,7 +224,7 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 18
+    weight: 19
     region: content
     settings: {  }
     third_party_settings: {  }
