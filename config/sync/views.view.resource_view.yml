@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_file_type
     - node.type.resource
+    - taxonomy.vocabulary.audience
     - taxonomy.vocabulary.file_type
     - taxonomy.vocabulary.location
     - taxonomy.vocabulary.resource
@@ -61,6 +62,11 @@ display:
               secondary_label: 'Advanced options'
               autosubmit: true
               autosubmit_hide: true
+            title:
+              bef_format: default
+              more_options:
+                is_secondary: false
+                placeholder_text: ''
             field_taxonomy_location_target_id:
               bef_format: default
               more_options:
@@ -78,6 +84,14 @@ display:
                 rewrite:
                   filter_rewrite_values: ''
             field_file_type_target_id:
+              bef_format: bef
+              more_options:
+                bef_select_all_none: false
+                bef_collapsible: false
+                is_secondary: false
+                rewrite:
+                  filter_rewrite_values: ''
+            field_taxonomy_audience_target_id:
               bef_format: bef
               more_options:
                 bef_select_all_none: false
@@ -471,6 +485,53 @@ display:
           entity_field: type
           plugin_id: bundle
           group: 1
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: title_op
+            label: 'Search by Keyword'
+            description: ''
+            use_operator: false
+            operator: title_op
+            identifier: title
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              author: '0'
+              editor: '0'
+              publisher: '0'
+              resource_editor: '0'
+              seo: '0'
+              user_creator: '0'
+              content_administrator: '0'
+              administrator: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: title
+          plugin_id: string
         field_taxonomy_location_target_id:
           id: field_taxonomy_location_target_id
           table: node__field_taxonomy_location
@@ -484,7 +545,7 @@ display:
           exposed: true
           expose:
             operator_id: field_taxonomy_location_target_id_op
-            label: 'Location Taxonomy (field_taxonomy_location)'
+            label: 'Select a Location'
             description: ''
             use_operator: false
             operator: field_taxonomy_location_target_id_op
@@ -588,7 +649,7 @@ display:
           exposed: true
           expose:
             operator_id: field_file_type_target_id_op
-            label: 'File Type (field_file_type)'
+            label: 'Filter by File Type'
             description: ''
             use_operator: false
             operator: field_file_type_target_id_op
@@ -624,6 +685,58 @@ display:
           type: select
           limit: true
           vid: file_type
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+        field_taxonomy_audience_target_id:
+          id: field_taxonomy_audience_target_id
+          table: node__field_taxonomy_audience
+          field: field_taxonomy_audience_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_taxonomy_audience_target_id_op
+            label: 'Filter by Audience'
+            description: ''
+            use_operator: false
+            operator: field_taxonomy_audience_target_id_op
+            identifier: field_taxonomy_audience_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              author: '0'
+              editor: '0'
+              publisher: '0'
+              resource_editor: '0'
+              seo: '0'
+              user_creator: '0'
+              content_administrator: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: audience
           hierarchy: false
           error_message: true
           plugin_id: taxonomy_index_tid
