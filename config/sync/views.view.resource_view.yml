@@ -597,7 +597,7 @@ display:
           exposed: true
           expose:
             operator_id: field_taxonomy_resource_target_id_op
-            label: 'Resource Category (field_taxonomy_resource)'
+            label: 'Filter by Category'
             description: ''
             use_operator: false
             operator: field_taxonomy_resource_target_id_op
