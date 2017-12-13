@@ -9,7 +9,7 @@ dependencies:
 id: messages
 theme: nkh
 region: content
-weight: -28
+weight: -32
 provider: null
 plugin: system_messages_block
 settings:

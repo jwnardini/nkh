@@ -2,9 +2,39 @@
 	background: url("../svg/svg-sprite.svg") no-repeat;
 }
 
+.svg-add {
+	@include svg-sprite;
+	background-position: 0 99.17355371900827%;
+}
+
+.svg-add-dims {
+	width: 20.6px;
+	height: 20.6px;
+}
+
+.svg-copy {
+	@include svg-sprite;
+	background-position: 99.39148073022312% 0;
+}
+
+.svg-copy-dims {
+	width: 23.7px;
+	height: 23.7px;
+}
+
+.svg-download {
+	@include svg-sprite;
+	background-position: 96.64694280078895% 48.36734693877551%;
+}
+
+.svg-download-dims {
+	width: 22.3px;
+	height: 20px;
+}
+
 .svg-home {
 	@include svg-sprite;
-	background-position: 100% 0;
+	background-position: 51.02040816326531% 0;
 }
 
 .svg-home-dims {
@@ -24,7 +54,7 @@
 
 .svg-tv {
 	@include svg-sprite;
-	background-position: 0 100%;
+	background-position: 0 53.333333333333336%;
 }
 
 .svg-tv-dims {
@@ -34,7 +64,7 @@
 
 .svg-twitter {
 	@include svg-sprite;
-	background-position: 96% 100%;
+	background-position: 48.97959183673469% 53.333333333333336%;
 }
 
 .svg-twitter-dims {

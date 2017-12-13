@@ -71,7 +71,15 @@
 %}
 <article{{ attributes.addClass(classes) }}>
   <div class="share-section">
-    {{ drupal_block('nkh_breadcrumbs') }}
+  <div id="block-nkh-breadcrumbs" class="block block-system block-system-breadcrumb-block block-nkh-breadcrumbs">
+
+
+  <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+  <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+  <ol><li><a href="/resource-center">Back to Resource Center</a></li>
+  </ol>
+</nav>
+</div>
   </div>
 
 

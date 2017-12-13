@@ -32,8 +32,8 @@
     max-width: 1300px;
     margin-top: 3rem;
   }
-  [id="resource_center_title"],
-  [id="resource_center_actions"] {
+  .form-item-form-header-image-featured ~ [id="resource_center_title"],
+  .form-item-form-header-image-featured ~ [id="resource_center_actions"] {
     @include breakpoint($min1120) {
       width: 50%;
       float: right;
@@ -82,29 +82,39 @@
     }
   }
   [id="resource_center_actions"] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
     button,
     input[type="submit"] {
-      background: transparent none;
+      background-color: transparent;
       color: $nkh-text;
       padding-right: 0;
       padding-left: 4rem;
+      margin-left: 1rem;
       font-size: 1.6rem;
-      &:before {
-        @include icon(nkh);
+      background-repeat: no-repeat;
+      background-position: left center;
+      background-size: 3rem;
+      &:hover, &:focus, &:active {
+        text-decoration: underline;
       }
     }
   }
   // the download button
   [data-drupal-selector="edit-form-header-form-actions-download-single"] {
-
+    background: url(../svg/origin/download.svg);
+    margin-left: 0;
   }
   //the copy shareable link button
   [data-drupal-selector="edit-form-header-form-actions-copy-single"] {
-
+    background: url(../svg/origin/copy.svg);
   }
   //the bulk download button
   [id="edit-form-header-form-actions-add-resource"] {
-
+    background: url(../svg/origin/add.svg);
   }
 
 
