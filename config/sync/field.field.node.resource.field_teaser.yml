@@ -11,10 +11,10 @@ dependencies:
 third_party_settings:
   allowed_formats:
     plain_text: plain_text
-    basic_html: '0'
     simple_html: '0'
     full_html: '0'
     restricted_html: '0'
+    basic_html: '0'
     code: '0'
 id: node.resource.field_teaser
 field_name: field_teaser
@@ -22,7 +22,7 @@ entity_type: node
 bundle: resource
 label: 'Summary (Meta Description)'
 description: 'Provide a 160 character (with spaces) summary of this content; it will be used as the meta description and "teaser" content for landing pages across the site.'
-required: true
+required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
