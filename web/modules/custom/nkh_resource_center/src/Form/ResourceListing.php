@@ -50,7 +50,7 @@ class ResourceListing extends FormBase {
     $form_state->set('view_listing', TRUE);
     foreach ($view[0] as $key => $row) {
       $current_row = $this->buildResource($row);
-      $form['resource_container'][$row] = [
+      $form['resource']['resource_item'][$row] = [
         '#type' => 'container',
         '#attributes' => [
           'class' => ['resource-container-inline'],
@@ -58,32 +58,31 @@ class ResourceListing extends FormBase {
         '#tree' => TRUE,
       ];
 
-      $form['resource'][$row]['resource'] = [
+      $form['resource']['resource_item'][$row]['resource'] = [
         '#type' => 'item',
         '#markup' => render($current_row[0]),
       ];
 
-      $form['resource'][$row]['form_actions'] = [
+      $form['resource']['resource_item'][$row]['form_actions'] = [
         '#type' => 'container',
         '#prefix' => '<div id="resource_center_actions">',
         '#suffix' => '</div>',
       ];
 
-      $form['resource'][$row]['form_actions']['download_single'] = [
+      $form['resource']['resource_item'][$row]['form_actions']['download_single'] = [
         '#type' => 'html_tag',
         '#tag' => 'button',
         '#value' => t('Download Resource'),
         '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterSingleDownload(event,"' . file_create_url($current_row[1]) . '")'],
       ];
-      // TODO: Pass something to function to know which link to copy
-      $form['resource'][$row]['form_actions']['copy_single'] = [
+      $form['resource']['resource_item'][$row]['form_actions']['copy_single'] = [
         '#type' => 'html_tag',
         '#tag' => 'button',
         '#value' => t('Copy a Shareable Link'),
         '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterCopy(event, ' . $row . ')'],
       ];
 
-      $form['resource'][$row]['form_actions']['add_resource'] = [
+      $form['resource']['resource_item'][$row]['form_actions']['add_resource'] = [
         '#type' => 'submit',
         '#value' => t('Add to Bulk Download'),
         '#submit' => ['Drupal\nkh_resource_center\Form\NKHResourceCenter::addResource'],
@@ -94,7 +93,7 @@ class ResourceListing extends FormBase {
         '#name' => $current_row[2],
       ];
 
-      $form['resource'][$row]['form_actions']['file_url'] = [
+      $form['resource']['resource_item'][$row]['form_actions']['file_url'] = [
         '#type' => 'textfield',
         '#value' => file_create_url($current_row[1]),
         '#attributes' => [
@@ -104,6 +103,7 @@ class ResourceListing extends FormBase {
       ];
     }
 
+    // Start the Resource Container
     $form['resource_container'] = [
       '#type' => 'container',
       '#prefix' => '<div id="ajax_resource_container">',
