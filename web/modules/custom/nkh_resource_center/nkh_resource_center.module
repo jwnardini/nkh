@@ -56,6 +56,9 @@ function nkh_resource_center_theme_suggestions_alter(array &$suggestions, array 
     if ($form_id == 'nkh_resource_center_single') {
       $suggestions[] = $original_theme_hook . '__' . str_replace('-', '_', $variables['element']['#id']);
     }
+    if ($form_id == 'nkh_resource_center_listing') {
+      $suggestions[] = $original_theme_hook . '__' . str_replace('-', '_', $variables['element']['#id']);
+    }
     return $suggestions;
   }
 }
