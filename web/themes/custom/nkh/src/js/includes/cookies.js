@@ -6,7 +6,7 @@ var Cookies = require('js-cookie');
 
 
     var $ctaCloseButton = $("button.toggle-close.icon-close");
-    var $alertRegion = $(".entity-cta-text.view-cta-references");
+    var $alertRegion = $(".entity--cta-alert.entity--cta__orange");
 
     var $timer = 1;
     //uncomment the line below for testing. It will set the timer to one minute only.
