@@ -74,7 +74,6 @@
 <div class="header-section {% if content.field_image_banner|render|striptags %}header-section__has-image{% endif %}">
   {{ content.field_image_banner }}
   <div class="header-section__overlay">
-    {{ content.field_taxonomy_series }}
     <h1>{{ drupal_title() }}</h1>
   </div>
 </div>
@@ -85,7 +84,7 @@
 
   <div{{ content_attributes.addClass('node__content') }}>
 
-    {{ content|without('field_image_banner','field_image_featured', 'field_teaser') }}
+    {{ content|without('field_image_banner','field_image_featured', 'field_teaser', 'field_taxonomy_issue') }}
   </div>
 
 </article>
