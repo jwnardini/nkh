@@ -130,15 +130,22 @@ abstract class NKHResourceCenter extends FormBase {
   public static function getViewData($name) {
     $view = Views::getView($name);
     $result = [];
+    $args = [];
     if (is_object($view)) {
+      
+      $view->setDisplay('block_1');
+      $view->setArguments($args);
+      $view->preExecute();
+      //$view->display_handler->setOption('path', 'resource-center');
       $view->execute();
       $view->render();
     }
 
     foreach ($view->result as $row) {
-      $result[] = $row->_item->getOriginalObject()->getValue()->id();
+      $result[] = $row->nid;
     }
-    return $result;
+    $whole_view = [$result, $view];
+    return $whole_view;
   }
 
 }

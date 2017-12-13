@@ -6,7 +6,7 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Drupal\nkh_resource_center\Form\NKHResourceCenter;
-
+use Drupal\views\Views;
 /**
  * Implements Resource Center Node form.
  */
@@ -25,12 +25,13 @@ class ResourceListing extends FormBase {
    * @todo Add add exeception if no $entity_id
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $view_id = 'solr_resources';
+    $view_id = 'resource_view';
     $view = NKHResourceCenter::getViewData($view_id);
     // Return 404 if there is no view.
     if ($view == NULL) {
       throw new NotFoundHttpException();
     }
+
     $field_count = $form_state->get('field_deltas');
     $form_state->set('zip_url', '');
     $form_state->set('resource_list_state', 'closed');
@@ -45,7 +46,7 @@ class ResourceListing extends FormBase {
     ];
 
     $form_state->set('view_listing', TRUE);
-    foreach ($view as $key => $row) {
+    foreach ($view[0] as $key => $row) {
       $current_row = $this->buildResource($row);
       $form['resource_container'][$row] = [
         '#type' => 'container',
@@ -72,7 +73,7 @@ class ResourceListing extends FormBase {
         '#value' => t('Download Resource'),
         '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterSingleDownload("' . file_create_url($current_row[1]) . '")'],
       ];
-
+      // TODO: Pass something to function to know which link to copy
       $form['resource'][$row]['form_actions']['copy_single'] = [
         '#type' => 'html_tag',
         '#tag' => 'button',
@@ -99,96 +100,108 @@ class ResourceListing extends FormBase {
           'readonly' => 'readonly',
         ],
       ];
+    }
 
-      $form['resource_container'] = [
-        '#type' => 'container',
-        '#prefix' => '<div id="ajax_resource_container">',
-        '#suffix' => '</div>',
-      ];
+    $form['resource_container'] = [
+      '#type' => 'container',
+      '#prefix' => '<div id="ajax_resource_container">',
+      '#suffix' => '</div>',
+    ];
 
-      $form['resource_container']['item_count'] = [
-        '#type' => 'html_tag',
-        '#tag' => 'span',
-        '#value' => t(count(\Drupal::request()->getSession()->get('nkh_bulk_download')) . ' Items to Download'),
+    $form['resource_container']['item_count'] = [
+      '#type' => 'html_tag',
+      '#tag' => 'span',
+      '#value' => t(count(\Drupal::request()->getSession()->get('nkh_bulk_download')) . ' Items to Download'),
+      '#attributes' => [
+        'class' => 'resource-item-count',
+      ],
+    ];
+  
+    $form['pager'] = [
+      '#type' => 'pager',
+    ];
+
+    $form['block'] = [
+      '#type' => 'item',
+      '#markup' => render($test),
+    ];
+
+    if (count(\Drupal::request()->getSession()->get('nkh_bulk_download')) > 0) {
+      $form['resource_container']['download_zip'] = [
+        '#type' => 'submit',
+        '#value' => t('Download All Items'),
+        '#submit' => ['Drupal\nkh_resource_center\Form\NKHResourceCenter::zipResources'],
+        // TODO When clicked need to just open the link in a new window and instead of copying
+        '#ajax' => [
+          'callback' => '::zipResourcesCallback',
+          'wrapper' => 'resource_zip_link',
+        ],
         '#attributes' => [
-          'class' => 'resource-item-count',
+          'class' => ['button'],
         ],
       ];
+    }
 
-      if (count(\Drupal::request()->getSession()->get('nkh_bulk_download')) > 0) {
-        $form['resource_container']['download_zip'] = [
-          '#type' => 'submit',
-          '#value' => t('Download All Items'),
-          '#submit' => ['::zipResources'],
-          '#ajax' => [
-            'callback' => '::zipResourcesCallback',
-            'wrapper' => 'resource_zip_link',
-          ],
+    $form['resource_container']['zip_link'] = [
+      '#type' => 'textfield',
+      '#value' => $form_state->get('zip_url'),
+      '#attributes' => [
+        'id' => 'resource_zip_link',
+        'readonly' => 'readonly',
+      ],
+    ];
+
+    $form['resource_container']['collapse'] = [
+      '#type' => 'html_tag',
+      '#tag' => 'button',
+      '#value' => t('Collapse Items'),
+      '#attributes' => [
+        'onclick' => 'Drupal.behaviors.nkhCollapseItems()',
+        'id' => 'resource_collapse_button',
+      ],
+    ];
+
+    $form['resource_container']['resource_list'] = [
+      '#type' => 'container',
+      '#prefix' => '<div id="nkh_resource_list" class="' . $form_state->get('resource_list_state') . '">',
+      '#suffix' => '</div>',
+    ];
+
+    if (\Drupal::request()->getSession()->get('nkh_bulk_download')) {
+      foreach (\Drupal::request()->getSession()->get('nkh_bulk_download') as $key => $value) {
+        $form['resource_container']['resource_list'][$value[0]] = [
+          '#type' => 'container',
           '#attributes' => [
-            'class' => ['button'],
+            'class' => ['container-inline'],
+          ],
+          '#tree' => TRUE,
+        ];
+
+        $form['resource_container']['resource_list'][$value[0]]['resource_display'] = [
+          '#type' => 'html_tag',
+          '#tag' => 'a',
+          '#value' => file_create_url($value[1]),
+          '#attributes' => [
+            'href' => file_create_url($value[1]),
           ],
         ];
-      }
 
-      $form['resource_container']['zip_link'] = [
-        '#type' => 'textfield',
-        '#value' => $form_state->get('zip_url'),
-        '#attributes' => [
-          'id' => 'resource_zip_link',
-          'readonly' => 'readonly',
-        ],
-      ];
-      $form['resource_container']['collapse'] = [
-        '#type' => 'html_tag',
-        '#tag' => 'button',
-        '#value' => t('Collapse Items'),
-        '#attributes' => [
-          'onclick' => 'Drupal.behaviors.nkhCollapseItems()',
-          'id' => 'resource_collapse_button',
-        ],
-      ];
-
-      $form['resource_container']['resource_list'] = [
-        '#type' => 'container',
-        '#prefix' => '<div id="nkh_resource_list" class="' . $form_state->get('resource_list_state') . '">',
-        '#suffix' => '</div>',
-      ];
-
-      if (\Drupal::request()->getSession()->get('nkh_bulk_download')) {
-        foreach (\Drupal::request()->getSession()->get('nkh_bulk_download') as $key => $value) {
-          $form['resource_container']['resource_list'][$value[0]] = [
-            '#type' => 'container',
-            '#attributes' => [
-              'class' => ['container-inline'],
-            ],
-            '#tree' => TRUE,
-          ];
-
-          $form['resource_container']['resource_list'][$value[0]]['resource_display'] = [
-            '#type' => 'html_tag',
-            '#tag' => 'a',
-            '#value' => file_create_url($value[1]),
-            '#attributes' => [
-              'href' => file_create_url($value[1]),
-            ],
-          ];
-
-          $form['resource_container']['resource_list'][$value[0]]['remove_resource'] = [
-            '#type' => 'submit',
-            '#value' => t('Remove'),
-            '#submit' => ['Drupal\nkh_resource_center\Form\NKHResourceCenter::removeResource'],
-            '#ajax' => [
-              'callback' => '::removeResourceCallback',
-              'wrapper' => 'ajax_resource_container',
-            ],
-            '#attributes' => [
-              'class' => ['button-small'],
-            ],
-            '#name' => 'remove_name_' . $value[0],
-          ];
-        }
+        $form['resource_container']['resource_list'][$value[0]]['remove_resource'] = [
+          '#type' => 'submit',
+          '#value' => t('Remove'),
+          '#submit' => ['Drupal\nkh_resource_center\Form\NKHResourceCenter::removeResource'],
+          '#ajax' => [
+            'callback' => '::removeResourceCallback',
+            'wrapper' => 'ajax_resource_container',
+          ],
+          '#attributes' => [
+            'class' => ['button-small'],
+          ],
+          '#name' => 'remove_name_' . $value[0],
+        ];
       }
     }
+
     return $form;
   }
 
@@ -220,6 +233,21 @@ class ResourceListing extends FormBase {
       $build[] = $node->get('field_upload')->entity->id();
     }
     return $build;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function zipResourcesCallback(array &$form, FormStateInterface $form_state) {
+    $form['resource_container']['zip_link'] = [
+      '#type' => 'textfield',
+      '#value' => $form_state->get('zip_url'),
+      '#attributes' => [
+        'id' => 'resource_zip_link',
+        'readonly' => 'readonly',
+      ],
+    ];
+    return $form['resource_container']['zip_link'];
   }
 
   /**
