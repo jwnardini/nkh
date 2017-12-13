@@ -20,7 +20,7 @@ id: node.resource.body
 field_name: body
 entity_type: node
 bundle: resource
-label: Body
+label: Description
 description: 'The body text will be used to populate the teaser overlay on the listing page. If you would like to add additional information about the resource that isn''t captured in the other description fields, you may also add that text here.'
 required: false
 translatable: true

@@ -1,0 +1,143 @@
+.node--type-resource.node--view-mode-full {
+  .share-section {
+    margin-bottom: 0;
+  }
+  form {
+    margin-top: 0;
+  }
+  .field--label-above {
+    .field__label {
+      @extend h2;
+      font-weight: 700;
+      margin: 1em 0 .25em;
+    }
+    ~ .field--label-above {
+      .field__label {
+        @extend h3;
+      }
+    }
+  }
+}
+
+[id="resource_center_header"] {
+
+  //layout below here
+  > .form-wrapper {
+    @include clearfix;
+    margin: auto;
+    position: relative;
+    z-index: 10;
+    padding: 5rem 5vw 5rem;
+    box-sizing: content-box;
+    max-width: 1300px;
+    margin-top: 3rem;
+  }
+  [id="resource_center_title"],
+  [id="resource_center_actions"] {
+    @include breakpoint($min1120) {
+      width: 50%;
+      float: right;
+      padding: 0 0 0 4rem;
+    }
+    @include breakpoint($min1360) {
+      width: 60%;
+    }
+  }
+  .form-item-form-header-image-featured {
+    margin: 0 auto 2rem;
+    @include breakpoint($min1120) {
+      float: left;
+      width: 50%;
+      padding: 0 4rem 0 0;
+    }
+    @include breakpoint($min1360) {
+      width: 40%;
+    }
+  }
+
+  //styling below here
+
+  h1 {
+    margin: 1rem 0 1rem;
+
+    font-size: 3.8rem;
+    @include breakpoint($min540) {
+      font-size: 4.5rem;
+    }
+    @include breakpoint($min768) {
+      font-size: 5rem;
+    }
+    @include breakpoint($min960) {
+      font-size: 6rem;
+    }
+    @include breakpoint($min1120) {
+      font-size: 8rem;
+    }
+  }
+  [id="resource_center_title"] {
+    padding-top: 3rem;
+    span {
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+  }
+  [id="resource_center_actions"] {
+    button,
+    input[type="submit"] {
+      background: transparent none;
+      color: $nkh-text;
+      padding-right: 0;
+      padding-left: 4rem;
+      font-size: 1.6rem;
+      &:before {
+        @include icon(nkh);
+      }
+    }
+  }
+  // the download button
+  [data-drupal-selector="edit-form-header-form-actions-download-single"] {
+
+  }
+  //the copy shareable link button
+  [data-drupal-selector="edit-form-header-form-actions-copy-single"] {
+
+  }
+  //the bulk download button
+  [id="edit-form-header-form-actions-add-resource"] {
+
+  }
+
+
+}
+//end resource_center_header
+//start download bar
+[id="ajax_resource_container"] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: $white;
+  z-index: 100;
+
+  @include breakpoint($min1024) {
+    bottom: 0;
+    top: auto;
+  }
+}
+[id="edit-resource-container"] {
+  display: flex;
+  flex-direction: column-reverse;
+  @include breakpoint($min1024) {
+    flex-direction: column;
+  }
+}
+[id="nkh_resource_list"] {
+  transition: height .2s;
+  &.open {
+    height: 25vh;
+    overflow-y: scroll;
+  }
+  &.closed {
+    height: 0;
+  }
+}

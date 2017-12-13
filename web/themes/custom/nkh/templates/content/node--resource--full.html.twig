@@ -72,12 +72,11 @@
 <article{{ attributes.addClass(classes) }}>
   <div class="share-section">
     {{ drupal_block('nkh_breadcrumbs') }}
-    {% include directory ~ '/templates/share-links.html.twig' %}
   </div>
 
 
   <div{{ content_attributes.addClass('node__content') }}>
-    {{ content|without('field_upload','field_image_featured', 'field_teaser',  'field_video') }}
+    {{ content }}
   </div>
 
 </article>

@@ -70,11 +70,5 @@
   ]
 %}
 <article{{ attributes.addClass(classes) }}>
-  <div class="share-section">
-    {{ drupal_block('nkh_breadcrumbs') }}
-    {% include directory ~ '/templates/share-links.html.twig' %}
-  </div>
-
     {{ content|without('field_upload','field_image_featured', 'field_teaser',  'field_video') }}
-
 </article>

@@ -20,7 +20,7 @@ id: node.resource.field_desc_dineout
 field_name: field_desc_dineout
 entity_type: node
 bundle: resource
-label: 'DineOut Description'
+label: 'Instructions for DineOut'
 description: 'Describe how to use this resource in a DineOut setting. (short paragraph)'
 required: false
 translatable: false
