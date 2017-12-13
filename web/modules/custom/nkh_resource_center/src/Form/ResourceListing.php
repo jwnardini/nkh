@@ -78,7 +78,7 @@ class ResourceListing extends FormBase {
         '#type' => 'html_tag',
         '#tag' => 'button',
         '#value' => t('Copy to Clipboard'),
-        '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterCopy'],
+        '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterCopy(' . $row . ')'],
       ];
 
       $form['resource'][$row]['form_actions']['add_resource'] = [

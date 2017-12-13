@@ -101,7 +101,7 @@ class SingleResource extends FormBase {
       '#type' => 'html_tag',
       '#tag' => 'button',
       '#value' => t('Copy to Clipboard'),
-      '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterCopy()'],
+      '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterCopy(' . $entity_id . ')'],
     ];
 
     $form['form_header']['form_actions']['add_resource'] = [
@@ -118,7 +118,7 @@ class SingleResource extends FormBase {
       '#type' => 'textfield',
       '#value' => file_create_url($file_uri),
       '#attributes' => [
-        'id' => 'resource_center_file',
+        'id' => 'resource_center_file_' . $entity_id,
         'readonly' => 'readonly',
       ],
     ];
