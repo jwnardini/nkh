@@ -151,3 +151,75 @@
     height: 0;
   }
 }
+
+.resource--teaser {
+  &__overlay {
+    position: relative;
+    min-height: 300px;
+    .field--name-field-image-featured {
+    }
+    .color-overlay {
+      opacity: 0;
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: rgba($nkh-orange, .7);
+      padding: 20px;
+      transition: all .2s;
+    }
+    .field--name-body {
+      margin: 0;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: calc(100% - 40px);
+      height: calc(100% - 40px);
+      background: rgba($nkh-orange, .7);
+      color: $white;
+      opacity: 0;
+      padding: 20px;
+      transition: all .2s;
+    }
+  }
+  &__link {
+    &:after {
+      content: none;
+    }
+    &:hover, &:focus, &:active {
+      .field--name-body,
+      .color-overlay {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.field--name-field-file-type {
+  color: $nkh-text;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+[id="nkh_resource_list"] > [id="edit-resource"] {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: space-evenly;
+}
+.resource-container-inline {
+  width: 48rem;
+  padding: 3rem;
+  text-align: left;
+  //make sure that each resource is centered once the browser gets really narrow
+  margin: auto;
+  @include breakpoint($min540) {
+    margin: 0;
+  }
+  @include breakpoint($min1120) {
+    width: 50%;
+  }
+}
