@@ -273,6 +273,9 @@
     @include breakpoint($min960) {
       font-size: 6rem;
     }
+    @include breakpoint($min1024) {
+      font-size: 7rem;
+    }
     @include breakpoint($min1120) {
       font-size: 8rem;
     }
@@ -282,11 +285,22 @@
 .intro-section {
   text-align: left;
   color: $white;
+  .field--name-field-intro {
+    @include breakpoint($min1024) {
+      font-size: 2.7rem;
+    }
+    @include breakpoint($min1120) {
+      font-size: 3rem;
+    }
+    @include breakpoint($min1360) {
+      font-size: 3.6rem;
+    }
+  }
 }
 
 .header-section__has-featured-image,
 .header-section__has-video {
-  @include breakpoint($min1120) {
+  @include breakpoint($min1024) {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -296,7 +310,7 @@
 
 .header-section__has-featured-image {
   .intro-section {
-    @include breakpoint($min1120) {
+    @include breakpoint($min1024) {
       width: 50%;
       padding: 0 0 0 4rem;
     }
@@ -306,7 +320,7 @@
   }
   .intro-section__image {
     width: 100%;
-    @include breakpoint($min1120) {
+    @include breakpoint($min1024) {
       width: 50%;
       padding: 0 4rem 0 0;
     }
@@ -318,9 +332,9 @@
 
 .header-section__has-video {
   .intro-section {
-    @include breakpoint($min1120) {
+    @include breakpoint($min1024) {
       width: 50%;
-      padding: 0 0 0 4rem;
+      padding: 0 0 0 2rem;
     }
     @include breakpoint($min1360) {
       width: 40%;
@@ -328,10 +342,14 @@
   }
   .intro-section__video {
     width: 100%;
-    @include breakpoint($min1120) {
+    @include breakpoint($min1024) {
       width: 50%;
+      padding: 0 1rem 0 0;
+    }
+    @include breakpoint($min1120) {
       padding: 0 4rem 0 0;
     }
+
     @include breakpoint($min1360) {
       width: 60%;
     }
