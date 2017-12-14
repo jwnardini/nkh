@@ -215,6 +215,8 @@ class ResourceListing extends FormBase {
             'class' => ['button-small'],
           ],
           '#name' => 'remove_name_' . $value[0],
+          '#prefix' => '<div class="remove-resource__wrapper">',
+          '#suffix' => '</div>',
         ];
       }
     }
