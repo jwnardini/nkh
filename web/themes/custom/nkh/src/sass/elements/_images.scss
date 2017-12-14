@@ -111,7 +111,7 @@
         text-decoration: none;
         letter-spacing: -0.025em;
         @include grit-clip-gray;
-
+        @include large-text-sizing;
         @include breakpoint($min1024) {
           order: 1;
           max-width: 36%;
@@ -120,6 +120,7 @@
         *{
           line-height: 1.29;
           font-weight: 700;
+          letter-spacing: -.025em;
         }
         p {
           margin: 0.5em 0;
@@ -129,13 +130,7 @@
           margin-right: .5rem;
           @include large-text-highlight;
         }
-        font-size: 3rem;
-        @include breakpoint($min768) {
-          font-size: 4.4rem;
-        }
-        @include breakpoint($min1024) {
-          font-size: 6rem;
-        }
+
       }
       .field--name-field-caption {
 

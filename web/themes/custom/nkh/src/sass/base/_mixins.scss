@@ -253,3 +253,21 @@
   font-weight: 700;
   padding: 0 2rem;  
 }
+
+@mixin large-text-sizing{
+  font-weight: 700;
+  font-size: 2.4rem;
+  word-break: break-word;
+  @include breakpoint($min480) {
+    font-size: 3rem;
+  }
+  @include breakpoint($min768) {
+    font-size: 3.6rem;
+  }
+  @include breakpoint($min1024) {
+    font-size: 4.8rem;
+  }
+  @include breakpoint($min1360) {
+    font-size: 6rem;
+  }  
+}

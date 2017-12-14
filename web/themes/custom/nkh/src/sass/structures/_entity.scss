@@ -50,7 +50,7 @@
   *{
     color: $white;
     line-height: 1.3;
-    letter-spacing: .1rem;
+    letter-spacing: .01em;
   }
   p {
     margin: 1em 0;
@@ -77,14 +77,10 @@
 .entity--cta-text,
 .view-id-cta_references {
   display: block;
-  font-size: 4rem;
-  @include breakpoint($min768) {
-    font-size: 6rem;
-  }
-  font-weight: 700;
-
+  @include large-text-sizing;
   p{
     @include grit-clip-white;
+    letter-spacing: -.025em;
   }
 }
 
@@ -846,3 +842,5 @@ div[class*="block-views-block-cta-references-"]{
     }
   }
 }
+
+
