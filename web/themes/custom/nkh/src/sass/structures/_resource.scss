@@ -122,31 +122,67 @@
 //start download bar
 [id="ajax_resource_container"] {
   position: fixed;
-  top: 0;
+  top: 0; //setting it to drop down from the top when at mobile
   left: 0;
   width: 100%;
   background: $white;
   z-index: 100;
 
   @include breakpoint($min1024) {
-    bottom: 0;
+    bottom: 0; //setting it to slide up from the bottom at desktop
     top: auto;
   }
 }
 [id="edit-resource-container"] {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column-reverse; //setting it to drop down from the top when at mobile
   @include breakpoint($min1024) {
-    flex-direction: column;
+    flex-direction: column; //setting it to slide up from the bottom at desktop
   }
 }
+// the toolbar across the top of the download tray
 .nkh_resource_container_options {
   display: flex;
   flex-direction: row;
   flex-grow: 1;
   background: $nkh-orange;
   color: $white;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 4rem;
+  @include breakpoint($min1024) {
+    padding: 2rem 4rem;
+  }
+  .resource-item-count {
+    font-weight: 700;
+    font-size: 2.2rem;
+    @include breakpoint($min1024) {
+      font-size: 3rem;
+    }
+  }
+  // download all items button
+  .form-submit {
+    margin: 0 1rem;
+    background: $white;
+    color: $nkh-text;
+    text-transform: uppercase;
+    font-weight: 700;
+    &:hover, &:active, &:focus {
+      background: $white;
+      color: $nkh-orange;
+    }
+  }
+  // the toggle button to open/close the bulk tray
+  [id="resource_collapse_button"] {
+    float: right;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    @include breakpoint($min1024) {
+      font-size: 1.6rem;
+    }
+  }
 }
+// the list of download items in the bulk download tray
 [id="nkh_resource_list"] {
   transition: height .2s;
   &.open {
@@ -155,6 +191,23 @@
   }
   &.closed {
     height: 0;
+  }
+  //the wrapper around the download
+  > div {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1rem 4rem;
+  }
+  // each download
+  .container-inline {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    align-items: center;
+  }
+  // button to remove the download from the bulk list
+  .form-submit {
+    //@include element-invisible;
   }
 }
 
@@ -402,19 +455,27 @@
   }
   form {
     background: $white;
-    padding: 4rem;
+    padding: 1rem 4rem 4rem;
     margin-top: 0;
     position: relative;
   }
   fieldset.form-item {
     border: 0 none transparent;
-    margin: 2rem 0 1rem;
+    margin: 1rem 0;
     float: none;
     @include breakpoint($min1024) {
       width: 100%;
     }
   }
-  legend {
+  .form-item.form-type-textfield,
+  .form-item.form-type-select {
+    margin: 1rem 0 2rem;
+  }
+  .form-type-textfield label {
+    @extend h2;
+    margin-bottom: 1rem;
+  }
+  legend, .form-type-select label {
     font-size: 1.4rem;
     text-transform: uppercase;
     font-weight: 700;
