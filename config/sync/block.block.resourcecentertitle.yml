@@ -2,10 +2,7 @@ uuid: fc57e1d1-54b2-4fa2-9be3-7021c03449aa
 langcode: en
 status: true
 dependencies:
-  content:
-    - 'block_content:basic:53d226e8-0f73-44cd-8591-a9bbb05fb9c2'
   module:
-    - block_content
     - system
   theme:
     - nkh
@@ -18,7 +15,7 @@ plugin: 'block_content:53d226e8-0f73-44cd-8591-a9bbb05fb9c2'
 settings:
   id: 'block_content:53d226e8-0f73-44cd-8591-a9bbb05fb9c2'
   label: 'Resource Center Title'
-  provider: block_content
+  provider: core
   label_display: '0'
   status: true
   info: ''
