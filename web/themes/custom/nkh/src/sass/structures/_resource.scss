@@ -226,7 +226,7 @@
     position: relative;
     height: 36vw;
     overflow: hidden;
-    background: $white;
+    background-color: #E1E1E1;
     margin-bottom: 2rem;
     @include breakpoint($min768){
       height: 23.5vw;
@@ -304,24 +304,31 @@
 }
 //default
 [class*="file-type--"] .resource--teaser__overlay {
-  background: url('/themes/custom/nkh/images/nkh-tile-orange.png') center center no-repeat;
+  background: #E1E1E1 center center no-repeat;
   background-size: cover;
 }
 //word
-.file-type--word-document .resource--teaser__overlay {
-  background-image: url('/themes/custom/nkh/images/nkh-tile-orange.png');
+[class*="file-type--"][class*="word-document"] .resource--teaser__overlay {
+  background-image: url('/themes/custom/nkh/images/resource-word_mini.jpg');
+}
+//video
+[class*="file-type--"][class*="video"] .resource--teaser__overlay {
+  background-image: url('/themes/custom/nkh/images/resource-video_mini.jpg');
 }
 //design files
-.file-type--design-files .resource--teaser__overlay {
-  background-image: url('/themes/custom/nkh/images/nkh-tile-orange.png');
+[class*="file-type--"][class*="design-files"] .resource--teaser__overlay {
+  background-image: url('/themes/custom/nkh/images/resource-design_mini.jpg');
 }
 //images
-.file-type--image .resource--teaser__overlay {
-  background-image: url('/themes/custom/nkh/images/nkh-tile-orange.png');
-}
+// [class*="file-type--"][class*="image"] .resource--teaser__overlay {
+//   background-image: url('/themes/custom/nkh/images/resource-image_mini.jpg');
+// }
 //pdfs
-.file-type--pdf .resource--teaser__overlay {
-  background-image: url('/themes/custom/nkh/images/nkh-tile-orange.png');
+[class*="file-type--"][class*="pdf"] .resource--teaser__overlay {
+  background-image: url('/themes/custom/nkh/images/resource-pdf_mini.jpg');
+}
+[class*="file-type--"][class*="excel"] .resource--teaser__overlay {
+  background-image: url('/themes/custom/nkh/images/resource-excel_mini.jpg');
 }
 
 .field.field--name-field-file-type {
@@ -385,9 +392,9 @@
 // the featured resources
 .block-views-block-featured-resources-block-1 {
   background: $white;
-  .resource--teaser__overlay {
-    background: $nkh-bone;
-  }
+  // .resource--teaser__overlay {
+  //   background-color: $nkh-bone;
+  // }
   .view-content {
     display: flex;
     flex-wrap: wrap;
