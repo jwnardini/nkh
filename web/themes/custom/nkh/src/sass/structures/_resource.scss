@@ -239,7 +239,7 @@
   h3 {
     text-decoration: underline;
     margin: .5rem 0 1rem;
-    padding: 0 2rem;
+    padding: 0 3rem;
     line-height: 1.3;
   }
   &__overlay {
@@ -357,7 +357,7 @@
   font-weight: 700;
   font-size: 1.4rem;
   margin: 1rem 0 0;
-  padding: 0 2rem;
+  padding: 0 3rem;
 }
 
 [id="nkh_resource_list"] > [id="edit-resource"] {
@@ -588,7 +588,7 @@
     @extend h2;
     margin-bottom: 1rem;
   }
-  legend, .form-type-select label {
+  legend, .form-item.form-type-select label {
     font-size: 1.4rem;
     text-transform: uppercase;
     font-weight: 700;
@@ -613,15 +613,18 @@
           border: 0 transparent;
         }
         + label:after {
-          margin-top: 0;
+          margin-top: .4rem;
+          font-size: .8rem;
+          margin-left: .2rem;
         }
       }
     }
   }
   .form-submit {
+    @include link-button;
+    clear: both;
     display: block;
-    width: 100%;
-    margin: 1rem;
+    margin: 1rem auto;
   }
   input.form-text, select.form-select {
     border: 0 transparent;
