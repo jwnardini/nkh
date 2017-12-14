@@ -8,6 +8,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Drupal\nkh_resource_center\Form\NKHResourceCenter;
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\InvokeCommand;
+use Drupal\taxonomy\Entity\Term;
 
 /**
  * Implements Resource Center Node form.
@@ -40,6 +41,31 @@ class ResourceListing extends FormBase {
     $form_state->set('session_name', 'nkh_bulk_download');
     $form['#cache'] = ['max-age' => 0];
     $form['#tree'] = TRUE;
+
+    // Build the query results to show at the top of the form.
+    $query_results_data = $view[1]->getExposedInput();
+    $query_string = '<span class="query-filter__label">Showing: </span>';
+    $query_results = '';
+    foreach ($query_results_data as $key => $result) {
+      if ($key == 'title' && $result != '') {
+        $query_results .= '"' . $result . '", ';
+      }
+      elseif (is_numeric($result)) {
+        $term = Term::load($result);
+        $name = $term->getName();
+        $query_results .= $name . ', ';
+      }
+    }
+
+    if ($query_results_data == NULL) {
+      $query_results .= 'All Resources (A-Z) ';
+    }
+    $query_string .= '<span class="query-filter__results">' . rtrim($query_results, ', ') . '</span>';
+
+    $form['query'] = [
+      '#type' => 'item',
+      '#markup' => $query_string,
+    ];
 
     $form['resource'] = [
       '#type' => 'container',
