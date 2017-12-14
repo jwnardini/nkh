@@ -12,10 +12,6 @@
     background-size: 600px;
     margin: -1rem 0 0 -791px;
   }
-  // & > div{
-  //   overflow-y: visible;
-  //   overflow-x: hidden;
-  // }
   a{
     text-decoration: none;
     &:focus,
@@ -99,7 +95,7 @@
 
     &:nth-child(3n-2){
       .view-series:after{
-        background: url('/themes/custom/nkh/images/nkh-tile-blue.png') 0 0/250px;;
+        background: url('/themes/custom/nkh/images/nkh-tile-blue.png') 0 0/250px;
       }
       a:hover, a:focus, a:active{
         .field--type-image:after{
@@ -109,7 +105,7 @@
     }
     &:nth-child(3n-1){
       .view-series:after{
-        background: url('/themes/custom/nkh/images/nkh-tile-green.png') 0 0/250px;;
+        background: url('/themes/custom/nkh/images/nkh-tile-green.png') 0 0/250px;
       }
       a:hover, a:focus, a:active{
         .field--type-image:after{
@@ -119,7 +115,7 @@
     }
     &:nth-child(3n){
       .view-series:after{
-        background: url('/themes/custom/nkh/images/nkh-tile-gold.png') 0 0/250px;;
+        background: url('/themes/custom/nkh/images/nkh-tile-gold.png') 0 0/250px;
       }
       a:hover, a:focus, a:active {
         .field--type-image:after{
@@ -148,7 +144,7 @@
     color: $white;
     letter-spacing: 0.025em;
     &:after{
-      opacity: .65;
+      opacity: .85;
       content: "";
       position: absolute;
       z-index: -1;
