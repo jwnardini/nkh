@@ -64,7 +64,7 @@ class SingleResource extends FormBase {
       $media_builder = \Drupal::entityTypeManager()->getViewBuilder('media');
       $media_storage = \Drupal::entityTypeManager()->getStorage('media');
       $media_entity = $media_storage->load($mid);
-      $media_build = $media_builder->view($media_entity, 'small_featured_image');
+      $media_build = $media_builder->view($media_entity, 'embed');
       $form['form_header']['image_featured'] = [
         '#type' => 'item',
         '#markup' => render($media_build),
