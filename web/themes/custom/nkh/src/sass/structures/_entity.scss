@@ -745,6 +745,7 @@ div[class*="block-views-block-cta-references-"]{
   .image-section{
     margin: 0;
     position: relative;
+    z-index: 0;
     div{
       margin: 0;
     }
@@ -762,14 +763,14 @@ div[class*="block-views-block-cta-references-"]{
       height: 100%;
       width: 100%;
       position: absolute;
-      mix-blend-mode: color;
       top: 0;
-      background: rgba($nkh-orange, .9);
+      mix-blend-mode: color;
+      background: rgba($nkh-orange, .5);
     }
   }
   .content-section{
-    background: rgba($nkh-orange, .9);
-    position: relative;
+    position: absolute;
+    z-index: 1;
     padding: 2rem 2rem 1rem 3rem;
     @include breakpoint($min768) {
       position: absolute;
@@ -778,18 +779,18 @@ div[class*="block-views-block-cta-references-"]{
       right: 7rem;
       padding: 3rem 3rem 2.5rem 4rem;
     }
+
     &:after{
-      -webkit-mask: url('/themes/custom/nkh/images/nkh-canvas-orange.png') 0 0 / 300%;
-      background: $nkh-orange;
-      display: block;
-      content: '';
-      height: 100%;
-      width: 100%;
+      content: "";
       position: absolute;
-      mix-blend-mode: lighten;
       top: 0;
       left: 0;
-      z-index: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: url('/themes/custom/nkh/images/nkh-tile-orange.png') 0 0/250px;
+      mix-blend-mode: multiply;
+      opacity: .85;
     }
   }
   *{
@@ -802,7 +803,6 @@ div[class*="block-views-block-cta-references-"]{
     margin: 0 0 2rem;
     display: block;
     position: relative;
-    z-index: 100;
     span{
       background-image: linear-gradient(180deg, transparent 0,$white 0);
       background-repeat: no-repeat;
@@ -814,6 +814,9 @@ div[class*="block-views-block-cta-references-"]{
     &:hover span{
       background-position: 0 1.15em;
     }
+  }
+  span.icon{
+    background: none;
   }
   p{
     line-height: 1.6;

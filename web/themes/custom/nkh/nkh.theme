@@ -47,6 +47,11 @@ function nkh_preprocess_eck_entity(&$variables) {
   $variables['entityLinkAdditional'] = $variables['entity']['field_additional_link_text'][0];
   $variables['entityLinkBody'] = $variables['entity']['field_text'][0];
 
+  //check to see if there is a value before establishing it.
+  if($variables['entity']['field_title'][0]['#context']){
+    $variables['entityFieldTitle'] = $variables['entity']['field_title'][0]['#context']['value'];
+  }
+
   //check to see if this is an external link
   if(substr($variables['entityLink'], 0, 1) === '/') {
     $variables['entityLinkExternal'] = false;
