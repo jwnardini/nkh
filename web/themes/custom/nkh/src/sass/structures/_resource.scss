@@ -203,7 +203,8 @@
       padding: 20px;
       transition: all .2s;
     }
-    .field--name-body {
+    .body {
+      display: block;
       margin: 0;
       position: absolute;
       top: 16px;
@@ -225,7 +226,7 @@
       content: none;
     }
     &:hover, &:focus, &:active {
-      .field--name-body,
+      .body,
       .color-overlay {
         opacity: 1;
       }
@@ -346,7 +347,7 @@
   }
   #content {
     max-width: 1600px;
-    padding: 0 4rem;
+    padding: 4rem;
     margin: 0 auto;
   }
   .region-preface {
@@ -356,26 +357,103 @@
 .block-resourcecentertitle,
 .block-resourcecenterintroduction {
   color: $white;
-  max-width: 1140px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 0 4rem;
 }
 .block-resourcecentertitle {
   text-align: center;
-  margin-top: 8rem;
+  padding-top: 8rem;
 }
 .block-resourcecenterintroduction {
-  margin-bottom: 4rem;
+  padding-bottom: 4rem;
 }
 .nkh-resource-center-listing {
   @include breakpoint($min1024) {
     float: right;
+    width: 55%;
+  }
+  @include breakpoint($min1120) {
     width: 66%;
   }
 }
 [class*="block-exposedformresource-viewpage"] {
   @include breakpoint($min1024) {
     float: left;
+    width: 45%;
+    padding: 2rem;
+  }
+  @include breakpoint($min1120) {
     width: 33%;
+  }
+  @include breakpoint($min1360) {
+    padding: 4rem;
+  }
+  position: relative;
+  &:before {
+    content: '';
+    display: block;
+    height: 30rem;
+    width: 60%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url('/themes/custom/nkh/images/nkh-tile-orange.png') 0 0/250px;
+  }
+  form {
+    background: $white;
+    padding: 4rem;
+    margin-top: 0;
+    position: relative;
+  }
+  fieldset.form-item {
+    border: 0 none transparent;
+    margin: 2rem 0 1rem;
+    float: none;
+    @include breakpoint($min1024) {
+      width: 100%;
+    }
+  }
+  legend {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .form-item {
+    margin: .5rem 0;
+    font-size: 1.4rem;
+    label {
+      font-weight: 700;
+    }
+    input[type="radio"],
+    input[type="checkbox"] {
+      + .field-label:before,
+      + label:before {
+        background: $nkh-bone;
+        border: 0 transparent;
+      }
+      &:checked {
+        + .field-label:before,
+        + label:before {
+          background: $nkh-bone;
+          border: 0 transparent;
+        }
+        + label:after {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+  .form-submit {
+    display: block;
+    width: 100%;
+    margin: 1rem;
+  }
+  input.form-text, select.form-select {
+    border: 0 transparent;
+    background: $nkh-bone;
+    height: 4rem;
+    min-width: auto;
+    width: 100%;
   }
 }

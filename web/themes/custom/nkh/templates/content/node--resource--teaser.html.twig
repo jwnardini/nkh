@@ -75,7 +75,7 @@
 <a href="{{ url }}" class="resource--teaser__link" rel="bookmark">
   <div{{ content_attributes.addClass('resource--teaser__overlay') }}>
     {{ content.field_image_featured }}
-    <div class="color-overlay">{{ content.body }}</div>
+    <div class="color-overlay"><p class="body">{{ content.body|render|striptags }}</p></div>
   </div>
   {{ content.field_file_type }}
   {{ title_prefix }}
@@ -85,6 +85,6 @@
     </h3>
   {% endif %}
   {{ title_suffix }}
-  </a>
+</a>
 
 </article>
