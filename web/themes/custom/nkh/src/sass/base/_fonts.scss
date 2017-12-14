@@ -18,11 +18,11 @@
 
 @font-face {
   font-family: 'nkh';
-  src:  url('../../fonts/nkh.eot?fsl2sh');
-  src:  url('../../fonts/nkh.eot?fsl2sh#iefix') format('embedded-opentype'),
-    url('../../fonts/nkh.ttf?fsl2sh') format('truetype'),
-    url('../../fonts/nkh.woff?fsl2sh') format('woff'),
-    url('../../fonts/nkh.svg?fsl2sh#nkh') format('svg');
+  src:  url('../../fonts/nkh.eot?3gl7sy');
+  src:  url('../../fonts/nkh.eot?3gl7sy#iefix') format('embedded-opentype'),
+    url('../../fonts/nkh.ttf?3gl7sy') format('truetype'),
+    url('../../fonts/nkh.woff?3gl7sy') format('woff'),
+    url('../../fonts/nkh.svg?3gl7sy#nkh') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -67,6 +67,7 @@ $icon-close: "\ea0f";
 $icon-external: "\e901";
 $icon-prev: "\ea40";
 $icon-next: "\ea3c";
+$icon-caret: "\e902";
 
 //listing all the key and value
 $icons:(
@@ -86,7 +87,8 @@ $icons:(
   close: $icon-close,
   external: $icon-external,
   prev: $icon-prev,
-  next: $icon-next
+  next: $icon-next,
+  caret: $icon-caret
 );
 
 //mixing the icon key and value
