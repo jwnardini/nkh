@@ -142,11 +142,15 @@ class ResourceListing extends FormBase {
         'class' => ['nkh_resource_container_options'],
       ],
     ];
+    $download_text = count(\Drupal::request()->getSession()->get('nkh_bulk_download')) . ' ' . t('Items to Download');
+    if ( count(\Drupal::request()->getSession()->get('nkh_bulk_download')) == 1) {
+      $download_text = count(\Drupal::request()->getSession()->get('nkh_bulk_download')) . ' ' . t('Item to Download');
+    }
 
     $form['resource_container']['option']['item_count'] = [
       '#type' => 'html_tag',
       '#tag' => 'span',
-      '#value' => t(count(\Drupal::request()->getSession()->get('nkh_bulk_download')) . ' Items to Download'),
+      '#value' => $download_text,
       '#attributes' => [
         'class' => 'resource-item-count',
       ],
