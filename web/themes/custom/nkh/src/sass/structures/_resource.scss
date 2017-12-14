@@ -481,6 +481,9 @@
   .region-preface {
     background: $nkh-orange;
   }
+  .breadcrumb a:before {
+    content: url(../svg/origin/caret.svg);
+  }
 }
 .block-resourcecentertitle,
 .block-resourcecenterintroduction {

@@ -4,7 +4,7 @@
 
 .svg-add {
 	@include svg-sprite;
-	background-position: 0 99.17355371900827%;
+	background-position: 0 100%;
 }
 
 .svg-add-dims {
@@ -12,9 +12,19 @@
 	height: 20.6px;
 }
 
+.svg-caret {
+	@include svg-sprite;
+	background-position: 0 0;
+}
+
+.svg-caret-dims {
+	width: 18.8px;
+	height: 25.4px;
+}
+
 .svg-copy {
 	@include svg-sprite;
-	background-position: 99.39148073022312% 0;
+	background-position: 99.26793557833089% 0;
 }
 
 .svg-copy-dims {
@@ -24,7 +34,7 @@
 
 .svg-download {
 	@include svg-sprite;
-	background-position: 96.64694280078895% 48.36734693877551%;
+	background-position: 97.27403156384504% 47.4%;
 }
 
 .svg-download-dims {
@@ -34,7 +44,7 @@
 
 .svg-home {
 	@include svg-sprite;
-	background-position: 51.02040816326531% 0;
+	background-position: 64.41176470588235% 0;
 }
 
 .svg-home-dims {
@@ -44,7 +54,7 @@
 
 .svg-library {
 	@include svg-sprite;
-	background-position: 0 0;
+	background-position: 28.059701492537314% 0;
 }
 
 .svg-library-dims {
@@ -54,7 +64,7 @@
 
 .svg-tv {
 	@include svg-sprite;
-	background-position: 0 53.333333333333336%;
+	background-position: 0 55.21739130434783%;
 }
 
 .svg-tv-dims {
@@ -64,7 +74,7 @@
 
 .svg-twitter {
 	@include svg-sprite;
-	background-position: 48.97959183673469% 53.333333333333336%;
+	background-position: 35.294117647058826% 55.21739130434783%;
 }
 
 .svg-twitter-dims {
