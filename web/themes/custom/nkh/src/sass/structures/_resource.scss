@@ -17,6 +17,10 @@
       }
     }
   }
+  .text-formatted {
+    font-size: 1.6rem;
+    line-height: 1.8;
+  }
 }
 
 [id="resource_center_header"] {
@@ -59,24 +63,25 @@
 
   h1 {
     margin: 1rem 0 1rem;
-
+    letter-spacing: -.2rem;
     font-size: 3.8rem;
     @include breakpoint($min540) {
-      font-size: 4.5rem;
+      font-size: 4.2rem;
     }
     @include breakpoint($min768) {
-      font-size: 5rem;
+      font-size: 4.5rem;
     }
     @include breakpoint($min960) {
-      font-size: 6rem;
+      font-size: 5rem;
     }
     @include breakpoint($min1120) {
-      font-size: 8rem;
+      font-size: 6rem;
     }
   }
   [id="resource_center_title"] {
     padding-top: 3rem;
     span {
+      font-size: 1.7rem;
       font-weight: 700;
       text-transform: uppercase;
     }
@@ -142,13 +147,14 @@
 }
 // the toolbar across the top of the download tray
 .nkh_resource_container_options {
-  display: flex;
-  flex-direction: row;
-  flex-grow: 1;
+  // display: flex;
+  // flex-direction: row;
+  // flex-grow: 1;
   background: $nkh-orange;
   color: $white;
-  justify-content: center;
-  align-items: center;
+  // justify-content: center;
+  // align-items: center;
+  text-align: center;
   padding: 1rem 4rem;
   @include breakpoint($min1024) {
     padding: 2rem 4rem;
@@ -177,6 +183,13 @@
     float: right;
     text-transform: uppercase;
     font-size: 1.4rem;
+    &:after {
+      @include icon($icon-caret);
+      color: $white;
+      transform: rotate(90deg);
+      display: inline-block;
+      margin-left: 2rem;
+    }
     @include breakpoint($min1024) {
       font-size: 1.6rem;
     }
@@ -481,8 +494,21 @@
   .region-preface {
     background: $nkh-orange;
   }
-  .breadcrumb a:before {
-    content: url(../svg/origin/caret.svg);
+
+}
+.page-node-type-resource {
+  .breadcrumb a {
+    margin-left: 2rem;
+    &:before {
+      @include icon($icon-caret);
+      color: $nkh-text;
+      transform: rotate(180deg);
+      display: inline-block;
+      transform: rotate(180deg);
+      display: inline-block;
+      margin-right: 1rem;
+      margin-left: -2rem;
+    }
   }
 }
 .block-resourcecentertitle,
