@@ -197,6 +197,10 @@
     max-width: 960px;
     margin: 0 auto;
     padding: 1rem 4rem;
+    @include breakpoint($min1024) {
+      padding: 1rem 2rem 1rem 0;
+      max-width: none;
+    }
   }
   // each download
   .container-inline {
@@ -224,11 +228,20 @@
     overflow: hidden;
     background: $white;
     margin-bottom: 2rem;
+    @include breakpoint($min768){
+      height: 24vw;
+    }
+    @include breakpoint($min1024) {
+      height: 24vw;
+    }
     @include breakpoint($min1120) {
-      height: 15vw;
+      height: 18vw;
+    }
+    @include breakpoint($min1360) {
+      height: 17vw;
     }
     @include breakpoint($min1680){
-      height: 245px;
+      height: 280px;
     }
     .field--name-field-image-featured,
     .field--name-field-image {
@@ -289,6 +302,27 @@
     }
   }
 }
+//default
+[class*="file-type--"] .resource--teaser__overlay {
+  background: url('/themes/custom/nkh/images/nkh-tile-orange.png') center center no-repeat;
+  background-size: cover;
+}
+//word
+.file-type--word-document .resource--teaser__overlay {
+  background-image: url('/themes/custom/nkh/images/nkh-tile-orange.png');
+}
+//design files
+.file-type--design-files .resource--teaser__overlay {
+  background-image: url('/themes/custom/nkh/images/nkh-tile-orange.png');
+}
+//images
+.file-type--image .resource--teaser__overlay {
+  background-image: url('/themes/custom/nkh/images/nkh-tile-orange.png');
+}
+//pdfs
+.file-type--pdf .resource--teaser__overlay {
+  background-image: url('/themes/custom/nkh/images/nkh-tile-orange.png');
+}
 
 .field.field--name-field-file-type {
   color: $nkh-text;
@@ -303,7 +337,15 @@
   display: flex;
   flex-wrap: wrap;
   align-items: start;
-  justify-content: space-between;
+  justify-content: space-around;
+  padding: 1rem 4rem;
+  @include breakpoint($min768) {
+    justify-content: space-evenly;
+    padding: 1rem 2rem 1rem 0;
+  }
+  @include breakpoint($min1024) {
+    justify-content: space-between;
+  }
 }
 .resource-container-inline {
   max-width: 50rem;
@@ -314,9 +356,17 @@
   @include breakpoint($min540) {
     margin: 0;
   }
-  @include breakpoint($min1120) {
+  @include breakpoint($min768) {
     width: 50rem;
     max-width: 50%;
+    padding: 1rem;
+  }
+  @include breakpoint($min1024) {
+    max-width: 100%;
+    padding: 3rem;
+  }
+  @include breakpoint($min1120) {
+    max-width: 49.75%;
     padding: 1rem;
   }
   @include breakpoint($min1360){
@@ -342,7 +392,13 @@
     display: flex;
     flex-wrap: wrap;
     align-items: start;
-    justify-content: space-between;
+    justify-content: space-around;
+    @include breakpoint($min768) {
+      justify-content: space-evenly;
+    }
+    @include breakpoint($min1024) {
+      justify-content: space-between;
+    }
   }
   .views-row {
     max-width: 50rem;
@@ -352,8 +408,16 @@
     @include breakpoint($min540) {
       margin: 0;
     }
-    @include breakpoint($min1120) {
+    @include breakpoint($min768) {
       width: 50rem;
+      max-width: 50%;
+      padding: 1rem;
+    }
+    @include breakpoint($min1024) {
+      //max-width: 100%;
+      padding: 3rem;
+    }
+    @include breakpoint($min1120) {
       max-width: 33%;
       padding: 1rem;
     }
@@ -402,6 +466,7 @@
     background: $nkh-bone;
   }
   #content {
+    @include clearfix;
     max-width: 1600px;
     padding: 4rem;
     margin: 0 auto;
@@ -427,7 +492,7 @@
 .nkh-resource-center-listing {
   @include breakpoint($min1024) {
     float: right;
-    width: 55%;
+    width: 50%;
   }
   @include breakpoint($min1120) {
     width: 66%;
@@ -436,7 +501,7 @@
 [class*="block-exposedformresource-viewpage"] {
   @include breakpoint($min1024) {
     float: left;
-    width: 45%;
+    width: 50%;
     padding: 2rem;
   }
   @include breakpoint($min1120) {
@@ -466,13 +531,13 @@
     border: 0 none transparent;
     margin: 1rem 0;
     float: none;
-    @include breakpoint($min1024) {
-      width: 100%;
-    }
+    width: 100%;
   }
   .form-item.form-type-textfield,
   .form-item.form-type-select {
     margin: 1rem 0 2rem;
+    float: none;
+    width: 100%;
   }
   .form-type-textfield label {
     @extend h2;
