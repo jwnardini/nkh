@@ -23,14 +23,11 @@
 }
 .entity--cta-text,
 .view-cta-references {
-  width: calc(100% + 20px);
-  margin-left: -20px;
-  margin-right: -20px;
+  width: 100%;
   overflow: visible;
   position: relative;
   padding: 1rem;
   @include breakpoint($min480) {
-    width: 100%;
     margin-left: 0;
     margin-right: 0;
   }
@@ -63,6 +60,16 @@
     border-bottom: 4px solid rgba($white, 0.95);
     &:after {
       content: none;
+    }
+  }
+  .cta-form__fields{
+    .wrapable{
+      &:after {
+        margin-top: -.6em;
+        @media (min-width: 419px){
+          margin-top: .6em;
+        }
+      }      
     }
   }
 
@@ -107,6 +114,9 @@ div[class*="block-views-block-cta-references-"]{
     height: 300px;
     background: url('/themes/custom/nkh/images/btn-bingo.gif') 0 0 no-repeat;
     background-size: 100%;
+    @include breakpoint($min768) {
+      top: -8rem;
+    }
     @include breakpoint($min1024) {
       top: -10rem;
     }
@@ -116,7 +126,11 @@ div[class*="block-views-block-cta-references-"]{
       opacity: 1;
       height: 300px;
       transform: translate(-50%, -100%) scale(1) rotate(0deg);
-      top: 10rem;
+      top: 4rem;
+      @include breakpoint($min768) {
+        top: 8rem;
+      }
+
       @include breakpoint($min1024) {
         top: 11rem;
       }
