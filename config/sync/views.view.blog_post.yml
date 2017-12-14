@@ -824,13 +824,6 @@ display:
           break_phrase: true
           not: false
           plugin_id: numeric
-        type:
-          id: type
-          table: node_field_data
-          field: type
-          entity_type: node
-          entity_field: type
-          plugin_id: node_type
       group_by: false
       block_hide_empty: true
     cache_metadata:
