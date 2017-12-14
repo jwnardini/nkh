@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - entityqueue.entity_queue.featured_resources
     - node.type.resource
   module:
+    - entityqueue
     - node
     - user
 id: featured_resources
@@ -128,7 +130,20 @@ display:
           entity_type: node
           entity_field: type
           plugin_id: bundle
-      sorts: {  }
+      sorts:
+        entityqueue_relationship:
+          id: entityqueue_relationship
+          table: node_field_data
+          field: entityqueue_relationship
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          entity_type: node
+          plugin_id: entity_queue_position
       title: 'Featured Resources'
       header:
         area:
@@ -146,7 +161,18 @@ display:
           plugin_id: text
       footer: {  }
       empty: {  }
-      relationships: {  }
+      relationships:
+        entityqueue_relationship:
+          id: entityqueue_relationship
+          table: node_field_data
+          field: entityqueue_relationship
+          relationship: none
+          group_type: group
+          admin_label: 'Content queue'
+          required: true
+          limit_queue: featured_resources
+          entity_type: node
+          plugin_id: entity_queue
       arguments: {  }
       display_extenders: {  }
       css_class: article-list
@@ -157,7 +183,10 @@ display:
         - 'languages:language_interface'
         - 'user.node_grants:view'
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:entityqueue.entity_queue.featured_resources'
+        - entity_field_info
+        - views_data
   block_1:
     display_plugin: block
     id: block_1
@@ -172,4 +201,7 @@ display:
         - 'languages:language_interface'
         - 'user.node_grants:view'
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:entityqueue.entity_queue.featured_resources'
+        - entity_field_info
+        - views_data
