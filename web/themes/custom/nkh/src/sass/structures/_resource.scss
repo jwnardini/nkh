@@ -227,6 +227,9 @@
     @include breakpoint($min1120) {
       height: 15vw;
     }
+    @include breakpoint($min1680){
+      height: 245px;
+    }
     .field--name-field-image-featured,
     .field--name-field-image {
       margin: 0;
