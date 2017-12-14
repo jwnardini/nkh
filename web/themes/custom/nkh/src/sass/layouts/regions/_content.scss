@@ -22,6 +22,15 @@
       padding: 0;
     }
   }
+  .field--name-field-landing-link-ref{
+    @include breakpoint($min1024) {
+      max-width: 1000px;
+    }
+    @include breakpoint($min1260) {
+      max-width: 1200px;
+    }
+  }
+
 
   .text-formatted{
     width: 100vw;
@@ -68,7 +77,6 @@
       max-width: 1000px;
       margin: 4rem auto;
     }
-
     .entity-landing_link-auto,
     .entity-landing_link-manual{
       max-width: 1200px;

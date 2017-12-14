@@ -127,14 +127,17 @@ div[class*="block-views-block-cta-references-"]{
     background: none;
   }
 }
+
 .field--name-field-landing-link-ref {
   .field__item {
     margin-top: 5rem;
     + .field__item {
       margin-top: 0;
     }
-    &:last-of-type{
-      margin-bottom: 5rem;
+    @include breakpoint($min1024) {
+      &:last-of-type{
+        margin-bottom: 5rem;
+      }
     }
     &:nth-child(odd){
       .image-section{
@@ -357,10 +360,18 @@ div[class*="block-views-block-cta-references-"]{
       -webkit-mask-size: 3750%;
     }
   }
+
   picture{
     position: relative;
     width: 100%;
+    overflow: hidden;
     display: block;
+    @include breakpoint($min1024) {
+      max-height: 375px;
+    }
+    @include breakpoint($min1260) {
+      max-height: 450px;
+    }
     &:after{
       display: block;
       content: '';
@@ -571,7 +582,7 @@ div[class*="block-views-block-cta-references-"]{
     .image-section,
     .content-section{
       width: 50%;
-      max-height: 490px;
+      max-height: 450px;
       margin: 0;
       align-items: start;
       div{
