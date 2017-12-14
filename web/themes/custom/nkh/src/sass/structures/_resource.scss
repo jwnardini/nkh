@@ -224,21 +224,21 @@
   }
   &__overlay {
     position: relative;
-    height: 305px;
+    height: 36vw;
     overflow: hidden;
     background: $white;
     margin-bottom: 2rem;
     @include breakpoint($min768){
-      height: 24vw;
+      height: 23.5vw;
     }
     @include breakpoint($min1024) {
-      height: 24vw;
+      height: 23.5vw;
     }
     @include breakpoint($min1120) {
-      height: 18vw;
+      height: 17.5vw;
     }
     @include breakpoint($min1360) {
-      height: 17vw;
+      height: 16.5vw;
     }
     @include breakpoint($min1680){
       height: 280px;
@@ -338,7 +338,7 @@
   flex-wrap: wrap;
   align-items: start;
   justify-content: space-around;
-  padding: 1rem 4rem;
+  padding: 1rem 0;
   @include breakpoint($min768) {
     justify-content: space-evenly;
     padding: 1rem 2rem 1rem 0;
