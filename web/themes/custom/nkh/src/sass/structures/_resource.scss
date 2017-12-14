@@ -38,25 +38,30 @@
   }
   .form-item-form-header-image-featured ~ [id="resource_center_title"],
   .form-item-form-header-image-featured ~ [id="resource_center_actions"] {
+    text-align: center;
     @include breakpoint($min1120) {
-      width: 50%;
-      float: right;
-      padding: 0 0 0 4rem;
-    }
-    @include breakpoint($min1360) {
+      text-align: left;
       width: 60%;
+      float: right;
+      clear: right;
+      padding: 0 0 0 2rem;
     }
+    // @include breakpoint($min1360) {
+    //   width: 60%;
+    // }
   }
   .form-item-form-header-image-featured {
     margin: 0 auto 2rem;
+    text-align: center;
     @include breakpoint($min1120) {
+      text-align: left;
       float: left;
-      width: 50%;
+      width: 40%;
       padding: 0 4rem 0 0;
     }
-    @include breakpoint($min1360) {
-      width: 40%;
-    }
+    // @include breakpoint($min1360) {
+    //   width: 40%;
+    // }
   }
 
   //styling below here
@@ -89,7 +94,7 @@
 }
 [id="resource_center_actions"] {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   align-content: center;
   flex-wrap: wrap;
