@@ -25,7 +25,7 @@ abstract class NKHResourceCenter extends FormBase {
       $fid = $form_state->get('fid');
     }
     elseif ($form_state->get('view_listing') == TRUE) {
-      $nid = $form_state->getTriggeringElement()['#parents'][1];
+      $nid = $form_state->getTriggeringElement()['#parents'][2];
       $storage = \Drupal::entityTypeManager()->getStorage('node');
       $node = $storage->load($nid);
       if ($node->get('field_upload')->entity !== NULL) {
@@ -132,11 +132,9 @@ abstract class NKHResourceCenter extends FormBase {
     $result = [];
     $args = [];
     if (is_object($view)) {
-      
-      $view->setDisplay('block_1');
+      $view->setDisplay('resource_center_block_display');
       $view->setArguments($args);
       $view->preExecute();
-      //$view->display_handler->setOption('path', 'resource-center');
       $view->execute();
       $view->render();
     }
