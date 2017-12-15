@@ -15,7 +15,6 @@ abstract class NKHResourceCenter extends FormBase {
    * {@inheritdoc}
    */
   public static function addResource(array &$form, FormStateInterface $form_state) {
-    \Drupal::logger('my_module')->notice('addResource');
     $session = \Drupal::request()->getSession();
     $session_name = $form_state->get('session_name');
     $current_session = $session->get($session_name);
@@ -73,7 +72,6 @@ abstract class NKHResourceCenter extends FormBase {
    * {@inheritdoc}
    */
   public static function removeResource(array &$form, FormStateInterface $form_state) {
-    \Drupal::logger('my_module')->notice('RemoveResource');
     $session = \Drupal::request()->getSession();
     $session_name = $form_state->get('session_name');
     $current_session = $session->get($session_name);
