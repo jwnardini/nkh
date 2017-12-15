@@ -19,7 +19,7 @@
     @include breakpoint($min768) {
       max-width: 1000px;
       margin: 2rem auto;
-      padding: 0;
+      padding: 0 2rem;
     }
   }
   .field--name-field-landing-link-ref{
@@ -34,12 +34,13 @@
 
   .text-formatted{
     width: 100vw;
-    padding: 0 4rem;
+    padding: 0 2rem;
     display: block;
     margin: 0 auto;
     max-width: 1680px;
     @include breakpoint($min768) {
       width: 67vw;
+      padding: 0 4rem;
     }
     @include breakpoint($min1024) {
       width: 60vw;
@@ -100,17 +101,39 @@
     }
 
   }
+}
+.page-node-type-blog {
+  .field--name-field-taxonomy-series {
+    @include blog-news-tag;
+    text-transform: uppercase;
+    a {
+      text-transform: none;
+      margin-left: .6em;
+    }    
+  }
 
 }
 .page-node-type-news{
+  .field--name-field-entity-partner,
   .field--name-field-url{
     @include blog-news-tag;
     text-transform: uppercase;
+    .field__label{
+      color: $nkh-text;
+      margin-right: .6em;
+      &:after{
+        content: ":";
+      }
+    }
     .field__item {
       text-transform: none;
       margin-left: .6em;
     }
   }
+  .field--name-field-date-simple{
+    display: block;
+  }
+
 }
 .page-node-type-partner .node--view-mode-full .node__content,
 .page-node-type-profile .node--view-mode-full .node__content {

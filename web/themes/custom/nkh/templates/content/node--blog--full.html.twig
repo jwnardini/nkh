@@ -91,7 +91,12 @@
   {{ content.field_date_simple }}
   </div>
 
-    {{ content|without('field_image_banner', 'field_date_simple', 'field_entity_partner', 'field_entity_profile', 'field_image_featured', 'field_teaser', 'field_taxonomy_series') }}
+    {{ content|without('field_image_banner', 'field_date_simple', 'field_entity_partner', 'field_entity_profile', 'field_image_featured', 'field_teaser', 'field_taxonomy_issue', 'field_taxonomy_series') }}
+  
+    {% if content.field_taxonomy_series|render|striptags %}
+      {{ content.field_taxonomy_series }}
+    {% endif %}
   </div>
+
 
 </article>

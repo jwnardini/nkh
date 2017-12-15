@@ -182,9 +182,9 @@
   }
   .inner-wrapper{
     margin: 0 auto;
+    padding: 0 2rem;
     @include breakpoint($min768) {
       max-width: 100%;
-      padding: 0 2rem;
     }
     @include breakpoint($min1024) {
       max-width: 1200px;
