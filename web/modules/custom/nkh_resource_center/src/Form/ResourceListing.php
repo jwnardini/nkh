@@ -37,7 +37,6 @@ class ResourceListing extends FormBase {
 
     $field_count = $form_state->get('field_deltas');
     $form_state->set('zip_url', '');
-    $form_state->set('resource_list_state', 'closed');
     $form_state->set('session_name', 'nkh_bulk_download');
     $form['#cache'] = ['max-age' => 0];
     $form['#tree'] = TRUE;
@@ -69,7 +68,7 @@ class ResourceListing extends FormBase {
 
     $form['resource'] = [
       '#type' => 'container',
-      '#prefix' => '<div id="nkh_resource_list">',
+      '#prefix' => '<div id="nkh_resource_view_listing">',
       '#suffix' => '</div>',
     ];
 
@@ -101,12 +100,6 @@ class ResourceListing extends FormBase {
         '#value' => t('Download Resource'),
         '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterSingleDownload(event,"' . file_create_url($current_row[1]) . '")'],
       ];
-      $form['resource']['resource_item'][$row]['form_actions']['copy_single'] = [
-        '#type' => 'html_tag',
-        '#tag' => 'button',
-        '#value' => t('Copy a Shareable Link'),
-        '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterCopy(event, ' . $row . ')'],
-      ];
 
       $form['resource']['resource_item'][$row]['form_actions']['add_resource'] = [
         '#type' => 'submit',
@@ -119,6 +112,13 @@ class ResourceListing extends FormBase {
         '#name' => $current_row[2],
       ];
 
+      $form['resource']['resource_item'][$row]['form_actions']['copy_single'] = [
+        '#type' => 'html_tag',
+        '#tag' => 'button',
+        '#value' => t('Copy a Shareable Link'),
+        '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterCopy(event, ' . $row . ')'],
+      ];
+
       $form['resource']['resource_item'][$row]['form_actions']['file_url'] = [
         '#type' => 'textfield',
         '#value' => file_create_url($current_row[1]),
@@ -129,7 +129,7 @@ class ResourceListing extends FormBase {
       ];
     }
 
-    // Start the Resource Container
+    // Start the Resource Container.
     $form['resource_container'] = [
       '#type' => 'container',
       '#prefix' => '<div id="ajax_resource_container">',
@@ -161,7 +161,6 @@ class ResourceListing extends FormBase {
         '#type' => 'submit',
         '#value' => t('Download All Items'),
         '#submit' => ['Drupal\nkh_resource_center\Form\NKHResourceCenter::zipResources'],
-        // TODO When clicked need to just open the link in a new window and instead of copying
         '#ajax' => [
           'callback' => '::zipResourcesCallback',
           'wrapper' => 'resource_zip_link',
@@ -175,17 +174,18 @@ class ResourceListing extends FormBase {
     $form['resource_container']['option']['collapse'] = [
       '#type' => 'html_tag',
       '#tag' => 'button',
-      '#value' => t('Collapse Items'),
+      '#value' => t('View All Items'),
       '#attributes' => [
-        'onclick' => 'Drupal.behaviors.nkhCollapseItems(event)',
-        'id' => 'resource_collapse_button',
+        'id' => 'nkh_toggle_resource_container',
       ],
     ];
 
     $form['resource_container']['resource_list'] = [
       '#type' => 'container',
-      '#prefix' => '<div id="nkh_resource_list" class="' . $form_state->get('resource_list_state') . '">',
-      '#suffix' => '</div>',
+      '#attributes' => [
+        'id' => 'nkh_resource_list',
+        'class' => 'closed',
+      ],
     ];
 
     if (\Drupal::request()->getSession()->get('nkh_bulk_download')) {
@@ -198,10 +198,19 @@ class ResourceListing extends FormBase {
           '#tree' => TRUE,
         ];
 
+        $form['resource_container']['resource_list'][$value[0]]['resource_type'] = [
+          '#type' => 'html_tag',
+          '#tag' => 'span',
+          '#value' => $value[3],
+          '#attributes' => [
+            'class' => 'resource_file_type',
+          ],
+        ];
+
         $form['resource_container']['resource_list'][$value[0]]['resource_display'] = [
           '#type' => 'html_tag',
           '#tag' => 'a',
-          '#value' => file_create_url($value[1]),
+          '#value' => urldecode($value[2]),
           '#attributes' => [
             'href' => file_create_url($value[1]),
           ],
@@ -266,8 +275,16 @@ class ResourceListing extends FormBase {
   /**
    * {@inheritdoc}
    */
-  public function zipResourcesCallback(array &$form, FormStateInterface $form_state) {
+  public function resourceToggleCallback(array &$form, FormStateInterface $form_state) {
+    $response = new AjaxResponse();
+    $response->addCommand(new InvokeCommand(NULL, 'toggleResourceContainer', [$form_state->get('container_status')]));
+    return $response;
+  }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function zipResourcesCallback(array &$form, FormStateInterface $form_state) {
     $response = new AjaxResponse();
     $response->addCommand(new InvokeCommand(NULL, 'downloadZip', [$form_state->get('zip_url')]));
     return $response;

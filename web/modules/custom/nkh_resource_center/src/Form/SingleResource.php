@@ -6,6 +6,7 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\InvokeCommand;
+use Drupal\Core\Ajax\ReplaceCommand;
 
 /**
  * Implements Resource Center Node form.
@@ -47,12 +48,12 @@ class SingleResource extends FormBase {
     $form['#tree'] = TRUE;
 
     $form_state->set('zip_url', '');
-    $form_state->set('resource_list_state', 'closed');
+    $form_state->set('container_status', 'closed');
     $form_state->set('session_name', 'nkh_bulk_download');
     $form_state->set('fid', $fid);
+    $form_state->set('nid', $entity_id);
     $form_state->set('file_uri', $file_uri);
     $form_state->set('field_deltas', \Drupal::request()->getSession()->get('nkh_bulk_download'));
-
     $form['form_header'] = [
       '#type' => 'container',
       '#prefix' => '<div id="resource_center_header">',
@@ -99,13 +100,6 @@ class SingleResource extends FormBase {
       '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterSingleDownload("' . file_create_url($file_uri) . '")'],
     ];
 
-    $form['form_header']['form_actions']['copy_single'] = [
-      '#type' => 'html_tag',
-      '#tag' => 'button',
-      '#value' => t('Copy to Clipboard'),
-      '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterCopy()'],
-    ];
-
     $form['form_header']['form_actions']['add_resource'] = [
       '#type' => 'submit',
       '#value' => t('Add to Bulk Download'),
@@ -114,6 +108,14 @@ class SingleResource extends FormBase {
         'callback' => '::addResourceCallback',
         'wrapper' => 'ajax_resource_container',
       ],
+      '#name' => $entity_id,
+    ];
+
+    $form['form_header']['form_actions']['copy_single'] = [
+      '#type' => 'html_tag',
+      '#tag' => 'button',
+      '#value' => t('Copy to Clipboard'),
+      '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterCopy()'],
     ];
 
     $form['form_header']['form_actions']['file_url'] = [
@@ -158,7 +160,7 @@ class SingleResource extends FormBase {
         '#submit' => ['Drupal\nkh_resource_center\Form\NKHResourceCenter::zipResources'],
         '#ajax' => [
           'callback' => '::zipResourcesCallback',
-          'wrapper' => 'resource_zip_link',
+          'wrapper' => 'ajax_resource_container',
         ],
         '#attributes' => [
           'class' => ['button'],
@@ -169,17 +171,20 @@ class SingleResource extends FormBase {
     $form['resource_container']['option']['collapse'] = [
       '#type' => 'html_tag',
       '#tag' => 'button',
-      '#value' => t('Collapse Items'),
+      '#value' => t('View All Items'),
       '#attributes' => [
-        'onclick' => 'Drupal.behaviors.nkhCollapseItems()',
-        'id' => 'resource_collapse_button',
+        'id' => 'nkh_toggle_resource_container',
       ],
     ];
+
     $form['resource_container']['resource_list'] = [
       '#type' => 'container',
-      '#prefix' => '<div id="nkh_resource_list" class="' . $form_state->get('resource_list_state') . '">',
-      '#suffix' => '</div>',
+      '#attributes' => [
+        'id' => 'nkh_resource_list',
+        'class' => 'closed',
+      ],
     ];
+
     if (\Drupal::request()->getSession()->get('nkh_bulk_download')) {
       foreach (\Drupal::request()->getSession()->get('nkh_bulk_download') as $key => $value) {
         $form['resource_container']['resource_list'][$value[0]] = [
@@ -190,10 +195,19 @@ class SingleResource extends FormBase {
           '#tree' => TRUE,
         ];
 
+        $form['resource_container']['resource_list'][$value[0]]['resource_type'] = [
+          '#type' => 'html_tag',
+          '#tag' => 'span',
+          '#value' => $value[3],
+          '#attributes' => [
+            'class' => 'resource_file_type',
+          ],
+        ];
+
         $form['resource_container']['resource_list'][$value[0]]['resource_display'] = [
           '#type' => 'html_tag',
           '#tag' => 'a',
-          '#value' => file_create_url($value[1]),
+          '#value' => urldecode($value[2]),
           '#attributes' => [
             'href' => file_create_url($value[1]),
           ],
@@ -211,6 +225,8 @@ class SingleResource extends FormBase {
             'class' => ['button-small'],
           ],
           '#name' => 'remove_name_' . $value[0],
+          '#prefix' => '<div class="remove-resource__wrapper">',
+          '#suffix' => '</div>',
         ];
       }
     }
