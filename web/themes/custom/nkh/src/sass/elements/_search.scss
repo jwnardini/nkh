@@ -44,25 +44,22 @@ button.header-search-form__toggle {
 
   form {
     margin: 0 2rem;
-    display: flex;
-    @include breakpoint($min1024) {
-      display: block;
-    }    
+    display: block;
+    position: relative;
   }
   .form-type-search,
   .form-actions{
     vertical-align: top;
-    display: inline-block;
     margin: 0;
     input{
       width: 100%;
     }
   }
   .form-type-search{
-    width: 100%;   
-
+    width: 70%;
     input{
       padding: 11px 10px;
+      min-width: auto;
       @include breakpoint($min1024) {
         padding-top: 14px;
         padding-bottom: 13px;
@@ -71,12 +68,17 @@ button.header-search-form__toggle {
     }
   }
   .form-actions{
-    width: 25%;
+    width: 30%;
+    top: 0;
+    position: absolute;
+    right: 0;
     input{
+      min-width: auto;
       height: 45px;
-      font-size: 14px;
+      font-size: 1.2rem;
       text-transform: uppercase;
-      padding: 0;
+      padding: 0 10px;
+      display: block;
     }
   }
   .form-submit{
@@ -107,14 +109,14 @@ button.header-search-form__toggle {
     }
     .form-type-search{
       margin-bottom: 0;
-      width: 200px;
+      width: 210px;
       input{
         width: 100%;
-        min-width: 204px;
+        min-width: 200px;
       }
     }
     .form-actions{
-      margin: 0;
+      margin: 1rem 1rem 0 0;
       width: 100px;
     }
     .form-submit {
@@ -143,7 +145,4 @@ button.header-search-form__toggle {
       }
     }
   }
-}
-
-.mobile .block-search {
 }
