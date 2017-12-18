@@ -317,14 +317,6 @@
       $(this).parents('.menu-item').removeClass('open');
     });
 
-    body.on('touchmove', function(e) {
-      if ($('body').hasClass('open-menu')){
-        e.preventDefault();
-        return false;
-      }
-
-    });
-
   }
 
   $( document ).ready( nkhMobileMenuParts );
