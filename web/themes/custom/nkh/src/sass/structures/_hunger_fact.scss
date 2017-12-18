@@ -106,12 +106,12 @@ div[data-quickedit-entity-id*="hunger_fact"],
       flex: 1 200%;
     }
   }
-  .field--name-field-statistic-hunger{
-    @include breakpoint($min1024) {
-      flex: 1 100%;
-    }
-  }
 }
+.hunger-fact__data{
+  @include grit-clip-white;
+}
+
+.hunger-fact__data,
 .hunger-fact-title,
 .field--name-field-statistic-hunger{
   text-transform: uppercase;
