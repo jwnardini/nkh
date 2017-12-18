@@ -696,9 +696,9 @@ display:
             suffix: ''
             target: ''
             nl2br: false
-            max_length: 140
-            word_boundary: true
-            ellipsis: true
+            max_length: 160
+            word_boundary: false
+            ellipsis: false
             more_link: false
             more_link_text: ''
             more_link_path: ''
@@ -1028,14 +1028,14 @@ display:
             suffix: ''
             target: ''
             nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
+            max_length: 160
+            word_boundary: false
+            ellipsis: false
             more_link: false
             more_link_text: ''
             more_link_path: ''
             strip_tags: false
-            trim: false
+            trim: true
             preserve_tags: ''
             html: false
           element_type: ''
@@ -1378,9 +1378,9 @@ display:
             suffix: ''
             target: ''
             nl2br: false
-            max_length: 140
-            word_boundary: true
-            ellipsis: true
+            max_length: 160
+            word_boundary: false
+            ellipsis: false
             more_link: false
             more_link_text: ''
             more_link_path: ''
@@ -1711,9 +1711,9 @@ display:
             suffix: ''
             target: ''
             nl2br: false
-            max_length: 140
-            word_boundary: true
-            ellipsis: true
+            max_length: 160
+            word_boundary: false
+            ellipsis: false
             more_link: false
             more_link_text: ''
             more_link_path: ''
@@ -1758,7 +1758,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"image-wrapper\">{{ field_image_featured }}</div>\n<div class=\"title-wrapper\">\n{% if field_taxonomy_series|render|striptags %}<span class=\"series-title\">{{ field_taxonomy_series }}</span>{% endif %}\n<h3 class=\"view-title\">{{ title }}</h3>\n{{ field_teaser }}</div>"
+            text: '<div class="image-wrapper">{{ field_image_featured }}</div><div class="title-wrapper"><span class="series-title">{{ type }}</span><div class="view-title">{{ title }}</div>{{ field_teaser }}</div>'
             make_link: true
             path: '{{ path }}'
             absolute: false
