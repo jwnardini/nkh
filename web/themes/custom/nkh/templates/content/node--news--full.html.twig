@@ -85,7 +85,13 @@
 
   <div{{ content_attributes.addClass('node__content') }}>
 
-    {{ content|without('field_teaser', 'field_taxonomy_series', 'field_taxonomy_news', 'field_taxonomy_issue', 'field_entity_partner', 'field_boilerplate', 'field_url') }}
+    {% if content.field_date_simple|render|striptags %}
+      <div class="byline">
+        {{ content.field_date_simple }}
+      </div>
+    {% endif %}
+
+    {{ content|without('field_teaser', 'field_taxonomy_series', 'field_date_simple', 'field_taxonomy_news', 'field_taxonomy_issue', 'field_entity_partner', 'field_boilerplate', 'field_url') }}
 
     {% if newsType %}
       {{ content.field_boilerplate }}
