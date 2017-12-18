@@ -44,7 +44,7 @@
     &:before{
       display: none
     }
-  }  
+  }
   &.mobile {
     float: none;
     top: auto;
@@ -56,7 +56,7 @@
     transition: max-height .6s;
     transition-timing-function: ease-out;
     .region-header {
-        width: 100%;
+      width: 100%;
     }
     &.open {
       height: calc(100% - 138px);
@@ -87,7 +87,7 @@
         color: $nkh-text;
         border-bottom: 3px solid $nkh-orange;
       }
-    } 
+    }
     //desktop
     @include breakpoint($min1024) {
       li{
@@ -126,10 +126,10 @@
           &.is-active{
             color: $white;
             border-bottom: 3px solid transparent;
-          }          
+          }
           &.is-active{
-            background: #31353b;          
-          }          
+            background: #31353b;
+          }
           &:hover{
             background: #4d545d;
           }
@@ -168,7 +168,7 @@
           margin-left: 0;
         }
         li a.menu-link{
-          min-width: 250px;        
+          min-width: 250px;
         }
         ul{
           left: -4em;
@@ -203,7 +203,7 @@
           margin-left: 0;
         }
         li a.menu-link{
-          min-width: 250px;        
+          min-width: 250px;
         }
         ul{
           left: -3.6em;
@@ -327,6 +327,9 @@
   overflow-x: hidden;
   height: 100%;
   z-index: 100;
+}
+.open-menu {
+  overflow:hidden;
 }
 .sub-nav-toggle,
 .sub-nav-toggle-back,
