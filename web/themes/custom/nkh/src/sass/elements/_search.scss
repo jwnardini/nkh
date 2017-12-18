@@ -57,6 +57,9 @@ button.header-search-form__toggle {
   }
   .form-type-search{
     width: 70%;
+    @include breakpoint($min480) {
+      width: 75%;
+    }
     input{
       padding: 11px 10px;
       min-width: auto;
@@ -72,6 +75,10 @@ button.header-search-form__toggle {
     top: 0;
     position: absolute;
     right: 0;
+    @include breakpoint($min480) {
+      width: 25%;
+    }
+
     input{
       min-width: auto;
       height: 45px;
