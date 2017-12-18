@@ -102,39 +102,28 @@
 
   }
 }
-.page-node-type-blog {
-  .field--name-field-taxonomy-series {
-    @include blog-news-tag;
-    text-transform: uppercase;
-    a {
-      text-transform: none;
-      margin-left: .6em;
-    }    
+.byline{
+  span{
+    text-transform: uppercase;    
   }
-
+  // * is not specific enough so I have more specific
+  span, .field, a{
+    display: inline-block;
+    vertical-align: top;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-top: 0;
+  }
+  a {
+    text-transform: none;
+  }  
 }
-.page-node-type-news{
-  .field--name-field-entity-partner,
-  .field--name-field-url{
-    @include blog-news-tag;
-    text-transform: uppercase;
-    .field__label{
-      color: $nkh-text;
-      margin-right: .6em;
-      &:after{
-        content: ":";
-      }
-    }
-    .field__item {
-      text-transform: none;
-      margin-left: .6em;
-    }
-  }
+.page-node-type-news .node--view-mode-full .node__content{
   .field--name-field-date-simple{
     display: block;
   }
-
 }
+
 .page-node-type-partner .node--view-mode-full .node__content,
 .page-node-type-profile .node--view-mode-full .node__content {
   max-width: 1260px;

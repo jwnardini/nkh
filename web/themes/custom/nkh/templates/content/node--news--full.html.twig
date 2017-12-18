@@ -92,11 +92,16 @@
     {% endif %}
 
     {% if content.field_url|render|striptags %}
-      {{ content.field_url }}
+      <div class="byline">
+        <span>Read More:</span>
+        {{ content.field_url }}
+      </div>
     {% endif %}
-
     {% if content.field_entity_partner|render|striptags %}
-      {{ content.field_entity_partner }}
+      <div class="byline">
+        <span>Related Partner:</span>
+        {{ content.field_entity_partner }}
+      </div>
     {% endif %}
 
   </div>

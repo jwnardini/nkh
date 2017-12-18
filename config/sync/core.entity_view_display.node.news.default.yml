@@ -52,7 +52,7 @@ content:
     region: content
   field_entity_partner:
     weight: 9
-    label: inline
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }

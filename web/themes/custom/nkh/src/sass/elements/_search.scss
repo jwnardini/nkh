@@ -44,10 +44,7 @@ button.header-search-form__toggle {
 
   form {
     margin: 0 2rem;
-    display: flex;
-    @include breakpoint($min1024) {
-      display: block;
-    }    
+    display: block;
   }
   .form-type-search,
   .form-actions{
