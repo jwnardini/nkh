@@ -249,7 +249,7 @@
         width: 40%;
         bottom: 45px;
         left: 5%;
-        padding: 3rem 5rem;
+        padding: 3rem 5rem 3rem 3rem;
       }
 
     }
@@ -291,7 +291,10 @@
             bottom: 55px;
             left: auto;
             right: -20px;
-            padding: 2.5rem 4rem 4rem 2.5rem;
+            padding: 2.5rem 3rem 4rem;            
+          }
+          p.icon-video{
+            margin-left: -1rem;
           }
         }
         &:last-child{
@@ -305,5 +308,17 @@
         }
       }
     }
+  }
+  p.icon-video{
+    font-size: 4em;
+    display: block;
+    position: absolute;
+    margin: 0 0 0 -2rem;
+    &:before {
+      vertical-align: top;
+    }
+  }
+  .icon-video ~ .view-content-wrapper{
+    margin-left: 9rem;
   }
 }
