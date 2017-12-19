@@ -12,7 +12,7 @@
 .share-section {
 
 }
-
+.view-search-general .view-content,
 .node--view-mode-full .node__content {
   > div{
     padding: 2rem;
@@ -197,3 +197,41 @@
     content: $icon-instagram;
   }
 }
+.view-search-general{
+  background: $nkh-bone;
+  padding-top: 1em;
+  .view-content .views-row{
+    background: $white;
+    margin-bottom: 1em;
+    padding: .8em;
+  }
+  a{
+    display: block;
+    font-size: 2rem;
+  }
+  span > a{
+    margin-bottom: .5em;
+  }
+  span, li a{
+    font-size: 1.6rem;    
+  }
+  ul li{
+    display: block;
+    margin-left: 2em;
+    &:before{
+      width: 1rem;
+      height: 1rem;
+      margin: .5em 0 0 -1.5em;
+    }
+  }
+  .pager{
+    padding-bottom: 1em;
+    li{
+      display: inline-block;
+    } 
+    a:after{
+      content: none;
+    }
+  }
+}
+
