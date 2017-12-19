@@ -143,7 +143,7 @@ content:
     type: text_textarea
     region: content
   field_video:
-    weight: 6
+    weight: 5
     settings:
       form_mode: default
       override_labels: true
@@ -158,7 +158,7 @@ content:
     type: inline_entity_form_complex
     region: content
   field_video_boolean:
-    weight: 5
+    weight: 6
     settings:
       display_label: true
     third_party_settings: {  }

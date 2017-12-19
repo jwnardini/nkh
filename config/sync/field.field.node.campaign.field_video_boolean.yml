@@ -10,7 +10,7 @@ field_name: field_video_boolean
 entity_type: node
 bundle: campaign
 label: 'Promote Video'
-description: 'Click the checkbox would display a video icon to inform site visitors this page includes video content.'
+description: 'Check this box to allow for a video icon to be showed in featured blocks sitewide.'
 required: false
 translatable: true
 default_value:
