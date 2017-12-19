@@ -54,11 +54,27 @@
       content: none;
     }
   }
-  [href*="facebook"]:before {
+  .facebook:before {
     content: $icon-facebook;
   }
-  [href*="twitter"]:before {
+  .twitter:before {
     content: $icon-twitter;
+  }
+  li{
+    &:before {
+      @include icon(nkh);
+      color: $nkh-lightgrey;
+      display: block;
+      position: absolute;
+      transition: all .2s;
+      background: none;
+      margin: 0;
+    }    
+    &:hover{
+      &:before{
+        color: $nkh-darkgrey;
+      }
+    }
   }
 }
 
@@ -89,15 +105,8 @@
         margin-right: 3.8rem;
       }
     }
-  }
-  a{
-    &:before {
-      font-size: 18px;
-    }
-    &:hover{
-      &:before{
-        color: $nkh-darkgrey;
-      }
+    &:before{
+      font-size: 1.8rem;
     }
   }
 }
@@ -111,24 +120,26 @@
   @include breakpoint($min1024) {
     width: auto;
   }
-  [href="/"]:before{
+  .home:before{
     content: $icon-logo;
   }
-  [href*="instagram"]:before {
+  .instagram:before {
     content: $icon-instagram;
   }
-  [href*="youtube"]:before {
+  .youtube:before {
     content: $icon-youtube;
   }
 
-  a{
+  li{
+    padding: 0;
+    &:before{
+      font-size: 2.6rem;
+    }
     &:hover, &:focus, &:active {
       &:before {
         color: $nkh-footer-lightergrey;
       }
     }
-  }
-  li{
     &:first-child{
       display: block;
       clear: both;
@@ -138,14 +149,12 @@
         height: 85px;
         display: block;
         margin: 0;
-        &:before{
-          font-size: 84px;
-          color: $white;
-        }
+      }
+      &:before{
+        font-size: 84px;
+        color: $white;
       }
     }
-    display: inline-block;
-    padding: 0;
     &:nth-child(2){
       margin-left: 0;
     }
