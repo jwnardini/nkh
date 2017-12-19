@@ -1,0 +1,23 @@
+uuid: ec5c1ba4-ddd2-4366-8f2e-0bb105b10a0c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_video_boolean
+    - node.type.campaign
+id: node.campaign.field_video_boolean
+field_name: field_video_boolean
+entity_type: node
+bundle: campaign
+label: 'Promote Video'
+description: 'Click the checkbox would display a video icon to inform site visitors this page includes video content.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

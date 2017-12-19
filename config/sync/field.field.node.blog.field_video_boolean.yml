@@ -1,0 +1,23 @@
+uuid: ea06a258-5d95-4d66-8049-ff7072a8ea1c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_video_boolean
+    - node.type.blog
+id: node.blog.field_video_boolean
+field_name: field_video_boolean
+entity_type: node
+bundle: blog
+label: 'Promote Video'
+description: 'Click the checkbox would display a video icon to inform site visitors this page includes video content.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
