@@ -41,9 +41,6 @@
   }
   li {
     list-style-type: none;
-    &:before{
-      display: none
-    }
   }
   &.mobile {
     float: none;

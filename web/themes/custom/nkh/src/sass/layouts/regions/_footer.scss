@@ -2,6 +2,11 @@
   display: inline-block;
   margin: 2rem 0 3rem;
 }
+nav.block-menu:not(.menu--header-social-media-links , .menu--footer-social-media-links) {
+  li:before{
+    display: none
+  }
+}
 
 .menu--footer {
   display: inline;
@@ -41,15 +46,9 @@
     width: 100%;
     padding: 0;
     position: relative;
-    font-size: 0;
-    &:before {
-      @include icon(nkh);
-      color: $nkh-lightgrey;
-      display: block;
-      position: absolute;
-      transition: all .2s;
-      font-size: 2.6rem;
-    }
+    text-indent: -9999px;
+    overflow: hidden;
+    text-decoration: none;  
     &:after {
       content: none;
     }
