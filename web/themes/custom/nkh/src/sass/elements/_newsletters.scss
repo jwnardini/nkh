@@ -225,8 +225,11 @@ div[class*="block-newsletter"] {
 }
 
 .cta-form__group {
-  display: inline-block;
+  display: block;
+  max-width: 400px;
+  margin: 0 auto;
   @include breakpoint($min960) {
+    display: inline-block;
     width: 30%;
     margin: 0 1%;
   }

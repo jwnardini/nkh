@@ -3,20 +3,22 @@
  * JavaScript for Resource Clipboard Copy.
  */
 
-(function (Drupal, $) {
+(function ($) {
   'use strict';
-  Drupal.behaviors.nkhCollapseItems = function(e) {
-    var e = window.event || e;
-    var targ = e.target || e.srcElement;
-    e.preventDefault();
-    if ($('#nkh_resource_list').hasClass('closed')) {
-      $('#nkh_resource_list').removeClass('closed');
-      $('#nkh_resource_list').addClass('open');
-    } else if ($('#nkh_resource_list').hasClass('open')) {
-      $('#nkh_resource_list').removeClass('open');
-      $('#nkh_resource_list').addClass('closed');
-    }
 
-    
+  Drupal.behaviors.nkhToggleResources = {
+    attach: function (context, settings) {
+      $(document, context).once().on('click', '#nkh_toggle_resource_container', function(e) {
+        e.preventDefault();
+        if ($('#nkh_resource_list').hasClass('closed')) {
+          $('#nkh_toggle_resource_container').html('Collapse Items');
+          $('#nkh_resource_list').removeClass('closed').addClass('open');
+        } else {
+          $('#nkh_toggle_resource_container').html('View All Items');
+          $('#nkh_resource_list').removeClass('open').addClass('closed');
+        }
+      })
+      
+    }
   }
-}(Drupal, jQuery));
+})(jQuery);

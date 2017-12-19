@@ -19,20 +19,30 @@ abstract class NKHResourceCenter extends FormBase {
     $session_name = $form_state->get('session_name');
     $current_session = $session->get($session_name);
     $is_duplicate = FALSE;
-    $fid;
-    if ($form_state->get('fid') != NULL && $form_state->get('file_uri') != NULL) {
-      $file = [$form_state->get('fid'), $form_state->get('file_uri')];
-      $fid = $form_state->get('fid');
+    $fid = '';
+    $nid = '';
+    $file = [];
+
+    // Set nid based on which form is making the call.
+    if ($form_state->get('nid') !== NULL) {
+      $nid = $form_state->get('nid');
     }
-    elseif ($form_state->get('view_listing') == TRUE) {
+    else {
       $nid = $form_state->getTriggeringElement()['#parents'][2];
-      $storage = \Drupal::entityTypeManager()->getStorage('node');
-      $node = $storage->load($nid);
-      if ($node->get('field_upload')->entity !== NULL) {
-        $fid = $node->get('field_upload')->entity->id();
-        $file[] = $node->get('field_upload')->entity->id();
-        $file[] = $node->get('field_upload')->entity->getFileUri();
-      }
+    }
+
+    // Get fid and set session variables.
+    $storage = \Drupal::entityTypeManager()->getStorage('node');
+    $node = $storage->load($nid);
+
+    if ($node->get('field_upload')->entity !== NULL) {
+      $fid = $node->get('field_upload')->entity->id();
+      $file_uri = $node->get('field_upload')->entity->getFileUri();
+      $file_name = explode('/', $file_uri);
+      $file[] = $node->get('field_upload')->entity->id();
+      $file[] = $file_uri;
+      $file[] = $file_name[3];
+      $file[] = $node->get('field_file_type')->entity->getName();
     }
     else {
       return FALSE;
@@ -40,32 +50,18 @@ abstract class NKHResourceCenter extends FormBase {
 
     if ($session && $file != NULL) {
       foreach ($current_session as $parent) {
-        foreach ($parent as $key => $value) {
-          if ($value[0] == $fid) {
-
-            $is_duplicate = TRUE;
-          }
+        if ($parent[0] == $fid) {
+          $is_duplicate = TRUE;
         }
       }
       if ($is_duplicate == FALSE) {
-        if ($current_session) {
-          $current_session[] = $file;
-          $session->set($session_name, $current_session);
-          $current_session = $session->get($session_name);
-        }
-        elseif ($current_session == NULL) {
-          $current_session[] = $file;
-          $session->set($session_name, $current_session);
-          $current_session = $session->get($session_name);
-        }
-        else {
-          $current_session = $session->get($session_name);
-        }
+        $current_session[] = $file;
+        $session->set($session_name, $current_session);
+        $current_session = $session->get($session_name);
       }
       $field_deltas_array = $form_state->get('field_deltas');
       $field_deltas_array = $current_session;
       $form_state->set('field_deltas', $field_deltas_array);
-      $form_state->set('resource_list_state', 'open');
       $form_state->setRebuild();
       drupal_get_messages();
     }
@@ -76,7 +72,6 @@ abstract class NKHResourceCenter extends FormBase {
    * {@inheritdoc}
    */
   public static function removeResource(array &$form, FormStateInterface $form_state) {
-
     $session = \Drupal::request()->getSession();
     $session_name = $form_state->get('session_name');
     $current_session = $session->get($session_name);
@@ -89,7 +84,7 @@ abstract class NKHResourceCenter extends FormBase {
 
     $current_session = array_values($current_session);
     $session->set($session_name, $current_session);
-    $delta_remove = $form_state->getTriggeringElement()['#parents'][1];
+    $delta_remove = $fid;
     $field_deltas_array = $form_state->get('field_deltas');
     $key_to_remove = array_search($delta_remove, $field_deltas_array);
     unset($field_deltas_array[$key_to_remove]);

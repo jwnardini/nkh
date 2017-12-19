@@ -206,6 +206,7 @@
     }
   }
 }
+
 // the list of download items in the bulk download tray
 [id="ajax_resource_container"] [id="nkh_resource_list"] {
   transition: height .2s;
@@ -360,7 +361,7 @@
   padding: 0 3rem;
 }
 
-[id="nkh_resource_list"] > [id="edit-resource"] {
+[id="nkh_resource_view_listing"] > [id="edit-resource"] {
   display: flex;
   flex-wrap: wrap;
   align-items: start;

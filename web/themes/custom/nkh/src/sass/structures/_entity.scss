@@ -23,14 +23,11 @@
 }
 .entity--cta-text,
 .view-cta-references {
-  width: calc(100% + 20px);
-  margin-left: -20px;
-  margin-right: -20px;
+  width: 100%;
   overflow: visible;
   position: relative;
   padding: 1rem;
   @include breakpoint($min480) {
-    width: 100%;
     margin-left: 0;
     margin-right: 0;
   }
@@ -63,6 +60,16 @@
     border-bottom: 4px solid rgba($white, 0.95);
     &:after {
       content: none;
+    }
+  }
+  .cta-form__fields{
+    .wrapable{
+      &:after {
+        margin-top: -.6em;
+        @media (min-width: 419px){
+          margin-top: .6em;
+        }
+      }      
     }
   }
 
@@ -107,6 +114,9 @@ div[class*="block-views-block-cta-references-"]{
     height: 300px;
     background: url('/themes/custom/nkh/images/btn-bingo.gif') 0 0 no-repeat;
     background-size: 100%;
+    @include breakpoint($min768) {
+      top: -8rem;
+    }
     @include breakpoint($min1024) {
       top: -10rem;
     }
@@ -116,7 +126,11 @@ div[class*="block-views-block-cta-references-"]{
       opacity: 1;
       height: 300px;
       transform: translate(-50%, -100%) scale(1) rotate(0deg);
-      top: 10rem;
+      top: 4rem;
+      @include breakpoint($min768) {
+        top: 8rem;
+      }
+
       @include breakpoint($min1024) {
         top: 11rem;
       }
@@ -679,6 +693,12 @@ div[class*="block-views-block-cta-references-"]{
     border: 0 none;
     color: $white;
     font-size: 1.8rem;
+    &::-ms-expand { 
+      display: none; 
+    }
+  }
+  option{
+    color: $nkh-text;
   }
   .form-type-select {
     position: relative;
@@ -699,6 +719,7 @@ div[class*="block-views-block-cta-references-"]{
   position: relative;
   padding: 2rem 2rem 1rem 3rem;
   color: $white;
+  z-index: 100;
   display: flex;
   flex-direction: column;
 
@@ -710,17 +731,15 @@ div[class*="block-views-block-cta-references-"]{
     padding: 3rem 3rem 2.5rem 4rem;
   }
   &:after{
-    -webkit-mask: url('/themes/custom/nkh/images/nkh-canvas-orange.png') 0 0 / 300%;
-    background: $nkh-orange;
-    display: block;
-    content: '';
-    height: 100%;
-    width: 100%;
+    content: "";
     position: absolute;
-    mix-blend-mode: lighten;
     top: 0;
     left: 0;
-    z-index: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: url('/themes/custom/nkh/images/nkh-tile-orange.png') 0 0/250px;
+    opacity: .85;
   }
   h2 {
     //@include element-invisible;
