@@ -12,38 +12,52 @@
 
                 var $everything = $(window);
                 // add class to this list for toggle class on the same page. Use this on footer/header sectionss.
-                var $blocks = $('.block-mobilecommonssignup .text-formatted, .block-newslettersignupform, .block-newslettersignupform-2, .block-search')
+                var $blocks = $('.block-mobilecommonssignup .text-formatted, .block-newslettersignupform, .block-newslettersignupform-2, .block-search');
+                var $blocksButton = $('.block-mobilecommonssignup .mobile-alert-button, .block-newslettersignupform .text-formatted .header-newsletter-form__toggle, .block-newslettersignupform-2 .text-formatted .something-else, .block-search .header-search-form__toggle');
 
                 // give the classes above a common share class.
                 $blocks.addClass('toggle-class');
+                $blocksButton.addClass('toggle-button');
 
 
                 $(document).on('click', function(e) {
                     // remove all the click listening by checking if it has toggle-class
                     if( !$(e.target).parents().hasClass('toggle-class') ) {
                         if( $('.open-item').is(':visible') ) {
+
+                            $('.toggle-button').removeClass('toggled');
                             $('.open-item').removeClass('open-item');
-                        }else{
+
+                        }else if($(e.target).is(':visible')){
+
+                            $('.open-item').removeClass('open-item');
+                            $('.toggle-button').removeClass('toggled');
+
                           //nothing.
+                        }else{
+                            
                         }
                     }
                 });
-                $blocks.click(function() {
-                    // this removes all the slibings open class
-                    if( $('.open-item').is(':visible') ) {
-                        $('.open-item').removeClass('open-item');
-                    }
-                    // this add the open class to the specific clicked object.
-                    $(this).addClass('open-item');
-                });
 
-        //         $('.cta-form__toggle').on('click keyup', function() {
-        //           $(this).parents('.cta-form').toggleClass('visible');
-        //         });
-        //
-				// $( '.cta-form__fields' ).on('focusin', function() {
-				// 	$(this).parents('.cta-form').addClass( 'visible' );
-				// });
+
+                $blocksButton.click(function(e) { 
+
+                    $('.open-item').removeClass('open-item');
+                    $(this).toggleClass('toggled');
+
+                    
+                    if($(this).hasClass('toggled')){
+                        $(this).closest('.toggle-class').addClass('open-item');
+                    }else{
+                        $('.toggle-button').removeClass('toggled');
+                        $(this).closest('.toggle-class').removeClass('open-item');                        
+
+                    }
+
+  
+
+                });                
 
             //}
 
