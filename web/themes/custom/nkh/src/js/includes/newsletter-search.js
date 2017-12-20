@@ -13,7 +13,7 @@
                 var $everything = $(window);
                 // add class to this list for toggle class on the same page. Use this on footer/header sectionss.
                 var $blocks = $('.block-mobilecommonssignup .text-formatted, .block-newslettersignupform, .block-newslettersignupform-2, .block-search');
-                var $blocksButton = $('.block-mobilecommonssignup .mobile-alert-button, .block-newslettersignupform .text-formatted .header-newsletter-form__toggle, .block-newslettersignupform-2 .text-formatted .something-else, .block-search .header-search-form__toggle');
+                var $blocksButton = $('.block-mobilecommonssignup .mobile-alert-button, .block-newslettersignupform .text-formatted .header-newsletter-form__toggle, .block-newslettersignupform-2 .text-formatted .header-newsletter-form__toggle, .block-search .header-search-form__toggle');
 
                 // give the classes above a common share class.
                 $blocks.addClass('toggle-class');
@@ -27,13 +27,7 @@
 
                             $('.toggle-button').removeClass('toggled');
                             $('.open-item').removeClass('open-item');
-
-                        }else if($(e.target).is(':visible')){
-
-                            $('.open-item').removeClass('open-item');
-                            $('.toggle-button').removeClass('toggled');
-
-                          //nothing.
+                            
                         }else{
                             
                         }

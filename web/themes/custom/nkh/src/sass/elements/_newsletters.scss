@@ -15,6 +15,10 @@
     letter-spacing: .025em;
     line-height: 1.4;
     background: $nkh-darkergrey;
+    &:hover{
+      background: $nkh-darkgrey-hover;
+
+    }
     span:first-of-type {
       padding: 1.2em 0 .9em;
       display:  block;
