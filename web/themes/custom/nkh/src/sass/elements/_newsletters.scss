@@ -14,10 +14,13 @@
     width: 156px;
     letter-spacing: .025em;
     line-height: 1.4;
-    background: $nkh-darkergrey;
-    &:hover{
-      background: $nkh-darkgrey-hover;
-
+    background-color: $nkh-darkergrey;
+    @include notouchhover {
+      background-color: $nkh-darkergrey;
+    }
+    &:hover,
+    &:focus{
+      background-color: $nkh-darkgrey-hover;
     }
     span:first-of-type {
       padding: 1.2em 0 .9em;
