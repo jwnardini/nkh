@@ -13,6 +13,7 @@
 }
 .block-views-block-core-partners-core-partners,
 .block-views-block-core-partners-national-partners{
+  z-index: 100;
   padding: 2rem;
   margin: 0;
   vertical-align: top;
@@ -100,25 +101,23 @@
   }
   //navigation
   .owl-nav{
-    position: absolute;
-    top: 0;
     width: 100%;
-    margin-top: 3.4rem;
-    z-index: -1;
+    z-index: 100;
   }
   .owl-prev,
   .owl-next{
-    top: 0;
+    position: absolute;
+    top: 3.4rem;
   }
   .owl-prev{
     &.disabled{
       .icon-prev{
+        cursor: default;
         background: rgba($nkh-lightgrey, .5);    
       }
     }
   }
   .owl-next{
-    position: absolute;
     right: 0;
   }
   .icon-prev,
