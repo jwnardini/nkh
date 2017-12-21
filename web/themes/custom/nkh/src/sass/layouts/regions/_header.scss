@@ -41,6 +41,14 @@
       margin: 0 auto;
     }  
   }
+  .logo-link{
+    max-width: 170px;
+    display: block;
+    height: 88px;
+    @include breakpoint($min1024) {
+      max-width: 150px;
+    }
+  }
   .nkh-logo {
     position: fixed;
     bottom: 6.5rem;
