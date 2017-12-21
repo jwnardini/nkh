@@ -13,6 +13,7 @@
 
 }
 
+.view-taxonomy-term .view-content,
 .node--view-mode-full .node__content {
   > div{
     padding: 2rem;
@@ -195,5 +196,85 @@
   }
   .field--name-field-social-ins:before {
     content: $icon-instagram;
+  }
+}
+.path-taxonomy{
+  #main{
+    //remove that white-space at the bottom
+    padding-bottom: 0;
+  }
+}
+.view-taxonomy-term{
+  background: $nkh-bone;
+  padding-top: 1em;
+  .view-content{
+    .views-row{
+      background: $white;
+      margin-bottom: 1em;
+      padding: .1em 1.8em;
+    }
+    .node__content .text-formatted{
+      max-width: auto;
+      width: 100%;
+      padding: 0;
+    }
+
+  }
+  h1,
+  .feed-icons{
+    @include breakpoint($min768) {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+  }
+  h1{
+    padding: 2rem 3rem;  
+    @include breakpoint($min1024) {
+      padding: 4rem 0 2rem;  
+    }
+  }  
+
+  & > a{
+    display: block;
+    font-size: 2rem;
+  }
+
+  span > a{
+    margin-bottom: .5em;
+  }
+
+  h2 {
+    line-height: 1.4;
+    @include breakpoint($min1024) {
+      font-size: 3.2rem;
+    }
+    *{
+      font-size: inherit;
+      display: inline;
+    }
+    a{
+      text-decoration: underline;
+      &:after{
+        content: none;
+      }
+    }
+  }
+  .pager{
+    padding-bottom: 1em;
+    li{
+      display: inline-block;
+
+    } 
+    a:after{
+      content: none;
+    }
+  }
+  .feed-icons{
+    padding: 0 3rem 2rem;
+    a {
+      font-weight: 700;
+      display: inline;
+      text-decoration: underline;
+    }    
   }
 }
