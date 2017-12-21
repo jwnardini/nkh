@@ -7,16 +7,24 @@
   @include breakpoint($min1024) {
     text-align: center;
     border-radius: 0;
-    pointer-events: none;
     display: block;
     @include link-button;
     -webkit-mask-size: 200%;
-    padding: .4em 0 .6em;
+    padding: 0;
     width: 156px;
     letter-spacing: .025em;
     line-height: 1.4;
-    background: $nkh-darkergrey;
+    background-color: $nkh-darkergrey;
+    @include notouchhover {
+      background-color: $nkh-darkergrey;
+    }
+    &:hover,
+    &:focus{
+      background-color: $nkh-darkgrey-hover;
+    }
     span:first-of-type {
+      padding: 1.2em 0 .9em;
+      display:  block;
       font-weight: 700;
       color: $white;
       text-transform: uppercase;

@@ -277,7 +277,13 @@
     }
     .header-newsletter-form__toggle{
       background-color: $nkh-lightgrey;
-      padding: 1.1em 0 1em;
+      padding: 0;
+        span:first-of-type {
+        padding: 1.1em 0 1em;
+        display: block;
+        width: 100%;
+
+      }
     }
     .block-newslettersignupform-2{
       position: absolute;
