@@ -1,5 +1,5 @@
 .article-list {
-  margin-top: 15rem;
+  margin-top: 3rem;
   background: $nkh-bone;
   &:before{
     content: "";
@@ -188,9 +188,15 @@
       display: inline;
     }
 
-    &:after{
+    &:after {
       content: "/";
-      margin-right: .5rem;
+      margin-right: .2rem;
+    }
+  }
+  // do not print slash if it's pressroom
+  &.pressroom {
+    .views-field-field-date-simple:after{
+      content: none;
     }
   }
   .views-field-field-entity-profile{

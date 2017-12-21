@@ -15,6 +15,7 @@ dependencies:
     - field.field.node.blog.field_taxonomy_issue
     - field.field.node.blog.field_taxonomy_series
     - field.field.node.blog.field_teaser
+    - field.field.node.blog.field_video_boolean
     - node.type.blog
   module:
     - datetime
@@ -94,4 +95,5 @@ hidden:
   field_image_featured: true
   field_metatags: true
   field_teaser: true
+  field_video_boolean: true
   links: true

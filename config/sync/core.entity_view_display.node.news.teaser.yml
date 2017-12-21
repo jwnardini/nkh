@@ -5,6 +5,17 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.news.body
+    - field.field.node.news.field_boilerplate
+    - field.field.node.news.field_cta_ref
+    - field.field.node.news.field_date_simple
+    - field.field.node.news.field_entity_partner
+    - field.field.node.news.field_intro
+    - field.field.node.news.field_metatags
+    - field.field.node.news.field_taxonomy_issue
+    - field.field.node.news.field_taxonomy_news
+    - field.field.node.news.field_teaser
+    - field.field.node.news.field_url
+    - field.field.node.news.field_video
     - node.type.news
   module:
     - text
@@ -17,12 +28,21 @@ content:
   body:
     label: hidden
     type: text_summary_or_trimmed
-    weight: 101
+    weight: 0
     settings:
       trim_length: 600
     third_party_settings: {  }
     region: content
-  links:
-    weight: 100
-    region: content
-hidden: {  }
+hidden:
+  field_boilerplate: true
+  field_cta_ref: true
+  field_date_simple: true
+  field_entity_partner: true
+  field_intro: true
+  field_metatags: true
+  field_taxonomy_issue: true
+  field_taxonomy_news: true
+  field_teaser: true
+  field_url: true
+  field_video: true
+  links: true
