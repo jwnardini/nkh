@@ -74,7 +74,6 @@
   <div class="header-section">
     <div>{{ content.field_image_banner }}</div>
     <div class="header-section__overlay">
-      <div>{{ content.field_taxonomy_series }}</div>
       <h1>{{ drupal_title() }}</h1>
     </div>
   </div>
@@ -86,20 +85,30 @@
 
   <div{{ content_attributes.addClass('node__content') }}>
 
-    {{ content|without('field_teaser', 'field_taxonomy_series', 'field_taxonomy_news', 'field_taxonomy_issue', 'field_entity_partner', 'field_boilerplate') }}
+    {% if content.field_date_simple|render|striptags %}
+      <div class="byline">
+        {{ content.field_date_simple }}
+      </div>
+    {% endif %}
+
+    {{ content|without('field_teaser', 'field_taxonomy_series', 'field_date_simple', 'field_taxonomy_news', 'field_taxonomy_issue', 'field_entity_partner', 'field_boilerplate', 'field_url') }}
 
     {% if newsType %}
       {{ content.field_boilerplate }}
     {% endif %}
 
+    {% if content.field_url|render|striptags %}
+      <div class="byline">
+        <span>Read More:</span>
+        {{ content.field_url }}
+      </div>
+    {% endif %}
     {% if content.field_entity_partner|render|striptags %}
-      {{ content.field_entity_partner }}
+      <div class="byline">
+        <span>Related Partner:</span>
+        {{ content.field_entity_partner }}
+      </div>
     {% endif %}
-
-    {% if content.field_taxonomy_issue|render|striptags %}
-      {{ content.field_taxonomy_issue }}
-    {% endif %}
-
 
   </div>
 
