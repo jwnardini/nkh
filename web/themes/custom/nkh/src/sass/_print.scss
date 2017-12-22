@@ -10,11 +10,11 @@
  * aggregated with other stylesheets, for improved front-end performance.
  */
 @media print {
-  width: 100%;
 
   @page {
-    margin: 0.5cm;
+    margin: 10mm 10mm 10mm 10mm;
   }
+
   /* Underline all links. */
   a:link,
   a:visited {
@@ -23,26 +23,6 @@
     /* Don't underline site link. */
     &.site-link {
       text-decoration: none !important;
-    }
-  }
-
-  #content {
-    /* Add visible URL after links. */
-    a[href]:after {
-//      content: " (" attr(href) ")";
-//      font-weight: normal;
-//      font-size: 10px;
-    }
-
-    /* Only display useful links. */
-    a[href^="javascript:"]:after,
-    a[href^="#"]:after {
-      content: "";
-    }
-
-    /* Add visible title after abbreviations. */
-    abbr[title]:after {
-/*      content: " (" attr(title) ")";*/
     }
   }
 
@@ -60,6 +40,7 @@
       display: none;
     }
   }
+
   /* Turn off any background colors or images. */
   body,
   #page,
@@ -72,31 +53,393 @@
 
   /* Hide sidebars and nav elements. */
   #skip-link,
+  #header,
   #navigation,
   #footer,
+  .region-alert,
   .sidebars,
   .breadcrumb,
   .pager,
   .tabs,
-  .feed-icons {
+  .feed-icons,
+  .form-type-select:after {
     visibility: hidden;
     display: none;
   }
-  .inner-wrapper{
+  .inner-wrapper {
     max-width: 90%;
   }
+
   /* for style guide only */
-  .color-palettes{
+  .color-palettes {
     // box__*{
     //   background: inherit;
     //   -webkit-print-color-adjust: exact!important;
     // }
   }
-  article{
-  }
-  h1{
+
+  h1 {
     font-size: 5rem;
     padding-bottom: 2rem;
   }
 
+  /* Homepage */
+  .path-frontpage {
+    .front_hero {
+      padding-top: 0;
+      margin-bottom: 2rem !important;
+      // display: none;
+      h1 {
+        font-size: 10rem;
+        line-height: normal;
+        margin: 0;
+        span {
+          display: inline;
+          margin: 0;
+        }
+      }
+      #block-hp-hero-intro {
+        position: static;
+        margin: 0 auto !important;
+        max-width: none;
+        a {
+          display: none;
+        }
+      }
+    }
+    .front_hero-section {
+      height: auto !important;
+    }
+    .block-views-blockour-stories-our-stories,
+    .block-views-blockour-work-our-work {
+      h2 {
+        position: static;
+        text-align: left;
+        margin: 0 0 0 1rem;
+      }
+      .view-header {
+        margin: 1rem auto;
+        width: 100%;
+        font-size: 2.6rem;
+        line-height: normal;
+      }
+      .attachment-after {
+        padding: 0 !important;
+        margin: 0 !important;
+        display: block;
+        .views-element-container {
+          display: block;
+          margin: 1rem 0 !important;
+          &:first-child {
+            .view-header {
+              padding: 1rem 0;
+            }
+          }
+          .view-our-stories.view-id-our_stories,
+          .view-our-work.view-id-our_work {
+            * {
+              margin: 0 !important;
+              min-height: 0 !important;
+            }
+          }
+          .field-content {
+            display: block;
+          }
+        }
+      }
+      a {
+        height: auto !important;
+        min-height: 0;
+        margin: 0;
+        .image-wrapper {
+          display: inline-block;
+          min-width: 0;
+          width: 25%;
+          height: auto;
+          padding-right: 2rem;
+        }
+        .title-wrapper {
+          display: inline-block;
+          min-height: 0;
+          position: static;
+          width: 65%;
+          color: $black;
+          padding: 0 !important;
+          margin: 0;
+          vertical-align: top;
+          .view-title {
+            text-decoration: underline;
+          }
+          .read-more {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    .region-postscript {
+      display: none;
+    }
+  }
+
+  /* Landing pages */
+  #main {
+    padding-bottom: 0rem;
+  }
+  .header-section {
+    min-height: 0;
+    margin-bottom: 1rem;
+    .field--name-field-image-banner {
+      display: none;
+    }
+    .header-section__overlay {
+      position: static !important;
+      padding: 0 !important;
+      h1 {
+        padding-bottom: 0;
+      }
+    }
+  }
+  .share-section {
+    display: none;
+  }
+  .node__content {
+    h2 {
+      color: $black !important;
+    }
+    .page-node-type-profile & {
+      padding: 0 !important;
+    }
+    .field--type-text-with-summary {
+      width: auto !important;
+    }
+    .field--name-field-intro {
+      h2 {
+        color: $black;
+      }
+    }
+    .text-formatted {
+      width: auto !important;
+      font-size: 2.5rem !important;
+    }
+    .entity--cta-image {
+      * {
+        color: $black;
+      }
+      margin: 0 auto;
+      .image-section {
+        display: inline-block;
+        width: auto;
+        img {
+          width: 500px;
+          height: auto;
+        }
+      }
+      .content-section {
+        position: static;
+        display: inline-block;
+        width: 100%;
+        .landing_title span {
+          text-decoration: underline;
+        }
+      }
+      span.icon {
+        display: none;
+      }
+    }
+    .field__item {
+      margin: 1rem 0;
+    }
+    .media.media-video {
+      display: none;
+    }
+    .entity-landing-link--manual {
+      margin-bottom: 0 !important;
+      .icon-external:before {
+        content: none;
+      }
+      a {
+        display: block;
+        margin: 0 auto;
+        .image-section {
+          display: inline-block;
+          width: auto;
+          .field--type-image {
+            margin-bottom: 0;
+          }
+        }
+        .content-section {
+          display: inline-block;
+          width: 64%;
+          padding: 0 !important;
+          vertical-align: top;
+          margin-top: 3rem;
+          margin-left: 3rem;
+          .landing_title,
+          .landing_teaser,
+          .landing_additional {
+            padding: 0;
+            margin: 0;
+            span {
+              text-decoration: underline;
+            }
+          }
+        }
+        .image-section img {
+          width: 150px;
+          height: auto;
+        }
+      }
+    }
+    .entity--hunger-fact {
+      * {
+        color: $black;
+      }
+      width: auto !important;
+      position: static !important;
+      margin: 0 !important;
+      ~ h2 {
+        color: $black !important;
+      }
+      .entity-content {
+        > a {
+          margin: 1rem 0 0 0 !important;
+        }
+        .hunger-fact-title {
+          margin: 0;
+        }
+        .entity-content__details {
+          display: block;
+          .field--name-field-statistic-hunger {
+            font-size: 3rem;
+          }
+        }
+      }
+    }
+  }
+  .region.region-postscript {
+    .block-views-block-featured-content-featured-content {
+      margin: 0;
+      h2 {
+        display: none;
+      }
+      a {
+        min-height: 0;
+        img {
+          display: none;
+        }
+        .title-wrapper {
+          min-height: 0;
+          position: static;
+          display: inline-block;
+          width: 100%;
+          color: $black;
+          padding-top: 0;
+          padding-bottom: 0;
+          margin: 2rem 0 0 0;
+          .view-title {
+            text-decoration: underline;
+          }
+          .read-more {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    .attachment-after {
+      display: none;
+    }
+    .view-blog-by-author,
+    .view-blog-post {
+      margin-top: 0 !important;
+      .view-content {
+        display: block;
+        padding: 2rem 0 2rem;
+        .views-row {
+          margin: 0;
+          width: 100%;
+          .title-wrapper {
+            margin-top: 0;
+          }
+          img {
+            display: none !important;
+          }
+          .view-series {
+            display: none !important;
+          }
+        }
+      }
+    }
+  }
+
+  /* Hunger facts */
+  #block-views-block-hunger-facts-data-food-insecurity,
+  #block-views-block-hunger-facts-data-school-breakfast,
+  #block-views-block-hunger-facts-data-snap,
+  #block-views-block-hunger-facts-data-summer {
+    min-height: 0;
+    margin: 0 auto;
+    * {
+      color: $black;
+    }
+    .hunger-fact {
+      position: static;
+      display: block;
+      width: 80%;
+      padding: 1rem;
+    }
+    .view-content {
+      font-size: 3rem;
+    }
+  }
+
+  /* Partner sections */
+  .block-views-block-profiles-executive,
+  .block-views-block-profiles-board,
+  .block-views-block-profiles-council,
+  .block-views-block-partners-celebrities,
+  .block-views-block-partners-restaurants,
+  .block-views-block-partners-corporate-core,
+  .block-views-block-partners-corporate {
+    padding: 0 4rem;
+  }
+  .view-partners {
+    .view-content{
+      display: block;
+      margin: 0;
+      padding: 0 !important;
+      .views-row {
+        display: inline-block;
+        width: 22%;
+        vertical-align: top;
+      }
+    }
+  }
+  .field--name-field-image-headshot img,
+  .view-profile-image img {
+    width: 200px;
+    height: auto;
+  }
+
+
+  /* Prefooter */
+  .region.region-prefooter {
+    margin-top: 1rem;
+    div[class*=block-views-block-cta-references-]:after {
+      content: none;
+    }
+    .view-cta-references {
+      padding: 0;
+      font-size: 3rem;
+      p {
+        margin: 0;
+        a {
+          color: $black;
+          border-bottom: underline !important;
+        }
+      }
+    }
+    #cta-newsletter-signup {
+      display: none;
+    }
+  }
 }
