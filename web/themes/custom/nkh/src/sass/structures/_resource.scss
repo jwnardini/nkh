@@ -488,8 +488,27 @@
   input {
     width: 100%;
     min-width: auto;
+    background: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
 }
+//for listing page override only
+.nkh-resource-center-listing{
+  .js-form-item[class*="form-actions-file-url"] {
+    margin: -.5rem 0 0 3rem;
+    input {
+      border: none;
+    }  
+  }
+}
+
+
+
 // resource listing
 .path-resource-center {
   main {
