@@ -22,6 +22,9 @@
       margin: 2rem auto;
       padding: 0 2rem;
     }
+    @include breakpoint($min1024) {
+      padding: 0;
+    }
   }
   .field--name-field-landing-link-ref{
     @include breakpoint($min1024) {
