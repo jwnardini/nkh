@@ -23,11 +23,14 @@
       background-color: $nkh-darkgrey-hover;
     }
     span:first-of-type {
-      padding: 1.2em 0 .9em;
+      padding: 16px 0;
       display:  block;
       font-weight: 700;
       color: $white;
       text-transform: uppercase;
+      @include breakpoint($min1260) {
+        padding: 1.2em 0 .9em;
+      }
     }
   }
 }
