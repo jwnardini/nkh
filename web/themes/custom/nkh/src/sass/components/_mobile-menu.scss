@@ -65,7 +65,7 @@
       margin: 0;
       position: absolute;
       bottom: 140px;
-      background: rgba($white, .9);
+      background: rgba($white, 1);
       overflow-y: scroll;
       transition: max-height .6s;
       transition-timing-function: ease-out;
@@ -323,7 +323,7 @@
 }
 
 .stay-open-menu {
-  overflow-y: scroll;
+  overflow-y: hidden;
   overflow-x: hidden;
   height: 100%;
   z-index: 100;
