@@ -224,6 +224,12 @@ h3 {
   // @include breakpoint($min1024) {
   //   font-size: 3rem;
   // }
+  a {
+    text-decoration: underline;
+    &:after{
+      content:none;
+    }
+  }
 }
 
 
