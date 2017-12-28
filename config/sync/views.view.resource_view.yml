@@ -62,8 +62,13 @@ display:
               secondary_label: 'Advanced options'
               autosubmit: true
               autosubmit_hide: true
-            field_taxonomy_location_target_id:
+            title:
               bef_format: default
+              more_options:
+                is_secondary: false
+                placeholder_text: 'Search by Keyword'
+            field_taxonomy_location_target_id:
+              bef_format: bef
               more_options:
                 bef_select_all_none: false
                 bef_collapsible: false
@@ -94,11 +99,6 @@ display:
                 is_secondary: false
                 rewrite:
                   filter_rewrite_values: ''
-            title:
-              bef_format: default
-              more_options:
-                is_secondary: false
-                placeholder_text: 'Search by Keyword'
           text_input_required_format: simple_html
       pager:
         type: mini
