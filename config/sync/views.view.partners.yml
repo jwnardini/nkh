@@ -727,7 +727,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<div class="view-profile-image">{{ field_image_logo }}<span class="element-invisible">{{ title }}</span></div>'
+            text: '<div class="view-profile-image">{{ field_image_logo }}<span>{{ title }}</span></div>'
             make_link: true
             path: '{{ path }}'
             absolute: false
@@ -2755,7 +2755,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<div class="view-profile-image">{{ field_image_logo }}<span class="element-invisible">{{ title }}</span></div>'
+            text: '<div class="view-profile-image">{{ field_image_logo }}<span>{{ title }}</span></div>'
             make_link: true
             path: '{{ path }}'
             absolute: false
