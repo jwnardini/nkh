@@ -44,8 +44,11 @@
     &:after{
       content: none;
     }
-    &:hover span {
-      border-bottom: 3px solid $nkh-orange;
+    &:focus,
+    &:hover{
+      span {
+        border-bottom: 3px solid $nkh-orange;
+      }
     }
   }
 }
