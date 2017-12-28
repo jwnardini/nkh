@@ -16,11 +16,11 @@
   transition: padding-top .4s;
   transition-timing-function: cubic-bezier(0.7,0,0.3,1);
   @include breakpoint($min480) {
-    background-position: 57% 42%;
+    background-position: 57% 30%;
     background-size: 176%;
   }
   @include breakpoint($min768) {
-    background-position: 57% 24%;
+    background-position: 57% 15%;
     background-size: 130%;
   }
   @include breakpoint($min1024) {
@@ -49,7 +49,7 @@
     font-weight: 800;
     text-align: center;
     font-size: 19.4vw;
-    margin-top: -1.3rem;
+    margin-top: 5px;
     margin-left: -1rem;
 
     @include breakpoint($min480) {
