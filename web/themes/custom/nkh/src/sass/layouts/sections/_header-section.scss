@@ -89,6 +89,33 @@
 
 }
 
+// IE11-specific
+@media all and (-ms-high-contrast:none){
+  .header-section__has-image {
+    display:table;
+    width:100%;
+  }
+  .header-section__overlay {
+    min-height:20vh;
+    box-sizing: border-box;
+  }
+  .header-section__has-image .header-section__overlay {
+    display:table-cell;
+    vertical-align: middle;
+    position:relative !important;
+    min-height: 78vw;
+    @include breakpoint($min768) {
+      min-height: 51vw;
+    }
+    @include breakpoint($min960) {
+      min-height: 37vw;
+    }
+  }
+  .page-node-type-landing-page .header-section__has-image .header-section__overlay {
+    vertical-align: bottom;
+  }
+}
+
 .page-node-type-blog,
 .page-node-type-program,
 .page-node-type-news,
