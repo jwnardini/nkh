@@ -6,7 +6,6 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\InvokeCommand;
-use Drupal\Core\Ajax\ReplaceCommand;
 
 /**
  * Implements Resource Center Node form.
@@ -33,15 +32,17 @@ class SingleResource extends FormBase {
     $path = $node->url();
     $build = $view_builder->view($node, 'nkh_resource_center');
     $file_type = NULL;
+    $is_video = isset($node->get('field_video')->entity);
     if ($node->get('field_upload')->entity !== NULL) {
       $file_uri = $node->get('field_upload')->entity->getFileUri();
       $fid = $node->get('field_upload')->entity->id();
     }
-    if ($node->get('field_image_featured')->entity !== NULL) {
-      $mid = $node->get('field_image_featured')->entity->id();
-    }
+
     if ($node->get('field_file_type')->entity !== NULL) {
-      $file_type = $node->get('field_file_type')->entity->getName();
+      $type_count = $node->get('field_file_type')->count();
+      for ($i = 0; $i < $type_count; $i++) {
+        $file_type[] = $node->get('field_file_type')->get($i)->entity->getName();
+      }
     }
 
     $field_count = $form_state->get('field_deltas');
@@ -62,16 +63,25 @@ class SingleResource extends FormBase {
       '#suffix' => '</div>',
     ];
 
-    // Build the media thumbnail if present.
-    if (!empty($mid)) {
-      $media_builder = \Drupal::entityTypeManager()->getViewBuilder('media');
-      $media_storage = \Drupal::entityTypeManager()->getStorage('media');
-      $media_entity = $media_storage->load($mid);
-      $media_build = $media_builder->view($media_entity, 'embed');
-      $form['form_header']['image_featured'] = [
-        '#type' => 'item',
-        '#markup' => render($media_build),
-      ];
+    // Build the media thumbnail if present or the video embed.
+    if ($node->get('field_image_featured')->entity !== NULL || $node->get('field_video')->entity !== NULL) {
+      if ($is_video) {
+        $mid = $node->get('field_video')->entity->id();
+      }
+      else {
+        $mid = $node->get('field_image_featured')->entity->id();
+      }
+      if (!empty($mid)) {
+        $media_builder = \Drupal::entityTypeManager()->getViewBuilder('media');
+        $media_storage = \Drupal::entityTypeManager()->getStorage('media');
+        $media_entity = $media_storage->load($mid);
+        $media_build = $media_builder->view($media_entity, 'embed');
+
+        $form['form_header']['image_featured'] = [
+          '#type' => 'item',
+          '#markup' => render($media_build),
+        ];
+      }
     }
 
     $form['form_header']['form_title'] = [
@@ -82,7 +92,7 @@ class SingleResource extends FormBase {
     $form['form_header']['form_title']['resource_type'] = [
       '#type' => 'html_tag',
       '#tag' => 'span',
-      '#value' => $file_type,
+      '#value' => implode(' ', $file_type),
     ];
     $form['form_header']['form_title']['node_title'] = [
       '#type' => 'page_title',
@@ -95,28 +105,32 @@ class SingleResource extends FormBase {
       '#suffix' => '</div>',
     ];
 
-    $form['form_header']['form_actions']['download_single'] = [
-      '#type' => 'html_tag',
-      '#tag' => 'button',
-      '#value' => t('Download Resource'),
-      '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterSingleDownload("' . file_create_url($file_uri) . '")'],
-    ];
+    if (!$is_video) {
+      $form['form_header']['form_actions']['download_single'] = [
+        '#type' => 'html_tag',
+        '#tag' => 'button',
+        '#value' => t('Download Resource'),
+        '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterSingleDownload("' . file_create_url($file_uri) . '")'],
+      ];
 
-    $form['form_header']['form_actions']['add_resource'] = [
-      '#type' => 'submit',
-      '#value' => t('Add to Bulk Download'),
-      '#submit' => ['Drupal\nkh_resource_center\Form\NKHResourceCenter::addResource'],
-      '#ajax' => [
-        'callback' => '::addResourceCallback',
-        'wrapper' => 'ajax_resource_container',
-      ],
-      '#name' => $entity_id,
-    ];
+      $form['form_header']['form_actions']['add_resource'] = [
+        '#type' => 'submit',
+        '#value' => t('Add to Bulk Download'),
+        '#submit' => ['Drupal\nkh_resource_center\Form\NKHResourceCenter::addResource'],
+        '#ajax' => [
+          'callback' => '::addResourceCallback',
+          'wrapper' => 'ajax_resource_container',
+        ],
+        '#name' => $entity_id,
+        '#prefix' => '<span class="resource-input-button">',
+        '#suffix' => '</span>',
+      ];
+    }
 
     $form['form_header']['form_actions']['copy_single'] = [
       '#type' => 'html_tag',
       '#tag' => 'button',
-      '#value' => t('Copy to Clipboard'),
+      '#value' => t('Copy a Shareable Link'),
       '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterCopy(event, ' . $entity_id . ')'],
     ];
 
