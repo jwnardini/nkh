@@ -86,7 +86,7 @@ class ResourceListing extends FormBase {
 
       $form['resource']['resource_item'][$row]['resource'] = [
         '#type' => 'item',
-        '#markup' => render($current_row[0]),
+        '#markup' => render($current_row['node_view']),
       ];
 
       $form['resource']['resource_item'][$row]['form_actions'] = [
@@ -95,23 +95,26 @@ class ResourceListing extends FormBase {
         '#suffix' => '</div>',
       ];
 
-      $form['resource']['resource_item'][$row]['form_actions']['download_single'] = [
-        '#type' => 'html_tag',
-        '#tag' => 'button',
-        '#value' => t('Download Resource'),
-        '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterSingleDownload(event,"' . file_create_url($current_row[1]) . '")'],
-      ];
+      if ($current_row['file_type_id'] != 96) {
+        $form['resource']['resource_item'][$row]['form_actions']['download_single'] = [
+          '#type' => 'html_tag',
+          '#tag' => 'button',
+          '#value' => t('Download Resource'),
+          '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterSingleDownload(event,"' . file_create_url($current_row[1]) . '")'],
+        ];
 
-      $form['resource']['resource_item'][$row]['form_actions']['add_resource'] = [
-        '#type' => 'submit',
-        '#value' => t('Add to Bulk Download'),
-        '#submit' => ['Drupal\nkh_resource_center\Form\NKHResourceCenter::addResource'],
-        '#ajax' => [
-          'callback' => '::addResourceCallback',
-          'wrapper' => 'ajax_resource_container',
-        ],
-        '#name' => $current_row[2],
-      ];
+        $form['resource']['resource_item'][$row]['form_actions']['add_resource'] = [
+          '#type' => 'submit',
+          '#value' => t('Add to Bulk Download'),
+          '#submit' => ['Drupal\nkh_resource_center\Form\NKHResourceCenter::addResource'],
+          '#ajax' => [
+            'callback' => '::addResourceCallback',
+            'wrapper' => 'ajax_resource_container',
+          ],
+          '#name' => $current_row['upload_id'],
+        ];
+      }
+
       $form['resource']['resource_item'][$row]['form_actions']['copy_single'] = [
         '#type' => 'html_tag',
         '#tag' => 'button',
@@ -121,7 +124,7 @@ class ResourceListing extends FormBase {
 
       $form['resource']['resource_item'][$row]['form_actions']['file_url'] = [
         '#type' => 'textfield',
-        '#value' => $host . $current_row[3],
+        '#value' => $host . $current_row['node_url'],
         '#attributes' => [
           'id' => 'resource_center_file_' . $row,
           'readonly' => 'readonly',
@@ -264,12 +267,17 @@ class ResourceListing extends FormBase {
     $view_builder = \Drupal::entityTypeManager()->getViewBuilder('node');
     $storage = \Drupal::entityTypeManager()->getStorage('node');
     $node = $storage->load($nid);
-    $build[] = $view_builder->view($node, 'teaser');
+    $build['node_view'] = $view_builder->view($node, 'teaser');
+    $build['node_url'] = $node->url();
     if ($node->get('field_upload')->entity !== NULL) {
-      $build[] = $node->get('field_upload')->entity->getFileUri();
-      $build[] = $node->get('field_upload')->entity->id();
-      $build[] = $node->url();
+      $build['upload_uri'] = $node->get('field_upload')->entity->getFileUri();
+      $build['upload_id'] = $node->get('field_upload')->entity->id();
     }
+
+    if ($node->get('field_file_type')->entity !== NULL) {
+      $build['file_type_id'] = $node->get('field_file_type')->entity->id();
+    }
+
     return $build;
   }
 

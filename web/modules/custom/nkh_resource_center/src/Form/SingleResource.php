@@ -37,11 +37,10 @@ class SingleResource extends FormBase {
       $file_uri = $node->get('field_upload')->entity->getFileUri();
       $fid = $node->get('field_upload')->entity->id();
     }
-    if ($node->get('field_image_featured')->entity !== NULL) {
-      $mid = $node->get('field_image_featured')->entity->id();
-    }
+
     if ($node->get('field_file_type')->entity !== NULL) {
       $file_type = $node->get('field_file_type')->entity->getName();
+      $file_type_id = $node->get('field_file_type')->entity->id();
     }
 
     $field_count = $form_state->get('field_deltas');
@@ -62,16 +61,25 @@ class SingleResource extends FormBase {
       '#suffix' => '</div>',
     ];
 
-    // Build the media thumbnail if present.
-    if (!empty($mid)) {
-      $media_builder = \Drupal::entityTypeManager()->getViewBuilder('media');
-      $media_storage = \Drupal::entityTypeManager()->getStorage('media');
-      $media_entity = $media_storage->load($mid);
-      $media_build = $media_builder->view($media_entity, 'embed');
-      $form['form_header']['image_featured'] = [
-        '#type' => 'item',
-        '#markup' => render($media_build),
-      ];
+    // Build the media thumbnail if present or the video embed.
+    if ($node->get('field_image_featured')->entity !== NULL || $node->get('field_video')->entity !== NULL) {
+      if ($file_type_id != 96) {
+        $mid = $node->get('field_image_featured')->entity->id();
+      }
+      else {
+        $mid = $node->get('field_video')->entity->id();
+      }
+      if (!empty($mid)) {
+        $media_builder = \Drupal::entityTypeManager()->getViewBuilder('media');
+        $media_storage = \Drupal::entityTypeManager()->getStorage('media');
+        $media_entity = $media_storage->load($mid);
+        $media_build = $media_builder->view($media_entity, 'embed');
+
+        $form['form_header']['image_featured'] = [
+          '#type' => 'item',
+          '#markup' => render($media_build),
+        ];
+      }
     }
 
     $form['form_header']['form_title'] = [
@@ -95,29 +103,31 @@ class SingleResource extends FormBase {
       '#suffix' => '</div>',
     ];
 
-    $form['form_header']['form_actions']['download_single'] = [
-      '#type' => 'html_tag',
-      '#tag' => 'button',
-      '#value' => t('Download Resource'),
-      '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterSingleDownload("' . file_create_url($file_uri) . '")'],
-    ];
+    if ($file_type_id != 96) {
+      $form['form_header']['form_actions']['download_single'] = [
+        '#type' => 'html_tag',
+        '#tag' => 'button',
+        '#value' => t('Download Resource'),
+        '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterSingleDownload("' . file_create_url($file_uri) . '")'],
+      ];
 
-    $form['form_header']['form_actions']['add_resource'] = [
-      '#type' => 'submit',
-      '#value' => t('Add to Bulk Download'),
-      '#submit' => ['Drupal\nkh_resource_center\Form\NKHResourceCenter::addResource'],
-      '#ajax' => [
-        'callback' => '::addResourceCallback',
-        'wrapper' => 'ajax_resource_container',
-      ],
-      '#name' => $entity_id,
-    ];
+      $form['form_header']['form_actions']['add_resource'] = [
+        '#type' => 'submit',
+        '#value' => t('Add to Bulk Download'),
+        '#submit' => ['Drupal\nkh_resource_center\Form\NKHResourceCenter::addResource'],
+        '#ajax' => [
+          'callback' => '::addResourceCallback',
+          'wrapper' => 'ajax_resource_container',
+        ],
+        '#name' => $entity_id,
+      ];
+    }
 
     $form['form_header']['form_actions']['copy_single'] = [
       '#type' => 'html_tag',
       '#tag' => 'button',
-      '#value' => t('Copy to Clipboard'),
-      '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterCopy(event, ' . $entity_id . ')'],
+      '#value' => t('Copy a Shareable Link'),
+      '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterCopy()'],
     ];
 
     $form['form_header']['form_actions']['file_url'] = [
