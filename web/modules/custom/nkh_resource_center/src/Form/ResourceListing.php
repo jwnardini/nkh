@@ -95,7 +95,7 @@ class ResourceListing extends FormBase {
         '#suffix' => '</div>',
       ];
 
-      if ($current_row['file_type_id'] != 96) {
+      if ($current_row['is_video'] == FALSE) {
         $form['resource']['resource_item'][$row]['form_actions']['download_single'] = [
           '#type' => 'html_tag',
           '#tag' => 'button',
@@ -112,6 +112,8 @@ class ResourceListing extends FormBase {
             'wrapper' => 'ajax_resource_container',
           ],
           '#name' => $current_row['upload_id'],
+          '#prefix' => '<span class="resource-input-button">',
+          '#suffix' => '</span>',
         ];
       }
 
@@ -274,9 +276,7 @@ class ResourceListing extends FormBase {
       $build['upload_id'] = $node->get('field_upload')->entity->id();
     }
 
-    if ($node->get('field_file_type')->entity !== NULL) {
-      $build['file_type_id'] = $node->get('field_file_type')->entity->id();
-    }
+    $build['is_video'] = isset($node->get('field_video')->entity);
 
     return $build;
   }

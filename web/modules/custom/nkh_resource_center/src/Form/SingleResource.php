@@ -6,7 +6,6 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\InvokeCommand;
-use Drupal\Core\Ajax\ReplaceCommand;
 
 /**
  * Implements Resource Center Node form.
@@ -33,14 +32,17 @@ class SingleResource extends FormBase {
     $path = $node->url();
     $build = $view_builder->view($node, 'nkh_resource_center');
     $file_type = NULL;
+    $is_video = isset($node->get('field_video')->entity);
     if ($node->get('field_upload')->entity !== NULL) {
       $file_uri = $node->get('field_upload')->entity->getFileUri();
       $fid = $node->get('field_upload')->entity->id();
     }
 
     if ($node->get('field_file_type')->entity !== NULL) {
-      $file_type = $node->get('field_file_type')->entity->getName();
-      $file_type_id = $node->get('field_file_type')->entity->id();
+      $type_count = $node->get('field_file_type')->count();
+      for ($i = 0; $i < $type_count; $i++) {
+        $file_type[] = $node->get('field_file_type')->get($i)->entity->getName();
+      }
     }
 
     $field_count = $form_state->get('field_deltas');
@@ -63,11 +65,11 @@ class SingleResource extends FormBase {
 
     // Build the media thumbnail if present or the video embed.
     if ($node->get('field_image_featured')->entity !== NULL || $node->get('field_video')->entity !== NULL) {
-      if ($file_type_id != 96) {
-        $mid = $node->get('field_image_featured')->entity->id();
+      if ($is_video) {
+        $mid = $node->get('field_video')->entity->id();
       }
       else {
-        $mid = $node->get('field_video')->entity->id();
+        $mid = $node->get('field_image_featured')->entity->id();
       }
       if (!empty($mid)) {
         $media_builder = \Drupal::entityTypeManager()->getViewBuilder('media');
@@ -90,7 +92,7 @@ class SingleResource extends FormBase {
     $form['form_header']['form_title']['resource_type'] = [
       '#type' => 'html_tag',
       '#tag' => 'span',
-      '#value' => $file_type,
+      '#value' => implode(' ', $file_type),
     ];
     $form['form_header']['form_title']['node_title'] = [
       '#type' => 'page_title',
@@ -103,7 +105,7 @@ class SingleResource extends FormBase {
       '#suffix' => '</div>',
     ];
 
-    if ($file_type_id != 96) {
+    if (!$is_video) {
       $form['form_header']['form_actions']['download_single'] = [
         '#type' => 'html_tag',
         '#tag' => 'button',
@@ -120,6 +122,8 @@ class SingleResource extends FormBase {
           'wrapper' => 'ajax_resource_container',
         ],
         '#name' => $entity_id,
+        '#prefix' => '<span class="resource-input-button">',
+        '#suffix' => '</span>',
       ];
     }
 
