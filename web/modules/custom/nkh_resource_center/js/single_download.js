@@ -1,6 +1,6 @@
 /**
  * @file
- * JavaScript for Resource Clipboard Copy.
+ * JavaScript for File Download.
  */
 
 (function (Drupal) {
