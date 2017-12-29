@@ -569,7 +569,7 @@
   }
   form {
     background: $white;
-    padding: 1rem 4rem 4rem;
+    padding: 1rem 4rem 2rem;
     margin-top: 0;
     position: relative;
   }
@@ -622,10 +622,7 @@
     }
   }
   .form-submit {
-    @include link-button;
-    clear: both;
-    display: block;
-    margin: 1rem auto;
+    display: none;
   }
   input.form-text, select.form-select {
     border: 0 transparent;
