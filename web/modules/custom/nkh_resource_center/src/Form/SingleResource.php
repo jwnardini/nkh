@@ -29,6 +29,8 @@ class SingleResource extends FormBase {
     $view_builder = \Drupal::entityTypeManager()->getViewBuilder('node');
     $storage = \Drupal::entityTypeManager()->getStorage('node');
     $node = $storage->load($entity_id);
+    $host = $this->getRequest()->getSchemeAndHttpHost();
+    $path = $node->url();
     $build = $view_builder->view($node, 'nkh_resource_center');
     $file_type = NULL;
     if ($node->get('field_upload')->entity !== NULL) {
@@ -115,14 +117,14 @@ class SingleResource extends FormBase {
       '#type' => 'html_tag',
       '#tag' => 'button',
       '#value' => t('Copy to Clipboard'),
-      '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterCopy()'],
+      '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterCopy(event, ' . $entity_id . ')'],
     ];
 
     $form['form_header']['form_actions']['file_url'] = [
       '#type' => 'textfield',
-      '#value' => file_create_url($file_uri),
+      '#value' => $host . $path,
       '#attributes' => [
-        'id' => 'resource_center_file',
+        'id' => 'resource_center_file_' . $entity_id,
         'readonly' => 'readonly',
       ],
     ];
