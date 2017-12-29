@@ -131,7 +131,7 @@ class SingleResource extends FormBase {
       '#type' => 'html_tag',
       '#tag' => 'button',
       '#value' => t('Copy a Shareable Link'),
-      '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterCopy()'],
+      '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterCopy(event, ' . $entity_id . ')'],
     ];
 
     $form['form_header']['form_actions']['file_url'] = [
