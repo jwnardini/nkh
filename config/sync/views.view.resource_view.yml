@@ -103,7 +103,7 @@ display:
       pager:
         type: mini
         options:
-          items_per_page: 10
+          items_per_page: 14
           offset: 0
           id: 0
           total_pages: null
@@ -396,6 +396,58 @@ display:
           entity_type: node
           entity_field: title
           plugin_id: string
+        field_taxonomy_audience_target_id:
+          id: field_taxonomy_audience_target_id
+          table: node__field_taxonomy_audience
+          field: field_taxonomy_audience_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_taxonomy_audience_target_id_op
+            label: 'Filter by Audience'
+            description: ''
+            use_operator: false
+            operator: field_taxonomy_audience_target_id_op
+            identifier: field_taxonomy_audience_target_id
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              author: '0'
+              editor: '0'
+              publisher: '0'
+              resource_editor: '0'
+              seo: '0'
+              user_creator: '0'
+              content_administrator: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: audience
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
         field_taxonomy_location_target_id:
           id: field_taxonomy_location_target_id
           table: node__field_taxonomy_location
@@ -549,58 +601,6 @@ display:
           type: select
           limit: true
           vid: file_type
-          hierarchy: false
-          error_message: true
-          plugin_id: taxonomy_index_tid
-        field_taxonomy_audience_target_id:
-          id: field_taxonomy_audience_target_id
-          table: node__field_taxonomy_audience
-          field: field_taxonomy_audience_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: or
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_taxonomy_audience_target_id_op
-            label: 'Filter by Audience'
-            description: ''
-            use_operator: false
-            operator: field_taxonomy_audience_target_id_op
-            identifier: field_taxonomy_audience_target_id
-            required: false
-            remember: false
-            multiple: true
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              author: '0'
-              editor: '0'
-              publisher: '0'
-              resource_editor: '0'
-              seo: '0'
-              user_creator: '0'
-              content_administrator: '0'
-              administrator: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          type: select
-          limit: true
-          vid: audience
           hierarchy: false
           error_message: true
           plugin_id: taxonomy_index_tid
