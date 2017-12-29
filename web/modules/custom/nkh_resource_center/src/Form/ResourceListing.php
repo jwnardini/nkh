@@ -100,7 +100,7 @@ class ResourceListing extends FormBase {
           '#type' => 'html_tag',
           '#tag' => 'button',
           '#value' => t('Download Resource'),
-          '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterSingleDownload(event,"' . file_create_url($current_row[1]) . '")'],
+          '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterSingleDownload(event,"' . file_create_url($current_row['upload_uri']) . '")'],
         ];
 
         $form['resource']['resource_item'][$row]['form_actions']['add_resource'] = [
