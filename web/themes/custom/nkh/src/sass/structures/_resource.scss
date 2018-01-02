@@ -622,7 +622,7 @@
     }
   }
   .form-submit {
-    display: none;
+    @include element-invisible;
   }
   input.form-text, select.form-select {
     border: 0 transparent;
