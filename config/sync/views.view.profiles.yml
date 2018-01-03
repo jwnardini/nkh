@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entityqueue.entity_queue.executives_leadership
     - field.storage.node.field_image_headshot
     - field.storage.node.field_jobtitle
     - node.type.profile
@@ -12,6 +13,7 @@ dependencies:
     - 'taxonomy_term:profile:2777bcde-be51-4068-91b0-960e03359c9f'
     - 'taxonomy_term:profile:b7e4ab06-4843-4d7b-aaba-6dc80bf406a8'
   module:
+    - entityqueue
     - node
     - taxonomy
     - user
@@ -425,16 +427,16 @@ display:
           id: title
           table: node_field_data
           field: title
-          order: ASC
-          entity_type: node
-          entity_field: title
-          plugin_id: standard
           relationship: none
           group_type: group
           admin_label: ''
+          order: ASC
           exposed: false
           expose:
             label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: standard
       title: 'Executive Leadership'
       header: {  }
       footer: {  }
@@ -462,80 +464,17 @@ display:
       display_extenders: {  }
       display_description: ''
       block_hide_empty: true
-      filters:
-        status:
-          value: '1'
-          table: node_field_data
-          field: status
-          plugin_id: boolean
-          entity_type: node
-          entity_field: status
-          id: status
-          expose:
-            operator: ''
-          group: 1
-        type:
-          id: type
-          table: node_field_data
-          field: type
-          value:
-            profile: profile
-          entity_type: node
-          entity_field: type
-          plugin_id: bundle
-        field_taxonomy_profile_target_id:
-          id: field_taxonomy_profile_target_id
-          table: node__field_taxonomy_profile
-          field: field_taxonomy_profile_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: or
-          value:
-            21: 21
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          type: select
-          limit: true
-          vid: profile
-          hierarchy: false
-          error_message: true
-          plugin_id: taxonomy_index_tid
+      filters: {  }
       defaults:
         filters: false
         filter_groups: false
         title: false
         header: false
+        sorts: false
+        relationships: false
       filter_groups:
         operator: AND
-        groups:
-          1: AND
+        groups: {  }
       title: 'Our Leadership Team'
       header:
         area:
@@ -551,17 +490,45 @@ display:
             value: 'From developing programs to feed more kids to building the political will for lasting change to raising the funds needed to make it all happen, the No Kid Hungry team is world-class, and they rely on our executive leaders to make sure they have the support they need every day.'
             format: simple_html
           plugin_id: text
+      sorts:
+        entityqueue_relationship:
+          id: entityqueue_relationship
+          table: node_field_data
+          field: entityqueue_relationship
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          entity_type: node
+          plugin_id: entity_queue_position
+      relationships:
+        entityqueue_relationship:
+          id: entityqueue_relationship
+          table: node_field_data
+          field: entityqueue_relationship
+          relationship: none
+          group_type: group
+          admin_label: 'Content queue'
+          required: true
+          limit_queue: executives_leadership
+          entity_type: node
+          plugin_id: entity_queue
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:entityqueue.entity_queue.executives_leadership'
         - 'config:field.storage.node.field_image_headshot'
         - 'config:field.storage.node.field_jobtitle'
+        - entity_field_info
+        - views_data
   block_2:
     display_plugin: block
     id: block_2

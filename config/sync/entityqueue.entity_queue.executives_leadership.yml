@@ -1,0 +1,25 @@
+uuid: 8e5396fa-737d-487f-a7c6-27e8d1dda6f9
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: executives_leadership
+label: 'Executives Leadership'
+handler: simple
+handler_configuration: {  }
+entity_settings:
+  target_type: node
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      profile: profile
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+queue_settings:
+  min_size: 0
+  max_size: 0
+  act_as_queue: false
+  reverse_in_admin: false
