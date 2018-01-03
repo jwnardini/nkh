@@ -110,14 +110,44 @@
     color: $nkh-text;
     padding-right: 0;
     padding-left: 4rem;
-    margin-left: 1rem;
     font-size: 1.6rem;
     background-repeat: no-repeat;
     background-position: left center;
     background-size: 3rem;
+    @include breakpoint($min480) {
+      margin-left: 1rem;  
+    }
     &:hover, &:focus, &:active {
-      text-decoration: underline;
+      color: $nkh-orange;
       background-color: transparent;
+    }
+  }
+  .resource-input-button {
+    position: relative;
+    display: inline-block;      
+    &:after {
+      margin-left: 4rem;
+    }  
+    @include breakpoint($min480) {
+      &:after {
+        margin-left: 5rem;
+      }
+    }
+    input {
+      display: block;
+    }
+  }
+  button,
+  .resource-input-button {
+    &:after {
+      content: '';
+      display: block;
+      border-bottom: 2px solid transparent;
+    }
+    &:hover, &:focus, &:active {
+      &:after {
+        border-bottom: 2px solid $nkh-orange;
+      }
     }
   }
   // the download button
@@ -408,6 +438,11 @@
     font-size: 1.2rem;
     background-size: 2.5rem;
     padding: .5rem 1rem .5rem 3rem;
+  }
+  .resource-input-button {
+    &:after {
+      margin: -.7rem 1rem 1rem 3rem;
+    }
   }
 }
 // the featured resources
