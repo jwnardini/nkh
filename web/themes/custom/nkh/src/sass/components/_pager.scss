@@ -30,7 +30,9 @@
     content: none;
   }
   &.is-active {
-    font-weight: 800;
+    a:after{
+        background: $nkh-orange;
+    }
   }
 }
 
