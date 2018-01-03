@@ -229,6 +229,8 @@
     $('#block-nkh-main-menu li.menu-item--expanded > .menu').append('<a class="sub-nav-toggle-back">' + 'Back' + '</a>');
   }
 
+  var windowOffset = 0;
+
 
   function nkhMobileMenu() {
 
@@ -246,7 +248,6 @@
     var menuset = $('#block-nkh-main-menu .menu .main-navigation');
     var subnav = $("#block-nkh-main-menu .menu li.menu-item--expanded .main-navigation");
 
-
     if (isMobile) {
 
       menublock.addClass('mobile-menu');
@@ -255,6 +256,7 @@
       // Add in click open on the main nav with accessibility
       menutoggle.off('click keyup').on('click keyup', function() {
         if (menutoggle.hasClass('open')) {
+          $(window).scrollTop(windowOffset);
           headergroup.removeClass('open').attr('aria-expanded', 'false');
           menutoggle.removeClass('open').attr('aria-expanded', 'false');
           menublock.removeClass('open').attr('aria-expanded', 'false');
@@ -267,7 +269,9 @@
           menutoggle.addClass('open').attr('aria-expanded', 'true');
           menublock.addClass('open').attr('aria-expanded', 'true');
           header.addClass('stay-open stay-open-menu');
-          framework.addClass('open-menu')
+          framework.addClass('open-menu');
+          windowOffset = $(window).scrollTop();
+
         }
       });
 
@@ -298,6 +302,7 @@
       });
     }
     else {
+      $(window).scrollTop(windowOffset);
       headergroup.removeClass('open mobile').attr('aria-expanded', '');
       menutoggle.removeClass('open').attr('aria-expanded', '');
       menublock.removeClass('open mobile-menu').attr('aria-expanded', '');
