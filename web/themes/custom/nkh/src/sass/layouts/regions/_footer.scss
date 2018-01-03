@@ -46,9 +46,7 @@ nav.block-menu:not(.menu--header-social-media-links , .menu--footer-social-media
     width: 100%;
     padding: 0;
     position: relative;
-    text-indent: -9999px;
-    overflow: hidden;
-    text-decoration: none;  
+    @include element-invisible;
     &:after {
       content: none;
     }
