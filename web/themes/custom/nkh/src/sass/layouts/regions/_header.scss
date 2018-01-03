@@ -19,11 +19,15 @@
     position: absolute;
     box-shadow: 0 -1px 3px rgba($nkh-text, .8);
     @include breakpoint($min1024) {
+      min-height: 100px;
+      position: relative;
+      box-shadow: none;
+    }
+    @include breakpoint($min1360) {
       min-height: 115px;
       position: relative;
       box-shadow: none;
     }
-
   }
   @include breakpoint($min1024) {
     background: $white;
@@ -60,7 +64,7 @@
       position: relative;
       display: block;
       left: 0;
-      top: 2.3rem;
+      top: 1rem;
     }
   }
   div[class*="block-newsletter"]{
@@ -75,6 +79,9 @@
 .path-frontpage{
   #header .header-wrapper{
     @include breakpoint($min1024) {
+      min-height: 74px;
+    }    
+    @include breakpoint($min1360) {
       min-height: 89px;
     }    
   }  

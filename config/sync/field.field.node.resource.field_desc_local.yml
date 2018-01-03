@@ -20,8 +20,8 @@ id: node.resource.field_desc_local
 field_name: field_desc_local
 entity_type: node
 bundle: resource
-label: 'Instructions for Local Markets'
-description: 'Describe how to use this resource in a Local Market setting. (short paragraph)'
+label: 'Instructions for Local Market Partner'
+description: 'Describe how to use this resource in a Local Market Partner setting. (short paragraph)'
 required: false
 translatable: false
 default_value: {  }

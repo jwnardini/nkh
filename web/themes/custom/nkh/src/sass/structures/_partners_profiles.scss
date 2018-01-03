@@ -32,12 +32,23 @@
   .view-profile-image {
     text-align: center;
   }
+  span {
+    display: inline;
+    font-size: 1.6rem;
+    border-bottom: 3px solid transparent;
+  }
   img {
     display: inline-block;
   }
   a{
     &:after{
       content: none;
+    }
+    &:focus,
+    &:hover{
+      span {
+        border-bottom: 3px solid $nkh-orange;
+      }
     }
   }
 }
