@@ -40,24 +40,25 @@ nav.block-menu:not(.menu--header-social-media-links , .menu--footer-social-media
 
 
 .menu--header-social-media-links,
-.menu--footer-social-media-links{
+.menu--footer-social-media-links {
   a {
     display: block;
-    width: 100%;
     padding: 0;
-    position: relative;
-    @include element-invisible;
+    position: absolute !important;
+    height: 20px;
+    width: 20px;
+    overflow: hidden;
+    white-space: nowrap;
     &:after {
       content: none;
     }
+    &, &:hover, &:focus{
+      color: transparent;
+      background: transparent;
+    }
   }
-  .facebook:before {
-    content: $icon-facebook;
-  }
-  .twitter:before {
-    content: $icon-twitter;
-  }
-  li{
+
+  li {
     &:before {
       @include icon(nkh);
       color: $nkh-lightgrey;
@@ -72,6 +73,12 @@ nav.block-menu:not(.menu--header-social-media-links , .menu--footer-social-media
         color: $nkh-darkgrey;
       }
     }
+  }
+  .facebook:before {
+    content: $icon-facebook;
+  }
+  .twitter:before {
+    content: $icon-twitter;
   }
 }
 
@@ -117,14 +124,16 @@ nav.block-menu:not(.menu--header-social-media-links , .menu--footer-social-media
   @include breakpoint($min1024) {
     width: auto;
   }
-  .home:before{
-    content: $icon-logo;
-  }
-  .instagram:before {
-    content: $icon-instagram;
-  }
-  .youtube:before {
-    content: $icon-youtube;
+  li{
+    &.home:before{
+      content: $icon-logo;
+    }
+    &.instagram:before {
+      content: $icon-instagram;
+    }
+    &.youtube:before {
+      content: $icon-youtube;
+    }
   }
 
   li{
@@ -141,6 +150,7 @@ nav.block-menu:not(.menu--header-social-media-links , .menu--footer-social-media
       display: block;
       clear: both;
       margin-top: -1rem;
+      height: 85px;
       a{
         width: 180px;
         height: 85px;
@@ -197,20 +207,22 @@ nav.block-menu:not(.menu--header-social-media-links , .menu--footer-social-media
       padding: 0;
     }
   }
-  li {
-    padding-left: 0;
-
+  nav:not(.menu--footer-social-media-links) {
+    li:before {
+      display: none    
+    }
     a {
       color: $white;
       font-weight: 700;
       text-decoration: none;
       text-transform: uppercase;
+      &:hover {
+       color: $nkh-footer-lightergrey;
+      }
     }
-
-    &:before {
-      display: none
-    }
-
+  }
+  li {
+    padding-left: 0;
     li {
       a{
         color: $nkh-lightgrey;
@@ -256,11 +268,6 @@ nav.block-menu:not(.menu--header-social-media-links , .menu--footer-social-media
 
   }
 
-  a {
-    &:hover {
-     color: $nkh-footer-lightergrey;
-    }
-  }
   .block-newslettersignupform-2,
   .block-donate-2 {
     display: none;
