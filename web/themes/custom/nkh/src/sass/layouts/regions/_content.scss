@@ -1,6 +1,8 @@
 #main {
-  padding-top: 9rem;
   padding-bottom: 4rem;
+  @include breakpoint($min1024) {
+    padding-top: 9rem;
+  }
 }
 
 .profile, .user-login-form {

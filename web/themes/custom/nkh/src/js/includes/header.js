@@ -19,7 +19,7 @@
                     didScroll = false;
                 }
 
-            }, 500);
+            }, 100);
 
 
             $('#header').addClass('top').css({'position' : 'fixed'});
@@ -37,7 +37,7 @@
 
               // if mobile menu is open, don't do anything -
               // this avoids a lot of weird scrolling behavior
-              if ( $( '.menu-toggle' ).hasClass( 'open' ) ) {
+              if ( $( '.menu--main' ).hasClass( 'mobile-menu' ) ) {
                 return;
               }
 
