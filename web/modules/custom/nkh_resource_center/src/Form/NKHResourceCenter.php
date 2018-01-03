@@ -18,6 +18,7 @@ abstract class NKHResourceCenter extends FormBase {
     $session = \Drupal::request()->getSession();
     $session_name = $form_state->get('session_name');
     $current_session = $session->get($session_name);
+
     $is_duplicate = FALSE;
     $fid = '';
     $nid = '';
@@ -59,6 +60,7 @@ abstract class NKHResourceCenter extends FormBase {
         $session->set($session_name, $current_session);
         $current_session = $session->get($session_name);
       }
+      ksm($session);
       $field_deltas_array = $form_state->get('field_deltas');
       $field_deltas_array = $current_session;
       $form_state->set('field_deltas', $field_deltas_array);

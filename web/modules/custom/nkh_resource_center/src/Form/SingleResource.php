@@ -148,111 +148,6 @@ class SingleResource extends FormBase {
       '#markup' => render($build),
     ];
 
-    $form['resource_container'] = [
-      '#type' => 'container',
-      '#prefix' => '<div id="ajax_resource_container">',
-      '#suffix' => '</div>',
-    ];
-
-    $form['resource_container']['option'] = [
-      '#type' => 'container',
-      '#attributes' => [
-        'class' => ['nkh_resource_container_options'],
-      ],
-    ];
-
-    $form['resource_container']['option']['item_count'] = [
-      '#type' => 'html_tag',
-      '#tag' => 'span',
-      '#value' => t(count(\Drupal::request()->getSession()->get('nkh_bulk_download')) . ' Items to Download'),
-      '#attributes' => [
-        'class' => 'resource-item-count',
-      ],
-    ];
-    if (count(\Drupal::request()->getSession()->get('nkh_bulk_download')) > 0) {
-      $form['resource_container']['option']['download_zip'] = [
-        '#type' => 'submit',
-        '#value' => t('Download All Items'),
-        '#submit' => ['Drupal\nkh_resource_center\Form\NKHResourceCenter::zipResources'],
-        '#ajax' => [
-          'callback' => '::zipResourcesCallback',
-          'wrapper' => 'ajax_resource_container',
-        ],
-        '#attributes' => [
-          'class' => ['button'],
-        ],
-      ];
-    }
-
-    if (count(\Drupal::request()->getSession()->get('nkh_bulk_download')) > 0) {
-      $downloadItem = 'solid';
-    }else{
-      $downloadItem = 'empty';
-    }
-   
-    $form['resource_container']['option']['collapse'] = [
-      '#type' => 'html_tag',
-      '#tag' => 'button',
-      '#value' => t('View All Items'),
-      '#attributes' => [
-        'id' => 'nkh_toggle_resource_container',
-        'class' => 'resource-download-item__' . $downloadItem,
-      ],
-    ];
-
-    $form['resource_container']['resource_list'] = [
-      '#type' => 'container',
-      '#attributes' => [
-        'id' => 'nkh_resource_list',
-        'class' => 'closed',
-      ],
-    ];
-
-    if (\Drupal::request()->getSession()->get('nkh_bulk_download')) {
-      foreach (\Drupal::request()->getSession()->get('nkh_bulk_download') as $key => $value) {
-        $form['resource_container']['resource_list'][$value[0]] = [
-          '#type' => 'container',
-          '#attributes' => [
-            'class' => ['container-inline'],
-          ],
-          '#tree' => TRUE,
-        ];
-
-        $form['resource_container']['resource_list'][$value[0]]['resource_type'] = [
-          '#type' => 'html_tag',
-          '#tag' => 'span',
-          '#value' => $value[3],
-          '#attributes' => [
-            'class' => 'resource_file_type',
-          ],
-        ];
-
-        $form['resource_container']['resource_list'][$value[0]]['resource_display'] = [
-          '#type' => 'html_tag',
-          '#tag' => 'a',
-          '#value' => urldecode($value[2]),
-          '#attributes' => [
-            'href' => file_create_url($value[1]),
-          ],
-        ];
-
-        $form['resource_container']['resource_list'][$value[0]]['remove_resource'] = [
-          '#type' => 'submit',
-          '#value' => t('Remove'),
-          '#submit' => ['Drupal\nkh_resource_center\Form\NKHResourceCenter::removeResource'],
-          '#ajax' => [
-            'callback' => '::removeResourceCallback',
-            'wrapper' => 'ajax_resource_container',
-          ],
-          '#attributes' => [
-            'class' => ['button-small'],
-          ],
-          '#name' => 'remove_name_' . $value[0],
-          '#prefix' => '<div class="remove-resource__wrapper">',
-          '#suffix' => '</div>',
-        ];
-      }
-    }
     $form['#attached']['library'][] = 'nkh_resource_center/single_form';
     return $form;
   }
@@ -269,15 +164,6 @@ class SingleResource extends FormBase {
    */
   public function removeResourceCallback(array &$form, FormStateInterface $form_state) {
     return $form['resource_container'];
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function zipResourcesCallback(array &$form, FormStateInterface $form_state) {
-    $response = new AjaxResponse();
-    $response->addCommand(new InvokeCommand(NULL, 'downloadZip', [$form_state->get('zip_url')]));
-    return $response;
   }
 
   /**

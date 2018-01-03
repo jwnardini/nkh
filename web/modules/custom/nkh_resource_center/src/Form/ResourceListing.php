@@ -247,9 +247,9 @@ class ResourceListing extends FormBase {
       }
     }
 
-    $form['pager'] = [
-      '#type' => 'pager',
-    ];
+    // $form['pager'] = [
+    //   '#type' => 'pager',
+    // ];
 
     $form['#attached']['library'][] = 'nkh_resource_center/single_form';
     return $form;

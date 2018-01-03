@@ -1,4 +1,4 @@
-uuid: d5513e7c-3ac1-4c50-b21c-a2e8f78f381a
+uuid: b388b230-931c-4b6f-862a-00a40c04f8e5
 langcode: en
 status: true
 dependencies:
@@ -24,6 +24,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "/resource-center\r\n/results-center"
+    pages: /resource-center
     negate: false
     context_mapping: {  }
