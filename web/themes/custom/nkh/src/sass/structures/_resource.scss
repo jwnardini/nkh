@@ -632,3 +632,32 @@
     width: 100%;
   }
 }
+
+//Remove Header Donate Button for mobile
+.path-resource-center,
+.page-node-type-resource {
+  #header {
+    .header-wrapper {
+      min-height: 80px;
+      // see PR pull/183
+      @include breakpoint($min1024) {
+        min-height: 100px;
+      }
+      @include breakpoint($min1360) {
+        min-height: 115px;
+      }
+    }
+    .nkh-logo {
+      bottom: 1.5rem;
+    }
+    .menu-toggle {
+      bottom: 3rem;      
+    }
+    .block-donate.block {
+      display: none;
+      @include breakpoint($min1024) {
+        display: inline-block;
+      }
+    }
+  }
+}
