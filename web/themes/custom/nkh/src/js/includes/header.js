@@ -1,15 +1,11 @@
-(function ($) {
-  // DOC READY
-  $(function () {
-
-// (function ($, Drupal, window, document, undefined) {
-//     Drupal.behaviors.header_behavior = {
-//         attach: function(context, settings) {
+(function ($, Drupal) {
+    Drupal.behaviors.headerBehavior = {
+        attach: function(context, settings) {
 
             //Code here
 
             // Start hide header on scroll down
-            var didScroll;
+            var didScroll = false;
             var veryTop = 0;
             var delta = 5;
 
@@ -25,7 +21,8 @@
 
             }, 500);
 
-             $('#header').addClass('top').css({'position' : 'fixed'});
+
+            $('#header').addClass('top').css({'position' : 'fixed'});
 
             function hasScrolled() {
               var header = jQuery('#header');
@@ -45,8 +42,9 @@
               }
 
               // Make sure they scroll more than delta
-              if(Math.abs(veryTop - st) <= delta)
-                return;
+              if(Math.abs(veryTop - st) <= delta){
+                return;                
+              }
 
               if ( atTop ) {
                 header.css({
@@ -110,16 +108,12 @@
             }
             // End of hide header on on scroll down
 
+            $( window ).resize(function(event){
 
-            //$( document ).ready( hasScrolled );
-            $( window ).resize( hasScrolled );
+              hasScrolled();
 
+            });
+         }
 
-
-        // }
-
-  });
-})(jQuery);
-
-//     };
-// })(jQuery, Drupal, this, this.document);
+    };
+})(jQuery, Drupal);
