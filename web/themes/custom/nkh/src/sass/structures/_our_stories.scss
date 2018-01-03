@@ -39,14 +39,14 @@
     font-weight: 700;
     @include grit-clip-gray;
     @include breakpoint($min1024) {
-      font-size: 4.8rem;
+      font-size: 3.2vw;
       position: absolute;
       text-align: right;
-      margin-top: -1.5rem;
-      margin-left: 15%;
+      margin-top: -.9rem;  
+      margin-left: 19%;
     }
-    @include breakpoint($min1120) {
-      margin-top: -1rem;  
+    @include breakpoint($min1360) {
+      font-size: 4.8rem;    
     }
   }
   h3 {
@@ -59,16 +59,19 @@
     font-size: 3rem;
     letter-spacing: -.01em;
     @include breakpoint($min1024) {
-      font-size: 3.2rem;
+      font-size: 2.4vw;
       line-height: 1.33;
       width: 50%;
-      margin: 4em 0 2em 45%;
+      margin: 2.5em 0 2em 45%;
     }
     @include breakpoint($min1120) {
-      font-size: 3.6rem;
       width: 52%;
       margin-left: 42%;
     }
+    @include breakpoint($min1360) {
+      font-size: 3.6rem;    
+    }
+
   }
   .image-wrapper{
     display: block;
@@ -112,7 +115,7 @@
       top: inherit;
       min-height: auto;
       padding: 3rem 5rem 3rem;
-      left: 5%;
+      left: 6%;
       bottom: 45px;
       width: 45%;
       .view-title{
@@ -180,6 +183,7 @@
     .attachment{
       max-width: 1400px;
       margin: 30px auto;
+      padding: 0 5vw;
       .view-title{
         font-size: 3.6rem;
       }
@@ -194,6 +198,11 @@
         }
       }
     }
+  }
+  @include breakpoint($min1360) {
+    .attachment{
+      padding: 0;
+    }  
   }
 }
 .block-views-block-our-stories-our-stories,
@@ -249,7 +258,7 @@
         width: 40%;
         bottom: 45px;
         left: 5%;
-        padding: 3rem 5rem;
+        padding: 3rem 5rem 3rem 3rem;
       }
 
     }
@@ -278,7 +287,7 @@
         &:nth-child(2){
           width: 41%;
           margin-left: 1.5%;
-          margin-bottom: 65px;
+          margin-bottom: 35px;
           padding-top: 25px;
           position: relative;
           .image-wrapper{
@@ -291,7 +300,10 @@
             bottom: 55px;
             left: auto;
             right: -20px;
-            padding: 2.5rem 4rem 4rem 2.5rem;
+            padding: 2.5rem 3rem 4rem;            
+          }
+          p.icon-video{
+            margin-left: -1rem;
           }
         }
         &:last-child{
@@ -305,5 +317,24 @@
         }
       }
     }
+  }
+  @include breakpoint($min1360) {
+    .attachment .views-element-container{
+      &:nth-child(2){
+        margin-bottom: 75px;
+      }
+    }
+  }
+  p.icon-video{
+    font-size: 4em;
+    display: block;
+    position: absolute;
+    margin: 0 0 0 -2rem;
+    &:before {
+      vertical-align: top;
+    }
+  }
+  .icon-video ~ .view-content-wrapper{
+    margin-left: 9rem;
   }
 }

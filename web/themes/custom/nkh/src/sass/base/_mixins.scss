@@ -246,13 +246,6 @@
   background: linear-gradient(transparent 60%, $nkh-orange 40%);
 }
 
-@mixin blog-news-tag {
-  display: flex;
-  align-items: baseline;
-  font-size: 1.6rem;
-  font-weight: 700;
-  padding: 0 2rem;  
-}
 
 @mixin large-text-sizing{
   font-weight: 700;

@@ -67,7 +67,7 @@
       &:after {
         margin-top: -.6em;
         @media (min-width: 419px){
-          margin-top: .6em;
+          margin-top: .45em;
         }
       }      
     }
@@ -109,7 +109,7 @@ div[class*="block-views-block-cta-references-"]{
     top: -8rem;
     left: 50%;
     width: 300px;
-    z-index: 100;
+    z-index: 1;
     display: block;
     height: 300px;
     background: url('/themes/custom/nkh/images/btn-bingo.gif') 0 0 no-repeat;
@@ -394,7 +394,7 @@ div[class*="block-views-block-cta-references-"]{
       position: absolute;
       top: 0;
       opacity: 0;
-      transition: opacity .6s;
+      transition: opacity .2s;
       transition-timing-function: ease-in;
     }
   }
@@ -430,12 +430,9 @@ div[class*="block-views-block-cta-references-"]{
     span{
       background-repeat: no-repeat;
       box-shadow: none;
-      -webkit-transition: background-position .1s ease-out;
-      transition: background-position .1s ease-out;
+      -webkit-transition: background-position .2s ease-out;
+      transition: background-position .2s ease-out;
       background-position: 0 1.25em;
-    }
-    &:hover span{
-      background-position: 0 .5em;
     }
   }
   a{
@@ -443,14 +440,18 @@ div[class*="block-views-block-cta-references-"]{
     display:block;
     max-width: 600px;
     margin:20px auto;
-    &:hover{
+    &:hover, &:focus{
       picture{
         &:after{
           opacity: .5;
-          transition: opacity .6s;
+          transition: opacity .2s;
           transition-timing-function: ease-in;
         }
       }
+      span{
+        background-position: 0 .5em;
+      }
+
     }
     &:after {
       content: none;

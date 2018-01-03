@@ -65,3 +65,14 @@ button.toggle-close{
     display: none;
   }
 }
+
+// BK note: Since there is only appearing in one region, 
+// I will disable the text-texture part for that only. 
+// Read NKH-842 for more details
+.region-alert {
+  .entity--cta-alert {
+    * {
+      -webkit-mask: none;
+    }    
+  }
+}

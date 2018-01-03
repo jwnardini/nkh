@@ -98,3 +98,10 @@ function nkh_preprocess_node(&$variables) {
 
   $variables['pageSubtitleClass']= $pageSubtitleCount;
 }
+
+function nkh_preprocess_taxonomy_term(&$variables) {
+  //check to see if there is a value before establishing it.
+  if($variables['name']['0']['#context']){
+    $variables['termTitle'] = $variables['name']['0']['#context']['value'];
+  }
+}

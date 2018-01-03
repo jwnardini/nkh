@@ -28,6 +28,7 @@ class ResourceListing extends FormBase {
    * @todo Add add exeception if no $entity_id
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
+    $host = $this->getRequest()->getSchemeAndHttpHost();
     $view_id = 'resource_view';
     $view = NKHResourceCenter::getViewData($view_id);
     // Return 404 if there is no view.
@@ -85,7 +86,7 @@ class ResourceListing extends FormBase {
 
       $form['resource']['resource_item'][$row]['resource'] = [
         '#type' => 'item',
-        '#markup' => render($current_row[0]),
+        '#markup' => render($current_row['node_view']),
       ];
 
       $form['resource']['resource_item'][$row]['form_actions'] = [
@@ -94,23 +95,27 @@ class ResourceListing extends FormBase {
         '#suffix' => '</div>',
       ];
 
-      $form['resource']['resource_item'][$row]['form_actions']['download_single'] = [
-        '#type' => 'html_tag',
-        '#tag' => 'button',
-        '#value' => t('Download Resource'),
-        '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterSingleDownload(event,"' . file_create_url($current_row[1]) . '")'],
-      ];
+      if ($current_row['is_video'] == FALSE) {
+        $form['resource']['resource_item'][$row]['form_actions']['download_single'] = [
+          '#type' => 'html_tag',
+          '#tag' => 'button',
+          '#value' => t('Download Resource'),
+          '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterSingleDownload(event,"' . file_create_url($current_row['upload_uri']) . '")'],
+        ];
 
-      $form['resource']['resource_item'][$row]['form_actions']['add_resource'] = [
-        '#type' => 'submit',
-        '#value' => t('Add to Bulk Download'),
-        '#submit' => ['Drupal\nkh_resource_center\Form\NKHResourceCenter::addResource'],
-        '#ajax' => [
-          'callback' => '::addResourceCallback',
-          'wrapper' => 'ajax_resource_container',
-        ],
-        '#name' => $current_row[2],
-      ];
+        $form['resource']['resource_item'][$row]['form_actions']['add_resource'] = [
+          '#type' => 'submit',
+          '#value' => t('Add to Bulk Download'),
+          '#submit' => ['Drupal\nkh_resource_center\Form\NKHResourceCenter::addResource'],
+          '#ajax' => [
+            'callback' => '::addResourceCallback',
+            'wrapper' => 'ajax_resource_container',
+          ],
+          '#name' => $current_row['upload_id'],
+          '#prefix' => '<span class="resource-input-button">',
+          '#suffix' => '</span>',
+        ];
+      }
 
       $form['resource']['resource_item'][$row]['form_actions']['copy_single'] = [
         '#type' => 'html_tag',
@@ -121,7 +126,7 @@ class ResourceListing extends FormBase {
 
       $form['resource']['resource_item'][$row]['form_actions']['file_url'] = [
         '#type' => 'textfield',
-        '#value' => file_create_url($current_row[1]),
+        '#value' => $host . $current_row['node_url'],
         '#attributes' => [
           'id' => 'resource_center_file_' . $row,
           'readonly' => 'readonly',
@@ -143,7 +148,7 @@ class ResourceListing extends FormBase {
       ],
     ];
     $download_text = count(\Drupal::request()->getSession()->get('nkh_bulk_download')) . ' ' . t('Items to Download');
-    if ( count(\Drupal::request()->getSession()->get('nkh_bulk_download')) == 1) {
+    if (count(\Drupal::request()->getSession()->get('nkh_bulk_download')) == 1) {
       $download_text = count(\Drupal::request()->getSession()->get('nkh_bulk_download')) . ' ' . t('Item to Download');
     }
 
@@ -264,11 +269,15 @@ class ResourceListing extends FormBase {
     $view_builder = \Drupal::entityTypeManager()->getViewBuilder('node');
     $storage = \Drupal::entityTypeManager()->getStorage('node');
     $node = $storage->load($nid);
-    $build[] = $view_builder->view($node, 'teaser');
+    $build['node_view'] = $view_builder->view($node, 'teaser');
+    $build['node_url'] = $node->url();
     if ($node->get('field_upload')->entity !== NULL) {
-      $build[] = $node->get('field_upload')->entity->getFileUri();
-      $build[] = $node->get('field_upload')->entity->id();
+      $build['upload_uri'] = $node->get('field_upload')->entity->getFileUri();
+      $build['upload_id'] = $node->get('field_upload')->entity->id();
     }
+
+    $build['is_video'] = isset($node->get('field_video')->entity);
+
     return $build;
   }
 

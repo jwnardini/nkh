@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.campaign.field_taxonomy_issue
     - field.field.node.campaign.field_teaser
     - field.field.node.campaign.field_video
+    - field.field.node.campaign.field_video_boolean
     - node.type.campaign
   module:
     - metatag
@@ -101,3 +102,4 @@ content:
     third_party_settings: {  }
 hidden:
   field_cta_ref: true
+  field_video_boolean: true

@@ -5,6 +5,16 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.campaign.body
+    - field.field.node.campaign.field_cta_ref
+    - field.field.node.campaign.field_entity_partner
+    - field.field.node.campaign.field_image_banner
+    - field.field.node.campaign.field_image_featured
+    - field.field.node.campaign.field_intro
+    - field.field.node.campaign.field_metatags
+    - field.field.node.campaign.field_taxonomy_issue
+    - field.field.node.campaign.field_teaser
+    - field.field.node.campaign.field_video
+    - field.field.node.campaign.field_video_boolean
     - node.type.campaign
   module:
     - text
@@ -17,12 +27,20 @@ content:
   body:
     label: hidden
     type: text_summary_or_trimmed
-    weight: 101
+    weight: 0
     settings:
       trim_length: 600
     third_party_settings: {  }
     region: content
-  links:
-    weight: 100
-    region: content
-hidden: {  }
+hidden:
+  field_cta_ref: true
+  field_entity_partner: true
+  field_image_banner: true
+  field_image_featured: true
+  field_intro: true
+  field_metatags: true
+  field_taxonomy_issue: true
+  field_teaser: true
+  field_video: true
+  field_video_boolean: true
+  links: true

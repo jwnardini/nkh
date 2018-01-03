@@ -391,7 +391,7 @@ display:
     display_options:
       display_extenders: {  }
       display_description: 'National Partners'
-      title: 'National No Kid Hungry Partners'
+      title: 'Corporate Partners'
       defaults:
         title: false
         relationships: false

@@ -7,6 +7,7 @@ dependencies:
     - field.storage.node.field_image_featured
     - field.storage.node.field_taxonomy_series
     - field.storage.node.field_teaser
+    - field.storage.node.field_video_boolean
     - image.style.large_2x
     - image.style.portrait_2x
     - image.style.square_2x
@@ -323,6 +324,71 @@ display:
           entity_type: node
           entity_field: title
           plugin_id: field
+        field_video_boolean:
+          id: field_video_boolean
+          table: node__field_video_boolean
+          field: field_video_boolean
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: true
+          hide_alter_empty: true
+          click_sort_column: value
+          type: boolean
+          settings:
+            format: default
+            format_custom_true: ''
+            format_custom_false: ''
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         field_teaser:
           id: field_teaser
           table: node__field_teaser
@@ -356,7 +422,7 @@ display:
             more_link_text: ''
             more_link_path: ''
             strip_tags: false
-            trim: true
+            trim: false
             preserve_tags: ''
             html: false
           element_type: ''
@@ -396,7 +462,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"image-wrapper\">{{ field_image_featured }}</div><div class=\"title-wrapper\">\n{% if field_taxonomy_series|render|striptags %}<span class=\"series-title\">{{ field_taxonomy_series }}</span>{% else %}<span class=\"series-title\"> {{ type }}</span>{% endif %}\n<h3 class=\"view-title\">{{ title }}</h3>\n{{ field_teaser }}</div>"
+            text: "<div class=\"image-wrapper\">{{ field_image_featured }}</div><div class=\"title-wrapper\">\n{% if field_video_boolean == \"On\" %}<p class=\"icon icon-video\"><span class=\"element-invisible\">video</span></p>{% endif %}\n<div class=\"view-content-wrapper\">\n{% if field_taxonomy_series|render|striptags %}<span class=\"series-title\">{{ field_taxonomy_series }}</span>{% else %}<span class=\"series-title\"> {{ type }}</span>{% endif %}\n<h3 class=\"view-title\">{{ title }}</h3>\n{{ field_teaser }}</div></div>"
             make_link: true
             path: '{{ path }}'
             absolute: false
@@ -505,6 +571,7 @@ display:
         - 'config:field.storage.node.field_image_featured'
         - 'config:field.storage.node.field_taxonomy_series'
         - 'config:field.storage.node.field_teaser'
+        - 'config:field.storage.node.field_video_boolean'
         - entity_field_info
         - views_data
   attachment_1:
@@ -785,6 +852,71 @@ display:
           entity_type: node
           entity_field: title
           plugin_id: field
+        field_video_boolean:
+          id: field_video_boolean
+          table: node__field_video_boolean
+          field: field_video_boolean
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: boolean
+          settings:
+            format: default
+            format_custom_true: ''
+            format_custom_false: ''
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         field_teaser:
           id: field_teaser
           table: node__field_teaser
@@ -818,7 +950,7 @@ display:
             more_link_text: ''
             more_link_path: ''
             strip_tags: false
-            trim: true
+            trim: false
             preserve_tags: ''
             html: false
           element_type: ''
@@ -858,7 +990,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"image-wrapper\">{{ field_image_featured }}</div><div class=\"title-wrapper\">\n{% if field_taxonomy_series|render|striptags %}<span class=\"series-title\">{{ field_taxonomy_series }}</span>{% else %}<span class=\"series-title\"> {{ type }}</span>{% endif %}\n<div class=\"view-title\">{{ title }}</div>{{ field_teaser }}</div>"
+            text: "<div class=\"image-wrapper\">{{ field_image_featured }}</div><div class=\"title-wrapper\">\n{% if field_video_boolean == \"On\" %}<p class=\"icon icon-video\"><span class=\"element-invisible\">video</span></p>{% endif %}\n<div class=\"view-content-wrapper\">\n{% if field_taxonomy_series|render|striptags %}<span class=\"series-title\">{{ field_taxonomy_series }}</span>{% else %}<span class=\"series-title\"> {{ type }}</span>{% endif %}\n<h3 class=\"view-title\">{{ title }}</h3>\n{{ field_teaser }}</div></div>"
             make_link: true
             path: '{{ path }}'
             absolute: false
@@ -910,6 +1042,7 @@ display:
         - 'config:field.storage.node.field_image_featured'
         - 'config:field.storage.node.field_taxonomy_series'
         - 'config:field.storage.node.field_teaser'
+        - 'config:field.storage.node.field_video_boolean'
         - entity_field_info
         - views_data
   attachment_2:
@@ -1116,6 +1249,71 @@ display:
           entity_type: node
           entity_field: type
           plugin_id: field
+        field_video_boolean:
+          id: field_video_boolean
+          table: node__field_video_boolean
+          field: field_video_boolean
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: boolean
+          settings:
+            format: default
+            format_custom_true: ''
+            format_custom_false: ''
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         title:
           id: title
           table: node_field_data
@@ -1192,7 +1390,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"image-wrapper\">{{ field_image_featured }}</div><div class=\"title-wrapper\">\n{% if field_taxonomy_series|render|striptags %}<span class=\"series-title\">{{ field_taxonomy_series }}</span>{% else %}<span class=\"series-title\"> {{ type }}</span>{% endif %}\n<h3 class=\"view-title\">{{ title }}</h3>\n</div>"
+            text: "<div class=\"image-wrapper\">{{ field_image_featured }}</div><div class=\"title-wrapper\">\n{% if field_video_boolean == \"On\" %}<p class=\"icon icon-video\"><span class=\"element-invisible\">video</span></p>{% endif %}\n<div class=\"view-content-wrapper\">\n{% if field_taxonomy_series|render|striptags %}<span class=\"series-title\">{{ field_taxonomy_series }}</span>{% else %}<span class=\"series-title\"> {{ type }}</span>{% endif %}\n<h3 class=\"view-title\">{{ title }}</h3></div></div>"
             make_link: true
             path: '{{ path }}'
             absolute: false
@@ -1252,6 +1450,7 @@ display:
         - 'config:entityqueue.entity_queue.our_stories'
         - 'config:field.storage.node.field_image_featured'
         - 'config:field.storage.node.field_taxonomy_series'
+        - 'config:field.storage.node.field_video_boolean'
         - entity_field_info
         - views_data
   attachment_3:
@@ -1285,6 +1484,7 @@ display:
         - 'config:field.storage.node.field_image_featured'
         - 'config:field.storage.node.field_taxonomy_series'
         - 'config:field.storage.node.field_teaser'
+        - 'config:field.storage.node.field_video_boolean'
         - entity_field_info
         - views_data
   our_stories:
@@ -1310,5 +1510,6 @@ display:
         - 'config:field.storage.node.field_image_featured'
         - 'config:field.storage.node.field_taxonomy_series'
         - 'config:field.storage.node.field_teaser'
+        - 'config:field.storage.node.field_video_boolean'
         - entity_field_info
         - views_data
