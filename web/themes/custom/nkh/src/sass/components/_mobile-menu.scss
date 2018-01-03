@@ -9,13 +9,12 @@
   top: auto;
   right: 0;
   @include breakpoint($min1024) {
-
     height: auto;
     max-height: none;
     transition: none;
     overflow: visible; // Needed for newsletter form dropdown - Casey
     width: auto;
-    top: 3.5rem;
+    top: 2.7rem;
     right: 2rem;
     nav{
       display: inline-block;
@@ -29,6 +28,9 @@
   }
   @include breakpoint($min1260) {
     right: 0;
+  }
+  @include breakpoint($min1360) {
+    top: 3.5rem;
   }
   span,
   a{

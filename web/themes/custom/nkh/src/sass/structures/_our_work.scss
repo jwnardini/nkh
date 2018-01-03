@@ -1,5 +1,4 @@
 .block-views-block-our-work-our-work {
-  max-width: 1320px;
   margin: 2rem auto;
   a{
     color: $white;
@@ -20,20 +19,7 @@
     }
     @include clearfix;
   }
-  h2{
-    @include grit-clip-gray;
-    text-transform: uppercase;
-    margin: 0 0 1rem 2rem;
-    font-size: 4.5rem;
 
-    @include breakpoint($min1024) {
-      font-size: 3.2rem;
-      position: absolute;
-      text-align: right;
-      margin-top: 0;
-      margin-left: 15%;
-    }
-  }
   .view-header{
     color: $nkh-lightgrey;
     margin: 0 0 3.5rem 2rem;

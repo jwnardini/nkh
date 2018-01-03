@@ -34,8 +34,9 @@
     @include breakpoint($min1024) {
       max-width: 1100px;
       position: relative;
+      margin-bottom: 2rem;
     }
-    @include breakpoint($min1260) {
+    @include breakpoint($min1360) {
       max-width: 1250px;
     }
   }
@@ -69,6 +70,7 @@
       background-size: 30%;
       font-size: 22.5rem;
       text-align: left;
+      letter-spacing: -.01em;
       span{
         display: block;
         &:nth-child(1){
@@ -82,7 +84,7 @@
         }
       }
     }
-    @include breakpoint($min1260) {
+    @include breakpoint($min1360) {
       font-size: 27.5rem;
       span{
         display: block;
@@ -146,7 +148,7 @@
       right: -6.2rem;
     }
   }
-  @include breakpoint($min1260) {
+  @include breakpoint($min1360) {
     top: 230px;
     max-width: 288px;
   }
