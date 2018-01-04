@@ -1,0 +1,31 @@
+uuid: 89857933-41c5-463a-a749-b3a0b9672a98
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:b53c1256-2f72-413e-93ea-5338e50f09ee'
+  module:
+    - block_content
+    - system
+  theme:
+    - nkh
+id: hungerfactsschoolbreakfastintro
+theme: nkh
+region: content
+weight: -13
+provider: null
+plugin: 'block_content:b53c1256-2f72-413e-93ea-5338e50f09ee'
+settings:
+  id: 'block_content:b53c1256-2f72-413e-93ea-5338e50f09ee'
+  label: 'Hunger Facts - School Breakfast Intro'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /who-we-are/hunger-facts
+    negate: false
+    context_mapping: {  }

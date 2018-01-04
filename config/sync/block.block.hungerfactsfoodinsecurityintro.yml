@@ -1,0 +1,31 @@
+uuid: c1ba73f5-fc8e-4433-b15c-f80a47abca24
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:8abd91ed-5213-44f4-875e-5c4558b1c15f'
+  module:
+    - block_content
+    - system
+  theme:
+    - nkh
+id: hungerfactsfoodinsecurityintro
+theme: nkh
+region: content
+weight: -16
+provider: null
+plugin: 'block_content:8abd91ed-5213-44f4-875e-5c4558b1c15f'
+settings:
+  id: 'block_content:8abd91ed-5213-44f4-875e-5c4558b1c15f'
+  label: 'Hunger Facts - Food Insecurity Intro'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /who-we-are/hunger-facts
+    negate: false
+    context_mapping: {  }

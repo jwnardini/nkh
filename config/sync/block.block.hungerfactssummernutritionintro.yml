@@ -1,0 +1,31 @@
+uuid: cfc003c1-ba7a-4377-9ab3-eb94d324e23f
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:42a07916-9b9a-498a-ba24-04f8127cc2ca'
+  module:
+    - block_content
+    - system
+  theme:
+    - nkh
+id: hungerfactssummernutritionintro
+theme: nkh
+region: content
+weight: -11
+provider: null
+plugin: 'block_content:42a07916-9b9a-498a-ba24-04f8127cc2ca'
+settings:
+  id: 'block_content:42a07916-9b9a-498a-ba24-04f8127cc2ca'
+  label: 'Hunger Facts - Summer Nutrition Intro'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /who-we-are/hunger-facts
+    negate: false
+    context_mapping: {  }

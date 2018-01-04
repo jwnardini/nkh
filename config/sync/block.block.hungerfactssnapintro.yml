@@ -1,0 +1,31 @@
+uuid: 81c09593-2913-4c08-a70c-7e223149cf8d
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:bbdcb505-84d7-4b64-9b82-69e35c7e2480'
+  module:
+    - block_content
+    - system
+  theme:
+    - nkh
+id: hungerfactssnapintro
+theme: nkh
+region: content
+weight: -9
+provider: null
+plugin: 'block_content:bbdcb505-84d7-4b64-9b82-69e35c7e2480'
+settings:
+  id: 'block_content:bbdcb505-84d7-4b64-9b82-69e35c7e2480'
+  label: 'Hunger Facts - SNAP Intro'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /who-we-are/hunger-facts
+    negate: false
+    context_mapping: {  }

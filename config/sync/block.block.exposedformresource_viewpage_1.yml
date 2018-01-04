@@ -12,7 +12,7 @@ dependencies:
 id: exposedformresource_viewpage_1
 theme: nkh
 region: content
-weight: -35
+weight: -38
 provider: null
 plugin: 'views_exposed_filter_block:resource_view-page_1'
 settings:
