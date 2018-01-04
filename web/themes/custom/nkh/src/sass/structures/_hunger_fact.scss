@@ -18,7 +18,7 @@ div[data-quickedit-entity-id*="hunger_fact"],
     }
 
     & > a{
-      letter-spacing: .025em; 
+      letter-spacing: .025em;
       text-decoration: underline;
       font-size: 1.2rem;
       margin: 2.5rem 0 0.5rem;
@@ -76,7 +76,7 @@ div[data-quickedit-entity-id*="hunger_fact"],
       line-height: 1.2;
       display: inline;
       padding: .6rem 0;
-      letter-spacing: .025em; 
+      letter-spacing: .025em;
     }
   }
 }
@@ -116,7 +116,7 @@ div[data-quickedit-entity-id*="hunger_fact"],
 .field--name-field-statistic-hunger{
   text-transform: uppercase;
   font-weight: 700;
-  letter-spacing: .025em; 
+  letter-spacing: .025em;
 }
 
 .hunger-fact-title{
@@ -125,4 +125,75 @@ div[data-quickedit-entity-id*="hunger_fact"],
     margin: 3rem 0 2.5rem;
   }
   font-size: 1.4rem;
+}
+
+.page-node-11 {
+  [id*="block-hungerfacts"] {
+    width: 100vw;
+    padding: 0 2rem;
+    display: block;
+    margin: 0 auto;
+    max-width: 1680px;
+    @include breakpoint($min768) {
+      width: 67vw;
+      padding: 0 4rem;
+    }
+    @include breakpoint($min1024) {
+      width: 60vw;
+      max-width: 1080px;
+    }
+    blockquote{
+      position: relative;
+      width: 100vw;
+      left: 50%;
+      margin-left: -50vw;
+      p {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    .view-mode-large,
+    .view-mode-feature-caption {
+      width: 100vw;
+      left: calc(50% + 4rem);
+      margin-left: calc(-50vw - 4rem);
+      padding: 0 4rem;
+      margin-top: 4rem;
+      margin-bottom: 4rem;
+      .inner-wrap {
+        margin: 0 auto;
+        max-width: 1600px;
+        width: 100%;
+        position: relative;
+      }
+    }
+
+    .media-video {
+      max-width: 1000px;
+      margin: 4rem auto;
+    }
+    .entity-landing_link-auto,
+    .entity-landing_link-manual{
+      max-width: 1200px;
+    }
+
+    .entity--cta-text,
+    .entity--hunger-fact {
+      position: relative;
+      width: 100vw;
+      left: 50%;
+      margin-left: -50vw;
+    }
+
+    .entity--cta-text {
+      margin-top: 4rem;
+      margin-bottom: 4rem;
+      .text-formatted {
+        width: auto;
+        max-width: 1600px;
+      }
+    }
+  }
 }
