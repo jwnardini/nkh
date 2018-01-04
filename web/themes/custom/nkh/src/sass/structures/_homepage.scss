@@ -177,7 +177,7 @@
     display: block;
     text-align: center;
     background: #F26722;
-    position: absolute;
+    position: relative;
     margin-top: -1.5rem;
     text-shadow: none;
     @include breakpoint($min1024) {
