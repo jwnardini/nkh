@@ -171,7 +171,7 @@
 //start download bar
 [id="ajax_resource_container"] {
   position: fixed;
-  top: 0; //setting it to drop down from the top when at mobile
+  bottom: 8.6rem; //setting it to slide up from the bottom at desktop
   left: 0;
   width: 100%;
   background: $white;
@@ -179,7 +179,6 @@
 
   @include breakpoint($min1024) {
     bottom: 0; //setting it to slide up from the bottom at desktop
-    top: auto;
   }
 }
 [id="edit-resource-container"] {
@@ -191,13 +190,8 @@
 }
 // the toolbar across the top of the download tray
 .nkh_resource_container_options {
-  // display: flex;
-  // flex-direction: row;
-  // flex-grow: 1;
   background: $nkh-orange;
   color: $white;
-  // justify-content: center;
-  // align-items: center;
   text-align: center;
   padding: 1rem 4rem;
   @include breakpoint($min1024) {
@@ -206,19 +200,22 @@
   .resource-item-count {
     font-weight: 700;
     font-size: 2.2rem;
+    vertical-align: middle;
     @include breakpoint($min1024) {
-      font-size: 3rem;
+      font-size: 2.5rem;
     }
   }
   // download all items button
-  .form-submit {
-    margin: 0 1rem;
-    background: $white;
+  input.form-submit[type="submit"] {
+    margin: 0 1rem 0 2rem;
+    background-color: $white;
     color: $nkh-text;
     text-transform: uppercase;
     font-weight: 700;
+    font-size: 14px;
+    padding: 1rem 3rem;
     &:hover, &:active, &:focus {
-      background: $white;
+      background-color: $white;
       color: $nkh-orange;
     }
   }
@@ -244,28 +241,63 @@
 [id="ajax_resource_container"] [id="nkh_resource_list"] {
   transition: height .2s;
   &.open {
-    height: 25vh;
+    height: 100%;
+    opacity: 1;
     overflow-y: scroll;
+    box-shadow: 0 -1px 3px $nkh-text;
+    @include breakpoint($min1024){
+      height: 25vh;
+      box-shadow: none;
+    }
   }
   &.closed {
     height: 0;
+    opacity: 0;
   }
   //the wrapper around the download
   > div {
-    max-width: 960px;
     margin: 0 auto;
     padding: 1rem 4rem;
+    &:nth-of-type(even){
+      background: $nkh-bone;
+    }
   }
   // each download
   .container-inline {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 2rem;
     align-items: center;
   }
-  // button to remove the download from the bulk list
-  .form-submit {
-    //@include element-invisible;
+  .resource_file_type,
+  a {
+    color: $nkh-text;
+    font-weight: 700;
+  }
+  .resource_file_type {
+    font-size: 1.4rem;    
+  }
+  a {
+    font-size: 2rem;
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+  .remove-resource__wrapper{
+    // button to remove the download from the bulk list
+    .form-submit {
+      position: absolute;
+      overflow: hidden;
+      white-space: nowrap;
+      width: 1rem;
+      height: 1.8rem;
+      background-color: transparent;
+      color: transparent;
+      margin-top: .8rem;
+    }    
+    &:after{
+      @include icon($icon-close);
+      color: $nkh-text;
+      font-size: 1.4rem;
+    }
   }
 }
 
@@ -373,6 +405,36 @@
 }
 [class*="file-type--"][class*="excel"] .resource--teaser__overlay {
   background-image: url('/themes/custom/nkh/images/resource-excel_mini.jpg');
+}
+button.resource-download-item__empty{
+  @include element-invisible;
+}
+
+button.resource-download-item__solid{
+  font-size: 1.4rem;
+  margin-top: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $white;
+  padding-right: .5rem;
+  &:focus, &:hover, &:active{
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  @include breakpoint($min768) {
+    float: right;
+  }
+  &:after{
+    font-size: 1.2rem;
+    margin-left: 1rem;
+    display: inline-block;
+    @include icon($icon-caret);
+    transform: rotate(90deg);
+  }
+  &.collapsed:after{
+    transform: rotate(270deg);    
+  }
+
 }
 
 .field.field--name-field-file-type {
