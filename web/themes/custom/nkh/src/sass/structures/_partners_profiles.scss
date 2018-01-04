@@ -67,11 +67,13 @@
 [class*="block-views-block-partners"] {
   a{
     text-decoration: none;
+    .view-profile-name {
+      color: $nkh-orange;
+      text-decoration: underline;
+    }
   }
   .view-profile-name {
-    color: $nkh-orange;
     margin: 0;
-    text-decoration: underline;
     font-size: 2rem;
   }
   .view-profile-jobtitle {

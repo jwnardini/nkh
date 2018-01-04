@@ -1896,7 +1896,7 @@ display:
           alter:
             alter_text: true
             text: "<div class=\"view-profile-image\">{{ field_image_logo }}</div>\n<h3 class=\"view-profile-name\">{{ title }}</h3>\n<div class=\"view-profile-jobtitle\">{{ field_jobtitle }}</div>"
-            make_link: true
+            make_link: false
             path: '{{ path }}'
             absolute: false
             external: false
@@ -2209,6 +2209,73 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+        field_url:
+          id: field_url
+          table: node__field_url
+          field: field_url
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: uri
+          type: link
+          settings:
+            trim_length: 80
+            url_only: true
+            url_plain: true
+            rel: '0'
+            target: '0'
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         nothing:
           id: nothing
           table: views
@@ -2220,11 +2287,11 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<div class="view-profile-image">{{ field_image_logo }}<span class="element-invisible">{{ title }}</span></div>'
-            make_link: true
-            path: '{{ path }}'
+            text: '<div class="view-profile-image"><a href="{{ field_url }}" target="_blank" rel="noopener noreferrer">{{ field_image_logo }}<span class="element-invisible">{{ title }}</span></a></div>'
+            make_link: false
+            path: '{{ field_url }}'
             absolute: false
-            external: false
+            external: true
             replace_spaces: false
             path_case: none
             trim_whitespace: false
@@ -2269,6 +2336,7 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_image_logo'
+        - 'config:field.storage.node.field_url'
   block_6:
     display_plugin: block
     id: block_6
@@ -2533,6 +2601,73 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+        field_url:
+          id: field_url
+          table: node__field_url
+          field: field_url
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: uri
+          type: link
+          settings:
+            trim_length: 80
+            url_only: true
+            url_plain: true
+            rel: '0'
+            target: '0'
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         nothing:
           id: nothing
           table: views
@@ -2544,7 +2679,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<h3 class="view-profile-name">{{ title }}</h3>'
+            text: '<h3 class="view-profile-name"><a href="{{ field_url }}" target="_blank" rel="noopener noreferrer">{{ title }}</a></h3>'
             make_link: true
             path: '{{ path }}'
             absolute: false
@@ -2592,6 +2727,7 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_image_logo'
+        - 'config:field.storage.node.field_url'
   block_7:
     display_plugin: block
     id: block_7
