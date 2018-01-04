@@ -48,9 +48,9 @@ class DownloadForm extends FormBase {
       ],
     ];
     $download_text = count(\Drupal::request()->getSession()->get('nkh_bulk_download')) . ' ' . t('Items to Download');
-    //if (count(\Drupal::request()->getSession()->get('nkh_bulk_download')) == 1) {
+    if (count(\Drupal::request()->getSession()->get('nkh_bulk_download')) == 1) {
       $download_text = count(\Drupal::request()->getSession()->get('nkh_bulk_download')) . ' ' . t('Item to Download');
-    //}
+    }
 
     $form['resource_container']['option']['item_count'] = [
       '#type' => 'html_tag',
@@ -61,7 +61,7 @@ class DownloadForm extends FormBase {
       ],
     ];
 
-    //if (count(\Drupal::request()->getSession()->get('nkh_bulk_download')) > 0) {
+    if (count(\Drupal::request()->getSession()->get('nkh_bulk_download')) > 0) {
       $form['resource_container']['option']['download_zip'] = [
         '#type' => 'submit',
         '#value' => t('Download All Items'),
@@ -74,7 +74,7 @@ class DownloadForm extends FormBase {
           'class' => ['button'],
         ],
       ];
-    //}
+    }
 
     $form['resource_container']['option']['collapse'] = [
       '#type' => 'html_tag',

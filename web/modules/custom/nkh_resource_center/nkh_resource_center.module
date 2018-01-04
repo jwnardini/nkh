@@ -64,6 +64,29 @@ function nkh_resource_center_theme_suggestions_alter(array &$suggestions, array 
 }
 
 /**
+* Implements hook_views_api().
+*
+* Enabling using templates inside module
+*/
+function nkh_resource_center_views_api() {
+  return array(
+    'api' => 3,
+    'path' => drupal_get_path('module', 'nkh_resource_center'),
+    'template path' => drupal_get_path('module', 'nkh_resource_center') . '/templates',
+  );
+}
+
+function nkh_resource_center_preprocess_views_view(&$variables) {
+  //ksm($variables);
+}
+
+function nkh_resource_center_preprocess_views_view_unformatted(&$variables) {
+
+  $variables['rows'][0]['content']['test'] = 'kdokd';
+  //ksm($variables);
+}
+
+/**
  * Implements hook_theme().
  */
 function nkh_resource_center_theme($existing, $type, $theme, $path) {

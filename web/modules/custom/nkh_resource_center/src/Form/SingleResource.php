@@ -156,7 +156,7 @@ class SingleResource extends FormBase {
    * {@inheritdoc}
    */
   public function addResourceCallback(array &$form, FormStateInterface $form_state) {
-    return $form['resource_container'];
+    return \Drupal::formBuilder()->getForm('Drupal\nkh_resource_center\Form\DownloadForm');
   }
 
   /**

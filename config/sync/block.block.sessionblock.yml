@@ -17,7 +17,7 @@ settings:
   id: session_block
   label: 'Session block'
   provider: nkh_resource_center
-  label_display: visible
+  label_display: '0'
 visibility:
   request_path:
     id: request_path

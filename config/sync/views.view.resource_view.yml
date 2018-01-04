@@ -554,6 +554,7 @@ display:
         operator: AND
         groups:
           1: AND
+      css_class: ''
     cache_metadata:
       max-age: -1
       contexts:
@@ -565,7 +566,26 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_file_type'
+        - 'config:core.entity_view_display.node.blog.default'
+        - 'config:core.entity_view_display.node.blog.teaser'
+        - 'config:core.entity_view_display.node.campaign.default'
+        - 'config:core.entity_view_display.node.campaign.teaser'
+        - 'config:core.entity_view_display.node.landing_page.default'
+        - 'config:core.entity_view_display.node.landing_page.teaser'
+        - 'config:core.entity_view_display.node.news.default'
+        - 'config:core.entity_view_display.node.news.teaser'
+        - 'config:core.entity_view_display.node.page.default'
+        - 'config:core.entity_view_display.node.page.teaser'
+        - 'config:core.entity_view_display.node.partner.default'
+        - 'config:core.entity_view_display.node.partner.teaser'
+        - 'config:core.entity_view_display.node.profile.default'
+        - 'config:core.entity_view_display.node.profile.teaser'
+        - 'config:core.entity_view_display.node.program.default'
+        - 'config:core.entity_view_display.node.program.teaser'
+        - 'config:core.entity_view_display.node.resource.default'
+        - 'config:core.entity_view_display.node.resource.full'
+        - 'config:core.entity_view_display.node.resource.nkh_resource_center'
+        - 'config:core.entity_view_display.node.resource.teaser'
   page_1:
     display_plugin: page
     id: page_1
@@ -574,31 +594,6 @@ display:
     display_options:
       display_extenders: {  }
       path: resource-center
-      exposed_block: true
-      defaults:
-        filters: true
-        filter_groups: true
-      enabled: false
-      display_description: 'All changes made here should be added to the Display Block.'
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - url
-        - url.query_args
-        - user
-        - 'user.node_grants:view'
-        - user.permissions
-      tags:
-        - 'config:field.storage.node.field_file_type'
-  resource_center_block_display:
-    display_plugin: block
-    id: resource_center_block_display
-    display_title: 'Resource Center Display Block'
-    position: 1
-    display_options:
-      display_extenders: {  }
       exposed_block: true
       defaults:
         filters: true

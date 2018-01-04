@@ -57,10 +57,10 @@ class ViewForm extends FormBase {
       '#type' => 'submit',
       '#value' => t('Add to Bulk Download'),
       '#submit' => ['Drupal\nkh_resource_center\Form\NKHResourceCenter::addResource'],
-      // '#ajax' => [
-      //   'callback' => '::addResourceCallback',
-      //   'wrapper' => 'nkh-resource-view-form', //'ajax_resource_container',
-      // ],
+      '#ajax' => [
+        'callback' => '::addResourceCallback',
+        'wrapper' => 'nkh-resource-download-form',
+      ],
       '#name' => $file_id,
       '#prefix' => '<span class="resource-input-button">',
       '#suffix' => '</span>',
@@ -89,8 +89,7 @@ class ViewForm extends FormBase {
    * {@inheritdoc}
    */
   public function addResourceCallback(array &$form, FormStateInterface $form_state) {
-    return $form['resource'];
-    
+    return \Drupal::formBuilder()->getForm('Drupal\nkh_resource_center\Form\DownloadForm');
   }
 
   /**
