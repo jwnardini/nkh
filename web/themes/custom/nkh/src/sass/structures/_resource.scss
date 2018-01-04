@@ -7,7 +7,10 @@
   }
   .field--label-above {
     .field__label {
-      @extend h2;
+      font-size: 3rem;
+      @include breakpoint($min768) {
+        font-size: 3.3rem;
+      }      
       font-weight: 700;
       margin: 1em 0 .25em;
     }
@@ -20,6 +23,10 @@
   .text-formatted {
     font-size: 1.6rem;
     line-height: 1.8;
+    h2, p {
+      color: $nkh-text;
+
+    }
   }
 }
 
@@ -81,12 +88,6 @@
     }
     @include breakpoint($min768) {
       font-size: 4.5rem;
-    }
-    @include breakpoint($min960) {
-      font-size: 5rem;
-    }
-    @include breakpoint($min1120) {
-      font-size: 6rem;
     }
   }
   [id="resource_center_title"] {
