@@ -6,6 +6,7 @@ require('./includes/eqheights');
 require('./includes/accordion');
 require('./includes/table');
 require('./includes/throttle');
+require('./includes/header');
 require('./includes/cookies');
 require('./includes/viewport');
 require('./includes/menu');
