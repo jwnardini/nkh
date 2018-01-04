@@ -302,7 +302,7 @@
       });
     }
     else {
-      $(window).scrollTop(windowOffset);
+      // $(window).scrollTop(windowOffset);
       headergroup.removeClass('open mobile').attr('aria-expanded', '');
       menutoggle.removeClass('open').attr('aria-expanded', '');
       menublock.removeClass('open mobile-menu').attr('aria-expanded', '');

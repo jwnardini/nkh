@@ -187,7 +187,8 @@ div[class*="block-newsletter"] {
     content: 'Sign Up for Our Newsletter';
     margin-bottom: 1rem;
     display: block;
-    /* text-align: left; */
+    text-align: left; 
+    color: $nkh-orange;
     /* font-size: 2rem; */
     font-weight: 700;
     text-transform: uppercase;
