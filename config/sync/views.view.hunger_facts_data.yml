@@ -9,7 +9,7 @@ dependencies:
     - field.storage.taxonomy_term.field_data_summernutr
     - taxonomy.vocabulary.location
   content:
-    - 'taxonomy_term:location:429ff611-5faa-466c-a387-8a8dfd5e5639'
+    - 'taxonomy_term:location:4c71d07c-d253-453a-a712-1ef46e10c060'
   module:
     - better_exposed_filters
     - taxonomy
@@ -153,7 +153,7 @@ display:
           admin_label: ''
           operator: or
           value:
-            27: 27
+            97: 97
           group: 1
           exposed: true
           expose:
@@ -172,6 +172,7 @@ display:
               author: '0'
               editor: '0'
               publisher: '0'
+              resource_editor: '0'
               seo: '0'
               user_creator: '0'
               content_administrator: '0'
