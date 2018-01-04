@@ -16,9 +16,11 @@
   }
 
   /* Underline all links. */
+  a,
   a:link,
   a:visited {
     text-decoration: underline !important;
+    color: $black !important;
 
     /* Don't underline site link. */
     &.site-link {
