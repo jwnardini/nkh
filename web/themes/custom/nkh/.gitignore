@@ -2,6 +2,7 @@
 !src/
 !fonts/
 !images/
+!favicon.ico
 !dist/
 !images/
 !.gitignore
