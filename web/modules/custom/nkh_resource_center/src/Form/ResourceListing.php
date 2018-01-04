@@ -58,7 +58,7 @@ class ResourceListing extends FormBase {
     }
 
     if ($query_results_data == NULL) {
-      $query_results .= 'All Resources (A-Z) ';
+      $query_results .= 'All Resources ';
     }
     $query_string .= '<span class="query-filter__results">' . rtrim($query_results, ', ') . '</span>';
 
