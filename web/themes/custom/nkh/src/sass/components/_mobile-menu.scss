@@ -8,6 +8,7 @@
   position: absolute;
   top: auto;
   right: 0;
+  width: 100%;
   @include breakpoint($min1024) {
     height: auto;
     max-height: none;

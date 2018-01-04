@@ -65,6 +65,29 @@
       }
     }
 
+    .entity--cta-image {
+      @include breakpoint($min768) {
+        min-height: 68vw;
+        width: 80vw;
+        margin-left: -10vw;
+      }
+      @include breakpoint($min960) {
+            min-height: 47vw;
+      }
+      @include breakpoint($min1024) {
+        min-height: 45vw;
+        width: 75vw;
+        margin-left: calc(-15vw + 4rem);
+        max-width: none;
+      }
+      @include breakpoint($min1260) {
+        min-height: 40vw;
+        width: 60vw;
+        margin-left: -4rem;
+      }
+
+    }
+
     .view-mode-large,
     .view-mode-feature-caption {
       width: 100vw;
