@@ -18,11 +18,11 @@
 
 @font-face {
   font-family: 'nkh';
-  src:  url('../../fonts/nkh.eot?uddzqv');
-  src:  url('../../fonts/nkh.eot?uddzqv#iefix') format('embedded-opentype'),
-    url('../../fonts/nkh.ttf?uddzqv') format('truetype'),
-    url('../../fonts/nkh.woff?uddzqv') format('woff'),
-    url('../../fonts/nkh.svg?uddzqv#nkh') format('svg');
+  src:  url('../../fonts/nkh.eot?q5j2xn');
+  src:  url('../../fonts/nkh.eot?q5j2xn#iefix') format('embedded-opentype'),
+    url('../../fonts/nkh.ttf?q5j2xn') format('truetype'),
+    url('../../fonts/nkh.woff?q5j2xn') format('woff'),
+    url('../../fonts/nkh.svg?q5j2xn#nkh') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -71,6 +71,7 @@ $icon-caret: "\e902";
 $icon-left-hug: "\e904";
 $icon-right-hug: "\e903";
 $icon-video: "\e905";
+$icon-checkmark: "\ea10";
 
 
 //listing all the key and value
@@ -95,7 +96,8 @@ $icons:(
   caret: $icon-caret,
   left-hug: $icon-left-hug,
   right-hug: $icon-right-hug,
-  video: $icon-video
+  video: $icon-video,
+  checkmark: $icon-checkmark
 );
 
 //mixing the icon key and value
