@@ -9,7 +9,7 @@ features:
   favicon: false
   node_user_picture: true
 logo:
-  path: ''
+  path: favicon.ico
   url: ''
   use_default: false
 _core:
