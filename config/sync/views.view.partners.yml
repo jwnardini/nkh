@@ -6,6 +6,7 @@ dependencies:
     - entityqueue.entity_queue.queue_core_partners
     - field.storage.node.field_image_logo
     - field.storage.node.field_jobtitle
+    - field.storage.node.field_url
     - node.type.partner
     - taxonomy.vocabulary.partner
   content:
@@ -17,6 +18,7 @@ dependencies:
     - 'taxonomy_term:partner:c091a00f-dacf-404b-8c4e-bdbc53a9247d'
   module:
     - entityqueue
+    - link
     - node
     - taxonomy
     - user
@@ -1043,6 +1045,73 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+        field_url:
+          id: field_url
+          table: node__field_url
+          field: field_url
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+          click_sort_column: uri
+          type: link
+          settings:
+            trim_length: 80
+            url_only: true
+            url_plain: true
+            rel: '0'
+            target: '0'
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         nothing:
           id: nothing
           table: views
@@ -1054,7 +1123,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<h3 class="view-profile-name">{{ title }}</h3>'
+            text: '<h3 class="view-profile-name"><a href="{{ field_url }}" target="_blank" rel="noopener noreferrer">{{ title }}</a></h3>'
             make_link: true
             path: '{{ path }}'
             absolute: false
@@ -1102,6 +1171,7 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_image_logo'
+        - 'config:field.storage.node.field_url'
   block_3:
     display_plugin: block
     id: block_3
