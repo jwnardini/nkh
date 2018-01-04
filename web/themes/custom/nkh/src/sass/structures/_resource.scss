@@ -590,6 +590,18 @@
   @include breakpoint($min1120) {
     width: 66%;
   }
+  .query-filter__label{
+    padding-left: 1rem;    
+    @include breakpoint($min1024) {
+      padding-left: 3rem;
+    }
+    @include breakpoint($min1120) {
+      padding-left: 1rem;
+    }
+    @include breakpoint($min1360) {
+      padding-left: 3rem;
+    }
+  }
 }
 [class*="block-exposedformresource-viewpage"] {
   @include breakpoint($min1024) {
@@ -628,7 +640,7 @@
   }
   .form-item.form-type-textfield,
   .form-item.form-type-select {
-    margin: 1rem 0 2rem;
+    margin: 1rem 0 2.6rem;
     float: none;
     width: 100%;
   }
@@ -645,32 +657,40 @@
     margin: .5rem 0;
     font-size: 1.4rem;
     label {
-      font-weight: 500;
+      font-weight: 700;
     }
     input[type="radio"],
     input[type="checkbox"] {
       + .field-label:before,
       + label:before {
         background: $nkh-bone;
-        border: 0 transparent;
+        border: 1px solid #efefef;
       }
       &:checked {
         + .field-label:before,
         + label:before {
-          background: $nkh-bone;
-          border: 0 transparent;
         }
         + label:after {
-          margin-top: .4rem;
-          font-size: .8rem;
-          margin-left: .2rem;
+          content: $icon-checkmark;
+          margin-top: .3rem;
+          font-size: 1rem;
+          margin-left: .1rem;
         }
       }
     }
   }
   .form-submit {
-    @include element-invisible;
+    @include link-button;
+    clear: both;
+    display: block;
+    margin: 1rem auto;
+    font-size: 14px;
+    padding: 1rem 3rem;
+    &.js-hide{
+      @include element-invisible;
+    }
   }
+
   input.form-text, select.form-select {
     border: 0 transparent;
     background: $nkh-bone;
