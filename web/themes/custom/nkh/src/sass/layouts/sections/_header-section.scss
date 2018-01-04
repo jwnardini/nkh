@@ -28,6 +28,23 @@
       min-height: 37vw;
     }
 
+    //interior hero
+    body:not(.page-node-type-landing-page) & {
+      min-height: 51vw;
+      //landscape large (tablet)
+      @include breakpoint($min768) {
+        min-height: 51vw;
+      }
+      //hero (desktop)
+      @include breakpoint($min960) {
+        min-height: 34vw;
+      }
+      //hero (desktop)
+      @include breakpoint($min1360) {
+        min-height: 37vw;
+      }
+    }
+
   }
 
   .field--name-field-image-banner {
