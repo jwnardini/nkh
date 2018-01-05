@@ -94,6 +94,7 @@ module:
   seckit: 0
   session_limit: 0
   shortcut: 0
+  simple_sitemap: 0
   svg_image: 0
   svg_image_field: 0
   system: 0

@@ -68,6 +68,7 @@
         "drupal/search_api_solr": "^1.1",
         "drupal/seckit": "^1.0@alpha",
         "drupal/session_limit": "^1.0@beta",
+        "drupal/simple_sitemap": "^2.11",
         "drupal/stage_file_proxy": "^1.0@alpha",
         "drupal/svg_image": "^1.6",
         "drupal/svg_image_field": "^1.0",
