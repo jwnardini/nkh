@@ -246,6 +246,7 @@
     height: 100%;
     opacity: 1;
     overflow-y: scroll;
+    overflow-x: hidden;
     box-shadow: 0 -1px 3px $nkh-text;
     @include breakpoint($min1024){
       height: 25vh;
@@ -260,31 +261,59 @@
   > div {
     margin: 0 auto;
     padding: 1rem 4rem;
+    position:relative;
     &:nth-of-type(even){
       background: $nkh-bone;
+      > * {
+        z-index: 2;
+        position:relative;
+      }
+      &:before {
+        content:'';
+        display:block;
+        position:absolute;
+        z-index:1;
+        background: $nkh-bone;
+        top:0;
+        bottom:0;
+        width:200vw;
+        left:-50vw;
+        right:auto;
+      }
     }
   }
   // each download
   .container-inline {
     display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
     justify-content: space-between;
     align-items: center;
+    max-width:730px;
   }
   .resource_file_type,
   a {
     color: $nkh-text;
     font-weight: 700;
+    &:after {
+      background-color:#000;
+    }
   }
   .resource_file_type {
-    font-size: 1.4rem;    
+    font-size: 1.4rem;
+    width:100%;
+    text-transform:uppercase;
+    padding-top:1.5rem;
   }
   a {
     font-size: 2rem;
-    padding: 0 1.5rem;
-    text-align: center;
+    padding: 0 5rem 2rem 0;
+    max-width:calc(100% - 2rem);
   }
   .remove-resource__wrapper{
     // button to remove the download from the bulk list
+    width: 1rem;
+    justify-self: end;
     .form-submit {
       position: absolute;
       overflow: hidden;
@@ -297,8 +326,9 @@
     }    
     &:after{
       @include icon($icon-close);
-      color: $nkh-text;
+      color: $nkh-lightgrey;
       font-size: 1.4rem;
+      position:relative;
     }
   }
 }
@@ -436,10 +466,8 @@ button.resource-download-item__solid{
   text-transform: uppercase;
   color: $white;
   padding-right: .5rem;
-  &:focus, &:hover, &:active{
-    background-color: transparent;
-    text-decoration: underline;
-  }
+  background-color: transparent;
+  text-decoration: underline;
   @include breakpoint($min768) {
     float: right;
   }
