@@ -48,7 +48,7 @@
     transition-timing-function: cubic-bezier(0.7,0,0.3,1);
     .inner-wrapper{
       max-width: 1320px;
-      padding: 0 10px 5px;
+      padding: 0 10px 0;
     }
   }
   @include breakpoint($min1260) {
@@ -73,6 +73,9 @@
       display: block;
       left: 0;
       top: 1rem;
+    }
+    @include breakpoint($min1360) {
+      top: 1.8rem;  
     }
   }
   div[class*="block-newsletter"]{
