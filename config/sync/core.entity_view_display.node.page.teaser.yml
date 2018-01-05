@@ -5,6 +5,15 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.page.body
+    - field.field.node.page.field_content_reference
+    - field.field.node.page.field_cta_ref
+    - field.field.node.page.field_image_banner
+    - field.field.node.page.field_image_featured
+    - field.field.node.page.field_intro
+    - field.field.node.page.field_landing_link_ref
+    - field.field.node.page.field_metatags
+    - field.field.node.page.field_taxonomy_issue
+    - field.field.node.page.field_teaser
     - node.type.page
   module:
     - text
@@ -16,15 +25,21 @@ targetEntityType: node
 bundle: page
 mode: teaser
 content:
-  body:
+  field_teaser:
+    type: text_default
+    weight: 0
+    region: content
     label: hidden
-    type: text_summary_or_trimmed
-    weight: 100
-    region: content
-    settings:
-      trim_length: 600
+    settings: {  }
     third_party_settings: {  }
-  links:
-    weight: 101
-    region: content
-hidden: {  }
+hidden:
+  body: true
+  field_content_reference: true
+  field_cta_ref: true
+  field_image_banner: true
+  field_image_featured: true
+  field_intro: true
+  field_landing_link_ref: true
+  field_metatags: true
+  field_taxonomy_issue: true
+  links: true

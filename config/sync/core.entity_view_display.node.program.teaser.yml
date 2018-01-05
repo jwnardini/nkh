@@ -21,20 +21,19 @@ targetEntityType: node
 bundle: program
 mode: teaser
 content:
-  body:
-    label: hidden
-    type: text_summary_or_trimmed
+  field_teaser:
+    type: text_default
     weight: 0
-    settings:
-      trim_length: 600
-    third_party_settings: {  }
     region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
 hidden:
+  body: true
   field_cta_ref: true
   field_image_banner: true
   field_image_featured: true
   field_metatags: true
   field_taxonomy_issue: true
-  field_teaser: true
   field_url: true
   links: true

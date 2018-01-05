@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.partner.body
     - field.field.node.partner.field_cta_ref
     - field.field.node.partner.field_image_logo
+    - field.field.node.partner.field_jobtitle
     - field.field.node.partner.field_metatags
     - field.field.node.partner.field_social_fb
     - field.field.node.partner.field_social_ins
@@ -23,30 +24,22 @@ targetEntityType: node
 bundle: partner
 mode: teaser
 content:
-  body:
-    label: hidden
-    type: text_summary_or_trimmed
-    weight: 1
-    settings:
-      trim_length: 160
-    third_party_settings: {  }
-    region: content
-  field_image_logo:
-    type: entity_reference_entity_view
+  field_teaser:
+    type: text_default
     weight: 0
     region: content
     label: hidden
-    settings:
-      view_mode: small_featured_image
-      link: false
+    settings: {  }
     third_party_settings: {  }
 hidden:
+  body: true
   field_cta_ref: true
+  field_image_logo: true
+  field_jobtitle: true
   field_metatags: true
   field_social_fb: true
   field_social_ins: true
   field_social_tw: true
   field_taxonomy_partner: true
-  field_teaser: true
   field_url: true
   links: true

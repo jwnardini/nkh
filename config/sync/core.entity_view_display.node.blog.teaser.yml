@@ -5,6 +5,8 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.blog.body
+    - field.field.node.blog.field_cta_ref
+    - field.field.node.blog.field_date_simple
     - field.field.node.blog.field_entity_partner
     - field.field.node.blog.field_entity_profile
     - field.field.node.blog.field_image_banner
@@ -14,6 +16,7 @@ dependencies:
     - field.field.node.blog.field_taxonomy_issue
     - field.field.node.blog.field_taxonomy_series
     - field.field.node.blog.field_teaser
+    - field.field.node.blog.field_video_boolean
     - node.type.blog
   module:
     - text
@@ -23,15 +26,16 @@ targetEntityType: node
 bundle: blog
 mode: teaser
 content:
-  body:
-    label: hidden
-    type: text_summary_or_trimmed
+  field_teaser:
+    type: text_default
     weight: 0
-    settings:
-      trim_length: 160
-    third_party_settings: {  }
     region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
 hidden:
+  body: true
+  field_cta_ref: true
   field_date_simple: true
   field_entity_partner: true
   field_entity_profile: true
@@ -41,5 +45,5 @@ hidden:
   field_metatags: true
   field_taxonomy_issue: true
   field_taxonomy_series: true
-  field_teaser: true
+  field_video_boolean: true
   links: true
