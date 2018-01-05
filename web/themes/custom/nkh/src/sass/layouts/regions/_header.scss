@@ -3,6 +3,9 @@
   bottom: 0;
   position: fixed;
   z-index: 1000;
+  @media all and (max-width: 1023px) {
+    top: auto !important;
+  }
   &.top-sticky {
     @include breakpoint($min1024) {
       top: 0;
