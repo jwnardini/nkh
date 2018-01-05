@@ -72,6 +72,12 @@
     max-width: 90%;
   }
 
+  #print-logo {
+    display: block !important;
+    margin: 2rem;
+    filter: grayscale(100%);
+  }
+
   /* for style guide only */
   .color-palettes {
     // box__*{
@@ -441,6 +447,55 @@
       }
     }
     #cta-newsletter-signup {
+      display: none;
+    }
+  }
+
+  .page-node-type-resource {
+    #edit-form-header {
+      padding: 0 2rem;
+    }
+    #edit-form-header-image-featured,
+    #resource_center_title {
+      float: left;
+    }
+    #edit-form-header-image-featured {
+      width: 30%;
+      img {
+        filter: grayscale(100%);
+      }
+    }
+    #resource_center_title {
+      width: 65%;
+      vertical-align: top;
+      text-align: left;
+      padding-left: 2rem;
+    }
+    #resource_center_actions {
+      float: none;
+      clear: left;
+      width: 100%;
+      padding-left: 0;
+      display: block;
+      text-align: left;
+      button,
+      input {
+        padding-left: 0;
+        text-decoration: underline;
+      }
+      .js-form-item[class*=form-actions-file-url] input {
+        padding-left: 1rem;
+      }
+    }
+    #edit-page-content {
+      .field__label {
+        font-size: 2rem;
+      }
+      .field__item {
+        font-size: 1.6rem;
+      }
+    }
+    #ajax_resource_container {
       display: none;
     }
   }
