@@ -39,14 +39,9 @@
       padding: 0;
     }
   }
-  .field--name-field-landing-link-ref{
-    @include breakpoint($min1024) {
-      max-width: 1000px;
-    }
-    @include breakpoint($min1260) {
-      max-width: 1200px;
-    }
-  }
+  // .field--name-field-landing-link-ref{
+  //
+  // }
 
 
   .text-formatted{
@@ -118,9 +113,18 @@
       max-width: 1000px;
       margin: 4rem auto;
     }
-    .entity-landing_link-auto,
-    .entity-landing_link-manual{
-      max-width: 1200px;
+    .entity-landing-link {
+      position: relative;
+      @include breakpoint($min1024) { //max 1000
+        left: 50%;
+        margin-left: -38vw;
+      }
+      // @include breakpoint($min1260) {
+      //   margin-left: -500px;
+      // }
+      @include breakpoint($min1680) { //max 1200
+        margin-left: -600px;
+      }
     }
 
     .entity--cta-text,
@@ -166,7 +170,6 @@
 .page-node-type-partner .node--view-mode-full .node__content,
 .page-node-type-profile .node--view-mode-full .node__content {
   max-width: 1260px;
-  width: 90vw;
   margin: 0 auto;
   padding: 6rem 4rem;
 
@@ -174,6 +177,10 @@
 
   @include breakpoint($min960) {
     padding-top: 8rem;
+  }
+
+  @include breakpoint($min1024) {
+    width: 90vw;
   }
 
   .text-formatted {

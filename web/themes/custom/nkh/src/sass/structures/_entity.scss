@@ -142,6 +142,20 @@ div[class*="block-views-block-cta-references-"]{
   }
 }
 
+div.node__content > div.field.field--name-field-landing-link-ref {
+  @include breakpoint($min1024) {
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: none;
+  }
+
+  @include breakpoint($min1680) {
+    width: auto;
+    max-width: none;
+  }
+}
+
 .field--name-field-landing-link-ref {
   .field__item {
     margin-top: 5rem;
@@ -345,6 +359,19 @@ div[class*="block-views-block-cta-references-"]{
 .entity-landing_link-auto,
 .entity-landing_link-manual {
   margin-top: 5rem;
+  @include breakpoint($min1024) {
+    width: 76vw;
+    margin-left: auto;
+    margin-right: auto;
+    //max-width: 1000px;
+  }
+  // @include breakpoint($min1260) {
+  //
+  // }
+  @include breakpoint($min1680) {
+    width: 1200px;
+    max-width: none;
+  }
   + .entity-landing-link--manual,
   + .entity-landing-link--auto,
   + .entity-landing_link-auto,

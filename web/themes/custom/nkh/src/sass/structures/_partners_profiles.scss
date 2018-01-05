@@ -2,8 +2,10 @@
 [class*="block-views-blockprofiles-block"] {
   padding: 6rem 4rem;
   max-width: 1260px;
-  width: 90vw;
   margin: 0 auto;
+  @include breakpoint($min1024) {
+    width: 90vw;
+  }
   h2 {
     @include grit-clip-gray;
   }
