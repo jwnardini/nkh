@@ -682,6 +682,10 @@ div[class*="block-views-block-cta-references-"]{
   position: relative;
   background-size: cover;
   background-position: center center;
+  padding-top: 50%;
+  @include breakpoint($min768) {
+    padding-top: 0;
+  }
   form, .form-item {
     margin: 0;
   }
@@ -718,7 +722,7 @@ div[class*="block-views-block-cta-references-"]{
 .hunger-fact {
   background: rgba($nkh-orange, .9);
   position: relative;
-  padding: 2rem 2rem 1rem 3rem;
+  padding: 2rem 2.5rem 1rem 3rem;
   color: $white;
   z-index: 100;
   display: flex;
@@ -729,7 +733,7 @@ div[class*="block-views-block-cta-references-"]{
     bottom: -5rem;
     width: 50%;
     right: 7rem;
-    padding: 3rem 3rem 2.5rem 4rem;
+    padding: 3rem 4rem 3.5rem;
   }
   &:after{
     content: "";

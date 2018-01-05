@@ -109,6 +109,8 @@ div[data-quickedit-entity-id*="hunger_fact"],
 }
 .hunger-fact__data{
   @include grit-clip-white;
+  line-height: 1;
+  margin-bottom: 1rem;
 }
 
 .hunger-fact__data,
