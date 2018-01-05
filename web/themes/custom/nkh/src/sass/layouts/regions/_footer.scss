@@ -67,7 +67,7 @@ nav.block-menu:not(.menu--header-social-media-links , .menu--footer-social-media
       transition: all .2s;
       background: none;
       margin: 0;
-    }    
+    }
     &:hover{
       &:before{
         color: $nkh-darkgrey;
@@ -200,16 +200,15 @@ nav.block-menu:not(.menu--header-social-media-links , .menu--footer-social-media
     margin: 0 auto;
     padding: 0 2rem;
     @include breakpoint($min768) {
-      max-width: 100%;
+      max-width: 1280px;
     }
     @include breakpoint($min1024) {
-      max-width: 1200px;
-      padding: 0;
+      padding: 0 4rem;
     }
   }
   nav:not(.menu--footer-social-media-links) {
     li:before {
-      display: none    
+      display: none
     }
     a {
       color: $white;
@@ -229,7 +228,7 @@ nav.block-menu:not(.menu--header-social-media-links , .menu--footer-social-media
         font-weight: 300;
         text-transform: none;
       }
-      &:hover, 
+      &:hover,
       &:focus{
         a{
           color: $white;
@@ -307,7 +306,7 @@ nav.block-menu:not(.menu--header-social-media-links , .menu--footer-social-media
     .block-newslettersignupform-2{
       position: absolute;
       right: 0;
-      margin-right: 15.4rem;
+      margin-right: 17.4rem;
 
       &:hover, &:active, &:focus {
         .header-newsletter-form__toggle{
