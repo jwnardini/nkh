@@ -184,12 +184,19 @@ class SingleResource extends FormBase {
       ];
     }
 
+    if (count(\Drupal::request()->getSession()->get('nkh_bulk_download')) > 0) {
+      $downloadItem = 'solid';
+    }else{
+      $downloadItem = 'empty';
+    }
+   
     $form['resource_container']['option']['collapse'] = [
       '#type' => 'html_tag',
       '#tag' => 'button',
       '#value' => t('View All Items'),
       '#attributes' => [
         'id' => 'nkh_toggle_resource_container',
+        'class' => 'resource-download-item__' . $downloadItem,
       ],
     ];
 
