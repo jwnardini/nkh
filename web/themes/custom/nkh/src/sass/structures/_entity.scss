@@ -784,6 +784,7 @@ div[class*="block-views-block-cta-references-"]{
     margin-top:7rem;
     position: relative;
     display: block;
+    width: 100%;
     @include clearfix;
   }
   .image-section {
@@ -931,5 +932,3 @@ div[class*="block-views-block-cta-references-"]{
     }
   }
 }
-
-
