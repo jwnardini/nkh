@@ -1,7 +1,17 @@
 #main {
   padding-bottom: 4rem;
   @include breakpoint($min1024) {
-    padding-top: 9rem;
+    padding-top: 10rem;
+  }
+  @include breakpoint($min1360) {
+    padding-top: 12rem;
+  }
+}
+.path-frontpage{
+  #main {
+    @include breakpoint($min1024) {
+      padding-top: 9rem;
+    }
   }
 }
 
