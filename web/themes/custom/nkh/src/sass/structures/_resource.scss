@@ -197,7 +197,7 @@
   text-align: center;
   padding: 1rem 4rem;
   @include breakpoint($min1024) {
-    padding: 2rem 4rem;
+    padding: 1.8rem 4rem;
   }
   .resource-item-count {
     font-weight: 700;
@@ -580,14 +580,14 @@ button.resource-download-item__solid{
     }
     @include breakpoint($min1024) {
       //max-width: 100%;
-      padding: 3rem;
+      padding: 2rem 3rem;
     }
     @include breakpoint($min1120) {
       max-width: 33%;
-      padding: 1rem;
+      padding: 0 1rem;
     }
     @include breakpoint($min1360){
-      padding: 3rem;
+      padding: 2rem 3rem;
     }
   }
 }
@@ -683,13 +683,14 @@ button.resource-download-item__solid{
   max-width: 960px;
   margin: 0 auto;
   padding: 0 4rem;
+  font-weight: 300;
 }
 .block-resourcecentertitle {
   text-align: center;
-  padding-top: 8rem;
+  padding-top: 5rem;
 }
 .block-resourcecenterintroduction {
-  padding-bottom: 4rem;
+  padding-bottom: 3rem;
 }
 .nkh-resource-center-listing {
   @include breakpoint($min1024) {
