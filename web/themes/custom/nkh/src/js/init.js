@@ -25,7 +25,7 @@ require('./includes/carousel');
   $(function () {
     // Place code here or place in a toolkit script file and require above
     $('.view-display-id-national_partners.view-core-partners .view-content').addClass('owl-carousel');
-    
+
     $(".owl-carousel").owlCarousel({
       items:3, 
       dots: false,
