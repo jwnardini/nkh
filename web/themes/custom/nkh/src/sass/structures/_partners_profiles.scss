@@ -29,7 +29,6 @@
   h2 {
     @include grit-clip-gray;
   }
-
   .view-content {
     display: flex;
     flex-wrap: wrap;
@@ -44,8 +43,6 @@
     padding: 1rem;
     text-align: left;
     //make sure that each profile is centered once the browser gets really narrow
-    &:last-child {
-    }
     @include breakpoint($min540) {
       margin: 0;
     }
