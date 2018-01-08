@@ -717,7 +717,19 @@ button.resource-download-item__solid{
     border: 0 none transparent;
     margin: 1rem 0;
     float: none;
-    width: 100%;
+      width: 100%;
+    @include breakpoint($min540) {
+      width: 49%;
+      &:nth-of-type(even){
+        margin-left: 1.5%;
+        padding-right: 0;
+      }
+
+    }  
+    @include breakpoint($min1024) {
+      width: 100%;
+      margin-left: 0;
+    }  
   }
   .form-item.form-type-textfield,
   .form-item.form-type-select {
