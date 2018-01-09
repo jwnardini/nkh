@@ -61,7 +61,7 @@
     color: $nkh-lightgrey;
     font-weight: 300;
     margin: 0 2rem 2rem;
-    font-size: 3rem;
+    font-size: 2.5rem;
     letter-spacing: -.01em;
     @include breakpoint($min1024) {
       font-size: 2.5rem;
@@ -73,10 +73,6 @@
       width: 52%;
       margin-left: 42%;
     }
-    @include breakpoint($min1360) {
-      font-size: 3.6rem;
-    }
-
   }
   .image-wrapper{
     display: block;
@@ -147,7 +143,7 @@
       opacity: .85;
     }
     &:hover .view-title{
-      background-position: 0 1.12em;
+      background-position: 0 1.19em;
     }
   }
   .view-title,
