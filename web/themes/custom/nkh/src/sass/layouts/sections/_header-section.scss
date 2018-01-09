@@ -145,8 +145,8 @@
     @include grit-bg-orange;
     display: inline;
     line-height: 1.2;
-
     font-size: 3.8rem;
+    letter-spacing: -.2rem;
     @include breakpoint($min540) {
       font-size: 4.5rem;
     }
@@ -155,9 +155,10 @@
     }
     @include breakpoint($min960) {
       font-size: 6rem;
+
     }
     @include breakpoint($min1120) {
-      font-size: 8rem;
+      font-size: 7rem;
     }
   }
   .header-section__overlay {

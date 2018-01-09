@@ -420,6 +420,7 @@ div.node__content > div.field.field--name-field-landing-link-ref {
     line-height: 1.8;
     color: $nkh-text;
     font-size: 1.6rem;
+    font-weight: 300;
     span{
       display: inline;
       padding-bottom: .5rem;
@@ -435,6 +436,9 @@ div.node__content > div.field.field--name-field-landing-link-ref {
     font-weight: 700;
     line-height: 1.4;
     margin-bottom: 1.5rem;
+    span {
+      color: #nkh-darkergrey;
+    }
   }
   .landing_additional {
     font-weight: 700;
