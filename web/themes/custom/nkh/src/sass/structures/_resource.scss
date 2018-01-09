@@ -25,7 +25,9 @@
     line-height: 1.8;
     h2, p {
       color: $nkh-text;
-
+    }
+    p{
+      font-weight: 300;
     }
   }
 }
@@ -413,6 +415,7 @@
       font-size: 1.6rem;
       line-height: 1.4;
       overflow: hidden;
+      font-weight: 300;
     }
   }
   &__link {
@@ -691,6 +694,9 @@ button.resource-download-item__solid{
 }
 .block-resourcecenterintroduction {
   padding-bottom: 3rem;
+  p {
+    font-weight: 300;
+  }
 }
 .nkh-resource-center-listing {
   @include breakpoint($min1024) {
@@ -844,6 +850,11 @@ button.resource-download-item__solid{
       @include breakpoint($min1024) {
         display: inline-block;
       }
+    }
+  }
+  #footer {
+    @include breakpoint($min1024) {
+      padding-bottom: 100px;
     }
   }
 }

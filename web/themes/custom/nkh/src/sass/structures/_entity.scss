@@ -98,42 +98,27 @@ div[class*="block-views-block-cta-references-"]{
     //display: block;
     max-width: 1600px;
   }
-  &:after{
-    content: '';
+  .cta-animation{
     position: absolute;
-    transform: translate(-50%, -50%) scale(0.5) rotate(5deg);
+    transform: translate(-50%, -100%) scale(0.65);
     transform-origin: bottom center;
     text-align: center;
     transition: 0.25s ease-in-out;
-    opacity: 0;
-    top: -8rem;
+    top: 4rem;
     left: 50%;
     width: 300px;
     pointer-events: none;
     display: block;
     height: 300px;
-    background: url('/themes/custom/nkh/images/btn-bingo.gif') 0 0 no-repeat;
     background-size: 100%;
+    z-index: 100;
     @include breakpoint($min768) {
-      top: -8rem;
+      transform: translate(-50%, -100%) scale(0.65);
+      top: 5rem;
     }
     @include breakpoint($min1024) {
-      top: -10rem;
-    }
-  }
-  &:hover{
-    &:after{
-      opacity: 1;
-      height: 300px;
-      transform: translate(-50%, -100%) scale(1) rotate(0deg);
-      top: 4rem;
-      @include breakpoint($min768) {
-        top: 8rem;
-      }
-
-      @include breakpoint($min1024) {
-        top: 11rem;
-      }
+      transform: translate(-50%, -100%) scale(1);
+      top: 8rem;
     }
   }
   //in case an admin uses a button instead of a link
@@ -435,6 +420,7 @@ div.node__content > div.field.field--name-field-landing-link-ref {
     line-height: 1.8;
     color: $nkh-text;
     font-size: 1.6rem;
+    font-weight: 300;
     span{
       display: inline;
       padding-bottom: .5rem;
@@ -450,6 +436,9 @@ div.node__content > div.field.field--name-field-landing-link-ref {
     font-weight: 700;
     line-height: 1.4;
     margin-bottom: 1.5rem;
+    span {
+      color: #nkh-darkergrey;
+    }
   }
   .landing_additional {
     font-weight: 700;
@@ -775,7 +764,7 @@ div.node__content > div.field.field--name-field-landing-link-ref {
   }
   h2 {
     //@include element-invisible;
-    font-size: 2.4rem;
+    font-size: 2.7rem;
     font-weight: 700;
     line-height: 1.4;
     margin: 0 0 1rem;
@@ -794,7 +783,10 @@ div.node__content > div.field.field--name-field-landing-link-ref {
   }
   .view-content {
     order: 1;
-    font-size: 8rem;
+    font-size: 7rem;
+    @include breakpoint($min540) {
+      font-size: 8.5rem;
+    }
   }
   label {
     @include element-invisible;

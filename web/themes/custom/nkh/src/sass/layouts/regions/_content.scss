@@ -2,6 +2,7 @@
   padding-bottom: 4rem;
   @include breakpoint($min1024) {
     padding-top: 10rem;
+    padding-bottom: 8rem;
   }
   @include breakpoint($min1360) {
     padding-top: 12rem;
@@ -57,7 +58,14 @@
     @include breakpoint($min1024) {
       width: 60vw;
       max-width: 1080px;
+      &.field--name-body{
+        p {
+          font-size: 1.6rem;
+          line-height: 1.8;
+        }        
+      }
     }
+
     blockquote{
       position: relative;
       width: 100vw;

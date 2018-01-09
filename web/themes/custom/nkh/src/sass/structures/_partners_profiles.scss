@@ -1,3 +1,23 @@
+[class*="block-views-blockprofiles-block"] {
+  h2, 
+  .view-header {
+    padding: 0 2rem;
+    display: block;
+    margin: 0 auto 2rem;
+    max-width: 1680px;
+    @include breakpoint($min768) {
+      width: 67vw;
+      padding: 0 4rem;
+    }
+    @include breakpoint($min1024) {
+      width: 60vw;
+      max-width: 1080px;
+    }
+  }
+  .view-header {
+    margin-bottom: 4rem;
+  }
+}
 [class*="block-views-blockpartners-block"],
 [class*="block-views-blockprofiles-block"] {
   padding: 6rem 4rem;
@@ -23,9 +43,11 @@
     padding: 1rem;
     text-align: left;
     //make sure that each profile is centered once the browser gets really narrow
-    margin: auto;
     @include breakpoint($min540) {
       margin: 0;
+    }
+    @include breakpoint($min1024) {
+      margin-right: auto;
     }
     @include breakpoint($min1120) {
       width: 25%;

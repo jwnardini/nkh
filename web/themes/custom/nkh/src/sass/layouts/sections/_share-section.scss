@@ -42,7 +42,7 @@
   display: none;
   @include breakpoint($min768) {
     display: block;
-    min-width: 190px;
+    min-width: 205px;
     span, ul{
       display: inline-block;
       vertical-align: top;
