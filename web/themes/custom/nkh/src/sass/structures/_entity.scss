@@ -764,7 +764,7 @@ div.node__content > div.field.field--name-field-landing-link-ref {
   }
   h2 {
     //@include element-invisible;
-    font-size: 2.4rem;
+    font-size: 2.7rem;
     font-weight: 700;
     line-height: 1.4;
     margin: 0 0 1rem;
@@ -783,7 +783,10 @@ div.node__content > div.field.field--name-field-landing-link-ref {
   }
   .view-content {
     order: 1;
-    font-size: 8rem;
+    font-size: 7rem;
+    @include breakpoint($min540) {
+      font-size: 8.5rem;
+    }
   }
   label {
     @include element-invisible;
