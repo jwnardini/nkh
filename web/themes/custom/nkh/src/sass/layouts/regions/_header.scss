@@ -88,14 +88,27 @@
   }
 }
 .path-frontpage{
-  #header .header-wrapper{
-    @include breakpoint($min1024) {
-      min-height: 74px;
+  #header {
+    .header-wrapper{
+      @include breakpoint($min1024) {
+        min-height: 74px;
+      }
+      @include breakpoint($min1360) {
+        min-height: 89px;
+      }
     }
-    @include breakpoint($min1360) {
-      min-height: 89px;
+    &.top-sticky{
+      .header-wrapper{
+        @include breakpoint($min1024) {
+          min-height: 100px;
+        }
+        @include breakpoint($min1360) {
+          min-height: 115px;
+        }
+      }
     }
   }
+
 }
 .nkh-logo {
   max-width: 150px;
