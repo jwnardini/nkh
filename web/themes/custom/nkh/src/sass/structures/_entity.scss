@@ -794,10 +794,17 @@ div.node__content > div.field.field--name-field-landing-link-ref {
 }
 .entity--cta-image {
   max-width: 800px;
-  margin: 4rem auto 7rem;
+  margin: 4rem auto;
+  @include breakpoint($min960) {
+    margin: 4rem auto 2.5rem;
+  }
+
+  @include breakpoint($min1024) {
+    margin: 4rem auto 0;
+  }
   position: relative;
   display: flex;
-  min-height:450px;
+  min-height:500px;
   align-items: flex-end;
   > a {
     margin-top:7rem;
