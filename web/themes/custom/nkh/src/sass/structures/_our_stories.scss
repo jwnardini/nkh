@@ -43,16 +43,16 @@
     @include grit-clip-gray;
     letter-spacing: -.2rem;
     @include breakpoint($min1024) {
-      font-size: 3.2vw;
+      font-size: 3.6rem;
       position: absolute;
-      text-align: right;
-      margin-top: -.9rem;
-      margin-left: 19%;
+      text-align: center;
+      margin-top: -.6rem;
+      display: block;
+      width: 42%;
     }
     @include breakpoint($min1360) {
-      font-size: 4.8rem;
-      margin-left: 11%;
-    }
+/*      font-size: 4.8rem;
+*/    }
   }
   h3 {
     color: inherit;
