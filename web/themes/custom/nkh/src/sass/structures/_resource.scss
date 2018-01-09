@@ -845,4 +845,9 @@ button.resource-download-item__solid{
       }
     }
   }
+  #footer {
+    @include breakpoint($min1024) {
+      padding-bottom: 100px;
+    }
+  }
 }
