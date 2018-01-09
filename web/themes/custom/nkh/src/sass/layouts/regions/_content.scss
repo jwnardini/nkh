@@ -112,6 +112,11 @@
     .media-video {
       max-width: 1000px;
       margin: 4rem auto;
+      @include breakpoint($min1024) {
+        margin: 7rem auto 12rem;
+
+      }
+
     }
     .entity-landing-link {
       position: relative;

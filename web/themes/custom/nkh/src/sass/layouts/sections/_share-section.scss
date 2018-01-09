@@ -5,6 +5,10 @@
   flex-direction: row;
   align-items: center;
   margin-bottom: 4rem;
+  @include breakpoint($min768) {
+    margin-bottom: 8rem;
+
+  }
   li{
     display: inline-block;
     vertical-align: top;
