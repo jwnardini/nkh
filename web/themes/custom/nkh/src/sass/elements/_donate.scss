@@ -56,6 +56,7 @@
       position: absolute;
       width: 100%;
       z-index: 99;
+      box-shadow: rgba($nkh-darkergrey, .4) 0px .5rem 2rem;
     }
     @include breakpoint($min1024) {
       position: relative;
