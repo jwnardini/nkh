@@ -18,7 +18,7 @@
 
           function videoToggle() {
               //only for the resource center
-              $('.our-stories-wrapper p.icon-video').on('click', function(e) {
+              $('.our-stories-wrapper a.icon-video').on('click', function(e) {
                 $('div.video-wrapper').attr('aria-hidden', 'false');
                 //mobile only
                   $(this).parents('.views-row').find('div div.video-wrapper').addClass('show');

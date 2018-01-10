@@ -1167,7 +1167,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"image-wrapper\">{{ field_image_featured }}</div>\n<div class=\"title-wrapper\">\n{% if field_video_1|render|striptags %}\n<p class=\"icon icon-video\"><span class=\"element-invisible\">play this video</span></p>\n{% endif %}\n<a href=\"{{ path }}\">\n<div class=\"view-content-wrapper\">\n{% if field_taxonomy_series|render|striptags %}\n<span class=\"series-title\">{{ field_taxonomy_series }}</span>{% else %}<span class=\"series-title\"> {{ type }}</span>{% endif %}\n<h3 class=\"view-title\">{{ title }}</h3>\n{{ field_teaser }}</div>\n</a>\n</div>"
+            text: "<div class=\"image-wrapper\">{{ field_image_featured }}</div>\n<div class=\"title-wrapper\">\n{% if field_video_1|render|striptags %}\n<a class=\"icon icon-video\" id=\"video_label\"><span class=\"element-invisible\">play this video</span></a>\n{% endif %}\n<a href=\"{{ path }}\">\n<div class=\"view-content-wrapper\">\n{% if field_taxonomy_series|render|striptags %}\n<span class=\"series-title\">{{ field_taxonomy_series }}</span>{% else %}<span class=\"series-title\"> {{ type }}</span>{% endif %}\n<h3 class=\"view-title\">{{ title }}</h3>\n{{ field_teaser }}</div>\n</a>\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -1677,7 +1677,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"image-wrapper\">{{ field_image_featured }}</div>\n<div class=\"title-wrapper\">\n{% if field_video_1|render|striptags %}\n<p class=\"icon icon-video\"><span class=\"element-invisible\">play this video</span></p>\n{% endif %}\n<a href=\"{{ path }}\">\n<div class=\"view-content-wrapper\">\n{% if field_taxonomy_series|render|striptags %}\n<span class=\"series-title\">{{ field_taxonomy_series }}</span>{% else %}<span class=\"series-title\"> {{ type }}</span>{% endif %}\n<h3 class=\"view-title\">{{ title }}</h3></div>\n</a>\n</div>"
+            text: "<div class=\"image-wrapper\">{{ field_image_featured }}</div>\n<div class=\"title-wrapper\">\n{% if field_video_1|render|striptags %}\n<a class=\"icon icon-video\" id=\"video_label\"><span class=\"element-invisible\">play this video</span></a>\n{% endif %}\n<a href=\"{{ path }}\">\n<div class=\"view-content-wrapper\">\n{% if field_taxonomy_series|render|striptags %}\n<span class=\"series-title\">{{ field_taxonomy_series }}</span>{% else %}<span class=\"series-title\"> {{ type }}</span>{% endif %}\n<h3 class=\"view-title\">{{ title }}</h3></div>\n</a>\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -2293,7 +2293,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"image-wrapper\">{{ field_image_featured }}</div>\n<div class=\"title-wrapper\">\n{% if field_video_1|render|striptags %}\n<p class=\"icon icon-video\"><span class=\"element-invisible\">play this video</span></p>\n{% endif %}\n<a href=\"{{ path }}\">\n<div class=\"view-content-wrapper\">\n{% if field_taxonomy_series|render|striptags %}\n<span class=\"series-title\">{{ field_taxonomy_series }}</span>{% else %}<span class=\"series-title\"> {{ type }}</span>{% endif %}\n<h3 class=\"view-title\">{{ title }}</h3>\n{{ field_teaser }}</div>\n</a>\n</div>"
+            text: "<div class=\"image-wrapper\">{{ field_image_featured }}</div>\n<div class=\"title-wrapper\">\n{% if field_video_1|render|striptags %}\n<a class=\"icon icon-video\" id=\"video_label\"><span class=\"element-invisible\">play this video</span></a>\n{% endif %}\n<a href=\"{{ path }}\">\n<div class=\"view-content-wrapper\">\n{% if field_taxonomy_series|render|striptags %}\n<span class=\"series-title\">{{ field_taxonomy_series }}</span>{% else %}<span class=\"series-title\"> {{ type }}</span>{% endif %}\n<h3 class=\"view-title\">{{ title }}</h3>\n{{ field_teaser }}</div>\n</a>\n</div>"
             make_link: false
             path: ''
             absolute: false
