@@ -752,7 +752,19 @@ button.resource-download-item__solid{
     border: 0 none transparent;
     margin: 1rem 0;
     float: none;
-    width: 100%;
+      width: 100%;
+    @include breakpoint($min540) {
+      width: 49%;
+      &:nth-of-type(even){
+        margin-left: 1.5%;
+        padding-right: 0;
+      }
+
+    }  
+    @include breakpoint($min1024) {
+      width: 100%;
+      margin-left: 0;
+    }  
   }
   .form-item.form-type-textfield,
   .form-item.form-type-select {
@@ -768,6 +780,46 @@ button.resource-download-item__solid{
     font-size: 1.4rem;
     text-transform: uppercase;
     font-weight: 700;
+  }
+  legend{
+    &:after{
+      font-size: 1.2rem;
+      margin-left: 1rem;
+      display: inline-block;
+      @include icon($icon-caret);
+      transform: rotate(90deg);
+      @include breakpoint($min1024) {
+        content: none;    
+      }  
+    }
+  }
+  .collapsed {
+    legend:after{
+      transform: rotate(270deg);    
+    }    
+  }
+
+  .fieldset-wrapper {
+    max-height: 144px;
+    overflow-y: scroll;
+    border: 1px solid #efefef;
+    padding: .1rem .8rem;
+    opacity: 1; 
+    transition: opacity .3s ease-in; 
+    // to hide this for mobile only. Dislay in full when in desktop
+    &.mobile-hide {
+      padding: 0 .8rem;
+      opacity: 0; 
+      height: 0;
+      transition: opacity .3s ease-in; 
+      border-color: transparent;
+      @include breakpoint($min1024) {
+        opacity: 1; 
+        height: 100%;
+        padding: .1rem .8rem;
+        border-color: #efefef;
+      }  
+    }
   }
 
   .form-item {
