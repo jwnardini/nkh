@@ -1,0 +1,21 @@
+uuid: 0726eaf2-2af9-4c50-8b77-0347c91bef2b
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+id: homepage_feature.field_additional_link_text
+field_name: field_additional_link_text
+entity_type: homepage_feature
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,19 @@
+uuid: abc48bb1-c146-4561-a719-f46e232ea67c
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - link
+id: homepage_feature.field_link
+field_name: field_link
+entity_type: homepage_feature
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,13 +1,13 @@
-uuid: a8fa8005-6acf-41e0-87b5-f63884a2eca3
+uuid: 06564764-4f69-4264-a98b-2b871489528e
 langcode: en
 status: true
 dependencies:
   module:
+    - eck
     - media_entity
-    - node
-id: node.field_video
-field_name: field_video
-entity_type: node
+id: homepage_feature.field_image
+field_name: field_image
+entity_type: homepage_feature
 type: entity_reference
 settings:
   target_type: media

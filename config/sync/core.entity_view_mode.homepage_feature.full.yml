@@ -1,0 +1,10 @@
+uuid: 8211e958-75f1-4594-bdcf-3b06e78e309e
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+id: homepage_feature.full
+label: Full
+targetEntityType: homepage_feature
+cache: true

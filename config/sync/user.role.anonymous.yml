@@ -15,6 +15,7 @@ permissions:
   - 'never autoplay videos'
   - 'search content'
   - 'view any cta entities'
+  - 'view any homepage_feature entities'
   - 'view any hunger_fact entities'
   - 'view any landing_link entities'
   - 'view media'

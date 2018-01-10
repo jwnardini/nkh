@@ -1,0 +1,31 @@
+uuid: 2929324c-bc80-419b-b236-adf94adf4e8a
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.entity_browser_homepage_feature
+  module:
+    - views
+name: homepage_feature_find
+label: 'Homepage Feature Find'
+display: iframe
+display_configuration:
+  width: '650'
+  height: '500'
+  link_text: 'Select Homepage Feature'
+  auto_open: true
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: single
+widget_selector_configuration: {  }
+widgets:
+  a0e766e6-9a49-4060-a15a-33e86765ff7f:
+    settings:
+      view: entity_browser_homepage_feature
+      view_display: entity_browser_1
+      submit_text: 'Select Homepage Feature'
+      auto_select: false
+    uuid: a0e766e6-9a49-4060-a15a-33e86765ff7f
+    weight: 1
+    label: 'Select an existing Homepage Feature'
+    id: view
