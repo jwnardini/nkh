@@ -101,6 +101,42 @@
       }
     }
   }
+  .our-stories-wrapper {
+    position: relative;
+  }
+  .video-wrapper {
+    display: none;
+    z-index: 0;
+    padding: 20vw 10vw;
+    background-color: rgba($white, .9);
+    position: fixed;
+    width: 100%;
+    height: auto;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    @include breakpoint($min1024) {
+      padding: 25vw;
+    }
+
+    &.show {
+      display: block;
+      z-index: 10000;
+    }
+
+  }
+  .icon-close{
+    float: right;
+    position: absolute;
+    padding: 0.6rem 1rem;
+    background: $white;
+    top: -1.5rem;
+    right: -1.5rem;
+    border: 1px solid $nkh-text;
+    border-radius: 50%;
+    font-size: 1.2rem;
+  }
   .title-wrapper{
     position: relative;
     z-index: 100;
@@ -146,7 +182,7 @@
       z-index: -1;
       opacity: .85;
     }
-    &:hover .view-title{
+    a:hover .view-title{
       background-position: 0 1.12em;
     }
   }
@@ -219,6 +255,7 @@
 }
 .block-views-block-our-stories-our-stories,
 .block-views-block-featured-content-featured-content {
+  margin-bottom: 0;
   .title-wrapper{
     &:after{
       background: url('/themes/custom/nkh/images/nkh-tile-blue.png') 0 0/250px;
@@ -337,16 +374,140 @@
       }
     }
   }
-  p.icon-video{
+  a.icon-video{
     font-size: 4em;
     display: block;
     position: absolute;
     margin: 0 0 0 -2rem;
+    color: $white;
+    cursor: pointer;
+    &:hover, focus {
+      color: rgb(230, 230, 230);
+    }
     &:before {
       vertical-align: top;
     }
   }
-  .icon-video ~ .view-content-wrapper{
+  .icon-video ~ a{
     margin-left: 9rem;
+  }
+}
+.entity-homepage-feature {
+  max-width: 1400px;
+  margin: 2rem auto 6rem;
+  position: relative;
+  @include breakpoint($min1024) {
+    width: 90vw;
+    margin-top: -3.5rem;    
+  }
+  a, 
+  .view-title {
+    color: $white
+  }
+  a{
+    display: block;
+    z-index: 1;
+    position: relative;
+    color: $white;
+    &:after {
+      content: none;
+    }
+  }
+  .image-wrapper {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+    width: 100%;
+    @include breakpoint($min768) {
+      height: 400px;
+    }
+    @include breakpoint($min768) {
+      height: auto;    
+    
+    }    
+  }
+  .title-wrapper {
+    position: relative;
+    z-index: 100;
+    width: 100%;
+    margin-top: -24%;
+    padding: 3rem 2rem;
+    height: 350px;
+
+
+    &:after {
+      display: block;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      opacity: .85;
+      background: url(/themes/custom/nkh/images/nkh-tile-gold.png) 0 0/250px;
+    }
+    @include breakpoint($min540) {
+      height: 300px; 
+      padding: 3rem 5rem;
+    }
+
+    @include breakpoint($min1024) {
+      position: absolute;
+      margin-top: 0;
+      top: inherit;
+      height: auto;
+      z-index: 1;
+      width: 45%;
+      bottom: 30px;
+      left: auto;
+      padding: 4rem 5rem 2rem;
+      right: -2rem; 
+    }
+    @include breakpoint($min1120) {
+      bottom: 70px;    
+    }
+  }
+  .series-title, 
+  p {
+    display: block;
+    font-size: 1.6rem;
+  }
+  .series-title {
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    letter-spacing: .025em;
+    display: block;    
+  }
+  p {
+    line-height: 1.6;
+    font-weight: 300;
+    margin: 1.5rem 0 .5rem  
+  }
+  .view-title, 
+  .series-title {
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  .view-title {
+    font-size: 3rem;
+    line-height: 1.6;
+    display: inline;
+    letter-spacing: -.025em;
+    background-image: linear-gradient(180deg,transparent 0,#fff 0);
+    background-repeat: no-repeat;
+    background-position: 0 1.29em;
+    padding-bottom: .55rem;
+    transition: background-position .1s ease-out; 
+    @include breakpoint($min1360) {
+      font-size: 3.6rem;
+    
+    }
+  }
+  a:hover {
+    .view-title {
+      background-position: 0 1.2em;
+    }
   }
 }

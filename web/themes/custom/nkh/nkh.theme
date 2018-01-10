@@ -40,6 +40,7 @@ function nkh_preprocess_entity_embed_container(&$variables) {
 }
 
 function nkh_preprocess_eck_entity(&$variables) {
+  
   $variables['entityLink'] = $variables['entity']['field_link'][0]['#plain_text'];
   $variables['entityLinkImage'] = $variables['entity']['field_image'][0];
   $variables['entityLinkTitle'] = $variables['entity']['title'][0];
@@ -52,6 +53,10 @@ function nkh_preprocess_eck_entity(&$variables) {
     $variables['entityFieldTitle'] = $variables['entity']['field_title'][0]['#context']['value'];
   }
 
+  //for Homepage Feature Entity
+  if($variables['entity']['field_link']){
+    $variables['entityLinkHomepage'] = $variables['entity']['field_link'][0]['#title'];
+  }
   //check to see if this is an external link
   if(substr($variables['entityLink'], 0, 1) === '/') {
     $variables['entityLinkExternal'] = false;
@@ -82,7 +87,7 @@ function nkh_preprocess_node(&$variables) {
 
   $variables['isNotHomepage']= $isNotHomepage;
 
-  
+  // ksm($variables['elements']['field_video']['0']['#media']);
   //to get length of subtitle
   $pageSubtitle = $variables['elements']['field_subtitle']['0']['#text'];
   
