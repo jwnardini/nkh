@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Default theme implementation of a container used to wrap embedded entities.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing element.
+ * - children: The rendered child elements of the container.
+ *
+ * @see nkh_preprocess_entity_embed_container()
+ * @see function nkh_preprocess_eck_entity() {
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+set classes = [
+  'entity-homepage-feature',
+]
+%}
+<div {{ attributes.addClass(classes) }}>
+    <div class='image-wrapper'>{{ entityLinkImage }}</div>
+	<div class='title-wrapper'>
+	  <a href='{{ entityLinkHomepage }}' alt='{{ entityLinkTitle }}' target='_blank' rel='noopener noreferrer'>
+	    <div class='view-content-wrapper'>
+	      <span class='series-title'>{{ entityLinkAdditional }}</span>
+	      <h3 class='view-title'>{{ entityLinkTitle }}</h3>
+	      <p>{{ entityLinkTeaser }}</p>
+	    </div>
+	  </a>
+	</div>
+</div>

@@ -15,6 +15,7 @@ permissions:
   - 'access custom_entity entity browser pages'
   - 'access embed entity browser pages'
   - 'access files overview'
+  - 'access homepage_feature_find entity browser pages'
   - 'access hunger_fact_add_find entity browser pages'
   - 'access hunger_fact_find entity browser pages'
   - 'access images entity browser pages'

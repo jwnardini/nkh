@@ -20,6 +20,9 @@ settings:
     -
       value: !!float 3
       label: 'Landing Link'
+    -
+      value: !!float 4
+      label: 'Homepage Feature'
   allowed_values_function: ''
 module: options
 locked: false

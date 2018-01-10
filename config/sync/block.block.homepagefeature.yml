@@ -1,0 +1,31 @@
+uuid: 3299fb2a-281b-44b3-b6d8-5d56b79265b7
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:reference_block:82006075-5907-4823-a48b-5fc01e38c08e'
+  module:
+    - block_content
+    - system
+  theme:
+    - nkh
+id: homepagefeature
+theme: nkh
+region: content
+weight: -31
+provider: null
+plugin: 'block_content:82006075-5907-4823-a48b-5fc01e38c08e'
+settings:
+  id: 'block_content:82006075-5907-4823-a48b-5fc01e38c08e'
+  label: 'Homepage Feature'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }
