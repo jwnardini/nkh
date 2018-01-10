@@ -24,7 +24,11 @@ set classes = [
 	  <a href='{{ entityLinkHomepage }}' alt='{{ entityLinkTitle }}' target='_blank' rel='noopener noreferrer'>
 	    <div class='view-content-wrapper'>
 	      <span class='series-title'>{{ entityLinkAdditional }}</span>
-	      <h3 class='view-title'>{{ entityLinkTitle }}</h3>
+	      <h3 class='view-title'>{{ entityLinkTitle }}
+	        {% if entityLinkHomepageExternal %}
+	          <span class="icon icon-external"></span>
+	        {% endif %}
+	      </h3>
 	      <p>{{ entityLinkTeaser }}</p>
 	    </div>
 	  </a>

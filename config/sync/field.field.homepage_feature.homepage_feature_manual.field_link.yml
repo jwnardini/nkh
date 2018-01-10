@@ -12,7 +12,7 @@ field_name: field_link
 entity_type: homepage_feature
 bundle: homepage_feature_manual
 label: Link
-description: 'Enter the location (path) this Landing Link should go to.'
+description: 'Enter the location (path) this Homepage Feature Link should go to either externally or internally.'
 required: true
 translatable: false
 default_value: {  }

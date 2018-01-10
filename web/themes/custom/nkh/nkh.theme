@@ -56,6 +56,13 @@ function nkh_preprocess_eck_entity(&$variables) {
   //for Homepage Feature Entity
   if($variables['entity']['field_link']){
     $variables['entityLinkHomepage'] = $variables['entity']['field_link'][0]['#title'];
+    //check to see if this is an external link
+    if(substr($variables['entityLinkHomepage'], 0, 1) === '/') {
+      $variables['entityLinkHomepageExternal'] = false;
+    } else {
+      $variables['entityLinkHomepageExternal'] = true;
+    }
+    
   }
   //check to see if this is an external link
   if(substr($variables['entityLink'], 0, 1) === '/') {
