@@ -2,17 +2,14 @@ uuid: 81c09593-2913-4c08-a70c-7e223149cf8d
 langcode: en
 status: true
 dependencies:
-  content:
-    - 'block_content:basic:bbdcb505-84d7-4b64-9b82-69e35c7e2480'
   module:
-    - block_content
     - system
   theme:
     - nkh
 id: hungerfactssnapintro
 theme: nkh
 region: content
-weight: -9
+weight: -8
 provider: null
 plugin: 'block_content:bbdcb505-84d7-4b64-9b82-69e35c7e2480'
 settings:

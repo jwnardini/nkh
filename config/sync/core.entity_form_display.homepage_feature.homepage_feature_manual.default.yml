@@ -1,0 +1,68 @@
+uuid: a6803877-234e-4b6c-adc3-9eda2684c2f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.homepage_feature.homepage_feature_manual
+    - field.field.homepage_feature.homepage_feature_manual.field_additional_link_text
+    - field.field.homepage_feature.homepage_feature_manual.field_image
+    - field.field.homepage_feature.homepage_feature_manual.field_link
+    - field.field.homepage_feature.homepage_feature_manual.field_teaser_text
+  module:
+    - entity_browser_entity_form
+    - inline_entity_form
+    - link
+id: homepage_feature.homepage_feature_manual.default
+targetEntityType: homepage_feature
+bundle: homepage_feature_manual
+mode: default
+content:
+  field_additional_link_text:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_image:
+    weight: 1
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: images
+    type: inline_entity_form_complex
+    region: content
+  field_link:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_teaser_text:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true

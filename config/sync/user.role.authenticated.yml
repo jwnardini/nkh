@@ -20,6 +20,7 @@ permissions:
   - 'skip comment approval'
   - 'use text format basic_html'
   - 'view any cta entities'
+  - 'view any homepage_feature entities'
   - 'view any hunger_fact entities'
   - 'view any landing_link entities'
   - 'view media'

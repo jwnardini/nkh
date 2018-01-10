@@ -1,0 +1,19 @@
+uuid: 044782dd-a8cf-4efc-8a70-846640ca3981
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+id: homepage_feature.field_teaser_text
+field_name: field_teaser_text
+entity_type: homepage_feature
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

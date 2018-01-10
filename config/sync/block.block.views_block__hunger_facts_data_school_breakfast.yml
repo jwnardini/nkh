@@ -12,7 +12,7 @@ dependencies:
 id: views_block__hunger_facts_data_school_breakfast
 theme: nkh
 region: content
-weight: -12
+weight: -11
 provider: null
 plugin: 'views_block:hunger_facts_data-block_5'
 settings:
