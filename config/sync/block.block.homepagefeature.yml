@@ -1,9 +1,9 @@
-uuid: 3299fb2a-281b-44b3-b6d8-5d56b79265b7
+uuid: 27c02a60-950d-4bba-9624-fe11ed489557
 langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:reference_block:82006075-5907-4823-a48b-5fc01e38c08e'
+    - 'block_content:reference_block:433b9ec1-504e-4b37-9d5c-d65d92cc8cf8'
   module:
     - block_content
     - system
@@ -14,9 +14,9 @@ theme: nkh
 region: content
 weight: -31
 provider: null
-plugin: 'block_content:82006075-5907-4823-a48b-5fc01e38c08e'
+plugin: 'block_content:433b9ec1-504e-4b37-9d5c-d65d92cc8cf8'
 settings:
-  id: 'block_content:82006075-5907-4823-a48b-5fc01e38c08e'
+  id: 'block_content:433b9ec1-504e-4b37-9d5c-d65d92cc8cf8'
   label: 'Homepage Feature'
   provider: block_content
   label_display: '0'

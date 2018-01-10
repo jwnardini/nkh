@@ -2,7 +2,10 @@ uuid: 89857933-41c5-463a-a749-b3a0b9672a98
 langcode: en
 status: true
 dependencies:
+  content:
+    - 'block_content:basic:b53c1256-2f72-413e-93ea-5338e50f09ee'
   module:
+    - block_content
     - system
   theme:
     - nkh

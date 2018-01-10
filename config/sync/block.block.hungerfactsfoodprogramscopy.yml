@@ -2,7 +2,10 @@ uuid: be600c70-1b22-4851-b05c-98133430e134
 langcode: en
 status: true
 dependencies:
+  content:
+    - 'block_content:basic:3366e90d-2132-4f4a-afc3-58dd6977083b'
   module:
+    - block_content
     - system
   theme:
     - nkh
