@@ -25,7 +25,7 @@
             //mobile only
             if ($(window).width() < 1024) {
               $(this).closest('fieldset.form-wrapper').toggleClass('collapsed');
-              $(this).siblings('div.fieldset-wrapper').toggleClass('mobile-hide');
+              $(this).siblings('div.fieldset-wrapper').toggleClass('mobile-show');
             };
           });
       };
