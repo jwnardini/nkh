@@ -103,10 +103,6 @@
     }
 
     .entity--cta-image {
-      max-height: 78vw;
-      @include breakpoint($min540) {
-        max-height: 76vw;
-      }
       @include breakpoint($min768) {
         max-height: auto;
         min-height: 68vw;
@@ -119,6 +115,7 @@
       @include breakpoint($min1024) {
         min-height: 43vw;
         width: 75vw;
+        margin-top: 13rem;
         margin-left: calc(-15vw + 4rem);
         max-width: none;
       }
