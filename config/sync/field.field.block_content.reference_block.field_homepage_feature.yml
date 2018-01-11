@@ -1,0 +1,28 @@
+uuid: ff9ed86b-c0f9-4b3a-bfdc-bd09503b6ba2
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.reference_block
+    - eck.eck_type.homepage_feature.homepage_feature_manual
+    - field.storage.block_content.field_homepage_feature
+id: block_content.reference_block.field_homepage_feature
+field_name: field_homepage_feature
+entity_type: block_content
+bundle: reference_block
+label: 'Homepage Feature'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:homepage_feature'
+  handler_settings:
+    target_bundles:
+      homepage_feature_manual: homepage_feature_manual
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

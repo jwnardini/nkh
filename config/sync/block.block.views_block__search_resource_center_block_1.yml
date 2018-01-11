@@ -12,7 +12,7 @@ dependencies:
 id: views_block__search_resource_center_block_1
 theme: nkh
 region: content
-weight: -20
+weight: -19
 provider: null
 plugin: 'views_block:search_resource_center-block_1'
 settings:

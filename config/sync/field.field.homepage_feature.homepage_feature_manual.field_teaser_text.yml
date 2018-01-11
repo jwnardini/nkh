@@ -1,0 +1,19 @@
+uuid: 485408a4-f8d8-4bd4-ae9a-086ed0c2bf9f
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.homepage_feature.homepage_feature_manual
+    - field.storage.homepage_feature.field_teaser_text
+id: homepage_feature.homepage_feature_manual.field_teaser_text
+field_name: field_teaser_text
+entity_type: homepage_feature
+bundle: homepage_feature_manual
+label: 'Teaser Text'
+description: 'Enter descriptive information about where this content will take the user.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

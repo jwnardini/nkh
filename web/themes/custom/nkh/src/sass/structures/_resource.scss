@@ -735,12 +735,16 @@ button.resource-download-item__solid{
   &:before {
     content: '';
     display: block;
-    height: 30rem;
     width: 60%;
     position: absolute;
-    top: 0;
+    height: 25rem;
+    top: -2rem;
     left: 0;
     background: url('/themes/custom/nkh/images/nkh-tile-orange.png') 0 0/250px;
+    @include breakpoint($min1024) {
+      height: 30rem;
+      top: 0;  
+    }
   }
   form {
     background: $white;
@@ -753,6 +757,25 @@ button.resource-download-item__solid{
     margin: 1rem 0;
     float: none;
     width: 100%;
+    @include breakpoint($min540) {
+      width: 49%;
+      &:nth-of-type(odd){
+        clear: left;
+      }
+      &:nth-of-type(even){
+        margin-left: 1.5%;
+        padding-right: 0;
+      }
+    }  
+    @include breakpoint($min1024) {
+      width: 100%;
+      margin-left: 0;
+      padding-right: 0;
+      &:nth-of-type(even){
+        margin-left: 0;
+      }
+
+    }  
   }
   .form-item.form-type-textfield,
   .form-item.form-type-select {
@@ -764,10 +787,63 @@ button.resource-download-item__solid{
     @extend h2;
     margin-bottom: 1rem;
   }
+
   legend, .form-item.form-type-select label {
     font-size: 1.4rem;
     text-transform: uppercase;
     font-weight: 700;
+  }
+  legend{
+    padding: 0 .75rem;
+    @include breakpoint($min1024) {
+      padding: 0;
+    } 
+    &:hover, &:focus {
+      background: $nkh-bone;
+      @include breakpoint($min1024) {
+        background: none;
+      } 
+    }
+
+
+    &:after{
+      font-size: 1.2rem;
+      margin-left: 1rem;
+      display: inline-block;
+      @include icon($icon-caret);
+      transform: rotate(90deg);
+      @include breakpoint($min1024) {
+        content: none;    
+      }  
+    }
+  }
+  .collapsed {
+    legend:after{
+      transform: rotate(270deg);    
+    }    
+  }
+
+  .fieldset-wrapper {
+    max-height: 144px;
+    overflow-y: scroll;
+    border-color: transparent;
+    padding: 0 .8rem;
+    opacity: 0; 
+    height: 0;
+    transition: opacity .3s ease-in; 
+    // to hide this for mobile only. Dislay in full when in desktop
+    @include breakpoint($min1024) {
+      opacity: 1; 
+      height: 100%;    
+      border: 1px solid #efefef;
+    }
+    &.mobile-show {
+      padding: .1rem .8rem;
+      opacity: 1; 
+      border: 1px solid #efefef;
+      height: 100%;    
+      transition: opacity .3s ease-in; 
+    }
   }
 
   .form-item {

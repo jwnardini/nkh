@@ -1,0 +1,28 @@
+uuid: 4586c3d7-f1ad-42b9-9e2c-25dee4693337
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_video
+    - media_entity.bundle.video
+    - node.type.blog
+id: node.blog.field_video
+field_name: field_video
+entity_type: node
+bundle: blog
+label: Video
+description: 'This feature is for video to display on homepage if it''s included for the "Our Stories" entityqueue, it will not display the video in the blog itself. Please select the video from body WYSIWYG to display it properly on the blog page.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      video: video
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

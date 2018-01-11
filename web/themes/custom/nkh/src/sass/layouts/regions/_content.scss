@@ -26,6 +26,28 @@
 .share-section {
 
 }
+
+.view-id-site_db_search {
+
+}
+
+.view-site-db-search > div {
+  //width: 100vw;
+  padding: 0 2rem;
+  display: block;
+  margin: 0 auto;
+  max-width: 1680px;
+  font-size: 2rem;
+  @include breakpoint($min768) {
+    width: 67vw;
+    padding: 0 4rem;
+  }
+  @include breakpoint($min1024) {
+    width: 60vw;
+    max-width: 1080px;
+  }
+}
+
 .view-search-general .view-content,
 .view-taxonomy-term .view-content,
 .node--view-mode-full .node__content {
@@ -45,6 +67,7 @@
   // }
 
 
+  & > .field--name-field-video.field--type-entity-reference, 
   .text-formatted{
     width: 100vw;
     padding: 0 2rem;
@@ -62,7 +85,7 @@
         p {
           font-size: 1.6rem;
           line-height: 1.8;
-        }        
+        }
       }
     }
 
@@ -280,8 +303,11 @@
     padding-bottom: 0;
   }
 }
+
+
 .view-taxonomy-term,
-.view-search-general{
+.view-search-general,
+.view-site-db-search {
   .view-content .views-row{
     background: $white;
     margin-bottom: 1em;
@@ -304,6 +330,7 @@
       content: none;
     }
   }
+
   h1,
   .feed-icons{
     @include breakpoint($min768) {
@@ -343,6 +370,18 @@
     }
   }
 }
+
+.view-site-db-search {
+  article > * {
+    margin-top: 0 !important;
+    margin-bottom: .5rem !important;
+    * {
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+    }
+  }
+}
+
 .view-taxonomy-term,
 .path-search main{
   background: $nkh-bone;
@@ -368,6 +407,22 @@
 }
 //for Search page
 .path-search{
+  .view-site-db-search .view-header {
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $nkh-lightergrey;
+    margin-top: 4rem;
+  }
+  .views-exposed-form {
+    [name="search_api_fulltext"] {
+      width: 100%;
+      background: $white;
+    }
+    [for="edit-search-api-fulltext"] {
+      @extend h2;
+    }
+  }
   main{
     .search-block-form{
       button{
@@ -397,8 +452,9 @@
       }
     }
   }
-  .view-search-general {
-    span, li a{
+  .view-search-general,
+  .view-content {
+    span, li a, p, li {
       font-size: 1.6rem;
     }
   }

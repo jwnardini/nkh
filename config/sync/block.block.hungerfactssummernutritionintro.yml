@@ -12,7 +12,7 @@ dependencies:
 id: hungerfactssummernutritionintro
 theme: nkh
 region: content
-weight: -11
+weight: -10
 provider: null
 plugin: 'block_content:42a07916-9b9a-498a-ba24-04f8127cc2ca'
 settings:

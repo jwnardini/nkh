@@ -1,0 +1,10 @@
+uuid: 302efe61-3d38-47ef-a682-7a4152dd9395
+langcode: en
+status: true
+dependencies: {  }
+id: homepage_feature
+label: 'Homepage Feature'
+created: true
+changed: true
+uid: false
+title: true

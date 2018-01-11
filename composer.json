@@ -40,6 +40,8 @@
         "drupal/features": "^3.5",
         "drupal/file_browser": "^1.1",
         "drupal/focal_point": "^1.0@beta",
+        "drupal/google_analytics": "^2.2",
+        "drupal/google_tag": "^1.0",
         "drupal/inline_entity_form": "^1.0@beta",
         "drupal/linkit": "^4.3",
         "drupal/maxlength": "1.x-dev",
