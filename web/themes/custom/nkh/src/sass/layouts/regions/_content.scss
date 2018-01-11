@@ -67,7 +67,7 @@
   // }
 
 
-  & > .field--name-field-video.field--type-entity-reference, 
+  & > .field--name-field-video.field--type-entity-reference,
   .text-formatted{
     width: 100vw;
     padding: 0 2rem;
@@ -82,7 +82,7 @@
       width: 60vw;
       max-width: 1080px;
       &.field--name-body{
-        p {
+        > p {
           font-size: 1.6rem;
           line-height: 1.8;
         }
