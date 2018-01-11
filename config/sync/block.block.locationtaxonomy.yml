@@ -1,0 +1,28 @@
+uuid: 166f999e-bbd9-48d5-b3a8-645b91fe4a11
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.db_location_taxonomy
+  module:
+    - facets
+    - system
+  theme:
+    - nkh
+id: locationtaxonomy
+theme: nkh
+region: content
+weight: -38
+provider: null
+plugin: 'facet_block:db_location_taxonomy'
+settings:
+  id: 'facet_block:db_location_taxonomy'
+  label: 'Select a Location'
+  provider: facets
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: /resource-center
+    negate: false
+    context_mapping: {  }

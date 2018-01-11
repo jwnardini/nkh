@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - nkh_resource_center
+id: node.nkh_form_teaser
+label: 'Teaser with Form'
+targetEntityType: node
+cache: true

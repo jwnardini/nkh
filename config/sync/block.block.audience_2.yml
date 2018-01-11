@@ -1,0 +1,28 @@
+uuid: da72dfac-8d02-4844-9a2f-33e2cad8239f
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.db_audience
+  module:
+    - facets
+    - system
+  theme:
+    - nkh
+id: audience_2
+theme: nkh
+region: content
+weight: -39
+provider: null
+plugin: 'facet_block:db_audience'
+settings:
+  id: 'facet_block:db_audience'
+  label: 'Filter by Audience'
+  provider: facets
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: /resource-center
+    negate: false
+    context_mapping: {  }

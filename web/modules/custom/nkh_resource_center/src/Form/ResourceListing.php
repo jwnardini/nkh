@@ -29,7 +29,7 @@ class ResourceListing extends FormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $host = $this->getRequest()->getSchemeAndHttpHost();
-    $view_id = 'resource_view';
+    $view_id = 'db_search_resource_center';
     $view = NKHResourceCenter::getViewData($view_id);
     // Return 404 if there is no view.
     if ($view == NULL) {

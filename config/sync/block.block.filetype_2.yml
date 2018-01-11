@@ -1,0 +1,28 @@
+uuid: 44cb8229-0d01-44ca-bcd7-4cc2ec77b9ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.db_file_type
+  module:
+    - facets
+    - system
+  theme:
+    - nkh
+id: filetype_2
+theme: nkh
+region: content
+weight: -36
+provider: null
+plugin: 'facet_block:db_file_type'
+settings:
+  id: 'facet_block:db_file_type'
+  label: 'Filter by File Type'
+  provider: facets
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: /resource-center
+    negate: false
+    context_mapping: {  }
