@@ -1,23 +1,23 @@
-uuid: 066e6b73-dac8-4794-83fd-94ba72ba0da3
+uuid: 5604b93a-18bd-482c-9927-d235f93af1b2
 langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.db_resource_category
+    - facets.facet.resource_audience_facet
   module:
     - facets
     - system
   theme:
     - nkh
-id: resourcecategory
+id: resourceaudiencefacet
 theme: nkh
-region: content
+region: sidebar
 weight: -37
 provider: null
-plugin: 'facet_block:db_resource_category'
+plugin: 'facet_block:resource_audience_facet'
 settings:
-  id: 'facet_block:db_resource_category'
-  label: 'Filter by Category'
+  id: 'facet_block:resource_audience_facet'
+  label: 'Filter by Audience'
   provider: facets
   label_display: visible
 visibility:

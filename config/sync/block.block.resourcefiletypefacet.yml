@@ -1,23 +1,23 @@
-uuid: 166f999e-bbd9-48d5-b3a8-645b91fe4a11
+uuid: c599f518-fe44-4097-a1b9-5478b3a5a44d
 langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.db_location_taxonomy
+    - facets.facet.resource_file_typoe_
   module:
     - facets
     - system
   theme:
     - nkh
-id: locationtaxonomy
+id: resourcefiletypefacet
 theme: nkh
-region: content
-weight: -38
+region: sidebar
+weight: -34
 provider: null
-plugin: 'facet_block:db_location_taxonomy'
+plugin: 'facet_block:resource_file_typoe_'
 settings:
-  id: 'facet_block:db_location_taxonomy'
-  label: 'Select a Location'
+  id: 'facet_block:resource_file_typoe_'
+  label: 'Filter by File Type'
   provider: facets
   label_display: visible
 visibility:

@@ -1,23 +1,23 @@
-uuid: 44cb8229-0d01-44ca-bcd7-4cc2ec77b9ce
+uuid: 9b3f113a-abc5-4f4b-9453-2fed61f1df8e
 langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.db_file_type
+    - facets.facet.resource_location_facet
   module:
     - facets
     - system
   theme:
     - nkh
-id: filetype_2
+id: resourcelocationfacet
 theme: nkh
-region: content
+region: sidebar
 weight: -36
 provider: null
-plugin: 'facet_block:db_file_type'
+plugin: 'facet_block:resource_location_facet'
 settings:
-  id: 'facet_block:db_file_type'
-  label: 'Filter by File Type'
+  id: 'facet_block:resource_location_facet'
+  label: 'Select a Location'
   provider: facets
   label_display: visible
 visibility:

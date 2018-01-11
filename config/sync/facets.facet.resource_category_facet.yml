@@ -1,20 +1,20 @@
-uuid: 8b4bc4da-764c-4ca8-856d-9bd3b2731904
+uuid: f5512881-d579-4e19-a42e-3d754d9aa1d5
 langcode: en
 status: true
 dependencies:
   config:
     - search_api.index.nkh_resource_index
-    - views.view.resource_view
+    - views.view.db_resource_center
   module:
     - search_api
-id: db_file_type
-name: 'File Type'
-url_alias: filetype
+id: resource_category_facet
+name: 'Resource Category Facet'
+url_alias: category
 weight: 0
 min_count: 1
 show_only_one_result: false
-field_identifier: field_file_type
-facet_source_id: 'search_api:views_page__resource_view__page_1'
+field_identifier: field_taxonomy_resource
+facet_source_id: 'search_api:views_page__db_resource_center__page_1'
 widget:
   type: checkbox
   config:
