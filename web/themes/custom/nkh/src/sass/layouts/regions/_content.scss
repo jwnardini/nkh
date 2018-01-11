@@ -223,6 +223,10 @@
     grid-gap: 0;
     padding: 0;
     width: auto;
+    font-weight: 300;
+  }
+  h1 {
+    margin-bottom: 1rem;
   }
 
   .side-section, .main-section {
@@ -230,9 +234,10 @@
   }
 
   .side-section {
+    font-size: 1.6rem;
     @include breakpoint($min960) {
       float: left;
-      width: 40%;
+      width: 32%;
       padding: 0 4rem 0 0;
     }
 
