@@ -117,23 +117,3 @@ function nkh_resource_center_preprocess_node(&$variables) {
     $variables['form'] = \Drupal::formBuilder()->getForm('Drupal\nkh_resource_center\Form\ViewForm', $nid, $path, $file_id, $file_uri);
   }
 }
-
-// TODO: SWITCH TO TEMPLATE FOR TEASER AND ADD FORM THERE INSTEAD OF ON VIEW ROW
-/**
- * Implements hook_preprocess_views_view_fields().
- */
-// function nkh_resource_center_preprocess_views_view_fields(&$variables) {
-//   if ($variables['view']->id() == 'resource_view') {
-//     $nid = $variables['row']->nid;
-//     $storage = \Drupal::entityTypeManager()->getStorage('node');
-//     $node = $storage->load($nid);
-
-//     $path = $node->url();
-//     if ($file_uri = $node->get('field_upload')->entity !== NULL) {
-//       $file_uri = $node->get('field_upload')->entity->getFileUri();
-//       $file_id = $node
-//     }
-//     $variables['form'] = \Drupal::formBuilder()->getForm('Drupal\nkh_resource_center\Form\ViewForm', $nid, $path, $file_id, $file_uri);
-//   }
-
-// }

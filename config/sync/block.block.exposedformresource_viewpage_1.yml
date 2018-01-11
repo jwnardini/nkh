@@ -1,4 +1,4 @@
-uuid: b388b230-931c-4b6f-862a-00a40c04f8e5
+uuid: 511ac4f0-49cf-4e8a-a9c3-2985efd5ad03
 langcode: en
 status: true
 dependencies:
@@ -12,7 +12,7 @@ dependencies:
 id: exposedformresource_viewpage_1
 theme: nkh
 region: content
-weight: -41
+weight: -40
 provider: null
 plugin: 'views_exposed_filter_block:resource_view-page_1'
 settings:

@@ -165,6 +165,9 @@
       {{ page.content }}
     </div>
   </main>
+  {% if page.sidebar %}
+    {{ page.sidebar }}
+  {% endif %}
   {% if page.postscript %}
     {{ page.postscript }}
   {% endif %}
