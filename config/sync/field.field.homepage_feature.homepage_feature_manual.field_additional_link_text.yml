@@ -9,8 +9,8 @@ id: homepage_feature.homepage_feature_manual.field_additional_link_text
 field_name: field_additional_link_text
 entity_type: homepage_feature
 bundle: homepage_feature_manual
-label: 'Additional Link Text'
-description: 'Add text under the description which will look like a link.'
+label: 'Text above title'
+description: 'Add a brief text above the title.'
 required: true
 translatable: false
 default_value: {  }
