@@ -1,0 +1,23 @@
+uuid: 81676e29-5631-421b-ae0e-d323c04e93af
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.homepage_feature.homepage_feature_manual
+    - field.storage.homepage_feature.field_link
+  module:
+    - link
+id: homepage_feature.homepage_feature_manual.field_link
+field_name: field_link
+entity_type: homepage_feature
+bundle: homepage_feature_manual
+label: Link
+description: 'Enter the location (path) this Homepage Feature Link should go to either externally or internally.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

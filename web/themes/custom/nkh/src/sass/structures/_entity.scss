@@ -444,6 +444,7 @@ div.node__content > div.field.field--name-field-landing-link-ref {
     font-weight: 700;
     text-transform: uppercase;
     span{
+      padding-bottom: .25rem;
       background-repeat: no-repeat;
       box-shadow: none;
       -webkit-transition: background-position .2s ease-out;
@@ -465,7 +466,7 @@ div.node__content > div.field.field--name-field-landing-link-ref {
         }
       }
       span{
-        background-position: 0 .5em;
+        background-position: 0 .6em;
       }
 
     }

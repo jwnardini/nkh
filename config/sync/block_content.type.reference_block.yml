@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: reference_block
 label: 'Reference Block'
-revision: 0
-description: 'Allows for any kind of cta, hunger fact, or link to be created.'
+revision: 1
+description: 'Allows for any kind of cta, homepage feature, hunger fact, or link to be created.'

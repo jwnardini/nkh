@@ -6,9 +6,11 @@ dependencies:
     - block_content.type.reference_block
     - field.field.block_content.reference_block.field_cta_entity
     - field.field.block_content.reference_block.field_hf_entity
+    - field.field.block_content.reference_block.field_homepage_feature
     - field.field.block_content.reference_block.field_landinglink_entity
     - field.field.block_content.reference_block.field_type
   module:
+    - content_moderation
     - entity_browser_entity_form
     - inline_entity_form
     - maxlength
@@ -47,6 +49,21 @@ content:
         entity_browser_id: hunger_fact_add_find
     type: inline_entity_form_complex
     region: content
+  field_homepage_feature:
+    weight: 5
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: homepage_feature_find
+    type: inline_entity_form_complex
+    region: content
   field_landinglink_entity:
     weight: 2
     settings:
@@ -79,4 +96,10 @@ content:
       maxlength:
         maxlength_js: null
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+  moderation_state:
+    type: moderation_state_default
+    weight: 6
+    settings: {  }
+    region: content
+    third_party_settings: {  }
 hidden: {  }

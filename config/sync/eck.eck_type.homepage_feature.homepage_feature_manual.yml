@@ -1,0 +1,9 @@
+uuid: 4a1de866-af72-4078-b0e1-17fbe4e15b8a
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.homepage_feature
+name: Manual
+type: homepage_feature_manual
+description: 'For external links, or links to pages which require customized descriptions and images.'

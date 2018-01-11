@@ -3,9 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.node.body
     - search_api.index.solr_general_index
   module:
     - search_api
+    - text
+    - user
 id: search_general
 label: 'Search: General'
 module: views
@@ -149,14 +152,17 @@ display:
   page_1:
     display_plugin: page
     id: page_1
-    display_title: Page
+    display_title: 'Solr Indexed Page'
     position: 1
     display_options:
       display_extenders: {  }
       path: search
+      display_description: ''
+      enabled: false
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_interface'
         - url.query_args
       tags: {  }
+    deleted: false

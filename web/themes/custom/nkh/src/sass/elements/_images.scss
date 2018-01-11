@@ -56,6 +56,7 @@
         margin-right: 4rem;
         margin-left: calc(-25% - 4rem);
         width: 75%;
+        clear: left;
         // .inner-wrap {
         //   max-width: 760px;
         //   position: relative;
@@ -64,18 +65,23 @@
         + .view-mode-small {
           margin-left: 0;
           margin-right: calc(-25% - 4rem);
+          clear: none;
           + .view-mode-small {
             margin-right: 4rem;
             margin-left: calc(-25% - 4rem);
+            clear: left;
             + .view-mode-small {
               margin-left: 0;
               margin-right: calc(-25% - 4rem);
+              clear: none;
               + .view-mode-small {
                 margin-right: 4rem;
                 margin-left: calc(-25% - 4rem);
+                clear: left;
                 + .view-mode-small {
                   margin-left: 0;
                   margin-right: calc(-25% - 4rem);
+                  clear: none;
                 }
               }
             }

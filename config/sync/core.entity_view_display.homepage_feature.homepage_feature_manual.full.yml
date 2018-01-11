@@ -1,0 +1,65 @@
+uuid: 48066c47-9700-4ea8-8b5f-ffcda2af651c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.homepage_feature.full
+    - eck.eck_type.homepage_feature.homepage_feature_manual
+    - field.field.homepage_feature.homepage_feature_manual.field_additional_link_text
+    - field.field.homepage_feature.homepage_feature_manual.field_image
+    - field.field.homepage_feature.homepage_feature_manual.field_link
+    - field.field.homepage_feature.homepage_feature_manual.field_teaser_text
+  module:
+    - link
+id: homepage_feature.homepage_feature_manual.full
+targetEntityType: homepage_feature
+bundle: homepage_feature_manual
+mode: full
+content:
+  field_additional_link_text:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_image:
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: hero
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_link:
+    weight: 4
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_teaser_text:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  title:
+    label: hidden
+    type: string
+    weight: 1
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  changed: true
+  created: true
