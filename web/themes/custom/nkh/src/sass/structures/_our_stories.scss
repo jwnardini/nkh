@@ -13,16 +13,16 @@
     position: relative;
     display: block;
     text-decoration: none;
-    margin: 5rem auto 6rem;
+    margin: -4rem auto 50px;
     //need this to get some separation
     //min-height: 350px;
-    margin-bottom: 50px;
+    //margin-bottom: 50px;
     //@include breakpoint($min768) {
       //min-height: 450px;
     //}
     @include breakpoint($min1024) {
       //min-height: auto;
-      margin-bottom: 0;
+      margin: 5rem auto 0;
     }
     &:hover{
       color: $white;
@@ -100,7 +100,8 @@
       //height: 400px;
       img{
         min-width: 0;
-        height: 400px;
+        //height: 400px;
+        height: auto;
         display: block;
         width: auto;
         margin: 0 auto;
@@ -247,7 +248,7 @@
     .attachment{
       max-width: 1400px;
       width: 90vw;
-      margin: 0 auto;
+      margin: 2rem auto 0;
       padding: 0 5vw;
       .view-title{
         font-size: 3rem;
