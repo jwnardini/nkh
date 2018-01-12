@@ -124,7 +124,7 @@
   .video-wrapper {
     display: none;
     z-index: 0;
-    padding: 20vw 10vw;
+    padding: 5vh 5vw;
     background-color: rgba($white, .9);
     position: fixed;
     width: 100%;
@@ -133,8 +133,11 @@
     top: 0;
     right: 0;
     bottom: 0;
+    @include breakpoint($min540) {
+      padding: 15vh 10vw;
+    }
     @include breakpoint($min1024) {
-      padding: 25vw;
+      padding: 10vh 20vw;
     }
 
     &.show {
