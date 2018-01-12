@@ -92,7 +92,9 @@ button.header-search-form__toggle {
     @include link-button;
     -webkit-mask-size: 350px;    
   }
-
+  .icon-close {
+    display: none;
+  }
   @include breakpoint($min1024) {
     transition: width .3s;
     form {
@@ -107,12 +109,25 @@ button.header-search-form__toggle {
       background: $white;
       padding: 1rem 1rem 1rem 0.8rem;
       position: absolute;
-      width: 330px;
+      width: 358px;
       margin: .6rem 0 0 0;
       right: 0;
       z-index: 100;
 
       transition: all .3s;
+    }
+    .icon-close {
+      float: right;
+      color: $nkh-lightgrey;
+      margin-top: 1.2rem;
+      margin-right: .2rem;
+      display: block;
+      &:after {
+        content: none;
+      }
+      &:hover {
+        color: $nkh-darkgrey;
+      }
     }
     .form-type-search{
       margin-bottom: 0;
@@ -123,7 +138,7 @@ button.header-search-form__toggle {
       }
     }
     .form-actions{
-      margin: 1rem 1rem 0 0;
+      margin: 1rem 3.6rem 0 0;
       width: 100px;
     }
     .form-submit {

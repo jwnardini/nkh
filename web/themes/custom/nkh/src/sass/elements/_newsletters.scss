@@ -122,8 +122,16 @@ div[class*="block-newsletter"] {
   p{
     margin: 0;
     line-height: 1;
+    &.form-title{
+      color: $nkh-orange;
+      font-weight: 700;
+      text-align: left;
+      margin-bottom: 1.5rem;
+    }
   }
-
+  .icon-close {
+    display: none;
+  }
   label {
     display: block;
     width: 100%;
@@ -133,7 +141,6 @@ div[class*="block-newsletter"] {
     font-size: 16px;
   }
 
-
   @include breakpoint($min1024) {
     display: inline-block;
     width: auto;
@@ -142,6 +149,21 @@ div[class*="block-newsletter"] {
     &:hover, &:active, &:focus {
       .header-newsletter-form__toggle{
         background-color: $nkh-darkergrey-button;
+      }
+    }
+    .icon-close {
+      float: right;
+      color: $nkh-lightgrey;
+      margin-top: 1.2rem;
+      display: block;
+      right: 3rem;
+      top: 1.5rem;
+      position: absolute;
+      &:after {
+        content: none;
+      }
+      &:hover {
+        color: $nkh-darkgrey;
       }
     }
     form {
@@ -189,17 +211,12 @@ div[class*="block-newsletter"] {
     display: block;
     text-align: left; 
     color: $nkh-orange;
-    /* font-size: 2rem; */
     font-weight: 700;
-    text-transform: uppercase;
+    font-size: 2rem;
+    letter-spacing: -0.025em;
   }
 }
 @include breakpoint($min1024) {
-  .newsletter-signup{
-    &:before{
-      content: none;
-    }
-  }
   .header .block--search.open-item ~ .block--newsletter {
     width: 5.6rem; //width of the button
     .header-newsletter-form__toggle span {
