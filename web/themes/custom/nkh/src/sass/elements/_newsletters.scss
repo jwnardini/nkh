@@ -11,7 +11,7 @@
     @include link-button;
     -webkit-mask-size: 200%;
     padding: 0;
-    width: 156px;
+    width: 136px;
     letter-spacing: .025em;
     line-height: 1.4;
     background-color: $nkh-darkergrey;
@@ -33,6 +33,10 @@
       }
     }
   }
+  @media all and (min-width: 1080px) {
+    width: 156px;
+  }
+
 }
 
 div[class*="block-newsletter"] {
