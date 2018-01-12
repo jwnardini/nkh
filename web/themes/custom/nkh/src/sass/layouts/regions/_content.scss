@@ -70,7 +70,7 @@
 
   & > .field--name-field-video.field--type-entity-reference,
   .text-formatted{
-    width: 100vw;
+    //width: 100vw;
     padding: 0 2rem;
     display: block;
     margin: 0 auto;
@@ -92,9 +92,11 @@
 
     blockquote{
       position: relative;
-      width: 100vw;
-      left: 50%;
-      margin-left: -50vw;
+      @include breakpoint($min768) {
+        width: 100vw;
+        left: 50%;
+        margin-left: -50vw;
+      }
       p {
         max-width: 1200px;
         margin-left: auto;
@@ -172,9 +174,11 @@
     .entity--cta-text,
     .entity--hunger-fact {
       position: relative;
-      width: 100vw;
-      left: 50%;
-      margin-left: -50vw;
+      @include breakpoint($min768) {
+        width: 100vw;
+        left: 50%;
+        margin-left: -50vw;
+      }
     }
 
     .entity--cta-text {
