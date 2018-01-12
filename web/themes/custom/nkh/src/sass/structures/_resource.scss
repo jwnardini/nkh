@@ -926,6 +926,10 @@ button.resource-download-item__solid{
         min-height: 115px;
       }
     }
+    .mobile.open {
+      height: calc(100% - 90px);
+      bottom: 91px;
+    }
     .nkh-logo {
       bottom: 1.5rem;
     }
