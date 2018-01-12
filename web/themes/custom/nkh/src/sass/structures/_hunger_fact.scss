@@ -3,7 +3,7 @@ div[data-quickedit-entity-id*="hunger_fact"],
   background: url('/themes/custom/nkh/images/nkh-canvas-darkgrey.png');
   background-size: 800px;
   padding: 2rem;
-  margin: 12rem 0 12rem -20px;
+  margin: 12rem -20px;
   overflow: hidden;
 
   @include breakpoint($min768) {
@@ -55,6 +55,8 @@ div[data-quickedit-entity-id*="hunger_fact"],
     }
     span {
       white-space: nowrap;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
       &:after {
         background: url('/themes/custom/nkh/images/nkh-canvas-orange.png') repeat;
         background-size: 1200px;
