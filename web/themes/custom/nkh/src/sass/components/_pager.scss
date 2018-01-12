@@ -5,8 +5,11 @@
 /* A list of page numbers when more than 1 page of content is available. */
 .pager {
   clear: both;
-  padding: 0;
+  padding: 0 0 3rem;
   text-align: center;
+  @include breakpoint($min1024) {
+    padding-bottom: 5rem;
+  }  
 }
 .pager__item {
   display: inline-block;
