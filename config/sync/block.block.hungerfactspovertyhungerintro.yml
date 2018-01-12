@@ -1,0 +1,31 @@
+uuid: 53cebd67-cf47-470a-b74a-fd4ad695af30
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:870a75ae-7e4c-45ee-a0e1-c78bd58a5e1c'
+  module:
+    - block_content
+    - system
+  theme:
+    - nkh
+id: hungerfactspovertyhungerintro
+theme: nkh
+region: content
+weight: -16
+provider: null
+plugin: 'block_content:870a75ae-7e4c-45ee-a0e1-c78bd58a5e1c'
+settings:
+  id: 'block_content:870a75ae-7e4c-45ee-a0e1-c78bd58a5e1c'
+  label: 'Hunger Facts - Poverty & Hunger Intro'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /who-we-are/hunger-facts
+    negate: false
+    context_mapping: {  }
