@@ -6,6 +6,7 @@
   }
   @include breakpoint($min1360) {
     padding-top: 12rem;
+    padding-bottom: 10rem;
   }
 }
 .path-frontpage{
@@ -103,23 +104,28 @@
 
     .entity--cta-image {
       @include breakpoint($min768) {
+        max-height: auto;
         min-height: 68vw;
         width: 80vw;
         margin-left: -10vw;
       }
       @include breakpoint($min960) {
-            min-height: 47vw;
+        min-height: 44vw;
       }
       @include breakpoint($min1024) {
-        min-height: 45vw;
+        min-height: 43vw;
         width: 75vw;
+        margin-top: 13rem;
         margin-left: calc(-15vw + 4rem);
         max-width: none;
       }
       @include breakpoint($min1260) {
-        min-height: 40vw;
+        min-height: 35vw;
         width: 60vw;
         margin-left: -4rem;
+      }
+      @include breakpoint($min1360) {
+        min-height: 34vw;
       }
 
     }
