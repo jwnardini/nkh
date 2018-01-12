@@ -13,6 +13,7 @@
     position: relative;
     display: block;
     text-decoration: none;
+    margin: 5rem auto 6rem;
     //need this to get some separation
     //min-height: 350px;
     margin-bottom: 50px;
@@ -42,6 +43,10 @@
     font-weight: 700;
     @include grit-clip-gray;
     letter-spacing: -.2rem;
+    @include breakpoint($min540) {
+      margin: 0 2rem 1rem 5rem;
+
+    }
     @include breakpoint($min1024) {
       font-size: 3.6rem;
       position: absolute;
@@ -60,14 +65,17 @@
   .view-header{
     color: $nkh-lightgrey;
     font-weight: 300;
-    margin: 0 2rem 2rem;
-    font-size: 2.5rem;
+    margin: 1rem 2rem 5rem;
+    font-size: 2rem;
     letter-spacing: -.01em;
+    @include breakpoint($min540) {
+      margin: 1rem 5rem 5rem;
+    }
     @include breakpoint($min1024) {
-      font-size: 2.5rem;
-      line-height: 4rem;
+      font-size: 2.2rem;
+      line-height: 3.7rem;
       width: 50%;
-      margin: 2.5em 0 2em 45%;
+      margin: 4em 0 4em 45%;
     }
     @include breakpoint($min1120) {
       width: 52%;
@@ -151,18 +159,22 @@
     .view-title{
       line-height: 1.6;
     }
+    @include breakpoint($min540) {
+      padding: 3rem 5rem 3rem;
+      max-height: 250px;
+    }
     @include breakpoint($min768) {
     //   min-height: 400px;
     margin-top: -20px;
     }
     @include breakpoint($min1024) {
+      max-height: initial;
       position: absolute;
       margin-top: 0;
       top: inherit;
-      //min-height: auto;
       padding: 3rem 5rem 3rem;
       left: 6%;
-      bottom: 45px;
+      bottom: 3rem;
       width: 45%;
       .view-title{
         line-height: 1.4;
@@ -174,7 +186,6 @@
       line-height: 1.6;
       font-weight: 300;
       margin: 1.5rem 0 .5rem;
-
     }
 
     &:after{
@@ -232,7 +243,7 @@
     .attachment{
       max-width: 1400px;
       width: 90vw;
-      margin: 30px auto;
+      margin: 0 auto;
       padding: 0 5vw;
       .view-title{
         font-size: 3rem;
@@ -332,7 +343,6 @@
           .view-content{
             .title-wrapper{
               width: 75%;
-              bottom: -3rem;
               left: 8%;
               padding: 3rem 4rem 5rem;
             }
@@ -341,7 +351,7 @@
         &:nth-child(2){
           width: 41%;
           margin-left: 1.5%;
-          margin-bottom: 35px;
+          margin-bottom: 10px;
           padding-top: 25px;
           position: relative;
           .image-wrapper{
@@ -351,16 +361,16 @@
           .title-wrapper{
             line-height: 1.4;
             width: 82%;
-            bottom: 55px;
+            bottom: 8rem;
             left: auto;
             right: -20px;
             padding: 2.5rem 3rem 4rem;
           }
-          p.icon-video{
+          .icon-video{
             margin-left: -1rem;
           }
         }
-        &:last-child{
+/*        &:last-child{
           .title-wrapper{
             width: 45%;
             bottom: 70px;
@@ -368,7 +378,7 @@
             padding: 4rem 5rem 2rem;
             right: -2rem;
           }
-        }
+        }*/
       }
     }
   }
@@ -379,13 +389,16 @@
       }
     }
   }
-  a.icon-video{
+  span.icon-video{
     font-size: 4em;
     display: block;
     position: absolute;
-    margin: 0 0 0 -2rem;
+    margin: 0;
     color: $white;
     cursor: pointer;
+    @include breakpoint($min1024) {
+      margin-left: -2rem;
+    }
     &:hover, focus {
       color: rgb(230, 230, 230);
     }
@@ -393,7 +406,7 @@
       vertical-align: top;
     }
   }
-  .icon-video ~ a{
+  span.icon-video ~ .view-content-wrapper{
     margin-left: 9rem;
   }
 }
