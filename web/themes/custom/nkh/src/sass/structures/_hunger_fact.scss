@@ -16,7 +16,7 @@ div[data-quickedit-entity-id*="hunger_fact"],
   }
   .entity-content{
     max-width: 1000px;
-    margin: 20px;
+    //margin: 20px;
     @include breakpoint($min480) {
       margin:0 auto;
     }
