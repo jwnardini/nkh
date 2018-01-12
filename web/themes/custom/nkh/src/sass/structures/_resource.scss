@@ -751,14 +751,22 @@ button.resource-download-item__solid{
     padding: 1rem 4rem 2rem;
     margin-top: 0;
     position: relative;
+    .form--inline .form-item.js-form-item-title {
+      padding-left: 0;
+      @include breakpoint($min1024) {
+        padding-left: 2rem;
+      }
+    }
   }
   fieldset.form-item {
     border: 0 none transparent;
     margin: 1rem 0;
     float: none;
     width: 100%;
-    @include breakpoint($min540) {
+    padding-left: 0;
+    @media all and (min-width: 570px) {
       width: 49%;
+      letter-spacing: -0.01em;
       &:nth-of-type(odd){
         clear: left;
       }
@@ -768,6 +776,7 @@ button.resource-download-item__solid{
       }
     }  
     @include breakpoint($min1024) {
+      padding-left: 2rem;
       width: 100%;
       margin-left: 0;
       padding-right: 0;
@@ -794,7 +803,7 @@ button.resource-download-item__solid{
     font-weight: 700;
   }
   legend{
-    padding: 0 .75rem;
+    padding: 0 .5rem 0 1rem;
     @include breakpoint($min1024) {
       padding: 0;
     } 
@@ -808,7 +817,7 @@ button.resource-download-item__solid{
 
     &:after{
       font-size: 1.2rem;
-      margin-left: 1rem;
+      margin-left: .5rem;
       display: inline-block;
       @include icon($icon-caret);
       transform: rotate(90deg);
@@ -850,6 +859,8 @@ button.resource-download-item__solid{
     margin: .5rem 0;
     font-size: 1.4rem;
     padding-left: 2rem;
+    @include breakpoint($min768) {
+    }
     label {
       font-weight: 700;
     }
