@@ -2,7 +2,7 @@
   padding-bottom: 4rem;
   @include breakpoint($min1024) {
     padding-top: 10rem;
-    padding-bottom: 8rem;
+    padding-bottom: 4rem;
   }
   @include breakpoint($min1360) {
     padding-top: 12rem;
@@ -210,6 +210,11 @@
   }
   .field--name-field-taxonomy-series {
     text-transform: none;
+  }
+  + .text-formatted +.byline {
+    @include breakpoint($min1024) {
+      margin-bottom: 0;  
+    }
   }
 }
 
