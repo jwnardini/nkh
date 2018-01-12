@@ -35,6 +35,10 @@
     }
 
     @include clearfix;
+
+    &.icon-video {
+      margin: 1rem 0;
+    }
   }
   h2{
     color: $nkh-text;
@@ -161,14 +165,14 @@
     }
     @include breakpoint($min540) {
       padding: 3rem 5rem 3rem;
-      max-height: 250px;
+      //max-height: 250px;
     }
     @include breakpoint($min768) {
     //   min-height: 400px;
     margin-top: -20px;
     }
     @include breakpoint($min1024) {
-      max-height: initial;
+      //max-height: initial;
       position: absolute;
       margin-top: 0;
       top: inherit;
