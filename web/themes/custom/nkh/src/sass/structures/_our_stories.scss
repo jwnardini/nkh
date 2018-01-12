@@ -14,13 +14,13 @@
     display: block;
     text-decoration: none;
     //need this to get some separation
-    min-height: 350px;
+    //min-height: 350px;
     margin-bottom: 50px;
-    @include breakpoint($min768) {
-      min-height: 450px;
-    }
+    //@include breakpoint($min768) {
+      //min-height: 450px;
+    //}
     @include breakpoint($min1024) {
-      min-height: auto;
+      //min-height: auto;
       margin-bottom: 0;
     }
     &:hover{
@@ -78,27 +78,35 @@
     display: block;
     position: relative;
     overflow: hidden;
-    height: 300px;
+    //height: 300px;
     width: 100%;
     img{
       min-width: 100%;
-      min-height: 300px;
+      //min-height: 300px;
     }
     @include breakpoint($min768) {
-      height: 400px;
+      //height: 400px;
       img{
-        min-height: 400px;
+        min-width: 0;
+        height: 400px;
+        display: block;
+        width: auto;
+        margin: 0 auto;
       }
     }
     @include breakpoint($min1024) {
       height: auto;
       img{
-        min-height: auto;
+        height: auto;
       }
     }
   }
-  .our-stories-wrapper {
+  .our-stories-wrapper, .view-our-work .views-row {
     position: relative;
+    @media all and (min-width: 540px) and (max-width: 1023px) {
+      max-width: 80vw;
+      margin: 2rem auto;
+    }
   }
   .video-wrapper {
     display: none;
@@ -137,20 +145,21 @@
     position: relative;
     z-index: 100;
     width: 100%;
-    margin-top: -24%;
+
     padding: 3rem 2rem;
-    min-height: 300px;
+    //min-height: 300px;
     .view-title{
       line-height: 1.6;
     }
     @include breakpoint($min768) {
-      min-height: 400px;
+    //   min-height: 400px;
+    margin-top: -20px;
     }
     @include breakpoint($min1024) {
       position: absolute;
       margin-top: 0;
       top: inherit;
-      min-height: auto;
+      //min-height: auto;
       padding: 3rem 5rem 3rem;
       left: 6%;
       bottom: 45px;
@@ -394,9 +403,9 @@
   position: relative;
   @include breakpoint($min1024) {
     width: 90vw;
-    margin-top: -3.5rem;    
+    margin-top: -3.5rem;
   }
-  a, 
+  a,
   .view-title {
     color: $white
   }
@@ -419,9 +428,9 @@
       height: 400px;
     }
     @include breakpoint($min768) {
-      height: auto;    
-    
-    }    
+      height: auto;
+
+    }
   }
   .title-wrapper {
     position: relative;
@@ -445,7 +454,7 @@
       background: url(/themes/custom/nkh/images/nkh-tile-gold.png) 0 0/250px;
     }
     @include breakpoint($min540) {
-      height: 300px; 
+      height: 300px;
       padding: 3rem 5rem;
     }
 
@@ -459,13 +468,13 @@
       bottom: 30px;
       left: auto;
       padding: 4rem 5rem 2rem;
-      right: -2rem; 
+      right: -2rem;
     }
     @include breakpoint($min1120) {
-      bottom: 70px;    
+      bottom: 70px;
     }
   }
-  .series-title, 
+  .series-title,
   p {
     display: block;
     font-size: 1.6rem;
@@ -474,14 +483,14 @@
     text-transform: uppercase;
     font-size: 1.6rem;
     letter-spacing: .025em;
-    display: block;    
+    display: block;
   }
   p {
     line-height: 1.6;
     font-weight: 300;
-    margin: 1.5rem 0 .5rem  
+    margin: 1.5rem 0 .5rem
   }
-  .view-title, 
+  .view-title,
   .series-title {
     margin-bottom: 1rem;
     font-weight: 700;
@@ -495,10 +504,10 @@
     background-repeat: no-repeat;
     background-position: 0 1.29em;
     padding-bottom: .55rem;
-    transition: background-position .1s ease-out; 
+    transition: background-position .1s ease-out;
     @include breakpoint($min1360) {
       font-size: 3.6rem;
-    
+
     }
   }
   a:hover {
