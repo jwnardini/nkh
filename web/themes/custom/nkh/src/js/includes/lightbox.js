@@ -31,6 +31,9 @@
               $closeVideoButton.on('click', function(e) {
                 $('div.video-wrapper').attr('aria-hidden', 'true');
                 $(this).removeClass('show');
+                //target the vimeo iframe src
+                var $iframe = $('iframe'), src = $iframe.prop('src');
+                $iframe.prop('src', '').prop('src', src.replace('&autoplay=0', ''));
               });
           };
 
