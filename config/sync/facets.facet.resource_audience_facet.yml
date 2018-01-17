@@ -9,7 +9,7 @@ dependencies:
     - search_api
 id: resource_audience_facet
 name: 'Resource Audience Facet'
-url_alias: resource_audience_facet
+url_alias: audience
 weight: 0
 min_count: 1
 show_only_one_result: false
