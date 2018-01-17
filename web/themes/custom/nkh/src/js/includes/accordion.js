@@ -18,14 +18,16 @@
       //   $(this).closest(accordioncontainer).toggleClass('collapsed');
       //   $(this).parent().next(accordioncontent).slideToggle('fast');
       // });
+      $('.block-facet--checkbox, .block-exposedformdb-resource-centerpage-1 fieldset.form-wrapper').addClass('accordion-wrapper');
+      $('.block-facet--checkbox ul, .block-exposedformdb-resource-centerpage-1 div.fieldset-wrapper').addClass('accordion-content');
 
       function resourceFiltersToggle() {
           //only for the resource center
-          $('#views-exposed-form-resource-view-page-1 legend').on('click', function(e) {
+          $('.block-exposedformdb-resource-centerpage-1 legend, .block-facet--checkbox h2').on('click', function(e) {
             //mobile only
             if ($(window).width() < 1024) {
-              $(this).closest('fieldset.form-wrapper').toggleClass('collapsed');
-              $(this).siblings('div.fieldset-wrapper').toggleClass('mobile-show');
+              $(this).closest('.accordion-wrapper').toggleClass('collapsed');
+              $(this).siblings('.accordion-content').toggleClass('mobile-show');
             };
           });
       };

@@ -510,6 +510,7 @@ button.resource-download-item__solid{
     justify-content: space-between;
   }
 }
+.nkh_resource_view_listing .views-row,
 .resource-container-inline {
   max-width: 50rem;
   padding: 3rem;
@@ -720,6 +721,7 @@ button.resource-download-item__solid{
   }
 }
 [class*="block-exposedformresource-viewpage"] {
+  position: relative;
   @include breakpoint($min1024) {
     float: left;
     width: 50%;
@@ -731,7 +733,12 @@ button.resource-download-item__solid{
   @include breakpoint($min1360) {
     padding: 4rem;
   }
-  position: relative;
+  .exposed-resource-filter {
+    margin-top: 0;
+    background: $white;
+    padding: 1rem 4rem 3rem;
+    position: relative;
+  }
   &:before {
     content: '';
     display: block;
@@ -747,10 +754,10 @@ button.resource-download-item__solid{
     }
   }
   form {
-    background: $white;
-    padding: 1rem 4rem 2rem;
-    margin-top: 0;
-    position: relative;
+    &, .form-wrapper.form-actions{
+      margin-bottom: 0;
+    }
+
     .form--inline .form-item.js-form-item-title {
       padding-left: 0;
       @include breakpoint($min1024) {
@@ -758,12 +765,25 @@ button.resource-download-item__solid{
       }
     }
   }
+  .block-facet--checkbox,
   fieldset.form-item {
     border: 0 none transparent;
     margin: 1rem 0;
     float: none;
     width: 100%;
     padding-left: 0;
+    @media all and (min-width: 570px) {
+      width: 49%;
+      letter-spacing: -0.01em;
+    }  
+    @include breakpoint($min1024) {
+      padding-left: 2rem;
+      width: 100%;
+      margin-left: 0;
+      padding-right: 0;
+    }  
+  }
+  fieldset.form-item {
     @media all and (min-width: 570px) {
       width: 49%;
       letter-spacing: -0.01em;
@@ -774,17 +794,14 @@ button.resource-download-item__solid{
         margin-left: 1.5%;
         padding-right: 0;
       }
-    }  
+    } 
     @include breakpoint($min1024) {
       padding-left: 2rem;
       width: 100%;
-      margin-left: 0;
-      padding-right: 0;
       &:nth-of-type(even){
         margin-left: 0;
-      }
-
-    }  
+      }    
+    }   
   }
   .form-item.form-type-textfield,
   .form-item.form-type-select {
@@ -796,12 +813,50 @@ button.resource-download-item__solid{
     @extend h2;
     margin-bottom: 1rem;
   }
+  .block-facet--checkbox{ 
+    font-size: 1.4rem;
+    font-weight: 700;
+    @media all and (min-width: 570px) {
+      display: inline-block;
+    }
+    @include breakpoint($min1024) {
+      padding-left: 2rem;
+      display: block;
+    }
+    h2 {
+      color: $nkh-text;
+    }
 
+    .facet-item {
+      padding-left: 0;
+      &:before {
+        content: none;
+      }
+      label{
+        &:before {
+          position: absolute;
+        }        
+        &:after {
+          margin-top: 0;
+        }
+      }
+    }
+    .facet-item__value {
+      font-weight: 700;
+      display: inline-block;
+      margin-left: 2rem;
+      vertical-align: top;
+      margin-top: -3px;
+    }
+  }
+
+  .block-facet--checkbox h2,
   legend, .form-item.form-type-select label {
     font-size: 1.4rem;
     text-transform: uppercase;
     font-weight: 700;
   }
+  .block-facet--checkbox h2,
   legend{
     padding: 0 .5rem 0 1rem;
     @include breakpoint($min1024) {
@@ -831,12 +886,18 @@ button.resource-download-item__solid{
       transform: rotate(270deg);    
     }    
   }
+  .fieldset-wrapper {
+    padding: 0 .8rem;
+  }
+  .block-facet--checkbox ul{
+    padding: .8rem .8rem 0;
+  }
 
+  .block-facet--checkbox ul,
   .fieldset-wrapper {
     max-height: 144px;
     overflow-y: scroll;
     border-color: transparent;
-    padding: 0 .8rem;
     opacity: 0; 
     height: 0;
     transition: opacity .3s ease-in; 
@@ -854,6 +915,7 @@ button.resource-download-item__solid{
       transition: opacity .3s ease-in; 
     }
   }
+
 
   .form-item {
     margin: .5rem 0;
