@@ -5,6 +5,7 @@ namespace Drupal\nkh_resource_center\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\views\Views;
+use Drupal\file\Entity\File;
 
 /**
  * {@inheritdoc}
@@ -60,7 +61,6 @@ abstract class NKHResourceCenter extends FormBase {
         $session->set($session_name, $current_session);
         $current_session = $session->get($session_name);
       }
-      ksm($session);
       $field_deltas_array = $form_state->get('field_deltas');
       $field_deltas_array = $current_session;
       $form_state->set('field_deltas', $field_deltas_array);
@@ -105,8 +105,7 @@ abstract class NKHResourceCenter extends FormBase {
 
     $zip = new \ZipArchive();
     $zip_name = 'NKH_Resources_' . date('U', strtotime('now')) . ".zip";
-    $destination = \Drupal::service('file_system')->realpath('public://resource_zips');
-
+    $destination = \Drupal::service('file_system')->realpath('public://resource_zips/');
     foreach ($current_session as $value) {
       $storage = \Drupal::entityTypeManager()->getStorage('file');
       $file = $storage->load($value[0]);
@@ -116,6 +115,14 @@ abstract class NKHResourceCenter extends FormBase {
       $zip->addFile($fileUri, $filename);
     }
     $zip->close();
+    $temp_file = File::create([
+      'uid' => 1,
+      'filename' => $zip_name,
+      'uri' => 'public://resource_zips/' . $zip_name,
+      'status' => 0,
+    ]);
+    ksm($temp_file);
+    $temp_file->save();
     $form_state->set('resource_list_state', 'closed');
     $form_state->set('zip_url', file_create_url('public://resource_zips/' . $zip_name));
     drupal_get_messages();
