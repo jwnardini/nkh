@@ -819,7 +819,7 @@ display:
           alter:
             alter_text: true
             text: "<h3 class=\"view-profile-name\">{{ title }}</h3>\n<div class=\"view-profile-jobtitle\">{{ field_jobtitle }}</div>"
-            make_link: true
+            make_link: false
             path: '{{ path }}'
             absolute: false
             external: false
