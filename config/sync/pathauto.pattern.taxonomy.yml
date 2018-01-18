@@ -1,0 +1,32 @@
+uuid: c94bf1a2-a052-43d0-b7b0-dce7fb311f33
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: taxonomy
+label: Taxonomy
+type: 'canonical_entities:taxonomy_term'
+pattern: '[term:vocabulary:name]/[term:parents:join-path]/[term:name]'
+selection_criteria:
+  c4806a5e-ed71-4582-a05e-be0602e86647:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      audience: audience
+      file_type: file_type
+      issue: issue
+      location: location
+      news: news
+      partner: partner
+      profile: profile
+      resource: resource
+      series: series
+      tags: tags
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: c4806a5e-ed71-4582-a05e-be0602e86647
+selection_logic: and
+weight: -5
+relationships: {  }
