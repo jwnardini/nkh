@@ -29,7 +29,8 @@ button.header-search-form__toggle {
   }
 }
 
-.block-search.block {
+// the header search block
+.block-exposedformsite-db-searchpage-form.block {
   display: inline-block;
   padding: 0;
   position: relative;
@@ -47,7 +48,7 @@ button.header-search-form__toggle {
     display: block;
     position: relative;
   }
-  .form-type-search,
+  .js-form-item.form-item,
   .form-actions{
     vertical-align: top;
     margin: 0;
@@ -55,17 +56,23 @@ button.header-search-form__toggle {
       width: 100%;
     }
   }
-  .form-type-search{
+  label{
+    display: none;
+  }
+  .js-form-item.form-item{
     width: 70%;
     @include breakpoint($min480) {
       width: 75%;
+    }
+    @include breakpoint($min1024) {
+      width: 63%;
     }
     input{
       padding: 11px 10px;
       min-width: auto;
       @include breakpoint($min1024) {
-        padding-top: 14px;
-        padding-bottom: 13px;
+        padding-top: 12px;
+        padding-bottom: 12px;
       }
 
     }
