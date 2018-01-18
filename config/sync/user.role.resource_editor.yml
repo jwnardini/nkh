@@ -35,6 +35,7 @@ permissions:
   - 'unpublish editable node type resource'
   - 'unpublish own node type resource'
   - 'update any media'
+  - 'update featured_resources entityqueue'
   - 'update media'
   - 'use editorial transition create_new_draft'
   - 'use editorial transition publish'
