@@ -31,27 +31,39 @@
     @include grit-clip-gray;
   }
   .view-content {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: start;
-    justify-content: space-evenly;
-    flex-grow: 1;
+    display: block;
     margin-left: -1rem;
     margin-right: -1rem;
   }
   .views-row {
-    width: 24rem;
-    padding: 1rem;
+/*    width: 24rem;*/
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    padding: 1rem 2rem 1rem 1rem;
+    line-height: 1.2;
     text-align: left;
     //make sure that each profile is centered once the browser gets really narrow
-    @include breakpoint($min540) {
-      margin: 0;
+    @include breakpoint($min480) {
+      width: 49.5%;
+      margin-right: auto;
+      margin-bottom: 2rem;
     }
     @include breakpoint($min1024) {
-      margin-right: auto;
+      width: 24.4%;
     }
     @include breakpoint($min1120) {
-      width: 25%;
+      width: 24.5%;
+    }
+    h3 {
+    }
+    a {
+      font-size: 1.6rem;
+      border-bottom: 3px solid transparent;
+      transition: border-bottom .1s ease-out;
+      &:hover {
+        border-bottom: 3px solid $nkh-orange;
+      }
     }
 
   }
