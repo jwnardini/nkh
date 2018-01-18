@@ -62,3 +62,8 @@ span.field-label {
     color: $nkh-text !important;
   }
 }
+
+#toolbar-administration {
+  z-index: 999;
+  position: relative;
+}
