@@ -12,7 +12,7 @@ dependencies:
 id: homepagefeature
 theme: nkh
 region: content
-weight: -31
+weight: -32
 provider: null
 plugin: 'block_content:433b9ec1-504e-4b37-9d5c-d65d92cc8cf8'
 settings:

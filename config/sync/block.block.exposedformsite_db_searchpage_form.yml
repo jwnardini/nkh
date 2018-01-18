@@ -1,0 +1,23 @@
+uuid: 7f0dc17c-36fb-4fe5-9799-9bbbcc144dd1
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.site_db_search
+  module:
+    - views
+  theme:
+    - nkh
+id: exposedformsite_db_searchpage_form
+theme: nkh
+region: header
+weight: 0
+provider: null
+plugin: 'views_exposed_filter_block:site_db_search-page_1'
+settings:
+  id: 'views_exposed_filter_block:site_db_search-page_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+visibility: {  }

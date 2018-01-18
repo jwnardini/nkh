@@ -1,30 +1,29 @@
-uuid: 113190b6-fd04-490e-a91f-61ed5c89b646
+uuid: 942833c5-7507-481a-ac85-06e1dc918e88
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.profiles
+    - views.view.site_db_search
   module:
     - system
     - views
   theme:
     - nkh
-id: views_block__profiles_executive
+id: exposedformsite_db_searchpage_pageform
 theme: nkh
 region: content
-weight: -23
+weight: -40
 provider: null
-plugin: 'views_block:profiles-block_1'
+plugin: 'views_exposed_filter_block:site_db_search-page_1'
 settings:
-  id: 'views_block:profiles-block_1'
+  id: 'views_exposed_filter_block:site_db_search-page_1'
   label: ''
   provider: views
   label_display: visible
   views_label: ''
-  items_per_page: none
 visibility:
   request_path:
     id: request_path
-    pages: /who-we-are/leadership
+    pages: /search
     negate: false
     context_mapping: {  }
