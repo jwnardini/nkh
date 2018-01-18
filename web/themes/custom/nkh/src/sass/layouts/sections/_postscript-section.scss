@@ -63,20 +63,22 @@
     max-height: 120px;
   }
   .owl-stage{
+    display:flex;
+    align-content: center;
     .owl-item{
       vertical-align: middle;
-      max-width: 100px;
-      @include breakpoint($min768) {
-        max-width: 76px;
-      }
+      max-width: 90px;
+      width:calc(((100vw - 40px) - 4rem) * 0.23) !important;
       @include breakpoint($min1024) {
         max-width: 106px;
       }
       @include breakpoint($min1120) {
         max-width: 117px;
       }
-      @include breakpoint($min1260) {
-        max-width: 125px;
+      > div {
+        display:flex;
+        align-items: center;
+        height: 100%;
       }
       + .owl-item{
         margin-left: 1em;
@@ -93,9 +95,11 @@
       justify-content: center;
       img{
         max-width: 100%;
-        max-height: 100px;
+        max-height: 117px;
+        height:100%;
         display: block;
         margin: auto;
+        -webkit-transform-style: unset;
       }
     }
   }
