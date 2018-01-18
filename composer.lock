@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "39ea4d2641bc0b77d12c974a3a6094af",
+    "content-hash": "daf99677dca073abf82c4313364af9d7",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -5552,6 +5552,65 @@
             }
         },
         {
+            "name": "drupal/username_enumeration_prevention",
+            "version": "1.0.0-beta1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/username_enumeration_prevention",
+                "reference": "8.x-1.0-beta1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/username_enumeration_prevention-8.x-1.0-beta1.zip",
+                "reference": "8.x-1.0-beta1",
+                "shasum": "65d473dae34a6d81f43bdd6f5b01dfa71ec0b0bc"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-beta1",
+                    "datestamp": "1466633339",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Matt V.",
+                    "homepage": "https://www.drupal.org/user/88338"
+                },
+                {
+                    "name": "ToneUK",
+                    "homepage": "https://www.drupal.org/user/1307446"
+                },
+                {
+                    "name": "fizk",
+                    "homepage": "https://www.drupal.org/user/473174"
+                },
+                {
+                    "name": "pbull",
+                    "homepage": "https://www.drupal.org/user/13896"
+                }
+            ],
+            "description": "Removes the error message produced, from the forgot password form, when an incorrect user has been supplied.",
+            "homepage": "https://www.drupal.org/project/username_enumeration_prevention",
+            "support": {
+                "source": "http://cgit.drupalcode.org/username_enumeration_prevention"
+            }
+        },
+        {
             "name": "drupal/video_embed_field",
             "version": "1.5.0",
             "source": {
@@ -10234,7 +10293,8 @@
         "drupal/seckit": 15,
         "drupal/session_limit": 10,
         "drupal/stage_file_proxy": 15,
-        "drupal/user_expire": 10
+        "drupal/user_expire": 10,
+        "drupal/username_enumeration_prevention": 10
     },
     "prefer-stable": true,
     "prefer-lowest": false,
