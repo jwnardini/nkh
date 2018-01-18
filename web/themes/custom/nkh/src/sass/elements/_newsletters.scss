@@ -211,7 +211,7 @@ div[class*="block-newsletter"] {
 
 .newsletter-signup{
   &:before{
-    content: 'Sign Up for Our Newsletter';
+    content: 'Sign up for our Emails';
     margin-bottom: 1rem;
     display: block;
     text-align: left; 
@@ -219,6 +219,7 @@ div[class*="block-newsletter"] {
     font-weight: 700;
     font-size: 2rem;
     letter-spacing: -0.025em;
+    text-transform: uppercase;
   }
 }
 @include breakpoint($min1024) {
