@@ -12,7 +12,7 @@ field_name: field_url
 entity_type: node
 bundle: partner
 label: Website
-description: 'Enter the homepage or specific link on the partner''s website. Enter the name of the website in "Link Text" and the link itself in "URL."'
+description: 'Enter the homepage or specific link on the partner''s website. Enter the name of the website in "Link Text" and the link itself in "URL".'
 required: false
 translatable: true
 default_value: {  }
