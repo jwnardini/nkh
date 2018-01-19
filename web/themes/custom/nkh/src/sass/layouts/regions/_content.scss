@@ -31,7 +31,7 @@
 .view-id-site_db_search {
 
 }
-
+.block-exposedformsite-db-searchpage-pageform form,
 .view-site-db-search > div {
   //width: 100vw;
   padding: 0 2rem;
@@ -433,9 +433,12 @@
     [name="search_api_fulltext"] {
       width: 100%;
       background: $white;
+      padding: 1.5rem;
+      font-size: 1.6rem;
     }
     [for="edit-search-api-fulltext"] {
       @extend h2;
+      margin-bottom: 1.6rem;
     }
   }
   main{

@@ -11,7 +11,7 @@ _core:
 id: nkh_search
 theme: nkh
 region: disabled
-weight: -33
+weight: -34
 provider: null
 plugin: search_form_block
 settings:
