@@ -45,10 +45,16 @@ Disallow: /comment/reply/
 Disallow: /filter/tips/
 Disallow: /node/add/
 Disallow: /search/
-Disallow: /user/register/
-Disallow: /user/password/
-Disallow: /user/login/
-Disallow: /user/logout/
+Disallow: /user/
+Disallow: /contact/
+Disallow: /issue/
+Disallow: /partner/
+Disallow: /profile/
+Disallow: /news/
+Disallow: /location/
+Disallow: /resource-category/
+Disallow: /audience/
+Disallow: /file-type/
 # Paths (no clean URLs)
 Disallow: /index.php/admin/
 Disallow: /index.php/comment/reply/
