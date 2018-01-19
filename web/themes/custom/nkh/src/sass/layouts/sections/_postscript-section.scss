@@ -1,6 +1,6 @@
 // for all postscript region
 .region-postscript{
-  
+  @include clearfix;
 }
 
 // the following for core-partners and national partners on homepage only.
@@ -25,20 +25,17 @@
     color: $nkh-text;
   }
   @include breakpoint($min768) {
-    width: 49%;
-    display: inline-block;    
-  }
-  @include breakpoint($min1024) {
-    width: 49.7%;
+    width: 50%;
+    float: left;
   }
   a{
-    &:after { content: none; }    
+    &:after { content: none; }
   }
 }
 .block-views-block-core-partners-core-partners{
   .view-content{
     @include breakpoint($min480) {
-      margin-left: 0;    
+      margin-left: 0;
     }
     & > div{
       display: inline-block;
@@ -46,7 +43,7 @@
       width: 21%;
       margin-left: 1%;
       margin-bottom: 1%;
-      + div{ 
+      + div{
         margin-left: 2.7%;
       }
     }
@@ -63,8 +60,8 @@
     max-height: 120px;
     .owl-stage .owl-item {
       display: inline-block;
-      float: none;      
-    } 
+      float: none;
+    }
   }
   .owl-stage{
     display:flex;
@@ -85,7 +82,7 @@
         height: 100%;
       }
 
-    }    
+    }
   }
   .views-field-field-image-logo{
     .field-content{
@@ -118,7 +115,7 @@
     &.disabled{
       .icon-prev{
         cursor: default;
-        background: rgba($nkh-lightgrey, .5);    
+        background: rgba($nkh-lightgrey, .5);
       }
     }
   }
