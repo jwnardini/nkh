@@ -41,6 +41,19 @@ class DownloadForm extends FormBase {
       '#suffix' => '</div>',
     ];
 
+    $form['resource_container']['rebuild'] = [
+      '#type' => 'submit',
+      '#value' => t('Rebuild'),
+      '#ajax' => [
+        'event' => 'click',
+        'callback' => '::rebuildCallback',
+        'wrapper' => 'ajax_resource_container',
+      ],
+      '#attributes' => [
+        'name' => 'edit-resource-container-rebuild',
+      ],
+    ];
+
     $form['resource_container']['option'] = [
       '#type' => 'container',
       '#attributes' => [
@@ -68,7 +81,7 @@ class DownloadForm extends FormBase {
         '#submit' => ['Drupal\nkh_resource_center\Form\NKHResourceCenter::zipResources'],
         '#ajax' => [
           'callback' => '::zipResourcesCallback',
-          'wrapper' => 'resource_zip_link',
+          'wrapper' => 'nkh_resource_list',
         ],
         '#attributes' => [
           'class' => ['button'],
@@ -160,6 +173,13 @@ class DownloadForm extends FormBase {
   /**
    * {@inheritdoc}
    */
+  public function rebuildCallback(array &$form, FormStateInterface $form_state) {
+    return $form['resource_container'];
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function validateForm(array &$form, FormStateInterface $form_state) {
 
   }
@@ -168,7 +188,7 @@ class DownloadForm extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-
+    
   }
 
 }

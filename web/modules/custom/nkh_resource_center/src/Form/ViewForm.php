@@ -64,10 +64,10 @@ class ViewForm extends FormBase {
       '#type' => 'submit',
       '#value' => t('Add to Bulk Download'),
       '#submit' => ['Drupal\nkh_resource_center\Form\NKHResourceCenter::addResource'],
-      // '#ajax' => [
-      //   'callback' => '::addResourceCallback',
-      //   'wrapper' => 'nkh-resource-download-form',
-      // ],
+      '#ajax' => [
+        'callback' => '::addResourceCallback',
+        'wrapper' => 'block-sessionblock',
+      ],
       '#name' => $file_id,
       '#prefix' => '<span class="resource-input-button">',
       '#suffix' => '</span>',
@@ -96,6 +96,10 @@ class ViewForm extends FormBase {
    * {@inheritdoc}
    */
   public function addResourceCallback(array &$form, FormStateInterface $form_state) {
+    $ajax_response = new AjaxResponse();
+    //$ajax_response->addCommand(new ReplaceCommand('nkh-resource-download-form', \Drupal::formBuilder()->getForm('Drupal\nkh_resource_center\Form\DownloadForm')));
+    $ajax_response->addCommand(new InvokeCommand(NULL, 'myTest', [render(\Drupal::formBuilder()->getForm('Drupal\nkh_resource_center\Form\DownloadForm'))]));
+    return $ajax_response;
     //return \Drupal::formBuilder()->getForm('Drupal\nkh_resource_center\Form\DownloadForm');
   }
 
