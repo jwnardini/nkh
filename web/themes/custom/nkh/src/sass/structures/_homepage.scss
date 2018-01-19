@@ -68,6 +68,27 @@
       margin-top: -25px;
       margin-bottom: -45px;
       background-size: 30%;
+      font-size: 20rem;
+      text-align: left;
+      letter-spacing: -.01em;
+      span{
+        display: block;
+        &:nth-child(1){
+          margin-left: 80px;
+        }
+        &:nth-child(2){
+          margin-left: 172px;
+        }
+        &:nth-child(3){
+          margin-left: 80px;
+        }
+      }
+    }
+    @include breakpoint($min1120) {
+      line-height: .8;
+      margin-top: -25px;
+      margin-bottom: -45px;
+      background-size: 30%;
       font-size: 21rem;
       text-align: left;
       letter-spacing: -.01em;
@@ -113,8 +134,8 @@
   @include breakpoint($min1024) {
     margin: 0;
     position: absolute;
-    left: 67.5%;
-    top: 123px;
+    left: 65.5%;
+    top: 110px;
     max-width: 287px;
     &:before,
     &:after{
@@ -144,8 +165,16 @@
     }
     &:after{
       content: $icon-right-hug;
-      right: -5.8rem;
+      right: -3.8rem;
     }
+  }
+  @include breakpoint($min1120) {
+    left: 67.5%;
+    top: 123px;
+    &:after{
+      right: -4.8rem;
+    }
+  
   }
   @include breakpoint($min1360) {
     top: 190px;
