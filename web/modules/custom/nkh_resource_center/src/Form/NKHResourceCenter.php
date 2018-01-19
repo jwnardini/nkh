@@ -30,7 +30,7 @@ abstract class NKHResourceCenter extends FormBase {
       $nid = $form_state->get('nid');
     }
     else {
-      $nid = $form_state->getTriggeringElement()['#parents'][2];
+      $nid = $form_state->getTriggeringElement()['#parents'][0];
     }
 
     // Get fid and set session variables.
@@ -121,7 +121,6 @@ abstract class NKHResourceCenter extends FormBase {
       'uri' => 'public://resource_zips/' . $zip_name,
       'status' => 0,
     ]);
-    ksm($temp_file);
     $temp_file->save();
     $form_state->set('resource_list_state', 'closed');
     $form_state->set('zip_url', file_create_url('public://resource_zips/' . $zip_name));

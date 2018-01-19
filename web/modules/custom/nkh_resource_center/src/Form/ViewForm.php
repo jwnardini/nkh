@@ -14,23 +14,30 @@ use Drupal\taxonomy\Entity\Term;
  * Implements Resource Center Node form.
  */
 class ViewForm extends FormBase {
+  protected $formNid;
+
+  /**
+   * {@inheritdoc}
+   */
+  public function __construct($formNid) {
+    $this->formNid = $formNid;
+  }
 
   /**
    * {@inheritdoc}
    */
   public function getFormId() {
-    return 'nkh_resource_view_form';
+    return 'nkh_resource_view_form-' . $this->formNid;
   }
 
   /**
    * {@inheritdoc}
-   *
-   * @todo Add add exeception if no $entity_id
    */
   public function buildForm(array $form, FormStateInterface $form_state, $entity_id = NULL, $entity_path = NULL, $file_id = NULL, $file_uri = NULL) {
     $host = $this->getRequest()->getSchemeAndHttpHost();
     $form_state->set('session_name', 'nkh_bulk_download');
     $form_state->set('nid', $entity_id);
+    $form['#cache'] = ['max-age' => 0];
 
     $form['resource']['resource_item'][$entity_id] = [
       '#type' => 'container',
@@ -57,10 +64,10 @@ class ViewForm extends FormBase {
       '#type' => 'submit',
       '#value' => t('Add to Bulk Download'),
       '#submit' => ['Drupal\nkh_resource_center\Form\NKHResourceCenter::addResource'],
-      '#ajax' => [
-        'callback' => '::addResourceCallback',
-        'wrapper' => 'nkh-resource-download-form',
-      ],
+      // '#ajax' => [
+      //   'callback' => '::addResourceCallback',
+      //   'wrapper' => 'nkh-resource-download-form',
+      // ],
       '#name' => $file_id,
       '#prefix' => '<span class="resource-input-button">',
       '#suffix' => '</span>',
@@ -89,7 +96,7 @@ class ViewForm extends FormBase {
    * {@inheritdoc}
    */
   public function addResourceCallback(array &$form, FormStateInterface $form_state) {
-    return \Drupal::formBuilder()->getForm('Drupal\nkh_resource_center\Form\DownloadForm');
+    //return \Drupal::formBuilder()->getForm('Drupal\nkh_resource_center\Form\DownloadForm');
   }
 
   /**
@@ -103,7 +110,7 @@ class ViewForm extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    return drupal_set_message($form_state->getValue('title'));
+    
   }
 
 }

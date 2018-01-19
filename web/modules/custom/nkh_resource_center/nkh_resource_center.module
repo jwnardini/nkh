@@ -7,6 +7,7 @@
 
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\nkh_resource_center\Form\ViewForm;
 
 /**
  * Implements hook_page_attachments().
@@ -66,18 +67,15 @@ function nkh_resource_center_theme_suggestions_alter(array &$suggestions, array 
 /**
  * Implements hook_preprocess_views_view().
  */
-function nkh_resource_center_preprocess_views_view__db_resource_center(&$variables) {
-  $query_filter;
-  $view_query = \Drupal::request()->query->all();
-  //ksm($view_query);
-  foreach ($view_query['results'] as $result) {
-    $query_filter .= $result;
-    //ksm($result);
-  }
-  $variables['queries'] = $query_filter;
+// function nkh_resource_center_preprocess_views_view__db_resource_center(&$variables) {
+//   $query_filter;
+//   $view_query = \Drupal::request()->query->all();
+//   foreach ($view_query['results'] as $result) {
+//     $query_filter .= $result;
+//   }
+//   $variables['queries'] = $query_filter;
 
-  //ksm($variables);
-}
+// }
 
 /**
  * Implements hook_theme().
@@ -108,6 +106,7 @@ function nkh_resource_center_preprocess_node(&$variables) {
     $path = $element['#node']->url();
     $file_id = $element['#node']->get('field_upload')->entity->id();
     $file_uri = $element['#node']->get('field_upload')->entity->getFileUri();
-    $variables['form'] = \Drupal::formBuilder()->getForm('Drupal\nkh_resource_center\Form\ViewForm', $nid, $path, $file_id, $file_uri);
+    $form = new ViewForm($nid);
+    $variables['form'] = \Drupal::formBuilder()->getForm($form, $nid, $path, $file_id, $file_uri);
   }
 }

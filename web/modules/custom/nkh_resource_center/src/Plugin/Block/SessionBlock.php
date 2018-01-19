@@ -15,14 +15,15 @@ use Drupal\Core\Block\BlockBase;
  */
 class SessionBlock extends BlockBase {
 
-  
-
   /**
    * {@inheritdoc}
    */
   public function build() {
-
-    return \Drupal::formBuilder()->getForm('Drupal\nkh_resource_center\Form\DownloadForm');
+    $build = [];
+    $form = \Drupal::formBuilder()->getForm('Drupal\nkh_resource_center\Form\DownloadForm');
+    $build['#markup'] = render($form);
+    $build['#cache']['max-age'] = 0;
+    return $build;
   }
 
 }
