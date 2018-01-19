@@ -29,7 +29,10 @@ require('./includes/cta-animation');
     $('.view-display-id-national_partners.view-core-partners .view-content').addClass('owl-carousel');
 
     $(".owl-carousel").owlCarousel({
-      items:3,
+      items: 1,
+      loop: true,
+      margin: 20,
+      autoWidth: true,
       dots: false,
       nav: true,
       smartSpeed: 900,

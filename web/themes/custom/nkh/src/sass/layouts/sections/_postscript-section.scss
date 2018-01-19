@@ -61,6 +61,10 @@
     width: 75%;
     margin: 0 auto;
     max-height: 120px;
+    .owl-stage .owl-item {
+      display: inline-block;
+      float: none;      
+    } 
   }
   .owl-stage{
     .owl-item{
@@ -78,9 +82,7 @@
       @include breakpoint($min1260) {
         max-width: 125px;
       }
-      + .owl-item{
-        margin-left: 1em;
-      }
+
     }    
   }
   .views-field-field-image-logo{
