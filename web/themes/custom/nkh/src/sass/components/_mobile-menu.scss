@@ -331,6 +331,15 @@
 .open-menu {
   overflow:hidden;
 }
+@supports (-webkit-overflow-scrolling: touch) {
+  body.open-menu {
+    position: fixed;
+  }
+  body.open-menu #page {
+    height: 100vh;
+    position: relative;
+  }
+}
 .sub-nav-toggle,
 .sub-nav-toggle-back,
 .sub-nav-toggle-back.menu-link {
