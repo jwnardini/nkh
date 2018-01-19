@@ -312,6 +312,16 @@
     content: $icon-instagram;
   }
 }
+.page-node-type-partner .node--view-mode-full .share-section + .node__content,
+.page-node-type-profile .node--view-mode-full .share-section + .node__content {
+  padding-top:0;
+  @include breakpoint($min960) {
+    padding-top: 0;
+  }
+  @include breakpoint($min1024) {
+    padding-top: 0;
+  }
+}
 .path-taxonomy{
   #main{
     //remove that white-space at the bottom
