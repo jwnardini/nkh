@@ -67,15 +67,45 @@ function nkh_resource_center_theme_suggestions_alter(array &$suggestions, array 
 /**
  * Implements hook_preprocess_views_view().
  */
-// function nkh_resource_center_preprocess_views_view__db_resource_center(&$variables) {
-//   $query_filter;
-//   $view_query = \Drupal::request()->query->all();
-//   foreach ($view_query['results'] as $result) {
-//     $query_filter .= $result;
-//   }
-//   $variables['queries'] = $query_filter;
+function nkh_resource_center_preprocess_views_view__db_resource_center(&$variables) {
+  $query_filters = \Drupal::request()->query->all();
+  $sort_order;
+  if ($query_filters['search'] != '' || $query_filters['results'] != NULL) {
+    $queries = 'Searching for: ';
+  }
+  else {
+    $queries = '';
+  }
 
-// }
+  foreach ($query_filters as $filter => $term) {
+    switch ($filter) {
+      case 'search':
+        if ($term != "") {
+          $queries .= '"' . $term . '", ';
+          break;
+        }
+        else {
+          break;
+        }
+      case 'sort_order':
+        if ($term == 'ASC') {
+          $sort_order .= 'sorting A-Z ';
+        }
+        else {
+          $sort_order .= 'sorting Z-A ';
+        }
+        break;
+    }
+    if ($filter['results'] != NULL) {
+      foreach ($term as $result) {
+        $tmp_query = explode(':', $result);
+        $queries .= \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($tmp_query[1])->getName() . ', ';
+      }
+    }
+  }
+  $variables['queries'] = trim($queries, ', ');
+  $variables['sort_order'] = $sort_order;
+}
 
 /**
  * Implements hook_theme().

@@ -43,8 +43,11 @@
 
   {% if header %}
     <header>
-      {{ header }}
+      {{ header }} 
+      {{ sort_order }}
+      <div> {{ queries }} </div>
     </header>
+    
   {% endif %}
 
   {{ exposed }}

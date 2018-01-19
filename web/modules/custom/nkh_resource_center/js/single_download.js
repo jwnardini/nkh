@@ -19,15 +19,7 @@
     window.open(path, '_blank');
   }
   
-  $.fn.myTest = function(data) {
-    //document.getElementById('edit-resource-container-rebuild');
+  $.fn.nkhResourceRebuild = function(data) {    
     document.getElementsByName('edit-resource-container-rebuild')[0].click()
-    Drupal.behaviors.awesome = {
-      attach: function(context, settings) {
-        // $('#block-sessionblock').find('#nkh-resource-download-form').html(data);
-        
-
-      }
-    };
   }
 })(jQuery);

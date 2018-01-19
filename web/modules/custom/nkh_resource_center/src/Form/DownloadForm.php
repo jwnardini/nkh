@@ -41,7 +41,13 @@ class DownloadForm extends FormBase {
       '#suffix' => '</div>',
     ];
 
-    $form['resource_container']['rebuild'] = [
+    $form['resource_container']['rebuild_container'] = [
+      '#type' => 'container',
+      '#prefix' => '<div class="element-invisible">',
+      '#suffix' => '</div>',
+    ];
+
+    $form['resource_container']['rebuild_container']['rebuild'] = [
       '#type' => 'submit',
       '#value' => t('Rebuild'),
       '#ajax' => [
