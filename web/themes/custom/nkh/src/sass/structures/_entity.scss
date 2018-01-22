@@ -801,9 +801,12 @@ div.node__content > div.field.field--name-field-landing-link-ref {
   max-width: 800px;
   position: relative;
   display: flex;
-  min-height:500px;
+  min-height:390px;
   align-items: flex-end;
-  margin: 4rem auto;
+  margin: 4rem auto 2rem;
+  @include breakpoint($min480) {
+    margin-top: 6rem;
+  }
   @include breakpoint($min960) {
     margin: 4rem auto 2.5rem;
   }
