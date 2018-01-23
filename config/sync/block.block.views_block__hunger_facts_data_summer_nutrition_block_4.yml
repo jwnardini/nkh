@@ -1,0 +1,30 @@
+uuid: ebf652af-4451-4d41-ade9-99a1d9786407
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.hunger_facts_data_summer_nutrition
+  module:
+    - system
+    - views
+  theme:
+    - nkh
+id: views_block__hunger_facts_data_summer_nutrition_block_4
+theme: nkh
+region: content
+weight: -8
+provider: null
+plugin: 'views_block:hunger_facts_data_summer_nutrition-block_4'
+settings:
+  id: 'views_block:hunger_facts_data_summer_nutrition-block_4'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: /node/11
+    negate: false
+    context_mapping: {  }
