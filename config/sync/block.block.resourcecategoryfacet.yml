@@ -1,6 +1,6 @@
 uuid: cd8f30d3-71b8-4676-8153-d2f21b850e17
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - facets.facet.resource_category_facet
@@ -11,7 +11,7 @@ dependencies:
     - nkh
 id: resourcecategoryfacet
 theme: nkh
-region: sidebar
+region: alert
 weight: -35
 provider: null
 plugin: 'facet_block:resource_category_facet'

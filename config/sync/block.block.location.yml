@@ -12,7 +12,7 @@ dependencies:
 id: location
 theme: nkh
 region: content
-weight: -21
+weight: -25
 provider: null
 plugin: 'facet_block:location'
 settings:

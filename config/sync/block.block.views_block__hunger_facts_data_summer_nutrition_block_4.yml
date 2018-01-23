@@ -12,7 +12,7 @@ dependencies:
 id: views_block__hunger_facts_data_summer_nutrition_block_4
 theme: nkh
 region: content
-weight: -8
+weight: -14
 provider: null
 plugin: 'views_block:hunger_facts_data_summer_nutrition-block_4'
 settings:

@@ -1,6 +1,6 @@
-uuid: 9b3f113a-abc5-4f4b-9453-2fed61f1df8e
+uuid: 27d72e5d-f12f-400c-ba51-d3c3d89b0f70
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - facets.facet.resource_location_facet
@@ -9,10 +9,10 @@ dependencies:
     - system
   theme:
     - nkh
-id: resourcelocationfacet
+id: resourcelocationfacet_db
 theme: nkh
-region: alert
-weight: -36
+region: sidebar
+weight: -45
 provider: null
 plugin: 'facet_block:resource_location_facet'
 settings:
@@ -23,6 +23,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "/resource-center\r\n/resource-center/search\r\n/resource-center/all\r\n"
+    pages: /resource-center/search
     negate: false
     context_mapping: {  }

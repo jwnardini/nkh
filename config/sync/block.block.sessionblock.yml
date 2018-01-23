@@ -10,7 +10,7 @@ dependencies:
 id: sessionblock
 theme: nkh
 region: content
-weight: -10
+weight: -11
 provider: null
 plugin: session_block
 settings:

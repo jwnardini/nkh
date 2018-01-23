@@ -1,6 +1,6 @@
 uuid: c599f518-fe44-4097-a1b9-5478b3a5a44d
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - facets.facet.resource_file_typoe_
@@ -11,7 +11,7 @@ dependencies:
     - nkh
 id: resourcefiletypefacet
 theme: nkh
-region: sidebar
+region: alert
 weight: -34
 provider: null
 plugin: 'facet_block:resource_file_typoe_'

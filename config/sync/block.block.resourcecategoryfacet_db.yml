@@ -1,28 +1,28 @@
-uuid: 750e29af-89e2-4022-bd7e-1f5616967674
+uuid: 5f671d02-c950-48ab-9f7e-60af84884131
 langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.category
+    - facets.facet.resource_category_facet
   module:
     - facets
     - system
   theme:
     - nkh
-id: category
+id: resourcecategoryfacet_db
 theme: nkh
-region: content
-weight: -23
+region: sidebar
+weight: -44
 provider: null
-plugin: 'facet_block:category'
+plugin: 'facet_block:resource_category_facet'
 settings:
-  id: 'facet_block:category'
+  id: 'facet_block:resource_category_facet'
   label: 'Filter by Category'
   provider: facets
   label_display: visible
 visibility:
   request_path:
     id: request_path
-    pages: /resource-center/results
+    pages: /resource-center/search
     negate: false
     context_mapping: {  }

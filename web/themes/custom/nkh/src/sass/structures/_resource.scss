@@ -738,6 +738,10 @@ button.resource-download-item__solid{
     background: $white;
     padding: 1rem 4rem 3rem;
     position: relative;
+
+    #edit-sort-by--wrapper {
+      @include element-invisible;
+    }
   }
   &:before {
     content: '';
@@ -750,7 +754,7 @@ button.resource-download-item__solid{
     background: url('/themes/custom/nkh/images/nkh-tile-orange.png') 0 0/250px;
     @include breakpoint($min1024) {
       height: 30rem;
-      top: 0;  
+      top: 0;
     }
   }
   form {
@@ -775,13 +779,13 @@ button.resource-download-item__solid{
     @media all and (min-width: 570px) {
       width: 49%;
       letter-spacing: -0.01em;
-    }  
+    }
     @include breakpoint($min1024) {
       padding-left: 2rem;
       width: 100%;
       margin-left: 0;
       padding-right: 0;
-    }  
+    }
   }
   fieldset.form-item {
     @media all and (min-width: 570px) {
@@ -794,14 +798,14 @@ button.resource-download-item__solid{
         margin-left: 1.5%;
         padding-right: 0;
       }
-    } 
+    }
     @include breakpoint($min1024) {
       padding-left: 2rem;
       width: 100%;
       &:nth-of-type(even){
         margin-left: 0;
-      }    
-    }   
+      }
+    }
   }
   .form-item.form-type-textfield,
   .form-item.form-type-select {
@@ -813,7 +817,7 @@ button.resource-download-item__solid{
     @extend h2;
     margin-bottom: 1rem;
   }
-  .block-facet--checkbox{ 
+  .block-facet--checkbox{
     font-size: 1.4rem;
     font-weight: 700;
     margin-top: 2rem;
@@ -842,12 +846,12 @@ button.resource-download-item__solid{
         }
         &.focused:after{
           content: none;
-        }     
+        }
       }
       .facets-checkbox[checked="checked"] ~ label:after {
         margin-top: 0;
         content: $icon-checkmark;
-        font-size: 1rem;        
+        font-size: 1rem;
       }
     }
     .facet-item__value {
@@ -873,12 +877,12 @@ button.resource-download-item__solid{
     padding: 0 .5rem 0 1rem;
     @include breakpoint($min1024) {
       padding: 0;
-    } 
+    }
     &:hover, &:focus {
       background: $nkh-bone;
       @include breakpoint($min1024) {
         background: none;
-      } 
+      }
     }
 
 
@@ -889,14 +893,14 @@ button.resource-download-item__solid{
       @include icon($icon-caret);
       transform: rotate(90deg);
       @include breakpoint($min1024) {
-        content: none;    
-      }  
+        content: none;
+      }
     }
   }
   .collapsed {
     legend:after{
-      transform: rotate(270deg);    
-    }    
+      transform: rotate(270deg);
+    }
   }
   .fieldset-wrapper {
     padding: 0 .8rem;
@@ -910,21 +914,21 @@ button.resource-download-item__solid{
     max-height: 144px;
     overflow-y: scroll;
     border-color: transparent;
-    opacity: 0; 
+    opacity: 0;
     height: 0;
-    transition: opacity .3s ease-in; 
+    transition: opacity .3s ease-in;
     // to hide this for mobile only. Dislay in full when in desktop
     @include breakpoint($min1024) {
-      opacity: 1; 
-      height: 100%;    
+      opacity: 1;
+      height: 100%;
       border: 1px solid #efefef;
     }
     &.mobile-show {
       padding: .1rem .8rem;
-      opacity: 1; 
+      opacity: 1;
       border: 1px solid #efefef;
-      height: 100%;    
-      transition: opacity .3s ease-in; 
+      height: 100%;
+      transition: opacity .3s ease-in;
     }
   }
 

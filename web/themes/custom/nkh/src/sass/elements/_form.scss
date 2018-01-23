@@ -55,11 +55,11 @@ input[type="radio"] {
       background-color: $white;
     }
     &:after {
-      @include icon($icon-close);
+      @include icon($icon-checkmark);
       position: absolute;
       left: .2em;
       top: 0;
-      margin-top: 1rem;
+      //margin-top: 1rem;
       font-size: 1.2rem;
       color: gray;
     }

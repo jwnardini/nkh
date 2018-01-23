@@ -12,7 +12,7 @@ dependencies:
 id: hungerfactsfoodprogramscopy
 theme: nkh
 region: content
-weight: -14
+weight: -18
 provider: null
 plugin: 'block_content:3366e90d-2132-4f4a-afc3-58dd6977083b'
 settings:

@@ -1,6 +1,6 @@
 uuid: d84714d7-fb1a-4b02-8472-6c06e7ad3c2d
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - search_api.index.solr_general_index
@@ -154,6 +154,7 @@ display:
     display_options:
       display_extenders: {  }
       path: search
+      enabled: false
     cache_metadata:
       max-age: -1
       contexts:

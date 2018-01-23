@@ -1,6 +1,6 @@
-uuid: 5604b93a-18bd-482c-9927-d235f93af1b2
+uuid: dadfe860-6468-4a3e-b7c8-6244fa386283
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - facets.facet.resource_audience_facet
@@ -9,10 +9,10 @@ dependencies:
     - system
   theme:
     - nkh
-id: resourceaudiencefacet
+id: resourceaudiencefacet_db
 theme: nkh
-region: alert
-weight: -37
+region: sidebar
+weight: -46
 provider: null
 plugin: 'facet_block:resource_audience_facet'
 settings:
@@ -23,6 +23,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "/resource-center\r\n/resource-center/search\r\n/resource-center/all"
+    pages: /resource-center/search
     negate: false
     context_mapping: {  }
