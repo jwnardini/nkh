@@ -18,4 +18,8 @@
   $.fn.downloadZip = function(path) {
     window.open(path, '_blank');
   }
+  
+  $.fn.nkhResourceRebuild = function(data) {    
+    document.getElementsByName('edit-resource-container-rebuild')[0].click()
+  }
 })(jQuery);

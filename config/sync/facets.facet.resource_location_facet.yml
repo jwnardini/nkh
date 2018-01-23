@@ -1,24 +1,24 @@
-uuid: 839e113a-5f99-49ba-b175-f229663e7ce0
+uuid: 43e0663f-0596-477b-9a75-033c0fdf7e86
 langcode: en
 status: true
 dependencies:
   config:
-    - search_api.index.solr_resource_index
-    - views.view.search_resource_center
+    - search_api.index.nkh_resource_index
+    - views.view.db_resource_center
   module:
     - search_api
-id: file_type
-name: 'File Type'
-url_alias: type
+id: resource_location_facet
+name: 'Resource Location Facet'
+url_alias: location
 weight: 0
 min_count: 1
 show_only_one_result: false
-field_identifier: field_file_type
-facet_source_id: 'search_api:views_page__search_resource_center__page_1'
+field_identifier: field_taxonomy_location
+facet_source_id: 'search_api:views_page__db_resource_center__page_1'
 widget:
   type: checkbox
   config:
-    show_numbers: false
+    show_numbers: true
     soft_limit: 0
 query_operator: or
 use_hierarchy: false

@@ -1,0 +1,28 @@
+uuid: c599f518-fe44-4097-a1b9-5478b3a5a44d
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.resource_file_typoe_
+  module:
+    - facets
+    - system
+  theme:
+    - nkh
+id: resourcefiletypefacet
+theme: nkh
+region: sidebar
+weight: -34
+provider: null
+plugin: 'facet_block:resource_file_typoe_'
+settings:
+  id: 'facet_block:resource_file_typoe_'
+  label: 'Filter by File Type'
+  provider: facets
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: "/resource-center\r\n/resource-center/search\r\n/resource-center/all"
+    negate: false
+    context_mapping: {  }

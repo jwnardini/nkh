@@ -1,0 +1,28 @@
+uuid: 5604b93a-18bd-482c-9927-d235f93af1b2
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.resource_audience_facet
+  module:
+    - facets
+    - system
+  theme:
+    - nkh
+id: resourceaudiencefacet
+theme: nkh
+region: sidebar
+weight: -37
+provider: null
+plugin: 'facet_block:resource_audience_facet'
+settings:
+  id: 'facet_block:resource_audience_facet'
+  label: 'Filter by Audience'
+  provider: facets
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: "/resource-center\r\n/resource-center/search\r\n/resource-center/all"
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,29 @@
+uuid: 156156d6-3cda-47a3-9514-d80fa08b3f6a
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.db_resource_center
+  module:
+    - system
+    - views
+  theme:
+    - nkh
+id: exposedformdb_resource_centerpage_1
+theme: nkh
+region: sidebar
+weight: -38
+provider: null
+plugin: 'views_exposed_filter_block:db_resource_center-page_1'
+settings:
+  id: 'views_exposed_filter_block:db_resource_center-page_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: "/resource-center\r\n/resource-center/search\r\n/resource-center/all"
+    negate: false
+    context_mapping: {  }

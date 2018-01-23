@@ -21,6 +21,7 @@ regions:
   header: Header
   preface: Preface
   content: Content
+  sidebar: Sidebar
   postscript: Postscript
   prefooter: Prefooter
   footer: Footer

@@ -163,8 +163,12 @@
         </div>
       {% endif %}
       {{ page.content }}
+      {% if page.sidebar %}
+    {{ page.sidebar }}
+  {% endif %}
     </div>
   </main>
+  
   {% if page.postscript %}
     {{ page.postscript }}
   {% endif %}

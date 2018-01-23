@@ -1,0 +1,28 @@
+uuid: 9b3f113a-abc5-4f4b-9453-2fed61f1df8e
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.resource_location_facet
+  module:
+    - facets
+    - system
+  theme:
+    - nkh
+id: resourcelocationfacet
+theme: nkh
+region: sidebar
+weight: -36
+provider: null
+plugin: 'facet_block:resource_location_facet'
+settings:
+  id: 'facet_block:resource_location_facet'
+  label: 'Select a Location'
+  provider: facets
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: "/resource-center\r\n/resource-center/search\r\n/resource-center/all\r\n"
+    negate: false
+    context_mapping: {  }

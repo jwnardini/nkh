@@ -1,0 +1,26 @@
+uuid: 4886113b-aa2f-4345-936a-1b84d8a5d76f
+langcode: en
+status: true
+dependencies:
+  module:
+    - nkh_resource_center
+    - system
+  theme:
+    - nkh
+id: sessionblock
+theme: nkh
+region: content
+weight: -10
+provider: null
+plugin: session_block
+settings:
+  id: session_block
+  label: 'Session block'
+  provider: nkh_resource_center
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "/resource-center\r\n/resource-center/*"
+    negate: false
+    context_mapping: {  }

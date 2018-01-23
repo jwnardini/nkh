@@ -1,0 +1,11 @@
+uuid: ea5a505a-ead8-44d2-aed5-fe20295605c6
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - nkh_resource_center
+id: node.nkh_form_teaser
+label: 'Teaser with Form'
+targetEntityType: node
+cache: true

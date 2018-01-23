@@ -7,6 +7,7 @@
 
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\nkh_resource_center\Form\ViewForm;
 
 /**
  * Implements hook_page_attachments().
@@ -60,5 +61,82 @@ function nkh_resource_center_theme_suggestions_alter(array &$suggestions, array 
       $suggestions[] = $original_theme_hook . '__' . str_replace('-', '_', $variables['element']['#id']);
     }
     return $suggestions;
+  }
+}
+
+/**
+ * Implements hook_preprocess_views_view().
+ */
+function nkh_resource_center_preprocess_views_view__db_resource_center(&$variables) {
+  $query_filters = \Drupal::request()->query->all();
+  $sort_order;
+  if ($query_filters['search'] != '' || $query_filters['results'] != NULL) {
+    $queries = 'Searching for: ';
+  }
+  else {
+    $queries = '';
+  }
+
+  foreach ($query_filters as $filter => $term) {
+    switch ($filter) {
+      case 'search':
+        if ($term != "") {
+          $queries .= '"' . $term . '", ';
+          break;
+        }
+        else {
+          break;
+        }
+      case 'sort_order':
+        if ($term == 'ASC') {
+          $sort_order .= 'sorting A-Z ';
+        }
+        else {
+          $sort_order .= 'sorting Z-A ';
+        }
+        break;
+    }
+    if ($filter['results'] != NULL) {
+      foreach ($term as $result) {
+        $tmp_query = explode(':', $result);
+        $queries .= \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($tmp_query[1])->getName() . ', ';
+      }
+    }
+  }
+  $variables['queries'] = trim($queries, ', ');
+  $variables['sort_order'] = $sort_order;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function nkh_resource_center_theme($existing, $type, $theme, $path) {
+  return [
+    'node__resource__nkh_form_teaser' => [
+      'base hook' => 'node',
+    ],
+    'views_view__db_resource_center' => [
+      'base hook' => 'view',
+    ],
+    'region__sidebar' => [
+      'base hook' => 'region',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function nkh_resource_center_preprocess_node(&$variables) {
+  $element = $variables['elements'];
+  $view_mode = $element['#view_mode'];
+
+  if ($view_mode == 'nkh_form_teaser' && $element['#node']->get('field_upload') !== NULL) {
+    $nid = $element['#node']->id();
+    $path = $element['#node']->url();
+    $file_id = $element['#node']->get('field_upload')->entity->id();
+    $file_uri = $element['#node']->get('field_upload')->entity->getFileUri();
+    $form = new ViewForm($nid);
+    $variables['form'] = \Drupal::formBuilder()->getForm($form, $nid, $path, $file_id, $file_uri);
   }
 }

@@ -18,7 +18,7 @@ plugin: 'block_content:53d226e8-0f73-44cd-8591-a9bbb05fb9c2'
 settings:
   id: 'block_content:53d226e8-0f73-44cd-8591-a9bbb05fb9c2'
   label: 'Resource Center Title'
-  provider: core
+  provider: block_content
   label_display: '0'
   status: true
   info: ''
@@ -26,6 +26,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: /resource-center
+    pages: "/resource-center\r\n/resource-center/search"
     negate: false
     context_mapping: {  }

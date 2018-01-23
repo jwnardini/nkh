@@ -1,18 +1,19 @@
-uuid: 18de4c55-25ef-4a5f-8595-c5fcf5f8a1d6
+uuid: 07f7c8fa-568b-42be-b891-05758f181c06
 langcode: en
 status: true
 dependencies:
   config:
-    - search_api.index.search_index
+    - search_api.index.nkh_resource_index
   module:
+    - better_exposed_filters
     - search_api
     - user
-id: site_db_search
-label: 'Site DB Search'
+id: db_resource_center
+label: 'DB Search API Resource Center'
 module: views
 description: ''
 tag: ''
-base_table: search_api_index_search_index
+base_table: search_api_index_nkh_resource_index
 base_field: search_api_id
 core: 8.x
 display:
@@ -35,33 +36,44 @@ display:
           bypass_access: false
           skip_access: false
       exposed_form:
-        type: basic
+        type: bef
         options:
           submit_button: Search
           reset_button: false
           reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: 'Sort Resources Alphabetically'
           expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_asc_label: A-Z
+          sort_desc_label: Z-A
+          input_required: false
+          text_input_required: 'Select any filter and click on Apply to see results'
+          bef:
+            general:
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+              autosubmit: false
+              autosubmit_hide: false
+            sort:
+              bef_format: bef
+              advanced:
+                collapsible: false
+                collapsible_label: 'Sort options'
+                combine: false
+                combine_rewrite: "Title Asc|A -> Z\nTitle Desc|Z -> A"
+                reset: false
+                reset_label: ''
+                is_secondary: false
+            search_api_fulltext:
+              bef_format: default
+              more_options:
+                is_secondary: false
+                rewrite:
+                  filter_rewrite_values: ''
+          text_input_required_format: simple_html
       pager:
-        type: mini
+        type: none
         options:
-          items_per_page: 10
           offset: 0
-          id: 0
-          total_pages: null
-          expose:
-            items_per_page: false
-            items_per_page_label: 'Items per page'
-            items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
-            offset: false
-            offset_label: Offset
-          tags:
-            previous: ‹‹
-            next: ››
       style:
         type: default
       row:
@@ -69,19 +81,15 @@ display:
         options:
           view_modes:
             'entity:node':
-              blog: teaser
-              campaign: teaser
-              landing_page: teaser
-              news: teaser
-              page: teaser
-              partner: teaser
-              profile: teaser
-              program: teaser
+              resource: nkh_form_teaser
       fields:
-        aggregated_field:
-          id: aggregated_field
-          table: search_api_index_search_index
-          field: aggregated_field
+        rendered_item:
+          table: search_api_index_nkh_resource_index
+          field: rendered_item
+          id: rendered_item
+          entity_type: null
+          entity_field: null
+          plugin_id: search_api
           relationship: none
           group_type: group
           admin_label: ''
@@ -118,7 +126,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: false
+          element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -126,16 +134,13 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          link_to_item: true
+          link_to_item: false
           multi_type: separator
           multi_separator: ', '
-          entity_type: null
-          entity_field: null
-          plugin_id: search_api
       filters:
         search_api_fulltext:
           id: search_api_fulltext
-          table: search_api_index_search_index
+          table: search_api_index_nkh_resource_index
           field: search_api_fulltext
           relationship: none
           group_type: group
@@ -146,11 +151,11 @@ display:
           exposed: true
           expose:
             operator_id: search_api_fulltext_op
-            label: 'Search by Keyword'
+            label: Search
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
-            identifier: search_api_fulltext
+            identifier: search
             required: false
             remember: false
             multiple: false
@@ -181,107 +186,87 @@ display:
           min_length: null
           fields: {  }
           plugin_id: search_api_fulltext
-        status:
-          id: status
-          table: search_api_index_search_index
-          field: status
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: '='
-          value: '1'
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          plugin_id: search_api_boolean
       sorts:
-        search_api_relevance:
-          id: search_api_relevance
-          table: search_api_index_search_index
-          field: search_api_relevance
+        title:
+          id: title
+          table: search_api_index_nkh_resource_index
+          field: title
           relationship: none
           group_type: group
           admin_label: ''
-          order: DESC
-          exposed: false
+          order: ASC
+          exposed: true
           expose:
-            label: ''
+            label: Title
           plugin_id: search_api
-      title: Search
+      title: 'Resource Center'
       header:
         result:
           id: result
           table: views
           field: result
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          content: 'Displaying @start - @end of @total'
           plugin_id: result
       footer: {  }
-      empty:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: true
-          tokenize: false
-          content:
-            value: 'No results found. '
-            format: simple_html
-          plugin_id: text
+      empty: {  }
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
+      use_more: false
+      use_more_always: false
+      use_more_text: more
+      use_ajax: false
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_interface'
         - url
-        - url.query_args
+        - 'url.query_args:sort_by'
+        - 'url.query_args:sort_order'
         - user.permissions
       tags: {  }
   page_1:
     display_plugin: page
     id: page_1
-    display_title: Page
+    display_title: 'Resource Center Paginated'
     position: 1
     display_options:
       display_extenders: {  }
-      path: search
+      path: resource-center/search
       exposed_block: true
+      cache:
+        type: none
+      defaults:
+        cache: false
+        pager: false
+      display_description: ''
+      pager:
+        type: full
+        options:
+          items_per_page: 14
+          offset: 0
+          id: 0
+          total_pages: null
+          tags:
+            previous: '‹ Previous'
+            next: 'Next ›'
+            first: '« First'
+            last: 'Last »'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: true
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          quantity: 9
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - 'url.query_args:sort_by'
+        - 'url.query_args:sort_order'
         - user.permissions
       tags: {  }

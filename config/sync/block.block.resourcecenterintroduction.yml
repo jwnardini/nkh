@@ -26,6 +26,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: /resource-center
+    pages: "/resource-center\r\n/resource-center/search"
     negate: false
     context_mapping: {  }
