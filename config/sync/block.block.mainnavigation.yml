@@ -11,7 +11,7 @@ dependencies:
 id: mainnavigation
 theme: nkh
 region: footer
-weight: -8
+weight: -40
 provider: null
 plugin: 'system_menu_block:main'
 settings:

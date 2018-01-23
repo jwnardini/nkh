@@ -11,7 +11,7 @@ dependencies:
 id: footersocialmedialinks
 theme: nkh
 region: footer
-weight: -9
+weight: -41
 provider: null
 plugin: 'system_menu_block:footer-social-media-links'
 settings:

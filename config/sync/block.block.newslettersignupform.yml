@@ -16,7 +16,7 @@ provider: null
 plugin: 'block_content:8d8638fb-79d4-4afa-89a7-918088de9a39'
 settings:
   id: 'block_content:8d8638fb-79d4-4afa-89a7-918088de9a39'
-  label: 'Newsletter Signup Form'
+  label: 'Header Newsletter Signup Form'
   provider: block_content
   label_display: '0'
   status: true
