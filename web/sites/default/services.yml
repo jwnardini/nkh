@@ -64,7 +64,7 @@ parameters:
     #
     # Not recommended in production environments
     # @default null
-    auto_reload: true
+    auto_reload: null
     # Twig cache:
     #
     # By default, Twig templates will be compiled and stored in the filesystem
@@ -75,7 +75,7 @@ parameters:
     #
     # Not recommended in production environments
     # @default true
-    cache: false
+    cache: true
   renderer.config:
     # Renderer required cache contexts:
     #
@@ -153,7 +153,6 @@ parameters:
     - sftp
     - webcal
     - rtsp
-
    # Configure Cross-Site HTTP requests (CORS).
    # Read https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
    # for more information about the topic in general.
