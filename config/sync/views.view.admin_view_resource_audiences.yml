@@ -9,6 +9,15 @@ dependencies:
     - field.storage.node.field_taxonomy_audience
     - node.type.resource
     - taxonomy.vocabulary.audience
+    - user.role.administrator
+    - user.role.authenticated
+    - user.role.author
+    - user.role.content_administrator
+    - user.role.editor
+    - user.role.publisher
+    - user.role.resource_editor
+    - user.role.seo
+    - user.role.user_creator
   module:
     - node
     - taxonomy
@@ -30,9 +39,18 @@ display:
     position: 0
     display_options:
       access:
-        type: perm
+        type: role
         options:
-          perm: 'access content'
+          role:
+            authenticated: authenticated
+            author: author
+            editor: editor
+            publisher: publisher
+            resource_editor: resource_editor
+            seo: seo
+            user_creator: user_creator
+            content_administrator: content_administrator
+            administrator: administrator
       cache:
         type: tag
         options: {  }
@@ -583,7 +601,7 @@ display:
         - url.query_args
         - user
         - 'user.node_grants:view'
-        - user.permissions
+        - user.roles
       tags:
         - 'config:field.storage.node.field_desc_corporate'
         - 'config:field.storage.node.field_desc_dineout'
@@ -606,7 +624,7 @@ display:
         - url.query_args
         - user
         - 'user.node_grants:view'
-        - user.permissions
+        - user.roles
       tags:
         - 'config:field.storage.node.field_desc_corporate'
         - 'config:field.storage.node.field_desc_dineout'

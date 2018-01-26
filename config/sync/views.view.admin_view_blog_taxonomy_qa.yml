@@ -7,6 +7,15 @@ dependencies:
     - field.storage.node.field_taxonomy_issue
     - field.storage.node.field_taxonomy_series
     - node.type.blog
+    - user.role.administrator
+    - user.role.authenticated
+    - user.role.author
+    - user.role.content_administrator
+    - user.role.editor
+    - user.role.publisher
+    - user.role.resource_editor
+    - user.role.seo
+    - user.role.user_creator
   module:
     - node
     - user
@@ -26,9 +35,18 @@ display:
     position: 0
     display_options:
       access:
-        type: perm
+        type: role
         options:
-          perm: 'access content'
+          role:
+            authenticated: authenticated
+            author: author
+            editor: editor
+            publisher: publisher
+            resource_editor: resource_editor
+            seo: seo
+            user_creator: user_creator
+            content_administrator: content_administrator
+            administrator: administrator
       cache:
         type: tag
         options: {  }
@@ -427,7 +445,7 @@ display:
         - 'languages:language_interface'
         - url.query_args
         - 'user.node_grants:view'
-        - user.permissions
+        - user.roles
       tags:
         - 'config:field.storage.node.field_image_featured'
         - 'config:field.storage.node.field_taxonomy_issue'
@@ -447,7 +465,7 @@ display:
         - 'languages:language_interface'
         - url.query_args
         - 'user.node_grants:view'
-        - user.permissions
+        - user.roles
       tags:
         - 'config:field.storage.node.field_image_featured'
         - 'config:field.storage.node.field_taxonomy_issue'
