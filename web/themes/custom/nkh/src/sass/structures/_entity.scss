@@ -946,6 +946,56 @@ div.node__content > div.field.field--name-field-landing-link-ref {
     }
   }
 }
+@media all and (min-width:768px) {
+  .entity--cta-image {
+    .image-section {
+      min-height: 48vw;
+      @supports (display:block){
+        min-height:0;
+      }
+    }
+  }
+}
+@media all and (min-width:960px) {
+  .entity--cta-image {
+    .image-section {
+      min-height: 24vw;
+      @supports (display:block){
+        min-height:0;
+      }
+    }
+  }
+}
+@media all and (min-width:1024px) {
+  .entity--cta-image {
+    .image-section {
+      min-height: 23vw;
+      @supports (display:block){
+        min-height:0;
+      }
+    }
+  }
+}
+@media all and (min-width:1260px) {
+  .entity--cta-image {
+    .image-section {
+      min-height: 25vw;
+      @supports (display:block){
+        min-height:0;
+      }
+    }
+  }
+}
+@media all and (min-width:1360px) {
+  .entity--cta-image {
+    .image-section {
+      min-height:24vw;
+      @supports (display:block){
+        min-height:0;
+      }
+    }
+  }
+}
 
 
 
