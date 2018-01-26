@@ -127,3 +127,16 @@
     align-items: center;
   }
 }
+.logo-grid.view-partners {
+  .view-content {
+    align-items: start;
+    .views-row {
+      margin-bottom:4rem;
+    }
+    @include breakpoint($min480) {
+      .inner-wrap {
+        min-height:180px;
+      }
+    }
+  }
+}
