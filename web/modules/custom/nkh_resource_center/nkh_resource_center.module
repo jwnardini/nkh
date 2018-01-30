@@ -69,12 +69,13 @@ function nkh_resource_center_theme_suggestions_alter(array &$suggestions, array 
  */
 function nkh_resource_center_preprocess_views_view__db_resource_center(&$variables) {
   $query_filters = \Drupal::request()->query->all();
-  $sort_order;
-  if ($query_filters['search'] != '' || $query_filters['results'] != NULL) {
-    $queries = 'Searching for: ';
-  }
-  else {
-    $queries = '';
+  $sort_order = '';
+  $queries = '';
+  if ($query_filters) {
+    if ((isset($query_filters['search']) && $query_filters['search'] != '') || isset($query_filters['results'])) {
+      $queries = 'Searching for: ';
+    }
+
   }
 
   foreach ($query_filters as $filter => $term) {
@@ -96,7 +97,7 @@ function nkh_resource_center_preprocess_views_view__db_resource_center(&$variabl
         }
         break;
     }
-    if ($filter['results'] != NULL) {
+    if (isset($query_filters['results']) && is_array($term)) {
       foreach ($term as $result) {
         $tmp_query = explode(':', $result);
         $queries .= \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($tmp_query[1])->getName() . ', ';
@@ -134,8 +135,10 @@ function nkh_resource_center_preprocess_node(&$variables) {
   if ($view_mode == 'nkh_form_teaser' && $element['#node']->get('field_upload') !== NULL) {
     $nid = $element['#node']->id();
     $path = $element['#node']->url();
-    $file_id = $element['#node']->get('field_upload')->entity->id();
-    $file_uri = $element['#node']->get('field_upload')->entity->getFileUri();
+    if ($element['#node']->get('field_upload')->entity) {
+      $file_id = $element['#node']->get('field_upload')->entity->id();
+      $file_uri = $element['#node']->get('field_upload')->entity->getFileUri();
+    }
     $form = new ViewForm($nid);
     $variables['form'] = \Drupal::formBuilder()->getForm($form, $nid, $path, $file_id, $file_uri);
   }
