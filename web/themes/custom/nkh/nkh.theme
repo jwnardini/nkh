@@ -41,33 +41,35 @@ function nkh_preprocess_entity_embed_container(&$variables) {
 
 function nkh_preprocess_eck_entity(&$variables) {
   if($variables['entity']){
-    if($variables['entity']['field_link']){
+    if(isset($variables['entity']['field_link'])){
+      if(isset($variables['entity']['field_link'][0]['#plain_text'])){
       $variables['entityLink'] = $variables['entity']['field_link'][0]['#plain_text'];
+     }
     }
-    if($variables['entity']['field_image']){
+    if(isset($variables['entity']['field_image'])){
       $variables['entityLinkImage'] = $variables['entity']['field_image'][0];
     }
-    if($variables['entity']['title']){
+    if(isset($variables['entity']['title'])){
       $variables['entityLinkTitle'] = $variables['entity']['title'][0];
       //check to see if there is a value before establishing it.
-      if($variables['entity']['field_title'][0]['#context']){
-        $variables['entityFieldTitle'] = $variables['entity']['field_title'][0]['#context']['value'];
-      }
+
     }
-    if($variables['entity']['field_teaser_text']){
+    //breaking this up since not all title have context
+    if(isset($variables['entity']['field_title'])){
+      $variables['entityFieldTitle'] = $variables['entity']['field_title'][0]['#context']['value'];
+    }
+    if(isset($variables['entity']['field_teaser_text'])){
       $variables['entityLinkTeaser'] = $variables['entity']['field_teaser_text'][0];
     }
-    if($variables['entity']['field_additional_link_text']){
+    if(isset($variables['entity']['field_additional_link_text'])){
       $variables['entityLinkAdditional'] = $variables['entity']['field_additional_link_text'][0];
     }
-    if($variables['entity']['field_text']){
+    if(isset($variables['entity']['field_text'])){
       $variables['entityLinkBody'] = $variables['entity']['field_text'][0];
     }
 
-
-
     //for Homepage Feature Entity
-    if($variables['entity']['field_link']){
+    if(isset($variables['entity']['field_link'][0]['#title'])){
       $variables['entityLinkHomepage'] = $variables['entity']['field_link'][0]['#title'];
       //check to see if this is an external link
       if(substr($variables['entityLinkHomepage'], 0, 1) === '/') {
@@ -78,7 +80,7 @@ function nkh_preprocess_eck_entity(&$variables) {
       
     }
     //check to see if this is an external link
-    if($variables['entityLink']){
+    if(isset($variables['entityLink'])){
       if(substr($variables['entityLink'], 0, 1) === '/') {
         $variables['entityLinkExternal'] = false;
       } else {
@@ -96,7 +98,7 @@ function nkh_preprocess_eck_entity(&$variables) {
 function nkh_preprocess_node(&$variables) {
 
   $newsType = false;
-  if($variables['elements']['field_taxonomy_news']){
+  if(isset($variables['elements']['field_taxonomy_news'])){
     $whichNewsType = $variables['elements']['field_taxonomy_news'][0]['#title'];  
     //This is for Boilerplate text display in News/Press Release content type
     if($whichNewsType == 'Press Release'){
@@ -122,7 +124,7 @@ function nkh_preprocess_node(&$variables) {
   // ksm($variables['elements']['field_video']['0']['#media']);
   //to get length of subtitle
   //
-  if($variables['elements']['field_subtitle']){
+  if(isset($variables['elements']['field_subtitle'])){
     $pageSubtitle = $variables['elements']['field_subtitle']['0']['#text'];
     
     $variables['pageSubtitle']= $pageSubtitle;
