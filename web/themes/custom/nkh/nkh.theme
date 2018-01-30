@@ -40,45 +40,72 @@ function nkh_preprocess_entity_embed_container(&$variables) {
 }
 
 function nkh_preprocess_eck_entity(&$variables) {
-  
-  $variables['entityLink'] = $variables['entity']['field_link'][0]['#plain_text'];
-  $variables['entityLinkImage'] = $variables['entity']['field_image'][0];
-  $variables['entityLinkTitle'] = $variables['entity']['title'][0];
-  $variables['entityLinkTeaser'] = $variables['entity']['field_teaser_text'][0];
-  $variables['entityLinkAdditional'] = $variables['entity']['field_additional_link_text'][0];
-  $variables['entityLinkBody'] = $variables['entity']['field_text'][0];
-
-  //check to see if there is a value before establishing it.
-  if($variables['entity']['field_title'][0]['#context']){
-    $variables['entityFieldTitle'] = $variables['entity']['field_title'][0]['#context']['value'];
-  }
-
-  //for Homepage Feature Entity
-  if($variables['entity']['field_link']){
-    $variables['entityLinkHomepage'] = $variables['entity']['field_link'][0]['#title'];
-    //check to see if this is an external link
-    if(substr($variables['entityLinkHomepage'], 0, 1) === '/') {
-      $variables['entityLinkHomepageExternal'] = false;
-    } else {
-      $variables['entityLinkHomepageExternal'] = true;
+  if($variables['entity']){
+    if(isset($variables['entity']['field_link'])){
+      if(isset($variables['entity']['field_link'][0]['#plain_text'])){
+      $variables['entityLink'] = $variables['entity']['field_link'][0]['#plain_text'];
+     }
     }
-    
+    if(isset($variables['entity']['field_image'])){
+      $variables['entityLinkImage'] = $variables['entity']['field_image'][0];
+    }
+    if(isset($variables['entity']['title'])){
+      $variables['entityLinkTitle'] = $variables['entity']['title'][0];
+      //check to see if there is a value before establishing it.
+
+    }
+    //breaking this up since not all title have context
+    if(isset($variables['entity']['field_title'])){
+      $variables['entityFieldTitle'] = $variables['entity']['field_title'][0]['#context']['value'];
+    }
+    if(isset($variables['entity']['field_teaser_text'])){
+      $variables['entityLinkTeaser'] = $variables['entity']['field_teaser_text'][0];
+    }
+    if(isset($variables['entity']['field_additional_link_text'])){
+      $variables['entityLinkAdditional'] = $variables['entity']['field_additional_link_text'][0];
+    }
+    if(isset($variables['entity']['field_text'])){
+      $variables['entityLinkBody'] = $variables['entity']['field_text'][0];
+    }
+
+    //for Homepage Feature Entity
+    if(isset($variables['entity']['field_link'][0]['#title'])){
+      $variables['entityLinkHomepage'] = $variables['entity']['field_link'][0]['#title'];
+      //check to see if this is an external link
+      if(substr($variables['entityLinkHomepage'], 0, 1) === '/') {
+        $variables['entityLinkHomepageExternal'] = false;
+      } else {
+        $variables['entityLinkHomepageExternal'] = true;
+      }
+      
+    }
+    //check to see if this is an external link
+    if(isset($variables['entityLink'])){
+      if(substr($variables['entityLink'], 0, 1) === '/') {
+        $variables['entityLinkExternal'] = false;
+      } else {
+        $variables['entityLinkExternal'] = true;
+      }
+
+    }
+
   }
-  //check to see if this is an external link
-  if(substr($variables['entityLink'], 0, 1) === '/') {
-    $variables['entityLinkExternal'] = false;
-  } else {
-    $variables['entityLinkExternal'] = true;
-  }
+
+
 
 }
 
 function nkh_preprocess_node(&$variables) {
-  $whichNewsType = $variables['elements']['field_taxonomy_news'][0]['#title'];
+
   $newsType = false;
-  //This is for Boilerplate text display in News/Press Release content type
-  if($whichNewsType == 'Press Release'){
-    $newsType = true;
+  if(isset($variables['elements']['field_taxonomy_news'])){
+    $whichNewsType = $variables['elements']['field_taxonomy_news'][0]['#title'];  
+    //This is for Boilerplate text display in News/Press Release content type
+    if($whichNewsType == 'Press Release'){
+      $newsType = true;
+    }  
+  } else {
+    $newsType = false;
   }
   $variables['newsType']= $newsType;
 
@@ -96,19 +123,26 @@ function nkh_preprocess_node(&$variables) {
 
   // ksm($variables['elements']['field_video']['0']['#media']);
   //to get length of subtitle
-  $pageSubtitle = $variables['elements']['field_subtitle']['0']['#text'];
-  
-  $variables['pageSubtitle']= $pageSubtitle;
+  //
+  if(isset($variables['elements']['field_subtitle'])){
+    $pageSubtitle = $variables['elements']['field_subtitle']['0']['#text'];
+    
+    $variables['pageSubtitle']= $pageSubtitle;
 
-  $pageSubtitleCount = strlen($pageSubtitle);
-  
-  if($pageSubtitleCount < 30){
-    $pageSubtitleCount = 'subtitle_length';
-  }else{
-    $pageSubtitleCount = 'subtitle_max_length';
+    $pageSubtitleCount = strlen($pageSubtitle);
+    
+    if($pageSubtitleCount < 30){
+      $pageSubtitleCount = 'subtitle_length';
+    }else{
+      $pageSubtitleCount = 'subtitle_max_length';
+    }
+
+    $variables['pageSubtitleClass']= $pageSubtitleCount;
+
+  }else {
+    $variables['pageSubtitleClass'] = '';
   }
 
-  $variables['pageSubtitleClass']= $pageSubtitleCount;
 }
 
 function nkh_preprocess_taxonomy_term(&$variables) {
