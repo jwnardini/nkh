@@ -88,7 +88,7 @@ field_settings:
     label: Title
     datasource_id: 'entity:node'
     property_path: title
-    type: string
+    type: text
 datasource_settings:
   'entity:node':
     bundles:
@@ -128,8 +128,6 @@ processor_settings:
       h3: 2
       strong: 2
       b: 2
-      em: 1
-      u: 1
     weights:
       preprocess_index: -15
       preprocess_query: -15
@@ -187,6 +185,19 @@ processor_settings:
     weights:
       preprocess_index: -5
       preprocess_query: -2
+  ignorecase:
+    all_fields: false
+    fields:
+      - rendered_item
+      - type
+      - field_taxonomy_location
+      - field_file_type
+      - field_taxonomy_resource
+      - field_taxonomy_audience
+      - title
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
 tracker_settings:
   default: {  }
 options:
