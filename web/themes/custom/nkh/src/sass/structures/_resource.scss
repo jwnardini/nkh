@@ -844,8 +844,14 @@ button.resource-download-item__solid{
           background: $nkh-bone;
           border: 1px solid #efefef;
         }
-        &.focused:after{
-          color: gray;
+        &:hover,
+        &:focus,
+        &:visited,
+        &.focused{
+          &:after{
+            color: gray;
+          }
+
         }
         &:after {
           color: transparent;
