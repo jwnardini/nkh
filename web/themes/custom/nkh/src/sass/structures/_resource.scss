@@ -844,14 +844,17 @@ button.resource-download-item__solid{
           background: $nkh-bone;
           border: 1px solid #efefef;
         }
-        &.focused:after{
-          content: none;
+        &:after {
+          color: transparent;
+          @include icon($icon-checkmark);
+          position: absolute;
+          left: .3em;
+          top: 0;
+          font-size: 1rem;
         }
       }
-      .facets-checkbox[checked="checked"] ~ label:after {
-        margin-top: 0;
-        content: $icon-checkmark;
-        font-size: 1rem;
+      .facets-checkbox:checked ~ label:after {
+        color: gray;
       }
     }
     .facet-item__value {
