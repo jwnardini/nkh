@@ -8,6 +8,7 @@
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\nkh_resource_center\Form\ViewForm;
+use Drupal\Core\Url;
 
 /**
  * Implements hook_page_attachments().
@@ -141,5 +142,14 @@ function nkh_resource_center_preprocess_node(&$variables) {
     }
     $form = new ViewForm($nid);
     $variables['form'] = \Drupal::formBuilder()->getForm($form, $nid, $path, $file_id, $file_uri);
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function nkh_resource_center_form_alter(&$form, $form_state, $form_id) {
+  if ($form['#id'] === 'views-exposed-form-db-resource-center-page-1') {
+    $form['actions']['reset']['#access'] = TRUE;
   }
 }
