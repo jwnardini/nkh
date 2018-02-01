@@ -844,15 +844,6 @@ button.resource-download-item__solid{
           background: $nkh-bone;
           border: 1px solid #efefef;
         }
-        &:hover,
-        &:focus,
-        &:visited,
-        &.focused{
-          &:after{
-            color: gray;
-          }
-
-        }
         &:after {
           color: transparent;
           @include icon($icon-checkmark);
@@ -862,7 +853,7 @@ button.resource-download-item__solid{
           font-size: 1rem;
         }
       }
-      .facets-checkbox[checked="checked"] ~ label:after {
+      .facets-checkbox:checked ~ label:after {
         color: gray;
       }
     }
