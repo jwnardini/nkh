@@ -151,3 +151,32 @@ function nkh_preprocess_taxonomy_term(&$variables) {
     $variables['termTitle'] = $variables['name']['0']['#context']['value'];
   }
 }
+
+function short_str($str, $max) {
+  // returns a trimmed version of a string with ellipsis after whole words when necessary
+  $str = trim($str);
+  if (strlen($str) > $max) {
+    $s_pos = strpos($str, ' ');
+    $cut = $s_pos === false || $s_pos > $max;
+    $str = wordwrap($str, $max, ';;', $cut);
+    $str = explode(';;', $str);
+    $str = $str[0] . '...';
+  }
+  return $str;
+}
+
+function nkh_preprocess_field(&$variables) {
+  // smart trim the body field of the teaser display mode of resource nodes
+  $element = $variables['element'];
+  if ($element['#entity_type'] == 'node') {
+    if ($element['#bundle'] == 'resource'){
+      if ($element['#view_mode'] == 'teaser')  {
+        if (($element['#field_name'] == 'body')) {
+          $body = strip_tags($variables['items'][0]['content']['#text']);
+          $alteredBody = short_str($body, 200);
+          $variables['items'][0]['content']['#text'] = $alteredBody;
+        }
+      }
+    }
+  }
+}
