@@ -55,6 +55,7 @@
  *   current user is a logged-in member.
  * - is_admin: Flag for admin user status. Will be true when the current user
  *   is an administrator.
+ * - referer: The response from HTTP_REFERER
  *
  * @see template_preprocess_node()
  */
@@ -76,7 +77,11 @@
 
   <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
   <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
-  <ol><li><a href="/resource-center">Back to Resource Center</a></li>
+  <ol>
+    {% if referer %}
+      <li><a href="{{ referer }}">Back to search results</a></li>
+    {% endif %}
+    <li><a href="/resource-center/search">Back to Resource Center</a></li>
   </ol>
 </nav>
 </div>

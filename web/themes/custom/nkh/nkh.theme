@@ -97,50 +97,60 @@ function nkh_preprocess_eck_entity(&$variables) {
 
 function nkh_preprocess_node(&$variables) {
 
-  $newsType = false;
-  if(isset($variables['elements']['field_taxonomy_news'])){
-    $whichNewsType = $variables['elements']['field_taxonomy_news'][0]['#title'];  
-    //This is for Boilerplate text display in News/Press Release content type
-    if($whichNewsType == 'Press Release'){
-      $newsType = true;
-    }  
-  } else {
-    $newsType = false;
+  $newsType = FALSE;
+  if (isset($variables['elements']['field_taxonomy_news'])) {
+    $whichNewsType = $variables['elements']['field_taxonomy_news'][0]['#title'];
+    // This is for Boilerplate text display in News/Press Release content type.
+    if ($whichNewsType == 'Press Release') {
+      $newsType = TRUE;
+    }
   }
-  $variables['newsType']= $newsType;
+  else {
+    $newsType = FALSE;
+  }
+  $variables['newsType'] = $newsType;
 
   //This is for the title on pages.
   //The boolean is to trigger it to print when it's not homepage.
   $whichPage = $variables['attributes']['about'];
 
-  if($whichPage == '/homepage'){
-    $isNotHomepage = false;
-  }else{
-    $isNotHomepage = true;
+  if ($whichPage == '/homepage') {
+    $isNotHomepage = FALSE;
+  }
+  else {
+    $isNotHomepage = TRUE;
   }
 
-  $variables['isNotHomepage']= $isNotHomepage;
+  $variables['isNotHomepage'] = $isNotHomepage;
 
-  // ksm($variables['elements']['field_video']['0']['#media']);
-  //to get length of subtitle
-  //
-  if(isset($variables['elements']['field_subtitle'])){
+  // Get length of subtitle.
+  if (isset($variables['elements']['field_subtitle'])) {
     $pageSubtitle = $variables['elements']['field_subtitle']['0']['#text'];
-    
-    $variables['pageSubtitle']= $pageSubtitle;
+    $variables['pageSubtitle'] = $pageSubtitle;
 
     $pageSubtitleCount = strlen($pageSubtitle);
-    
-    if($pageSubtitleCount < 30){
+    if ($pageSubtitleCount < 30) {
       $pageSubtitleCount = 'subtitle_length';
-    }else{
+    }
+    else {
       $pageSubtitleCount = 'subtitle_max_length';
     }
 
-    $variables['pageSubtitleClass']= $pageSubtitleCount;
+    $variables['pageSubtitleClass'] = $pageSubtitleCount;
 
-  }else {
+  }
+  else {
     $variables['pageSubtitleClass'] = '';
+  }
+
+  if ($variables['elements']['#node']->bundle() == 'resource') {
+    if ($variables['view_mode'] == 'full') {
+      $variables['referer'] = NULL;
+      $referer = \Drupal::request()->server->get('HTTP_REFERER');
+      if (strpos($referer, 'resource-center/search?') !== FALSE) {
+        $variables['referer'] = $referer;
+      }
+    }
   }
 
 }
