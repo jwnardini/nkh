@@ -7,9 +7,7 @@
             //http://agencychiefjira.com:8080/browse/NKH-1064 
             // add a check here to make sure that this function only fires
             // when it's not on resource center
-            if($('body').hasClass('path-resource-center')){
-            }else {
-
+            if(!$('body').hasClass('path-resource-center')){
               // Start hide header on scroll down
               var didScroll = false;
               var veryTop = 0;
