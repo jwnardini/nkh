@@ -993,6 +993,12 @@ button.resource-download-item__solid{
     width: 100%;
   }
 }
+// remove the main padding NKH-1075
+.path-resource-center {
+  #main {
+    padding-top: 0;
+  }
+}
 
 //Remove Header Donate Button for mobile
 .path-resource-center,
