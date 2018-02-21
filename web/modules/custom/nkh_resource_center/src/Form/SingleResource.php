@@ -110,7 +110,7 @@ class SingleResource extends FormBase {
         '#type' => 'html_tag',
         '#tag' => 'button',
         '#value' => t('Download Resource'),
-        '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterSingleDownload(event,"' . file_create_url($file_uri) . '")'],
+        '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterSingleDownload(event,"/resource-center/' . $form_state->get('fid') . '/download")'],
       ];
 
       $form['form_header']['form_actions']['add_resource'] = [

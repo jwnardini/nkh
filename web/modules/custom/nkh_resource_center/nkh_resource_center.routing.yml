@@ -1,0 +1,6 @@
+entity.nkh_resource_center.download:
+  path: 'resource-center/{fid}/download'
+  defaults:
+    _controller: '\Drupal\nkh_resource_center\Controller\DownloadController::downloadFile'
+  requirements:
+    _permission: 'access content'

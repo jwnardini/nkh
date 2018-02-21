@@ -57,7 +57,7 @@ class ViewForm extends FormBase {
       '#type' => 'html_tag',
       '#tag' => 'button',
       '#value' => t('Download Resource'),
-      '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterSingleDownload(event,"' . file_create_url($file_uri) . '")'],
+      '#attributes' => ['onclick' => 'Drupal.behaviors.nkhResourceCenterSingleDownload(event,"/resource-center/' . $file_id . '/download")'],
     ];
 
     $form['resource']['resource_item'][$entity_id]['form_actions']['add_resource'] = [
