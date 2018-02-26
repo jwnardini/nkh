@@ -24,9 +24,10 @@ class DownloadController extends ControllerBase {
     $download = new Response();
     $filename = $file->getFilename();
     $mimetype = $file->getMimeType();
-    $download->setContent($file->getFileUri());
+    $download->setContent(file_get_contents($file->getFileUri()));
     $download->headers->set('Content-Type', $mimetype);
     $download->headers->set('Content-Disposition', 'attachment; filename="' . $filename . '"');
+    $download->headers->set('Content-Length', $file->getSize());
     return $download;
   }
 
