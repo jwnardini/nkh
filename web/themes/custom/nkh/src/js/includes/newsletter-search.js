@@ -14,9 +14,9 @@
 
                 var $everything = $(window);
                 // add class to this list for toggle class on the same page. Use this on footer/header sectionss.
-                var $blocks = $('.block-mobilecommonssignup .text-formatted, .block-newslettersignupform, .block-newslettersignupform-2, .block-exposedformsite-db-searchpage-form');
-                var $blocksButton = $('.block-mobilecommonssignup .mobile-alert-button, .block-newslettersignupform .text-formatted .header-newsletter-form__toggle, .block-newslettersignupform-2 .text-formatted .header-newsletter-form__toggle, .block-exposedformsite-db-searchpage-form .header-search-form__toggle');
-                var $blocksCloseButton = $('.block-exposedformsite-db-searchpage-form .icon-close, .block-newslettersignupform .icon-close, .block-newslettersignupform-2 .icon-close');
+                var $blocks = $('.block-mobilecommonssignup .text-formatted, .block-newslettersignupform, .block-newslettersignupform-2, .block-newslettersignupformfooter, .block-exposedformsite-db-searchpage-form');
+                var $blocksButton = $('.block-mobilecommonssignup .mobile-alert-button, .block-newslettersignupform .text-formatted .header-newsletter-form__toggle, .block-newslettersignupform-2 .text-formatted .header-newsletter-form__toggle, .block-newslettersignupformfooter .text-formatted .header-newsletter-form__toggle, .block-exposedformsite-db-searchpage-form .header-search-form__toggle');
+                var $blocksCloseButton = $('.block-exposedformsite-db-searchpage-form .icon-close, .block-newslettersignupform .icon-close, .block-newslettersignupform-2 .icon-close, .block-newslettersignupformfooter .icon-close');
 
                 // give the classes above a common share class.
                 $blocks.addClass('toggle-class');
@@ -30,32 +30,32 @@
 
                             $('.toggle-button').removeClass('toggled');
                             $('.open-item').removeClass('open-item');
-                            
+
                         }else{
-                            
+
                         }
                     }
 
                 });
 
 
-                $blocksButton.click(function(e) { 
+                $blocksButton.click(function(e) {
 
                     $('.open-item').removeClass('open-item');
                     $(this).toggleClass('toggled');
 
-                    
+
                     if($(this).hasClass('toggled')){
                         $(this).closest('.toggle-class').addClass('open-item');
                     }else{
                         $('.toggle-button').removeClass('toggled');
-                        $(this).closest('.toggle-class').removeClass('open-item');                        
+                        $(this).closest('.toggle-class').removeClass('open-item');
 
                     }
 
-                }); 
+                });
 
-                $blocksCloseButton.click(function(e) { 
+                $blocksCloseButton.click(function(e) {
                     if( $('.open-item').is(':visible') ) {
 
                         $('.toggle-button').removeClass('toggled');
