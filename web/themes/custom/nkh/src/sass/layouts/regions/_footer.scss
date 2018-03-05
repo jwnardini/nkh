@@ -274,6 +274,7 @@ nav.block-menu:not(.menu--header-social-media-links , .menu--footer-social-media
   }
 
   .block-newslettersignupform-2,
+  .block-newslettersignupformfooter,
   .block-footerdonate {
     display: none;
     margin: 0;
@@ -289,6 +290,7 @@ nav.block-menu:not(.menu--header-social-media-links , .menu--footer-social-media
       display: inline-block;
     }
     .block-newslettersignupform-2,
+    .block-newslettersignupformfooter,
     .block-footerdonate {
       margin-top: -1.1rem;
       display: inline-block;
@@ -303,7 +305,8 @@ nav.block-menu:not(.menu--header-social-media-links , .menu--footer-social-media
 
       }
     }
-    .block-newslettersignupform-2{
+    .block-newslettersignupform-2,
+    .block-newslettersignupformfooter{
       position: absolute;
       right: 0;
       margin-right: 17.4rem;
