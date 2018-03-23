@@ -1,6 +1,6 @@
 uuid: 91e3da83-5d3a-4e7e-9684-7c0db28c5ff5
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - field.storage.node.body
@@ -53,11 +53,12 @@ datasource_settings:
       default: true
       selected: {  }
 processor_settings:
+  rendered_item: {  }
   add_url: {  }
   aggregated_field: {  }
-  rendered_item: {  }
 tracker_settings:
-  default: {  }
+  default:
+    indexing_order: fifo
 options:
   index_directly: true
   cron_limit: 50

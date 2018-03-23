@@ -5,5 +5,7 @@ dependencies: {  }
 id: node__resource
 label: 'Content: Resource'
 tags:
-  referrer: no-referrer
   robots: 'noindex, nofollow, noarchive, nosnippet, noodp, noydir, noimageindex, notranslate'
+  referrer: no-referrer
+  shortlink: 'https://www.nokidhungry.org/[current-page:url:relative]'
+  canonical_url: 'https://www.nokidhungry.org/[current-page:url:relative]'

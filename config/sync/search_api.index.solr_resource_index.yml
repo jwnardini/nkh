@@ -1,6 +1,6 @@
 uuid: c6befcc1-5d21-432d-a0c5-cbfae39fd229
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - field.storage.node.field_taxonomy_location
@@ -120,7 +120,8 @@ processor_settings:
   add_url: {  }
   aggregated_field: {  }
 tracker_settings:
-  default: {  }
+  default:
+    indexing_order: fifo
 options:
   index_directly: true
   cron_limit: 50

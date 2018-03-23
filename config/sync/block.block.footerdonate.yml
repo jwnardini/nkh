@@ -11,7 +11,7 @@ dependencies:
 id: footerdonate
 theme: nkh
 region: footer
-weight: -42
+weight: -44
 provider: null
 plugin: 'block_content:4ea47ffc-bf1a-474c-b9d0-1f752eb295c1'
 settings:

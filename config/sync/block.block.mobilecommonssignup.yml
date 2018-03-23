@@ -11,7 +11,7 @@ dependencies:
 id: mobilecommonssignup
 theme: nkh
 region: footer
-weight: -44
+weight: -46
 provider: null
 plugin: 'block_content:ea741ca5-fa4c-4f19-8479-940c7e95cd38'
 settings:
