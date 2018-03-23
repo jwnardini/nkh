@@ -8,5 +8,5 @@ id: front
 label: 'Front page'
 tags:
   title: 'No Kid Hungry'
-  shortlink: '[site:url]'
-  canonical_url: '[site:url]'
+  shortlink: 'https://www.nokidhungry.org'
+  canonical_url: 'https://www.nokidhungry.org'
