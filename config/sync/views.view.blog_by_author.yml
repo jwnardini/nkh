@@ -146,7 +146,7 @@ display:
         path:
           id: path
           table: node
-          field: path
+          field: view_node
           relationship: none
           group_type: group
           admin_label: ''
@@ -193,7 +193,8 @@ display:
           hide_alter_empty: true
           absolute: false
           entity_type: node
-          plugin_id: node_path
+          plugin_id: entity_link
+          output_url_as_text: true
         field_taxonomy_series:
           id: field_taxonomy_series
           table: node__field_taxonomy_series
@@ -494,6 +495,9 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -816,7 +820,7 @@ display:
         path:
           id: path
           table: node
-          field: path
+          field: view_node
           relationship: none
           group_type: group
           admin_label: ''
@@ -863,7 +867,8 @@ display:
           hide_alter_empty: true
           absolute: false
           entity_type: node
-          plugin_id: node_path
+          plugin_id: entity_link
+          output_url_as_text: true
         field_image_featured:
           id: field_image_featured
           table: node__field_image_featured

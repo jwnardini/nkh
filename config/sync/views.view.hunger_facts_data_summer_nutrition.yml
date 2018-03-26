@@ -3,9 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.taxonomy_term.field_data_foodinsec
-    - field.storage.taxonomy_term.field_data_schoolbkfst
-    - field.storage.taxonomy_term.field_data_snap
     - field.storage.taxonomy_term.field_data_summernutr
     - taxonomy.vocabulary.location
   content:

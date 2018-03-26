@@ -381,6 +381,7 @@ display:
               user_creator: '0'
               content_administrator: '0'
               administrator: '0'
+            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
