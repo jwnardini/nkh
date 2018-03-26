@@ -24,7 +24,7 @@
         "drupal/autologout": "^1.0",
         "drupal/better_exposed_filters": "^3.0@alpha",
         "drupal/console": "~1.0",
-        "drupal/core": "~8.0",
+        "drupal/core": "~8.5",
         "drupal/devel": "^1.2",
         "drupal/easy_breadcrumb": "^1.6",
         "drupal/eck": "^1.0@alpha",
