@@ -126,7 +126,7 @@ nav.block-menu:not(.menu--header-social-media-links , .menu--footer-social-media
   }
   li{
     &.home:before{
-      content: $icon-logo;
+      content: $icon-nkh-white_logo;
     }
     &.instagram:before {
       content: $icon-instagram;
@@ -158,7 +158,7 @@ nav.block-menu:not(.menu--header-social-media-links , .menu--footer-social-media
         margin: 0;
       }
       &:before{
-        font-size: 84px;
+        font-size: 8.8rem;
         color: $white;
       }
     }
