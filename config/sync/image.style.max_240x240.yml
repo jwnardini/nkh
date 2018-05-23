@@ -1,0 +1,14 @@
+uuid: f8dd3096-2bbb-4ed7-8179-b4db84ddb153
+langcode: en
+status: true
+dependencies: {  }
+name: max_240x240
+label: 'Max 240x240'
+effects:
+  4fcbc0fe-21da-4ad1-a2c0-69b854044b3b:
+    uuid: 4fcbc0fe-21da-4ad1-a2c0-69b854044b3b
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 240
+      height: 240
