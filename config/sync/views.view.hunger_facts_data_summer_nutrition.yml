@@ -239,10 +239,11 @@ display:
   block_4:
     display_plugin: block
     id: block_4
-    display_title: 'Summer Nutrition'
+    display_title: 'Summer Meals'
     position: 2
     display_options:
-      display_extenders: {  }
+      display_extenders:
+        metatag_display_extender: {  }
       fields:
         field_data_summernutr:
           id: field_data_summernutr
@@ -404,7 +405,7 @@ display:
           empty: false
           tokenize: false
           content:
-            value: "<h2>Summer Nutrition</h2>\n<p>Summer nutrition participation is the number of children participating in the summer meals programs for every 100 low-income students who participate in the National School Lunch Program during the school year. (2015)</h2>"
+            value: "<h2>Summer Meals</h2>\n<p>The percentage of children in each state who participated in the summer meals programs in 2015, based on the number of low-income students who qualified for free or reduced-price lunch during the school year. (Source: FRAC)</h2>"
             format: simple_html
           plugin_id: text
     cache_metadata:

@@ -12,7 +12,7 @@ dependencies:
 id: exposedformdb_resource_centerpage_1
 theme: nkh
 region: alert
-weight: -38
+weight: -45
 provider: null
 plugin: 'views_exposed_filter_block:db_resource_center-page_1'
 settings:

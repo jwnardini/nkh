@@ -13,7 +13,7 @@ _core:
 id: nkh_tools
 theme: nkh
 region: alert
-weight: -9
+weight: -40
 provider: null
 plugin: 'system_menu_block:tools'
 settings:

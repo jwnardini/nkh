@@ -404,7 +404,7 @@ display:
           empty: false
           tokenize: false
           content:
-            value: "<h2>School Breakfast</h2>\n<p>School Breakfast participation is the number of low-income children participating in the School Breakfast Program for every 100 who participate in the National School Lunch Program. (SY 15-16)</p>"
+            value: "<h2>School Breakfast</h2>\n<p>The percentage of kids in each state who ate breakfast at school in 2016, based on the number eating lunch at school. (Source: FRAC)</p>"
             format: simple_html
           plugin_id: text
     cache_metadata:

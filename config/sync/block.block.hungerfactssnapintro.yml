@@ -12,7 +12,7 @@ dependencies:
 id: hungerfactssnapintro
 theme: nkh
 region: content
-weight: -13
+weight: -15
 provider: null
 plugin: 'block_content:bbdcb505-84d7-4b64-9b82-69e35c7e2480'
 settings:

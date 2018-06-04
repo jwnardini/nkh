@@ -12,7 +12,7 @@ dependencies:
 id: views_block__our_stories_our_stories
 theme: nkh
 region: content
-weight: -38
+weight: -39
 provider: null
 plugin: 'views_block:our_stories-our_stories'
 settings:

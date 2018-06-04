@@ -12,7 +12,7 @@ dependencies:
 id: views_block__hunger_facts_data_food_insecurity_block_2
 theme: nkh
 region: content
-weight: -19
+weight: -21
 provider: null
 plugin: 'views_block:hunger_facts_data_food_insecurity-block_2'
 settings:

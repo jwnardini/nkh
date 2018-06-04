@@ -404,7 +404,7 @@ display:
           empty: false
           tokenize: false
           content:
-            value: "<h2>SNAP</h2>\n<p>The percentage of people in each state who are eligible for SNAP benefits that actually receive them.</p>"
+            value: "<h2>SNAP</h2>\n<p>The percentage of people in each state who are eligible for SNAP benefits that actually receive them. (Source: USDA)</p>"
             format: simple_html
           plugin_id: text
     cache_metadata:

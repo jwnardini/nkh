@@ -1,0 +1,78 @@
+uuid: 03bf8e0a-9b1a-4413-a8cc-32ba86c93733
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - nkh_partner_migrate
+_core:
+  default_config_hash: Ld729RV5E9etQUhOdTWUKSPjT3JZF-Fyhk1aMyKC5RE
+id: partner
+migration_tags: null
+migration_group: null
+label: 'Partner Node Migration'
+source:
+  plugin: csv
+  track_changes: true
+  path: /config/install/Partners-All-Migrate-dbor.csv
+  header_row_count: 1
+  keys:
+    - legacy_id
+  constants:
+    slash: /
+process:
+  type:
+    plugin: default_value
+    default_value: partner
+  langcode:
+    plugin: default_value
+    default_value: en
+  status:
+    plugin: default_value
+    default_value: 1
+  promote:
+    plugin: default_value
+    default_value: 0
+  sticky:
+    plugin: default_value
+    default_value: 0
+  revision_translation_affected:
+    plugin: default_value
+    default_value: 1
+  default_langcode:
+    plugin: default_value
+    default_value: 1
+  path:
+    plugin: concat
+    source:
+      - constants/slash
+      - alias
+  created: created
+  changed: created
+  title: title
+  uid:
+    plugin: default_value
+    default_value: 1
+  body/value: body
+  body/format:
+    plugin: default_value
+    default_value: full_html
+  field_teaser: field_teaser
+  field_url: field_url
+  field_image_logo:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_image_logo
+    -
+      plugin: migration_lookup
+      migration: partner_media
+      source: legacy_id
+      no_stub: true
+destination:
+  plugin: 'entity:node'
+migration_dependencies:
+  required:
+    - partner_image
+    - partner_media
+  optional: {  }

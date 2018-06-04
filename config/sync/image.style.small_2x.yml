@@ -13,5 +13,5 @@ effects:
     weight: 1
     data:
       width: 1740
-      height: 920
+      height: 924
       crop_type: focal_point

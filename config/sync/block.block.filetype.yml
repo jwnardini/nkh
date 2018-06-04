@@ -12,7 +12,7 @@ dependencies:
 id: filetype
 theme: nkh
 region: content
-weight: -22
+weight: -24
 provider: null
 plugin: 'facet_block:file_type'
 settings:

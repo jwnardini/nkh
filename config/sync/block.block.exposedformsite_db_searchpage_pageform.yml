@@ -12,7 +12,7 @@ dependencies:
 id: exposedformsite_db_searchpage_pageform
 theme: nkh
 region: content
-weight: -45
+weight: -46
 provider: null
 plugin: 'views_exposed_filter_block:site_db_search-page_1'
 settings:

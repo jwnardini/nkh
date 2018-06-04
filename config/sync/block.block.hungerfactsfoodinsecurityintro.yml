@@ -12,7 +12,7 @@ dependencies:
 id: hungerfactsfoodinsecurityintro
 theme: nkh
 region: content
-weight: -20
+weight: -22
 provider: null
 plugin: 'block_content:8abd91ed-5213-44f4-875e-5c4558b1c15f'
 settings:

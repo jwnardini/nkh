@@ -12,7 +12,7 @@ dependencies:
 id: resourceaudiencefacet
 theme: nkh
 region: alert
-weight: -37
+weight: -44
 provider: null
 plugin: 'facet_block:resource_audience_facet'
 settings:

@@ -12,7 +12,7 @@ dependencies:
 id: resourcelocationfacet
 theme: nkh
 region: alert
-weight: -36
+weight: -43
 provider: null
 plugin: 'facet_block:resource_location_facet'
 settings:

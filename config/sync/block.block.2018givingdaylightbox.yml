@@ -1,0 +1,25 @@
+uuid: 437ccc12-2202-4fac-8cfc-df398366080e
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:aee08d77-cf6a-4af0-b967-8958b6de11fc'
+  module:
+    - block_content
+  theme:
+    - nkh
+id: 2018givingdaylightbox
+theme: nkh
+region: content
+weight: -12
+provider: null
+plugin: 'block_content:aee08d77-cf6a-4af0-b967-8958b6de11fc'
+settings:
+  id: 'block_content:aee08d77-cf6a-4af0-b967-8958b6de11fc'
+  label: '2018 Giving Day Lightbox'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
