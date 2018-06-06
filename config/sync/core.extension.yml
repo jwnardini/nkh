@@ -65,16 +65,10 @@ module:
   metatag_twitter_cards: 0
   metatag_views: 0
   migrate: 0
-  migrate_plus: 0
-  migrate_source_csv: 0
-  migrate_tools: 0
   module_filter: 0
-  nkh_blog_migrate: 0
   nkh_news_conditional: 0
-  nkh_partner_migrate: 0
   nkh_reference_conditional: 0
   nkh_resource_center: 0
-  nkh_resource_migrate: 0
   node: 0
   node_title_help_text: 0
   optimizely: 0
