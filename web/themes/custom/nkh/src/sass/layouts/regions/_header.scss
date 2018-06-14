@@ -66,16 +66,16 @@
   }
   .nkh-logo {
     position: fixed;
-    bottom: 6.5rem;
+    bottom: 3.5rem;
     left: 2rem;
     @include breakpoint($min1024) {
       position: relative;
       display: block;
       left: 0;
-      top: 1rem;
+      top: -1em;
     }
     @include breakpoint($min1360) {
-      top: 1.8rem;
+      top: -1rem;
     }
   }
   div[class*="block-newsletter"]{
@@ -112,7 +112,7 @@
 }
 .nkh-logo {
   max-width: 150px;
-  height: 67px;
+  height: 125px;
   display: block;
   .st0{
     fill:#231F20;
