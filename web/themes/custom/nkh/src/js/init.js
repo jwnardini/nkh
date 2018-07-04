@@ -21,6 +21,8 @@ require('./includes/sticky');
 require('./includes/konami');
 require('./includes/carousel');
 require('./includes/cta-animation');
+require('./includes/culinary-events');
+
 
 (function ($) {
   // DOC READY

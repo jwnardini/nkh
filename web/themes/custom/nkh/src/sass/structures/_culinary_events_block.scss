@@ -1,0 +1,132 @@
+#block-culinaryeventscontentfeed {
+  max-width: 1440px;
+  margin: 0 auto;
+  > h2 {
+    display: none;
+  }
+  h2.ce-events-h2 {
+    width: 100%;
+    @media (min-width:768px) {
+      width: 31%;
+      display: inline-block;
+      margin: 0 0 40px 0;
+      float: left;
+    }
+    color: #383D44;
+    font-family: Gotham;
+    font-size: 35px;
+    font-weight: bold;
+    letter-spacing: -0.2px;
+  }
+  .form-item-nkh-culinary-events-city select {
+    width: 100%;
+    background-color: #F6F5F3 !important;
+  }
+  input#edit-nkh-culinary-events-zip {
+    height: 40px;
+    width: 100%;
+  }
+  input[type="text"] {
+    min-width: initial;
+  }
+  h2.ce-events-h2, .form-item-nkh-culinary-events-zip, .form-item-nkh-culinary-events-city {
+    margin: 0;
+  }
+  .form-item-nkh-culinary-events-city {
+    @media (min-width:768px) {
+      margin-left: 5%;
+    }
+  }
+  .form-item-nkh-culinary-events-zip, .form-item-nkh-culinary-events-city {
+    width: 100%;
+    @media (min-width:768px) {
+      width: 22%;
+      display: inline-block;
+      float:right;
+    }
+
+    &:after {
+      content: "\2193";
+      position: relative;
+      top: -39px;
+      margin-left: 90%;
+      z-index: 9999;
+    }
+  }
+  #nkh-culinary-events-feed--list {
+    float:left;
+    clear:both;
+    width: 100%;
+  }
+  .ce-feed-item {
+    width: 100%;
+    margin-top: 40px;
+    @media (min-width:768px) {
+      width:33%;
+    }
+    float:left;
+    img {
+      display: block;
+      width:400px;
+      @media (max-width:400px) {
+        width:100%;
+      }
+      @media (min-width:768px) {
+        width: 90%;
+      }
+    }
+    .ce-feed-field-title {;
+      color: #383D44;
+      font-family: Gotham;
+      font-size: 22px;
+      font-weight: bold;
+      line-height: 26px;
+      text-decoration: underline;
+    }
+    .ce-feed-field-type {
+      padding: 9px 18px;
+      background: blue;
+      color: #FFFFFF;
+      font-family: Gotham;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 0.7px;
+      line-height: 18px;
+      text-transform: uppercase;
+      display: inline-block;
+      position: relative;
+      top: -20px;
+    }
+    .ce-feed-type-taste-of-the-nation {
+      background: #48C0E7 !important;
+    }
+    .ce-feed-type-give-me-five {
+      background: #88B631 !important;
+    }
+    .ce-feed-field.ce-feed-field-date:after {
+      content: "/";
+      padding: 0px 3px 0px 10px;
+    }
+
+    .ce-feed-field-date,
+    .ce-feed-field-location {
+      color: #94989E;
+      font-family: Gotham;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 18px;
+      display: inline-block;
+    }
+    .ce-feed-field-location {
+      text-transform: uppercase;
+    }
+
+    .ce-feed-field-link {
+      display: none;
+    }
+
+    .ce-feed-field-title, .ce-feed-field-date, .ce-feed-field-type {
+      margin-left: 20px;
+    }
+  }
+}
